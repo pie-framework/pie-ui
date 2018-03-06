@@ -9,7 +9,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PieElements/pie-elements.git"
+    "url": "https://github.com/pie-framework/pie-elements.git"
   },
   "publishConfig": {
     "access": "public"

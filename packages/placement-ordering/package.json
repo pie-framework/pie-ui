@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PieELements/pie-elements"
+    "url": "https://github.com/pie-framework/pie-elements"
   },
   "publishConfig": {
     "access": "public"

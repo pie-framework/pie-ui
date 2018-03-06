@@ -5,7 +5,7 @@
     "pie",
     "pie-elements"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "repository": "pie-framework/pie-ui",
   "publishConfig": {

@@ -1,7 +1,7 @@
 import Main from "./main.jsx";
 import React from "react";
 import ReactDOM from "react-dom";
-import {ModelSetEvent, SessionChangedEvent} from "@pie-lib/pie-player-events";
+import { ModelSetEvent, SessionChangedEvent } from "@pie-framework/pie-player-events";
 
 export default class RootInlineChoice extends HTMLElement {
 
@@ -10,11 +10,11 @@ export default class RootInlineChoice extends HTMLElement {
     this._model = null;
     this._session = null;
     this._rerender = () => {
-      if(this._model && this._session) {
+      if (this._model && this._session) {
         let elem = React.createElement(Main, {
-          model : this._model,
-          session : this._session,
-          onChoiceChanged : this._handleChoiceChange.bind(this)
+          model: this._model,
+          session: this._session,
+          onChoiceChanged: this._handleChoiceChange.bind(this)
         });
         ReactDOM.render(elem, this);
       }

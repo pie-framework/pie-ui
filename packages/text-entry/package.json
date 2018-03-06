@@ -22,7 +22,7 @@
     "test": "npm run client-test && npm run controller-test && npm run configure-test"
   },
   "dependencies": {
-    "@pie-lib/pie-player-events": "^0.0.1",
+    "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/render-ui": "^0.1.10",
     "debug": "^3.0.1",
     "lodash": "^4.17.4",

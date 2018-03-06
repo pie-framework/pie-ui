@@ -1,4 +1,4 @@
-import { ModelSetEvent, SessionChangedEvent } from '@pie-lib/pie-player-events'
+import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events'
 import ReactTextEntry from './text-entry.jsx';
 import debug from 'debug';
 import React from 'react';

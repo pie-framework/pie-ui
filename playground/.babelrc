@@ -1,8 +1,0 @@
-{
-  "presets": [
-    "babel-preset-react"
-  ],
-  "plugins": [
-    "transform-es3-member-expression-literals"
-  ]
-}

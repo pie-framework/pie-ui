@@ -1,5 +1,6 @@
 {
   "name": "@pie-ui/pie-ui",
+  "version": "1.0.0",
   "description": "the pie-elements mono repo",
   "private": true,
   "license": "MIT",

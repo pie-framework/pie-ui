@@ -1,0 +1,24 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
+    "material-ui": "^1.0.0-beta.27",
+    "proptypes": "^1.1.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-jss": "^7.0.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

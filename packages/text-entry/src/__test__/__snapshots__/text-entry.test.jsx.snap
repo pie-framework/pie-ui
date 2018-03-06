@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`text-entry:snapshot renders 1`] = `
+<div
+  className="textEntry"
+>
+  <div
+    className="MuiFormControl-root-27 RawInput-formControl-2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    required={false}
+  >
+    <div
+      className="RawInput-inputAndIcon-4"
+    >
+      <div
+        className="MuiInput-root-31 RawInput-inputRoot-3 MuiInput-formControl-32 MuiInput-inkbar-33 MuiInput-underline-37"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-40 MuiInput-inputSingleline-43"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onChange={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="RawInput-icon-5"
+      >
+        <div
+          data-name="mock=comp"
+        >
+          {"feedback":"feedback"}
+        </div>
+      </div>
+    </div>
+    <p
+      className="MuiFormHelperText-root-46"
+    >
+      
+    </p>
+  </div>
+</div>
+`;

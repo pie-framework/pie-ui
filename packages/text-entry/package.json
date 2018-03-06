@@ -1,0 +1,53 @@
+{
+  "name": "@pie-ui/text-entry",
+  "description": "A pie text-entry component",
+  "keywords": [
+    "pie",
+    "pie-elements"
+  ],
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PieElements/pie-elements.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "scripts": {
+    "client-test": "jest",
+    "controller-test": "cd controller && npm test",
+    "configure-test": "cd configure && npm test",
+    "test": "npm run client-test && npm run controller-test && npm run configure-test"
+  },
+  "dependencies": {
+    "@pie-lib/pie-player-events": "^0.0.1",
+    "@pie-lib/render-ui": "^0.1.10",
+    "debug": "^3.0.1",
+    "lodash": "^4.17.4",
+    "material-ui": "^1.0.0-beta.27",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-number-format": "PieElements/react-number-format#feature/bad-input"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "^22.1.1",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^4.2.2"
+  }
+}

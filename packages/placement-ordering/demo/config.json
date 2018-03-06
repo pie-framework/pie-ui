@@ -1,0 +1,117 @@
+{
+  "elements": {
+    "placement-ordering": "../.."
+  },
+  "langs": [
+    "en-US",
+    "es-ES"
+  ],
+  "models": [
+    {
+      "id": "1",
+      "element": "placement-ordering",
+      "defaultLang": "en-US",
+      "langs": [
+        "en-US",
+        "es-ES"
+      ],
+      "correctResponse": [
+        {
+          "id": "c1",
+          "weight": 0.2
+        },
+        {
+          "id": "c4",
+          "weight": 0.2
+        },
+        {
+          "id": "c3",
+          "weight": 0.3
+        },
+        {
+          "id": "c2",
+          "weight": 0.3
+        }
+      ],
+      "model": {
+        "prompt": [
+          {
+            "lang": "en-US",
+            "value": "Arrange the fruits alphabetically"
+          },
+          {
+            "lang": "es-ES",
+            "value": "Organizar los frutos alfabético"
+          }
+        ],
+        "choices": [
+          {
+            "id": "c2",
+            "label": [
+              {
+                "lang": "en-US",
+                "value": "<div><strong>Lemon</strong><br/><br/><h4>hi</h4><img width=\"300\" src=\"https://realfood.tesco.com/media/images/Lemon-easter-biscuits-hero-1d74c01d-8906-45fe-8135-322f0520c434-0-472x310.jpg\"></img></div>"
+              },
+              {
+                "lang": "es-ES",
+                "value": "Limón"
+              }
+            ],
+            "shuffle": false,
+            "moveOnDrag": true
+          },
+          {
+            "id": "c3",
+            "label": [
+              {
+                "lang": "en-US",
+                "value": "Melon"
+              },
+              {
+                "lang": "es-ES",
+                "value": "Melón"
+              }
+            ],
+            "moveOnDrag": true
+          },
+          {
+            "id": "c1",
+            "label": [
+              {
+                "lang": "en-US",
+                "value": "Blueberry"
+              },
+              {
+                "lang": "es-ES",
+                "value": "Arándano"
+              }
+            ],
+            "moveOnDrag": false
+          },
+          {
+            "id": "c4",
+            "label": [
+              {
+                "lang": "en-US",
+                "value": "Pear"
+              },
+              {
+                "lang": "es-ES",
+                "value": "Pera"
+              }
+            ],
+            "moveOnDrag": false
+          }
+        ]
+      },
+      "config": {
+        "shuffle": false,
+        "placementType": "none",
+        "choiceAreaLayout": "vertical",
+        "choiceAreaLabel": "choices: ",
+        "answerAreaLabel": "aa",
+        "showOrdering": true
+      }
+    }
+  ]
+}

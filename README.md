@@ -1,16 +1,8 @@
 # pie-elements
 
-The pie elements package set.
+The pie custom elements only.
 
 Elements are in `packages`.
-
-
-## lerna
-
-
-### issues 
-
-* whilst publishing w/ lerna will bump dependencies in the main packages, it won't do so for internal pie packages (ie controller/configure).
 
 # install
 
@@ -28,14 +20,9 @@ npm install
 
 ### info
 ```shell
-cd packages/multiple-choice
-pie info
-```
-Sometimes you want to link in libraries to the config ui: 
-
-```
-cd docs/demo/.pie/.configure
-npm link @pie-lib/editable-html # will link up the local editable-html package
+cd packages/multiple-choice/demo
+pie serve
+ 
 ```
 
 # release/publish
@@ -51,6 +38,13 @@ lerna publish --conventional-commits # will add conventional commits to each pac
 * [lerna js][lerna] for handling multiple packages in a mono repo
 * [pie][pie] to test/build the pies
 
+
+### package development
+
+* use [jest][jest] for testing
+
+
 [lerna]: https://lernajs.io/
 [pie]: http://pie-framework.org
 [ccs]: https://conventionalcommits.org/
+[jest]: https://github.com/facebook/jest

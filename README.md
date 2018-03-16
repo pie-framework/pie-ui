@@ -28,6 +28,9 @@ pie serve
 # release/publish
 
 ```bash
+## before publishing run lint
+npm run lint
+
 lerna publish --conventional-commits # will add conventional commits to each packages CHANGELOG.md
 # you can add --skip-npm and/or --skip-git if you want to bypass publishing to either.
 ```

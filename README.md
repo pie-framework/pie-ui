@@ -45,6 +45,8 @@ lerna publish --conventional-commits # will add conventional commits to each pac
 ### package development
 
 * use [jest][jest] for testing
+* file names - use kebab-case for filenames
+
 
 
 [lerna]: https://lernajs.io/

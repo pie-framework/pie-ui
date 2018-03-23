@@ -1,8 +1,13 @@
-import React from "react";
-import EditableHTML from "@pie-lib/editable-html";
+import React from 'react';
+import EditableHTML from '"@pie-lib/editable-html';
+import PropTypes from 'prop-types';
 
 class Main extends React.Component {
-  constructor (props) {
+
+  static propTypes = {
+    onChange: PropTypes.func.isRequired
+  }
+  constructor(props) {
     super(props);
     this.handleEditableChange = this.handleEditableChange.bind(this);
   }
@@ -10,17 +15,15 @@ class Main extends React.Component {
   handleEditableChange(change) {
     this.props.onChange(change);
   }
-  
+
   render() {
     return (
-      <div>
-        <EditableHTML 
-          onChange={this.handleEditableChange} 
-          markup="" 
-          activePlugins={['bold', 'bulleted-list', 'numbered-list']}/>
-      </div>
-    )
+      <EditableHTML
+        onChange={this.handleEditableChange}
+        markup=""
+        activePlugins={['bold', 'bulleted-list', 'numbered-list']} />
+    );
   }
-};
+}
 
 export default Main;

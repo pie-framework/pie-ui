@@ -5,10 +5,13 @@ import PropTypes from 'prop-types';
 class Main extends React.Component {
 
   static propTypes = {
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    model: PropTypes.object
   }
+
   constructor(props) {
     super(props);
+    
     this.handleEditableChange = this.handleEditableChange.bind(this);
   }
 
@@ -17,11 +20,16 @@ class Main extends React.Component {
   }
 
   render() {
+    let {width, height} = this.props.model;
+
     return (
       <EditableHTML
         onChange={this.handleEditableChange}
         markup=""
-        activePlugins={['bold', 'bulleted-list', 'numbered-list']} />
+        activePlugins={['bold', 'bulleted-list', 'numbered-list']}
+        width={width.toString()}
+        height={height.toString()}
+        />
     );
   }
 }

@@ -22,16 +22,20 @@ const base = {
   }
 };
 
-const model = (id, extras) => Object.assign({},
-  base,
-  { id, element: 'point-intercept' },
-  extras);
+const model = (id, extras) =>
+  Object.assign({}, base, { id, element: 'point-intercept' }, extras);
 
 module.exports = {
   elements: {
     'point-intercept': '..'
   },
   models: [
-    model('1', { disabled: false })
+    model('1', {
+      disabled: true,
+      correctResponse: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+      correctness: 'partially-correct'
+    }),
+    model('2', { disabled: true }),
+    model('3', { disabled: false })
   ]
-}
+};

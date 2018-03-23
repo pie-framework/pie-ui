@@ -1,22 +1,24 @@
 import React from "react";
-import TextArea from "./textarea";
+import EditableHTML from "@pie-lib/editable-html";
 
 class Main extends React.Component {
   constructor (props) {
     super(props);
+    this.handleEditableChange = this.handleEditableChange.bind(this);
   }
 
+  handleEditableChange(change) {
+    this.props.onChange(change);
+  }
+  
   render() {
     return (
-      <React.Fragment>
-        <TextArea
-          rows="8"
-          cols="70"
-          value="i am the value"
-          placeholder="Hey I am placeholder"
-        />
-
-      </React.Fragment>
+      <div>
+        <EditableHTML 
+          onChange={this.handleEditableChange} 
+          markup="" 
+          activePlugins={['bold', 'bulleted-list', 'numbered-list']}/>
+      </div>
     )
   }
 };

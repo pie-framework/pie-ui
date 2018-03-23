@@ -1,0 +1,22 @@
+{
+  "name": "@pie-ui/point-intercept",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "@pie-lib/charting": "^0.0.1",
+    "debug": "^3.1.0",
+    "material-ui": "1.0.0-beta.27",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

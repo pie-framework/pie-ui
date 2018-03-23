@@ -1,5 +1,5 @@
 import React from 'react';
-import EditableHTML from '"@pie-lib/editable-html';
+import EditableHTML from '@pie-lib/editable-html';
 import PropTypes from 'prop-types';
 
 class Main extends React.Component {

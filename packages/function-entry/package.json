@@ -9,6 +9,7 @@
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/editable-html": "^2.2.4",
+    "@pie-lib/render-ui": "^0.1.13",
     "material-ui": "^1.0.0-beta.27",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",

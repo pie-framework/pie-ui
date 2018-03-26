@@ -7,8 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react": "^15.6.1",
-    "material-ui": "1.0.0-beta.27"
+    "@pie-framework/pie-player-events": "^0.1.0",
+    "@pie-lib/editable-html": "^2.2.4",
+    "material-ui": "^1.0.0-beta.27",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "author": "",
   "license": "ISC"

@@ -22,6 +22,7 @@ export class FunctionEntry extends React.Component {
     onValueChanged: PropTypes.func,
     classes: PropTypes.object,
   }
+
   constructor(props) {
     super(props);
     this.state = {

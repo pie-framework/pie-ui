@@ -1,7 +1,7 @@
 {
-  "name": "@pie-ui/pie-calculator",
+  "name": "@pie-ui/calculator",
   "version": "1.1.1",
-  "description": "A pie calculator component",
+  "description": "A calculator component",
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"
@@ -12,12 +12,8 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupFiles": ["./jestsetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }

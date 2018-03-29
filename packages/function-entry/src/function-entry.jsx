@@ -1,21 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import debug from 'debug';
-import { withStyles } from 'material-ui/styles';
 import Input from './input';
 
-const log = debug('pie-elements:text-entry');
+const log = debug('pie-ui:function-entry');
 
-const FunctionEntryStyles = {
-  'white_on_black': {
-    backgroundColor: 'black'
-  },
-  'black_on_rose': {
-    backgroundColor: 'mistyrose'
-  }
-}
-
-export class FunctionEntry extends React.Component {
+export default class FunctionEntry extends React.Component {
   static propTypes = {
     session: PropTypes.object,
     model: PropTypes.object,
@@ -57,7 +47,6 @@ export class FunctionEntry extends React.Component {
     return (
         <div className={classes[model.colorContrast]}>
           <Input
-              dark={model.colorContrast === 'white_on_black'}
               feedback={model.feedback}
               value={value}
               correctness={model.correctness}
@@ -69,5 +58,3 @@ export class FunctionEntry extends React.Component {
     );
   }
 }
-
-export default withStyles(FunctionEntryStyles)(FunctionEntry);

@@ -17,7 +17,7 @@ const tags = {
   'empty': NothingSubmitted
 }
 
-const log = debug('pie-elements:function-entry:input');
+const log = debug('pie-ui:function-entry:input');
 
 class RawInput extends React.Component {
   static propTypes = {
@@ -73,7 +73,7 @@ class RawInput extends React.Component {
               inputComponent={TextField}
               inputProps={inputProps}  />
           </MuiThemeProvider>
-          {CorrectnessTag && <div className={classes.icon}><CorrectnessTag feedback={feedback || 'feedback'} /></div>}
+          <div className={classes.icon}><CorrectnessTag feedback={feedback || 'feedback'} /></div>
         </div>
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>
@@ -99,7 +99,7 @@ const inputStyles = theme => {
     },
     icon: {
       padding: '3px',
-      paddingLeft: `${theme.spacing.unit}px`
+      paddingLeft: theme.spacing.unit,
     },
     right: {
       textAlign: 'right'

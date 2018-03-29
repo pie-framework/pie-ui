@@ -4,7 +4,7 @@ import debug from 'debug';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const log = debug('pie-elements:text-entry');
+const log = debug('pie-elements:function-entry');
 
 export default class FunctionEntry extends HTMLElement {
 

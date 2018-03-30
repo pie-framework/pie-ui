@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlotPoints, utils } from '@pie-lib/charting';
+import { PlotPoints, pointUtils as utils } from '@pie-lib/charting';
 import PropTypes from 'prop-types';
 import Controls from './controls';
 import debug from 'debug';

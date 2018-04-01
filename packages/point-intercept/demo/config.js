@@ -32,8 +32,8 @@ module.exports = {
   models: [
     model('1', {
       disabled: true,
-      correctResponse: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
-      correctness: 'partially-correct'
+      correctResponse: [{ x: 0, y: 0, label: 'A' }, { x: 1, y: 1, label: 'B' }],
+      correctness: 'incorrect'
     }),
     model('2', { disabled: true }),
     model('3', { disabled: false })

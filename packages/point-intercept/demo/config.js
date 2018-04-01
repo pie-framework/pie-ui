@@ -25,6 +25,10 @@ const base = {
 const model = (id, extras) =>
   Object.assign({}, base, { id, element: 'point-intercept' }, extras);
 
+/**
+ * Legacy system had sigfigs - which i think is for checking if a value
+ * is close enough to a correct answer. do we need this?
+ */
 module.exports = {
   elements: {
     'point-intercept': '..'
@@ -36,6 +40,10 @@ module.exports = {
       correctness: 'incorrect'
     }),
     model('2', { disabled: true }),
-    model('3', { disabled: false })
+    model('3', {
+      disabled: false,
+      pointLabels: ['a', 'b', 'c', 'd', 'foo'],
+      pointsMustMatchLabels: true
+    })
   ]
 };

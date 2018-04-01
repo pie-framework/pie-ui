@@ -39,7 +39,8 @@ export class Main extends React.Component {
   }
 
   addPoint = p => {
-    const points = utils.addPoint(this.state.session.points, p);
+    const { pointLabels } = this.props.model;
+    const points = utils.addPoint(this.state.session.points, p, pointLabels);
     const session = { ...this.state.session, points };
     log('[addPoint] points: ', session.points);
     this.setState({ session }, this.callOnSessionChange);

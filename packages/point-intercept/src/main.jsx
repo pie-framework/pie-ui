@@ -6,7 +6,7 @@ import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { withStyles } from 'material-ui/styles';
 
-const log = debug('pie-lib:point-intercept:main');
+const log = debug('pie-ui:point-intercept:main');
 
 export class Main extends React.Component {
   static propTypes = {

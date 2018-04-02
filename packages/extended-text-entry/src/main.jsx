@@ -20,15 +20,16 @@ class Main extends React.Component {
   }
 
   render() {
-    let {width, height} = this.props.model;
 
+    let {width, height, colorContrast, disabled} = this.props.model;
+    
     return (
       <EditableHTML
         onChange={this.handleEditableChange}
         markup=""
-        activePlugins={['bold', 'bulleted-list', 'numbered-list']}
         width={width.toString()}
         height={height.toString()}
+        disabled={disabled}
         />
     );
   }

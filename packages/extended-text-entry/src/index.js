@@ -42,6 +42,7 @@ export default class RootExtendedTextEntry extends HTMLElement {
 
   render() {
     if (this._model && this._session) {
+      console.log("model", this._model);
       let elem = React.createElement(Main, {
         model: this._model,
         session: this._session,

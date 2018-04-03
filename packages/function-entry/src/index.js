@@ -16,7 +16,7 @@ export default class FunctionEntry extends HTMLElement {
     this._model = m;
     this.dispatchEvent(new ModelSetEvent(
         this.tagName.toLowerCase(),
-        true,
+        false,
         !!this._model
     ));
 
@@ -35,7 +35,7 @@ export default class FunctionEntry extends HTMLElement {
 
     this.dispatchEvent(new SessionChangedEvent(
         this.tagName.toLowerCase(),
-        false,
+        true,
     ));
   }
 

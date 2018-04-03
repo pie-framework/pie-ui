@@ -10,7 +10,6 @@ export default class FunctionEntry extends React.Component {
     session: PropTypes.object,
     model: PropTypes.object,
     onValueChanged: PropTypes.func,
-    classes: PropTypes.object,
   }
 
   constructor(props) {
@@ -36,24 +35,23 @@ export default class FunctionEntry extends React.Component {
     }
   }
 
-
   render() {
-    const { model, classes } = this.props;
+    const { model } = this.props;
     log('[render] model: ', model);
     const { value } = this.state;
 
     const inputProps = model.allowIntegersOnly ? { onBadInput: this.onBadInput } : {}
 
     return (
-        <div className={classes[model.colorContrast]}>
+        <div>
           <Input
-              feedback={model.feedback}
-              value={value}
-              correctness={model.correctness}
-              onChange={this.onChange}
-              error={this.state.warning}
-              inputProps={inputProps}
-              disabled={model.disabled} />
+            feedback={model.feedback}
+            value={value}
+            correctness={model.correctness}
+            onChange={this.onChange}
+            error={this.state.warning}
+            inputProps={inputProps}
+            disabled={model.disabled}/>
         </div>
     );
   }

@@ -73,7 +73,7 @@ class RawInput extends React.Component {
               inputComponent={TextField}
               inputProps={inputProps}  />
           </MuiThemeProvider>
-          <div className={classes.icon}><CorrectnessTag feedback={feedback || 'feedback'} /></div>
+          {CorrectnessTag && <div className={classes.icon}><CorrectnessTag feedback={feedback || 'feedback'} /></div>}
         </div>
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>

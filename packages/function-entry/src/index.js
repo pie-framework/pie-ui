@@ -16,7 +16,7 @@ export default class FunctionEntry extends HTMLElement {
     this._model = m;
     this.dispatchEvent(new ModelSetEvent(
         this.tagName.toLowerCase(),
-        false,
+        true,
         !!this._model
     ));
 

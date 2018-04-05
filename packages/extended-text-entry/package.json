@@ -40,8 +40,6 @@
     "style-loader": "^0.20.3"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ]
+    "setupFiles": ["./jestsetup.js"]
   }
 }

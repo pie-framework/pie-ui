@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/editable-html": "^2.2.5",
+    "@pie-lib/editable-html": "^3.0.0",
     "lodash.throttle": "^4.1.1",
     "material-ui": "^1.0.0-beta.22",
     "material-ui-icons": "^1.0.0-beta.17",

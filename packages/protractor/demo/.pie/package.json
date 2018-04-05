@@ -1,0 +1,10 @@
+{
+  "description": "auto generated package.json",
+  "license": "MIT",
+  "name": "x",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "protractor": "../.."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/extended-text-entry",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "src/index.js",
@@ -8,32 +8,38 @@
     "access": "public"
   },
   "scripts": {
-    "client-test": "cd src && jest src",
-    "controller-test": "cd controller && jest --verbose",
-    "test": "npm run client-test"
+    "test": "./node_modules/.bin/jest --verbose"
   },
   "author": "Mukesh Sharma",
   "license": "ISC",
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/editable-html": "^2.2.4",
-    "material-ui": "^1.0.0-beta.27",
+    "@pie-lib/editable-html": "^3.0.0",
+    "lodash.throttle": "^4.1.1",
+    "material-ui": "^1.0.0-beta.22",
+    "material-ui-icons": "^1.0.0-beta.17",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-jest": "^22.2.2",
-    "babel-loader": "^7.1.2",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-airbnb": "^2.4.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
-    "jest": "^22.3.0",
-    "react-test-renderer": "^16.2.0",
-    "style-loader": "^0.20.2"
+    "jest": "^22.1.4",
+    "lodash": "^4.17.5",
+    "react-test-renderer": "^15.6.1",
+    "style-loader": "^0.20.3"
+  },
+  "jest": {
+    "setupFiles": ["./jestsetup.js"]
   }
 }

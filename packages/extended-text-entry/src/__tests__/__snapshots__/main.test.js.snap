@@ -4,7 +4,7 @@ exports[`Render Main Component should match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Main
+  Symbol(enzyme.__unrendered__): <WithStyles(Main)
     model={
       Object {
         "height": 50,
@@ -23,45 +23,39 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "activePlugins": Array [
-        "bold",
-        "bulleted-list",
-        "numbered-list",
-      ],
-      "height": "50",
-      "markup": "",
+      "classes": Object {
+        "main": "Main-main-1",
+      },
+      "model": Object {
+        "height": 50,
+        "width": 100,
+      },
       "onChange": [Function],
-      "width": "100",
     },
     "ref": null,
     "rendered": null,
-    "type": Object {
-      "EditableHTML": [Function],
-    },
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "activePlugins": Array [
-          "bold",
-          "bulleted-list",
-          "numbered-list",
-        ],
-        "height": "50",
-        "markup": "",
+        "classes": Object {
+          "main": "Main-main-1",
+        },
+        "model": Object {
+          "height": 50,
+          "width": 100,
+        },
         "onChange": [Function],
-        "width": "100",
       },
       "ref": null,
       "rendered": null,
-      "type": Object {
-        "EditableHTML": [Function],
-      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

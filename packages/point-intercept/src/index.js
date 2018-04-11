@@ -5,8 +5,9 @@ import debug from 'debug';
 
 const log = debug('pie-ui:point-intercept');
 
-export default class PointIntercept extends HTMLElement {
+export { Main as Component };
 
+export default class PointIntercept extends HTMLElement {
   constructor() {
     super();
   }

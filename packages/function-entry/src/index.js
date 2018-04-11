@@ -1,5 +1,8 @@
-import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events';
-import ReactFunctionEntry from './function-entry.jsx';
+import {
+  ModelSetEvent,
+  SessionChangedEvent
+} from '@pie-framework/pie-player-events';
+import ReactFunctionEntry from './function-entry';
 import debug from 'debug';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -7,18 +10,15 @@ import ReactDOM from 'react-dom';
 const log = debug('pie-elements:function-entry');
 
 export default class FunctionEntry extends HTMLElement {
-
   constructor() {
     super();
   }
 
   set model(m) {
     this._model = m;
-    this.dispatchEvent(new ModelSetEvent(
-        this.tagName.toLowerCase(),
-        false,
-        !!this._model
-    ));
+    this.dispatchEvent(
+      new ModelSetEvent(this.tagName.toLowerCase(), false, !!this._model)
+    );
 
     this.render();
   }
@@ -33,10 +33,9 @@ export default class FunctionEntry extends HTMLElement {
 
     log('[onSessionChanged] session: ', this._session);
 
-    this.dispatchEvent(new SessionChangedEvent(
-        this.tagName.toLowerCase(),
-        true,
-    ));
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), true)
+    );
   }
 
   connectedCallback() {
@@ -45,7 +44,6 @@ export default class FunctionEntry extends HTMLElement {
 
   render() {
     if (this._model && this._session) {
-
       const e = React.createElement(ReactFunctionEntry, {
         model: this._model,
         session: this._session,

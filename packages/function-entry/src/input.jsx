@@ -4,7 +4,11 @@ import classNames from 'classnames';
 import range from 'lodash/range';
 import MuiInput from 'material-ui/Input';
 import TextField from 'material-ui/TextField';
-import { MuiThemeProvider, createMuiTheme, withStyles } from 'material-ui/styles';
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  withStyles
+} from 'material-ui/styles';
 import { FormControl, FormHelperText } from 'material-ui/Form';
 import { indicators } from '@pie-lib/render-ui';
 import PropTypes from 'prop-types';
@@ -12,12 +16,10 @@ import PropTypes from 'prop-types';
 const { Correct, Incorrect, NothingSubmitted } = indicators;
 
 const tags = {
-  'correct': Correct,
-  'incorrect': Incorrect,
-  'empty': NothingSubmitted
-}
-
-const log = debug('pie-ui:function-entry:input');
+  correct: Correct,
+  incorrect: Incorrect,
+  empty: NothingSubmitted
+};
 
 class RawInput extends React.Component {
   static propTypes = {
@@ -31,7 +33,7 @@ class RawInput extends React.Component {
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     value: PropTypes.string.isRequired,
     feedback: PropTypes.string
-  }
+  };
   render() {
     const {
       dark,
@@ -52,15 +54,11 @@ class RawInput extends React.Component {
     const theme = createMuiTheme({
       palette: {
         type: dark ? 'dark' : 'light'
-      },
+      }
     });
 
-
     return (
-      <FormControl
-        disabled={disabled}
-        className={formClasses}
-        error={!!error} >
+      <FormControl disabled={disabled} className={formClasses} error={!!error}>
         <div className={classes.inputAndIcon}>
           <MuiThemeProvider theme={theme}>
             <MuiInput
@@ -71,35 +69,38 @@ class RawInput extends React.Component {
               value={value}
               onChange={onChange}
               inputComponent={TextField}
-              inputProps={inputProps}  />
+              inputProps={inputProps}
+            />
           </MuiThemeProvider>
-          {CorrectnessTag && <div className={classes.icon}><CorrectnessTag feedback={feedback || 'feedback'} /></div>}
+          {CorrectnessTag && (
+            <div className={classes.icon}>
+              <CorrectnessTag feedback={feedback || 'feedback'} />
+            </div>
+          )}
         </div>
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>
-    )
+    );
   }
 }
 
 const inputStyles = theme => {
-
   const base = {
     container: {
       display: 'flex',
-      flexWrap: 'wrap',
+      flexWrap: 'wrap'
     },
     formControl: {
-      margin: theme.spacing.unit,
+      margin: theme.spacing.unit
     },
-    inputRoot: {
-    },
+    inputRoot: {},
     inputAndIcon: {
       display: 'flex',
-      alignItems: 'end',
+      alignItems: 'end'
     },
     icon: {
       padding: '3px',
-      paddingLeft: theme.spacing.unit,
+      paddingLeft: theme.spacing.unit
     },
     right: {
       textAlign: 'right'
@@ -107,17 +108,17 @@ const inputStyles = theme => {
     center: {
       textAlign: 'center'
     }
-  }
+  };
 
   const sizes = range(1, 20).reduce((acc, s) => {
     acc[`size${s}`] = {
       maxWidth: `${theme.spacing.unit * 1.4 * s}px`
-    }
+    };
     return acc;
   }, {});
 
   return Object.assign(base, sizes);
-}
+};
 
 const Input = withStyles(inputStyles)(RawInput);
 

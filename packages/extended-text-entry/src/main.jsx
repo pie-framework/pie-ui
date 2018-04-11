@@ -1,24 +1,38 @@
-import React from "react";
-import TextArea from "./textarea";
+import React from 'react';
+import EditableHTML from '@pie-lib/editable-html';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+
+const style = () => ({
+  main: {
+    margin: '20px'
+  }
+});
 
 class Main extends React.Component {
-  constructor (props) {
-    super(props);
-  }
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    model: PropTypes.object,
+    classes: PropTypes.object.isRequired
+  };
 
   render() {
+    const { model, onChange, classes } = this.props;
+    const { width, height, disabled } = model;
+
     return (
-      <React.Fragment>
-        <TextArea
-          rows="8"
-          cols="70"
-          value="i am the value"
-          placeholder="Hey I am placeholder"
+      <div className={classes.main}>
+        <EditableHTML
+          onChange={onChange}
+          markup=""
+          width={width.toString()}
+          height={height.toString()}
+          disabled={disabled}
+          highlightShape={true}
         />
-
-      </React.Fragment>
-    )
+      </div>
+    );
   }
-};
+}
 
-export default Main;
+export default withStyles(style)(Main);

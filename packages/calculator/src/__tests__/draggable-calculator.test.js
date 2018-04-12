@@ -6,7 +6,12 @@ describe('DraggableCalculator', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <DraggableCalculator mode="basic" show={true} onClose={jest.fn()} />
+      <DraggableCalculator
+        mode="basic"
+        show={true}
+        onClose={jest.fn()}
+        classes={{}}
+      />
     );
   });
 

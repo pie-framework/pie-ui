@@ -90,13 +90,13 @@ class FunctionEntry extends React.Component {
     classes: PropTypes.object,
     session: PropTypes.object,
     model: PropTypes.object,
-    onValueChanged: PropTypes.func,
-  }
+    onValueChanged: PropTypes.func
+  };
 
   constructor(props) {
     super(props);
     this.state = {
-      value: props.session && props.session.value || '',
+      value: (props.session && props.session.value) || '',
       hintsAnchorEl: null,
       anchorReference: 'anchorEl',
       hintsOpen: false
@@ -104,18 +104,14 @@ class FunctionEntry extends React.Component {
   }
 
   handleHintsPopoverOpen = event => {
-    console.log('open');
     this.setState({ hintsAnchorEl: event.target });
-    event.stopPropagation();
-    event.preventDefault();
   };
 
   handleHintsPopoverClose = () => {
-    console.log('closed');
     this.setState({ hintsAnchorEl: null });
   };
 
-  onChange = (event) => {
+  onChange = event => {
     clearTimeout(this.state.timeoutId);
 
     this.setState({ warning: null, timeoutId: null });
@@ -123,13 +119,15 @@ class FunctionEntry extends React.Component {
     log('[onChange] value: ', event.target.value);
 
     if (this.state.value !== event.target.value) {
-      let value = this.props.model.ignoreWhitespace ? event.target.value.trim() : event.target.value;
+      let value = this.props.model.ignoreWhitespace
+        ? event.target.value.trim()
+        : event.target.value;
 
       this.setState({ value }, () => {
         this.props.onValueChanged(this.state.value);
       });
     }
-  }
+  };
 
   render() {
     const { classes, model } = this.props;

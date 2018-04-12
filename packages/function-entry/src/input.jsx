@@ -32,6 +32,11 @@ class RawInput extends React.Component {
     value: PropTypes.string.isRequired,
     feedback: PropTypes.string
   }
+
+  static defaultProps = {
+    inputProps: {}
+  }
+
   render() {
     const {
       dark,

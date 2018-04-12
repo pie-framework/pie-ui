@@ -9,10 +9,8 @@ class Main extends React.Component {
   render() {
     return (
       <div style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '-48px', left: '0px', zIndex: '3', transform: 'rotate(28deg)' }}>
-          <svg height="260" width="500">
-            <path fill="#9ed343" stroke="none" d="M128.50001404928582,208.99881807537156L132.50001404928582,208.99881807537156L124.7394371262089,218.02862576767924L116.50001404928582,208.99881807537156L120.50001404928582,208.99881807537156A190.4999999999998,190.4999999999998,0,0,1,123.18462943390121,178.34881807537155L119.25001404928582,177.64881807537157L128.9144371262089,170.19497192152542L134.99905251082427,180.43824115229467L131.05386020313196,179.74497192152543A190.4999999999998,190.4999999999998,0,0,0,128.5000140492858,208.9988180753716Z" style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0', cursor: 'move' }} transform="rotate(55.368463321796085 297.00000000000006 209.00000000000003)"></path>
-          </svg>
+        <div style={{ position: 'absolute', top: '0px', left: '0px', zIndex: '3', transform: 'rotate(0deg)' }}>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="37.68421050980477" height="68.42105254902413" style={{WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'}}><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" className=""/><desc style={{WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'}}>Created with Raphaël</desc><defs style={{WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'}}/><g className="currentLayer"><title>Layer 1</title><path fill="#9ed343" stroke="none" d="M11.421054371954,102.27994433862631 L17.420054371953995,102.27994433862631 L5.771054371953995,115.8259443386263 L-6.578945628046007,102.27994433862631 L-0.576945628046005,102.27994433862631 A285.7500000000009,285.7500000000009 0 0 1 3.454054371953994,56.324944338626324 L-2.47794562804601,55.273944338626336 L12.04405437195399,44.07894433862634 L21.171054371953986,59.43594433862634 L15.266054371953985,58.37994433862633 A285.7500000000009,285.7500000000009 0 0 0 11.421054371953986,102.27994433862634 z" style={{WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)', cursor: 'move'}} transform="rotate(16.345787048339844 178.5470733642579,94.83988189697271) " id="svg_1" className=""/></g></svg>
         </div>
         <div style={{ position: 'absolute', top: '0px', left: '0px', zIndex: '1' }}>
           <img className="proImage" src={proImage} width="500" alt="proImage" />

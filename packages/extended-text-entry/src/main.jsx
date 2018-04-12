@@ -17,14 +17,14 @@ class Main extends React.Component {
   };
 
   render() {
-    const { model, onChange, classes } = this.props;
+    const { model, onChange, classes, session } = this.props;
     const { width, height, disabled } = model;
-
+    const {value} = session;
     return (
       <div className={classes.main}>
         <EditableHTML
           onChange={onChange}
-          markup=""
+          markup={value || ''}
           width={width.toString()}
           height={height.toString()}
           disabled={disabled}

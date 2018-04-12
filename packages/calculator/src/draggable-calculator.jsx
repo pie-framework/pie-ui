@@ -40,7 +40,44 @@ const styles = theme => {
   };
 };
 
-class DraggableCalculator extends React.Component {
+class BaseLayout extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    onClose: PropTypes.func.isRequired,
+    mode: PropTypes.oneOf(['basic', 'scientific'])
+  };
+
+  render() {
+    const { classes, onClose, mode } = this.props;
+    return (
+      <div className={classes.handle}>
+        <div className={`handle ${classes.titleBar}`}>
+          <Typography variant="subheading" className={classes.title}>
+            Calculator
+          </Typography>
+          <IconButton
+            className={classes.closeIcon}
+            onClick={onClose}
+            aria-label="Delete"
+          >
+            <Close />
+          </IconButton>
+        </div>
+        <Calculator mode={mode} />
+      </div>
+    );
+  }
+}
+
+export const CalculatorLayout = withStyles(styles)(BaseLayout);
+
+export class DraggableCalculator extends React.Component {
+  static propTypes = {
+    mode: PropTypes.oneOf(['basic', 'scientific']),
+    show: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -62,7 +99,7 @@ class DraggableCalculator extends React.Component {
   };
 
   render() {
-    const { mode, show, onClose, classes } = this.props;
+    const { mode, show, onClose } = this.props;
     const { x, y } = this.state.deltaPosition;
     return show ? (
       <Draggable
@@ -70,31 +107,13 @@ class DraggableCalculator extends React.Component {
         defaultPosition={{ x, y }}
         handle=".handle"
       >
-        <div className={classes.handle}>
-          <div className={`handle ${classes.titleBar}`}>
-            <Typography variant="subheading" className={classes.title}>
-              Calculator
-            </Typography>
-            <IconButton
-              className={classes.closeIcon}
-              onClick={onClose}
-              aria-label="Delete"
-            >
-              <Close />
-            </IconButton>
-          </div>
-          <Calculator mode={mode} />
+        {/* draggable needs to have a div as the first child so it can find the classname. */}
+        <div>
+          <CalculatorLayout onClose={onClose} mode={mode} />
         </div>
       </Draggable>
     ) : null;
   }
 }
-
-DraggableCalculator.propTypes = {
-  mode: PropTypes.any,
-  show: PropTypes.any,
-  onClose: PropTypes.any,
-  classes: PropTypes.any
-};
 
 export default withStyles(styles)(DraggableCalculator);

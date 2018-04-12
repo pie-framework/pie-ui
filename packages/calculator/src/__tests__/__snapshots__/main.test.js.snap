@@ -4,6 +4,7 @@ exports[`render a calculator component 1`] = `
 <Main
   classes={
     Object {
+      "active": "Main-active-2",
       "icon": "Main-icon-1",
     }
   }

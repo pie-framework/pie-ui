@@ -17,7 +17,6 @@ class Main extends React.Component {
 
   constructor(props) {
     super(props);
-    
     this.handleEditableChange = this.handleEditableChange.bind(this);
   }
 
@@ -26,14 +25,14 @@ class Main extends React.Component {
   }
 
   render() {
-
     let {width, height, colorContrast, disabled} = this.props.model;
+    let {value} = this.props.session;
     
     return (
       <div style={style.rootAlign}>
         <EditableHTML
           onChange={this.handleEditableChange}
-          markup=""
+          markup={value || ''}
           width={width.toString()}
           height={height.toString()}
           disabled={disabled}

@@ -13,13 +13,16 @@ class Main extends React.Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     model: PropTypes.object,
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    session: PropTypes.shape({
+      value: PropTypes.string
+    }).isRequired
   };
 
   render() {
     const { model, onChange, classes, session } = this.props;
     const { width, height, disabled } = model;
-    const {value} = session;
+    const { value } = session;
     return (
       <div className={classes.main}>
         <EditableHTML

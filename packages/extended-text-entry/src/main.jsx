@@ -2,6 +2,9 @@ import React from 'react';
 import EditableHTML from '@pie-lib/editable-html';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import debug from 'debug';
+
+const log = debug('@pie-ui:extended-text-entry');
 
 const style = () => ({
   main: {
@@ -23,6 +26,7 @@ class Main extends React.Component {
     const { model, onChange, classes, session } = this.props;
     const { width, height, disabled } = model;
     const { value } = session;
+    log('[render] disabled? ', disabled);
     return (
       <div className={classes.main}>
         <EditableHTML

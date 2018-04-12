@@ -1,10 +1,12 @@
 import Main from './main.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events';
+import {
+  ModelSetEvent,
+  SessionChangedEvent
+} from '@pie-framework/pie-player-events';
 
 export default class RootExtendedTextEntry extends HTMLElement {
-
   constructor() {
     super();
     this._model = null;
@@ -13,11 +15,9 @@ export default class RootExtendedTextEntry extends HTMLElement {
 
   set model(m) {
     this._model = m;
-    this.dispatchEvent(new ModelSetEvent(
-      this.tagName.toLowerCase(),
-      false,
-      !!this._model
-    ));
+    this.dispatchEvent(
+      new ModelSetEvent(this.tagName.toLowerCase(), false, !!this._model)
+    );
 
     this.render();
   }
@@ -30,10 +30,9 @@ export default class RootExtendedTextEntry extends HTMLElement {
   handleChange(value) {
     this._session.value = value;
 
-    this.dispatchEvent(new SessionChangedEvent(
-      this.tagName.toLowerCase(),
-      this._session,
-    ));
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), this._session)
+    );
   }
 
   connectedCallback() {

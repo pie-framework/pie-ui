@@ -1,46 +1,38 @@
 import React from 'react';
 import EditableHTML from '@pie-lib/editable-html';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
 
-const style = {
-  rootAlign : {
-    margin : '20px'
+const style = () => ({
+  main: {
+    margin: '20px'
   }
-}
+});
 
 class Main extends React.Component {
-
   static propTypes = {
     onChange: PropTypes.func.isRequired,
-    model: PropTypes.object
-  }
-
-  constructor(props) {
-    super(props);
-    this.handleEditableChange = this.handleEditableChange.bind(this);
-  }
-
-  handleEditableChange(change) {
-    this.props.onChange(change);
-  }
+    model: PropTypes.object,
+    classes: PropTypes.object.isRequired
+  };
 
   render() {
-    let {width, height, colorContrast, disabled} = this.props.model;
-    let {value} = this.props.session;
-    
+    const { model, onChange, classes, session } = this.props;
+    const { width, height, disabled } = model;
+    const {value} = session;
     return (
-      <div style={style.rootAlign}>
+      <div className={classes.main}>
         <EditableHTML
-          onChange={this.handleEditableChange}
+          onChange={onChange}
           markup={value || ''}
           width={width.toString()}
           height={height.toString()}
           disabled={disabled}
           highlightShape={true}
-          />
+        />
       </div>
     );
   }
 }
 
-export default Main;
+export default withStyles(style)(Main);

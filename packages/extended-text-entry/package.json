@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/editable-html": "^3.1.0",
+    "@pie-lib/editable-html": "^3.1.1",
     "debug": "^3.1.0",
     "lodash.throttle": "^4.1.1",
     "material-ui": "^1.0.0-beta.22",
@@ -41,8 +41,6 @@
     "style-loader": "^0.20.3"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ]
+    "setupFiles": ["./jestsetup.js"]
   }
 }

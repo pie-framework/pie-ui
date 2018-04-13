@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.8"></a>
+## [0.0.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@0.0.7...@pie-ui/extended-text-entry@0.0.8) (2018-04-13)
+
+
+### Bug Fixes
+
+* **serialization:** use [@pie-lib](https://github.com/pie-lib)/editable-html@3.1.1 ([873dc55](https://github.com/pie-framework/pie-ui/commit/873dc55))
+
+
+
+
 <a name="0.0.7"></a>
 ## [0.0.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@0.0.6...@pie-ui/extended-text-entry@0.0.7) (2018-04-12)
 

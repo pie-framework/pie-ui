@@ -3,11 +3,14 @@ import {
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
 import ReactFunctionEntry from './function-entry';
+import HintsPopover from './hints-popover';
 import debug from 'debug';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 const log = debug('pie-elements:function-entry');
+
+export { HintsPopover };
 
 export default class FunctionEntry extends HTMLElement {
   constructor() {

@@ -44,3 +44,7 @@ export default class PointIntercept extends HTMLElement {
     ReactDOM.render(el, this);
   }
 }
+
+export {
+  Main as Component
+}

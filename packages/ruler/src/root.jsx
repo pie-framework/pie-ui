@@ -49,17 +49,12 @@ export default class Root extends React.Component {
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
     //let ruler = rulerGenerator({label: 'cm', width: 500, tickInterval: 50, tickParts: 10, tickSize: 40, height: 50})
     //let {imgData, width, height} = ruler;
-    let inputObj = {width : 500, height: 40, label: 'cm'};
+    let inputObj = {width : 600, height: 200, label: 'cm'};
     return (
-      <div>
-        
-        <div>
-          <button onClick={this.handleRotate} style={{marginBottom: '100px'}}>Rotate Y</button>
+      <div>  
           <div style={{transform : `rotate(${this.state.activeAngle}deg)`}}>
             <RulerGenerator width={inputObj.width} height={inputObj.height} handleRotate={() => {this.handleRotate()}} />
           </div>
-          </div>
-        
       </div>
     );
   }

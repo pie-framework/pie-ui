@@ -31,13 +31,8 @@ const styles = theme => ({
     'vertical-align': '+50%',
     'margin-left': '2px',
   },
-  'hints-control-row': {
-    'margin-top': theme.spacing.unit,
-    display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'flex-start',
-  },
   'hints-popover': {
+    marginTop: theme.spacing.unit * 2,
     pointerEvents: 'none',
   },
   'hints-checkbox': {
@@ -93,16 +88,21 @@ class HintsPopover extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     hintsOpen: PropTypes.bool.isRequired,
+    className: PropTypes.string,
     hintsAnchorEl: PropTypes.any,
     anchorReference: PropTypes.any,
   };
 
+  static defaultProps = {
+    className: '',
+  };
+
   render() {
-    const { classes, hintsOpen, hintsAnchorEl, anchorReference } = this.props;
+    const { className, classes, hintsOpen, hintsAnchorEl, anchorReference } = this.props;
 
     return (
       <Popover
-        className={classes['hints-popover']}
+        className={`${classes['hints-popover']} ${className}`}
         open={hintsOpen}
         anchorEl={hintsAnchorEl}
         anchorReference={anchorReference}

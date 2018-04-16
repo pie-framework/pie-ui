@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import debug from 'debug';
+import { withStyles } from 'material-ui/styles';
 import HintsPopover from './hints-popover';
 import Input from './input';
 
 const log = debug('pie-ui:function-entry');
 
-export default class FunctionEntry extends React.Component {
+const styles = (theme) => ({
+  popup: {
+    marginTop: theme.spacing.unit * 2,
+  },
+});
+
+class FunctionEntry extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
     session: PropTypes.object,
@@ -51,7 +58,7 @@ export default class FunctionEntry extends React.Component {
   };
 
   render() {
-    const { model } = this.props;
+    const { model, classes } = this.props;
     log('[render] model: ', model);
     const { value } = this.state;
     const { anchorReference, hintsAnchorEl } = this.state;
@@ -72,11 +79,14 @@ export default class FunctionEntry extends React.Component {
             disabled={model.disabled}
           />
           <HintsPopover
-              hintsOpen={hintsOpen}
-              anchorEl={hintsAnchorEl}
-              anchorReference={anchorReference}
+            className={classes.popup}
+            hintsOpen={hintsOpen}
+            hintsAnchorEl={hintsAnchorEl}
+            anchorReference={anchorReference}
           />
         </div>
     );
   }
 }
+
+export default withStyles(styles)(FunctionEntry);

@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import ChoiceInput from './choice-input';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import classNames from 'classnames';
@@ -8,7 +8,7 @@ import { withStyles } from 'material-ui/styles';
 const styles = {
   corespringChoice: {
     '& *': {
-      fontFamily: "'Roboto', Arial, Helvetica, sans-serif",
+      fontFamily: "'Roboto', Arial, Helvetica, sans-serif", //eslint-disable-line
       '-webkit-font-smoothing': 'antialiased'
     }
   },
@@ -18,21 +18,30 @@ const styles = {
   choice: {
     paddingTop: '20px',
     paddingBottom: '10px',
-    borderBottom: '1px solid #E0DEE0',
+    borderBottom: '1px solid #E0DEE0'
   },
   last: {
     borderBottom: 'none'
   }
-}
+};
 
 export class MultipleChoice extends React.Component {
-
+  static propTypes = {
+    mode: PropTypes.oneOf(['gather', 'view', 'evaluate']),
+    choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
+    keyMode: PropTypes.oneOf(['numbers', 'letters']),
+    choices: PropTypes.array,
+    prompt: PropTypes.string,
+    session: PropTypes.object,
+    disabled: PropTypes.bool.isRequired,
+    onChoiceChanged: PropTypes.func.isRequired
+  };
   constructor(props) {
     super(props);
 
     this.state = {
       showCorrect: false
-    }
+    };
 
     this.onToggle = this.onToggle.bind(this);
   }
@@ -41,7 +50,7 @@ export class MultipleChoice extends React.Component {
     if (this.props.mode === 'evaluate') {
       this.setState({ showCorrect: !this.state.showCorrect });
     }
-  };
+  }
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.correctResponse) {
@@ -58,11 +67,13 @@ export class MultipleChoice extends React.Component {
   }
 
   indexToSymbol(index) {
-    return ((this.props.keyMode === 'numbers') ? index + 1 : String.fromCharCode(97 + index).toUpperCase()).toString();
+    return (this.props.keyMode === 'numbers'
+      ? index + 1
+      : String.fromCharCode(97 + index).toUpperCase()
+    ).toString();
   }
 
   render() {
-
     const {
       mode,
       disabled,
@@ -77,12 +88,15 @@ export class MultipleChoice extends React.Component {
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
 
-    const correctness = (c) => c === true ? 'correct' : 'incorrect';
+    const correctness = c => (c === true ? 'correct' : 'incorrect');
 
     let choiceToTag = (choice, index) => {
-      var choiceClass = 'choice' + (index === choices.length - 1 ? ' last' : '');
+      var choiceClass =
+        'choice' + (index === choices.length - 1 ? ' last' : '');
 
-      const checked = showCorrect ? (choice.correct || false) : this.isSelected(choice.value);
+      const checked = showCorrect
+        ? choice.correct || false
+        : this.isSelected(choice.value);
 
       const feedback = !isEvaluateMode || showCorrect ? '' : choice.feedback;
 
@@ -92,42 +106,40 @@ export class MultipleChoice extends React.Component {
         disabled,
         feedback,
         value: choice.value,
-        correctness: checked && isEvaluateMode ? correctness(choice.correct) : undefined,
+        correctness:
+          checked && isEvaluateMode ? correctness(choice.correct) : undefined,
         displayKey: this.indexToSymbol(index),
         label: choice.label,
-        onChange: mode === 'gather' ? onChoiceChanged : () => { }
-      }
+        onChange: mode === 'gather' ? onChoiceChanged : () => {}
+      };
 
       const names = classNames(classes.choice, {
         [classes.last]: index === choices.length - 1
       });
 
-      return <div className={choiceClass} key={index}>
-        <ChoiceInput {...choiceProps} className={names} />
-      </div>;
+      return (
+        <div className={choiceClass} key={index}>
+          <ChoiceInput {...choiceProps} className={names} />
+        </div>
+      );
     };
 
-    return <div className={classes.corespringChoice}>
-      <CorrectAnswerToggle
-        show={isEvaluateMode && !responseCorrect}
-        toggled={this.state.showCorrect}
-        onToggle={this.onToggle.bind(this)} />
-      <div className={classes.prompt} dangerouslySetInnerHTML={{ __html: prompt }}></div>
-      {choices.map(choiceToTag)}
-    </div>;
+    return (
+      <div className={classes.corespringChoice}>
+        <CorrectAnswerToggle
+          show={isEvaluateMode && !responseCorrect}
+          toggled={this.state.showCorrect}
+          onToggle={this.onToggle.bind(this)}
+        />
+        <div
+          className={classes.prompt}
+          dangerouslySetInnerHTML={{ __html: prompt }}
+        />
+        {choices.map(choiceToTag)}
+      </div>
+    );
   }
 }
-
-MultipleChoice.propTypes = {
-  mode: PropTypes.oneOf(['gather', 'view', 'evaluate']),
-  choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
-  keyMode: PropTypes.oneOf(['numbers', 'letters']),
-  choices: PropTypes.array,
-  prompt: PropTypes.string,
-  session: PropTypes.object,
-  disabled: PropTypes.bool.isRequired,
-  onChoiceChanged: PropTypes.func.isRequired
-};
 
 MultipleChoice.defaultProps = {
   session: {
@@ -135,4 +147,4 @@ MultipleChoice.defaultProps = {
   }
 };
 
-export default withStyles(styles, { name: 'MultipleChoice' })(MultipleChoice);
+export default withStyles(styles)(MultipleChoice);

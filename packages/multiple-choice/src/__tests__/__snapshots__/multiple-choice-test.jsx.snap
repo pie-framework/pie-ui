@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CorespringChoice snapshot renders 1`] = `
+<div>
+  <Component
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
+    className="choice"
+    key="0"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className=""
+      disabled={false}
+      displayKey="A"
+      feedback=""
+      label="label a"
+      onChange={[MockFunction]}
+      value="a"
+    />
+  </div>
+  <div
+    className="choice last"
+    key="1"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className="undefined"
+      disabled={false}
+      displayKey="B"
+      feedback=""
+      label="label b"
+      onChange={[MockFunction]}
+      value="b"
+    />
+  </div>
+</div>
+`;

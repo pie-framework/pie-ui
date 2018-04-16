@@ -1,8 +1,13 @@
 import * as dataConverter from './data-converter';
-import * as pointChooser from './number-line/point-chooser'
+import * as pointChooser from './number-line/point-chooser';
 import * as tickUtils from './number-line/graph/tick-utils';
 
-import { lineIsSwitched, switchGraphLine, toGraphFormat, toSessionFormat } from './data-converter';
+import {
+  lineIsSwitched,
+  switchGraphLine,
+  toGraphFormat,
+  toSessionFormat
+} from './data-converter';
 
 import Graph from './number-line/graph';
 import NumberLineComponent from './number-line';
@@ -12,15 +17,12 @@ import RootComponent from './number-line';
 import cloneDeep from 'lodash/cloneDeep';
 
 //Expose some additional modules for configuration
-export {
-  Graph,
-  NumberLineComponent,
-  tickUtils,
-  dataConverter,
-  pointChooser
-}
+export { Graph, NumberLineComponent, tickUtils, dataConverter, pointChooser };
 
 export default class NumberLine extends HTMLElement {
+  constructor() {
+    super();
+  }
 
   set model(m) {
     this._model = m;
@@ -40,16 +42,18 @@ export default class NumberLine extends HTMLElement {
   }
 
   isComplete() {
-    return this._session ? (this._session.answer || []).length > 0 : false
+    return this._session ? (this._session.answer || []).length > 0 : false;
   }
 
   dispatch(type) {
-    this.dispatchEvent(new CustomEvent(type, {
-      bubbles: true,
-      detail: {
-        complete: this.isComplete()
-      }
-    }));
+    this.dispatchEvent(
+      new CustomEvent(type, {
+        bubbles: true,
+        detail: {
+          complete: this.isComplete()
+        }
+      })
+    );
   }
 
   dispatchSessionChanged() {
@@ -68,13 +72,11 @@ export default class NumberLine extends HTMLElement {
   }
 
   moveElement(index, el, position) {
-
     let answer = this._session.answer[index];
 
     if (!answer) {
       throw new Error('cant find element at index: ', index);
     }
-
 
     if (el.type === 'line' && position.left === position.right) {
       this._render();
@@ -84,8 +86,8 @@ export default class NumberLine extends HTMLElement {
     //set the new position
     el.position = position;
 
-    let update = (el.type === 'line' && lineIsSwitched(el)) ?
-      switchGraphLine(el) : el;
+    let update =
+      el.type === 'line' && lineIsSwitched(el) ? switchGraphLine(el) : el;
 
     this._session.answer.splice(index, 1, toSessionFormat(update));
 
@@ -102,9 +104,13 @@ export default class NumberLine extends HTMLElement {
   }
 
   _applyInitialElements() {
-    if (this._model &&
+    if (
+      this._model &&
       this._model.config &&
-      this._model.config.initialElements && this._session && !this._session.answer) {
+      this._model.config.initialElements &&
+      this._session &&
+      !this._session.answer
+    ) {
       this._session.answer = cloneDeep(this._model.config.initialElements);
     }
   }
@@ -114,17 +120,18 @@ export default class NumberLine extends HTMLElement {
       if (this._model && this._session) {
         let answer = (this._session.answer || []).map(toGraphFormat);
         let model = cloneDeep(this._model);
-        model.correctResponse = model.correctResponse && model.correctResponse.map(toGraphFormat);
-
+        model.correctResponse =
+          model.correctResponse && model.correctResponse.map(toGraphFormat);
 
         let props = {
-          model, answer,
+          model,
+          answer,
           onAddElement: this.addElement.bind(this),
           onMoveElement: this.moveElement.bind(this),
           onDeleteElements: this.deleteElements.bind(this)
         };
 
-        let el = React.createElement(RootComponent, props)
+        let el = React.createElement(RootComponent, props);
         ReactDOM.render(el, this);
       }
     } catch (e) {

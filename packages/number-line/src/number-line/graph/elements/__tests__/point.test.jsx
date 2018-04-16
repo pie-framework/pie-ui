@@ -1,24 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { stub, spy, assert } from 'sinon';
-import { expect } from 'chai';
-import proxyquire from 'proxyquire';
 import _ from 'lodash';
 import { assertProp, stubContext } from './utils';
-import Draggable from '../../../../src/draggable';
-
+import Draggable from '../../../../draggable';
+import { Point } from '../point';
 describe('point', () => {
-  let Point, deps, wrapper;
+  let w;
 
-  let mkWrapper = (props, context) => {
+  const mkWrapper = (props, context) => {
+    const onMove = jest.fn();
+    const onClick = jest.fn();
+    const onDragStart = jest.fn();
+    const onDragStop = jest.fn();
+    const onDrag = jest.fn();
 
-    let onMove = stub();
-    let onClick = stub();
-    let onDragStart = stub();
-    let onDragStop = stub();
-    let onDrag = stub();
-
-    let defaults = {
+    const defaults = {
+      classes: {
+        point: 'point',
+        selected: 'selected',
+        correct: 'correct',
+        incorrect: 'incorrect',
+        empty: 'empty'
+      },
       interval: 10,
       position: 1,
       bounds: {
@@ -35,61 +38,52 @@ describe('point', () => {
       onDragStart,
       onDragStop,
       onDrag
-    }
-
-    props = _.merge(defaults, props);
-    let opts = _.merge({ context: stubContext }, { context: context });
-    return shallow(<Point {...props} />, opts);
-  }
-
-  beforeEach(() => {
-
-    let less = stub();
-    less['@noCallThru'] = true;
-
-    deps = {
-      './point.less': less
     };
 
-    Point = proxyquire('../../../../src/number-line/graph/elements/point', deps).default;
-  });
-
+    props = _.merge(defaults, props);
+    const opts = _.merge({ context: stubContext }, { context: context });
+    return shallow(<Point {...props} />, opts);
+  };
 
   describe('className', () => {
-    let f = (opts) => () => mkWrapper(opts).find('circle');
+    const f = opts => () => mkWrapper(opts).find('circle');
 
     assertProp(f({ selected: true }), 'className', 'point selected incorrect');
     assertProp(f({ selected: false }), 'className', 'point incorrect');
-    assertProp(f({ selected: true, correct: true }), 'className', 'point selected correct');
-    assertProp(f({ empty: true, selected: true, correct: true }), 'className', 'point selected correct empty');
+    assertProp(
+      f({ selected: true, correct: true }),
+      'className',
+      'point selected correct'
+    );
+    assertProp(
+      f({ empty: true, selected: true, correct: true }),
+      'className',
+      'point selected correct empty'
+    );
   });
 
   describe('Draggable', () => {
-    let f = (opts) => () => mkWrapper(opts).find(Draggable);
+    const f = opts => () => mkWrapper(opts).find(Draggable);
     assertProp(f(), 'axis', 'x');
     assertProp(f(), 'grid', [10]);
     assertProp(f(), 'bounds', { left: -1, right: 9 });
 
     describe('onStart', () => {
-      let w;
       beforeEach(() => {
         w = mkWrapper();
         w.find(Draggable).prop('onStart')({ clientX: 0 });
       });
 
       it('sets state.startX', () => {
-        expect(w.state('startX')).to.eql(0);
+        expect(w.state('startX')).toEqual(0);
       });
 
       it('calls onDragStart callback', () => {
-        assert.called(w.instance().props.onDragStart);
+        expect(w.instance().props.onDragStart).toBeCalled();
       });
-
     });
 
     describe('onStop', () => {
-
-      let w;
       beforeEach(() => {
         w = mkWrapper({ position: 1 });
         w.setState({ startX: 0 });
@@ -97,25 +91,23 @@ describe('point', () => {
       });
 
       it('calls onDragStop callback', () => {
-        assert.called(w.instance().props.onDragStop);
+        expect(w.instance().props.onDragStop).toBeCalled();
       });
 
       it('calls onMove callback', () => {
-        assert.calledWith(w.instance().props.onMove, 101);
-      })
+        expect(w.instance().props.onMove).toBeCalledWith(101);
+      });
     });
 
     describe('onDrag', () => {
-      let w;
       beforeEach(() => {
         w = mkWrapper();
         w.find(Draggable).prop('onDrag')({}, { x: 10 });
       });
 
       it('calls onDrag callback', () => {
-        assert.calledWith(w.instance().props.onDrag, 11);
+        expect(w.instance().props.onDrag).toBeCalledWith(11);
       });
     });
   });
-
 });

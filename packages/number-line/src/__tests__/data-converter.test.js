@@ -1,42 +1,39 @@
-const chai = require('chai');
-const { expect } = chai;
-const { stub, match, assert, spy } = require('sinon');
+import * as converter from '../data-converter';
 
 describe('data-converter', () => {
-  let converter;
-
-  beforeEach(() => {
-    converter = require('../src/data-converter');
-  });
-
   describe('switchGraphLine', () => {
-
     it('does not switch if not needed', () => {
-      let line = {
+      const line = {
         type: 'line',
-        leftPoint: 'empty', rightPoint: 'full', position: {
+        leftPoint: 'empty',
+        rightPoint: 'full',
+        position: {
           left: -2,
           right: -1
         }
       };
 
-      let result = converter.switchGraphLine(line);
-      expect(result).to.eql(line);
+      const result = converter.switchGraphLine(line);
+      expect(result).toEqual(line);
     });
 
     it('switches', () => {
-      let line = {
+      const line = {
         type: 'line',
-        leftPoint: 'empty', rightPoint: 'full', position: {
+        leftPoint: 'empty',
+        rightPoint: 'full',
+        position: {
           left: 0,
           right: -1
         }
       };
 
-      let result = converter.switchGraphLine(line);
-      expect(result).to.eql({
+      const result = converter.switchGraphLine(line);
+      expect(result).toEqual({
         type: 'line',
-        leftPoint: 'full', rightPoint: 'empty', position: {
+        leftPoint: 'full',
+        rightPoint: 'empty',
+        position: {
           left: -1,
           right: 0
         }
@@ -45,7 +42,7 @@ describe('data-converter', () => {
   });
 
   describe('format', () => {
-    let graph = {
+    const graph = {
       point: {
         position: 1,
         type: 'point',
@@ -66,9 +63,9 @@ describe('data-converter', () => {
           right: 1
         }
       }
-    }
+    };
 
-    let session = {
+    const session = {
       line: {
         type: 'line',
         leftPoint: 'full',
@@ -87,7 +84,7 @@ describe('data-converter', () => {
         direction: 'positive',
         pointType: 'full'
       }
-    }
+    };
 
     describe('toSessionFormat', () => {
       let toSessionFormat;
@@ -97,15 +94,15 @@ describe('data-converter', () => {
       });
 
       it('converts line', () => {
-        expect(toSessionFormat(graph.line)).to.eql(session.line);
+        expect(toSessionFormat(graph.line)).toEqual(session.line);
       });
 
       it('converts point', () => {
-        expect(toSessionFormat(graph.point)).to.eql(session.point);
+        expect(toSessionFormat(graph.point)).toEqual(session.point);
       });
 
       it('converts ray', () => {
-        expect(toSessionFormat(graph.ray)).to.eql(session.ray);
+        expect(toSessionFormat(graph.ray)).toEqual(session.ray);
       });
     });
 
@@ -117,17 +114,16 @@ describe('data-converter', () => {
       });
 
       it('converts line', () => {
-        expect(toGraphFormat(session.line)).to.eql(graph.line);
+        expect(toGraphFormat(session.line)).toEqual(graph.line);
       });
 
       it('converts point', () => {
-        expect(toGraphFormat(session.point)).to.eql(graph.point);
+        expect(toGraphFormat(session.point)).toEqual(graph.point);
       });
 
       it('converts ray', () => {
-        expect(toGraphFormat(session.ray)).to.eql(graph.ray);
+        expect(toGraphFormat(session.ray)).toEqual(graph.ray);
       });
-
     });
   });
 });

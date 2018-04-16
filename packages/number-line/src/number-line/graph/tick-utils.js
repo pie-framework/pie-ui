@@ -1,5 +1,4 @@
 import range from 'lodash/range';
-import uniq from 'lodash/uniq';
 
 export function getInterval(domain, ticks) {
   let { min, max } = domain;
@@ -10,7 +9,7 @@ export function getInterval(domain, ticks) {
   }
 
   let distance = max - min;
-  let minorTicks = minor > 0 ? (minor + 1) : 1;
+  let minorTicks = minor > 0 ? minor + 1 : 1;
   let normalizedMajor = major - 1;
 
   if (isNaN(normalizedMajor)) {
@@ -29,12 +28,11 @@ export function getInterval(domain, ticks) {
 let mkRange = (min, max, interval) => {
   let raw = range(min, max, interval);
   /* Fix the last step due to rounding errors */
-  raw.splice(raw.length, 1, max)
+  raw.splice(raw.length, 1, max);
   return raw;
-}
+};
 
 export function snapTo(min, max, interval, value) {
-
   if (value >= max) {
     return max;
   }
@@ -59,17 +57,15 @@ export function snapTo(min, max, interval, value) {
 }
 
 export function buildTickModel(domain, ticks, interval, scaleFn) {
-
   let rng = mkRange(domain.min, domain.max, interval);
 
   return rng.map((r, index) => {
-
-    let isMajor = (index % (ticks.minor + 1)) === 0;
+    let isMajor = index % (ticks.minor + 1) === 0;
 
     return {
       value: r,
       major: isMajor,
       x: scaleFn(r)
-    }
+    };
   });
 }

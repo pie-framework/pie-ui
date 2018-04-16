@@ -19,19 +19,32 @@ const styles = theme => ({
     maxWidth: 300
   },
   selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing.unit * 2
   }
 });
 
-
 class InlineChoice extends React.Component {
-
+  static propTypes = {
+    onChoiceChanged: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
+    choices: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired
+      })
+    ),
+    disabled: PropTypes.bool,
+    result: PropTypes.shape({
+      correct: PropTypes.bool,
+      nothingSubmitted: PropTypes.bool
+    }),
+    session: PropTypes.object
+  };
   handleChange = event => {
     this.props.onChoiceChanged(event.target.value);
   };
 
   render() {
-
     let { choices, classes, disabled, result, session } = this.props;
     result = result || {};
     const { correct, nothingSubmitted } = result;
@@ -40,7 +53,7 @@ class InlineChoice extends React.Component {
       if (correct === false && nothingSubmitted) {
         return NothingSubmitted;
       } else if (correct === false && !nothingSubmitted) {
-        return Incorrect
+        return Incorrect;
       } else if (correct === true) {
         return Correct;
       }
@@ -49,13 +62,12 @@ class InlineChoice extends React.Component {
     return (
       <div className={classes.container}>
         {choices.length > 0 && (
-          <FormControl
-            className={classes.formControl}
-            disabled={disabled}>
+          <FormControl className={classes.formControl} disabled={disabled}>
             <Choices
               items={choices}
               value={session.selectedChoice || ''}
-              onChange={this.handleChange} />
+              onChange={this.handleChange}
+            />
           </FormControl>
         )}
         {Feedback && <Feedback feedback={result.feedback} />}
@@ -64,13 +76,4 @@ class InlineChoice extends React.Component {
   }
 }
 
-InlineChoice.propTypes = {
-  classes: PropTypes.object,
-  choices: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
-  })),
-  disabled: PropTypes.bool
-};
-
-export default withStyles(styles)(InlineChoice);  
+export default withStyles(styles)(InlineChoice);

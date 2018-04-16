@@ -2,7 +2,7 @@ import React from 'react';
 import Calculator from '@pie-framework/material-ui-calculator';
 import Draggable from 'react-draggable';
 import Typography from 'material-ui/Typography';
-import Close from 'material-ui-icons/Close';
+import Close from '@material-ui/icons/Close';
 import IconButton from 'material-ui/IconButton';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
@@ -10,7 +10,9 @@ import grey from 'material-ui/colors/grey';
 import classNames from 'classnames';
 
 const styles = theme => {
-  const { palette: { secondary, primary } } = theme;
+  const {
+    palette: { secondary, primary }
+  } = theme;
 
   const border = `solid 1px var(--pie-ui, ${grey[900]})`;
 

@@ -2,16 +2,15 @@ import React from 'react';
 
 import renderer from 'react-test-renderer';
 import { TextEntry } from '../text-entry.jsx';
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import Input from '../input';
-import Adapter from 'enzyme-adapter-react-15';
 
-Enzyme.configure({ adapter: new Adapter() });
 jest.useFakeTimers();
 
 jest.mock('@pie-lib/render-ui', () => {
-
-  const comp = (props) => <div data-name="mock=comp">{JSON.stringify(props)}</div>
+  const comp = props => (
+    <div data-name="mock=comp">{JSON.stringify(props)}</div>
+  );
   return {
     indicators: {
       Correct: comp,
@@ -19,48 +18,45 @@ jest.mock('@pie-lib/render-ui', () => {
       PartiallyCorrect: comp,
       NothingSubmitted: comp
     }
-  }
+  };
 });
 
 const classNames = ['textEntry'].reduce((acc, n) => {
   acc[n] = n;
-  return acc
+  return acc;
 }, {});
 
 describe('text-entry:snapshot', () => {
-
   it('renders', () => {
     const model = {
       correctness: 'correct'
-    }
-    const session = {}
+    };
+    const session = {};
 
-    const tree = renderer.create(<TextEntry
-      model={model}
-      session={session}
-      classes={classNames}
-    />);
+    const tree = renderer.create(
+      <TextEntry model={model} session={session} classes={classNames} />
+    );
     expect(tree).toMatchSnapshot();
-
   });
 });
 
 describe('text-entry', () => {
-
   let wrapper, onValueChanged;
 
   beforeEach(() => {
     onValueChanged = jest.fn();
 
-    wrapper = shallow(<TextEntry
-      model={{ allowIntegersOnly: true }}
-      session={{}}
-      classes={classNames}
-      onValueChanged={onValueChanged} />);
+    wrapper = shallow(
+      <TextEntry
+        model={{ allowIntegersOnly: true }}
+        session={{}}
+        classes={classNames}
+        onValueChanged={onValueChanged}
+      />
+    );
   });
 
   it('calls onValueChange ', () => {
-
     wrapper.find(Input).prop('onChange')({
       target: {
         value: 'value'
@@ -80,5 +76,3 @@ describe('text-entry', () => {
     expect(wrapper.state('warning')).toBe(null);
   });
 });
-
-

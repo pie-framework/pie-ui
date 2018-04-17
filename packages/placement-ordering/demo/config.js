@@ -1,5 +1,4 @@
 module.exports = {
-
   elements: {
     'placement-ordering': '..'
   },
@@ -11,17 +10,17 @@ module.exports = {
       choices: [
         { id: '1', label: '1', moveOnDrag: true },
         { id: '2', label: '2' },
-        { id: '3', label: '2' },
-        { id: '4', label: '2' }
+        { id: '3', label: '3' },
+        { id: '4', label: '4' }
       ],
       disabled: false,
       config: {
         orientation: 'vertical',
         includeTargets: true,
         showOrdering: true,
-        choiceLabel: 'Choices',
+        choiceLabel: 'Choices!',
         targetLabel: 'Targets'
       }
     }
   ]
-}
+};

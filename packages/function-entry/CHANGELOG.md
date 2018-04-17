@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@2.0.0...@pie-ui/function-entry@2.1.0) (2018-04-17)
+
+
+### Features
+
+* **function-entry:** added hints popover ([13eabc9](https://github.com/pie-framework/pie-ui/commit/13eabc9))
+* **function-entry:** added hints to input element ([c068527](https://github.com/pie-framework/pie-ui/commit/c068527))
+* **function-entry:** getting ready for publish, final version ([d4ac84a](https://github.com/pie-framework/pie-ui/commit/d4ac84a))
+* **function-entry:** hints popover fixes and adjustments ([762430e](https://github.com/pie-framework/pie-ui/commit/762430e))
+
+
+
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@1.1.1...@pie-ui/function-entry@2.0.0) (2018-04-17)

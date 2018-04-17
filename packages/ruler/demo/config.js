@@ -5,7 +5,12 @@ module.exports = {
   models: [
     {
       element: 'pie-ruler',
-      id: '1'
+      id: '1',
+      length: 20,
+      height: 62,
+      scale: 20,
+      ticks: 10,
+      type: 'imperial'
     }
   ]
 }

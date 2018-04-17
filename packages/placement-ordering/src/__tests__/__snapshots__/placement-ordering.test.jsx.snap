@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacementOrdering render snapshot 1`] = `
+<div
+  className="placementOrdering"
+>
+  <Component
+    onToggle={[Function]}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <WithStyles(HTiler)
+    instanceId="1"
+    onDropChoice={[Function]}
+    onRemoveChoice={[Function]}
+    tiles={
+      Array [
+        Object {
+          "draggable": true,
+          "droppable": true,
+          "id": "c1",
+          "label": "C1",
+          "type": "choice",
+        },
+        Object {
+          "draggable": true,
+          "droppable": true,
+          "id": "c2",
+          "label": "C2",
+          "type": "choice",
+        },
+        Object {
+          "draggable": true,
+          "droppable": true,
+          "id": "c3",
+          "label": "C3",
+          "type": "choice",
+        },
+        Object {
+          "draggable": true,
+          "droppable": true,
+          "id": "c4",
+          "label": "C4",
+          "type": "choice",
+        },
+      ]
+    }
+  />
+  <br />
+  <Feedback />
+</div>
+`;

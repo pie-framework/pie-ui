@@ -2,22 +2,28 @@ import React from 'react';
 import Calculator from '@pie-framework/material-ui-calculator';
 import Draggable from 'react-draggable';
 import Typography from 'material-ui/Typography';
-import Close from 'material-ui-icons/Close';
+import Close from '@material-ui/icons/Close';
 import IconButton from 'material-ui/IconButton';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import grey from 'material-ui/colors/grey';
+import classNames from 'classnames';
 
 const styles = theme => {
-  const { palette: { secondary, primary } } = theme;
+  const {
+    palette: { secondary, primary }
+  } = theme;
 
   const border = `solid 1px var(--pie-ui, ${grey[900]})`;
 
   return {
-    handle: {
+    baseLayout: {
+      display: 'inline-block',
       border,
-      zIndex: '10',
-      position: 'absolute'
+      zIndex: '10'
+    },
+    scientific: {
+      minWidth: '515px'
     },
     closeIcon: {
       width: '24px',
@@ -40,7 +46,52 @@ const styles = theme => {
   };
 };
 
-class DraggableCalculator extends React.Component {
+class BaseLayout extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    className: PropTypes.string,
+    onClose: PropTypes.func.isRequired,
+    mode: PropTypes.oneOf(['basic', 'scientific'])
+  };
+
+  render() {
+    const { classes, onClose, mode, className } = this.props;
+    return (
+      <div
+        className={classNames(
+          classes.baseLayout,
+          mode === 'scientific' && classes.scientific,
+          className
+        )}
+      >
+        <div className={`handle ${classes.titleBar}`}>
+          <Typography variant="subheading" className={classes.title}>
+            Calculator
+          </Typography>
+          <IconButton
+            className={classes.closeIcon}
+            onClick={onClose}
+            aria-label="Delete"
+          >
+            <Close />
+          </IconButton>
+        </div>
+        <Calculator mode={mode} />
+      </div>
+    );
+  }
+}
+
+export const CalculatorLayout = withStyles(styles)(BaseLayout);
+
+export class DraggableCalculator extends React.Component {
+  static propTypes = {
+    mode: PropTypes.oneOf(['basic', 'scientific']),
+    show: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -70,31 +121,21 @@ class DraggableCalculator extends React.Component {
         defaultPosition={{ x, y }}
         handle=".handle"
       >
-        <div className={classes.handle}>
-          <div className={`handle ${classes.titleBar}`}>
-            <Typography variant="subheading" className={classes.title}>
-              Calculator
-            </Typography>
-            <IconButton
-              className={classes.closeIcon}
-              onClick={onClose}
-              aria-label="Delete"
-            >
-              <Close />
-            </IconButton>
-          </div>
-          <Calculator mode={mode} />
+        {/* draggable needs to have a div as the first child so it can find the classname. */}
+        <div>
+          <CalculatorLayout
+            onClose={onClose}
+            mode={mode}
+            className={classes.draggable}
+          />
         </div>
       </Draggable>
     ) : null;
   }
 }
 
-DraggableCalculator.propTypes = {
-  mode: PropTypes.any,
-  show: PropTypes.any,
-  onClose: PropTypes.any,
-  classes: PropTypes.any
-};
-
-export default withStyles(styles)(DraggableCalculator);
+export default withStyles(() => ({
+  draggable: {
+    position: 'absolute'
+  }
+}))(DraggableCalculator);

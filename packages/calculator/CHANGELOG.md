@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@1.2.0...@pie-ui/calculator@1.3.0) (2018-04-12)
+
+
+### Bug Fixes
+
+* **dependencies:** use 1.1.2 of material-ui-calculator ([47774b4](https://github.com/pie-framework/pie-ui/commit/47774b4))
+
+
+### Features
+
+* **exports:** export 'CalculatorLayout' component ([3205471](https://github.com/pie-framework/pie-ui/commit/3205471))
+
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2018-03-29)
 

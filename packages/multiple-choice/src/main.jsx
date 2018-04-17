@@ -1,7 +1,7 @@
 import { green, orange, pink } from 'material-ui/colors';
-import { withStyles, withTheme } from 'material-ui/styles';
-
-import CorespringChoice from './corespring-choice.jsx';
+import { withStyles } from 'material-ui/styles';
+import PropTypes from 'prop-types';
+import MultipleChoice from './multiple-choice';
 import { createMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import React from 'react';
 import classNames from 'classnames';
@@ -16,10 +16,8 @@ const styleSheet = theme => {
     '--choice-input-disabled-color': theme.palette.grey[500],
     '--choice-input-correct-disabled-color': green[500],
     '--choice-input-incorrect-disabled-color': orange[500],
-    '--choice-input-selected-color': theme.palette.primary[500],
-    '--choice-input-disabled-color': theme.palette.grey[500],
     backgroundColor: 'var(--mc-bg-color, rgba(0,0,0,0))'
-  }
+  };
 
   return {
     root,
@@ -30,7 +28,7 @@ const styleSheet = theme => {
       '--feedback-color': 'white',
       '--mc-bg-color': 'black',
       '--choice-input-color': 'white',
-      '--choice-input-selected-color': theme.palette.primary[200],
+      '--choice-input-selected-color': theme.palette.primary[200]
     },
     'black-on-rose': {
       '--mc-bg-color': pink[50]
@@ -39,38 +37,44 @@ const styleSheet = theme => {
 };
 
 class Main extends React.Component {
-
   constructor(props) {
     super(props);
   }
 
   render() {
-
     const { model, onChoiceChanged, session, classes } = this.props;
 
-    return <div className={classNames(classes.root, classes[model.className])}>
-      <CorespringChoice
-        {...model}
-        session={session}
-        onChoiceChanged={onChoiceChanged} />
-    </div>;
+    return (
+      <div className={classNames(classes.root, classes[model.className])}>
+        <MultipleChoice
+          {...model}
+          session={session}
+          onChoiceChanged={onChoiceChanged}
+        />
+      </div>
+    );
   }
 }
 
 Main.propTypes = {
-  model: React.PropTypes.object,
-  session: React.PropTypes.object,
-  onChoiceChanged: React.PropTypes.func
+  model: PropTypes.object,
+  session: PropTypes.object,
+  onChoiceChanged: PropTypes.func
 };
 
 Main.defaultProps = {
   model: {},
   session: {}
-}
+};
 
 const Styled = withStyles(styleSheet, { name: 'Main' })(Main);
 
 const theme = createMuiTheme();
 
-export default (props) => <MuiThemeProvider theme={theme}><Styled {...props} /></MuiThemeProvider>;
+const Root = props => (
+  <MuiThemeProvider theme={theme}>
+    <Styled {...props} />
+  </MuiThemeProvider>
+);
 
+export default Root;

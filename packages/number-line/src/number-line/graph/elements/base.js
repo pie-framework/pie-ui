@@ -1,10 +1,10 @@
-import React, { PropTypes as PT } from 'react';
-
+import React from 'react'; //eslint-disable-line
+import PropTypes from 'prop-types';
 
 export const basePropTypes = () => ({
-  interval: PT.number.isRequired,
-  domain: PT.shape({
-    min: PT.number.isRequired,
-    max: PT.number.isRequired
+  interval: PropTypes.number.isRequired,
+  domain: PropTypes.shape({
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired
   })
 });

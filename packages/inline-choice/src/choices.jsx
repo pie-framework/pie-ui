@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
@@ -6,13 +6,10 @@ import Input from 'material-ui/Input';
 
 const Choices = ({ value, onChange, items }) => {
   return (
-    <Select
-      value={value}
-      onChange={onChange}
-      input={<Input />}>
+    <Select value={value} onChange={onChange} input={<Input />}>
       {items.map((item, index) => (
         <MenuItem key={index} value={item.value}>
-          <span dangerouslySetInnerHTML={{ __html: item.label }}></span>
+          <span dangerouslySetInnerHTML={{ __html: item.label }} />
         </MenuItem>
       ))}
     </Select>

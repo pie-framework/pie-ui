@@ -1,10 +1,7 @@
 {
   "name": "@pie-ui/multiple-choice",
   "description": "A pie multiple choice component",
-  "keywords": [
-    "pie",
-    "pie-elements"
-  ],
+  "keywords": ["pie", "pie-elements"],
   "version": "2.0.1",
   "main": "src/index.js",
   "repository": "pie-framework/pie-elements.git",
@@ -13,53 +10,36 @@
   },
   "license": "ISC",
   "scripts": {
-    "client-test": "./node_modules/.bin/mocha  --require test/setup test/**/*-test.js",
-    "controller-test": "./node_modules/.bin/mocha  --require test/setup controller/test/**/*-test.js",
-    "configure-test": "./node_modules/.bin/mocha  --require test/setup configure/test/**/*-test.js",
-    "test": "npm run client-test && npm run controller-test && npm run configure-test"
+    "test": "./node_modules/.bin/jest"
+  },
+  "jest": {
+    "setupFiles": ["./jest.setup.js"]
   },
   "dependencies": {
-    "@pie-lib/correct-answer-toggle": "^0.1.6",
-    "@pie-lib/render-ui": "^0.1.10",
-    "debug": "^3.0.1",
+    "@pie-lib/correct-answer-toggle": "^1.0.1",
+    "@pie-lib/render-ui": "^1.0.0",
+    "debug": "^3.1.0",
+    "enzyme-to-json": "^3.3.3",
     "katex": "^0.9.0",
-    "lodash": "^4.17.4",
-    "material-ui": "^1.0.0-beta.27",
-    "material-ui-icons": "^1.0.0-beta.17",
-    "prop-types": "^15.6.0",
-    "react": "^15.6.1",
-    "react-addons-css-transition-group": "^15.6.0",
-    "react-dom": "^15.6.1"
+    "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.41",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "react-transition-group": "^2.3.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-airbnb": "^2.4.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-register": "^6.24.1",
-    "chai": "^4.1.0",
-    "chai-shallow-deep-equal": "^1.4.6",
-    "css-loader": "^0.28.4",
-    "dsv-loader": "^2.0.0",
-    "enzyme": "^2.9.1",
-    "eslint": "^4.2.0",
-    "eslint-plugin-react": "^7.1.0",
-    "gulp": "^3.9.1",
-    "json-loader": "^0.5.4",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.5",
-    "mocha": "^3.4.2",
-    "pie-control-panel": "PieLabs/pie-control-panel#develop",
-    "postcss-loader": "^2.0.6",
-    "proxyquire": "^1.8.0",
-    "react-addons-test-utils": "^15.6.0",
-    "sinon": "^2.3.8",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3"
   }
 }

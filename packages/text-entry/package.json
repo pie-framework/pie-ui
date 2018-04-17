@@ -1,8 +1,11 @@
 {
   "name": "@pie-ui/text-entry",
   "description": "A pie text-entry component",
-  "keywords": ["pie", "pie-elements"],
-  "version": "1.0.1",
+  "keywords": [
+    "pie",
+    "pie-elements"
+  ],
+  "version": "2.0.0",
   "main": "src/index.js",
   "repository": "pie-framework/pie-ui",
   "publishConfig": {
@@ -13,16 +16,16 @@
     "test": "./node_modules/.bin/jest"
   },
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.42",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/render-ui": "^1.0.0",
     "debug": "^3.1.0",
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.41",
-    "@material-ui/icons": "^1.0.0-beta.42",
     "react": "^16.3.2",
-    "react-transition-group": "^2.3.1",
     "react-dom": "^16.3.2",
-    "react-number-format": "PieElements/react-number-format#feature/bad-input"
+    "react-number-format": "PieElements/react-number-format#feature/bad-input",
+    "react-transition-group": "^2.3.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",

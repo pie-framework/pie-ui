@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@1.1.1...@pie-ui/function-entry@2.0.0) (2018-04-17)
+
+
+### Bug Fixes
+
+* **dependencies:** use latest react + material-ui ([450fa22](https://github.com/pie-framework/pie-ui/commit/450fa22))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** use react@16.x
+
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@1.1.0...@pie-ui/function-entry@1.1.1) (2018-04-11)
 

@@ -34,7 +34,12 @@ describe('text-entry:snapshot', () => {
     const session = {};
 
     const tree = renderer.create(
-      <TextEntry model={model} session={session} classes={classNames} />
+      <TextEntry
+        model={model}
+        session={session}
+        classes={classNames}
+        onValueChanged={jest.fn()}
+      />
     );
     expect(tree).toMatchSnapshot();
   });

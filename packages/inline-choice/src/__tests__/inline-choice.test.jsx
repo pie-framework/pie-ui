@@ -53,7 +53,7 @@ describe('inline-choice', () => {
           <InlineChoice
             {...model}
             session={props.session}
-            onChoiceChanged={props.onChoiceChanged()}
+            onChoiceChanged={props.onChoiceChanged}
           />
         )
         .toJSON();

@@ -7,8 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "test":
-      "./node_modules/.bin/mocha --require babel-register --recursive test && cd controller && npm test"
+    "test": "./node_modules/.bin/jest"
   },
   "repository": "pie-framework/pie-ui",
   "author": "corespring",

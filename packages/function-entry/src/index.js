@@ -4,13 +4,17 @@ import {
 } from '@pie-framework/pie-player-events';
 import ReactFunctionEntry from './function-entry';
 import HintsPopover from './hints-popover';
+import Hints from './hints';
+import Fraction from './fraction';
+import Power from './power';
+import Radical from './radical';
 import debug from 'debug';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 const log = debug('pie-elements:function-entry');
 
-export { HintsPopover };
+export { Hints, Fraction, Power, Radical, HintsPopover };
 
 export default class FunctionEntry extends HTMLElement {
   constructor() {

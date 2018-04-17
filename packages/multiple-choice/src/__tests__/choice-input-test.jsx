@@ -53,7 +53,7 @@ describe('ChoiceInput', () => {
   describe('onToggleChoice', () => {
     it('calls handler', () => {
       wrapper.instance().onToggleChoice({ target: { checked: true } });
-      expect(onChange.mock.calls[0][0]).toEqual({
+      expect(onChange).toBeCalledWith({
         value: 'value',
         selected: true
       });

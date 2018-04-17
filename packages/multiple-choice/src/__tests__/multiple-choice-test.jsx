@@ -57,7 +57,6 @@ describe('CorespringChoice', () => {
     describe('Toggle', () => {
       it('toggle is rendered', () => {
         const t = mkWrapper().find(CorrectAnswerToggle);
-        console.log('t: ', t.debug());
         expect(t.length).toEqual(1);
       });
 

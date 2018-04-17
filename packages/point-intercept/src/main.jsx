@@ -65,7 +65,7 @@ export class Main extends React.Component {
     );
 
     const session = { ...this.state.session, points };
-    this.setState({ session, selection: [] }, this.callOnSessionChange());
+    this.setState({ session, selection: [] }, this.callOnSessionChange);
   };
 
   movePoint = (from, to) => {

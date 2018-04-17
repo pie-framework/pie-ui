@@ -63,8 +63,8 @@ describe('text-entry', () => {
       }
     });
 
-    expect(onValueChanged.mock.calls.length).toEqual(1);
-    expect(onValueChanged.mock.calls[0][0]).toEqual('value');
+    expect(onValueChanged).toBeCalled();
+    expect(onValueChanged).toBeCalledWith('value');
   });
 
   it('onBadInput sets warning', () => {

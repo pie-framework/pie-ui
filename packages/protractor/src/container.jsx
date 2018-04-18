@@ -8,7 +8,7 @@ class Container extends React.Component {
   }
 
   render (){
-    return <Draggable>{this.props.children}</Draggable>
+    return <Draggable onDrag={this.props.onDrag}>{this.props.children}</Draggable>
   }
 
 }

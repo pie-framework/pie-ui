@@ -1,6 +1,6 @@
 import React from 'react';
 import proImage from '../public/protractor.png';
-import Draggable, { DraggableCore } from 'react-draggable';
+import Container from './container';
 
 const styles = {
   svg: {
@@ -20,10 +20,6 @@ class Protractor extends React.Component {
       startAngle: 0,
       angle: 0
     };
-  }
-
-  getDistance = (x1, y1, x2, y2) => {
-    return Math.sqrt((x1 - x2) * (x1 - x2) + (y2 - y1) * (y2 - y1));
   }
 
   mouseDownHandler = (e) => {
@@ -78,18 +74,19 @@ class Protractor extends React.Component {
     const svg2 = (
       <svg onMouseOver={() => this.setState({ hovered: true })} onMouseOut={() => this.setState({ hovered: false })} onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler} onMouseMove={this.mouseMoveHandler} xmlns="http://www.w3.org/2000/svg" version="1.1" width="29.47368439214722" height="178" style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" /><desc style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}>Created with Raphaël</desc><defs style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }} /><g className="currentLayer"><title>Layer 1</title><path fill="#9ed343" stroke="none" d="M19.321989993785216,105.06616200794492 L23.26001028935756,105.06616200794492 L15.613069395354858,114.14876339481546 L7.505959768697343,105.06616200794492 L11.445949402640533,105.06616200794492 A187.57947982327056,191.5955519192577 0 0 1 14.0920837269366,74.25330605536591 L10.198045321646529,73.54860990464977 L19.730955928797975,66.04235547337738 L25.722339699041143,76.33923348151048 L21.846025339088705,75.63118482769862 A187.57947982327056,191.5955519192577 0 0 0 19.32198999378521,105.06616200794495 z" style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)', cursor: 'move' }} transform="rotate(-2.3505332469940186 16.614152908323916,80.22714233398428) " id="svg_1" /></g></svg>
     );
-    return (
-      <Draggable>
-        <div style={{ position: 'relative' }}>
-            <div id="rotateDiv" style={{ position: 'absolute', WebkitTransformStyle: 'preserve-3d', position: 'absolute', top: '137px', width: '502px', height: '180px', left: '0px', zIndex: '3', WebkitTransform: `rotate(${rotation}deg)` }}>
-              {hovered ? svg1 : svg2}
-            </div>
-          <div style={{ position: 'absolute', top: '0px', left: '0px', zIndex: '1' }}>
-            <img className="proImage" src={proImage} width="500" alt="proImage" />
-          </div>
+
+    const renderItems = (
+      <div style={{ position: 'relative' }}>
+        <div id="rotateDiv" style={{ position: 'absolute', WebkitTransformStyle: 'preserve-3d', position: 'absolute', top: '137px', width: '502px', height: '180px', left: '0px', zIndex: '3', WebkitTransform: `rotate(${rotation}deg)` }}>
+          {hovered ? svg1 : svg2}
         </div>
-      </Draggable>
-    )
+        <div style={{ position: 'absolute', top: '0px', left: '0px', zIndex: '1' }}>
+          <img className="proImage" src={proImage} width="500" alt="proImage" />
+        </div>
+      </div>
+    );
+
+    return hovered ? renderItems : <Container>{renderItems}</Container>;
   }
 }
 

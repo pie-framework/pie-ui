@@ -6,10 +6,10 @@ module.exports = {
     {
       element: 'pie-ruler',
       id: '1',
-      length: 4,
+      length: 1,
       height: 100,
-      scale: 70,
-      ticks: 8,
+      scale: 100,
+      ticks: 12,
       type: 'imperial',
       unit: 'cm'
     }

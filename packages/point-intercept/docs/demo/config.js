@@ -36,8 +36,8 @@ module.exports = {
   models: [
     model('1', {
       disabled: false,
-      // pointLabels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-      // correctResponse: [{ x: 0, y: 0, label: 'A' }, { x: 1, y: 1, label: 'B' }],
+      pointLabels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+      correctResponse: [{ x: 0, y: 0, label: 'A' }, { x: 1, y: 1, label: 'B' }],
       pointsMustMatchLabels: true
     }),
   ],

@@ -4,18 +4,20 @@ import PropTypes from 'prop-types';
 import Controls from './controls';
 import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+import { Feedback } from '@pie-lib/render-ui';
 import { withStyles } from 'material-ui/styles';
 
 const log = debug('pie-ui:point-intercept:main');
 
 export class Main extends React.Component {
   static propTypes = {
+    classes: PropTypes.object,
     session: PropTypes.shape({
       points: PropTypes.arrayOf(
-        PropTypes.shape({
-          x: PropTypes.number.isRequired,
-          y: PropTypes.number.isRequired
-        })
+          PropTypes.shape({
+            x: PropTypes.number.isRequired,
+            y: PropTypes.number.isRequired
+          })
       )
     }),
     onSessionChange: PropTypes.func,
@@ -24,7 +26,9 @@ export class Main extends React.Component {
 
   constructor(props) {
     super(props);
+
     const points = props.session.points || [];
+
     this.state = {
       session: { ...props.session, points },
       selection: [],
@@ -35,6 +39,7 @@ export class Main extends React.Component {
   componentWillReceiveProps(nextProps) {
     const points = nextProps.session.points || [];
     const session = { ...nextProps.session, points };
+
     this.setState({ session });
   }
 
@@ -42,7 +47,9 @@ export class Main extends React.Component {
     const { pointLabels } = this.props.model;
     const points = utils.addPoint(this.state.session.points, p, pointLabels);
     const session = { ...this.state.session, points };
+
     log('[addPoint] points: ', session.points);
+
     this.setState({ session }, this.callOnSessionChange);
   };
 
@@ -53,6 +60,7 @@ export class Main extends React.Component {
 
   callOnSessionChange = () => {
     const { onSessionChange } = this.props;
+
     if (onSessionChange) {
       onSessionChange(this.state.session);
     }
@@ -60,8 +68,8 @@ export class Main extends React.Component {
 
   deleteSelection = () => {
     const points = utils.removePoints(
-      this.state.session.points,
-      this.state.selection
+        this.state.session.points,
+        this.state.selection
     );
 
     const session = { ...this.state.session, points };
@@ -85,7 +93,7 @@ export class Main extends React.Component {
       } else {
         return session.points.map(p => ({
           ...p,
-          correct: utils.hasPoint(model.correctResponse, p)
+          correct: utils.hasPoint(model.correctResponse, p, model.pointsMustMatchLabels)
         }));
       }
     } else {
@@ -100,35 +108,47 @@ export class Main extends React.Component {
   render() {
     const { model, classes } = this.props;
     const { selection, showCorrect } = this.state;
-
     const points = this.buildPoints();
 
     return (
-      <div style={{ width: `${model.width}px` }} className={classes.main}>
-        <CorrectAnswerToggle
-          className={classes.toggle}
-          show={model.correctness && model.correctness !== 'correct'}
-          toggled={showCorrect}
-          onToggle={this.toggleShowCorrect}
-        />
-        {!model.disabled && (
-          <Controls
-            disabled={!(selection && selection.length > 0)}
-            onDeleteClick={this.deleteSelection}
+      <div style={{ width: `${model.width}px` }}>
+        <div className={classes.main}>
+          {model.correctness && <div>Score: {model.correctness.score}</div>}
+          <CorrectAnswerToggle
+              className={classes.toggle}
+              show={model.correctness && model.correctness !== 'correct'}
+              toggled={showCorrect}
+              onToggle={this.toggleShowCorrect}
           />
-        )}
-        <PlotPoints
-          width={model.width}
-          height={model.height}
-          domain={model.domain}
-          range={model.range}
-          disabled={model.disabled}
-          onAddPoint={this.addPoint}
-          onSelectionChange={this.selectionChange}
-          onMovePoint={this.movePoint}
-          points={points}
-          selection={selection}
-        />
+          {!model.disabled && (
+              <Controls
+                  disabled={!(selection && selection.length > 0)}
+                  onDeleteClick={this.deleteSelection}
+              />
+          )}
+          <PlotPoints
+            title={model.title}
+            width={model.width}
+            height={model.height}
+            domain={model.domain}
+            range={model.range}
+            disabled={model.disabled}
+            showPointCoordinates={model.showCoordinates}
+            showPointLabels={model.showPointLabels}
+            showAxisLabels={model.showAxisLabels}
+            maxNoOfPoints={model.maxPoints}
+            onAddPoint={this.addPoint}
+            onSelectionChange={this.selectionChange}
+            onMovePoint={this.movePoint}
+            points={points}
+            selection={selection}
+          />
+        </div>
+        {model.feedback &&
+        <Feedback
+            correctness={model.correctness.correctness}
+            feedback={model.feedback}
+            width={model.width - 20} />}
       </div>
     );
   }

@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 export default class Index extends Component {
 
   static propTypes = {
-    width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     length: PropTypes.number.isRequired,
     ticks: PropTypes.number.isRequired,

@@ -1,6 +1,6 @@
 import React from 'react';
-import RulerGenerator from './ruler-generator';
 import Draggable from 'react-draggable';
+import Ruler from './ruler';
 
 export default class Root extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class Root extends React.Component {
     return (
       <div>  
           <div style={{transform : `rotate(${this.state.activeAngle}deg)`}}>
-            <RulerGenerator {...model} handleRotate={() => {this.handleRotate()}} />
+            <Ruler {...model} handleRotate={() => {this.handleRotate()}} />
           </div>
       </div>
     );

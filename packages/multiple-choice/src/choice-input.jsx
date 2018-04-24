@@ -172,7 +172,6 @@ export class ChoiceInput extends React.Component {
                   onChange={this.onToggleChoice}
                 />
               }
-              label={displayKey + '. '}
             />
             <span
               className={classes.label}

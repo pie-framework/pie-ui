@@ -1,8 +1,11 @@
 {
   "name": "@pie-ui/text-entry",
   "description": "A pie text-entry component",
-  "keywords": ["pie", "pie-elements"],
-  "version": "2.0.0",
+  "keywords": [
+    "pie",
+    "pie-elements"
+  ],
+  "version": "2.0.1",
   "main": "src/index.js",
   "repository": "pie-framework/pie-ui",
   "publishConfig": {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@3.0.0...@pie-ui/placement-ordering@3.0.1) (2018-04-24)
+
+
+### Bug Fixes
+
+* **dependencies:** versions bump ([ffd1915](https://github.com/pie-framework/pie-ui/commit/ffd1915))
+
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@2.0.1...@pie-ui/placement-ordering@3.0.0) (2018-04-17)
 

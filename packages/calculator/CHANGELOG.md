@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@2.0.0...@pie-ui/calculator@2.0.1) (2018-04-24)
+
+
+### Bug Fixes
+
+* **dependencies:** versions bump ([00c6adb](https://github.com/pie-framework/pie-ui/commit/00c6adb))
+* **dependencies:** versions bump ([789514e](https://github.com/pie-framework/pie-ui/commit/789514e))
+
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@1.3.0...@pie-ui/calculator@2.0.0) (2018-04-17)
 

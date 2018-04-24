@@ -1,8 +1,13 @@
 {
   "name": "@pie-ui/multiple-choice",
   "description": "A pie multiple choice component",
-  "keywords": ["pie", "pie-ui", "custom-element", "react"],
-  "version": "3.0.0",
+  "keywords": [
+    "pie",
+    "pie-ui",
+    "custom-element",
+    "react"
+  ],
+  "version": "3.0.1",
   "main": "src/index.js",
   "repository": "pie-framework/pie-elements.git",
   "publishConfig": {
@@ -13,7 +18,9 @@
     "test": "./node_modules/.bin/jest"
   },
   "jest": {
-    "setupFiles": ["./jest.setup.js"]
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   },
   "dependencies": {
     "@pie-lib/correct-answer-toggle": "^2.0.6",

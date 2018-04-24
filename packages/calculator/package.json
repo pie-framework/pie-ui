@@ -12,12 +12,8 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupFiles": ["./jestsetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }
@@ -28,7 +24,7 @@
     "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-framework/material-ui-calculator": "^2.0.0",
     "classnames": "^2.2.5",
-    "material-ui": "^1.0.0-beta.41",
+    "material-ui": "^1.0.0-beta.42",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

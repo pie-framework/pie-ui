@@ -25,7 +25,7 @@
   "author": "harry",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/icons": "^1.0.0-beta.42",
+    "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-framework/material-ui-calculator": "^2.0.0",
     "classnames": "^2.2.5",
     "material-ui": "^1.0.0-beta.41",
@@ -54,8 +54,8 @@
     "jest": "^22.4.3",
     "power-assert": "^1.5.0",
     "react-test-renderer": "^16.3.2",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
   }
 }

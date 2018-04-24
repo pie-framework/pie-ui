@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const RulerBg = ({bgX1, bgX2, bgY1, bgFill, bgStroke, bgStrokeWidth}) => {
@@ -9,9 +9,9 @@ const RulerBg = ({bgX1, bgX2, bgY1, bgFill, bgStroke, bgStrokeWidth}) => {
 };
 
 RulerBg.propTypes = {
-  bgX1: PropTypes.string,
-  bgX2: PropTypes.string,
-  bgX2: PropTypes.string,
+  bgX1: PropTypes.number,
+  bgX2: PropTypes.number,
+  bgY1: PropTypes.number,
   bgFill: PropTypes.string,
   bgStroke: PropTypes.string,
   bgStrokeWidth: PropTypes.number

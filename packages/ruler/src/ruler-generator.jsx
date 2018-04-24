@@ -130,7 +130,7 @@ export default class RulerGenerator extends React.Component {
 				</svg>
 				</div>
 				<div style={{marginTop : '20px'}}>
-					<Ruler width={rulerWidth} height={height} />
+					<Ruler {...this.props} />
 				</div>
 			</div>
 		);

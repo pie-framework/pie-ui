@@ -55,10 +55,10 @@ const colorStyle = (varName, fallback) => ({
 const inputStyles = {
   'correct-root': colorStyle('correct-color', 'black'),
   'correct-checked': colorStyle('correct-selected-color', green[500]),
-  'correct-disabled': colorStyle('correct-disabled-color', 'black'),
+  'correct-disabled': colorStyle('correct-disabled-color', 'grey'),
   'incorrect-root': colorStyle('incorrect-color', 'black'),
   'incorrect-checked': colorStyle('incorrect-checked', orange[500]),
-  'incorrect-disabled': colorStyle('incorrect-disabled-color', 'purple'),
+  'incorrect-disabled': colorStyle('incorrect-disabled-color', 'grey'),
   root: colorStyle('color', 'black'),
   checked: colorStyle('selected-color', 'black'),
   disabled: colorStyle('disabled-color', 'black')

@@ -13,19 +13,19 @@
   "author": "Mukesh Sharma",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/icons": "^1.0.0-beta.42",
+    "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/editable-html": "^4.0.2",
+    "@pie-lib/editable-html": "^5.0.6",
     "debug": "^3.1.0",
     "lodash.throttle": "^4.1.1",
-    "material-ui": "^1.0.0-beta.41",
-    "prop-types": "^15.6.0",
+    "material-ui": "^1.0.0-beta.42",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-airbnb": "^2.4.0",
@@ -35,13 +35,11 @@
     "babel-register": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.1.4",
+    "jest": "^22.4.3",
     "lodash": "^4.17.5",
-    "style-loader": "^0.20.3"
+    "style-loader": "^0.21.0"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ]
+    "setupFiles": ["./jestsetup.js"]
   }
 }

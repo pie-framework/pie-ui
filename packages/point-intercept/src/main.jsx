@@ -116,7 +116,7 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
               className={classes.toggle}
-              show={model.correctness && model.correctness !== 'correct'}
+              show={model.correctness && model.correctness.correctness !== 'correct'}
               toggled={showCorrect}
               onToggle={this.toggleShowCorrect}
           />

@@ -28,7 +28,7 @@ export default class RootInlineChoice extends HTMLElement {
     this.dispatchEvent(
       new ModelSetEvent(
         this.tagName.toLowerCase(),
-        this.session && !!this.session.selectedChoice,
+        this.session && !!this.session.value,
         !!this._model
       )
     );
@@ -46,11 +46,11 @@ export default class RootInlineChoice extends HTMLElement {
   }
 
   _handleChoiceChange(selectedChoice) {
-    this.session.selectedChoice = selectedChoice;
+    this.session.value = selectedChoice;
     this.dispatchEvent(
       new SessionChangedEvent(
         this.tagName.toLowerCase(),
-        this.session && !!this.session.selectedChoice
+        this.session && !!this.session.value
       )
     );
     this._rerender();

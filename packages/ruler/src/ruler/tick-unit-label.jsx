@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const RulerUnitLabel = ({label, x, y, textAlign, fill, fontSize, stroke}) => {
   return (
@@ -8,14 +8,20 @@ const RulerUnitLabel = ({label, x, y, textAlign, fill, fontSize, stroke}) => {
 };
 
 RulerUnitLabel.propTypes = {
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  textAlign: PropTypes.string,
+  fill: PropTypes.string,
+  fontSize:  PropTypes.number,
+  stroke: PropTypes.string
 };
 
 RulerUnitLabel.defaultProps = {
-  textAlign: "middle",
-  fill: "#000000",
+  textAlign: 'middle',
+  fill: '#000000',
   fontSize: 11,
-  stroke: "none",
+  stroke: 'none',
   x: 15,
   y: 20
 };

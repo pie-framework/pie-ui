@@ -9,7 +9,7 @@ module.exports = {
       length: 1,
       height: 100,
       scale: 100,
-      ticks: 12,
+      ticks: 16,
       type: 'imperial',
       unit: 'cm'
     }

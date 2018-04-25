@@ -1,0 +1,25 @@
+import React from 'react';
+
+const RotateAnchor = (props) => {
+  return (
+    <path 
+      fill="black" 
+      fillOpacity="1" 
+      stroke="#67e767" 
+      strokeOpacity="1" 
+      strokeWidth="2" 
+      strokeDasharray="none" 
+      strokeLinejoin="miter" 
+      strokeLinecap="butt" 
+      strokeDashoffset="" 
+      fillRule="nonzero" 
+      opacity="1" 
+      markerStart="" 
+      markerMid="" 
+      markerEnd="" 
+      d="M595.7336893160524,50.61904726659017 C595.7336893160524,47.477564353968766 598.3674647159067,44.93296319474543 601.6190392836284,44.93296319474543 C604.87061385135,44.93296319474543 607.5043892512043,47.477564353968766 607.5043892512043,50.61904726659017 C607.5043892512043,53.76053017921157 604.87061385135,56.305131338434904 601.6190392836284,56.305131338434904 C598.3674647159067,56.305131338434904 595.7336893160524,53.76053017921157 595.7336893160524,50.61904726659017 z" transform="rotate(0.07305727899074554 601.6190185546812,50.61904907219691) "
+    />
+  );
+}
+
+export default RotateAnchor;

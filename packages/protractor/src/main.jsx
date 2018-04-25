@@ -1,6 +1,8 @@
 import React from 'react';
-import DragableProtractor from './draggable-protractor';
+import Dragable from 'react-draggable';
+import protractor from '../public/protractor.png';
 import GreenArrow from "./green-arrow";
+
 
 class Main extends React.Component {
 
@@ -89,10 +91,12 @@ class Main extends React.Component {
 
     render(){
         return(
-            <div ref="box">
-                <GreenArrow onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}/>
-                <DragableProtractor />
-            </div>
+            <Dragable>
+                <div ref="box">
+                    <GreenArrow onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}/>
+                    <img className="cursor" src={protractor}></img>
+                </div>
+            </Dragable>
         );
     }
 

@@ -15,7 +15,7 @@ export class Controls extends React.Component {
   render() {
     const { classes, disabled, onDeleteClick } = this.props;
 
-    return (<div>
+    return (
       <Button
         className={classes.button}
         color="primary"
@@ -24,7 +24,7 @@ export class Controls extends React.Component {
         Delete
         <Delete className={classes.rightIcon} />
       </Button>
-    </div>);
+    );
   }
 }
 

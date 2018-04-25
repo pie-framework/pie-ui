@@ -49,14 +49,9 @@ export default class Root extends React.Component {
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
     let {model} = this.props;
     
-    
-    //let ruler = rulerGenerator({label: 'cm', width: 500, tickInterval: 50, tickParts: 10, tickSize: 40, height: 50})
-    //let {imgData, width, height} = ruler;
     return (
-      <div>  
-          <div style={{transform : `rotate(${this.state.activeAngle}deg)`}}>
-            <Ruler {...model} handleRotate={() => {this.handleRotate()}} />
-          </div>
+      <div style={{transform : `rotate(${this.state.activeAngle}deg)`}}>
+        <Ruler {...model} handleRotate={() => {this.handleRotate()}} />
       </div>
     );
   }

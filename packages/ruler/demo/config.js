@@ -6,7 +6,7 @@ module.exports = {
     {
       element: 'pie-ruler',
       id: '1',
-      length: 1,
+      length: 4,
       height: 100,
       scale: 100,
       ticks: 16,

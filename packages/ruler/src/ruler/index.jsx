@@ -35,22 +35,26 @@ export default class Index extends Component {
   
   render () {
     let {length, height, ticks, scale, unit} = this.props;
-    
 		let rulerWidth = length * scale;
     let perTickSpacing = rulerWidth / (ticks * length);
 
     let rulerFractions = this.getRulerFractions(ticks);
     let totalTicks = length * ticks;
+    let viewBox = `0 0 ${rulerWidth + 10} ${height + 10}`;
 
     return (
-      <svg width={rulerWidth + 15} height={height + 15} >
+      <div style={{marginLeft: "20px"}}>
+
+      <svg width={rulerWidth} height={height} viewBox={viewBox} >
         <g>
           <RulerBg bgX1={1} bgX2={rulerWidth} bgY1={height}  />
           <TickUnitLabel label={unit} />
           <TickUnit perTickSpacing={perTickSpacing} totalTicks={totalTicks} rulerHeight={height} tickCountPerUnit={ticks} rulerFractions={rulerFractions} />
-          <RotateAnchor />
+          <RotateAnchor cx={1} cy={height} r={7} />
+          <RotateAnchor cx={rulerWidth} cy={height} r={7} />
         </g>
       </svg>
+      </div>
     );
   }
 }

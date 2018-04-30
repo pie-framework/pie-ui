@@ -6,15 +6,17 @@ module.exports = {
     {
       element: 'multiple-choice',
       id: '1',
-      mode: 'gather',
+      mode: 'evaluate',
       prompt: 'This instance is in gather mode and can be clicked',
       disabled: false,
       choiceMode: 'radio',
       keyMode: 'letters',
+      showCorrect: true,
+      correctResponse: [{ value: 'b' }],
       choices: [
-        { label: 'apple', value: 'a' },
+        { label: 'apple', value: 'a', correct: false },
         { label: 'banana', value: 'b' }
       ]
     }
   ]
-}
+};

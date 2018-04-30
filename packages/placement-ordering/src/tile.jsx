@@ -35,12 +35,17 @@ const PlaceHolder = withStyles({
     color: 'rgba(0,0,0,0.6)'
   }
 })(({ classes, isOver, type, index }) => {
-  const names = classNames(classes.placeholder, isOver && classes.over, classes[type]);
+  const names = classNames(
+    classes.placeholder,
+    isOver && classes.over,
+    classes[type]
+  );
   return (
     <div className={names}>
-      {type === 'target' && index !== undefined && <div className={classes.number}>{index}</div>}
+      {type === 'target' &&
+        index !== undefined && <div className={classes.number}>{index}</div>}
     </div>
-  )
+  );
 });
 
 const TileContent = withStyles({
@@ -59,7 +64,7 @@ const TileContent = withStyles({
     transition: 'opacity 200ms linear'
   },
   dragging: {
-    opacity: 0.5,
+    opacity: 0.5
   },
   disabled: {
     backgroundColor: '#ececec',
@@ -71,16 +76,29 @@ const TileContent = withStyles({
   correct: {
     border: 'solid 1px green'
   }
-})((props) => {
+})(props => {
   log('[TileContent] render: ', props);
-  const { type, classes, isDragging, empty, isOver, label, disabled, outcome, guideIndex } = props;
+  const {
+    type,
+    classes,
+    isDragging,
+    empty,
+    isOver,
+    label,
+    disabled,
+    outcome,
+    guideIndex
+  } = props;
 
   if (empty) {
-    return <PlaceHolder
-      type={type}
-      index={guideIndex}
-      isOver={isOver}
-      disabled={disabled} />;
+    return (
+      <PlaceHolder
+        type={type}
+        index={guideIndex}
+        isOver={isOver}
+        disabled={disabled}
+      />
+    );
   } else {
     const names = classNames(
       classes.tileContent,
@@ -89,13 +107,28 @@ const TileContent = withStyles({
       disabled && classes.disabled,
       outcome && classes[outcome]
     );
-    return <div
-      className={names}
-      dangerouslySetInnerHTML={{ __html: label }}></div>
+    return (
+      <div className={names} dangerouslySetInnerHTML={{ __html: label }} />
+    );
   }
 });
 
 export class Tile extends React.Component {
+  static propTypes = {
+    connectDragSource: PropTypes.func.isRequired,
+    connectDropTarget: PropTypes.func.isRequired,
+    isDragging: PropTypes.bool.isRequired,
+    id: PropTypes.any,
+    label: PropTypes.string,
+    isOver: PropTypes.bool,
+    classes: PropTypes.object.isRequired,
+    type: PropTypes.string,
+    empty: PropTypes.bool,
+    disabled: PropTypes.bool,
+    outcome: PropTypes.object,
+    index: PropTypes.number,
+    guideIndex: PropTypes.number.isRequired
+  };
 
   render() {
     const {
@@ -109,12 +142,10 @@ export class Tile extends React.Component {
       id,
       empty,
       disabled,
-      moveOnDrag,
       outcome,
       index,
-      guideIndex } = this.props;
-
-    const opacity = isDragging ? 0.5 : 1;
+      guideIndex
+    } = this.props;
 
     log('[render], props: ', this.props);
 
@@ -122,7 +153,7 @@ export class Tile extends React.Component {
 
     const dragSourceOpts = {
       //dropEffect: moveOnDrag ? 'move' : 'copy'
-    }
+    };
 
     return connectDragSource(
       connectDropTarget(
@@ -137,22 +168,14 @@ export class Tile extends React.Component {
             isDragging={isDragging}
             disabled={disabled}
             outcome={outcome}
-            type={type} />
-        </div>,
+            type={type}
+          />
+        </div>
       ),
       dragSourceOpts
     );
   }
 }
-
-Tile.propTypes = {
-  connectDragSource: PropTypes.func.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired,
-  id: PropTypes.any,
-  label: PropTypes.string,
-  isOver: PropTypes.bool
-};
 
 const StyledTile = withStyles({
   tile: {
@@ -164,11 +187,15 @@ const StyledTile = withStyles({
   }
 })(Tile);
 
-
 const tileTarget = {
   drop(props, monitor) {
     const draggedItem = monitor.getItem();
-    log('props.instanceId', props.instanceId, 'draggedItem.instanceId:', draggedItem.instanceId);
+    log(
+      'props.instanceId',
+      props.instanceId,
+      'draggedItem.instanceId:',
+      draggedItem.instanceId
+    );
     if (draggedItem.instanceId === props.instanceId) {
       props.onDropChoice(draggedItem, props.index);
     }
@@ -178,7 +205,7 @@ const tileTarget = {
     const canDrop = draggedItem.instanceId === props.instanceId;
     return canDrop;
   }
-}
+};
 
 const DropTile = DropTarget('Tile', tileTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
@@ -189,18 +216,17 @@ const tileSource = {
   canDrag(props) {
     return props.draggable && !props.disabled;
   },
-  beginDrag(props, monitor, component) {
+  beginDrag(props) {
     return {
       id: props.id,
       type: props.type,
       instanceId: props.instanceId
     };
   },
-  endDrag(props, monitor, container) {
+  endDrag(props, monitor) {
     if (!monitor.didDrop()) {
-      console.log('dont drop!!!');
       if (props.type === 'target') {
-        props.onRemoveChoice(monitor.getItem())
+        props.onRemoveChoice(monitor.getItem());
       }
     }
   }
@@ -208,8 +234,7 @@ const tileSource = {
 
 const DragDropTile = DragSource('Tile', tileSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
-  isDragging: monitor.isDragging(),
+  isDragging: monitor.isDragging()
 }))(DropTile);
-
 
 export default DragDropTile;

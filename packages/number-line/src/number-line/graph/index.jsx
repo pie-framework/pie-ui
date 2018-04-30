@@ -1,5 +1,4 @@
-import React, { PropTypes as PT } from 'react';
-import Draggable from '../../draggable';
+import React from 'react';
 import { scaleLinear } from 'd3-scale';
 import { select, mouse } from 'd3-selection';
 import Point from './elements/point';
@@ -8,9 +7,11 @@ import Ray from './elements/ray';
 import BaseLine from './line';
 import Arrow from './arrow';
 import Ticks, { TickValidator } from './ticks';
-import { getInterval, snapTo } from './tick-utils';
+import { snapTo } from './tick-utils';
 import Stacks from './stacks';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { TransitionGroup } from 'react-transition-group';
+import PropTypes from 'prop-types';
+import { Fade } from '../transitions';
 
 const getXScale = (min, max, width, padding) => {
   if (min === undefined || max === undefined || width === undefined) {
@@ -22,20 +23,46 @@ const getXScale = (min, max, width, padding) => {
     .range([padding, width - padding]);
 };
 
-export default class NumberLineGraph extends React.Component {
+export class NumberLineGraph extends React.Component {
+  static childContextTypes = {
+    xScale: PropTypes.func.isRequired,
+    snapValue: PropTypes.func.isRequired
+  };
+
+  static propTypes = {
+    domain: PropTypes.shape({
+      min: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired
+    }).isRequired,
+    ticks: TickValidator,
+    interval: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    onToggleElement: PropTypes.func.isRequired,
+    onMoveElement: PropTypes.func.isRequired,
+    onAddElement: PropTypes.func.isRequired,
+    debug: PropTypes.bool,
+    elements: PropTypes.array,
+    disabled: PropTypes.bool,
+    onDeselectElements: PropTypes.func
+  };
+
+  static defaultProps = {
+    debug: false
+  };
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
   xScaleFn() {
-    let { domain, width } = this.props;
+    const { domain, width } = this.props;
     return getXScale(domain.min, domain.max, width, 20);
   }
 
   snapValueFn() {
-    let { domain, interval } = this.props;
+    const { domain, interval } = this.props;
     return snapTo.bind(null, domain.min, domain.max, interval);
   }
 
@@ -46,42 +73,41 @@ export default class NumberLineGraph extends React.Component {
     };
   }
 
-  /** 
+  /**
    * Note: we use d3 click + mouse to give us domain values directly.
    * Saves us having to calculate them ourselves from a MouseEvent.
    */
   onRectClick(rect) {
-    let { elements, disabled } = this.props;
+    const { elements, disabled } = this.props;
 
     if (disabled) {
       return;
     }
 
-    let anyElementSelected = elements.some(e => e.selected);
+    const anyElementSelected = elements.some(e => e.selected);
 
     if (anyElementSelected) {
       this.props.onDeselectElements();
     } else {
       var coords = mouse(rect._groups[0][0]);
-      let x = this.xScaleFn().invert(coords[0]);
+      const x = this.xScaleFn().invert(coords[0]);
       this.addElement(x);
     }
   }
 
   componentDidMount() {
-    let rect = select(this.rect);
+    const rect = select(this.rect);
     rect.on('click', this.onRectClick.bind(this, rect));
   }
 
   addElement(x) {
-    let snapFn = this.snapValueFn();
-    let v = snapFn(x);
+    const snapFn = this.snapValueFn();
+    const v = snapFn(x);
     this.props.onAddElement(v);
   }
 
   render() {
-
-    let {
+    const {
       domain,
       width,
       ticks,
@@ -89,137 +115,119 @@ export default class NumberLineGraph extends React.Component {
       interval,
       onToggleElement,
       onMoveElement,
-      disabled } = this.props;
+      disabled
+    } = this.props;
 
-    let { min, max } = domain;
-
-    const xScale = this.xScaleFn();
+    const { min, max } = domain;
 
     if (domain.max <= domain.min) {
-      return <div>{domain.max} is less than or equal to {domain.min}</div>
+      return (
+        <div>
+          {domain.max} is less than or equal to {domain.min}
+        </div>
+      );
     } else {
-      const distance = domain.max - domain.min;
       const lineY = height - 30;
 
       const stacks = new Stacks(domain);
 
-      let elements = this.props.elements.map((el, index) => {
-
-        let stackIndex = stacks.add(el);
+      const elements = this.props.elements.map((el, index) => {
+        const stackIndex = stacks.add(el);
 
         if (stackIndex === -1) {
           throw new Error('stack index is -1, cant add element');
         }
 
-        let y = lineY - ((stackIndex) * 25);
+        const y = lineY - stackIndex * 25;
 
-        let commonProps = {
+        const commonProps = {
           key: index,
           y,
           selected: el.selected && !disabled,
           interval,
           disabled,
           correct: el.correct
-        }
+        };
 
-        let toggleElement = onToggleElement.bind(null, index, el)
-        let moveElement = onMoveElement.bind(null, index, el);
+        const toggleElement = onToggleElement.bind(null, index, el);
+        const moveElement = onMoveElement.bind(null, index, el);
 
         if (el.type === 'line') {
-          let empty = { left: el.leftPoint === 'empty', right: el.rightPoint === 'empty' };
+          const empty = {
+            left: el.leftPoint === 'empty',
+            right: el.rightPoint === 'empty'
+          };
 
-          return <Line
-            {...commonProps}
-            domain={{ min: min, max: max }}
-            onMoveLine={moveElement}
-            onToggleSelect={toggleElement}
-            position={el.position}
-            empty={empty} />
+          return (
+            <Line
+              {...commonProps}
+              domain={{ min: min, max: max }}
+              onMoveLine={moveElement}
+              onToggleSelect={toggleElement}
+              position={el.position}
+              empty={empty}
+            />
+          );
         } else if (el.type === 'point') {
-
-          let bounds = {
+          const bounds = {
             left: min - el.position,
             right: max - el.position
           };
 
-          return <Point
-            {...commonProps}
-            empty={el.pointType === 'empty'}
-            position={el.position}
-            bounds={bounds}
-            onClick={toggleElement}
-            onMove={moveElement} />
+          return (
+            <Point
+              {...commonProps}
+              empty={el.pointType === 'empty'}
+              position={el.position}
+              bounds={bounds}
+              onClick={toggleElement}
+              onMove={moveElement}
+            />
+          );
         } else if (el.type === 'ray') {
-          return <Ray
-            {...commonProps}
-            domain={{ min: min, max: max }}
-            direction={el.direction}
-            position={el.position}
-            onMove={moveElement}
-            onToggleSelect={toggleElement}
-            width={width}
-            empty={el.pointType === 'empty'} />
+          return (
+            <Ray
+              {...commonProps}
+              domain={{ min: min, max: max }}
+              direction={el.direction}
+              position={el.position}
+              onMove={moveElement}
+              onToggleSelect={toggleElement}
+              width={width}
+              empty={el.pointType === 'empty'}
+            />
+          );
         }
       });
 
-      return <div>
-        <svg
-          width={width}
-          height={height}>
-          <BaseLine y={lineY} width={width} />
-          <Arrow
-            y={lineY} />
-          <Arrow
-            x={width}
-            y={lineY}
-            direction="right" />
-          <Ticks
-            y={lineY}
-            domain={domain}
-            ticks={ticks}
-            interval={interval} />
-          <rect
-            ref={rect => this.rect = rect}
-            //need to have a fill for it to be clickable
-            fill="red"
-            fillOpacity="0.0"
-            width={width}
-            height={height}></rect>
-          <ReactCSSTransitionGroup
-            transitionName="el"
-            component="g"
-            transitionAppear={true}
-            transitionAppearTimeout={200}
-            transitionEnterTimeout={200}
-            transitionLeaveTimeout={200}>
-            {elements}
-          </ReactCSSTransitionGroup>
-        </svg>
-      </div>;
+      return (
+        <div>
+          <svg width={width} height={height}>
+            <BaseLine y={lineY} width={width} />
+            <Arrow y={lineY} />
+            <Arrow x={width} y={lineY} direction="right" />
+            <Ticks
+              y={lineY}
+              domain={domain}
+              ticks={ticks}
+              interval={interval}
+            />
+            <rect
+              ref={rect => (this.rect = rect)}
+              //need to have a fill for it to be clickable
+              fill="red"
+              fillOpacity="0.0"
+              width={width}
+              height={height}
+            />
+            <TransitionGroup component="g">
+              {elements.map((c, index) => <Fade key={index}>{c}</Fade>)}
+            </TransitionGroup>
+          </svg>
+        </div>
+      );
     }
   }
 }
 
-NumberLineGraph.childContextTypes = {
-  xScale: PT.func.isRequired,
-  snapValue: PT.func.isRequired
-};
-
-NumberLineGraph.propTypes = {
-  domain: PT.shape({
-    min: PT.number.isRequired,
-    max: PT.number.isRequired
-  }).isRequired,
-  ticks: TickValidator,
-  interval: PT.number.isRequired,
-  width: PT.number.isRequired,
-  height: PT.number.isRequired,
-  onToggleElement: PT.func.isRequired,
-  onMoveElement: PT.func.isRequired,
-  onAddElement: PT.func.isRequired,
-  debug: PT.bool
-}
-
-NumberLineGraph.defaultProps = {
-  debug: false
-}
+export default NumberLineGraph;

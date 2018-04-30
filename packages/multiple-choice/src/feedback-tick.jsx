@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import classNames from 'classnames';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withStyles } from 'material-ui/styles';
+import PropTypes from 'prop-types';
 
 const stylesheet = {
   incorrect: {
@@ -45,42 +45,58 @@ const stylesheet = {
 };
 
 class FeedbackTick extends React.Component {
-
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    correctness: PropTypes.string
+  };
   constructor(props) {
     super(props);
-    this.incorrectIcon = <svg key="1"
-      preserveAspectRatio="xMinYMin meet"
-      x="0px"
-      y="0px"
-      viewBox="0 0 44 40"
-      style={{ "enableBackground": "new 0 0 44 40" }}>
-      <g>
-        <rect x="11"
-          y="17.3"
-          transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.852 19.2507)"
-          className={this.props.classes.incorrect}
-          width="16.6"
-          height="3.7"></rect>
-        <rect x="17.4"
-          y="10.7"
-          transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.8175 19.209)"
-          className={this.props.classes.incorrect}
-          width="3.7"
-          height="16.6"></rect>
-      </g>
-    </svg>;
+    this.incorrectIcon = (
+      <svg
+        key="1"
+        preserveAspectRatio="xMinYMin meet"
+        x="0px"
+        y="0px"
+        viewBox="0 0 44 40"
+        style={{ enableBackground: 'new 0 0 44 40' }}
+      >
+        <g>
+          <rect
+            x="11"
+            y="17.3"
+            transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.852 19.2507)"
+            className={this.props.classes.incorrect}
+            width="16.6"
+            height="3.7"
+          />
+          <rect
+            x="17.4"
+            y="10.7"
+            transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.8175 19.209)"
+            className={this.props.classes.incorrect}
+            width="3.7"
+            height="16.6"
+          />
+        </g>
+      </svg>
+    );
 
-    this.correctIcon = <svg key="2"
-      preserveAspectRatio="xMinYMin meet"
-      version="1.1"
-      x="0px"
-      y="0px"
-      viewBox="0 0 44 40"
-      style={{ "enableBackground": "new 0 0 44 40" }}>
-      <polygon className={this.props.classes.correct}
-        points="19.1,28.6 11.8,22.3 14.4,19.2 17.9,22.1 23.9,11.4 27.5,13.4"></polygon>
-    </svg>;
-
+    this.correctIcon = (
+      <svg
+        key="2"
+        preserveAspectRatio="xMinYMin meet"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 44 40"
+        style={{ enableBackground: 'new 0 0 44 40' }}
+      >
+        <polygon
+          className={this.props.classes.correct}
+          points="19.1,28.6 11.8,22.3 14.4,19.2 17.9,22.1 23.9,11.4 27.5,13.4"
+        />
+      </svg>
+    );
   }
 
   render() {
@@ -96,24 +112,24 @@ class FeedbackTick extends React.Component {
 
     return (
       <div className={classes.feedbackTick}>
-        <ReactCSSTransitionGroup
-          transitionName={{
-            enter: classes.feedbackTickEnter,
-            enterActive: classes.feedbackTickEnterActive,
-            leave: classes.feedbackTickLeave,
-            leaveActive: classes.feedbackTickLeaveActive
-          }}
-          transitionEnterTimeout={700}
-          transitionLeaveTimeout={300}>
-          {icon}
-        </ReactCSSTransitionGroup>
+        <TransitionGroup>
+          {correctness && (
+            <CSSTransition
+              classNames={{
+                enter: classes.feedbackTickEnter,
+                enterActive: classes.feedbackTickEnterActive,
+                exit: classes.feedbackTickLeave,
+                exitActive: classes.feedbackTickLeaveActive
+              }}
+              timeout={{ enter: 700, exit: 300 }}
+            >
+              {icon}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
       </div>
     );
   }
-}
-
-FeedbackTick.propTypes = {
-  correctness: React.PropTypes.string
 }
 
 export default withStyles(stylesheet, { name: 'FeedbackTick' })(FeedbackTick);

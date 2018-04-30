@@ -1,17 +1,19 @@
-import Main from "./main.jsx";
-import React from "react";
-import ReactDOM from "react-dom";
-import { ModelSetEvent, SessionChangedEvent } from "@pie-framework/pie-player-events";
+import InlineChoice from './inline-choice';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  ModelSetEvent,
+  SessionChangedEvent
+} from '@pie-framework/pie-player-events';
 
 export default class RootInlineChoice extends HTMLElement {
-
   constructor() {
     super();
     this._model = null;
     this._session = null;
     this._rerender = () => {
       if (this._model && this._session) {
-        let elem = React.createElement(Main, {
+        let elem = React.createElement(InlineChoice, {
           model: this._model,
           session: this._session,
           onChoiceChanged: this._handleChoiceChange.bind(this)
@@ -24,7 +26,11 @@ export default class RootInlineChoice extends HTMLElement {
   set model(m) {
     this._model = m;
     this.dispatchEvent(
-      new ModelSetEvent(this.tagName.toLowerCase(), this.session && !!this.session.selectedChoice, !!this._model)
+      new ModelSetEvent(
+        this.tagName.toLowerCase(),
+        this.session && !!this.session.value,
+        !!this._model
+      )
     );
 
     this._rerender();
@@ -32,9 +38,6 @@ export default class RootInlineChoice extends HTMLElement {
 
   set session(s) {
     this._session = s;
-    this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this.session && !!this.session.selectedChoice)
-    );
     this._rerender();
   }
 
@@ -43,9 +46,12 @@ export default class RootInlineChoice extends HTMLElement {
   }
 
   _handleChoiceChange(selectedChoice) {
-    this.session.selectedChoice = selectedChoice;
+    this.session.value = selectedChoice;
     this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this.session && !!this.session.selectedChoice)
+      new SessionChangedEvent(
+        this.tagName.toLowerCase(),
+        this.session && !!this.session.value
+      )
     );
     this._rerender();
   }
@@ -53,5 +59,4 @@ export default class RootInlineChoice extends HTMLElement {
   connectedCallback() {
     this._rerender();
   }
-
 }

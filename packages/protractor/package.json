@@ -1,8 +1,11 @@
 {
   "name": "@pie-ui/protractor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A protractor custom element",
-  "keywords": ["pie", "protractor"],
+  "keywords": [
+    "pie",
+    "protractor"
+  ],
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"

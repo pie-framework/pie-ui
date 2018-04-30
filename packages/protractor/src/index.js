@@ -3,28 +3,21 @@ import ReactDOM from 'react-dom';
 import Main from './main';
 
 export default class Protractor extends HTMLElement {
-
   constructor() {
     super();
-    this._model = null;
-    this._session = null;
-    this._rerender = () => {
-      if (this._model) {
-        let elem = React.createElement(Main, {
-          model: this._model
-        });
-        ReactDOM.render(elem, this);
-      }
-    };
+  }
+
+  connectedCallback() {
+    this.render();
   }
 
   set model(m) {
     this._model = m;
-    this._rerender();
+    this.render();
   }
 
-  connectedCallback() {
-    this._rerender();
+  render() {
+    const el = React.createElement(Main, {});
+    ReactDOM.render(el, this);
   }
-
 }

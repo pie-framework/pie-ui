@@ -1,106 +1,37 @@
 import React from 'react';
-import Dragable from 'react-draggable';
-import protractor from '../public/protractor.png';
-import GreenArrow from "./green-arrow";
+import { Protractor } from '@pie-lib/tools';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Toggle from './toggle';
 
+const styles = {
+  protractor: {
+    position: 'absolute',
+    left: '200px'
+  }
+};
 
 class Main extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
 
-    constructor(){
-        super();
-        this.state = {
-            isActive: false,
-            angle: 0,
-            startAngle: 0,
-            currentAngle: 0,
-            boxCenterPoint: {},
-        };
-        this.getPositionFromCenter = this.getPositionFromCenter.bind(this);
-        this.mouseDownHandler = this.mouseDownHandler.bind(this);
-        this.mouseUpHandler = this.mouseUpHandler.bind(this);
-        this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
-        this.deslectAll = this.deslectAll.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = { show: false };
+  }
 
-    // to avoid unwanted behaviour, deselect all text
-    deslectAll(){
-        if ( document.selection ) {
-            document.selection.empty();
-        } else if ( window.getSelection ) {
-            window.getSelection().removeAllRanges();
-        }
-    }
+  onToggle = () => this.setState({ show: !this.state.show });
 
-    // method to get the positionof the pointer event relative to the center of the box
-    getPositionFromCenter(e){
-        const {boxCenterPoint} = this.state;
-        const fromBoxCenter = {x: e.clientX - boxCenterPoint.x, y: - (e.clientY - boxCenterPoint.y)};
-        return fromBoxCenter;
-    };
-
-
-    mouseDownHandler(e){
-        e.stopPropagation();
-        const fromBoxCenter = this.getPositionFromCenter(e);
-        const newStartAngle = 90 - Math.atan2(fromBoxCenter.y, fromBoxCenter.x) * (180 / Math.PI);
-        this.setState({
-            startAngle: newStartAngle,
-            isActive: true
-        });
-    }
-
-    mouseUpHandler(e){
-        this.deslectAll();
-        e.stopPropagation();
-        const {isActive, angle, startAngle, currentAngle} = this.state;
-        if(isActive){
-            const newCurrentAngle = currentAngle + (angle - startAngle);
-            this.setState({
-                isActive: false,
-                currentAngle: newCurrentAngle
-            });
-        }
-    }
-
-    mouseMoveHandler(e){
-        const {isActive, currentAngle, startAngle} = this.state;
-        if(isActive) {
-            const fromBoxCenter = this.getPositionFromCenter(e);
-            const newAngle = 90 - Math.atan2(fromBoxCenter.y, fromBoxCenter.x) * (180 / Math.PI);
-            console.log(fromBoxCenter);
-            this.refs.box.style.transform = "rotate(" + ( currentAngle + (newAngle - (startAngle ? startAngle : 0)) ) + "deg)";
-            this.setState({angle: newAngle});
-        } // active conditional
-    }
-
-
-    componentDidMount(){
-        const boxPosition = this.refs.box.getBoundingClientRect();
-        // get the current center point
-        const boxCenterX = boxPosition.left + (boxPosition.width / 2);
-        const boxCenterY = boxPosition.top + (boxPosition.height / 2);
-        // update the state
-        this.setState({
-            boxCenterPoint: { x: boxCenterX, y: boxCenterY }
-        });
-        console.log(this.state);
-        // in case the event ends outside the box
-        window.onmouseup = this.mouseUpHandler;
-        window.onmousemove = this.mouseMoveHandler;
-    }
-
-    render(){
-        return(
-            <Dragable>
-                <div ref="box">
-                    <GreenArrow onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}/>
-                    <img className="cursor" src={protractor}></img>
-                </div>
-            </Dragable>
-        );
-    }
-
-
+  render() {
+    const { show } = this.state;
+    const { classes } = this.props;
+    return (
+      <div>
+        <Toggle active={show} onToggle={this.onToggle} />
+        {show && <Protractor className={classes.protractor} />}
+      </div>
+    );
+  }
 }
-
-export default Main;
+export default withStyles(styles)(Main);

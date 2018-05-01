@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@1.1.1...@pie-ui/ruler@1.2.0) (2018-05-01)
+
+
+### Features
+
+* **Ruler:** export RulerComponent ([c99e743](https://github.com/pie-framework/pie-ui/commit/c99e743))
+
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@1.1.0...@pie-ui/ruler@1.1.1) (2018-05-01)
 

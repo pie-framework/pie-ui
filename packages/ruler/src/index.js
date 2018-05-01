@@ -2,8 +2,9 @@ import { ModelSetEvent } from '@pie-framework/pie-player-events';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
+export { Root as RulerComponent };
 
-export default class RootRuler extends HTMLElement {
+export default class Ruler extends HTMLElement {
   constructor() {
     super();
     this._model = null;

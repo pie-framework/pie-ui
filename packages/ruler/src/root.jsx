@@ -13,7 +13,8 @@ const styles = {
 
 export class Root extends React.Component {
   static propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    model: PropTypes.object.isRequired
   };
 
   constructor(props) {
@@ -25,14 +26,19 @@ export class Root extends React.Component {
 
   render() {
     const { show } = this.state;
-    const { classes } = this.props;
+    const { classes, model } = this.props;
     return (
       <div>
         <Toggle active={show} onToggle={this.onToggle} />
         {show && (
           <Ruler
             className={classes.ruler}
+            measure={model.measure}
+            units={model.units}
+            width={model.width}
+            label={model.label}
             startPosition={{ left: 100, top: 100 }}
+            tickCount={model.imperialTicks}
           />
         )}
       </div>

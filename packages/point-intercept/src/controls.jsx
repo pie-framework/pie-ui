@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
-import Delete from 'material-ui-icons/Delete';
+import Delete from '@material-ui/icons/Delete';
 
 export class Controls extends React.Component {
-
   static propTypes = {
     classes: PropTypes.object.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool.isRequired
-  }
+  };
 
   render() {
     const { classes, disabled, onDeleteClick } = this.props;
@@ -20,7 +19,8 @@ export class Controls extends React.Component {
         className={classes.button}
         color="primary"
         disabled={disabled}
-        onClick={onDeleteClick} >
+        onClick={onDeleteClick}
+      >
         Delete
         <Delete className={classes.rightIcon} />
       </Button>
@@ -30,11 +30,11 @@ export class Controls extends React.Component {
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing.unit
   }
-})
+});
 
 export default withStyles(styles)(Controls);

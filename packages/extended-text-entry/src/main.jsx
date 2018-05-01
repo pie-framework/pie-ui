@@ -32,8 +32,8 @@ class Main extends React.Component {
         <EditableHTML
           onChange={onChange}
           markup={value || ''}
-          width={width.toString()}
-          height={height.toString()}
+          width={width && width.toString()}
+          height={height && height.toString()}
           disabled={disabled}
           highlightShape={true}
         />

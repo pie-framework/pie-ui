@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@1.1.0...@pie-ui/ruler@1.1.1) (2018-05-01)
+
+
+### Bug Fixes
+
+* **tools:** use 0.4.0 of [@pie-lib](https://github.com/pie-lib)/tools ([351228a](https://github.com/pie-framework/pie-ui/commit/351228a))
+
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2018-05-01)
 

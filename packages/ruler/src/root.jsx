@@ -1,58 +1,42 @@
 import React from 'react';
-import Draggable from 'react-draggable';
-import Ruler from './ruler';
+import { Ruler } from '@pie-lib/tools';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Toggle from './toggle';
 
-export default class Root extends React.Component {
+const styles = {
+  ruler: {
+    position: 'absolute',
+    left: '200px'
+  }
+};
+
+export class Root extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+
   constructor(props) {
     super(props);
-    this.state = {
-      activeDrags: 0,
-      deltaPosition: {
-        x: 0, y: 0
-      },
-      activeAngle: 0
-    }
-
-    this.onStart = this.onStart.bind(this);
-    this.onStop = this.onStop.bind(this);
-    //this.handleRotate = this.handleRotate.bind(this);
+    this.state = { show: false };
   }
 
-  handleDrag(e, ui) {
-    const {x, y} = this.state.deltaPosition;
-    this.setState({
-      deltaPosition: {
-        x: x + ui.deltaX,
-        y: y + ui.deltaY,
-      }
-    });
-  }
-
-  onStart() {
-    let activeDrag = this.state.activeDrags;
-    this.setState({activeDrags: ++activeDrag});
-  }
-
-  onStop() {
-    let activeDrag = this.state.activeDrags;
-    this.setState({activeDrags: --activeDrag});
-  }
-
-  handleRotate() {
-    console.log("rotate");
-    let currAngle = this.state.activeAngle;
-    this.setState({activeAngle : currAngle+10});
-  }
-
+  onToggle = () => this.setState({ show: !this.state.show });
 
   render() {
-    const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
-    let {model} = this.props;
-    
+    const { show } = this.state;
+    const { classes } = this.props;
     return (
-      <div style={{transform : `rotate(${this.state.activeAngle}deg)`}}>
-        <Ruler {...model} handleRotate={() => {this.handleRotate()}} />
+      <div>
+        <Toggle active={show} onToggle={this.onToggle} />
+        {show && (
+          <Ruler
+            className={classes.ruler}
+            startPosition={{ left: 100, top: 100 }}
+          />
+        )}
       </div>
     );
   }
 }
+export default withStyles(styles)(Root);

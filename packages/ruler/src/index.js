@@ -1,48 +1,39 @@
-import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events';
+import { ModelSetEvent } from '@pie-framework/pie-player-events';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
 
 export default class RootRuler extends HTMLElement {
-
   constructor() {
     super();
     this._model = null;
     this._session = null;
-    this._rerender = () => {
-      if (this._model && this._session) {
-        let elem = React.createElement(Root, {
-          model: this._model,
-          session: this._session
-        });
-        ReactDOM.render(elem, this);
-      }
-    };
+  }
+
+  connectedCallback() {
+    this.render();
   }
 
   set model(m) {
     this._model = m;
     this.dispatchEvent(
-      new ModelSetEvent(this.tagName.toLowerCase(), this._session, !!this._model)
+      new ModelSetEvent(
+        this.tagName.toLowerCase(),
+        this._session,
+        !!this._model
+      )
     );
 
-    this._rerender();
+    this.render();
   }
 
-  get session() {
-    return this._session;
-  }
+  render() {
+    if (this._model) {
+      let elem = React.createElement(Root, {
+        model: this._model
+      });
 
-  set session(s) {
-    this._session = s;
-    this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this._session)
-    );
-    this._rerender();
+      ReactDOM.render(elem, this);
+    }
   }
-
-  connectedCallback() {
-    this._rerender();
-  }
-
 }

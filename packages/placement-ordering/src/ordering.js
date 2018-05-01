@@ -8,15 +8,22 @@ const log = debug('pie-elements:placement-ordering:ordering');
 
 export const swap = (arr, fromIndex, toIndex) => {
   log('[swap]', arr, fromIndex, toIndex);
-  if (!arr || arr.length <= 1 || fromIndex === undefined || toIndex === undefined) {
-    throw new Error(`swap requires a non-empty array, fromIndex, toIndex: ${arr}, ${fromIndex} ${toIndex}`);
+  if (
+    !arr ||
+    arr.length <= 1 ||
+    fromIndex === undefined ||
+    toIndex === undefined
+  ) {
+    throw new Error(
+      `swap requires a non-empty array, fromIndex, toIndex: ${arr}, ${fromIndex} ${toIndex}`
+    );
   }
   const update = cloneDeep(arr);
   const tmp = arr[toIndex];
   update[toIndex] = update[fromIndex];
   update[fromIndex] = tmp;
   return update;
-}
+};
 
 function removeResponse(state, targetTile) {
   const update = cloneDeep(state.response);
@@ -24,7 +31,11 @@ function removeResponse(state, targetTile) {
   if (update[targetTile.index] === targetTile.id) {
     update[targetTile.index] = undefined;
   } else {
-    throw new Error(`Tried to remove from index: ${targetTile.index}, but the id doesn't match: array: ${update}, target: ${targetTile.id}`);
+    throw new Error(
+      `Tried to remove from index: ${
+        targetTile.index
+      }, but the id doesn't match: array: ${update}, target: ${targetTile.id}`
+    );
   }
   return update;
 }
@@ -46,22 +57,26 @@ function updateResponse(state, from, to) {
       return response;
     }
   } else {
-    const fromIndex = state.response.findIndex(r => r !== undefined && r === from.id);
-    const toIndex = state.response.findIndex(r => r !== undefined && r === to.id);
+    const fromIndex = state.response.findIndex(
+      r => r !== undefined && r === from.id
+    );
+    const toIndex = state.response.findIndex(
+      r => r !== undefined && r === to.id
+    );
     log('fromIndex: ', fromIndex, 'toIndex:', toIndex);
     return swap(state.response, fromIndex, toIndex);
   }
 }
 
-
 function buildTiles(choices, response, outcomes, opts) {
   if (opts.includeTargets) {
-
     const targets = [];
     for (var i = 0; i < response.length; i++) {
       const r = response[i];
 
-      const choice = choices.find(c => r !== undefined && r !== null && c.id === r);
+      const choice = choices.find(
+        c => r !== undefined && r !== null && c.id === r
+      );
       //TODO: index needs to match too!!
       const outcome = outcomes[i];
 
@@ -93,46 +108,58 @@ function buildTiles(choices, response, outcomes, opts) {
     });
 
     return processedChoices.concat(targets);
-
   } else {
     return response.map((id, index) => {
       return Object.assign(
         { type: 'choice', draggable: true, droppable: true },
         choices.find(m => m.id === id),
         outcomes[index]
-      )
+      );
     });
   }
 }
 
 export function buildState(choices, response, outcomes, opts) {
-
   opts = assign({ includeTargets: true }, opts);
 
   outcomes = outcomes || [];
-  response = (!response || isEmpty(response)) ? (opts.includeTargets ? new Array(choices.length) : map(choices, c => c.id)) : response;
+  response =
+    !response || isEmpty(response)
+      ? opts.includeTargets
+        ? new Array(choices.length)
+        : map(choices, c => c.id)
+      : response;
   return {
     choices,
     response,
     opts,
     outcomes,
     tiles: buildTiles(choices, response, outcomes, opts)
-  }
+  };
 }
 
 export function reducer(action, state) {
-
   switch (action.type) {
-    case 'move':
+    case 'move': {
       const { from, to } = action;
       const response = updateResponse(state, from, to);
-      const tiles = buildTiles(state.choices, response, state.outcomes, state.opts);
+      const tiles = buildTiles(
+        state.choices,
+        response,
+        state.outcomes,
+        state.opts
+      );
       return Object.assign({}, state, { response, tiles });
-      break;
+    }
     case 'remove': {
       const { target } = action;
       const response = removeResponse(state, target);
-      const tiles = buildTiles(state.choices, response, state.outcomes, state.opts);
+      const tiles = buildTiles(
+        state.choices,
+        response,
+        state.outcomes,
+        state.opts
+      );
       return Object.assign({}, state, { response, tiles });
     }
   }

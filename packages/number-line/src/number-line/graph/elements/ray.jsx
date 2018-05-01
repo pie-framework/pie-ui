@@ -1,18 +1,16 @@
 import * as colors from '../../colors';
 
-import React, { PropTypes as PT } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import Arrow from '../arrow';
-import Draggable from '../../../draggable';
 import Point from './point';
 import { basePropTypes } from './base';
 import classNames from 'classnames';
 import extend from 'lodash/extend';
 import injectSheet from 'react-jss';
-import isEqual from 'lodash/isEqual';
 import isNumber from 'lodash/isNumber';
 
-const rayColor = (color) => ({
+const rayColor = color => ({
   '& line': {
     stroke: color
   },
@@ -46,19 +44,43 @@ const style = {
   arrowSelected: {
     '--arrow-color': colors.selected
   }
-}
+};
 
 export class Ray extends React.Component {
+  static propTypes = {
+    ...basePropTypes(),
+    width: PropTypes.number.isRequired,
+    selected: PropTypes.bool,
+    disabled: PropTypes.bool,
+    empty: PropTypes.bool,
+    direction: PropTypes.oneOf(['positive', 'negative']),
+    y: PropTypes.number,
+    position: PropTypes.number.isRequired,
+    onMove: PropTypes.func.isRequired,
+    onToggleSelect: PropTypes.func.isRequired
+  };
+
+  static defaultProps = {
+    selected: false,
+    direction: 'positive',
+    y: 0,
+    disabled: false
+  };
+
+  static contextTypes = {
+    xScale: PropTypes.func.isRequired,
+    snapValue: PropTypes.func.isRequired
+  };
 
   constructor(props) {
     super(props);
     this.state = {
       dragPosition: null
-    }
+    };
   }
 
   drag(p) {
-    let { domain } = this.props;
+    const { domain } = this.props;
     if (p >= domain.min && p <= domain.max) {
       this.setState({ dragPosition: p });
     }
@@ -69,7 +91,8 @@ export class Ray extends React.Component {
   }
 
   render() {
-    let {
+    /* eslint-disable */
+    const {
       interval,
       empty,
       position,
@@ -82,35 +105,34 @@ export class Ray extends React.Component {
       correct,
       classes
     } = this.props;
+    /* eslint-enable */
+    const { xScale } = this.context;
 
-    let { xScale } = this.context;
+    const drag = this.drag.bind(this);
+    const stopDrag = this.stopDrag.bind(this);
 
-    let drag = this.drag.bind(this);
-    let stopDrag = this.stopDrag.bind(this);
+    const finalPosition = isNumber(this.state.dragPosition)
+      ? this.state.dragPosition
+      : position;
 
-    let is = xScale(interval) - xScale(0);
-    let finalPosition = isNumber(this.state.dragPosition) ? this.state.dragPosition : position;
-
-    let className = classNames(classes.ray, {
+    const className = classNames(classes.ray, {
       [classes.selected]: selected,
       [classes.correct]: correct === true,
       [classes.incorrect]: correct === false
     });
 
+    const positive = direction === 'positive';
+    const left = positive ? finalPosition : domain.min;
+    const right = positive ? domain.max : finalPosition;
+    // const triangleX = positive ? xScale(right) : xScale(left);
 
-    let positive = direction === 'positive';
-    let left = positive ? finalPosition : domain.min;
-    let right = positive ? domain.max : finalPosition;
-    let triangleX = positive ? xScale(right) : xScale(left);
+    //const et the line run all the way to 0 or width.
+    const x1 = positive ? xScale(left) : 8;
+    const x2 = positive ? width - 8 : xScale(right);
+    const arrowX = positive ? width : 0;
+    const arrowDirection = positive ? 'right' : 'left';
 
-
-    //let the line run all the way to 0 or width.
-    let x1 = positive ? xScale(left) : 8;
-    let x2 = positive ? (width - 8) : xScale(right);
-    let arrowX = positive ? width : 0;
-    let arrowDirection = positive ? 'right' : 'left';
-
-    let noop = () => { }
+    const noop = () => {};
 
     const arrowClassNames = classNames({
       [classes.arrowCorrect]: correct === true,
@@ -118,54 +140,34 @@ export class Ray extends React.Component {
       [classes.arrowSelected]: selected
     });
 
-    return <g className={className} transform={`translate(0, ${y})`}>
-      <line
-        onClick={disabled ? noop : this.props.onToggleSelect}
-        className="line-handle"
-        x1={x1} x2={x2}
-      ></line>
-      <Point
-        disabled={disabled}
-        correct={correct}
-        selected={selected}
-        empty={empty}
-        interval={interval}
-        bounds={{ left: domain.min - position, right: domain.max - position }}
-        position={position}
-        onDrag={drag}
-        onDragStop={stopDrag}
-        onMove={this.props.onMove}
-      />
-      <Arrow
-        x={arrowX}
-        className={arrowClassNames}
-        direction={arrowDirection} />
-    </g>;
+    return (
+      <g className={className} transform={`translate(0, ${y})`}>
+        <line
+          onClick={disabled ? noop : this.props.onToggleSelect}
+          className="line-handle"
+          x1={x1}
+          x2={x2}
+        />
+        <Point
+          disabled={disabled}
+          correct={correct}
+          selected={selected}
+          empty={empty}
+          interval={interval}
+          bounds={{ left: domain.min - position, right: domain.max - position }}
+          position={position}
+          onDrag={drag}
+          onDragStop={stopDrag}
+          onMove={this.props.onMove}
+        />
+        <Arrow
+          x={arrowX}
+          className={arrowClassNames}
+          direction={arrowDirection}
+        />
+      </g>
+    );
   }
-}
-
-Ray.propTypes = extend(basePropTypes(), {
-  width: PT.number.isRequired,
-  selected: PT.bool,
-  disabled: PT.bool,
-  empty: PT.bool,
-  direction: PT.oneOf(['positive', 'negative']),
-  y: PT.number,
-  position: PT.number.isRequired,
-  onMove: PT.func.isRequired,
-  onToggleSelect: PT.func.isRequired
-});
-
-Ray.defaultProps = {
-  selected: false,
-  direction: 'positive',
-  y: 0,
-  disabled: false
-}
-
-Ray.contextTypes = {
-  xScale: PT.func.isRequired,
-  snapValue: PT.func.isRequired
 }
 
 export default injectSheet(style)(Ray);

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@1.2.2...@pie-ui/protractor@1.2.3) (2018-05-01)
+
+
+
+
+**Note:** Version bump only for package @pie-ui/protractor
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@1.2.1...@pie-ui/protractor@1.2.2) (2018-04-30)
 

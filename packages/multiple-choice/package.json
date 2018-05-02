@@ -1,8 +1,13 @@
 {
   "name": "@pie-ui/multiple-choice",
   "description": "A pie multiple choice component",
-  "keywords": ["pie", "pie-ui", "custom-element", "react"],
-  "version": "3.0.2",
+  "keywords": [
+    "pie",
+    "pie-ui",
+    "custom-element",
+    "react"
+  ],
+  "version": "4.0.0",
   "main": "lib/index.js",
   "repository": "pie-framework/pie-elements.git",
   "publishConfig": {

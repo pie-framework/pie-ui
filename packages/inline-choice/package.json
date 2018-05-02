@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/inline-choice",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",

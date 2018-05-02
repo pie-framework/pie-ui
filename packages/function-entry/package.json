@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/function-entry",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "",
   "main": "lib/index.js",
   "publishConfig": {

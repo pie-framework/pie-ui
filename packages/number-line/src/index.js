@@ -135,8 +135,7 @@ export default class NumberLine extends HTMLElement {
         ReactDOM.render(el, this);
       }
     } catch (e) {
-      console.log(e.stack);
-      console.log('!!', e.message);
+      throw e;
     }
   }
 }

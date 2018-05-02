@@ -3,14 +3,11 @@
   "version": "1.0.1",
   "description": "",
   "repository": "pie-framework/pie-ui",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "test": "./node_modules/.bin/jest --verbose"
-  },
-  "author": "Mukesh Sharma",
+  "author": "pie framework developers",
   "license": "ISC",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
@@ -18,30 +15,9 @@
     "@pie-lib/editable-html": "^5.0.6",
     "debug": "^3.1.0",
     "lodash.throttle": "^4.1.1",
-    "material-ui": "^1.0.0-beta.42",
+    "material-ui": "^1.0.0-beta.44",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-airbnb": "^2.4.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.3",
-    "lodash": "^4.17.5",
-    "style-loader": "^0.21.0"
-  },
-  "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ]
   }
 }

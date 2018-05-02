@@ -1,7 +1,7 @@
 import React from 'react';
 
 import renderer from 'react-test-renderer';
-import { TextEntry } from '../text-entry.jsx';
+import { TextEntry } from '../text-entry';
 import { shallow } from 'enzyme';
 import Input from '../input';
 

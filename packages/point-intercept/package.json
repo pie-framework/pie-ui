@@ -4,8 +4,9 @@
     "access": "public"
   },
   "version": "0.1.0",
-  "description": "An interaction to allow students identify coordinates or plot points on a graph by clicking on the graph.",
-  "main": "src/index.js",
+  "description":
+    "An interaction to allow students identify coordinates or plot points on a graph by clicking on the graph.",
+  "main": "lib/index.js",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-lib/charting": "^2.2.0",
@@ -15,9 +16,6 @@
     "material-ui": "1.0.0-beta.44",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC"

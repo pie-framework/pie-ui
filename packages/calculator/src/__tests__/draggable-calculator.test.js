@@ -1,5 +1,6 @@
 import React from 'react';
 import { DraggableCalculator } from '../draggable-calculator';
+import { shallow } from 'enzyme';
 
 describe('DraggableCalculator', () => {
   let wrapper;

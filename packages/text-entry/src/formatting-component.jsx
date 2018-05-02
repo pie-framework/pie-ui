@@ -6,9 +6,11 @@ import _every from 'lodash/every';
 
 const log = debug('pie-elements:text-entry:input');
 
-const BuildFormat = (opts) => {
-  return class extends React.Component {
-
+const BuildFormat = opts => {
+  return class Format extends React.Component {
+    static propTypes = {
+      onChange: PropTypes.func.isRequired
+    };
     render() {
       log('[render] this.props: ', this.props);
       return (
@@ -19,15 +21,15 @@ const BuildFormat = (opts) => {
             log('[onValueChange]: ', values);
             this.props.onChange({
               target: {
-                value: values.value,
-              },
+                value: values.value
+              }
             });
           }}
         />
       );
     }
-  }
-}
+  };
+};
 
 const DecimalNegativeSeparator = BuildFormat({
   decimalScale: 2,
@@ -82,14 +84,18 @@ function every() {
 }
 
 /**
- * It seems like the Mui Input component does not like getting an anonymous class built each time if wants the format component. 
+ * It seems like the Mui Input component does not like getting an anonymous class built each time if wants the format component.
  * Instead we predefine them and return them.
  */
-export const getFormatTag = ({ allowDecimal, allowThousandsSeparator, allowNegative, allowIntegersOnly }) => {
-
+export const getFormatTag = ({
+  allowDecimal,
+  allowThousandsSeparator,
+  allowNegative,
+  allowIntegersOnly
+}) => {
   if (allowIntegersOnly) {
     /**
-     * This would be preferable: 
+     * This would be preferable:
      * return BuildFormat({
      *  decimalScale: allowDecimal ? 2 : 0,
      *  fixedDecimalScale: allowDecimal ? true : false,
@@ -117,4 +123,4 @@ export const getFormatTag = ({ allowDecimal, allowThousandsSeparator, allowNegat
   } else {
     return null;
   }
-}
+};

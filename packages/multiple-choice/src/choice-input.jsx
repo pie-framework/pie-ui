@@ -5,7 +5,7 @@ import { withStyles } from 'material-ui/styles';
 
 import Checkbox from 'material-ui/Checkbox';
 import { Feedback } from '@pie-lib/render-ui';
-import FeedbackTick from './feedback-tick.jsx';
+import FeedbackTick from './feedback-tick';
 import Radio from 'material-ui/Radio';
 import green from 'material-ui/colors/green';
 import orange from 'material-ui/colors/orange';

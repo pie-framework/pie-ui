@@ -1,5 +1,4 @@
 import React from 'react';
-import debug from 'debug';
 import classNames from 'classnames';
 import range from 'lodash/range';
 import MuiInput from 'material-ui/Input';

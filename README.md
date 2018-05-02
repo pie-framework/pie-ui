@@ -56,6 +56,12 @@ git merge master
 git push
 ```
 
+### prerelease
+
+```shell
+lerna publish --npm-tag=next
+```
+
 ### dependencies
 
 * [lerna js][lerna] for handling multiple packages in a mono repo

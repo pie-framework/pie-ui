@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/extended-text-entry",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "src/index.js",
@@ -41,6 +41,8 @@
     "style-loader": "^0.21.0"
   },
   "jest": {
-    "setupFiles": ["./jestsetup.js"]
+    "setupFiles": [
+      "./jestsetup.js"
+    ]
   }
 }

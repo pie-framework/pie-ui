@@ -21,6 +21,7 @@ const styleSheet = {
         cursor: 'pointer'
     },
     row: {
+        display: 'flex',
         alignItems: 'center'
     }
 };
@@ -126,6 +127,7 @@ export class ChoiceInput extends React.Component {
         return (
             <div className={classNames(className, 'corespring-' + classSuffix)}>
                 <div className={classes.row}>
+                    <Typography className={classes.title}>{displayKey + '. '}</Typography>
                     <StyledFormControlLabel
                         disabled={disabled}
                         control={
@@ -136,9 +138,6 @@ export class ChoiceInput extends React.Component {
                             />
                         }
                     />
-                </div>
-                <div className={classes.row}>
-                    <Typography className={classes.title}>{displayKey + '. '}</Typography>
                     <span
                         className={classes.label}
                         onClick={this.onToggleChoice}

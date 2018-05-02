@@ -15,7 +15,8 @@
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/editable-html": "^5.0.6",
+    "@pie-lib/editable-html": "^5.0.12",
+    "@pie-lib/render-ui": "^2.0.10",
     "debug": "^3.1.0",
     "lodash.throttle": "^4.1.1",
     "material-ui": "^1.0.0-beta.42",
@@ -40,8 +41,6 @@
     "style-loader": "^0.21.0"
   },
   "jest": {
-    "setupFiles": [
-      "./jestsetup.js"
-    ]
+    "setupFiles": ["./jestsetup.js"]
   }
 }

@@ -1,8 +1,4 @@
-const argv = require('minimist')(process.argv.slice(2));
-const fs = require('fs-extra');
-const { join } = require('path');
-const _ = require('lodash');
-const { spawnSync, spawn } = require('child_process');
+const { spawn } = require('child_process');
 const debug = require('debug');
 
 const log = debug('@pie-ui:scripts:babel-multiple');

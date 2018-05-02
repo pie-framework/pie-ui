@@ -10,10 +10,6 @@
   "rules": {
     "quotes": ["warn", "single"],
     "strict": 0,
-    "react/prop-types": "warn",
-    "react/jsx-no-duplicate-props": "warn",
-    "react/no-deprecated": "warn",
-    "react/display-name": "warn",
     "no-extra-semi": "warn",
     "no-dupe-keys": "warn",
     "no-const-assign": "warn",
@@ -21,7 +17,6 @@
     "no-undef": "warn",
     "no-unreachable": "warn",
     "no-unused-vars": "warn",
-    "jsx-uses-vars": true,
     "constructor-super": "warn",
     "valid-typeof": "warn",
     "no-case-declarations": "warn",

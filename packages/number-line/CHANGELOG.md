@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.1"></a>
+## [4.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.0.0...@pie-ui/number-line@4.0.1) (2018-05-03)
+
+
+
+
+**Note:** Version bump only for package @pie-ui/number-line
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@3.0.0...@pie-ui/number-line@3.0.1) (2018-04-24)
 

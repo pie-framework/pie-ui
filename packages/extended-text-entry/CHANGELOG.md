@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.0.0...@pie-ui/extended-text-entry@2.1.0) (2018-05-03)
+
+
+### Features
+
+* **feedback:** add feedback component ([ab9f9cd](https://github.com/pie-framework/pie-ui/commit/ab9f9cd))
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@1.0.2...@pie-ui/extended-text-entry@1.1.0) (2018-05-02)
 

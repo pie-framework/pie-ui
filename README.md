@@ -18,14 +18,14 @@ npm install # install root package and child packages
 
 ### Commands
 
-| Action  | Cmd                                   |
-| ------- | ------------------------------------- |
-| test    | `npm test`                            |
-| lint    | `npm run lint`                        |
-| build   | `npm run build`                       |
-| release | `npm run release`                     |
-| watch   | `scripts/watch --scope $package-name` |
-| demo    | `scripts/demo $package-name`          |
+| Action  | Cmd                                   | Notes                                                                                                           |
+| ------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| test    | `npm test`                            |                                                                                                                 |
+| lint    | `npm run lint`                        |                                                                                                                 |
+| build   | `npm run build`                       |                                                                                                                 |
+| release | `npm run release`                     |                                                                                                                 |
+| watch   | `scripts/watch --scope $package-name` | This can be useful when you have a package linked elsewhere <br/>and what your changes in `src` to be picked up |
+| demo    | `scripts/demo $package-name`          | Will start a watch and run `pie serve` for the given package                                                    |
 
 To test an individual package you can do:
 

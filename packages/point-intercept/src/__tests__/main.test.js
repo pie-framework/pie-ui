@@ -1,27 +1,10 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { PlotPoints } from '@pie-lib/charting';
+import { shallowChild } from '@pie-lib/test-utils';
 import Controls from '../controls';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import Main from '../main';
-
-function shallowRenderComponent(Component, defaultProps = {}, nestLevel) {
-  return function innerRender(props = {}) {
-    let rendered = shallow(<Component {...defaultProps} {...props} />);
-
-    if (nestLevel) {
-      let repeat = nestLevel;
-
-      while (repeat--) {
-        rendered = rendered.first().shallow();
-      }
-    }
-
-    return rendered;
-  };
-}
-
 
 describe('Main', () => {
   const defaultProps = {
@@ -62,7 +45,7 @@ describe('Main', () => {
   let component;
 
   beforeEach(() => {
-    wrapper = shallowRenderComponent(Main, defaultProps, 1);
+    wrapper = shallowChild(Main, defaultProps, 1);
   });
 
   it('renders correctly', () => {

@@ -1,5 +1,5 @@
 import {FormControlLabel} from 'material-ui/Form';
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Radio from 'material-ui/Radio';
@@ -21,8 +21,14 @@ const styleSheet = {
         cursor: 'pointer'
     },
     row: {
-        display: 'flex',
         alignItems: 'center'
+    },
+    textRow: {
+        alignItems: 'center',
+        display: 'inline-flex'
+    },
+    column: {
+        display: 'table-cell'
     }
 };
 
@@ -82,7 +88,7 @@ export const StyledRadio = withStyles(inputStyles)(props => {
     );
 });
 
-export class ChoiceInput extends React.Component {
+export class ChoiceInput extends Component {
     static propTypes = {
         choiceMode: PropTypes.oneOf(['radio']),
         displayKey: PropTypes.string.isRequired,
@@ -122,22 +128,22 @@ export class ChoiceInput extends React.Component {
             className
         } = this.props;
 
-        const Tag = StyledRadio;
         const classSuffix = 'radio-button';
         return (
-            <div className={classNames(className, 'corespring-' + classSuffix)}>
+            <div className={classNames(className, 'corespring-' + classSuffix, classes.column)}>
                 <div className={classes.row}>
-                    <Typography className={classes.title}>{displayKey + '. '}</Typography>
                     <StyledFormControlLabel
                         disabled={disabled}
                         control={
-                            <Tag
+                            <StyledRadio
                                 checked={checked}
                                 correctness={correctness}
                                 onChange={this.onToggleChoice}
                             />
                         }
-                    />
+                    /></div>
+                <div className={classes.textRow}>
+                    <Typography className={classes.title}>{displayKey + '. '}</Typography>
                     <span
                         className={classes.label}
                         onClick={this.onToggleChoice}

@@ -3,9 +3,7 @@ import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
 import { MultipleChoice } from '../multiple-choice';
-import toJson from 'enzyme-to-json';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import correctAnswerToggle from '../../__mocks__/@pie-lib/correct-answer-toggle';
 
 describe('CorespringChoice', () => {
   let wrapper, toggle;
@@ -42,7 +40,7 @@ describe('CorespringChoice', () => {
         ]
       });
 
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     describe('onToggle', () => {
@@ -87,7 +85,7 @@ describe('CorespringChoice', () => {
       it('not toggled if showCorrect is false', () => {
         let w = mkWrapper({ mode: 'evaluate' });
         w.setState({ showCorrect: false });
-        expect(w.find(correctAnswerToggle).prop('toggled')).toEqual(false);
+        expect(w.find(CorrectAnswerToggle).prop('toggled')).toEqual(false);
       });
 
       it('is toggled showCorrect=true && mode=evaluate', () => {

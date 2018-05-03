@@ -6,7 +6,6 @@ import Arrow from '../arrow';
 import Point from './point';
 import { basePropTypes } from './base';
 import classNames from 'classnames';
-import extend from 'lodash/extend';
 import injectSheet from 'react-jss';
 import isNumber from 'lodash/isNumber';
 

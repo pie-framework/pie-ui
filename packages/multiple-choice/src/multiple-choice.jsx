@@ -34,8 +34,12 @@ export class MultipleChoice extends React.Component {
     prompt: PropTypes.string,
     session: PropTypes.object,
     disabled: PropTypes.bool.isRequired,
-    onChoiceChanged: PropTypes.func.isRequired
+    onChoiceChanged: PropTypes.func.isRequired,
+    responseCorrect: PropTypes.bool,
+    classes: PropTypes.object.isRequired,
+    correctResponse: PropTypes.array
   };
+
   constructor(props) {
     super(props);
 

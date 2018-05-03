@@ -3,6 +3,7 @@ import EditableHTML from '@pie-lib/editable-html';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import debug from 'debug';
+import { Feedback } from '@pie-lib/render-ui';
 
 const log = debug('@pie-ui:extended-text-entry');
 
@@ -24,7 +25,7 @@ class Main extends React.Component {
 
   render() {
     const { model, onChange, classes, session } = this.props;
-    const { width, height, disabled } = model;
+    const { width, height, disabled, feedback } = model;
     const { value } = session;
     log('[render] disabled? ', disabled);
     return (
@@ -32,11 +33,13 @@ class Main extends React.Component {
         <EditableHTML
           onChange={onChange}
           markup={value || ''}
-          width={width.toString()}
-          height={height.toString()}
+          width={width && width.toString()}
+          height={height && height.toString()}
           disabled={disabled}
           highlightShape={true}
         />
+        <br />
+        {feedback && <Feedback correctness="correct" feedback={feedback} />}
       </div>
     );
   }

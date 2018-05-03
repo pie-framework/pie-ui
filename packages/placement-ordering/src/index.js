@@ -1,4 +1,4 @@
-import Main from './main.jsx';
+import Main from './main';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import compact from 'lodash/compact';
@@ -15,13 +15,9 @@ const renderMathInElement = require('katex/dist/contrib/auto-render.min');
 
 require('katex/dist/katex.css');
 
-export {
-  withContext,
-  swap
-}
+export { withContext, swap };
 
 export default class Ordering extends HTMLElement {
-
   constructor() {
     super();
     this.sessionChange = this.sessionChange.bind(this);
@@ -47,29 +43,35 @@ export default class Ordering extends HTMLElement {
   sessionChange(session) {
     this._session.value = session.value;
     this.render();
-    this.dispatchEvent(new CustomEvent('session-changed', {
-      bubbles: true,
-      detail: {
-        component: this.tagName.toLowerCase(),
-        complete: this._session && this._session.value && compact(this._session.value).length === this._model.completeLength
-      }
-    }));
+    this.dispatchEvent(
+      new CustomEvent('session-changed', {
+        bubbles: true,
+        detail: {
+          component: this.tagName.toLowerCase(),
+          complete:
+            this._session &&
+            this._session.value &&
+            compact(this._session.value).length === this._model.completeLength
+        }
+      })
+    );
   }
 
   set model(newModel) {
     this._model = newModel;
     this.render();
-    this.dispatchEvent(new CustomEvent('model-set', {
-      bubbles: true,
-      detail: {
-        complete: false
-      }
-    }));
+    this.dispatchEvent(
+      new CustomEvent('model-set', {
+        bubbles: true,
+        detail: {
+          complete: false
+        }
+      })
+    );
   }
 
   set session(newSession) {
     this._session = newSession;
     this.render();
   }
-
 }

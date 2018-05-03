@@ -3,9 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "An interaction to allow students identify coordinates or plot points on a graph by clicking on the graph.",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
     "@pie-lib/charting": "^2.2.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.0.1"></a>
+## [5.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-choice@5.0.0...@pie-ui/inline-choice@5.0.1) (2018-05-03)
+
+
+
+
+**Note:** Version bump only for package @pie-ui/inline-choice
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-choice@4.0.0...@pie-ui/inline-choice@4.0.1) (2018-04-25)
 

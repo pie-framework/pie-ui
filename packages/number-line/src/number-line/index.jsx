@@ -37,7 +37,9 @@ export class NumberLine extends React.Component {
     onMoveElement: PropTypes.func.isRequired,
     onDeleteElements: PropTypes.func.isRequired,
     onAddElement: PropTypes.func.isRequired,
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
+    answer: PropTypes.array,
+    classes: PropTypes.object.isRequired
   };
 
   constructor(props, context) {
@@ -149,7 +151,7 @@ export class NumberLine extends React.Component {
 
   render() {
     let { model, answer, classes } = this.props;
-    let { selectedElements, showCorrectAnswer } = this.state;
+    let { showCorrectAnswer } = this.state;
     let { corrected = { correct: [], incorrect: [] }, disabled } = model;
     let addElement = this.addElement.bind(this);
     let elementsSelected =

@@ -7,8 +7,8 @@
     "custom-element",
     "react"
   ],
-  "version": "3.0.2",
-  "main": "src/index.js",
+  "version": "4.0.1",
+  "main": "lib/index.js",
   "repository": "pie-framework/pie-elements.git",
   "publishConfig": {
     "access": "public"
@@ -16,11 +16,6 @@
   "license": "ISC",
   "scripts": {
     "test": "./node_modules/.bin/jest"
-  },
-  "jest": {
-    "setupFiles": [
-      "./jest.setup.js"
-    ]
   },
   "dependencies": {
     "@pie-lib/correct-answer-toggle": "^2.0.6",
@@ -35,18 +30,5 @@
     "react-dom": "^16.3.2",
     "react-test-renderer": "^16.3.2",
     "react-transition-group": "^2.3.1"
-  },
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.3"
   }
 }

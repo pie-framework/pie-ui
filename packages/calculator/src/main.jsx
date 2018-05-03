@@ -21,6 +21,10 @@ const styles = {
 };
 
 class Main extends React.Component {
+  static propTypes = {
+    model: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired
+  };
   constructor(props) {
     super(props);
     this.state = { show: false };
@@ -50,10 +54,5 @@ class Main extends React.Component {
     );
   }
 }
-
-Main.propTypes = {
-  model: PropTypes.any,
-  classes: PropTypes.any
-};
 
 export default withStyles(styles)(Main);

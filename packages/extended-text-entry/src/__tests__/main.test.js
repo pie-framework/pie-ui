@@ -1,5 +1,6 @@
 import React from 'react';
-import Main from './../main';
+import Main from '../main';
+import { shallow } from 'enzyme';
 
 describe('Render Main Component', () => {
   let wrapper;

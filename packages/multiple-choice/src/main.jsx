@@ -37,6 +37,17 @@ const styleSheet = theme => {
 };
 
 class Main extends React.Component {
+  static propTypes = {
+    model: PropTypes.object,
+    session: PropTypes.object,
+    onChoiceChanged: PropTypes.func,
+    classes: PropTypes.object.isRequired
+  };
+
+  static defaultProps = {
+    model: {},
+    session: {}
+  };
   constructor(props) {
     super(props);
   }
@@ -55,17 +66,6 @@ class Main extends React.Component {
     );
   }
 }
-
-Main.propTypes = {
-  model: PropTypes.object,
-  session: PropTypes.object,
-  onChoiceChanged: PropTypes.func
-};
-
-Main.defaultProps = {
-  model: {},
-  session: {}
-};
 
 const Styled = withStyles(styleSheet, { name: 'Main' })(Main);
 

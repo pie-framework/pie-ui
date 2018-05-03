@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Icon = ({ className }) => {
   return (
@@ -16,6 +17,9 @@ const Icon = ({ className }) => {
       </g>
     </svg>
   );
+};
+Icon.propTypes = {
+  className: PropTypes.string
 };
 
 export default Icon;

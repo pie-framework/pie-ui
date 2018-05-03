@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+const debug = require('debug');
+const log = debug('@pie-ui:scripts:watch');
+const { watch } = require('./babel-multiple');
+const argv = require('minimist')(process.argv.slice(2));
+const fs = require('fs-extra');
+const fix = require('./process-fix');
+
+let watcher = null;
+
+fix(log, () => {
+  if (watcher) {
+    watcher.exit();
+  }
+  process.exit();
+});
+
+const scope = argv.scope
+  ? Array.isArray(argv.scope)
+    ? argv.scope
+    : [argv.scope]
+  : fs.readdirSync('packages').filter(n => !n.startsWith('.'));
+log('scope: ', scope);
+
+const args = scope.map(s => ({
+  src: `packages/${s}/src`,
+  target: `packages/${s}/lib`
+}));
+
+watcher = watch(args);

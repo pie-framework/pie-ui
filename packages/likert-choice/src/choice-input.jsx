@@ -6,7 +6,6 @@ import Radio from 'material-ui/Radio';
 import green from 'material-ui/colors/green';
 import orange from 'material-ui/colors/orange';
 import Typography from 'material-ui/typography';
-import classNames from 'classnames';
 
 const styleSheet = {
     title: {
@@ -26,9 +25,6 @@ const styleSheet = {
     textRow: {
         alignItems: 'center',
         display: 'inline-flex'
-    },
-    column: {
-        display: 'table-cell'
     }
 };
 
@@ -92,7 +88,7 @@ export class ChoiceInput extends Component {
     static propTypes = {
         choiceMode: PropTypes.oneOf(['radio']),
         displayKey: PropTypes.string.isRequired,
-        checked: PropTypes.bool.isRequired,
+        checked: PropTypes.bool,
         correctness: PropTypes.string,
         disabled: PropTypes.bool.isRequired,
         label: PropTypes.string.isRequired,
@@ -130,7 +126,7 @@ export class ChoiceInput extends Component {
 
         const classSuffix = 'radio-button';
         return (
-            <div className={classNames(className, 'corespring-' + classSuffix, classes.column)}>
+            <div className={className}>
                 <div className={classes.row}>
                     <StyledFormControlLabel
                         disabled={disabled}

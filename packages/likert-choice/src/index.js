@@ -29,7 +29,9 @@ export default class MultipleChoice extends HTMLElement {
             var element = React.createElement(Main,
                 {
                     model: this._model,
-                    session: this._session
+                    session: this._session,
+                    onChoiceChanged: console.log('changing'),
+                    classes: ''
                 });
             ReactDOM.render(element, this);
 

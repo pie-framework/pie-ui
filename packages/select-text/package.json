@@ -1,0 +1,18 @@
+{
+  "name": "@pie-ui/select-text",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "dependencies": {
+    "@pie-lib/text-select": "next",
+    "@pie-framework/pie-player-events": "^0.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -10,7 +10,13 @@ module.exports = {
             prompt: 'This instance is in gather mode and can be clicked',
             disabled: false,
             choiceMode: 'radio',
-            keyMode: 'letters'
+            keyMode: 'letters',
+            showCorrect: true,
+            correctResponse: [{ value: 'b' }],
+            choices: [
+                { label: 'apple', value: 'a', correct: false },
+                { label: 'banana', value: 'b' }
+            ]
         }
     ]
 };

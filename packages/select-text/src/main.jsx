@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextSelect } from '@pie-lib/text-select';
-
+import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 const Types = {
   model: PropTypes.object,
   session: PropTypes.object,
@@ -13,17 +13,45 @@ export class Main extends React.Component {
 
   static defaultProps = {};
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showCorrectAnswer: false
+    };
+  }
+
+  toggleShowCorrect = () => {
+    this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });
+  };
+
+  correctAnswer = () => {
+    const { model } = this.props;
+    return model.tokens.filter(t => t.correct);
+  };
+
   render() {
     const { model, session, onSelectionChange } = this.props;
+    const { showCorrectAnswer } = this.state;
+
     return (
-      <TextSelect
-        disabled={model.disabled}
-        text={model.text}
-        tokens={model.tokens}
-        selectedTokens={session.selectedTokens}
-        onChange={onSelectionChange}
-        highlightChoices={model.highlightChoices}
-      />
+      <div>
+        <CorrectAnswerToggle
+          show={model.disabled && model.incorrect}
+          toggled={showCorrectAnswer}
+          onToggle={this.toggleShowCorrect}
+        />
+        <TextSelect
+          disabled={model.disabled}
+          text={model.text}
+          tokens={model.tokens}
+          selectedTokens={
+            showCorrectAnswer ? this.correctAnswer() : session.selectedTokens
+          }
+          onChange={onSelectionChange}
+          highlightChoices={model.highlightChoices}
+        />
+      </div>
     );
   }
 }

@@ -9,13 +9,32 @@ module.exports = {
             mode: 'evaluate',
             prompt: 'This instance is in gather mode and can be clicked',
             disabled: false,
-            choiceMode: 'radio',
             keyMode: 'letters',
-            showCorrect: true,
-            correctResponse: [{ value: 'b' }],
+            choiceMode: 'radio',
+            activeLanguage: 'en-US',
             choices: [
-                { label: 'apple', value: 'a', correct: false },
-                { label: 'banana', value: 'b' }
+                {
+                    correct: true,
+                    value: 'like',
+                    label: [
+                        {lang: 'en-US', value: 'Like'},
+                        {lang: 'es-ES', value: 'Me gusta'}
+                    ],
+                },
+                {
+                    value: 'dislike',
+                    label: [
+                        {lang: 'en-US', value: 'Dislike'},
+                        {lang: 'es-ES', value: 'Disgusto'}
+                    ],
+                },
+                {
+                    value: 'notLikely',
+                    label: [
+                        {lang: 'en-US', value: 'Not Likely'},
+                        {lang: 'es-ES', value: 'Disgusto'}
+                    ],
+                }
             ]
         }
     ]

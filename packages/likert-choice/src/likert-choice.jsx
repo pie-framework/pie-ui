@@ -37,7 +37,8 @@ class LikertChoice extends Component {
         prompt: PropTypes.string,
         session: PropTypes.object,
         disabled: PropTypes.bool,
-        onChoiceChanged: PropTypes.func
+        onChoiceChanged: PropTypes.func,
+        activeLanguage: PropTypes.string
     };
 
     constructor(props) {
@@ -51,6 +52,15 @@ class LikertChoice extends Component {
         ).toString();
     }
 
+
+    search(nameKey, myArray){
+        for (var i=0; i < myArray.length; i++) {
+            if (myArray[i].lang === nameKey) {
+                return myArray[i];
+            }
+        }
+    }
+
     render() {
         const {
             mode,
@@ -59,18 +69,20 @@ class LikertChoice extends Component {
             choiceMode,
             prompt,
             onChoiceChanged,
-            classes
+            classes,
+            activeLanguage
         } = this.props;
 
 
         let choiceToTag = (choice, index) => {
+            const label = this.search(activeLanguage,choice.label);
             var choiceClass = 'choice' + (index === choices.length - 1 ? ' last' : '');
             const choiceProps = {
                 choiceMode,
                 disabled,
                 value: choice.value,
                 displayKey: this.indexToSymbol(index),
-                label: choice.label,
+                label: label.value,
                 onChange: onChoiceChanged
             };
 

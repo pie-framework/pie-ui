@@ -71,7 +71,7 @@ class LikertChoice extends Component {
                 value: choice.value,
                 displayKey: this.indexToSymbol(index),
                 label: choice.label,
-                onChange: mode === 'gather' ? onChoiceChanged : () => {}
+                onChange: onChoiceChanged
             };
 
             const names = classNames(classes.choice, {

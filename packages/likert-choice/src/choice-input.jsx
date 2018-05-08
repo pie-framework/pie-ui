@@ -86,7 +86,6 @@ export const StyledRadio = withStyles(inputStyles)(props => {
 
 export class ChoiceInput extends Component {
     static propTypes = {
-        choiceMode: PropTypes.oneOf(['radio']),
         displayKey: PropTypes.string.isRequired,
         checked: PropTypes.bool,
         correctness: PropTypes.string,
@@ -114,7 +113,6 @@ export class ChoiceInput extends Component {
 
     render() {
         const {
-            choiceMode,
             disabled,
             displayKey,
             label,

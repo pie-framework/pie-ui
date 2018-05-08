@@ -11,28 +11,29 @@ module.exports = {
             disabled: false,
             keyMode: 'letters',
             choiceMode: 'radio',
-            activeLanguage: 'en-US',
+            activeLang: 'en-US',
+            defaultLang: 'en-US',
             choices: [
                 {
+                    value: 'disagree',
+                    label: [
+                        {lang: 'en-US', value: 'Disagree'},
+                        {lang: 'es-ES', value: 'Discrepar'}
+                    ],
+                },
+                {
                     correct: true,
-                    value: 'like',
+                    value: 'neutral',
                     label: [
-                        {lang: 'en-US', value: 'Like'},
-                        {lang: 'es-ES', value: 'Me gusta'}
+                        {lang: 'en-US', value: 'Neutral'},
+                        {lang: 'es-ES', value: 'Neutral'}
                     ],
                 },
                 {
-                    value: 'dislike',
+                    value: 'agree',
                     label: [
-                        {lang: 'en-US', value: 'Dislike'},
-                        {lang: 'es-ES', value: 'Disgusto'}
-                    ],
-                },
-                {
-                    value: 'notLikely',
-                    label: [
-                        {lang: 'en-US', value: 'Not Likely'},
-                        {lang: 'es-ES', value: 'Disgusto'}
+                        {lang: 'en-US', value: 'Agree'},
+                        {lang: 'es-ES', value: 'De Acuerdo'}
                     ],
                 }
             ]

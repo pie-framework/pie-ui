@@ -31,14 +31,13 @@ class LikertChoice extends Component {
 
     static propTypes = {
         mode: PropTypes.oneOf(['gather', 'view', 'evaluate']),
-        choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
         keyMode: PropTypes.oneOf(['numbers', 'letters']),
         choices: PropTypes.array,
         prompt: PropTypes.string,
         session: PropTypes.object,
         disabled: PropTypes.bool,
         onChoiceChanged: PropTypes.func,
-        activeLanguage: PropTypes.string
+        activeLang: PropTypes.string
     };
 
     constructor(props) {
@@ -66,19 +65,17 @@ class LikertChoice extends Component {
             mode,
             disabled,
             choices,
-            choiceMode,
             prompt,
             onChoiceChanged,
             classes,
-            activeLanguage
+            activeLang
         } = this.props;
 
 
         let choiceToTag = (choice, index) => {
-            const label = this.search(activeLanguage,choice.label);
+            const label = this.search(activeLang,choice.label);
             var choiceClass = 'choice' + (index === choices.length - 1 ? ' last' : '');
             const choiceProps = {
-                choiceMode,
                 disabled,
                 value: choice.value,
                 displayKey: this.indexToSymbol(index),

@@ -16,6 +16,7 @@
       "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files"
   },
   "devDependencies": {
+    "@pie-lib/test-utils": "0.0.3",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-builtin-extend": "^1.1.2",

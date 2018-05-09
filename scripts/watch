@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 const debug = require('debug');
 const log = debug('@pie-ui:scripts:watch');
-const { watch } = require('./babel-multiple');
+const { processFix, watch } = require('@pie-framework/build-helper');
 const argv = require('minimist')(process.argv.slice(2));
 const fs = require('fs-extra');
-const fix = require('./process-fix');
 
 let watcher = null;
 
-fix(log, () => {
+processFix(log, () => {
   if (watcher) {
     watcher.exit();
   }

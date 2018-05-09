@@ -8,8 +8,9 @@ module.exports = {
       id: '1',
       width: '200px',
       height: '100px',
-      disabled: false,
-      mode: 'gather'
+      disabled: false
+      //
+      //feedback: '...'
     }
   ]
-}
+};

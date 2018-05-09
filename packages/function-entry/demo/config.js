@@ -6,9 +6,10 @@ module.exports = {
     {
       id: '1',
       element: 'function-entry',
-      showHint: true,
       showFormattingHelp: true,
       disabled: false
+      //feedback: 'foo'
+      //correctness: 'correct'...
     }
   ]
 };

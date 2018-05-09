@@ -7,15 +7,13 @@
   "scripts": {
     "postinstall": "lerna run install",
     "test": "jest",
-    "release":
-      "npm test && npm run build && lerna publish --conventional-commits",
-    "lint":
-      "lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/eslint  --ignore-path \\$LERNA_ROOT_PATH/.eslintignore --ext .js --ext .jsx src",
+    "release": "npm test && npm run build && lerna publish --conventional-commits",
+    "lint": "lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/eslint  --ignore-path \\$LERNA_ROOT_PATH/.eslintignore --ext .js --ext .jsx src",
     "clean": "lerna exec -- rm -fr lib",
-    "build":
-      "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files"
+    "build": "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files"
   },
   "devDependencies": {
+    "@pie-lib/test-utils": "0.0.3",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-builtin-extend": "^1.1.2",

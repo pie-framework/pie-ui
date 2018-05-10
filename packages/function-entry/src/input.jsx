@@ -78,7 +78,7 @@ class RawInput extends React.Component {
           </MuiThemeProvider>
           {CorrectnessTag && (
             <div className={classes.icon}>
-              <CorrectnessTag feedback={feedback || 'feedback'} />
+              <CorrectnessTag feedback={feedback} />
             </div>
           )}
         </div>

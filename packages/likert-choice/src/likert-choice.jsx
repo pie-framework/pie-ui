@@ -55,6 +55,7 @@ class LikertChoice extends Component {
     search(nameKey, myArray){
         for (var i=0; i < myArray.length; i++) {
             if (myArray[i].lang === nameKey) {
+                console.log(myArray[i]);
                 return myArray[i];
             }
         }
@@ -79,7 +80,7 @@ class LikertChoice extends Component {
                 disabled,
                 value: choice.value,
                 displayKey: this.indexToSymbol(index),
-                label: label.value,
+                label: label.label,
                 onChange: onChoiceChanged
             };
 

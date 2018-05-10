@@ -15,25 +15,26 @@ module.exports = {
             defaultLang: 'en-US',
             choices: [
                 {
+                    correct: true,
                     value: 'disagree',
                     label: [
-                        {lang: 'en-US', value: 'Disagree'},
-                        {lang: 'es-ES', value: 'Discrepar'}
+                        {lang: 'en-US', label: 'Disagree', value: 'Disagree'},
+                        {lang: 'es-ES', label: 'Discrepar', value: 'Discrepar'}
                     ],
                 },
                 {
                     correct: true,
                     value: 'neutral',
                     label: [
-                        {lang: 'en-US', value: 'Neutral'},
-                        {lang: 'es-ES', value: 'Neutral'}
+                        {lang: 'en-US', label: 'Neutral', value: 'Neutral'},
+                        {lang: 'es-ES', label: 'Neutral', value: 'Neutral'}
                     ],
                 },
                 {
                     value: 'agree',
                     label: [
-                        {lang: 'en-US', value: 'Agree'},
-                        {lang: 'es-ES', value: 'De Acuerdo'}
+                        {lang: 'en-US', label: 'Agree', value: 'Agree'},
+                        {lang: 'es-ES', label: 'De Acuerdo', value: 'De Acuerdo'}
                     ],
                 }
             ]

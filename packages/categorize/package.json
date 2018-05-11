@@ -1,0 +1,23 @@
+{
+  "name": "@pie-ui/categorize",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-dnd": "^3.0.0",
+    "material-ui": "^1.0.0-beta.47"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2"
+  },
+  "devDependencies": {
+    "react": "^16.3.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1"
+  }
+}

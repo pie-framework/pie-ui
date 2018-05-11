@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`droppable-placeholder snapshot className 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <WithStyles(PlaceHolder)
+    className="foo"
+  >
+    content
+  </WithStyles(PlaceHolder)>
+</div>
+`;
+
+exports[`droppable-placeholder snapshot disabled 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <WithStyles(PlaceHolder)
+    disabled={true}
+  >
+    content
+  </WithStyles(PlaceHolder)>
+</div>
+`;
+
+exports[`droppable-placeholder snapshot grid 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <WithStyles(PlaceHolder)
+    grid={
+      Object {
+        "columns": 2,
+      }
+    }
+  >
+    content
+  </WithStyles(PlaceHolder)>
+</div>
+`;
+
+exports[`droppable-placeholder snapshot renders 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <WithStyles(PlaceHolder)>
+    content
+  </WithStyles(PlaceHolder)>
+</div>
+`;

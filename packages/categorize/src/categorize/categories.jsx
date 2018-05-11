@@ -11,7 +11,11 @@ export class Categories extends React.Component {
     categories: PropTypes.arrayOf(PropTypes.shape(CategoryType)),
     config: PropTypes.shape({
       columns: PropTypes.number.isRequired
-    })
+    }),
+    disabled: PropTypes.bool,
+    onDropChoice: PropTypes.func.isRequired,
+    onRemoveChoice: PropTypes.func.isRequired,
+    grid: PropTypes.object
   };
 
   static defaultProps = {
@@ -21,12 +25,28 @@ export class Categories extends React.Component {
   };
 
   render() {
-    const { classes, categories, config } = this.props;
+    const {
+      classes,
+      categories,
+      config,
+      disabled,
+      onDropChoice,
+      onRemoveChoice,
+      grid
+    } = this.props;
 
     return (
       <GridContent columns={config.columns} className={classes.categories}>
         {categories.map((c, index) => (
-          <Category className={classes.category} key={index} {...c} />
+          <Category
+            grid={grid}
+            onDropChoice={h => onDropChoice(c.id, h)}
+            onRemoveChoice={onRemoveChoice}
+            disabled={disabled}
+            className={classes.category}
+            key={index}
+            {...c}
+          />
         ))}
       </GridContent>
     );

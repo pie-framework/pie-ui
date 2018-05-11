@@ -16,11 +16,17 @@ export default class Categorize extends HTMLElement {
     this._session = s;
   }
 
+  changeAnswers(answers) {
+    this._session.answers = answers;
+    this.render();
+  }
+
   render() {
     if (this._model && this._session) {
       const el = React.createElement(CategorizeComponent, {
         model: this._model,
-        session: this._session
+        session: this._session,
+        onAnswersChange: this.changeAnswers.bind(this)
       });
       ReactDOM.render(el, this);
     }

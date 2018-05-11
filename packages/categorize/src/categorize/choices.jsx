@@ -5,13 +5,21 @@ import Choice, { ChoiceType } from './choice';
 export { ChoiceType };
 import GridContent from './grid-content';
 
+const Blank = () => <div />;
+
 export class Choices extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    choices: PropTypes.arrayOf(PropTypes.shape(ChoiceType)),
+    choices: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape(ChoiceType),
+        PropTypes.shape({ empty: PropTypes.bool })
+      ])
+    ),
     config: PropTypes.shape({
       columns: PropTypes.number.isRequired
-    })
+    }),
+    disabled: PropTypes.bool
   };
 
   static defaultProps = {
@@ -21,13 +29,22 @@ export class Choices extends React.Component {
   };
 
   render() {
-    const { classes, choices, config } = this.props;
+    const { classes, choices, config, disabled } = this.props;
 
     return (
       <GridContent columns={config.columns} className={classes.choices}>
-        {choices.map((c, index) => (
-          <Choice className={classes.choice} key={index} {...c} />
-        ))}
+        {choices.map((c, index) => {
+          return c.empty ? (
+            <Blank key={index} />
+          ) : (
+            <Choice
+              disabled={disabled}
+              className={classes.choice}
+              key={index}
+              {...c}
+            />
+          );
+        })}
       </GridContent>
     );
   }

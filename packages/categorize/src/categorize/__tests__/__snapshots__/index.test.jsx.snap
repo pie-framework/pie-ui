@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`categorize snapshots incorrect 1`] = `
+<mockConstructor
+  value="1"
+>
+  <div>
+    <Component
+      onToggle={[Function]}
+      toggled={false}
+    />
+    <div
+      style={
+        Object {
+          "flexDirection": "column-reverse",
+        }
+      }
+    >
+      <WithStyles(Categories)
+        categories={Array []}
+        config={
+          Object {
+            "columns": 2,
+          }
+        }
+        grid={
+          Object {
+            "columns": 1,
+            "rows": 1,
+          }
+        }
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+      <WithStyles(Choices)
+        choices={Array []}
+        config={
+          Object {
+            "columns": 2,
+            "position": "top",
+          }
+        }
+      />
+    </div>
+  </div>
+</mockConstructor>
+`;
+
+exports[`categorize snapshots renders 1`] = `
+<mockConstructor
+  value="1"
+>
+  <div>
+    <Component
+      onToggle={[Function]}
+      toggled={false}
+    />
+    <div
+      style={
+        Object {
+          "flexDirection": "column-reverse",
+        }
+      }
+    >
+      <WithStyles(Categories)
+        categories={Array []}
+        config={
+          Object {
+            "columns": 2,
+          }
+        }
+        grid={
+          Object {
+            "columns": 1,
+            "rows": 1,
+          }
+        }
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+      <WithStyles(Choices)
+        choices={Array []}
+        config={
+          Object {
+            "columns": 2,
+            "position": "top",
+          }
+        }
+      />
+    </div>
+  </div>
+</mockConstructor>
+`;

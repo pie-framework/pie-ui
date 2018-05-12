@@ -1,54 +1,20 @@
 {
   "name": "@pie-ui/likert-choice",
-  "description": "A pie likert choice component",
-  "keywords": [
-    "pie",
-    "pie-ui",
-    "custom-element",
-    "react"
-  ],
   "version": "1.0.0",
+  "description": "",
+  "repository": "pie-framework/pie-ui",
   "main": "src/index.js",
-  "repository": "pie-framework/pie-elements.git",
   "publishConfig": {
     "access": "public"
   },
+  "author": "pie framework developers",
   "license": "ISC",
-  "scripts": {
-    "test": "./node_modules/.bin/jest"
-  },
-  "jest": {
-    "setupFiles": [
-      "./jest.setup.js"
-    ]
-  },
   "dependencies": {
-    "@pie-lib/correct-answer-toggle": "^2.0.6",
-    "@pie-lib/render-ui": "^2.0.7",
+    "@pie-framework/pie-player-events": "^0.1.0",
     "classnames": "^2.2.5",
-    "debug": "^3.1.0",
-    "enzyme-to-json": "^3.3.3",
-    "katex": "^0.9.0",
-    "lodash": "^4.17.5",
-    "material-ui": "^1.0.0-beta.44",
+    "material-ui": "^1.0.0-beta.43",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.3.2",
-    "react-transition-group": "^2.3.1",
-    "webpack": "^4.6.0"
-  },
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.3"
+    "react-dom": "^16.3.2"
   }
 }

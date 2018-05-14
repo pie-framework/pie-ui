@@ -70,7 +70,7 @@ class Main extends React.Component {
                     {model.choices.map((k,index) => {
                         return(
                             <div key={index} className={classes.row}>
-                                <Radio name='likert' onClick={(e) => this.toggleRadio(e)} checked={radioValue === k.value} value={k.value}/>
+                                <Radio name='likert' onClick={(e) => this.toggleRadio(e)} checked={radioValue === k.value && k.value} value={k.value}/>
                                 <div className={classes.textRow}>
                                     <Typography className={classes.identifier}>{this.indexToSymbol(index)}.</Typography>
                                     {this.label(model.activeLang, k.label)}

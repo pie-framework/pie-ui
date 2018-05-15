@@ -103,7 +103,10 @@ export const buildState = (
   const addChoices = category => {
     const answer = answers.find(a => a.category === category.id);
 
-    const cr = Array.isArray(correctResponse)
+    const hasCorrectResponse =
+      Array.isArray(correctResponse) && correctResponse.length > 0;
+
+    const cr = hasCorrectResponse
       ? correctResponse.find(r => r.category === category.id)
       : undefined;
     const correctChoices = clone(cr ? cr.choices || [] : undefined);
@@ -126,7 +129,10 @@ export const buildState = (
           }
           return acc;
         },
-        { choices: [], correct: correctChoices }
+        {
+          choices: [],
+          correct: hasCorrectResponse ? correctChoices || [] : undefined
+        }
       );
 
       return { ...category, choices: out.choices };

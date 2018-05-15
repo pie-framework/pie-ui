@@ -3,9 +3,7 @@
   "version": "4.1.0",
   "main": "lib/index.js",
   "description": "A pie placement component",
-  "keywords": [
-    "pie"
-  ],
+  "keywords": ["pie"],
   "repository": "pie-framework/pie-ui",
   "publishConfig": {
     "access": "public"
@@ -14,16 +12,17 @@
     "test": "./node_modules/.bin/jest"
   },
   "dependencies": {
-    "@pie-lib/correct-answer-toggle": "^2.0.6",
-    "@pie-lib/render-ui": "^2.0.7",
+    "@pie-lib/correct-answer-toggle": "^2.0.10",
+    "@pie-lib/render-ui": "^2.0.11",
+    "@pie-lib/drag": "^0.1.0",
     "debug": "^3.1.0",
     "decimal.js": "^10.0.0",
     "katex": "^0.9.0",
-    "lodash": "^4.17.5",
-    "material-ui": "1.0.0-beta.43",
+    "lodash": "^4.17.10",
+    "material-ui": "1.0.0-beta.47",
     "prop-types": "^15.6.1",
     "react": "~16.3.2",
-    "react-dnd": "^2.6.0",
+    "react-dnd": "^3.0.0",
     "react-dnd-html5-backend": "^2.6.0",
     "react-dom": "^16.3.2",
     "react-jss": "^8.4.0",

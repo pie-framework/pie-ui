@@ -5,48 +5,30 @@ import React from 'react';
 import classNames from 'classnames';
 import debug from 'debug';
 import { withStyles } from 'material-ui/styles';
+import { PlaceHolder } from '@pie-lib/drag';
 
 const log = debug('pie-elements:placement-ordering:tile');
 
-const PlaceHolder = withStyles({
-  placeholder: {
-    width: '100%',
-    height: '100%',
-    background: '#f8f6f6',
-    boxShadow: 'inset 3px 4px 2px 0 rgba(0,0,0,0.08)',
-    border: '1px solid #c2c2c2',
-    transition: 'background-color 200ms linear',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  over: {
-    backgroundColor: '#ddd'
-  },
-  //hide choice placeholders
-  choice: {
-    opacity: '0.0'
-  },
+const Holder = withStyles(() => ({
   number: {
     width: '100%',
     fontSize: '30px',
     textAlign: 'center',
     color: 'rgba(0,0,0,0.6)'
   }
-})(({ classes, isOver, type, index }) => {
-  const names = classNames(
-    classes.placeholder,
-    isOver && classes.over,
-    classes[type]
-  );
-  return (
-    <div className={names}>
-      {type === 'target' &&
-        index !== undefined && <div className={classes.number}>{index}</div>}
-    </div>
-  );
-});
+}))(({ classes, type, index, isOver, disabled }) => (
+  <PlaceHolder isOver={isOver} disabled={disabled}>
+    {type === 'target' &&
+      index !== undefined && <div className={classes.number}>{index}</div>}
+  </PlaceHolder>
+));
+
+Holder.propTypes = {
+  type: PropTypes.string,
+  index: PropTypes.number,
+  isOver: PropTypes.bool,
+  disabled: PropTypes.bool
+};
 
 const TileContent = withStyles({
   over: {
@@ -77,7 +59,6 @@ const TileContent = withStyles({
     border: 'solid 1px green'
   }
 })(props => {
-  log('[TileContent] render: ', props);
   const {
     type,
     classes,
@@ -92,7 +73,7 @@ const TileContent = withStyles({
 
   if (empty) {
     return (
-      <PlaceHolder
+      <Holder
         type={type}
         index={guideIndex}
         isOver={isOver}

@@ -5,8 +5,7 @@ import compact from 'lodash/compact';
 import debug from 'debug';
 import katex from 'katex';
 import { swap } from './ordering';
-import withContext from './with-context';
-
+import { withContext } from '@pie-lib/drag';
 const log = debug('pie-elements:placement-ordering');
 
 //Auto render requires the katex global

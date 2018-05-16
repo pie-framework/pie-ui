@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { DragSource } from 'react-dnd';
 import { withUid } from './id-context';
-import Card, { CardContent } from 'material-ui/Card';
-import green from 'material-ui/colors/green';
-import orange from 'material-ui/colors/orange';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import green from '@material-ui/core/colors/green';
+import orange from '@material-ui/core/colors/orange';
 import debug from 'debug';
 
 const log = debug('@pie-ui:categorize:choice');

@@ -1,8 +1,10 @@
-import { green, orange, pink } from 'material-ui/colors';
-import { withStyles } from 'material-ui/styles';
+import green from '@material-ui/core/colors/green';
+import orange from '@material-ui/core/colors/orange';
+import pink from '@material-ui/core/colors/pink';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import MultipleChoice from './multiple-choice';
-import { createMuiTheme, MuiThemeProvider } from 'material-ui/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import classNames from 'classnames';
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import Choice from './choice';
 import PlaceHolder from './droppable-placeholder';
-import orange from 'material-ui/colors/orange';
+import orange from '@material-ui/core/colors/orange';
 
 export const CategoryType = {
   id: PropTypes.string.isRequired,

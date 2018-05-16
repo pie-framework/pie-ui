@@ -1,5 +1,5 @@
-import Checkbox from 'material-ui/Checkbox';
-import Radio from 'material-ui/Radio';
+import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
 import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';

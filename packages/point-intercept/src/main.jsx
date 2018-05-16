@@ -5,7 +5,7 @@ import Controls from './controls';
 import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const log = debug('pie-ui:point-intercept:main');
 

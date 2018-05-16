@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import range from 'lodash/range';
-import MuiInput from 'material-ui/Input';
+import MuiInput from '@material-ui/core/Input';
 import {
   MuiThemeProvider,
   createMuiTheme,
   withStyles
-} from 'material-ui/styles';
-import { FormControl, FormHelperText } from 'material-ui/Form';
+} from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import { indicators } from '@pie-lib/render-ui';
 import PropTypes from 'prop-types';
 

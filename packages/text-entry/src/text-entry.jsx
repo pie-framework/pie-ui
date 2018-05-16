@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debug from 'debug';
 import classNames from 'classnames';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Input from './input';
 import { getFormatTag } from './formatting-component';
 

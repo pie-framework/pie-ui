@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import debug from 'debug';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { PlaceHolder } from '@pie-lib/drag';
 
 const log = debug('pie-elements:placement-ordering:tile');

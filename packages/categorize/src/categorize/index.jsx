@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Choices, { ChoiceType } from './choices';
 import Categories, { CategoryType } from './categories';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import {
   buildState,
   removeChoiceFromCategory,

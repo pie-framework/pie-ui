@@ -1,12 +1,12 @@
 import React from 'react';
 import Calculator from '@pie-framework/material-ui-calculator';
 import Draggable from 'react-draggable';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import Close from '@material-ui/icons/Close';
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import grey from 'material-ui/colors/grey';
+import { withStyles } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/grey';
 import classNames from 'classnames';
 
 const styles = theme => {

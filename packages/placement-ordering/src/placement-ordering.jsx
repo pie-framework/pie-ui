@@ -9,7 +9,7 @@ import compact from 'lodash/compact';
 import debug from 'debug';
 import isEmpty from 'lodash/isEmpty';
 import uniqueId from 'lodash/uniqueId';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const log = debug('pie-elements:placement-ordering');
 

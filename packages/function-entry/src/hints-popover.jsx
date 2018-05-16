@@ -1,7 +1,7 @@
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Popover from 'material-ui/Popover';
+import Popover from '@material-ui/core/Popover';
 import classNames from 'classnames';
 import Hints from './hints';
 

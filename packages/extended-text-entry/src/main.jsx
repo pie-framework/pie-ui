@@ -1,7 +1,7 @@
 import React from 'react';
 import EditableHTML from '@pie-lib/editable-html';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import debug from 'debug';
 import { Feedback } from '@pie-lib/render-ui';
 

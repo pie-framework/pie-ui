@@ -9,45 +9,77 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-"@pie-lib/correct-answer-toggle@^2.0.10":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.0.10.tgz#5b5f4cfc1bad5f2ea9902b2d76c50798a63e5fd8"
+"@material-ui/core@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0-rc.1.tgz#71a0b98c5698a4631114678eaec2d28b7d04c369"
   dependencies:
-    "@pie-lib/icons" "^2.1.8"
+    "@babel/runtime" "^7.0.0-beta.42"
+    "@types/jss" "^9.5.3"
+    "@types/react-transition-group" "^2.0.8"
+    brcast "^3.0.1"
+    classnames "^2.2.5"
+    deepmerge "^2.0.1"
+    dom-helpers "^3.2.1"
+    hoist-non-react-statics "^2.5.0"
+    jss "^9.3.3"
+    jss-camel-case "^6.0.0"
+    jss-default-unit "^8.0.2"
+    jss-global "^3.0.0"
+    jss-nested "^6.0.1"
+    jss-props-sort "^6.0.0"
+    jss-vendor-prefixer "^7.0.0"
+    keycode "^2.1.9"
+    lodash "^4.2.0"
+    normalize-scroll-left "^0.1.2"
+    prop-types "^15.6.0"
+    react-event-listener "^0.5.1"
+    react-jss "^8.1.0"
+    react-popper "^0.10.0"
+    react-scrollbar-size "^2.0.2"
+    react-transition-group "^2.2.1"
+    recompose "^0.26.0 || ^0.27.0"
+    scroll "^2.0.3"
+    warning "^3.0.0"
+
+"@pie-lib/correct-answer-toggle@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.1.0.tgz#7c5cc9b105fa59ed7b47bb43005e4f5b63379bf2"
+  dependencies:
+    "@pie-lib/icons" "^2.2.0"
     classnames "^2.2.5"
     lodash "^4.17.5"
     prop-types "^15.6.1"
     react-transition-group "^2.3.1"
 
-"@pie-lib/drag@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-0.1.0.tgz#c4caf5cb79b74c1b7be56327c4dd75bf739b5b02"
+"@pie-lib/drag@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-0.2.0.tgz#325567d7b83844e10eac4f16b58809146abd142f"
   dependencies:
     classnames "^2.2.5"
 
-"@pie-lib/icons@^2.1.8":
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.1.8.tgz#e208c09543c1249dc55068bf6f2b110ddde24b2f"
+"@pie-lib/icons@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.2.0.tgz#8dd6e674ab0f6285ef84d867d2cdb28b64494d3e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
 
-"@pie-lib/render-ui@^2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-2.0.11.tgz#7b9ddb12d87566472eaedcf03c24694fbe08e9fb"
+"@pie-lib/render-ui@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-2.1.0.tgz#0c485f1f41db2c910d01c9af3f53400184e23a55"
   dependencies:
-    "@pie-lib/icons" "^2.1.8"
+    "@material-ui/core" "^1.0.0-rc.1"
+    "@pie-lib/icons" "^2.2.0"
     debug "^3.1.0"
-    material-ui "^1.0.0-beta.44"
     react-transition-group "^2.3.1"
 
 "@types/invariant@^2.2.29":
   version "2.2.29"
   resolved "https://registry.yarnpkg.com/@types/invariant/-/invariant-2.2.29.tgz#aa845204cd0a289f65d47e0de63a6a815e30cc66"
 
-"@types/jss@^9.3.0":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@types/jss/-/jss-9.5.2.tgz#85076b2c16606a6f996aa7e20c1ec7ed6a08075f"
+"@types/jss@^9.5.3":
+  version "9.5.3"
+  resolved "https://registry.yarnpkg.com/@types/jss/-/jss-9.5.3.tgz#0c106de3fe0b324cd4173fac7dab26c12cda624e"
   dependencies:
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
@@ -388,39 +420,6 @@ match-at@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.1.tgz#25d040d291777704d5e6556bbb79230ec2de0540"
 
-material-ui@1.0.0-beta.47, material-ui@^1.0.0-beta.44:
-  version "1.0.0-beta.47"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.47.tgz#5deb97dc3e694299992d3c3cacb44051f8bc2166"
-  dependencies:
-    "@babel/runtime" "^7.0.0-beta.42"
-    "@types/jss" "^9.3.0"
-    "@types/react-transition-group" "^2.0.8"
-    brcast "^3.0.1"
-    classnames "^2.2.5"
-    deepmerge "^2.0.1"
-    dom-helpers "^3.2.1"
-    hoist-non-react-statics "^2.5.0"
-    jss "^9.3.3"
-    jss-camel-case "^6.0.0"
-    jss-default-unit "^8.0.2"
-    jss-global "^3.0.0"
-    jss-nested "^6.0.1"
-    jss-props-sort "^6.0.0"
-    jss-vendor-prefixer "^7.0.0"
-    keycode "^2.1.9"
-    lodash "^4.2.0"
-    normalize-scroll-left "^0.1.2"
-    prop-types "^15.6.0"
-    react-event-listener "^0.5.1"
-    react-jss "^8.1.0"
-    react-lifecycles-compat "^3.0.0"
-    react-popper "^0.10.0"
-    react-scrollbar-size "^2.0.2"
-    react-transition-group "^2.2.1"
-    recompose "^0.26.0 || ^0.27.0"
-    scroll "^2.0.3"
-    warning "^3.0.0"
-
 min-document@^2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
@@ -544,7 +543,7 @@ react-jss@^8.4.0:
     prop-types "^15.6.0"
     theming "^1.3.0"
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2:
+react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 

@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/inline-choice",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",
@@ -10,12 +10,12 @@
   "author": "pie framework developers",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^1.0.0-rc.1",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/icons": "^2.2.0",
     "@pie-lib/render-ui": "^2.1.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
-    "@material-ui/core": "^1.0.0-rc.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"

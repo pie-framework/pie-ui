@@ -1,17 +1,20 @@
 {
   "name": "@pie-ui/protractor",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A protractor custom element",
-  "keywords": ["pie", "protractor"],
+  "keywords": [
+    "pie",
+    "protractor"
+  ],
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {},
   "dependencies": {
+    "@material-ui/core": "^1.0.0-rc.1",
     "@pie-lib/tools": "^0.7.0",
     "classnames": "^2.2.5",
-    "@material-ui/core": "^1.0.0-rc.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },

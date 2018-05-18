@@ -1,6 +1,8 @@
 import compact from 'lodash/compact';
 import debug from 'debug';
 import clone from 'lodash/clone';
+import every from 'lodash/every';
+import isEqual from 'lodash/isEqual';
 
 const log = debug('@pie-ui:categorize:builder');
 
@@ -103,6 +105,10 @@ export const buildState = (
   const addChoices = category => {
     const answer = answers.find(a => a.category === category.id);
 
+    // const correction = corrections.find(t => t.category === category.id);
+    /*
+    {category: 1, choices: [ {id: x, correct: true}]}
+    */
     const hasCorrectResponse =
       Array.isArray(correctResponse) && correctResponse.length > 0;
 
@@ -135,13 +141,35 @@ export const buildState = (
         }
       );
 
-      return { ...category, choices: out.choices };
+      // const nonEmpty = out.choices.filter(c => !c.empty);
+
+      const ids = out.choices.map(c => c.id).sort();
+      const correctIds = clone(cr ? cr.choices : []).sort();
+
+      log('ids: ', ids, 'correctIds: ', correctIds);
+      const correct = hasCorrectResponse ? isEqual(ids, correctIds) : undefined;
+      return {
+        ...category,
+        choices: out.choices,
+        correct
+      };
     } else {
-      return { ...category, choices: [] };
+      const correct =
+        correctChoices === undefined ? true : correctChoices.length === 0;
+      log('empty choices is that correct?', correctChoices);
+      return {
+        ...category,
+        choices: [],
+        correct
+      };
     }
   };
 
   const withChoices = categories.map(addChoices);
+
+  const correct = correctResponse
+    ? every(withChoices, category => category.correct)
+    : undefined;
 
   const stillSelectable = h => {
     if (h.categoryCount > 0) {
@@ -160,5 +188,5 @@ export const buildState = (
     }
   });
 
-  return { choices: filteredChoices, categories: withChoices };
+  return { choices: filteredChoices, categories: withChoices, correct };
 };

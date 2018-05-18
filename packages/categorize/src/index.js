@@ -13,6 +13,10 @@ export default class Categorize extends HTMLElement {
   }
 
   set session(s) {
+    if (s && !s.answers) {
+      s.answers = [];
+    }
+
     this._session = s;
   }
 

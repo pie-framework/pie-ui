@@ -144,7 +144,9 @@ describe('builder', () => {
       [answer('1', '1')],
       [],
       {
-        categories: [{ ...cat('1'), choices: [choice('1')] }],
+        categories: [
+          { ...cat('1'), choices: [choice('1')], correct: undefined }
+        ],
         choices: [choice('1')]
       }
     );
@@ -201,8 +203,9 @@ describe('builder', () => {
       [answer('1', ['1'])],
       [answer('2', ['1'])],
       {
+        correct: false,
         categories: [
-          { ...cat('1'), choices: [choice('1', 0, false)] },
+          { ...cat('1'), choices: [choice('1', 0, false)], correct: false },
           {
             ...cat('2'),
             choices: []
@@ -219,10 +222,12 @@ describe('builder', () => {
       [answer('1', ['1'])],
       [answer('1', ['1'])],
       {
+        correct: true,
         categories: [
           {
             ...cat('1'),
-            choices: [choice('1', 0, true)]
+            choices: [choice('1', 0, true)],
+            correct: true
           }
         ],
         choices: [{ ...choice('1', 0) }]
@@ -236,10 +241,12 @@ describe('builder', () => {
       [answer('1', ['1', '1'])],
       [answer('1', ['1', '1'])],
       {
+        correct: true,
         categories: [
           {
             ...cat('1'),
-            choices: [choice('1', 0, true), choice('1', 0, true)]
+            choices: [choice('1', 0, true), choice('1', 0, true)],
+            correct: true
           }
         ],
         choices: [{ ...choice('1', 0) }]
@@ -253,10 +260,12 @@ describe('builder', () => {
       [answer('1', ['1', '1'])],
       [answer('1', ['1'])],
       {
+        correct: false,
         categories: [
           {
             ...cat('1'),
-            choices: [choice('1', 0, true), choice('1', 0, false)]
+            choices: [choice('1', 0, true), choice('1', 0, false)],
+            correct: false
           }
         ],
         choices: [{ ...choice('1', 0) }]
@@ -264,14 +273,34 @@ describe('builder', () => {
     );
 
     assert(
-      '1 category, 1 limited choice , 1 correct answer, correct response',
-      [cat('1')],
+      '2 categories, 1 limited choice , 1 correct answer, correct response',
+      [cat('1'), cat('2')],
       [choice('1', 1)],
       [answer('1', ['1'])],
       [answer('1', ['1'])],
       {
-        categories: [{ ...cat('1'), choices: [choice('1', 1, true)] }],
+        correct: true,
+        categories: [
+          { ...cat('1'), choices: [choice('1', 1, true)], correct: true },
+          { ...cat('2'), correct: true }
+        ],
         choices: [{ empty: true }]
+      }
+    );
+
+    assert(
+      '2 categories, 1 limited choice , empty answer, correct response',
+      [cat('1'), cat('2')],
+      [choice('1', 1)],
+      [],
+      [answer('1', ['1'])],
+      {
+        correct: false,
+        categories: [
+          { ...cat('1'), choices: [], correct: false },
+          { ...cat('2'), choices: [], correct: true }
+        ],
+        choices: [choice('1', 1)]
       }
     );
   });

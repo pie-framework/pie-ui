@@ -47,20 +47,14 @@ class Main extends React.Component {
     };
   }
 
-  label(nameKey, myArray) {
-    for (var i = 0; i < myArray.length; i++) {
-      if (myArray[i].lang === nameKey) {
-        return <div className={this.props.classes.label} dangerouslySetInnerHTML={{__html: myArray[i].label}}/>;
-      }
-    }
-  }
-
   indexToSymbol(index) {
     const {model} = this.props;
-    return (model.keyMode === 'numbers'
-        ? index + 1
-        : String.fromCharCode(97 + index).toUpperCase()
-    ).toString();
+    switch(model.keyMode){
+      case 'numbers':
+      return (index + 1).toString();;
+      case 'letters':
+      return (String.fromCharCode(97 + index).toUpperCase()).toString();
+    }
   }
 
   toggleRadio(e) {
@@ -83,7 +77,7 @@ class Main extends React.Component {
                        checked={radioValue === k.value && k.value} value={k.value}/>
                 <div className={classes.textRow}>
                   <Typography className={classes.identifier}>{this.indexToSymbol(index)}.</Typography>
-                  {this.label(model.activeLang, k.label)}
+                  <div className={classes.label} dangerouslySetInnerHTML={{__html: k.label}}/>
                 </div>
               </div>
             );

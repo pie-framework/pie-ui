@@ -4,39 +4,20 @@ module.exports = {
   },
   models: [
     {
-      element: 'likert-choice',
       id: '1',
-      mode: 'evaluate',
-      prompt: 'This instance is in gather mode and can be clicked',
-      disabled: false,
-      keyMode: 'letters',
+      element: 'likert-choice',
+      prompt: 'Do you Like northern European countries ?',
       choiceMode: 'radio',
+      keyMode: 'numbers',
       activeLang: 'en-US',
       defaultLang: 'en-US',
+      responseType: '3',
+      disabled: false,
+      labelType: 'agreement',
       choices: [
-        {
-          correct: true,
-          value: 'disagree',
-          label: [
-            {lang: 'en-US', label: 'Disagree', value: 'Disagree'},
-            {lang: 'es-ES', label: 'Discrepar', value: 'Discrepar'}
-          ],
-        },
-        {
-          correct: true,
-          value: 'neutral',
-          label: [
-            {lang: 'en-US', label: 'Neutral', value: 'Neutral'},
-            {lang: 'es-ES', label: 'Neutral', value: 'Neutral'}
-          ],
-        },
-        {
-          value: 'agree',
-          label: [
-            {lang: 'en-US', label: 'Agree', value: 'Agree'},
-            {lang: 'es-ES', label: 'De Acuerdo', value: 'De Acuerdo'}
-          ],
-        }
+        {lang: 'en-US', value: 'disagree', label: 'Disagree'},
+        {lang: 'en-US', value: 'unsure', label: 'Unsure'},
+        {lang: 'en-US', value: 'agree', label: 'Agree'}
       ]
     }
   ]

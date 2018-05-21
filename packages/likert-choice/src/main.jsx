@@ -1,8 +1,11 @@
 import React from 'react';
 import Radio from '@material-ui/core/Radio';
 import Typography from '@material-ui/core/Typography';
-import {withStyles} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import {graphics} from './graphics';
+import {YesA}from './icons';
+
 
 const styles = {
   radioButton: {
@@ -48,36 +51,40 @@ class Main extends React.Component {
   }
 
   indexToSymbol(index) {
-    const {model} = this.props;
-    switch(model.keyMode){
+    const { model } = this.props;
+    switch (model.keyMode) {
       case 'numbers':
-      return (index + 1).toString();;
+        return (index + 1).toString() + '.';
       case 'letters':
-      return (String.fromCharCode(97 + index).toUpperCase()).toString();
+        return (String.fromCharCode(97 + index).toUpperCase()).toString() + '.';
+      case 'graphics':
+      return graphics[model.graphicsType][model.responseType][index];
+      default:
+        return '';
     }
   }
 
   toggleRadio(e) {
     this.props.onChoiceChanged(e);
-    this.setState({radioValue: e.target.value});
+    this.setState({ radioValue: e.target.value });
   }
 
 
   render() {
-    const {classes, model} = this.props;
-    const {radioValue} = this.state;
+    const { classes, model } = this.props;
+    const { radioValue } = this.state;
     return (
       <div>
-        <div dangerouslySetInnerHTML={{__html: model.prompt}}/>
+        <div dangerouslySetInnerHTML={{ __html: model.prompt }} />
         <div className={classes.container}>
           {model.choices.map((k, index) => {
             return (
               <div key={index} className={classes.row}>
                 <Radio name='likert' onClick={(e) => this.toggleRadio(e)}
-                       checked={radioValue === k.value && k.value} value={k.value}/>
+                  checked={radioValue === k.value && k.value} value={k.value} />
                 <div className={classes.textRow}>
-                  <Typography className={classes.identifier}>{this.indexToSymbol(index)}.</Typography>
-                  <div className={classes.label} dangerouslySetInnerHTML={{__html: k.label}}/>
+                  <Typography className={this.indexToSymbol(index) && classes.identifier}>{this.indexToSymbol(index)}</Typography>
+                  <div className={classes.label} dangerouslySetInnerHTML={{ __html: k.label }} />
                 </div>
               </div>
             );

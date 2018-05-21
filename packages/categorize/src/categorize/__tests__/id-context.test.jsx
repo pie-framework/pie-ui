@@ -15,7 +15,6 @@ describe('id-context', () => {
       const Wrapped = withUid(() => ({}));
 
       const Consumer = Wrapped({});
-      console.log(Consumer);
       expect(createElement).toBeCalledWith(
         expect.any(Function),
         null,

@@ -32,20 +32,26 @@ export class Choices extends React.Component {
     const { classes, choices, config, disabled } = this.props;
 
     return (
-      <GridContent columns={config.columns} className={classes.choices}>
-        {choices.map((c, index) => {
-          return c.empty ? (
-            <Blank key={index} />
-          ) : (
-            <Choice
-              disabled={disabled}
-              className={classes.choice}
-              key={index}
-              {...c}
-            />
-          );
-        })}
-      </GridContent>
+      <div>
+        {config.label &&
+          config.label !== '' && (
+            <div className={classes.labelHolder}>{config.label}</div>
+          )}
+        <GridContent columns={config.columns} className={classes.choices}>
+          {choices.map((c, index) => {
+            return c.empty ? (
+              <Blank key={index} />
+            ) : (
+              <Choice
+                disabled={disabled}
+                className={classes.choice}
+                key={index}
+                {...c}
+              />
+            );
+          })}
+        </GridContent>
+      </div>
     );
   }
 }
@@ -54,6 +60,11 @@ const styles = theme => ({
   choices: {
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
+  },
+  labelHolder: {
+    margin: '0 auto',
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit
   }
 });
 

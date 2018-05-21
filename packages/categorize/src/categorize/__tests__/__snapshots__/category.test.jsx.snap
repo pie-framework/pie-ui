@@ -44,7 +44,7 @@ exports[`category snapshots incorrect 1`] = `
     />
   </WithStyles(Typography)>
   <Wrapped
-    className="placeholder incorrect"
+    className="placeholder"
     grid={
       Object {
         "columns": 1,

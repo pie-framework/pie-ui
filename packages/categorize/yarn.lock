@@ -9,9 +9,9 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-"@material-ui/core@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0-rc.1.tgz#71a0b98c5698a4631114678eaec2d28b7d04c369"
+"@material-ui/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0.tgz#857b871038bb300f2d25594ce0cd250be944e71b"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.42"
     "@types/jss" "^9.5.3"
@@ -41,6 +41,13 @@
     scroll "^2.0.3"
     warning "^3.0.0"
 
+"@pie-lib/categorize@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/categorize/-/categorize-0.4.0.tgz#440eeccfe9b86062e763e0e1a7dc5dbbf26040dc"
+  dependencies:
+    debug "^3.1.0"
+    lodash "^4.17.10"
+
 "@pie-lib/correct-answer-toggle@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.1.0.tgz#7c5cc9b105fa59ed7b47bb43005e4f5b63379bf2"
@@ -51,11 +58,12 @@
     prop-types "^15.6.1"
     react-transition-group "^2.3.1"
 
-"@pie-lib/drag@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-0.2.0.tgz#325567d7b83844e10eac4f16b58809146abd142f"
+"@pie-lib/drag@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-0.3.1.tgz#0d44b5e0027eaa14f84bd6aa8152e37c9eab47f2"
   dependencies:
     classnames "^2.2.5"
+    lodash "^4.17.10"
 
 "@pie-lib/icons@^2.2.0":
   version "2.2.0"
@@ -145,6 +153,12 @@ css-vendor@^0.3.8:
 csstype@^2.0.0, csstype@^2.2.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.1.tgz#654231d1ddddfc3eb93da281a1144e7c14fc0bdc"
+
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  dependencies:
+    ms "2.0.0"
 
 deepmerge@^2.0.1:
   version "2.1.0"
@@ -344,7 +358,7 @@ lodash-es@^4.17.4:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
-lodash@^4.13.1, lodash@^4.17.5, lodash@^4.2.0:
+lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.5, lodash@^4.2.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -359,6 +373,10 @@ min-document@^2.19.0:
   resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
   dependencies:
     dom-walk "^0.1.0"
+
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 node-fetch@^1.0.1:
   version "1.7.3"

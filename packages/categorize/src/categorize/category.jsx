@@ -35,17 +35,17 @@ export class Category extends React.Component {
       onDropChoice,
       onRemoveChoice,
       grid,
-      id
+      id,
+      correct
     } = this.props;
-
-    const incorrectChoices = choices.filter(c => c.correct === false);
 
     const names = classNames(classes.category, className);
 
     const placeholderNames = classNames(
       classes.placeholder,
-      incorrectChoices.length > 0 && classes.incorrect
+      correct === false && classes.incorrect
     );
+
     return (
       <div className={names}>
         <Typography className={classes.label}>

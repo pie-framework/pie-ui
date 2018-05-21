@@ -1,7 +1,7 @@
 import React from 'react';
-import Radio from 'material-ui/Radio';
-import Typography from 'material-ui/typography';
-import {withStyles} from 'material-ui/styles';
+import Radio from '@material-ui/core/Radio';
+import Typography from '@material-ui/core/Typography';
+import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
 const styles = {

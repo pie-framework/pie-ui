@@ -8,7 +8,7 @@ import {
   buildState,
   removeChoiceFromCategory,
   moveChoiceToCategory
-} from './builder';
+} from '@pie-lib/categorize';
 import { withContext } from '@pie-lib/drag';
 import { Provider as IdProvider, generateId } from './id-context';
 import debug from 'debug';

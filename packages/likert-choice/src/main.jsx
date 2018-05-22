@@ -4,8 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import {graphics} from './graphics';
-import {YesA}from './icons';
-
+import reverse from 'lodash/reverse';
 
 const styles = {
   radioButton: {
@@ -52,13 +51,15 @@ class Main extends React.Component {
 
   indexToSymbol(index) {
     const { model } = this.props;
+    let arr = [];
     switch (model.keyMode) {
       case 'numbers':
         return (index + 1).toString() + '.';
       case 'letters':
         return (String.fromCharCode(97 + index).toUpperCase()).toString() + '.';
       case 'graphics':
-      return graphics[model.graphicsType][model.responseType][index];
+      arr = model.reverse ? reverse(graphics[model.graphicsType][model.responseType]) : graphics[model.graphicsType][model.responseType];
+      return arr[index];
       default:
         return '';
     }

@@ -25,11 +25,11 @@ const styles = {
   },
   identifier: {
     display: 'inline-flex',
-    paddingRight: '1em',
     fontSize: '1em',
     fontWeight: 'bold'
   },
   label: {
+    paddingLeft: '1em',
     display: 'inline-flex',
   }
 };
@@ -81,10 +81,10 @@ class Main extends React.Component {
             return (
               <div key={index} className={classes.row}>
                 <Radio name='likert' onClick={(e) => this.toggleRadio(e)}
-                  checked={radioValue === k.value && k.value} value={k.value} />
+                  checked={radioValue && radioValue === k.value && k.value} value={k.value} />
                 <div className={classes.textRow}>
-                  <Typography className={this.indexToSymbol(index) && classes.identifier}>{this.indexToSymbol(index)}</Typography>
-                  <div className={classes.label} dangerouslySetInnerHTML={{ __html: k.label }} />
+                  <Typography className={classes.identifier}>{this.indexToSymbol(index)}</Typography>
+                  {model.labelType !== 'none' ?<div className={classes.label} dangerouslySetInnerHTML={{ __html: k.label }} />: null}
                 </div>
               </div>
             );

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Choices snapshot renders 1`] = `
+<div
+  className="choices className"
+>
+  <div
+    className="choicesContainer"
+  >
+    <div
+      className="choiceHolder"
+      key="0"
+    >
+      <Wrapped
+        content="foo"
+        id="1"
+      />
+    </div>
+  </div>
+</div>
+`;

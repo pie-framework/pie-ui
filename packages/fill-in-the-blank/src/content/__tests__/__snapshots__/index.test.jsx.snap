@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content snapshot renders 1`] = `
+<div
+  className="content className"
+>
+  <div
+    className="holder"
+  >
+    <Entry
+      content="test"
+      key="0"
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <Entry
+      content={
+        Object {
+          "choice": Object {
+            "content": "foo",
+            "id": "1",
+          },
+          "id": "1",
+        }
+      }
+      key="1"
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+  </div>
+</div>
+`;

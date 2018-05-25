@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Choice snapshot renders 1`] = `
+<div
+  className="className"
+>
+  <WithStyles(Card)
+    className=""
+  >
+    <WithStyles(CardContent)>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "hi",
+          }
+        }
+      />
+    </WithStyles(CardContent)>
+  </WithStyles(Card)>
+</div>
+`;

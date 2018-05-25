@@ -2,7 +2,7 @@ import React from 'react';
 import { PlaceHolder } from '@pie-lib/drag';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd';
-import { withUid } from './id-context';
+import { withUid } from '@pie-lib/drag';
 import debug from 'debug';
 
 const log = debug('@pie-ui:categorize:droppable-placeholder');

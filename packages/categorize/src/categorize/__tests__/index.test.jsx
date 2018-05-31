@@ -2,10 +2,13 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Categorize } from '../index';
 
-jest.mock('../id-context', () => ({
-  withUid: jest.fn(a => a),
-  Provider: jest.fn(a => a),
-  generateId: jest.fn().mockReturnValue('1')
+jest.mock('@pie-lib/drag', () => ({
+  uid: {
+    withUid: jest.fn(a => a),
+    Provider: jest.fn(a => a),
+    generateId: jest.fn().mockReturnValue('1')
+  },
+  withDragContext: jest.fn(n => n)
 }));
 
 describe('categorize', () => {

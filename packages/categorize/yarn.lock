@@ -41,9 +41,9 @@
     scroll "^2.0.3"
     warning "^3.0.0"
 
-"@pie-lib/categorize@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/categorize/-/categorize-0.4.0.tgz#440eeccfe9b86062e763e0e1a7dc5dbbf26040dc"
+"@pie-lib/categorize@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/categorize/-/categorize-0.4.1.tgz#354be491cd9e6bbe8f0ad11755545ff7134ec694"
   dependencies:
     debug "^3.1.0"
     lodash "^4.17.10"
@@ -58,9 +58,9 @@
     prop-types "^15.6.1"
     react-transition-group "^2.3.1"
 
-"@pie-lib/drag@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-0.3.1.tgz#0d44b5e0027eaa14f84bd6aa8152e37c9eab47f2"
+"@pie-lib/drag@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-1.0.0.tgz#7ec179f25d16aee04edcf4dc64f95270b59d1a9e"
   dependencies:
     classnames "^2.2.5"
     lodash "^4.17.10"

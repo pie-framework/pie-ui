@@ -3,9 +3,7 @@
   "version": "4.2.1",
   "main": "lib/index.js",
   "description": "A pie placement component",
-  "keywords": [
-    "pie"
-  ],
+  "keywords": ["pie"],
   "repository": "pie-framework/pie-ui",
   "publishConfig": {
     "access": "public"
@@ -16,7 +14,7 @@
   "dependencies": {
     "@material-ui/core": "^1.0.0-rc.1",
     "@pie-lib/correct-answer-toggle": "^2.1.0",
-    "@pie-lib/drag": "^0.2.0",
+    "@pie-lib/drag": "^1.0.0",
     "@pie-lib/render-ui": "^2.1.0",
     "debug": "^3.1.0",
     "decimal.js": "^10.0.0",

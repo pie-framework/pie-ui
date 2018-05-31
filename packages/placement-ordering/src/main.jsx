@@ -1,6 +1,6 @@
 import PlacementOrdering from './placement-ordering';
 import React from 'react';
-import { withContext } from '@pie-lib/drag';
+import { withDragContext } from '@pie-lib/drag';
 import PropTypes from 'prop-types';
 
 class Main extends React.Component {
@@ -22,4 +22,4 @@ class Main extends React.Component {
   }
 }
 
-export default withContext(Main);
+export default withDragContext(Main);

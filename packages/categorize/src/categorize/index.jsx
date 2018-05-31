@@ -9,7 +9,7 @@ import {
   removeChoiceFromCategory,
   moveChoiceToCategory
 } from '@pie-lib/categorize';
-import { withContext, idContext } from '@pie-lib/drag';
+import { withDragContext, uid } from '@pie-lib/drag';
 
 import debug from 'debug';
 
@@ -39,7 +39,7 @@ export class Categorize extends React.Component {
 
   constructor(props) {
     super(props);
-    this.uid = idContext.generateId();
+    this.uid = uid.generateId();
 
     this.state = {
       showCorrect: false
@@ -122,7 +122,7 @@ export class Categorize extends React.Component {
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
     return (
-      <idContext.IdProvider value={this.uid}>
+      <uid.Provider value={this.uid}>
         <div>
           <CorrectAnswerToggle
             show={showCorrect || correct === false}
@@ -145,7 +145,7 @@ export class Categorize extends React.Component {
             />
           </div>
         </div>
-      </idContext.IdProvider>
+      </uid.Provider>
     );
   }
 }
@@ -155,4 +155,4 @@ const styles = {
     flexDirection: 'column'
   }
 };
-export default withContext(withStyles(styles)(Categorize));
+export default withDragContext(withStyles(styles)(Categorize));

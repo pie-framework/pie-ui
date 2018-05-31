@@ -57,7 +57,7 @@ export class Choice extends React.Component {
     );
   }
 }
-const styles = theme => ({
+const styles = () => ({
   choice: {
     padding: 0,
     backgroundColor: 'white',

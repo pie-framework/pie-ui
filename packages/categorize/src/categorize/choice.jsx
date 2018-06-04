@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { DragSource } from 'react-dnd';
-import { withUid } from './id-context';
+import { uid } from '@pie-lib/drag';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import green from '@material-ui/core/colors/green';
@@ -142,4 +142,4 @@ const DraggableChoice = DragSource(
   })
 )(Choice);
 
-export default withUid(DraggableChoice);
+export default uid.withUid(DraggableChoice);

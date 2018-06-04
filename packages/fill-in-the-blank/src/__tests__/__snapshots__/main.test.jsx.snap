@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main snapshot renders 1`] = `
+<[object Object]
+  value="1"
+>
+  <Component
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    className="className"
+  >
+    <WithStyles(Content)
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices) />
+  </div>
+</[object Object]>
+`;

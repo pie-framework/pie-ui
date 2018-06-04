@@ -7,12 +7,13 @@ exports[`categorize snapshots incorrect 1`] = `
   <div>
     <Component
       onToggle={[Function]}
+      show={false}
       toggled={false}
     />
     <div
       style={
         Object {
-          "flexDirection": "column-reverse",
+          "flexDirection": undefined,
         }
       }
     >
@@ -53,12 +54,13 @@ exports[`categorize snapshots renders 1`] = `
   <div>
     <Component
       onToggle={[Function]}
+      show={false}
       toggled={false}
     />
     <div
       style={
         Object {
-          "flexDirection": "column-reverse",
+          "flexDirection": undefined,
         }
       }
     >

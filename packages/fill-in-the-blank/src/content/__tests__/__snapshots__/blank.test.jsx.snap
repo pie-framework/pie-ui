@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blank snapshot renders 1`] = `
+<div
+  className="className"
+>
+  <Wrapped
+    blankId="1"
+    content="foo"
+    id="1"
+    onRemoveFromBlank={[Function]}
+  />
+</div>
+`;

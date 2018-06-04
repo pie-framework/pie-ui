@@ -35,7 +35,8 @@ module.exports = {
         choices: {
           label: 'The Label',
           position: 'bottom',
-          columns: 4
+          columns: 4,
+          shuffle: true
         }
       }
     },
@@ -64,6 +65,16 @@ module.exports = {
       choices: getChoices(),
       incorrect: true,
       correctResponse: [{ choices: ['1'], category: '1' }],
+      /**
+       * Corrections indicate which choices are correct or not.
+       */
+      corrections: [
+        {
+          category: '1',
+          correct: false,
+          choices: [{ id: '1', correct: true }, { id: '1', correct: false }]
+        }
+      ],
       config: {
         categories: {
           columns: 2

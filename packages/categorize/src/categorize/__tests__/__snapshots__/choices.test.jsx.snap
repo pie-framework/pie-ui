@@ -1,35 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`choices snapshots disabled 1`] = `
-<WithStyles(GridContent)
-  columns={2}
-/>
+<div>
+  <WithStyles(GridContent)
+    columns={2}
+  />
+</div>
 `;
 
 exports[`choices snapshots empty 1`] = `
-<WithStyles(GridContent)
-  columns={2}
->
-  <Wrapped
-    id="1"
-    key="0"
-    label="foo"
-  />
-</WithStyles(GridContent)>
+<div>
+  <WithStyles(GridContent)
+    columns={2}
+  >
+    <Wrapped
+      id="1"
+      key="0"
+      label="foo"
+    />
+  </WithStyles(GridContent)>
+</div>
 `;
 
 exports[`choices snapshots empty 2`] = `
-<WithStyles(GridContent)
-  columns={2}
->
-  <Blank
-    key="0"
-  />
-</WithStyles(GridContent)>
+<div>
+  <WithStyles(GridContent)
+    columns={2}
+  >
+    <Blank
+      key="0"
+    />
+  </WithStyles(GridContent)>
+</div>
 `;
 
 exports[`choices snapshots renders 1`] = `
-<WithStyles(GridContent)
-  columns={2}
-/>
+<div>
+  <WithStyles(GridContent)
+    columns={2}
+  />
+</div>
 `;

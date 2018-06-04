@@ -8,9 +8,9 @@ import {
   buildState,
   removeChoiceFromCategory,
   moveChoiceToCategory
-} from './builder';
-import { withContext } from '@pie-lib/drag';
-import { Provider as IdProvider, generateId } from './id-context';
+} from '@pie-lib/categorize';
+import { withDragContext, uid } from '@pie-lib/drag';
+
 import debug from 'debug';
 
 const log = debug('@pie-ui:categorize');
@@ -39,7 +39,7 @@ export class Categorize extends React.Component {
 
   constructor(props) {
     super(props);
-    this.uid = generateId();
+    this.uid = uid.generateId();
 
     this.state = {
       showCorrect: false
@@ -78,18 +78,27 @@ export class Categorize extends React.Component {
     onAnswersChange(answers);
   };
 
+  componentWillReceiveProps() {
+    this.setState({ showCorrect: false });
+  }
+
   toggleShowCorrect = () =>
     this.setState({ showCorrect: !this.state.showCorrect });
 
   render() {
     const { classes, model, session } = this.props;
     const { showCorrect } = this.state;
+
+    const choicePosition =
+      model.config && model.config.choices
+        ? model.config.choices.position
+        : 'above';
+
     const style = {
-      flexDirection:
-        model.config.choices.position === 'top' ? 'column-reverse' : undefined
+      flexDirection: choicePosition === 'above' ? 'column-reverse' : undefined
     };
 
-    const { categories, choices } = buildState(
+    const { categories, choices, correct } = buildState(
       model.categories,
       model.choices,
       showCorrect ? model.correctResponse : session.answers,
@@ -112,13 +121,12 @@ export class Categorize extends React.Component {
 
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
-    log('grid: ', grid);
     return (
-      <IdProvider value={this.uid}>
+      <uid.Provider value={this.uid}>
         <div>
           <CorrectAnswerToggle
-            show={model.incorrect}
-            toggled={this.state.showCorrect}
+            show={showCorrect || correct === false}
+            toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.categorize} style={style}>
@@ -137,7 +145,7 @@ export class Categorize extends React.Component {
             />
           </div>
         </div>
-      </IdProvider>
+      </uid.Provider>
     );
   }
 }
@@ -147,4 +155,4 @@ const styles = {
     flexDirection: 'column'
   }
 };
-export default withContext(withStyles(styles)(Categorize));
+export default withDragContext(withStyles(styles)(Categorize));

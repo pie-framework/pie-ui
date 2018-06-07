@@ -27,7 +27,7 @@ const model = (id, extras) =>
 
 module.exports = {
   elements: {
-    'graph-lines': '../..'
+    'graph-lines': '..'
   },
   models: [
     model('1', {

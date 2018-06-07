@@ -23,7 +23,7 @@ export default class GraphLines extends HTMLElement {
   }
 
   sessionChanged(s) {
-    this._session.points = s.points;
+    this._session.lines = s.lines;
     log('session: ', this._session);
   }
 

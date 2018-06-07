@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import { InputContainer } from '@pie-lib/config-ui';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { lineUtils as utils } from '../../../../pie-lib/packages/charting/src';
+import { lineUtils as utils } from '@pie-lib/charting';
 
 export class GraphLineControls extends React.Component {
   static propTypes = {
@@ -19,9 +19,11 @@ export class GraphLineControls extends React.Component {
   onLineLabelChange = line => event => {
     const newLine = { ...line, label: event.target.value };
 
-    const newLines = this.props.lines.map(propLine => utils.linesEqual(propLine, line) ? newLine : propLine);
+    const newLines = this.props.lines.map(
+      propLine => (utils.linesEqual(propLine, line) ? newLine : propLine)
+    );
     this.props.updateLines(newLines);
-  }
+  };
 
   onChange = line => event => {
     const [point, coordinate] = event.target.name.split('.');
@@ -31,14 +33,16 @@ export class GraphLineControls extends React.Component {
     if (!isNaN(newValue)) {
       newLine[point][coordinate] = newValue;
 
-      const newLines = this.props.lines.map(propLine => utils.linesEqual(propLine, line) ? newLine : propLine);
+      const newLines = this.props.lines.map(
+        propLine => (utils.linesEqual(propLine, line) ? newLine : propLine)
+      );
       this.props.updateLines(newLines);
     }
-  }
+  };
 
   deleteLine = line => () => {
     this.props.onDeleteLine(line);
-  }
+  };
 
   render() {
     const { classes, lines, model } = this.props;
@@ -46,115 +50,116 @@ export class GraphLineControls extends React.Component {
 
     return (
       <div className={classes.controlsContainer}>
-        {lines.length === 0 &&
+        {lines.length === 0 && (
           <Typography component="div" className={classes.empty}>
-            There are currently no lines on the chart. Add one by clicking on the chart.
+            There are currently no lines on the chart. Add one by clicking on
+            the chart.
           </Typography>
-        }
+        )}
         {lines.map((line, idx) => {
           const lineOnChange = this.onChange(line);
           const onLineLabelChange = this.onLineLabelChange(line);
 
           return (
-              <div key={idx} className={classes.inputsContainer}>
-                <div style={{ display: 'flex' }}>
-                  <div className={classes.inputItem}>
-                    <InputContainer label="Label">
-                      <Input
-                          disabled={disabled}
-                          type="text"
-                          name="label"
-                          className={classes.input}
-                          onChange={onLineLabelChange}
-                          value={line.label || ''}
-                          placeholder="Enter Value"
-                      />
-                    </InputContainer>
-                  </div>
-                  <div className={classes.inputItem}>
-                    <Typography type="body1" className={classes.labelContainer}>
-                      <span className={classes.label}>Point A: </span>
-                    </Typography>
-                    <InputContainer label="X">
-                      <Input
-                          disabled={disabled}
-                          inputProps={{
-                            min: model.domain.min,
-                            max: model.domain.max,
-                          }}
-                          type="number"
-                          name="from.x"
-                          className={classes.input}
-                          onChange={lineOnChange}
-                          value={line.from.x}
-                          placeholder="Enter Value"
-                      />
-                    </InputContainer>
-                  </div>
-                  <div className={classes.inputItem}>
-                    <InputContainer label="Y">
-                      <Input
-                          disabled={disabled}
-                          inputProps={{
-                            min: model.range.min,
-                            max: model.range.max,
-                          }}
-                          name="from.y"
-                          type="number"
-                          className={classes.input}
-                          onChange={lineOnChange}
-                          value={line.from.y}
-                          placeholder="Enter Value"
-                      />
-                    </InputContainer>
-                  </div>
-                </div>
-                <div style={{ marginLeft: '10px', display: 'flex' }}>
-                  <div className={classes.inputItem}>
-                    <Typography type="body1" className={classes.labelContainer}>
-                      <span className={classes.label}>Point B: </span>
-                    </Typography>
-                    <InputContainer label="X">
-                      <Input
-                          disabled={disabled}
-                          inputProps={{
-                            min: model.domain.min,
-                            max: model.domain.max,
-                          }}
-                          name="to.x"
-                          type="number"
-                          className={classes.input}
-                          onChange={lineOnChange}
-                          value={line.to.x}
-                          placeholder="Enter Value"
-                      />
-                    </InputContainer>
-                  </div>
-                  <div className={classes.inputItem}>
-                    <InputContainer label="Y">
-                      <Input
-                          disabled={disabled}
-                          inputProps={{
-                            min: model.range.min,
-                            max: model.range.max,
-                          }}
-                          name="to.y"
-                          type="number"
-                          className={classes.input}
-                          onChange={lineOnChange}
-                          value={line.to.y}
-                          placeholder="Enter Value"
-                      />
-                    </InputContainer>
-                    <Controls
-                        iconOnly
-                        disabled={disabled}
-                        onDeleteClick={this.deleteLine(line)}
+            <div key={idx} className={classes.inputsContainer}>
+              <div style={{ display: 'flex' }}>
+                <div className={classes.inputItem}>
+                  <InputContainer label="Label">
+                    <Input
+                      disabled={disabled}
+                      type="text"
+                      name="label"
+                      className={classes.input}
+                      onChange={onLineLabelChange}
+                      value={line.label || ''}
+                      placeholder="Enter Value"
                     />
-                  </div>
+                  </InputContainer>
+                </div>
+                <div className={classes.inputItem}>
+                  <Typography type="body1" className={classes.labelContainer}>
+                    <span className={classes.label}>Point A: </span>
+                  </Typography>
+                  <InputContainer label="X">
+                    <Input
+                      disabled={disabled}
+                      inputProps={{
+                        min: model.domain.min,
+                        max: model.domain.max
+                      }}
+                      type="number"
+                      name="from.x"
+                      className={classes.input}
+                      onChange={lineOnChange}
+                      value={line.from.x}
+                      placeholder="Enter Value"
+                    />
+                  </InputContainer>
+                </div>
+                <div className={classes.inputItem}>
+                  <InputContainer label="Y">
+                    <Input
+                      disabled={disabled}
+                      inputProps={{
+                        min: model.range.min,
+                        max: model.range.max
+                      }}
+                      name="from.y"
+                      type="number"
+                      className={classes.input}
+                      onChange={lineOnChange}
+                      value={line.from.y}
+                      placeholder="Enter Value"
+                    />
+                  </InputContainer>
                 </div>
               </div>
-          )
+              <div style={{ marginLeft: '10px', display: 'flex' }}>
+                <div className={classes.inputItem}>
+                  <Typography type="body1" className={classes.labelContainer}>
+                    <span className={classes.label}>Point B: </span>
+                  </Typography>
+                  <InputContainer label="X">
+                    <Input
+                      disabled={disabled}
+                      inputProps={{
+                        min: model.domain.min,
+                        max: model.domain.max
+                      }}
+                      name="to.x"
+                      type="number"
+                      className={classes.input}
+                      onChange={lineOnChange}
+                      value={line.to.x}
+                      placeholder="Enter Value"
+                    />
+                  </InputContainer>
+                </div>
+                <div className={classes.inputItem}>
+                  <InputContainer label="Y">
+                    <Input
+                      disabled={disabled}
+                      inputProps={{
+                        min: model.range.min,
+                        max: model.range.max
+                      }}
+                      name="to.y"
+                      type="number"
+                      className={classes.input}
+                      onChange={lineOnChange}
+                      value={line.to.y}
+                      placeholder="Enter Value"
+                    />
+                  </InputContainer>
+                  <Controls
+                    iconOnly
+                    disabled={disabled}
+                    onDeleteClick={this.deleteLine(line)}
+                  />
+                </div>
+              </div>
+            </div>
+          );
         })}
       </div>
     );

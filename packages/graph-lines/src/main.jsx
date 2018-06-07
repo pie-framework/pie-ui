@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraphLines, lineUtils as utils } from '../../../../pie-lib/packages/charting/src';
+import { GraphLines, lineUtils as utils } from '@pie-lib/charting';
 import PropTypes from 'prop-types';
 import Controls from './controls';
 import debug from 'debug';
@@ -15,16 +15,16 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     session: PropTypes.shape({
       lines: PropTypes.arrayOf(
-          PropTypes.shape({
-            from: PropTypes.shape({
-              x: PropTypes.number.isRequired,
-              y: PropTypes.number.isRequired
-            }),
-            to: PropTypes.shape({
-              x: PropTypes.number.isRequired,
-              y: PropTypes.number.isRequired
-            })
+        PropTypes.shape({
+          from: PropTypes.shape({
+            x: PropTypes.number.isRequired,
+            y: PropTypes.number.isRequired
+          }),
+          to: PropTypes.shape({
+            x: PropTypes.number.isRequired,
+            y: PropTypes.number.isRequired
           })
+        })
       )
     }),
     onSessionChange: PropTypes.func,
@@ -51,8 +51,13 @@ export class Main extends React.Component {
     // if we do not have lines in the session OR
     // if we previously had lines in the session and they were cleared out
     // it means the model has changed and we need to stop using the lines in the session
-    if (!this.props.session.lines ||
-        (this.props.session.lines && this.props.session.lines.length && this.state.useSessionLines && !lines.length)) {
+    if (
+      !this.props.session.lines ||
+      (this.props.session.lines &&
+        this.props.session.lines.length &&
+        this.state.useSessionLines &&
+        !lines.length)
+    ) {
       shouldUseSessionLines = false;
     }
 
@@ -61,9 +66,15 @@ export class Main extends React.Component {
     this.setState({ session, useSessionLines: shouldUseSessionLines });
   }
 
-  setUseSessionLines = (lines) => {
-    this.setState(state => ({ session: { ...state.session, lines }, useSessionLines: true }), this.callOnSessionChange);
-  }
+  setUseSessionLines = lines => {
+    this.setState(
+      state => ({
+        session: { ...state.session, lines },
+        useSessionLines: true
+      }),
+      this.callOnSessionChange
+    );
+  };
 
   callOnSessionChange = () => {
     const { onSessionChange } = this.props;
@@ -75,8 +86,8 @@ export class Main extends React.Component {
 
   deleteSelection = () => {
     const lines = utils.removeLines(
-        this.state.session.lines,
-        this.state.selection
+      this.state.session.lines,
+      this.state.selection
     );
 
     const session = { ...this.state.session, lines };
@@ -125,7 +136,10 @@ export class Main extends React.Component {
     const newSelection = utils.swapLine(selection, old, newLine);
     const newSession = { ...session, lines: newLines };
 
-    this.setState({ session: newSession, selection: newSelection, useSessionLines: true }, this.callOnSessionChange);
+    this.setState(
+      { session: newSession, selection: newSelection, useSessionLines: true },
+      this.callOnSessionChange
+    );
   };
 
   toggleSelectLine = line => {
@@ -147,39 +161,51 @@ export class Main extends React.Component {
       }
 
       return lineToUse;
-    })
+    });
 
     const newSession = { ...session, lines: newLines };
 
-    this.setState({ selection: newSelection, session: newSession, useSessionLines: true }, this.callOnSessionChange);
+    this.setState(
+      { selection: newSelection, session: newSession, useSessionLines: true },
+      this.callOnSessionChange
+    );
   };
 
   onAddPoint = () => {
     const linesFromModel = this.buildLines();
 
     this.setUseSessionLines(linesFromModel);
-  }
+  };
 
-  onAddLine = (line) => {
-    this.setState(state => ({
-      session: { ...state.session, lines: [...state.session.lines, line] }
-    }), this.callOnSessionChange);
-  }
+  onAddLine = line => {
+    this.setState(
+      state => ({
+        session: { ...state.session, lines: [...state.session.lines, line] }
+      }),
+      this.callOnSessionChange
+    );
+  };
 
-  updateLines = (newLines) => {
+  updateLines = newLines => {
     this.setUseSessionLines(newLines);
-  }
+  };
 
-  onDeleteLine = (line) => {
+  onDeleteLine = line => {
     const { session, useSessionLines, selection } = this.state;
     const linesToUse = useSessionLines ? session.lines : this.buildLines();
 
-    this.setState(state => ({
-      session: { ...state.session, lines: utils.removeLine(linesToUse, line) },
-      useSessionLines: true,
-      selection: utils.removeLine(selection, line)
-    }), this.callOnSessionChange);
-  }
+    this.setState(
+      state => ({
+        session: {
+          ...state.session,
+          lines: utils.removeLine(linesToUse, line)
+        },
+        useSessionLines: true,
+        selection: utils.removeLine(selection, line)
+      }),
+      this.callOnSessionChange
+    );
+  };
 
   render() {
     const { model, classes } = this.props;
@@ -187,49 +213,56 @@ export class Main extends React.Component {
     const lines = this.buildLines();
 
     return (
-        <div className={classes.mainContainer}>
-          <div className={classes.main}>
-            {model.correctness && <div>Score: {model.correctness.score}</div>}
-            <CorrectAnswerToggle
-                className={classes.toggle}
-                show={!model.exhibitOnly && model.correctness && model.correctness.correctness !== 'correct'}
-                toggled={showCorrect}
-                onToggle={this.toggleShowCorrect}
-            />
-            {!model.disabled && !model.exhibitOnly && (
-                <Controls
-                    iconOnly={false}
-                    disabled={!(selection && selection.length > 0)}
-                    onDeleteClick={this.deleteSelection}
-                />
+      <div className={classes.mainContainer}>
+        <div className={classes.main}>
+          {model.correctness && <div>Score: {model.correctness.score}</div>}
+          <CorrectAnswerToggle
+            className={classes.toggle}
+            show={
+              !model.exhibitOnly &&
+              model.correctness &&
+              model.correctness.correctness !== 'correct'
+            }
+            toggled={showCorrect}
+            onToggle={this.toggleShowCorrect}
+          />
+          {!model.disabled &&
+            !model.exhibitOnly && (
+              <Controls
+                iconOnly={false}
+                disabled={!(selection && selection.length > 0)}
+                onDeleteClick={this.deleteSelection}
+              />
             )}
-            <GraphLineControls
-                lines={lines}
-                model={model}
-                onDeleteLine={this.onDeleteLine}
-                updateLines={this.updateLines}
-            />
-            <GraphLines
-                maxLines={model.multiple ? model.lines.length : 1}
-                className={classes.graph}
-                lines={lines}
-                width={model.width}
-                height={model.height}
-                domain={model.domain}
-                range={model.range}
-                disabled={model.disabled || model.exhibitOnly || false}
-                onAddPoint={this.onAddPoint}
-                onAddLine={this.onAddLine}
-                onLineChange={this.onLineChange}
-                onLineClick={this.toggleSelectLine}
-            />
-          </div>
-          {model.feedback &&
-          <Feedback
-              correctness={model.correctness.correctness}
-              feedback={model.feedback}
-              width={model.width - 20}/>}
+          <GraphLineControls
+            lines={lines}
+            model={model}
+            onDeleteLine={this.onDeleteLine}
+            updateLines={this.updateLines}
+          />
+          <GraphLines
+            maxLines={model.multiple ? model.lines.length : 1}
+            className={classes.graph}
+            lines={lines}
+            width={model.width}
+            height={model.height}
+            domain={model.domain}
+            range={model.range}
+            disabled={model.disabled || model.exhibitOnly || false}
+            onAddPoint={this.onAddPoint}
+            onAddLine={this.onAddLine}
+            onLineChange={this.onLineChange}
+            onLineClick={this.toggleSelectLine}
+          />
         </div>
+        {model.feedback && (
+          <Feedback
+            correctness={model.correctness.correctness}
+            feedback={model.feedback}
+            width={model.width - 20}
+          />
+        )}
+      </div>
     );
   }
 }

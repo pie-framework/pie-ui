@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PlotPoints } from '@pie-lib/charting';
+import { GraphLines } from '@pie-lib/charting';
 import { shallowChild } from '@pie-lib/test-utils';
 import Controls from '../controls';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
@@ -8,9 +8,8 @@ import Main from '../main';
 
 describe('Main', () => {
   const defaultProps = {
-    onSessionChange: () => {},
-    session: {
-      points: [],
+    session: {},
+    onSessionChange: () => {
     },
     model: {
       width: 600,
@@ -35,10 +34,16 @@ describe('Main', () => {
         padding: 20
       },
       disabled: false,
-      pointLabels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-      correctResponse: [{ x: 0, y: 0, label: 'A' }, { x: 1, y: 1, label: 'B' }],
-      pointsMustMatchLabels: true
-    },
+      model: {
+        config: {
+          lines: [{
+            label: 'Line One',
+            correctLine: '3x+2',
+            initialView: '3x+3'
+          }],
+        }
+      }
+    }
   };
 
   let wrapper;
@@ -53,90 +58,136 @@ describe('Main', () => {
 
     expect(component.find(CorrectAnswerToggle).length).toEqual(1);
     expect(component.find(Controls).length).toEqual(1);
-    expect(component.find(PlotPoints).length).toEqual(1);
+    expect(component.find(GraphLines).length).toEqual(1);
     expect(component.find(Feedback).length).toEqual(0);
     expect(component.state()).toEqual({
       selection: [],
       session: {
-        points: [],
+        lines: [],
       },
-      showCorrect: false
+      showCorrect: false,
+      useSessionLines: false
     });
     expect(component.html().includes('Score')).toEqual(false);
   });
 
-  it('adds a point correctly', () => {
+  it('adds a line correctly', () => {
     component = wrapper();
 
-    component.instance().addPoint({ x: 0, y: 0 });
+    component.instance().onAddLine({ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } });
     expect(component.state()).toEqual({
       selection: [],
       session: {
-        points: [{
-          label: 'A',
-          x: 0,
-          y: 0
-        }],
+        lines: [{ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }],
       },
-      showCorrect: false
+      showCorrect: false,
+      useSessionLines: false
     });
   });
 
-  it('swaps a point correctly', () => {
+  it('deletes a selection correctly', () => {
     component = wrapper();
 
-    component.instance().addPoint({ x: 0, y: 0 });
-    component.instance().selectionChange([{ x: 0, y: 0 }]);
-    component.instance().movePoint({ x: 0, y: 0 }, { x: 1, y: 1 });
+    component.instance().setUseSessionLines([{ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }]);
+    expect(component.state()).toEqual({
+      selection: [],
+      session: {
+        lines: [{ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }],
+      },
+      showCorrect: false,
+      useSessionLines: true
+    });
+
+    component.instance().toggleSelectLine({ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } });
 
     expect(component.state()).toEqual({
-      selection: [{
-        x: 1,
-        y: 1
-      }],
-      session: {
-        points: [{
-          label: 'A',
-          x: 1,
-          y: 1
+        selection: [{
+          selected: true,
+          from: { x: 0, y: 0 },
+          to: { x: 2, y: 2 }
         }],
-      },
-      showCorrect: false
-    });
-  });
+        session: {
+          lines: [{
+            selected: true,
+            from: { x: 0, y: 0 },
+            to: { x: 2, y: 2 }
+          }]
+        },
+        showCorrect: false,
+        useSessionLines: true
+      }
+    );
 
-  it('deletes a point correctly', () => {
-    component = wrapper();
-
-    component.instance().addPoint({ x: 0, y: 0 });
-    component.instance().selectionChange([{ x: 0, y: 0 }]);
-    component.instance().deleteSelection({ x: 0, y: 0 });
+    component.instance().deleteSelection();
 
     expect(component.state()).toEqual({
       selection: [],
       session: {
-        points: [],
+        lines: [],
       },
-      showCorrect: false
+      showCorrect: false,
+      useSessionLines: true
     });
   });
 
-  it('builds points correctly upon rendering', () => {
+  it('builds out lines correctly depending on what to show', () => {
+    component = wrapper();
+
+    expect(component.instance().buildLines()).toEqual([{
+      correctLine: '3x+2',
+      from: { x: -1, y: 0 },
+      initialView: '3x+3',
+      label: 'Line One',
+      to: { x: 0, y: 3 }
+    }]);
+
     component = wrapper({
-      model: { ...defaultProps.model, correctResponse: null },
-      session: {
-        points: [{
-          label: 'A',
-          x: 0,
-          y: 0
-        }]
+      ...defaultProps,
+      model: {
+        ...defaultProps.model,
+        correctResponse: [{ from: { x: 1, y: 1 }, to: { x: 2, y: 2 } }]
       }
     });
 
-    expect(component.find(PlotPoints).props().points).toEqual([{
-      label: 'A',
-      x: 0,
-      y: 0
+    expect(component.instance().buildLines()).toEqual([]);
+
+    component.instance().setUseSessionLines([{ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }]);
+
+    expect(component.instance().buildLines()).toEqual([{
+      selected: false,
+      correct: false,
+      from: { x: 0, y: 0 },
+      to: { x: 2, y: 2 }
     }]);
+
+    component.instance().toggleShowCorrect(true);
+
+    expect(component.instance().buildLines()).toEqual([{ from: { x: 1, y: 1 }, to: { x: 2, y: 2 } }]);
+  });
+
+  it('changes a line correctly', () => {
+    component = wrapper();
+    component.instance().setUseSessionLines([{ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }]);
+    component.instance().onLineChange({ from: { x: 0, y: 0 }, to: { x: 2, y: 2 } }, {
+      from: { x: 0, y: 0 },
+      to: { x: 2, y: 3 }
+    });
+
+    expect(component.instance().buildLines()).toEqual([{
+      from: { x: 0, y: 0 },
+      to: { x: 2, y: 3 }
+    }]);
+
+    expect(component.state()).toEqual({
+      selection: [],
+      session: {
+        lines: [{
+          from: { x: 0, y: 0 },
+          to: { x: 2, y: 3 }
+        }]
+      },
+      showCorrect: false,
+      useSessionLines: true
+    })
   })
 });

@@ -32,9 +32,11 @@ module.exports = {
   models: [
     model('1', {
       disabled: false,
-      pointLabels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-      correctResponse: '3x+2',
-      initialView: '3x+3'
+      lines: [{
+        label: 'Line One',
+        correctLine: '3x+2',
+        initialView: '3x+3'
+      }],
     })
   ]
 };

@@ -6,6 +6,7 @@ describe('Controls', () => {
   const defaultProps = {
     onDeleteClick: () => {},
     disabled: false,
+    iconOnly: false,
   };
 
   it('renders correctly', () => {

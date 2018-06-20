@@ -1,28 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
-
-const log = debug('pie-ui:match:main');
-
-function shuffle(array) {
-  let counter = array.length;
-
-  while (counter > 0) {
-    let index = Math.floor(Math.random() * counter);
-
-    counter--;
-
-    let temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
-  }
-
-  return array;
-}
 
 export class Main extends React.Component {
   static propTypes = {
@@ -45,21 +26,24 @@ export class Main extends React.Component {
     this.callOnSessionChange();
   }
 
-  generateAnswers = (model) => {
+  generateAnswers = model => {
     const { config } = model;
     const answers = {};
 
     config.rows.forEach(row => {
       answers[row.id] = new Array(config.layout - 1).fill(false);
-    })
+    });
 
     return answers;
-  }
+  };
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      session: { ...nextProps.session, answers: this.generateAnswers(nextProps.model) },
-      shuffledRows: nextProps.model.config.rows, // TODO shuffle if needed
+      session: {
+        ...nextProps.session,
+        answers: this.generateAnswers(nextProps.model)
+      },
+      shuffledRows: nextProps.model.config.rows // TODO shuffle if needed
     });
   }
 
@@ -75,14 +59,17 @@ export class Main extends React.Component {
     this.setState({ showCorrect: show });
   };
 
-  onAnswerChange = (newAnswers) => {
-    this.setState(state => ({
-      session: {
-        ...state.session,
-        answers: newAnswers,
-      }
-    }), this.callOnSessionChange);
-  }
+  onAnswerChange = newAnswers => {
+    this.setState(
+      state => ({
+        session: {
+          ...state.session,
+          answers: newAnswers
+        }
+      }),
+      this.callOnSessionChange
+    );
+  };
 
   render() {
     const { model, classes } = this.props;
@@ -94,7 +81,9 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
-            show={model.correctness && model.correctness.correctness !== 'correct'}
+            show={
+              model.correctness && model.correctness.correctness !== 'correct'
+            }
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />

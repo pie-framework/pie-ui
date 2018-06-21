@@ -67,12 +67,18 @@ export class Main extends React.Component {
       isRequired = true;
     }
 
-    return isRequired;
+    if (this.props.model.config.rows.length !== nextProps.model.config.rows.length) {
+      isRequired = true;
+    }
+
+    return isRequired || !nextProps.session.answers;
   }
 
   isShuffleRowsRequired = (nextProps) => this.props.model.config.shuffled === false && nextProps.model.config.shuffled === true;
 
-  isResetRowsRequired = (nextProps) => this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false;
+  isResetRowsRequired = (nextProps) =>
+    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
+    (this.props.model.config.rows.length !== nextProps.model.config.rows.length);
 
   componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
@@ -128,6 +134,7 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <AnswerGrid
+            disabled={model.disabled}
             onAnswerChange={this.onAnswerChange}
             responseType={model.config.responseType}
             answers={session.answers}

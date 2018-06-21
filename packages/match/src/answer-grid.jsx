@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 export class AnswerGrid extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    disabled: PropTypes.bool.isRequired,
     onAnswerChange: PropTypes.func.isRequired,
     responseType: PropTypes.string.isRequired,
     rows: PropTypes.array.isRequired,
@@ -32,7 +33,7 @@ export class AnswerGrid extends React.Component {
   };
 
   render() {
-    const { classes, headers, rows, responseType, answers } = this.props;
+    const { classes, headers, rows, responseType, answers, disabled } = this.props;
 
     return (
       <div className={classes.controlsContainer}>
@@ -59,11 +60,13 @@ export class AnswerGrid extends React.Component {
                 <div key={answerIndex} className={classes.rowItem}>
                   {responseType === 'radio' ? (
                     <Radio
+                      disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}
                       checked={rowValue === true}
                     />
                   ) : (
                     <Checkbox
+                      disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}
                       checked={rowValue === true}
                     />

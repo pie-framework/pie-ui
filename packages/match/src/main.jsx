@@ -37,13 +37,45 @@ export class Main extends React.Component {
     return answers;
   };
 
+  isAnswerRegenerationRequired = (nextProps) => {
+    let isRequired = false;
+
+    if (this.props.model.config.responseType !== nextProps.model.config.responseType) {
+      isRequired = true;
+    }
+
+    if (this.props.model.config.layout !== nextProps.model.config.layout) {
+      isRequired = true;
+    }
+
+    if (this.props.model.config.rows.length !== nextProps.model.config.rows.length) {
+      isRequired = true;
+    }
+
+    return isRequired || !nextProps.session.answers;
+  }
+
+  isShuffleRowsRequired = (nextProps) => this.props.model.config.shuffled === false && nextProps.model.config.shuffled === true;
+
+  isResetRowsRequired = (nextProps) =>
+    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
+    (this.props.model.config.rows.length !== nextProps.model.config.rows.length);
+
   componentWillReceiveProps(nextProps) {
-    this.setState({
+    const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
+    const shuffleRows = this.isShuffleRowsRequired(nextProps);
+    const resetRows = this.isResetRowsRequired(nextProps);
+
+    this.setState(state => ({
       session: {
         ...nextProps.session,
-        answers: this.generateAnswers(nextProps.model)
+        // regenerate answers if layout or responseType change
+        answers: regenAnswers ? this.generateAnswers(nextProps.model) : nextProps.session.answers,
       },
-      shuffledRows: nextProps.model.config.rows // TODO shuffle if needed
+      // shuffle if needed
+      shuffledRows: shuffleRows ? shuffle([...nextProps.model.config.rows]) : (resetRows ? nextProps.model.config.rows : state.shuffledRows)
+    }), () => {
+      if (regenAnswers) this.callOnSessionChange()
     });
   }
 
@@ -88,6 +120,7 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <AnswerGrid
+            disabled={model.disabled}
             onAnswerChange={this.onAnswerChange}
             responseType={model.config.responseType}
             answers={session.answers}

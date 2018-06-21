@@ -56,10 +56,39 @@ export class Main extends React.Component {
     return answers;
   }
 
+  isAnswerRegenerationRequired = (nextProps) => {
+    let isRequired = false;
+
+    if (this.props.model.config.responseType !== nextProps.model.config.responseType) {
+      isRequired = true;
+    }
+
+    if (this.props.model.config.layout !== nextProps.model.config.layout) {
+      isRequired = true;
+    }
+
+    return isRequired;
+  }
+
+  isShuffleRowsRequired = (nextProps) => this.props.model.config.shuffled === false && nextProps.model.config.shuffled === true;
+
+  isResetRowsRequired = (nextProps) => this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false;
+
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      session: { ...nextProps.session, answers: this.generateAnswers(nextProps.model) },
-      shuffledRows: nextProps.model.config.rows, // TODO shuffle if needed
+    const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
+    const shuffleRows = this.isShuffleRowsRequired(nextProps);
+    const resetRows = this.isResetRowsRequired(nextProps);
+
+    this.setState(state => ({
+      session: {
+        ...nextProps.session,
+        // regenerate answers if layout or responseType change
+        answers: regenAnswers ? this.generateAnswers(nextProps.model) : nextProps.session.answers,
+      },
+      // shuffle if needed
+      shuffledRows: shuffleRows ? shuffle([...nextProps.model.config.rows]) : (resetRows ? nextProps.model.config.rows : state.shuffledRows)
+    }), () => {
+      if (regenAnswers) this.callOnSessionChange()
     });
   }
 

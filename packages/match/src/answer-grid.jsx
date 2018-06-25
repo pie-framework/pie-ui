@@ -9,6 +9,9 @@ import { withStyles } from '@material-ui/core/styles';
 export class AnswerGrid extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    correctAnswers: PropTypes.object,
+    view: PropTypes.bool.isRequired,
+    showCorrect: PropTypes.bool.isRequired,
     disabled: PropTypes.bool.isRequired,
     onAnswerChange: PropTypes.func.isRequired,
     responseType: PropTypes.string.isRequired,
@@ -32,8 +35,22 @@ export class AnswerGrid extends React.Component {
     onAnswerChange(newAnswers);
   };
 
+  answerIsCorrect = (rowId, rowValue, rowValueIndex) => {
+    const { correctAnswers } = this.props;
+
+    return correctAnswers[rowId][rowValueIndex] === rowValue && rowValue === true;
+  }
+
+  // needs a separate method because what isn't correct isn't necessarily incorrect
+  answerIsIncorrect = (rowId, rowValue, rowValueIndex) => {
+    const { correctAnswers } = this.props;
+
+    return correctAnswers[rowId][rowValueIndex] === true && rowValue === false
+      || correctAnswers[rowId][rowValueIndex] === false && rowValue === true;
+  }
+
   render() {
-    const { classes, headers, rows, responseType, answers, disabled } = this.props;
+    const { classes, showCorrect, headers, rows, responseType, answers, disabled, view } = this.props;
 
     return (
       <div className={classes.controlsContainer}>
@@ -56,19 +73,29 @@ export class AnswerGrid extends React.Component {
               <div className={cx(classes.rowItem, classes.questionText)}>
                 {row.title}
               </div>
-              {answers[row.id].map((rowValue, answerIndex) => (
+              {answers[row.id].map((rowItem, answerIndex) => (
                 <div key={answerIndex} className={classes.rowItem}>
                   {responseType === 'radio' ? (
                     <Radio
+                      className={cx({
+                        [classes.correct]: (showCorrect && rowItem === true)
+                          || (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex)),
+                        [classes.incorrect]: disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
+                      })}
                       disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}
-                      checked={rowValue === true}
+                      checked={rowItem === true}
                     />
                   ) : (
                     <Checkbox
+                      className={cx({
+                        [classes.correct]: (showCorrect && rowItem === true)
+                          || (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex)),
+                        [classes.incorrect]: disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
+                      })}
                       disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}
-                      checked={rowValue === true}
+                      checked={rowItem === true}
                     />
                   )}
                 </div>
@@ -83,6 +110,12 @@ export class AnswerGrid extends React.Component {
 }
 
 const styles = theme => ({
+  correct: {
+    color: 'green !important'
+  },
+  incorrect: {
+    color: 'red !important'
+  },
   empty: {
     margin: theme.spacing.unit * 2
   },

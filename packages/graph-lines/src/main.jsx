@@ -2,13 +2,10 @@ import React from 'react';
 import { GraphLines, lineUtils as utils } from '@pie-lib/charting';
 import PropTypes from 'prop-types';
 import Controls from './controls';
-import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import GraphLineControls from './GraphLineControls';
 import { withStyles } from '@material-ui/core/styles';
-
-const log = debug('pie-ui:graph-lines:main');
 
 export class Main extends React.Component {
   static propTypes = {
@@ -129,7 +126,6 @@ export class Main extends React.Component {
   };
 
   onLineChange = (old, newLine) => {
-    log('old: ', old, 'new: ', newLine);
     const { session, selection, useSessionLines } = this.state;
     const linesToUse = useSessionLines ? session.lines : this.buildLines();
     const newLines = utils.swapLine(linesToUse, old, newLine);

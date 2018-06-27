@@ -114,7 +114,7 @@ export class GraphLineControls extends React.Component {
                   </InputContainer>
                 </div>
               </div>
-              <div style={{ marginLeft: '10px', display: 'flex' }}>
+              <div className={classes.inputContainer}>
                 <div className={classes.inputItem}>
                   <Typography type="body1" className={classes.labelContainer}>
                     <span className={classes.label}>Point B: </span>
@@ -201,6 +201,10 @@ const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1
+  },
+  inputContainer: {
+    marginLeft: '10px',
+    display: 'flex'
   }
 });
 

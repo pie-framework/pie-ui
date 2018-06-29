@@ -17,7 +17,10 @@ export class Main extends React.Component {
     super(props);
 
     this.state = {
-      session: { ...props.session, answers: this.generateAnswers(props.model) },
+      session: {
+        ...props.session,
+        answers: this.generateAnswers(props.model)
+      },
       // initially it'll be the same as the actual rows
       shuffledRows: props.model.config.rows,
       showCorrect: false
@@ -37,10 +40,13 @@ export class Main extends React.Component {
     return answers;
   };
 
-  isAnswerRegenerationRequired = (nextProps) => {
+  isAnswerRegenerationRequired = nextProps => {
     let isRequired = false;
 
-    if (this.props.model.config.responseType !== nextProps.model.config.responseType) {
+    if (
+      this.props.model.config.responseType !==
+      nextProps.model.config.responseType
+    ) {
       isRequired = true;
     }
 
@@ -48,35 +54,63 @@ export class Main extends React.Component {
       isRequired = true;
     }
 
-    if (this.props.model.config.rows.length !== nextProps.model.config.rows.length) {
+    if (
+      this.props.model.config.rows.length !==
+        nextProps.model.config.rows.length ||
+      (nextProps.session.answers &&
+        nextProps.model.config.rows.length !==
+          Object.keys(nextProps.session.answers).length)
+    ) {
       isRequired = true;
     }
 
     return isRequired || !nextProps.session.answers;
-  }
+  };
 
-  isShuffleRowsRequired = (nextProps) => this.props.model.config.shuffled === false && nextProps.model.config.shuffled === true;
+  isShuffleRowsRequired = nextProps =>
+    this.props.model.config.shuffled === false &&
+    nextProps.model.config.shuffled === true;
 
-  isResetRowsRequired = (nextProps) =>
-    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
-    (this.props.model.config.rows.length !== nextProps.model.config.rows.length);
+  isResetRowsRequired = nextProps =>
+    (this.props.model.config.shuffled === true &&
+      nextProps.model.config.shuffled === false) ||
+    this.props.model.config.rows.length !==
+      nextProps.model.config.rows.length ||
+    (nextProps.session.answers &&
+      nextProps.model.config.rows.length !==
+        Object.keys(nextProps.session.answers).length);
 
   componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
     const shuffleRows = this.isShuffleRowsRequired(nextProps);
     const resetRows = this.isResetRowsRequired(nextProps);
 
-    this.setState(state => ({
-      session: {
-        ...nextProps.session,
-        // regenerate answers if layout or responseType change
-        answers: regenAnswers ? this.generateAnswers(nextProps.model) : nextProps.session.answers,
-      },
-      // shuffle if needed
-      shuffledRows: shuffleRows ? shuffle([...nextProps.model.config.rows]) : (resetRows ? nextProps.model.config.rows : state.shuffledRows)
-    }), () => {
-      if (regenAnswers) this.callOnSessionChange()
-    });
+    this.setState(
+      state => ({
+        session: {
+          ...nextProps.session,
+          // regenerate answers if layout or responseType change
+          answers: regenAnswers
+            ? this.generateAnswers(nextProps.model)
+            : nextProps.session.answers
+        },
+        // shuffle if needed
+        shuffledRows: shuffleRows
+          ? shuffle([...nextProps.model.config.rows])
+          : resetRows
+            ? nextProps.model.config.rows
+            : state.shuffledRows,
+        showCorrect:
+          this.props.model.disabled &&
+          !nextProps.model.disabled &&
+          state.showCorrect
+            ? false
+            : state.showCorrect
+      }),
+      () => {
+        if (regenAnswers) this.callOnSessionChange();
+      }
+    );
   }
 
   callOnSessionChange = () => {
@@ -120,10 +154,13 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <AnswerGrid
+            showCorrect={showCorrect}
+            correctAnswers={model.correctResponse}
             disabled={model.disabled}
+            view={model.view}
             onAnswerChange={this.onAnswerChange}
             responseType={model.config.responseType}
-            answers={session.answers}
+            answers={showCorrect ? model.correctResponse : session.answers}
             headers={model.config.headers}
             rows={shuffledRows}
           />

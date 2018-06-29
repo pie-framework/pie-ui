@@ -7,7 +7,7 @@ const log = debug('pie-ui:graph-lines');
 
 export { Main as Component };
 
-export default class GraphLines extends HTMLElement {
+export default class Match extends HTMLElement {
   constructor() {
     super();
   }

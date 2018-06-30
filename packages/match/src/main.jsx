@@ -35,7 +35,7 @@ export class Main extends React.Component {
     this.state = {
       session: {
         ...props.session,
-        answers: this.generateAnswers(props.model),
+        answers: this.generateAnswers(props.model)
       },
       // initially it'll be the same as the actual rows
       shuffledRows: props.model.config.rows,
@@ -45,21 +45,24 @@ export class Main extends React.Component {
     this.callOnSessionChange();
   }
 
-  generateAnswers = (model) => {
+  generateAnswers = model => {
     const { config } = model;
     const answers = {};
 
     config.rows.forEach(row => {
-      answers[row.id] = new Array(config.layout - 1).fill(false)
-    })
+      answers[row.id] = new Array(config.layout - 1).fill(false);
+    });
 
     return answers;
-  }
+  };
 
-  isAnswerRegenerationRequired = (nextProps) => {
+  isAnswerRegenerationRequired = nextProps => {
     let isRequired = false;
 
-    if (this.props.model.config.responseType !== nextProps.model.config.responseType) {
+    if (
+      this.props.model.config.responseType !==
+      nextProps.model.config.responseType
+    ) {
       isRequired = true;
     }
 
@@ -67,38 +70,63 @@ export class Main extends React.Component {
       isRequired = true;
     }
 
-    if (this.props.model.config.rows.length !== nextProps.model.config.rows.length
-     || (nextProps.session.answers && (nextProps.model.config.rows.length !== Object.keys(nextProps.session.answers).length))) {
+    if (
+      this.props.model.config.rows.length !==
+        nextProps.model.config.rows.length ||
+      (nextProps.session.answers &&
+        nextProps.model.config.rows.length !==
+          Object.keys(nextProps.session.answers).length)
+    ) {
       isRequired = true;
     }
 
     return isRequired || !nextProps.session.answers;
-  }
+  };
 
-  isShuffleRowsRequired = (nextProps) => this.props.model.config.shuffled === false && nextProps.model.config.shuffled === true;
+  isShuffleRowsRequired = nextProps =>
+    this.props.model.config.shuffled === false &&
+    nextProps.model.config.shuffled === true;
 
-  isResetRowsRequired = (nextProps) =>
-    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
-    (this.props.model.config.rows.length !== nextProps.model.config.rows.length) ||
-    (nextProps.session.answers && (nextProps.model.config.rows.length !== Object.keys(nextProps.session.answers).length));
+  isResetRowsRequired = nextProps =>
+    (this.props.model.config.shuffled === true &&
+      nextProps.model.config.shuffled === false) ||
+    this.props.model.config.rows.length !==
+      nextProps.model.config.rows.length ||
+    (nextProps.session.answers &&
+      nextProps.model.config.rows.length !==
+        Object.keys(nextProps.session.answers).length);
 
   componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
     const shuffleRows = this.isShuffleRowsRequired(nextProps);
     const resetRows = this.isResetRowsRequired(nextProps);
 
-    this.setState(state => ({
-      session: {
-        ...nextProps.session,
-        // regenerate answers if layout or responseType change
-        answers: regenAnswers ? this.generateAnswers(nextProps.model) : nextProps.session.answers,
-      },
-      // shuffle if needed
-      shuffledRows: shuffleRows ? shuffle([...nextProps.model.config.rows]) : (resetRows ? nextProps.model.config.rows : state.shuffledRows),
-      showCorrect: (this.props.model.disabled && !nextProps.model.disabled && state.showCorrect) ? false : state.showCorrect
-    }), () => {
-      if (regenAnswers) this.callOnSessionChange()
-    });
+    this.setState(
+      state => ({
+        session: {
+          ...nextProps.session,
+          // regenerate answers if layout or responseType change
+          answers: regenAnswers
+            ? this.generateAnswers(nextProps.model)
+            : nextProps.session.answers
+        },
+        // shuffle if needed
+        shuffledRows: shuffleRows
+          ? shuffle([...nextProps.model.config.rows])
+          : resetRows
+            ? nextProps.model.config.rows
+            : state.shuffledRows,
+        showCorrect:
+          this.props.model.disabled &&
+          !nextProps.model.disabled &&
+          state.showCorrect
+            ? false
+            : state.showCorrect
+      }),
+      () => {
+        if (regenAnswers) this.callOnSessionChange();
+      }
+    );
   }
 
   callOnSessionChange = () => {
@@ -113,18 +141,21 @@ export class Main extends React.Component {
     this.setState({ showCorrect: show });
   };
 
-  onAnswerChange = (newAnswers) => {
-    this.setState(state => ({
-      session: {
-        ...state.session,
-        answers: newAnswers,
-      }
-    }), this.callOnSessionChange);
-  }
+  onAnswerChange = newAnswers => {
+    this.setState(
+      state => ({
+        session: {
+          ...state.session,
+          answers: newAnswers
+        }
+      }),
+      this.callOnSessionChange
+    );
+  };
 
   render() {
     const { model, classes } = this.props;
-    const { showCorrect, shuffledRows, session} = this.state;
+    const { showCorrect, shuffledRows, session } = this.state;
 
     return (
       <div className={classes.mainContainer}>
@@ -132,7 +163,9 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
-            show={model.correctness && model.correctness.correctness !== 'correct'}
+            show={
+              model.correctness && model.correctness.correctness !== 'correct'
+            }
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />

@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debug from 'debug';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
-
-const log = debug('pie-ui:match:main');
 
 function shuffle(array) {
   let counter = array.length;

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.4"></a>
+## [4.2.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.2...@pie-ui/placement-ordering@4.2.4) (2018-07-18)
+
+
+### Bug Fixes
+
+* **placement-ordering:** fix drag context import and export - update drag lib ([902fcdf](https://github.com/pie-framework/pie-ui/commit/902fcdf))
+* bump [@pie-lib](https://github.com/pie-lib)/drag to ^1.1.0 ([ee955c6](https://github.com/pie-framework/pie-ui/commit/ee955c6))
+
+
+
+
 <a name="4.2.2"></a>
 ## [4.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.1...@pie-ui/placement-ordering@4.2.2) (2018-05-31)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.3"></a>
+## [0.3.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.1...@pie-ui/categorize@0.3.3) (2018-07-18)
+
+
+### Bug Fixes
+
+* bump version due to publish failure ([1ad7f26](https://github.com/pie-framework/pie-ui/commit/1ad7f26))
+
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.0...@pie-ui/categorize@0.3.1) (2018-07-18)
 

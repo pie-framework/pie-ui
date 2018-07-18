@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.1.2...@pie-ui/fill-in-the-blank@1.1.4) (2018-07-18)
+
+
+### Bug Fixes
+
+* bump version due to publish failure ([1ad7f26](https://github.com/pie-framework/pie-ui/commit/1ad7f26))
+
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.1.1...@pie-ui/fill-in-the-blank@1.1.2) (2018-07-18)
 

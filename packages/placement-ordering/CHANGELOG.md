@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.5"></a>
+## [4.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.4...@pie-ui/placement-ordering@4.2.5) (2018-07-18)
+
+
+### Bug Fixes
+
+* ignore demo dir when building npm package ([21ef180](https://github.com/pie-framework/pie-ui/commit/21ef180))
+
+
+
+
 <a name="4.2.4"></a>
 ## [4.2.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.2...@pie-ui/placement-ordering@4.2.4) (2018-07-18)
 

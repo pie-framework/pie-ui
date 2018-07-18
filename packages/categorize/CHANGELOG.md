@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.6"></a>
+## [0.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.5...@pie-ui/categorize@0.3.6) (2018-07-18)
+
+
+### Bug Fixes
+
+* ignore demo dir when building npm package ([21ef180](https://github.com/pie-framework/pie-ui/commit/21ef180))
+
+
+
+
 <a name="0.3.5"></a>
 ## [0.3.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.3...@pie-ui/categorize@0.3.5) (2018-07-18)
 

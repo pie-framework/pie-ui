@@ -5,7 +5,7 @@ import compact from 'lodash/compact';
 import debug from 'debug';
 import katex from 'katex';
 import { swap } from './ordering';
-import { withContext } from '@pie-lib/drag';
+import { withDragContext } from '@pie-lib/drag';
 const log = debug('pie-elements:placement-ordering');
 
 //Auto render requires the katex global
@@ -14,7 +14,7 @@ const renderMathInElement = require('katex/dist/contrib/auto-render.min');
 
 require('katex/dist/katex.css');
 
-export { withContext, swap };
+export { withDragContext, swap };
 
 export default class Ordering extends HTMLElement {
   constructor() {

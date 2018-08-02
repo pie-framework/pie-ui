@@ -19,7 +19,7 @@
     "strict": 0,
     "react/prop-types": "error",
     "react/jsx-no-duplicate-props": "error",
-    "react/no-deprecated": "error",
+    "react/no-deprecated": "warn",
     "react/display-name": "error",
     "no-extra-semi": "error",
     "no-dupe-keys": "error",

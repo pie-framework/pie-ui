@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.5.0...@pie-ui/categorize@0.6.0) (2018-08-08)
+
+
+### Features
+
+* add pie-player-events to categorize ([5896897](https://github.com/pie-framework/pie-ui/commit/5896897))
+
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.4.0...@pie-ui/categorize@0.5.0) (2018-08-08)
 

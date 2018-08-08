@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import katex from 'katex';
+import { renderMath } from '@pie-lib/player-utils';
 
-window.katex = katex;
-const renderMathInElement = require('katex/dist/contrib/auto-render.min');
-
-require('katex/dist/katex.css');
 import CategorizeComponent from './categorize';
 
 export default class Categorize extends HTMLElement {
@@ -39,7 +35,7 @@ export default class Categorize extends HTMLElement {
         onAnswersChange: this.changeAnswers.bind(this)
       });
       ReactDOM.render(el, this, () => {
-        renderMathInElement(this);
+        renderMath(this);
       });
     }
   }

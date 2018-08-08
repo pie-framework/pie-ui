@@ -14,8 +14,15 @@ module.exports = {
       showCorrect: true,
       correctResponse: [{ value: 'b' }],
       choices: [
-        { label: 'apple', value: 'a', correct: false },
-        { label: 'banana', value: 'b' }
+        {
+          label: 'apple <span data-latex="">$\\frac{2}{2}$</span>',
+          value: 'a',
+          correct: false
+        },
+        {
+          label: 'banana <span data-latex="">\\(\\frac{1}{2}\\)</span>',
+          value: 'b'
+        }
       ]
     }
   ]

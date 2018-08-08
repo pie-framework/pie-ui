@@ -10,8 +10,16 @@ const getCategories = () => {
 
 const getChoices = () => {
   return [
-    { id: '1', content: '<h1>Banana</h1>', categoryCount: 1 },
-    { id: '2', content: '<div>Carrot</div>', categoryCount: 1 },
+    {
+      id: '1',
+      content: '<h1>Banana<span data-latex="">$\\frac{1}{2}$</span></h1>',
+      categoryCount: 1
+    },
+    {
+      id: '2',
+      content: '<div>Carrot<span data-latex="">\\(\\frac{2}{1}\\)</span></div>',
+      categoryCount: 1
+    },
     { id: '3', content: '<div>Apple</div>' },
     { id: '4', content: '<div>Papaya</div>' }
   ];

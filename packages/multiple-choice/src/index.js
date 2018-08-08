@@ -3,14 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import debounce from 'lodash/debounce';
 import debug from 'debug';
-import katex from 'katex';
+import { renderMath } from '@pie-lib/player-utils';
 import { updateSessionValue } from './session-updater';
-
-//Auto render requires the katex global
-window.katex = katex;
-const renderMathInElement = require('katex/dist/contrib/auto-render.min');
-
-require('katex/dist/katex.css');
 
 const log = debug('pie-elements:multiple-choice');
 
@@ -30,7 +24,7 @@ export default class MultipleChoice extends HTMLElement {
           });
           ReactDOM.render(element, this, () => {
             log('render complete - render math');
-            renderMathInElement(this);
+            renderMath(this);
           });
         } else {
           log('skip');

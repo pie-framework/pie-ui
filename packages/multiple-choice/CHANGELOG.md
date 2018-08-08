@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.1.1...@pie-ui/multiple-choice@4.2.0) (2018-08-08)
+
+
+### Features
+
+* add [@pie-lib](https://github.com/pie-lib)/player-utils#renderMath ([e875aad](https://github.com/pie-framework/pie-elements/commit/e875aad))
+
+
+
+
 <a name="4.1.1"></a>
 ## [4.1.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.1.0...@pie-ui/multiple-choice@4.1.1) (2018-05-16)
 

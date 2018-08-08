@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.6...@pie-ui/categorize@0.4.0) (2018-08-08)
+
+
+### Features
+
+* **categorize:** added math katex support for categorize ([4bb2d61](https://github.com/pie-framework/pie-ui/commit/4bb2d61))
+* **categorize:** dependency updates ([ff4dc3b](https://github.com/pie-framework/pie-ui/commit/ff4dc3b))
+
+
+
+
 <a name="0.3.6"></a>
 ## [0.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.3.5...@pie-ui/categorize@0.3.6) (2018-07-18)
 

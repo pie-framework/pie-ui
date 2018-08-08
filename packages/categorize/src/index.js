@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { renderMath } from '@pie-lib/player-utils';
-
+import {
+  SessionChangedEvent,
+  ModelSetEvent
+} from '@pie-framework/pie-player-events';
 import CategorizeComponent from './categorize';
 
 export default class Categorize extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   set model(m) {
     this._model = m;
+
+    this.dispatchEvent(
+      new ModelSetEvent(
+        this.tagName.toLowerCase(),
+        this.isComplete(),
+        !!this._model
+      )
+    );
     this.render();
+  }
+
+  isComplete() {
+    if (!this._session) {
+      return false;
+    }
+
+    return (
+      Array.isArray(this._session.answers) && this._session.answers.length > 0
+    );
   }
 
   set session(s) {
@@ -24,6 +41,11 @@ export default class Categorize extends HTMLElement {
 
   changeAnswers(answers) {
     this._session.answers = answers;
+
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
+    );
+
     this.render();
   }
 

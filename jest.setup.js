@@ -4,7 +4,8 @@ Enzyme.configure({ adapter: new Adapter() });
 
 // mock HTML - jsdom doesnt support it.
 global.HTMLElement = class HTMLElement {
-  dispatchEvent() {}
+  dispatchEvent = jest.fn();
+  addEventListener = jest.fn();
 };
 
 global.CustomEvent = class CustomEvent {};

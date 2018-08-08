@@ -92,9 +92,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@pie-framework/build-helper@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.0.2.tgz#71c8d8cefb76a41be934d0f9841b304767230fa6"
+"@pie-framework/build-helper@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.0.3.tgz#c51b1b3ebf03f4ca2aedcc0996ce18422fa4fb4d"
 
 "@pie-lib/test-utils@0.0.3":
   version "0.0.3"

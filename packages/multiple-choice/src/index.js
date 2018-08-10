@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import debounce from 'lodash/debounce';
 import debug from 'debug';
-import { renderMath } from '@pie-lib/player-utils';
+import { renderMath } from '@pie-lib/math-rendering';
 import { updateSessionValue } from './session-updater';
 
 const log = debug('pie-elements:multiple-choice');

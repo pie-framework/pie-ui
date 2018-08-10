@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { renderMath } from '@pie-lib/player-utils';
+import { renderMath } from '@pie-lib/math-rendering';
 import {
   SessionChangedEvent,
   ModelSetEvent

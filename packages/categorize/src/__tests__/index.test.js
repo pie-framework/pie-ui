@@ -4,7 +4,7 @@ import {
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
 
-jest.mock('@pie-lib/player-utils', () => ({ renderMath: jest.fn() }));
+jest.mock('@pie-lib/math-rendering', () => ({ renderMath: jest.fn() }));
 
 describe('categorize', () => {
   describe('events', () => {

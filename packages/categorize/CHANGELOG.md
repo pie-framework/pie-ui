@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.0...@pie-ui/categorize@0.6.1) (2018-08-10)
+
+
+### Bug Fixes
+
+* use [@pie-lib](https://github.com/pie-lib)/math-rendering instead of [@pie-lib](https://github.com/pie-lib)/player-utils ([f82be95](https://github.com/pie-framework/pie-ui/commit/f82be95))
+
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.5.0...@pie-ui/categorize@0.6.0) (2018-08-08)
 

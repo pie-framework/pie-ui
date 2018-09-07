@@ -37,6 +37,7 @@ export default class Categorize extends HTMLElement {
     }
 
     this._session = s;
+    this.render();
   }
 
   changeAnswers(answers) {

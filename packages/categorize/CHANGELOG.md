@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.2"></a>
+## [0.6.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.1...@pie-ui/categorize@0.6.2) (2018-09-07)
+
+
+### Bug Fixes
+
+* run a render after setting session ([cfaf12a](https://github.com/pie-framework/pie-ui/commit/cfaf12a))
+
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.0...@pie-ui/categorize@0.6.1) (2018-08-10)
 

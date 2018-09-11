@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import debug from 'debug';
+import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Input from './input';
@@ -63,6 +64,7 @@ export class TextEntry extends React.Component {
 
     return (
       <div className={names}>
+        {model.prompt && <Typography className={classes.prompt}>{model.prompt}</Typography>}
         <Input
           feedback={model.feedback}
           value={value}
@@ -80,4 +82,8 @@ export class TextEntry extends React.Component {
   }
 }
 
-export default withStyles({})(TextEntry);
+export default withStyles({
+  prompt: {
+    width: '100%'
+  }
+})(TextEntry);

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.2.1...@pie-ui/extended-text-entry@2.3.0) (2018-09-11)
+
+
+### Features
+
+* **extended-text-entry:** added prompt to be rendered ([bc3b1e7](https://github.com/pie-framework/pie-ui/commit/bc3b1e7))
+
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.2.0...@pie-ui/extended-text-entry@2.2.1) (2018-05-16)
 

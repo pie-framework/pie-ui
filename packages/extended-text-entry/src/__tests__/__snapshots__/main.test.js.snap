@@ -5,6 +5,7 @@ exports[`Render Main Component should match snapshot 1`] = `
   classes={
     Object {
       "main": "Main-main-1",
+      "prompt": "Main-prompt-2",
     }
   }
   model={

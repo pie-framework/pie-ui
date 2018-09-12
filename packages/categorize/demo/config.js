@@ -12,7 +12,8 @@ const getChoices = () => {
   return [
     {
       id: '1',
-      content: '<h1>Banana<span data-latex="">$\\frac{1}{2}$</span></h1>',
+      content:
+        '<h1>$10 is $20 - fooBanana<span data-latex="">$\\frac{1}{2}$</span></h1>',
       categoryCount: 1
     },
     {

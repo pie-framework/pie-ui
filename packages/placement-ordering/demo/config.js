@@ -6,7 +6,8 @@ module.exports = {
     {
       id: '1',
       element: 'placement-ordering',
-      prompt: 'this is the prompt',
+      prompt:
+        '$10 - and $20 - this is the prompt, <span data-latex="">$\\frac{1}{2}$</span></h1>',
       choices: [
         { id: '1', label: '1', moveOnDrag: true },
         { id: '2', label: '2' },

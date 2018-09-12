@@ -32,7 +32,8 @@ export default class Ordering extends HTMLElement {
       });
 
       ReactDOM.render(element, this, () => {
-        renderMathInElement(this);
+        const nodes = this.querySelectorAll('[data-latex=""]');
+        renderMath(nodes);
       });
     }
   }

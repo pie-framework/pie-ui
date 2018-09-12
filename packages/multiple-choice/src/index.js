@@ -24,7 +24,9 @@ export default class MultipleChoice extends HTMLElement {
           });
           ReactDOM.render(element, this, () => {
             log('render complete - render math');
-            renderMath(this);
+            const latexNodes = this.querySelectorAll('[data-latex=""]');
+            log('latex nodes: ', latexNodes);
+            renderMath(latexNodes);
           });
         } else {
           log('skip');

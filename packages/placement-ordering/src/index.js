@@ -3,14 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import compact from 'lodash/compact';
 import debug from 'debug';
-import katex from 'katex';
+import { renderMath } from '@pie-lib/math-rendering';
 import { swap } from './ordering';
 import { withDragContext } from '@pie-lib/drag';
 const log = debug('pie-elements:placement-ordering');
 
 //Auto render requires the katex global
-window.katex = katex;
-const renderMathInElement = require('katex/dist/contrib/auto-render.min');
 
 require('katex/dist/katex.css');
 

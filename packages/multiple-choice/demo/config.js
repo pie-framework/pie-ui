@@ -7,12 +7,13 @@ module.exports = {
       element: 'multiple-choice',
       id: '1',
       mode: 'evaluate',
-      prompt: 'This instance is in gather mode and can be clicked',
+      prompt: 'I have $4 and you have $5 - who has more?',
       disabled: false,
       choiceMode: 'radio',
       keyMode: 'letters',
       showCorrect: true,
       correctResponse: [{ value: 'b' }],
+
       choices: [
         {
           label: 'apple <span data-latex="">$\\frac{2}{2}$</span>',

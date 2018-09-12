@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.2"></a>
+## [4.2.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.2.1...@pie-ui/multiple-choice@4.2.2) (2018-09-12)
+
+
+### Bug Fixes
+
+* use [@pie-lib](https://github.com/pie-lib)/math-rendering@0.5.0 ([ac64bcf](https://github.com/pie-framework/pie-elements/commit/ac64bcf))
+
+
+
+
 <a name="4.2.1"></a>
 ## [4.2.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.2.0...@pie-ui/multiple-choice@4.2.1) (2018-08-10)
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.6"></a>
+## [4.2.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.5...@pie-ui/placement-ordering@4.2.6) (2018-09-12)
+
+
+### Bug Fixes
+
+* use [@pie-lib](https://github.com/pie-lib)/math-rendering@0.5.0 ([ac64bcf](https://github.com/pie-framework/pie-ui/commit/ac64bcf))
+* use new math render only on latex nodes ([1fe1c92](https://github.com/pie-framework/pie-ui/commit/1fe1c92))
+
+
+
+
 <a name="4.2.5"></a>
 ## [4.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.2.4...@pie-ui/placement-ordering@4.2.5) (2018-07-18)
 

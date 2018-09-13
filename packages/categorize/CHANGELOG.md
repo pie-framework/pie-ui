@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.3...@pie-ui/categorize@0.7.0) (2018-09-13)
+
+
+### Features
+
+* upgrade to [@pie-lib](https://github.com/pie-lib)/math-rendering@^1.0.0 ([3e86ddd](https://github.com/pie-framework/pie-ui/commit/3e86ddd))
+
+
+
+
 <a name="0.6.3"></a>
 ## [0.6.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.2...@pie-ui/categorize@0.6.3) (2018-09-12)
 

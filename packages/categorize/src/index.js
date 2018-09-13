@@ -58,8 +58,7 @@ export default class Categorize extends HTMLElement {
         onAnswersChange: this.changeAnswers.bind(this)
       });
       ReactDOM.render(el, this, () => {
-        const nodes = this.querySelectorAll('[data-latex=""]');
-        renderMath(nodes);
+        renderMath(this);
       });
     }
   }

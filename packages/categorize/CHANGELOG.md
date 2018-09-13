@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.1"></a>
+## [0.7.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.0...@pie-ui/categorize@0.7.1) (2018-09-13)
+
+
+### Bug Fixes
+
+* render all math as single dollar is now disabled ([5caea57](https://github.com/pie-framework/pie-ui/commit/5caea57))
+
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.6.3...@pie-ui/categorize@0.7.0) (2018-09-13)
 

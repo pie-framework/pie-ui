@@ -71,7 +71,7 @@ export class Choices extends React.Component {
 const styles = theme => ({
   wrapper: {
     flex: 1,
-    padding: '10px'
+    padding: theme.spacing.unit
   },
   choices: {
     paddingTop: theme.spacing.unit,

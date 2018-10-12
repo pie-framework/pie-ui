@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
-import assign from 'lodash/assign';
 
 export class GridContent extends React.Component {
   static propTypes = {
@@ -12,7 +11,8 @@ export class GridContent extends React.Component {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node
     ]).isRequired,
-    columns: PropTypes.number
+    columns: PropTypes.number,
+    extraStyle: PropTypes.object
   };
   static defaultProps = {
     columns: 2
@@ -20,9 +20,10 @@ export class GridContent extends React.Component {
 
   render() {
     const { classes, className, children, columns, extraStyle } = this.props;
-    const style = assign({
-      gridTemplateColumns: `repeat(${columns}, 1fr)`
-    }, extraStyle);
+    const style = {
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      ...extraStyle
+    };
 
     return (
       <div style={style} className={classNames(classes.gridContent, className)}>

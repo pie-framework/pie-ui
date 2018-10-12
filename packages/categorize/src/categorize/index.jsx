@@ -85,15 +85,7 @@ export class Categorize extends React.Component {
   toggleShowCorrect = () =>
     this.setState({ showCorrect: !this.state.showCorrect });
 
-  render() {
-    const { classes, model, session } = this.props;
-    const { showCorrect } = this.state;
-
-    const choicePosition =
-      model.config && model.config.choices
-        ? model.config.choices.position
-        : 'above';
-
+  getPositionDirection = (choicePosition) => {
     let flexDirection;
 
     switch (choicePosition) {
@@ -112,8 +104,20 @@ export class Categorize extends React.Component {
         break;
     }
 
+    return flexDirection;
+  };
+
+  render() {
+    const { classes, model, session } = this.props;
+    const { showCorrect } = this.state;
+
+    const choicePosition =
+      model.config && model.config.choices
+        ? model.config.choices.position
+        : 'above';
+
     const style = {
-      flexDirection
+      flexDirection: this.getPositionDirection(choicePosition)
     };
 
     const { categories, choices, correct } = buildState(

@@ -19,7 +19,8 @@ export class Choices extends React.Component {
     config: PropTypes.shape({
       columns: PropTypes.number.isRequired
     }),
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    choicePosition: PropTypes.string
   };
 
   static defaultProps = {
@@ -29,15 +30,26 @@ export class Choices extends React.Component {
   };
 
   render() {
-    const { classes, choices, config, disabled } = this.props;
+    const { classes, choices, config, disabled, choicePosition } = this.props;
+    let style = {
+      textAlign: 'center'
+    };
+
+    if (choicePosition === 'left') {
+      style.direction = 'rtl';
+    }
 
     return (
-      <div>
+      <div className={classes.wrapper}>
         {config.label &&
           config.label !== '' && (
             <div className={classes.labelHolder}>{config.label}</div>
           )}
-        <GridContent columns={config.columns} className={classes.choices}>
+        <GridContent
+          columns={config.columns}
+          className={classes.choices}
+          extraStyle={style}
+        >
           {choices.map((c, index) => {
             return c.empty ? (
               <Blank key={index} />
@@ -57,6 +69,10 @@ export class Choices extends React.Component {
 }
 
 const styles = theme => ({
+  wrapper: {
+    flex: 1,
+    padding: '10px'
+  },
   choices: {
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit

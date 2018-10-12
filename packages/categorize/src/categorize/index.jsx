@@ -94,8 +94,26 @@ export class Categorize extends React.Component {
         ? model.config.choices.position
         : 'above';
 
+    let flexDirection;
+
+    switch (choicePosition) {
+      case 'left':
+        flexDirection = 'row-reverse';
+        break;
+      case 'right':
+        flexDirection = 'row';
+        break;
+      case 'bottom':
+        flexDirection = 'column';
+        break;
+      default:
+        // above
+        flexDirection = 'column-reverse';
+        break;
+    }
+
     const style = {
-      flexDirection: choicePosition === 'above' ? 'column-reverse' : undefined
+      flexDirection
     };
 
     const { categories, choices, correct } = buildState(
@@ -142,6 +160,7 @@ export class Categorize extends React.Component {
               disabled={model.disabled}
               config={model.config.choices}
               choices={choices}
+              choicePosition={choicePosition}
             />
           </div>
         </div>

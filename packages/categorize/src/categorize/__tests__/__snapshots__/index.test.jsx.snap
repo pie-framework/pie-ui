@@ -13,7 +13,7 @@ exports[`categorize snapshots incorrect 1`] = `
     <div
       style={
         Object {
-          "flexDirection": undefined,
+          "flexDirection": "column-reverse",
         }
       }
     >
@@ -34,6 +34,7 @@ exports[`categorize snapshots incorrect 1`] = `
         onRemoveChoice={[Function]}
       />
       <WithStyles(Choices)
+        choicePosition="top"
         choices={Array []}
         config={
           Object {
@@ -60,7 +61,7 @@ exports[`categorize snapshots renders 1`] = `
     <div
       style={
         Object {
-          "flexDirection": undefined,
+          "flexDirection": "column-reverse",
         }
       }
     >
@@ -81,6 +82,7 @@ exports[`categorize snapshots renders 1`] = `
         onRemoveChoice={[Function]}
       />
       <WithStyles(Choices)
+        choicePosition="top"
         choices={Array []}
         config={
           Object {

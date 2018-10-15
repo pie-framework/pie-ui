@@ -4,6 +4,11 @@ exports[`choices snapshots disabled 1`] = `
 <div>
   <WithStyles(GridContent)
     columns={2}
+    extraStyle={
+      Object {
+        "textAlign": "center",
+      }
+    }
   />
 </div>
 `;
@@ -12,6 +17,11 @@ exports[`choices snapshots empty 1`] = `
 <div>
   <WithStyles(GridContent)
     columns={2}
+    extraStyle={
+      Object {
+        "textAlign": "center",
+      }
+    }
   >
     <Wrapped
       id="1"
@@ -26,6 +36,11 @@ exports[`choices snapshots empty 2`] = `
 <div>
   <WithStyles(GridContent)
     columns={2}
+    extraStyle={
+      Object {
+        "textAlign": "center",
+      }
+    }
   >
     <Blank
       key="0"
@@ -38,6 +53,11 @@ exports[`choices snapshots renders 1`] = `
 <div>
   <WithStyles(GridContent)
     columns={2}
+    extraStyle={
+      Object {
+        "textAlign": "center",
+      }
+    }
   />
 </div>
 `;

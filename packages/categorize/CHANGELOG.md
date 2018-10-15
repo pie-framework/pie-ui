@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.2"></a>
+## [0.7.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.1...@pie-ui/categorize@0.7.2) (2018-10-15)
+
+
+### Bug Fixes
+
+* **categorize:** made the requested changes ([81c27c0](https://github.com/pie-framework/pie-ui/commit/81c27c0))
+* **issue-84:** added the left and right positioning for the choices ([6efccfc](https://github.com/pie-framework/pie-ui/commit/6efccfc))
+
+
+
+
 <a name="0.7.1"></a>
 ## [0.7.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.0...@pie-ui/categorize@0.7.1) (2018-09-13)
 

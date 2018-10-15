@@ -11,18 +11,20 @@ export class GridContent extends React.Component {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node
     ]).isRequired,
-    columns: PropTypes.number
+    columns: PropTypes.number,
+    extraStyle: PropTypes.object
   };
   static defaultProps = {
     columns: 2
   };
 
   render() {
-    const { classes, className, children, columns } = this.props;
-
+    const { classes, className, children, columns, extraStyle } = this.props;
     const style = {
-      gridTemplateColumns: `repeat(${columns}, 1fr)`
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      ...extraStyle
     };
+
     return (
       <div style={style} className={classNames(classes.gridContent, className)}>
         {children}

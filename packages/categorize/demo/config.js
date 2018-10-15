@@ -42,8 +42,8 @@ module.exports = {
           columns: 2
         },
         choices: {
-          label: 'The Label',
-          position: 'bottom',
+          label: 'First Label',
+          position: 'left',
           columns: 4,
           shuffle: true
         }
@@ -60,7 +60,7 @@ module.exports = {
           columns: 2
         },
         choices: {
-          label: 'The Label',
+          label: 'Second Label',
           position: 'bottom',
           columns: 4
         }
@@ -89,7 +89,7 @@ module.exports = {
           columns: 2
         },
         choices: {
-          label: 'The Label',
+          label: 'Third Label',
           position: 'bottom',
           columns: 4
         }

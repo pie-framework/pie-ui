@@ -53,5 +53,9 @@ export class Categories extends React.Component {
   }
 }
 
-const styles = () => ({});
+const styles = () => ({
+  categories: {
+    flex: 1
+  }
+});
 export default withStyles(styles)(Categories);

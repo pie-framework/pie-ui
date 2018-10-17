@@ -4,6 +4,7 @@ import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
+import isEqual from 'lodash/isEqual';
 
 function shuffle(array) {
   let counter = array.length;
@@ -88,13 +89,14 @@ export class Main extends React.Component {
     nextProps.model.config.shuffled === true;
 
   isResetRowsRequired = nextProps =>
-    (this.props.model.config.shuffled === true &&
-      nextProps.model.config.shuffled === false) ||
-    this.props.model.config.rows.length !==
-      nextProps.model.config.rows.length ||
-    (nextProps.session.answers &&
+    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
+    this.props.model.config.rows.length !== nextProps.model.config.rows.length ||
+    !isEqual(this.props.model.config.rows, nextProps.model.config.rows) ||
+    (
+      nextProps.session.answers &&
       nextProps.model.config.rows.length !==
-        Object.keys(nextProps.session.answers).length);
+      Object.keys(nextProps.session.answers).length
+    );
 
   componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);

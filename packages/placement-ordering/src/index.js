@@ -8,10 +8,6 @@ import { swap } from './ordering';
 import { withDragContext } from '@pie-lib/drag';
 const log = debug('pie-elements:placement-ordering');
 
-//Auto render requires the katex global
-
-require('katex/dist/katex.css');
-
 export { withDragContext, swap };
 
 export default class Ordering extends HTMLElement {

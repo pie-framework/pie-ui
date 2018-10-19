@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.0...@pie-ui/match@1.1.1) (2018-10-19)
+
+
+### Bug Fixes
+
+* **ch468:** made it possible to use html instead of just a string for the title of a row ([ea3b97e](https://github.com/pie-framework/pie-ui/commit/ea3b97e))
+
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.0.5...@pie-ui/match@1.1.0) (2018-10-17)
 

@@ -5,7 +5,6 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "postinstall": "lerna run install",
     "test": "jest",
     "release": "npm run clean && npm test && npm run build && lerna publish --conventional-commits",
     "lint": "lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/eslint  --ignore-path \\$LERNA_ROOT_PATH/.eslintignore --ext .js --ext .jsx src",
@@ -30,9 +29,12 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
-    "lerna": "^2.11.0",
+    "lerna": "^3.4.3",
     "minimist": "^1.2.0",
     "react": "^16.3.2",
     "react-dom": "16.3.2"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

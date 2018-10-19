@@ -70,9 +70,7 @@ export class AnswerGrid extends React.Component {
         {rows.map((row, idx) => (
           <div key={idx}>
             <div className={classes.rowContainer}>
-              <div className={cx(classes.rowItem, classes.questionText)}>
-                {row.title}
-              </div>
+              <div className={cx(classes.rowItem, classes.questionText)} dangerouslySetInnerHTML={{ __html: row.title }}></div>
               {answers[row.id].map((rowItem, answerIndex) => (
                 <div key={answerIndex} className={classes.rowItem}>
                   {responseType === 'radio' ? (

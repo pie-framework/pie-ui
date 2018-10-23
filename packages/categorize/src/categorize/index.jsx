@@ -95,7 +95,7 @@ export class Categorize extends React.Component {
       case 'right':
         flexDirection = 'row';
         break;
-      case 'bottom':
+      case 'below':
         flexDirection = 'column';
         break;
       default:

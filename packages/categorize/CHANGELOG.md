@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.2...@pie-ui/categorize@0.7.3) (2018-10-23)
+
+
+### Bug Fixes
+
+* **ch542:** fixed the label for the below position ([77c58ed](https://github.com/pie-framework/pie-ui/commit/77c58ed))
+
+
+
+
+
 <a name="0.7.2"></a>
 ## [0.7.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.1...@pie-ui/categorize@0.7.2) (2018-10-15)
 

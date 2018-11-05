@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.2.1...@pie-ui/select-text@1.2.2) (2018-11-05)
+
+
+### Bug Fixes
+
+* **select-text:** added a prompt for the select text ui ([d315d42](https://github.com/pie-framework/pie-ui/commit/d315d42))
+* **select-text:** updated snapshots ([70e763b](https://github.com/pie-framework/pie-ui/commit/70e763b))
+
+
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.2.0...@pie-ui/select-text@1.2.1) (2018-05-16)
 

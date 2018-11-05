@@ -2,6 +2,13 @@
 
 exports[`main snapshot renders 1`] = `
 <div>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
   <Component
     onToggle={[Function]}
     toggled={false}
@@ -33,6 +40,13 @@ exports[`main snapshot renders 1`] = `
 
 exports[`main snapshot renders showCorrect 1`] = `
 <div>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
   <Component
     onToggle={[Function]}
     toggled={false}

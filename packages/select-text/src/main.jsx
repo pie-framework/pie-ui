@@ -49,6 +49,10 @@ export class Main extends React.Component {
 
     return (
       <div>
+        <div
+          className={classes.prompt}
+          dangerouslySetInnerHTML={{ __html: model.prompt }}
+        />
         <CorrectAnswerToggle
           show={model.disabled && model.incorrect}
           toggled={showCorrectAnswer}
@@ -81,6 +85,10 @@ const StyledMain = withStyles(theme => ({
   textSelect: {
     marginBottom: theme.spacing.unit,
     marginTop: theme.spacing.unit
+  },
+  prompt: {
+    verticalAlign: 'middle',
+    marginBottom: theme.spacing.unit
   }
 }))(Main);
 

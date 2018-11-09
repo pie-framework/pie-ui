@@ -10,6 +10,7 @@ import {
   moveChoiceToCategory
 } from '@pie-lib/categorize';
 import { withDragContext, uid } from '@pie-lib/drag';
+import { Feedback } from '@pie-lib/render-ui';
 
 import debug from 'debug';
 
@@ -167,15 +168,27 @@ export class Categorize extends React.Component {
               choicePosition={choicePosition}
             />
           </div>
+          {
+            model.correctness &&
+            model.feedback &&
+            !showCorrect &&(
+              <Feedback
+                correctness={model.correctness}
+                feedback={model.feedback}
+              />
+            )
+          }
         </div>
       </uid.Provider>
     );
   }
 }
-const styles = {
+const styles = (theme) => ({
   categorize: {
+    marginBottom: theme.spacing.unit,
     display: 'flex',
     flexDirection: 'column'
   }
-};
+});
+
 export default withDragContext(withStyles(styles)(Categorize));

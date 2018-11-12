@@ -12,6 +12,25 @@ jest.mock('@pie-lib/drag', () => ({
 }));
 
 describe('categorize', () => {
+  const defaultProps = {
+    classes: {},
+    session: {
+      answers: []
+    },
+    model: {
+      config: {
+        choices: {
+          position: 'top',
+          columns: 2
+        },
+        categories: {
+          columns: 2
+        }
+      },
+      choices: [],
+      categories: []
+    }
+  };
   let onAnswersChange;
 
   beforeEach(() => {
@@ -19,32 +38,40 @@ describe('categorize', () => {
   });
   const wrapper = extras => {
     const defaults = {
-      classes: {},
-      session: {
-        answers: []
-      },
-      model: {
-        config: {
-          choices: {
-            position: 'top',
-            columns: 2
-          },
-          categories: {
-            columns: 2
-          }
-        },
-        choices: [],
-        categories: []
-      },
+      ...defaultProps,
       onAnswersChange
     };
     const props = { ...defaults, ...extras };
+    console.log(props);
     return shallow(<Categorize {...props} />);
   };
 
   describe('snapshots', () => {
     it('renders', () => {
       expect(wrapper()).toMatchSnapshot();
+    });
+
+    it('renders with feedback', () => {
+      expect(wrapper({
+        model: {
+          ...defaultProps.model,
+          correctness: 'correct',
+          feedback: {
+            correct: {
+              type: 'default',
+              default: 'Correct'
+            },
+            incorrect: {
+              type: 'default',
+              default: 'Incorrect'
+            },
+            partial: {
+              type: 'default',
+              default: 'Nearly'
+            }
+          },
+        }
+      })).toMatchSnapshot();
     });
 
     it('incorrect', () => {

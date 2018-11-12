@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.4...@pie-ui/categorize@0.7.5) (2018-11-12)
+
+
+### Bug Fixes
+
+* **categorize-add-feedback:** added feedback to the categorize ui ([9123532](https://github.com/pie-framework/pie-ui/commit/9123532))
+* **categorize-add-feedback:** added snapshot for screen with feedback ([6b52a3c](https://github.com/pie-framework/pie-ui/commit/6b52a3c))
+
+
+
+
+
 ## [0.7.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.3...@pie-ui/categorize@0.7.4) (2018-11-12)
 
 

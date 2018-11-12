@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.1...@pie-ui/match@1.1.2) (2018-11-12)
+
+
+### Bug Fixes
+
+* **added-dependencies-where-needed:** fixed missing dependencies ([b60f172](https://github.com/pie-framework/pie-ui/commit/b60f172))
+
+
+
+
+
 ## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.0...@pie-ui/match@1.1.1) (2018-10-19)
 
 

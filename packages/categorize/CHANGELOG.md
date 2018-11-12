@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.3...@pie-ui/categorize@0.7.4) (2018-11-12)
+
+
+### Bug Fixes
+
+* **added-dependencies-where-needed:** fixed missing dependencies ([b60f172](https://github.com/pie-framework/pie-ui/commit/b60f172))
+* **added-dependencies-where-needed:** removed code from the other PR ([7c751fb](https://github.com/pie-framework/pie-ui/commit/7c751fb))
+
+
+
+
+
 ## [0.7.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.2...@pie-ui/categorize@0.7.3) (2018-10-23)
 
 

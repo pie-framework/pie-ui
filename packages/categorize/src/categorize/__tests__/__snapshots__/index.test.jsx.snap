@@ -95,3 +95,70 @@ exports[`categorize snapshots renders 1`] = `
   </div>
 </mockConstructor>
 `;
+
+exports[`categorize snapshots renders with feedback 1`] = `
+<mockConstructor
+  value="1"
+>
+  <div>
+    <Component
+      onToggle={[Function]}
+      show={false}
+      toggled={false}
+    />
+    <div
+      style={
+        Object {
+          "flexDirection": "column-reverse",
+        }
+      }
+    >
+      <WithStyles(Categories)
+        categories={Array []}
+        config={
+          Object {
+            "columns": 2,
+          }
+        }
+        grid={
+          Object {
+            "columns": 1,
+            "rows": 1,
+          }
+        }
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+      <WithStyles(Choices)
+        choicePosition="top"
+        choices={Array []}
+        config={
+          Object {
+            "columns": 2,
+            "position": "top",
+          }
+        }
+      />
+    </div>
+    <Component
+      correctness="correct"
+      feedback={
+        Object {
+          "correct": Object {
+            "default": "Correct",
+            "type": "default",
+          },
+          "incorrect": Object {
+            "default": "Incorrect",
+            "type": "default",
+          },
+          "partial": Object {
+            "default": "Nearly",
+            "type": "default",
+          },
+        }
+      }
+    />
+  </div>
+</mockConstructor>
+`;

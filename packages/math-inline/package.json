@@ -1,0 +1,23 @@
+{
+  "name": "@pie-ui/math-inline",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "@pie-lib/correct-answer-toggle": "^2.1.0",
+    "@pie-lib/render-ui": "^2.1.0",
+    "@pie-lib/test-utils": "^0.0.3",
+    "classnames": "^2.2.5",
+    "debug": "^3.1.0",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

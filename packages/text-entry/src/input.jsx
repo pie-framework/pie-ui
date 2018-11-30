@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import { indicators } from '@pie-lib/render-ui';
+import { indicators, Feedback } from '@pie-lib/render-ui';
 import PropTypes from 'prop-types';
 
 const { Correct, Incorrect, PartiallyCorrect, NothingSubmitted } = indicators;
@@ -92,6 +92,7 @@ class RawInput extends React.Component {
             </div>
           )}
         </div>
+        <Feedback feedback={feedback} correctness={correctness} />
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>
     );

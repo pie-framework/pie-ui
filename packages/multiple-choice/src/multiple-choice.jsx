@@ -111,7 +111,7 @@ export class MultipleChoice extends React.Component {
         feedback,
         value: choice.value,
         correctness:
-          checked && isEvaluateMode ? correctness(choice.correct) : undefined,
+          (checked || choice.correct ) && isEvaluateMode ? correctness(choice.correct && checked) : undefined,
         displayKey: this.indexToSymbol(index),
         label: choice.label,
         onChange: mode === 'gather' ? onChoiceChanged : () => {}

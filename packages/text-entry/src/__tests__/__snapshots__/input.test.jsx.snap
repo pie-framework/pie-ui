@@ -2,39 +2,48 @@
 
 exports[`input snapshot renders 1`] = `
 <div
-  className="MuiFormControl-root-27 RawInput-formControl-2"
+  className="MuiFormControl-root-29 RawInput-formControl-2"
 >
   <div
-    className="RawInput-inputAndIcon-4"
+    className="RawInput-inputAndIcon-6"
   >
     <div
-      className="MuiInput-root-31 RawInput-inputRoot-3 MuiInput-formControl-32 MuiInput-underline-35"
+      className="RawInput-inputWrapper-4"
     >
-      <input
-        aria-invalid={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-39"
-        defaultValue={undefined}
-        disabled={false}
-        id={undefined}
-        name={undefined}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={false}
-        rows={undefined}
-        type="text"
-        value="hi"
-      />
+      <div
+        className="MuiInput-root-33 RawInput-inputRoot-3 MuiInput-formControl-34 MuiInput-underline-37"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-41"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
   >
     
   </p>
@@ -43,39 +52,48 @@ exports[`input snapshot renders 1`] = `
 
 exports[`input snapshot renders alignment 1`] = `
 <div
-  className="MuiFormControl-root-27 RawInput-formControl-2"
+  className="MuiFormControl-root-29 RawInput-formControl-2"
 >
   <div
-    className="RawInput-inputAndIcon-4"
+    className="RawInput-inputAndIcon-6"
   >
     <div
-      className="MuiInput-root-77 RawInput-inputRoot-3 MuiInput-formControl-78 MuiInput-underline-81"
+      className="RawInput-inputWrapper-4"
     >
-      <input
-        aria-invalid={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-85 RawInput-right-6 RawInput-size4-11"
-        defaultValue={undefined}
-        disabled={false}
-        id={undefined}
-        name={undefined}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={false}
-        rows={undefined}
-        type="text"
-        value="hi"
-      />
+      <div
+        className="MuiInput-root-79 RawInput-inputRoot-3 MuiInput-formControl-80 MuiInput-underline-83"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-87 RawInput-right-8 RawInput-size4-13"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
   >
     
   </p>
@@ -84,38 +102,47 @@ exports[`input snapshot renders alignment 1`] = `
 
 exports[`input snapshot renders correct feedback 1`] = `
 <div
-  className="MuiFormControl-root-27 RawInput-formControl-2"
+  className="MuiFormControl-root-29 RawInput-formControl-2"
 >
   <div
-    className="RawInput-inputAndIcon-4"
+    className="RawInput-inputAndIcon-6"
   >
     <div
-      className="MuiInput-root-51 RawInput-inputRoot-3 MuiInput-formControl-52 MuiInput-underline-55"
+      className="RawInput-inputWrapper-4"
     >
-      <input
-        aria-invalid={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-59"
-        defaultValue={undefined}
-        disabled={false}
-        id={undefined}
-        name={undefined}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={false}
-        rows={undefined}
-        type="text"
-        value="hi"
-      />
+      <div
+        className="MuiInput-root-53 RawInput-inputRoot-3 MuiInput-formControl-54 MuiInput-underline-57"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-61"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
     </div>
     <div
-      className="RawInput-icon-5"
+      className="RawInput-icon-7"
     >
       <div>
         Correct
@@ -126,7 +153,7 @@ exports[`input snapshot renders correct feedback 1`] = `
     Feedback
   </div>
   <p
-    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
   >
     
   </p>
@@ -135,39 +162,48 @@ exports[`input snapshot renders correct feedback 1`] = `
 
 exports[`input snapshot renders disabled 1`] = `
 <div
-  className="MuiFormControl-root-27 RawInput-formControl-2"
+  className="MuiFormControl-root-29 RawInput-formControl-2"
 >
   <div
-    className="RawInput-inputAndIcon-4"
+    className="RawInput-inputAndIcon-6"
   >
     <div
-      className="MuiInput-root-64 RawInput-inputRoot-3 MuiInput-disabled-67 MuiInput-formControl-65 MuiInput-underline-68"
+      className="RawInput-inputWrapper-4"
     >
-      <input
-        aria-invalid={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-72 MuiInput-disabled-67"
-        defaultValue={undefined}
-        disabled={true}
-        id={undefined}
-        name={undefined}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={false}
-        rows={undefined}
-        type="text"
-        value="hi"
-      />
+      <div
+        className="MuiInput-root-66 RawInput-inputRoot-3 MuiInput-disabled-69 MuiInput-formControl-67 MuiInput-underline-70"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-74 MuiInput-disabled-69"
+          defaultValue={undefined}
+          disabled={true}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44 MuiFormHelperText-disabled-46 MuiFormHelperText-filled-49"
+    className="MuiFormHelperText-root-46 MuiFormHelperText-disabled-48 MuiFormHelperText-filled-51"
   >
     
   </p>

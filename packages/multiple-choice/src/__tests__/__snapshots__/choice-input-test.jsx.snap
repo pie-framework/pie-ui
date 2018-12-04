@@ -31,7 +31,7 @@ exports[`ChoiceInput snapshots checkbox renders 1`] = `
       />
     </div>
   </div>
-  <Feedback
+  <Component
     correctness="correct"
   />
 </div>
@@ -68,7 +68,7 @@ exports[`ChoiceInput snapshots radio renders 1`] = `
       />
     </div>
   </div>
-  <Feedback
+  <Component
     correctness="correct"
   />
 </div>

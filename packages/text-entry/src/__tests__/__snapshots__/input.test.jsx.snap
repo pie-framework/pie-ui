@@ -102,51 +102,55 @@ exports[`input snapshot renders alignment 1`] = `
 
 exports[`input snapshot renders correct feedback 1`] = `
 <div
-  className="MuiFormControl-root-27 RawInput-formControl-2"
-  onBlur={[Function]}
-  onFocus={[Function]}
+  className="MuiFormControl-root-29 RawInput-formControl-2"
 >
   <div
-    className="RawInput-inputAndIcon-4"
+    className="RawInput-inputAndIcon-6"
   >
     <div
-      className="MuiInput-root-48 RawInput-inputRoot-3 MuiInput-formControl-49 MuiInput-underline-52"
-    >
-      <input
-        aria-invalid={false}
-        aria-required={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-56"
-        defaultValue={undefined}
-        disabled={false}
-        id={undefined}
-        name={undefined}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
-        rows={undefined}
-        type="text"
-        value="hi"
-      />
-    </div>
-    <div
-      className="RawInput-icon-5"
+      className="RawInput-inputWrapper-4"
     >
       <div
-        data-name="Correct"
+        className="MuiInput-root-53 RawInput-inputRoot-3 MuiInput-formControl-54 MuiInput-underline-57"
       >
-        {"feedback":"fb"}
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-61"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
+    </div>
+    <div
+      className="RawInput-icon-7"
+    >
+      <div>
+        Correct
       </div>
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44"
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
   >
     
   </p>

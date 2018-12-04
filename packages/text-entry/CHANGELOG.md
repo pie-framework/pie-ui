@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.2.0...@pie-ui/text-entry@3.3.0) (2018-12-04)
+
+
+### Bug Fixes
+
+* **text-entry:** added some snapshot testing ([42c833a](https://github.com/pie-framework/pie-ui/commit/42c833a))
+* **text-entry:** updated snapshots ([ae77b34](https://github.com/pie-framework/pie-ui/commit/ae77b34))
+
+
+### Features
+
+* **text-entry:** added feedback in evaluate mode ([0ed2744](https://github.com/pie-framework/pie-ui/commit/0ed2744))
+* **text-entry:** made the text-entry expandable ([e6cd7cb](https://github.com/pie-framework/pie-ui/commit/e6cd7cb))
+
+
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.1.1...@pie-ui/text-entry@3.2.0) (2018-09-11)
 

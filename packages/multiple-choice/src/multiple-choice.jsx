@@ -92,10 +92,10 @@ export class MultipleChoice extends React.Component {
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
 
-    const correctness = c => (c === true ? 'correct' : 'incorrect');
+    const correctness = (isCorrect, isChecked) => isCorrect ? (isChecked ? 'correct' : 'incorrect' ): undefined;
 
-    let choiceToTag = (choice, index) => {
-      var choiceClass =
+    const choiceToTag = (choice, index) => {
+      const choiceClass =
         'choice' + (index === choices.length - 1 ? ' last' : '');
 
       const checked = showCorrect
@@ -110,8 +110,7 @@ export class MultipleChoice extends React.Component {
         disabled,
         feedback,
         value: choice.value,
-        correctness:
-          (checked || choice.correct ) && isEvaluateMode ? correctness(choice.correct && checked) : undefined,
+        correctness: isEvaluateMode ? correctness(choice.correct, checked) : undefined,
         displayKey: this.indexToSymbol(index),
         label: choice.label,
         onChange: mode === 'gather' ? onChoiceChanged : () => {}

@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CorespringChoice snapshot choiceProps returns the right props 1`] = `
+<div>
+  <Component
+    onToggle={[Function]}
+    show={true}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
+    className="choice"
+    key="0"
+  >
+    <WithStyles(ChoiceInput)
+      checked={true}
+      className=""
+      correctness="correct"
+      disabled={false}
+      displayKey="A"
+      feedback="great"
+      label="label a"
+      onChange={[Function]}
+      value="a"
+    />
+  </div>
+  <div
+    className="choice"
+    key="1"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className=""
+      disabled={false}
+      displayKey="B"
+      label="label b"
+      onChange={[Function]}
+      value="b"
+    />
+  </div>
+  <div
+    className="choice last"
+    key="2"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className="undefined"
+      correctness="incorrect"
+      disabled={false}
+      displayKey="C"
+      feedback="great"
+      label="label c"
+      onChange={[Function]}
+      value="c"
+    />
+  </div>
+</div>
+`;
+
 exports[`CorespringChoice snapshot renders 1`] = `
 <div>
   <Component
@@ -30,18 +93,33 @@ exports[`CorespringChoice snapshot renders 1`] = `
     />
   </div>
   <div
-    className="choice last"
+    className="choice"
     key="1"
   >
     <WithStyles(ChoiceInput)
       checked={false}
-      className="undefined"
+      className=""
       disabled={false}
       displayKey="B"
       feedback=""
       label="label b"
       onChange={[MockFunction]}
       value="b"
+    />
+  </div>
+  <div
+    className="choice last"
+    key="2"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className="undefined"
+      disabled={false}
+      displayKey="C"
+      feedback=""
+      label="label c"
+      onChange={[MockFunction]}
+      value="c"
     />
   </div>
 </div>

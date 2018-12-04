@@ -1,4 +1,3 @@
-import ChoiceInput from '../choice-input';
 import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
@@ -36,11 +35,30 @@ describe('CorespringChoice', () => {
       wrapper = mkWrapper({
         choices: [
           { value: 'a', label: 'label a', correct: true, feedback: 'great' },
-          { value: 'b', label: 'label b' }
+          { value: 'b', label: 'label b' },
+          { value: 'c', label: 'label c', correct: true, feedback: 'great' }
         ]
       });
 
       expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('renders incorrect tick if one answer is correct but it is not checked', () => {
+      it('returns the right props', () => {
+        let w = mkWrapper({
+          mode: 'evaluate',
+          choices: [
+            { value: 'a', label: 'label a', correct: true, feedback: 'great' },
+            { value: 'b', label: 'label b' },
+            { value: 'c', label: 'label c', correct: true, feedback: 'great' }
+          ],
+          session: {
+            value: ['a']
+          }
+        });
+
+        expect(w).toMatchSnapshot();
+      });
     });
 
     describe('onToggle', () => {

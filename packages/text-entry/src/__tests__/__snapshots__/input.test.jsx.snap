@@ -149,6 +149,9 @@ exports[`input snapshot renders correct feedback 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    Feedback
+  </div>
   <p
     className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
   >

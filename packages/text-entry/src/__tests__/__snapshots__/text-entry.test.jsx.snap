@@ -4,61 +4,12 @@ exports[`text-entry:snapshot renders 1`] = `
 <div
   className="textEntry"
 >
-  <div
-    className="MuiFormControl-root-29 RawInput-formControl-2"
-  >
-    <div
-      className="RawInput-inputAndIcon-6"
-    >
-      <div
-        className="RawInput-inputWrapper-4"
-      >
-        <div
-          className="MuiInput-root-33 RawInput-inputRoot-3 MuiInput-formControl-34 MuiInput-underline-37"
-        >
-          <input
-            aria-invalid={false}
-            autoComplete={undefined}
-            autoFocus={undefined}
-            className="MuiInput-input-41"
-            defaultValue={undefined}
-            disabled={false}
-            id={undefined}
-            name={undefined}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={undefined}
-            onKeyUp={undefined}
-            placeholder={undefined}
-            readOnly={undefined}
-            required={false}
-            rows={undefined}
-            type="text"
-            value=""
-          />
-        </div>
-        <div
-          className="RawInput-hiddenText-5"
-        >
-          
-        </div>
-      </div>
-      <div
-        className="RawInput-icon-7"
-      >
-        <div
-          data-name="mock=comp"
-        >
-          {"feedback":"feedback"}
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiFormHelperText-root-46"
-    >
-      
-    </p>
-  </div>
+  <WithStyles(RawInput)
+    correctness="correct"
+    inputComponent={null}
+    inputProps={Object {}}
+    onChange={[Function]}
+    value=""
+  />
 </div>
 `;

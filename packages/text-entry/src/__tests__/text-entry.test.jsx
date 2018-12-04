@@ -1,6 +1,5 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
 import { TextEntry } from '../text-entry';
 import { shallow } from 'enzyme';
 import Input from '../input';
@@ -33,7 +32,7 @@ describe('text-entry:snapshot', () => {
     };
     const session = {};
 
-    const tree = renderer.create(
+    const tree = shallow(
       <TextEntry
         model={model}
         session={session}

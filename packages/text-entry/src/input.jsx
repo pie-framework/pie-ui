@@ -92,7 +92,10 @@ class RawInput extends React.Component {
             </div>
           )}
         </div>
-        <Feedback feedback={feedback} correctness={correctness} />
+        {
+          feedback &&
+          <Feedback feedback={feedback} correctness={correctness} />
+        }
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>
     );

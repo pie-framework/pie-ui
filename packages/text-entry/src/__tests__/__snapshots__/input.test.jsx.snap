@@ -3,8 +3,6 @@
 exports[`input snapshot renders 1`] = `
 <div
   className="MuiFormControl-root-27 RawInput-formControl-2"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="RawInput-inputAndIcon-4"
@@ -14,7 +12,6 @@ exports[`input snapshot renders 1`] = `
     >
       <input
         aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         className="MuiInput-input-39"
@@ -29,7 +26,7 @@ exports[`input snapshot renders 1`] = `
         onKeyUp={undefined}
         placeholder={undefined}
         readOnly={undefined}
-        required={undefined}
+        required={false}
         rows={undefined}
         type="text"
         value="hi"
@@ -37,7 +34,7 @@ exports[`input snapshot renders 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44"
+    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
   >
     
   </p>
@@ -47,21 +44,18 @@ exports[`input snapshot renders 1`] = `
 exports[`input snapshot renders alignment 1`] = `
 <div
   className="MuiFormControl-root-27 RawInput-formControl-2"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="RawInput-inputAndIcon-4"
   >
     <div
-      className="MuiInput-root-74 RawInput-inputRoot-3 MuiInput-formControl-75 MuiInput-underline-78"
+      className="MuiInput-root-77 RawInput-inputRoot-3 MuiInput-formControl-78 MuiInput-underline-81"
     >
       <input
         aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-82 RawInput-right-6 RawInput-size4-11"
+        className="MuiInput-input-85 RawInput-right-6 RawInput-size4-11"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
@@ -73,7 +67,7 @@ exports[`input snapshot renders alignment 1`] = `
         onKeyUp={undefined}
         placeholder={undefined}
         readOnly={undefined}
-        required={undefined}
+        required={false}
         rows={undefined}
         type="text"
         value="hi"
@@ -81,7 +75,7 @@ exports[`input snapshot renders alignment 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44"
+    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
   >
     
   </p>
@@ -91,21 +85,18 @@ exports[`input snapshot renders alignment 1`] = `
 exports[`input snapshot renders correct feedback 1`] = `
 <div
   className="MuiFormControl-root-27 RawInput-formControl-2"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="RawInput-inputAndIcon-4"
   >
     <div
-      className="MuiInput-root-48 RawInput-inputRoot-3 MuiInput-formControl-49 MuiInput-underline-52"
+      className="MuiInput-root-51 RawInput-inputRoot-3 MuiInput-formControl-52 MuiInput-underline-55"
     >
       <input
         aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-56"
+        className="MuiInput-input-59"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
@@ -117,7 +108,7 @@ exports[`input snapshot renders correct feedback 1`] = `
         onKeyUp={undefined}
         placeholder={undefined}
         readOnly={undefined}
-        required={undefined}
+        required={false}
         rows={undefined}
         type="text"
         value="hi"
@@ -126,15 +117,16 @@ exports[`input snapshot renders correct feedback 1`] = `
     <div
       className="RawInput-icon-5"
     >
-      <div
-        data-name="Correct"
-      >
-        {"feedback":"fb"}
+      <div>
+        Correct
       </div>
     </div>
   </div>
+  <div>
+    Feedback
+  </div>
   <p
-    className="MuiFormHelperText-root-44"
+    className="MuiFormHelperText-root-44 MuiFormHelperText-filled-49"
   >
     
   </p>
@@ -144,21 +136,18 @@ exports[`input snapshot renders correct feedback 1`] = `
 exports[`input snapshot renders disabled 1`] = `
 <div
   className="MuiFormControl-root-27 RawInput-formControl-2"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="RawInput-inputAndIcon-4"
   >
     <div
-      className="MuiInput-root-61 RawInput-inputRoot-3 MuiInput-disabled-64 MuiInput-formControl-62 MuiInput-underline-65"
+      className="MuiInput-root-64 RawInput-inputRoot-3 MuiInput-disabled-67 MuiInput-formControl-65 MuiInput-underline-68"
     >
       <input
         aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-69 MuiInput-disabled-64"
+        className="MuiInput-input-72 MuiInput-disabled-67"
         defaultValue={undefined}
         disabled={true}
         id={undefined}
@@ -170,7 +159,7 @@ exports[`input snapshot renders disabled 1`] = `
         onKeyUp={undefined}
         placeholder={undefined}
         readOnly={undefined}
-        required={undefined}
+        required={false}
         rows={undefined}
         type="text"
         value="hi"
@@ -178,7 +167,7 @@ exports[`input snapshot renders disabled 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-44 MuiFormHelperText-disabled-46"
+    className="MuiFormHelperText-root-44 MuiFormHelperText-disabled-46 MuiFormHelperText-filled-49"
   >
     
   </p>

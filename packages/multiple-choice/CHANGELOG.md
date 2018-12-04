@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.3.2...@pie-ui/multiple-choice@4.4.0) (2018-12-04)
+
+
+### Bug Fixes
+
+* **multiple-choice:** changed jest regex, added snapshot tests ([69df63b](https://github.com/pie-framework/pie-elements/commit/69df63b))
+* **multiple-choice:** failing snapshot ([2a7abed](https://github.com/pie-framework/pie-elements/commit/2a7abed))
+
+
+### Features
+
+* **multiple-choice:** changed the code in order to be obvious when a user answers partially correct ([5fc2ccd](https://github.com/pie-framework/pie-elements/commit/5fc2ccd))
+
+
+
+
+
 ## [4.3.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.3.1...@pie-ui/multiple-choice@4.3.2) (2018-11-12)
 
 

@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input snapshot renders 1`] = `
+<div
+  className="MuiFormControl-root-29 RawInput-formControl-2"
+>
+  <div
+    className="RawInput-inputAndIcon-6"
+  >
+    <div
+      className="RawInput-inputWrapper-4"
+    >
+      <div
+        className="MuiInput-root-33 RawInput-inputRoot-3 MuiInput-formControl-34 MuiInput-underline-37"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-41"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
+    </div>
+  </div>
+  <p
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
+  >
+    
+  </p>
+</div>
+`;
+
+exports[`input snapshot renders alignment 1`] = `
+<div
+  className="MuiFormControl-root-29 RawInput-formControl-2"
+>
+  <div
+    className="RawInput-inputAndIcon-6"
+  >
+    <div
+      className="RawInput-inputWrapper-4"
+    >
+      <div
+        className="MuiInput-root-79 RawInput-inputRoot-3 MuiInput-formControl-80 MuiInput-underline-83"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-87 RawInput-right-8 RawInput-size4-13"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
+    </div>
+  </div>
+  <p
+    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
+  >
+    
+  </p>
+</div>
+`;
+
+exports[`input snapshot renders correct feedback 1`] = `
+<div
+  className="MuiFormControl-root-27 RawInput-formControl-2"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <div
+    className="RawInput-inputAndIcon-4"
+  >
+    <div
+      className="MuiInput-root-48 RawInput-inputRoot-3 MuiInput-formControl-49 MuiInput-underline-52"
+    >
+      <input
+        aria-invalid={false}
+        aria-required={false}
+        autoComplete={undefined}
+        autoFocus={undefined}
+        className="MuiInput-input-56"
+        defaultValue={undefined}
+        disabled={false}
+        id={undefined}
+        name={undefined}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={undefined}
+        onKeyUp={undefined}
+        placeholder={undefined}
+        readOnly={undefined}
+        required={undefined}
+        rows={undefined}
+        type="text"
+        value="hi"
+      />
+    </div>
+    <div
+      className="RawInput-icon-5"
+    >
+      <div
+        data-name="Correct"
+      >
+        {"feedback":"fb"}
+      </div>
+    </div>
+  </div>
+  <p
+    className="MuiFormHelperText-root-44"
+  >
+    
+  </p>
+</div>
+`;
+
+exports[`input snapshot renders disabled 1`] = `
+<div
+  className="MuiFormControl-root-29 RawInput-formControl-2"
+>
+  <div
+    className="RawInput-inputAndIcon-6"
+  >
+    <div
+      className="RawInput-inputWrapper-4"
+    >
+      <div
+        className="MuiInput-root-66 RawInput-inputRoot-3 MuiInput-disabled-69 MuiInput-formControl-67 MuiInput-underline-70"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-74 MuiInput-disabled-69"
+          defaultValue={undefined}
+          disabled={true}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="text"
+          value="hi"
+        />
+      </div>
+      <div
+        className="RawInput-hiddenText-5"
+      >
+        hi
+      </div>
+    </div>
+  </div>
+  <p
+    className="MuiFormHelperText-root-46 MuiFormHelperText-disabled-48 MuiFormHelperText-filled-51"
+  >
+    
+  </p>
+</div>
+`;

@@ -44,7 +44,7 @@ describe('CorespringChoice', () => {
     });
 
     describe('renders incorrect tick if one answer is correct but it is not checked', () => {
-      it('returns the right props', () => {
+      it('renders', () => {
         let w = mkWrapper({
           mode: 'evaluate',
           choices: [

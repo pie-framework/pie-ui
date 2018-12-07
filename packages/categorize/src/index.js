@@ -50,12 +50,18 @@ export default class Categorize extends HTMLElement {
     this.render();
   }
 
-  render() {
+  forceRender() {
+    this.render(true);
+  }
+
+  render(forcedRender) {
     if (this._model && this._session) {
       const el = React.createElement(CategorizeComponent, {
+        forcedRender,
         model: this._model,
         session: this._session,
-        onAnswersChange: this.changeAnswers.bind(this)
+        onAnswersChange: this.changeAnswers.bind(this),
+        forceRender: this.forceRender.bind(this),
       });
       ReactDOM.render(el, this, () => {
         renderMath(this);

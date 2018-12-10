@@ -32,17 +32,20 @@ describe('categorize', () => {
     }
   };
   let onAnswersChange;
+  let onShowCorrectToggle;
 
   beforeEach(() => {
     onAnswersChange = jest.fn();
+    onShowCorrectToggle = jest.fn();
   });
   const wrapper = extras => {
     const defaults = {
       ...defaultProps,
-      onAnswersChange
+      onAnswersChange,
+      onShowCorrectToggle
     };
     const props = { ...defaults, ...extras };
-    console.log(props);
+
     return shallow(<Categorize {...props} />);
   };
 
@@ -102,6 +105,18 @@ describe('categorize', () => {
         expect(onAnswersChange).toBeCalledWith([
           { category: '1', choices: [] }
         ]);
+      });
+    });
+
+    describe('showAnswers', () => {
+      it('calls onShowCorrectToggle', () => {
+        const w = wrapper({
+          session: { answers: [{ category: '1', choices: ['1'] }] }
+        });
+
+        w.instance().toggleShowCorrect();
+
+        expect(onShowCorrectToggle).toHaveBeenCalled();
       });
     });
   });

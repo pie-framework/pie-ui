@@ -31,7 +31,8 @@ export class Categorize extends React.Component {
         })
       )
     }),
-    onAnswersChange: PropTypes.func.isRequired
+    onAnswersChange: PropTypes.func.isRequired,
+    onShowCorrectToggle: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -84,7 +85,9 @@ export class Categorize extends React.Component {
   }
 
   toggleShowCorrect = () =>
-    this.setState({ showCorrect: !this.state.showCorrect });
+    this.setState({ showCorrect: !this.state.showCorrect }, () => {
+      this.props.onShowCorrectToggle();
+    });
 
   getPositionDirection = (choicePosition) => {
     let flexDirection;

@@ -1,12 +1,13 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 import pink from '@material-ui/core/colors/pink';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-import MultipleChoice from './multiple-choice';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import React from 'react';
 import classNames from 'classnames';
+import { PreviewLayout } from '@pie-lib/config-ui';
+import MultipleChoice from './multiple-choice';
 
 const styleSheet = theme => {
   const root = {
@@ -58,13 +59,15 @@ class Main extends React.Component {
     const { model, onChoiceChanged, session, classes } = this.props;
 
     return (
-      <div className={classNames(classes.root, classes[model.className])}>
-        <MultipleChoice
-          {...model}
-          session={session}
-          onChoiceChanged={onChoiceChanged}
-        />
-      </div>
+      <PreviewLayout>
+        <div className={classNames(classes.root, classes[model.className])}>
+          <MultipleChoice
+            {...model}
+            session={session}
+            onChoiceChanged={onChoiceChanged}
+          />
+        </div>
+      </PreviewLayout>
     );
   }
 }

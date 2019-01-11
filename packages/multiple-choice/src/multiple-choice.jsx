@@ -29,7 +29,7 @@ export class MultipleChoice extends React.Component {
   static propTypes = {
     mode: PropTypes.oneOf(['gather', 'view', 'evaluate']),
     choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
-    keyMode: PropTypes.oneOf(['numbers', 'letters']),
+    keyMode: PropTypes.oneOf(['numbers', 'letters', 'none']),
     choices: PropTypes.array,
     prompt: PropTypes.string,
     session: PropTypes.object,
@@ -71,10 +71,15 @@ export class MultipleChoice extends React.Component {
   }
 
   indexToSymbol(index) {
-    return (this.props.keyMode === 'numbers'
-      ? index + 1
-      : String.fromCharCode(97 + index).toUpperCase()
-    ).toString();
+    if (this.props.keyMode === 'numbers') {
+      return index + 1;
+    }
+
+    if (this.props.keyMode === 'letters') {
+      return String.fromCharCode(97 + index).toUpperCase();
+    }
+
+    return '';
   }
 
   render() {

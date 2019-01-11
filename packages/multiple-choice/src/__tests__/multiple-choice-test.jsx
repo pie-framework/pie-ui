@@ -20,6 +20,7 @@ describe('CorespringChoice', () => {
             classes: {},
             choices: [],
             disabled: false,
+            keyMode: 'letters',
             onChoiceChanged: jest.fn(),
             mode: 'gather'
           },
@@ -47,6 +48,7 @@ describe('CorespringChoice', () => {
       it('renders', () => {
         let w = mkWrapper({
           mode: 'evaluate',
+          keyMode: 'none',
           choices: [
             { value: 'a', label: 'label a', correct: true, feedback: 'great' },
             { value: 'b', label: 'label b' },

@@ -85,7 +85,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
       className=""
       correctness="correct"
       disabled={false}
-      displayKey="A"
+      displayKey=""
       feedback="great"
       label="label a"
       onChange={[Function]}
@@ -100,7 +100,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
       checked={false}
       className=""
       disabled={false}
-      displayKey="B"
+      displayKey=""
       label="label b"
       onChange={[Function]}
       value="b"
@@ -115,7 +115,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
       className="undefined"
       correctness="incorrect"
       disabled={false}
-      displayKey="C"
+      displayKey=""
       feedback="great"
       label="label c"
       onChange={[Function]}

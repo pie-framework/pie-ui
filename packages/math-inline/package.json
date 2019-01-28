@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
   "main": "lib/index.js",
   "dependencies": {
@@ -14,8 +14,8 @@
     "@pie-lib/test-utils": "^0.0.3",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
-    "mathquill": "git+https://github.com/luxp/mathquill-webpack.git",
     "lodash": "^4.17.10",
+    "mathquill": "git+https://github.com/luxp/mathquill-webpack.git",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"

@@ -196,6 +196,10 @@ export class Main extends React.Component {
     const { model, classes } = this.props;
     const { showCorrect, activeAnswerBlock } = this.state;
 
+    if (!this.props.model.config) {
+      return null;
+    }
+
     return (
       <div className={classes.mainContainer}>
         <div className={classes.main}>

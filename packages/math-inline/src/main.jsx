@@ -38,11 +38,13 @@ export class Main extends React.Component {
 
     const answers = {};
 
-    props.model.config.responses.forEach(response => {
-      answers[response.id] = {
-        value: '',
-      };
-    });
+    if (props.model.config && props.model.config.responses) {
+      props.model.config.responses.forEach(response => {
+        answers[response.id] = {
+          value: '',
+        };
+      });
+    }
 
     this.state = {
       session: {

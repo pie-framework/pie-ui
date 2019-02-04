@@ -63,17 +63,19 @@ export class Main extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.model.config.responses.length !== nextProps.model.config.responses.length) {
-      const answers = {};
-      const stateAnswers = this.state.session.answers;
+    if (this.props.model.config && this.props.model.config.responses) {
+      if (this.props.model.config.responses.length !== nextProps.model.config.responses.length) {
+        const answers = {};
+        const stateAnswers = this.state.session.answers;
 
-      nextProps.model.config.responses.forEach(response => {
-        answers[response.id] = {
-          value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
-        };
-      });
+        nextProps.model.config.responses.forEach(response => {
+          answers[response.id] = {
+            value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
+          };
+        });
 
-      this.setState(state => ({ session: { ...state.session, answers }}));
+        this.setState(state => ({ session: { ...state.session, answers }}));
+      }
     }
   }
 

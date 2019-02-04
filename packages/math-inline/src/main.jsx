@@ -134,6 +134,11 @@ export class Main extends React.Component {
   checkAnswerBlocks = () => {
     const { model } = this.props;
     const { activeAnswerBlock, session, showCorrect } = this.state;
+
+    if (!model.config) {
+      return;
+    }
+
     const responses = model.config.responses;
 
     responses.forEach((response, index) => {

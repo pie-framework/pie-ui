@@ -76,6 +76,17 @@ export class Main extends React.Component {
 
         this.setState(state => ({ session: { ...state.session, answers }}));
       }
+    } else if (!this.props.model.config && nextProps.model.config && nextProps.model.config.responses) {
+      const answers = {};
+      const stateAnswers = this.state.session.answers;
+
+      nextProps.model.config.responses.forEach(response => {
+        answers[response.id] = {
+          value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
+        };
+      });
+
+      this.setState(state => ({ session: { ...state.session, answers }}));
     }
   }
 

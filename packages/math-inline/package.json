@@ -8,7 +8,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@material-ui/core": "^3.8.3",
-    "@pie-lib/correct-answer-toggle": "^2.1.0",
+    "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-toolbar": "^0.6.2",
     "@pie-lib/render-ui": "^4.3.1",
     "classnames": "^2.2.5",

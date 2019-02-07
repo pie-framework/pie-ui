@@ -7,7 +7,7 @@
   "description": "An interaction to allow students identify coordinates or plot points on a graph by clicking on the graph.",
   "main": "lib/index.js",
   "dependencies": {
-    "@material-ui/core": "^1.0.0-rc.1",
+    "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^1.0.0-rc.0",
     "@pie-lib/charting": "^2.2.3",
     "@pie-lib/correct-answer-toggle": "^2.1.0",

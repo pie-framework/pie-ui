@@ -6,7 +6,7 @@
   },
   "description": "",
   "dependencies": {
-    "@material-ui/core": "^1.0.0",
+    "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/correct-answer-toggle": "^2.1.0",
     "@pie-lib/drag": "^1.1.0",

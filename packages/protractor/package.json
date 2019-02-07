@@ -13,10 +13,10 @@
   "scripts": {},
   "dependencies": {
     "@material-ui/core": "^3.9.2",
-    "@pie-lib/tools": "^0.7.0",
+    "@pie-lib/tools": "^0.8.1",
     "classnames": "^2.2.5",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "author": "pie framework developers",
   "license": "ISC"

@@ -8,7 +8,7 @@ import cx from 'classnames';
 const styles = theme => ({
   container: {
     margin: theme.spacing.unit / 2,
-    display: 'inline-flex'
+    display: 'inline-flex',
   },
   static: {
     color: 'grey',

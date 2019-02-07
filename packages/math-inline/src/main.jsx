@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 
   MQ.registerEmbed('answerBlock', id => {
     return {
-      htmlString: `<span id=${id}></span>`,
+      htmlString: `<span style="min-height: 20px" id=${id}></span>`,
       text: () => 'testText',
       latex: () => '\\embed{answerBlock}[' + id + ']'
     };
@@ -290,7 +290,19 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
     padding: theme.spacing.unit,
-    minHeight: '150px'
+    minHeight: '150px',
+    '& > .mq-math-mode': {
+      '& .mq-non-leaf': {
+        display: 'inline-flex',
+        alignItems: 'center',
+        // '& .mq-scaled': {
+        //   transform: 'scale(1,1) !important'
+        // }
+      },
+      '& .mq-paren' : {
+        verticalAlign: 'middle'
+      }
+    }
   },
   responseEditor: {
     display: 'flex',

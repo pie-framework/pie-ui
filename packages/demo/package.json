@@ -1,0 +1,14 @@
+{
+  "name": "@pie-ui/demo",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@pie-ui/calculator": "^3.2.1",
+    "@pie-ui/select-text": "^1.2.2",
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "fs-extra": "^7.0.1",
+    "webpack": "^4.29.3",
+    "webpack-dev-middleware": "^3.5.2"
+  }
+}

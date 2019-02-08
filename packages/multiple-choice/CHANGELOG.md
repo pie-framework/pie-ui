@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.4.0...@pie-ui/multiple-choice@4.5.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **multiple-choice:** fixed tests ([13823eb](https://github.com/pie-framework/pie-elements/commit/13823eb))
+* **multiple-choice:** fixed tests ([1cd4e71](https://github.com/pie-framework/pie-elements/commit/1cd4e71))
+
+
+### Features
+
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-elements/commit/af32637))
+* **multiple-choice:** added none option for the choice label ([9dbf5de](https://github.com/pie-framework/pie-elements/commit/9dbf5de))
+* **multiple-choice:** updated the config-ui package version ([d0f64cd](https://github.com/pie-framework/pie-elements/commit/d0f64cd))
+* **multiple-choice:** wrapped the element with the preview layout ([d6ad6da](https://github.com/pie-framework/pie-elements/commit/d6ad6da))
+
+
+
+
+
 # [4.4.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.3.2...@pie-ui/multiple-choice@4.4.0) (2018-12-04)
 
 

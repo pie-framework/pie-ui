@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.2.1...@pie-ui/calculator@3.3.0) (2019-02-08)
+
+
+### Features
+
+* add private demo pkg ([7b34962](https://github.com/pie-framework/pie-ui/commit/7b34962))
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-ui/commit/af32637))
+
+
+
+
+
 <a name="3.2.1"></a>
 ## [3.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.2.0...@pie-ui/calculator@3.2.1) (2018-05-31)
 

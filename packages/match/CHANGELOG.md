@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.2...@pie-ui/match@1.2.0) (2019-02-08)
+
+
+### Features
+
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-ui/commit/af32637))
+
+
+
+
+
 ## [1.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.1...@pie-ui/match@1.1.2) (2018-11-12)
 
 

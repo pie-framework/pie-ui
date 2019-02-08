@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/ruler",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",
   "publishConfig": {

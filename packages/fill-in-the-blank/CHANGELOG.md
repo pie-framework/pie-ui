@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.1.7...@pie-ui/fill-in-the-blank@1.2.0) (2019-02-08)
+
+
+### Features
+
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-ui/commit/af32637))
+
+
+
+
+
 <a name="1.1.7"></a>
 ## [1.1.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.1.6...@pie-ui/fill-in-the-blank@1.1.7) (2018-07-18)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.3.0...@pie-ui/text-entry@3.4.0) (2019-02-08)
+
+
+### Features
+
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-ui/commit/af32637))
+
+
+
+
+
 # [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.2.0...@pie-ui/text-entry@3.3.0) (2018-12-04)
 
 

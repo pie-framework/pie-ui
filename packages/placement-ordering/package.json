@@ -32,5 +32,6 @@
   },
   "devDependencies": {
     "react-dnd-test-backend": "^2.6.0"
-  }
+  },
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

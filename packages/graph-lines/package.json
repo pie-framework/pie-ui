@@ -7,16 +7,16 @@
   "description": "This interaction asks a student to draw a line that meets specific criteria. The student will draw the line by clicking on two points on the graph.",
   "main": "lib/index.js",
   "dependencies": {
-    "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^1.0.0",
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "@pie-lib/charting": "^2.3.1",
-    "@pie-lib/config-ui": "^7.1.1",
-    "@pie-lib/correct-answer-toggle": "^2.1.0",
-    "@pie-lib/render-ui": "^2.1.0",
+    "@pie-lib/config-ui": "^7.11.3",
+    "@pie-lib/correct-answer-toggle": "^2.1.2",
+    "@pie-lib/render-ui": "^4.3.1",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "author": "",
   "license": "ISC"

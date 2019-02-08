@@ -16,14 +16,14 @@
     "test": "./node_modules/.bin/jest"
   },
   "dependencies": {
-    "@material-ui/core": "^1.0.0-rc.1",
-    "@material-ui/icons": "^1.0.0-rc.0",
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/render-ui": "^2.1.0",
+    "@pie-lib/render-ui": "^4.3.1",
     "debug": "^3.1.0",
     "lodash": "^4.17.10",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-number-format": "PieElements/react-number-format#feature/bad-input",
     "react-transition-group": "^2.3.1"
   }

@@ -11,13 +11,15 @@ exports[`input snapshot renders 1`] = `
       className="RawInput-inputWrapper-4"
     >
       <div
-        className="MuiInput-root-33 RawInput-inputRoot-3 MuiInput-formControl-34 MuiInput-underline-37"
+        className="MuiInputBase-root-46 MuiInput-root-33 RawInput-inputRoot-3 MuiInput-underline-37 MuiInputBase-formControl-47 MuiInput-formControl-34"
+        onClick={[Function]}
       >
         <input
+          aria-describedby={undefined}
           aria-invalid={false}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiInput-input-41"
+          className="MuiInputBase-input-56 MuiInput-input-41"
           defaultValue={undefined}
           disabled={false}
           id={undefined}
@@ -43,7 +45,7 @@ exports[`input snapshot renders 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -61,13 +63,15 @@ exports[`input snapshot renders alignment 1`] = `
       className="RawInput-inputWrapper-4"
     >
       <div
-        className="MuiInput-root-79 RawInput-inputRoot-3 MuiInput-formControl-80 MuiInput-underline-83"
+        className="MuiInputBase-root-144 MuiInput-root-131 RawInput-inputRoot-3 MuiInput-underline-135 MuiInputBase-formControl-145 MuiInput-formControl-132"
+        onClick={[Function]}
       >
         <input
+          aria-describedby={undefined}
           aria-invalid={false}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiInput-input-87 RawInput-right-8 RawInput-size4-13"
+          className="MuiInputBase-input-154 MuiInput-input-139 RawInput-right-8 RawInput-size4-13"
           defaultValue={undefined}
           disabled={false}
           id={undefined}
@@ -93,7 +97,7 @@ exports[`input snapshot renders alignment 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -111,13 +115,15 @@ exports[`input snapshot renders correct feedback 1`] = `
       className="RawInput-inputWrapper-4"
     >
       <div
-        className="MuiInput-root-53 RawInput-inputRoot-3 MuiInput-formControl-54 MuiInput-underline-57"
+        className="MuiInputBase-root-84 MuiInput-root-71 RawInput-inputRoot-3 MuiInput-underline-75 MuiInputBase-formControl-85 MuiInput-formControl-72"
+        onClick={[Function]}
       >
         <input
+          aria-describedby={undefined}
           aria-invalid={false}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiInput-input-61"
+          className="MuiInputBase-input-94 MuiInput-input-79"
           defaultValue={undefined}
           disabled={false}
           id={undefined}
@@ -153,7 +159,7 @@ exports[`input snapshot renders correct feedback 1`] = `
     Feedback
   </div>
   <p
-    className="MuiFormHelperText-root-46 MuiFormHelperText-filled-51"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -171,13 +177,15 @@ exports[`input snapshot renders disabled 1`] = `
       className="RawInput-inputWrapper-4"
     >
       <div
-        className="MuiInput-root-66 RawInput-inputRoot-3 MuiInput-disabled-69 MuiInput-formControl-67 MuiInput-underline-70"
+        className="MuiInputBase-root-114 MuiInput-root-101 RawInput-inputRoot-3 MuiInput-underline-105 MuiInputBase-disabled-117 MuiInput-disabled-104 MuiInputBase-formControl-115 MuiInput-formControl-102"
+        onClick={[Function]}
       >
         <input
+          aria-describedby={undefined}
           aria-invalid={false}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiInput-input-74 MuiInput-disabled-69"
+          className="MuiInputBase-input-124 MuiInput-input-109 MuiInputBase-disabled-117 MuiInput-disabled-104"
           defaultValue={undefined}
           disabled={true}
           id={undefined}
@@ -203,7 +211,7 @@ exports[`input snapshot renders disabled 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-46 MuiFormHelperText-disabled-48 MuiFormHelperText-filled-51"
+    className="MuiFormHelperText-root-63 MuiFormHelperText-disabled-65"
   >
     
   </p>

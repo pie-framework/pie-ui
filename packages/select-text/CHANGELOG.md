@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.3.0...@pie-ui/select-text@1.3.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-ui/commit/8ef42e5))
+
+
+
+
+
 # [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.2.2...@pie-ui/select-text@1.3.0) (2019-02-08)
 
 

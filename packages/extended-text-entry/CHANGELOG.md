@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.0...@pie-ui/extended-text-entry@2.4.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-ui/commit/8ef42e5))
+
+
+
+
+
 # [2.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.3.1...@pie-ui/extended-text-entry@2.4.0) (2019-02-08)
 
 

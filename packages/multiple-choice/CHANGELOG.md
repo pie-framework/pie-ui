@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.5.0...@pie-ui/multiple-choice@4.5.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-elements/commit/8ef42e5))
+
+
+
+
+
 # [4.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.4.0...@pie-ui/multiple-choice@4.5.0) (2019-02-08)
 
 

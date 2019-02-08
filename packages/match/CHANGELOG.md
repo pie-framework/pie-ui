@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.2.0...@pie-ui/match@1.2.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-ui/commit/8ef42e5))
+
+
+
+
+
 # [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.1.2...@pie-ui/match@1.2.0) (2019-02-08)
 
 

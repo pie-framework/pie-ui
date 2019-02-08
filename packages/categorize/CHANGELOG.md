@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.8.0...@pie-ui/categorize@0.8.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-ui/commit/8ef42e5))
+
+
+
+
+
 # [0.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.7.5...@pie-ui/categorize@0.8.0) (2019-02-08)
 
 

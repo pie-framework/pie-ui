@@ -70,7 +70,9 @@ const buildWebpackConfig = () => {
     return cfg;
   }, {});
 
+  const base = require('../webpack.config');
   return Promise.resolve({
+    ...base,
     entry,
     context: resolve(__dirname, '..', '.out'),
     output: {

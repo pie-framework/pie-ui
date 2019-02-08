@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.0-premerge",
+  "version": "1.0.0",
   "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
   "main": "lib/index.js",
   "dependencies": {

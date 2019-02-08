@@ -13,8 +13,8 @@ npm install # install root package and child packages
 
 ## develop
 
-* the packages use `independent` versioning, meaning that a change in 1 package won't bump another package's version.
-* use [conventional commits syntax][ccs] when commiting, lerna will detect the appropriate version bump.
+- the packages use `independent` versioning, meaning that a change in 1 package won't bump another package's version.
+- use [conventional commits syntax][ccs] when commiting, lerna will detect the appropriate version bump.
 
 ### Commands
 
@@ -26,6 +26,18 @@ npm install # install root package and child packages
 | release | `npm run release`                     |                                                                                                                 |
 | watch   | `scripts/watch --scope $package-name` | This can be useful when you have a package linked elsewhere <br/>and what your changes in `src` to be picked up |
 | demo    | `scripts/demo $package-name`          | Will start a watch and run `pie serve` for the given package                                                    |
+
+#### New Demo
+
+There is a new demo being built that will run all the packages in 1 location:
+
+```shell
+cd packages/demo
+
+node src/index.js
+
+
+```
 
 To test an individual package you can do:
 
@@ -64,13 +76,13 @@ lerna publish --npm-tag=next
 
 ### dependencies
 
-* [lerna js][lerna] for handling multiple packages in a mono repo
-* [pie][pie] to test/build the pies
+- [lerna js][lerna] for handling multiple packages in a mono repo
+- [pie][pie] to test/build the pies
 
 ### package development
 
-* use [jest][jest] for testing - it is set up at the root of this repo.
-* file names - use kebab-case for filenames
+- use [jest][jest] for testing - it is set up at the root of this repo.
+- file names - use kebab-case for filenames
 
 [lerna]: https://lernajs.io/
 [pie]: http://pie-framework.org

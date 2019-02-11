@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import { PreviewLayout } from '@pie-lib/config-ui';
 import MultipleChoice from './multiple-choice';
 
-//test 2
+//test 3
 
 const styleSheet = theme => {
   const root = {

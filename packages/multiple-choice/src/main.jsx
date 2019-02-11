@@ -9,8 +9,6 @@ import classNames from 'classnames';
 import { PreviewLayout } from '@pie-lib/config-ui';
 import MultipleChoice from './multiple-choice';
 
-//test 3
-
 const styleSheet = theme => {
   const root = {
     '--feedback-correct-bg-color': green[500],

@@ -8,6 +8,7 @@ describe('Main', () => {
   const defaultProps = {
     model: {
       config: {
+        responses: [],
         id: '1',
         element: 'math-inline',
         feedback: {
@@ -23,7 +24,7 @@ describe('Main', () => {
             type: 'none',
             default: 'Incorrect'
           }
-        },
+        }
       }
     },
     onSessionChange: jest.fn(),

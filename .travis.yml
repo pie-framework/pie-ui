@@ -12,10 +12,12 @@ stages:
 
 jobs:
   include:
-    - stage: test
-      script: 'npm run test'
-    - stage: release-next
-      script: 'npm run release:next'
+    - stage: checker
+      script: npm whoami
+    # - stage: test
+    #   script: 'npm run test'
+    # - stage: release-next
+    #   script: 'npm run release:next'
 branches:
   only:
     - develop

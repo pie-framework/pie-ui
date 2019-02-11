@@ -23,7 +23,7 @@ export default class Match extends HTMLElement {
   }
 
   sessionChanged(s) {
-    this._session.answer = s.answer;
+    this._session.answers = s.answers;
     log('session: ', this._session);
   }
 

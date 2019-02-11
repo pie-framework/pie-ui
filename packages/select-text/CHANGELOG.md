@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.3.1...@pie-ui/select-text@1.4.0) (2019-02-08)
+
+
+### Features
+
+* render math in select-text ([3fbc989](https://github.com/pie-framework/pie-ui/commit/3fbc989))
+
+
+
+
+
+## [1.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.3.0...@pie-ui/select-text@1.3.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* tag version of math inline ([8ef42e5](https://github.com/pie-framework/pie-ui/commit/8ef42e5))
+
+
+
+
+
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.2.2...@pie-ui/select-text@1.3.0) (2019-02-08)
+
+
+### Features
+
+* material-ui version bump ([af32637](https://github.com/pie-framework/pie-ui/commit/af32637))
+
+
+
+
+
 ## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.2.1...@pie-ui/select-text@1.2.2) (2018-11-05)
 
 

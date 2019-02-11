@@ -1,20 +1,21 @@
 {
   "name": "@pie-ui/function-entry",
-  "version": "3.1.1",
+  "version": "3.2.1",
   "description": "",
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@material-ui/core": "^1.0.0-rc.1",
+    "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/render-ui": "^2.1.0",
+    "@pie-lib/render-ui": "^4.3.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

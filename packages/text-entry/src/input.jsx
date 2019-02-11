@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import { indicators } from '@pie-lib/render-ui';
+import { indicators, Feedback } from '@pie-lib/render-ui';
 import PropTypes from 'prop-types';
 
 const { Correct, Incorrect, PartiallyCorrect, NothingSubmitted } = indicators;
@@ -74,24 +74,33 @@ class RawInput extends React.Component {
     return (
       <FormControl disabled={disabled} className={formClasses} error={!!error}>
         <div className={classes.inputAndIcon}>
-          <MuiThemeProvider theme={theme}>
-            <MuiInput
-              classes={{
-                root: classes.inputRoot,
-                input: inputClass
-              }}
-              value={value}
-              onChange={onChange}
-              inputComponent={inputComponent}
-              inputProps={inputProps}
-            />
-          </MuiThemeProvider>
+          <div className={classes.inputWrapper}>
+            <MuiThemeProvider theme={theme}>
+              <MuiInput
+                classes={{
+                  root: classes.inputRoot,
+                  input: inputClass
+                }}
+                value={value}
+                onChange={onChange}
+                inputComponent={inputComponent}
+                inputProps={inputProps}
+              />
+            </MuiThemeProvider>
+            <div className={classes.hiddenText}>
+              {value}
+            </div>
+          </div>
           {CorrectnessTag && (
             <div className={classes.icon}>
               <CorrectnessTag feedback={feedback || 'feedback'} />
             </div>
           )}
         </div>
+        {
+          feedback &&
+          <Feedback feedback={feedback} correctness={correctness} />
+        }
         <FormHelperText>{error ? error : ''}</FormHelperText>
       </FormControl>
     );
@@ -107,7 +116,17 @@ const inputStyles = theme => {
     formControl: {
       margin: theme.spacing.unit
     },
-    inputRoot: {},
+    inputRoot: {
+      minWidth: '100%'
+    },
+    inputWrapper: {},
+    hiddenText: {
+      bottom: 32,
+      height: 32,
+      maxWidth: '450px',
+      position: 'relative',
+      visibility: 'hidden'
+    },
     inputAndIcon: {
       display: 'flex',
       alignItems: 'end'

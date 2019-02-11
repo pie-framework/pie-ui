@@ -6,7 +6,7 @@ import debug from 'debug';
 import { renderMath } from '@pie-lib/math-rendering';
 import { updateSessionValue } from './session-updater';
 
-const log = debug('pie-elements:multiple-choice');
+const log = debug('pie-ui:multiple-choice');
 
 export default class MultipleChoice extends HTMLElement {
   constructor() {

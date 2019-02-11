@@ -5,6 +5,7 @@ import {
   ModelSetEvent
 } from '@pie-framework/pie-player-events';
 import Main from './main';
+import { renderMath } from '@pie-lib/math-rendering';
 
 export default class SelectText extends HTMLElement {
   constructor() {
@@ -59,7 +60,10 @@ export default class SelectText extends HTMLElement {
         session: this._session,
         onSelectionChange: this.selectionChanged.bind(this)
       });
-      ReactDOM.render(el, this);
+
+      ReactDOM.render(el, this, () => {
+        renderMath(this);
+      });
     }
   }
 }

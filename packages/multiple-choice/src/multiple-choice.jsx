@@ -29,7 +29,7 @@ export class MultipleChoice extends React.Component {
   static propTypes = {
     mode: PropTypes.oneOf(['gather', 'view', 'evaluate']),
     choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
-    keyMode: PropTypes.oneOf(['numbers', 'letters']),
+    keyMode: PropTypes.oneOf(['numbers', 'letters', 'none']),
     choices: PropTypes.array,
     prompt: PropTypes.string,
     session: PropTypes.object,
@@ -71,10 +71,15 @@ export class MultipleChoice extends React.Component {
   }
 
   indexToSymbol(index) {
-    return (this.props.keyMode === 'numbers'
-      ? index + 1
-      : String.fromCharCode(97 + index).toUpperCase()
-    ).toString();
+    if (this.props.keyMode === 'numbers') {
+      return index + 1;
+    }
+
+    if (this.props.keyMode === 'letters') {
+      return String.fromCharCode(97 + index).toUpperCase();
+    }
+
+    return '';
   }
 
   render() {
@@ -92,10 +97,10 @@ export class MultipleChoice extends React.Component {
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
 
-    const correctness = c => (c === true ? 'correct' : 'incorrect');
+    const correctness = (isCorrect, isChecked) => isCorrect ? (isChecked ? 'correct' : 'incorrect' ): undefined;
 
-    let choiceToTag = (choice, index) => {
-      var choiceClass =
+    const choiceToTag = (choice, index) => {
+      const choiceClass =
         'choice' + (index === choices.length - 1 ? ' last' : '');
 
       const checked = showCorrect
@@ -110,8 +115,7 @@ export class MultipleChoice extends React.Component {
         disabled,
         feedback,
         value: choice.value,
-        correctness:
-          checked && isEvaluateMode ? correctness(choice.correct) : undefined,
+        correctness: isEvaluateMode ? correctness(choice.correct, checked) : undefined,
         displayKey: this.indexToSymbol(index),
         label: choice.label,
         onChange: mode === 'gather' ? onChoiceChanged : () => {}

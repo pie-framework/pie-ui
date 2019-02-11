@@ -7,11 +7,13 @@
   "scripts": {
     "test": "jest",
     "release": "npm run clean && npm test && npm run build && lerna publish --conventional-commits",
+    "release:next": "npm run clean && npm test && npm run build && lerna publish --canary --yes --conventional-commits --preid next --dist-tag next",
     "lint": "lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/eslint  --ignore-path \\$LERNA_ROOT_PATH/.eslintignore --ext .js --ext .jsx src",
     "clean": "lerna exec -- rm -fr lib",
     "build": "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files --source-maps"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.0",
     "@pie-framework/build-helper": "^1.0.3",
     "@pie-lib/test-utils": "0.0.3",
     "babel-cli": "^6.26.0",
@@ -27,12 +29,12 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "^22.4.3",
-    "lerna": "^3.10.8",
+    "lerna": "^3.11.0",
     "minimist": "^1.2.0",
-    "react": "^16.3.2",
-    "react-dom": "16.3.2"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "workspaces": [
     "packages/*"

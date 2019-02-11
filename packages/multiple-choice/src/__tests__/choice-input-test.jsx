@@ -1,9 +1,7 @@
-import Checkbox from '@material-ui/core/Checkbox';
-import Radio from '@material-ui/core/Radio';
 import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
-import { ChoiceInput, StyledRadio, StyledCheckbox } from '../choice-input';
+import { ChoiceInput } from '../choice-input';
 import toJson from 'enzyme-to-json';
 
 describe('ChoiceInput', () => {
@@ -45,6 +43,13 @@ describe('ChoiceInput', () => {
     describe('checkbox', () => {
       it('renders', () => {
         const wrapper = mkWrapper({ choiceMode: 'checkbox' });
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
+    });
+
+    describe('radio with incorrect', () => {
+      it('renders', () => {
+        const wrapper = mkWrapper({ choiceMode: 'radio', correctness: 'incorrect' });
         expect(toJson(wrapper)).toMatchSnapshot();
       });
     });

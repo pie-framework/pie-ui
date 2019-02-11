@@ -1,0 +1,29 @@
+html
+  head 
+    link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
+
+    style. 
+
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+
+    script(src=`/assets/${name}.js`)
+
+    script(type="text/javascript"). 
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+
+        const data = !{JSON.stringify(data.models[0])};
+
+        console.log('data:', data);
+
+        const el = '!{name}-el';
+        document.querySelector(el).model = data;
+        document.querySelector(el).session = {};
+      })
+  body 
+    h1
+      | @pie-ui/!{name}
+    | <!{name}-el></name-el>

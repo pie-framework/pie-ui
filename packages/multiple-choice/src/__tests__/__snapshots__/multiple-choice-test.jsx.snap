@@ -30,18 +30,96 @@ exports[`CorespringChoice snapshot renders 1`] = `
     />
   </div>
   <div
-    className="choice last"
+    className="choice"
     key="1"
   >
     <WithStyles(ChoiceInput)
       checked={false}
-      className="undefined"
+      className=""
       disabled={false}
       displayKey="B"
       feedback=""
       label="label b"
       onChange={[MockFunction]}
       value="b"
+    />
+  </div>
+  <div
+    className="choice last"
+    key="2"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className="undefined"
+      disabled={false}
+      displayKey="C"
+      feedback=""
+      label="label c"
+      onChange={[MockFunction]}
+      value="c"
+    />
+  </div>
+</div>
+`;
+
+exports[`CorespringChoice snapshot renders incorrect tick if one answer is correct but it is not checked renders 1`] = `
+<div>
+  <Component
+    onToggle={[Function]}
+    show={true}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
+    className="choice"
+    key="0"
+  >
+    <WithStyles(ChoiceInput)
+      checked={true}
+      className=""
+      correctness="correct"
+      disabled={false}
+      displayKey=""
+      feedback="great"
+      label="label a"
+      onChange={[Function]}
+      value="a"
+    />
+  </div>
+  <div
+    className="choice"
+    key="1"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className=""
+      disabled={false}
+      displayKey=""
+      label="label b"
+      onChange={[Function]}
+      value="b"
+    />
+  </div>
+  <div
+    className="choice last"
+    key="2"
+  >
+    <WithStyles(ChoiceInput)
+      checked={false}
+      className="undefined"
+      correctness="incorrect"
+      disabled={false}
+      displayKey=""
+      feedback="great"
+      label="label c"
+      onChange={[Function]}
+      value="c"
     />
   </div>
 </div>

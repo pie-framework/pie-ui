@@ -2,6 +2,11 @@ import SelectText from '..';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+
+import { renderMath } from '@pie-lib/math-rendering';
+jest.mock('@pie-lib/math-rendering', () => ({
+  renderMath: jest.fn()
+}));
 jest.mock('../main', () => jest.fn());
 
 jest.mock('react', () => ({
@@ -9,7 +14,9 @@ jest.mock('react', () => ({
 }));
 
 jest.mock('react-dom', () => ({
-  render: jest.fn()
+  render: jest.fn((r, el, cb) => {
+    cb();
+  })
 }));
 
 describe('select-text', () => {
@@ -27,7 +34,15 @@ describe('select-text', () => {
       expect(React.createElement).toBeCalled();
     });
     it('calls render', () => {
-      expect(ReactDOM.render).toBeCalled();
+      expect(ReactDOM.render).toBeCalledWith(
+        undefined,
+        expect.anything(),
+        expect.any(Function)
+      );
+    });
+
+    it('calls renderMath', () => {
+      expect(renderMath).toHaveBeenCalled();
     });
   });
 

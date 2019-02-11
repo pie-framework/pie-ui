@@ -164,7 +164,7 @@ export class ChoiceInput extends React.Component {
           <div className={classes.checkboxHolder}>
             <StyledFormControlLabel
               disabled={disabled}
-              label={displayKey + '. '}
+              label={displayKey ? displayKey + '. ' : ''}
               control={
                 <Tag
                   checked={checked}

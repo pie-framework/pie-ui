@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 9.11.2
+
+before_install:
+  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+
+stages:
+  - test
+  - name: release-next
+    if: branch = develop
+
+jobs:
+  include:
+    - stage: test
+      script: 'npm run test'
+    - stage: release-next
+      script: 'npm run release:next'

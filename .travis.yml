@@ -16,3 +16,6 @@ jobs:
       script: 'npm run test'
     - stage: release-next
       script: 'npm run release:next'
+branches:
+  only:
+    - develop

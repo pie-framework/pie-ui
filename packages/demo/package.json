@@ -5,6 +5,7 @@
   "dependencies": {
     "@material/mwc-icon": "^0.3.6",
     "@material/mwc-button": "^0.3.6",
+    "@material/top-app-bar": "^0.44.0",
     "@pie-ui/calculator": "^3.3.1",
     "@pie-ui/categorize": "^0.8.1",
     "@pie-ui/extended-text-entry": "^2.4.1",

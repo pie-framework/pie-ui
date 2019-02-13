@@ -70,7 +70,7 @@ const buildApp = (config, pkgAndDemos) => {
 const buildWebpackConfig = () => {
   const pkgAndDemos = getPkgAndDemo();
 
-  const entry = createEntryObject(OUT_DIR, pkgAndDemos);
+  const entry = {}; //createEntryObject(OUT_DIR, pkgAndDemos);
 
   entry.index = './index.js';
 
@@ -79,6 +79,8 @@ const buildWebpackConfig = () => {
     `
     import {Button} from "@material/mwc-button";
   import {Icon} from "@material/mwc-icon";
+
+  import {TopAppBar} from "../src/mwc-top-app-bar";
 
   console.log('index', Icon);
 

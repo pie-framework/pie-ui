@@ -7,28 +7,38 @@ html
 
     style. 
 
+      html, body {
+        margin-left: 0;
+        --mdc-theme-primary: #3f51b5;
+         /*padding: 0;*/
+      }
+
       * {
         font-family: 'Roboto', sans-serif;
       }
       a {
         display: block;
       }
-    script. 
-      document.addEventListener('DOMContentLoaded', () => {
 
-        mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
-      })
+      .content{
+        position: relative;
+        top: 80px;
+        padding: 10px;
+      }
 
 
   
   body 
-    for p in packages 
-      a(href=`/${p.shortName}.html`)
-        | !{p.name}@!{p.version}
+    mwc-top-app-bar(title="foo") 
+      span(slot="title") @pie-ui
+      | foo 
+    div.content
+      for p in packages 
+        a(href=`/${p.shortName}.html`)
+          | !{p.name}@!{p.version}
 
-    button.foo-button.mdc-button Button
-    mwc-icon sentiment_very_satisfied
-    mwc-button foo 
+      mwc-icon sentiment_very_satisfied
+      mwc-button foo 
 
 
     script(src="/assets/index.js")

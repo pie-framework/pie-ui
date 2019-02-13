@@ -1,8 +1,8 @@
 const express = require('express');
 
 const minimist = require('minimist');
-
-const { basename, resolve } = require('path');
+const { writeFileSync } = require('fs-extra');
+const { basename, resolve, join } = require('path');
 const webpack = require('webpack');
 const middleware = require('webpack-dev-middleware');
 const {
@@ -71,6 +71,20 @@ const buildWebpackConfig = () => {
   const pkgAndDemos = getPkgAndDemo();
 
   const entry = createEntryObject(OUT_DIR, pkgAndDemos);
+
+  entry.index = './index.js';
+
+  writeFileSync(
+    join(OUT_DIR, 'index.js'),
+    `
+    import {Button} from "@material/mwc-button";
+  import {Icon} from "@material/mwc-icon";
+
+  console.log('index', Icon);
+
+`,
+    'utf8'
+  );
 
   const base = require('../webpack.config');
   const config = {

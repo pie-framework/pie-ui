@@ -9,6 +9,8 @@ const vm = require('vm');
 
 exports.getPkgAndDemo = () => {
   return exports.getPackages().map(pkg => {
+    pkg.shortName = basename(pkg.name);
+
     const { markup, data } = exports.loadDemo(dirname(pkg._path));
     pkg.demo = {
       tagName: exports.getElementNameFromDemo(data),

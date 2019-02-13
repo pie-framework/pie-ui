@@ -2,8 +2,8 @@ console.log('build static site...');
 const pug = require('pug');
 const webpack = require('webpack');
 
-const { getPackages, createEntryObject, loadDemo } = require('./shared');
-const { resolve } = require('path');
+const { createEntryObject, getPkgAndDemo } = require('./shared');
+const { resolve, basename } = require('path');
 const { writeFileSync, mkdirpSync, removeSync } = require('fs-extra');
 
 const indexRender = pug.compileFile(
@@ -18,20 +18,23 @@ const buildIndex = (packages, outDir) => {
   writeFileSync(resolve(outDir, 'index.html'), out, 'utf8');
 };
 
-const buildPackagePage = p => {
-  const pkgPath = resolve(__dirname, '..', '..', p);
-  console.log('pkgPath: ', pkgPath);
-  const data = loadDemo(pkgPath);
-
-  console.log(p, data);
-  const out = packageRender({ name: p, data });
-  writeFileSync(resolve(outDir, `${p}.html`), out, 'utf8');
+const buildPackagePage = pd => {
+  const { demo, ...pkg } = pd;
+  const opts = {
+    name: basename(pkg.name),
+    data: demo.data,
+    markup: demo.markup,
+    pkg,
+    tagName: demo.tagName
+  };
+  const out = packageRender(opts);
+  writeFileSync(resolve(outDir, `${basename(pkg.name)}.html`), out, 'utf8');
 };
 
 const outDir = resolve(__dirname, '..', '.out');
 removeSync(outDir);
 mkdirpSync(outDir);
-const packages = getPackages();
+const packages = getPkgAndDemo();
 buildIndex(packages, outDir);
 
 packages.forEach(p => {
@@ -39,11 +42,6 @@ packages.forEach(p => {
 });
 
 const entry = createEntryObject(outDir, packages);
-//  packages.reduce((cfg, p) => {
-//   writeEntry(p, resolve(outDir));
-//   cfg[p] = `./${p}.js`;
-//   return cfg;
-// }, {});
 
 const publicPath = './assets';
 

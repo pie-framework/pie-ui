@@ -14,16 +14,25 @@ html
 
       document.addEventListener("DOMContentLoaded", () => {
 
+        const data = !{JSON.stringify(data)};
 
-        const data = !{JSON.stringify(data.models[0])};
+        if(!customElements.get('!{tagName}') ){
+          console.warn('!{tagName} is not a custom element')
+        }
 
-        console.log('data:', data);
-
-        const el = '!{name}-el';
-        document.querySelector(el).model = data;
-        document.querySelector(el).session = {};
+        if(data && data.models){
+          const el = '!{tagName}';
+          data.models.forEach( m => {
+            const n = document.querySelector(`[pie-id="${m.id}"]`); 
+            n.model = m;
+            n.session = {};
+          });
+        } else {
+          console.error('no data?', data);
+        }
       })
   body 
     h1
-      | @pie-ui/!{name}
-    | <!{name}-el></name-el>
+      | @pie-ui/!{name}@!{pkg.version}
+    
+    | !{markup}

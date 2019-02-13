@@ -1,0 +1,19 @@
+html
+  head 
+    link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
+
+    style. 
+
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+      a {
+        display: block;
+      }
+
+
+  
+  body 
+    for p in packages 
+      a(href=`/${p.shortName}.html`)
+        | !{p.name}@!{p.version}

@@ -1,13 +1,25 @@
 const express = require('express');
-const port = 3000;
-const { resolve, dirname } = require('path');
+
+const minimist = require('minimist');
+
+const { basename, resolve } = require('path');
 const webpack = require('webpack');
 const middleware = require('webpack-dev-middleware');
-const fs = require('fs-extra');
-
+const {
+  getPkgAndDemo,
+  createEntryObject,
+  generateMarkupFromData
+} = require('./shared');
 const publicPath = '/assets';
 
-const buildApp = config => {
+const BUILD_DIR = '.out-runtime';
+
+const OUT_DIR = resolve(__dirname, '..', BUILD_DIR);
+
+const args = minimist(process.argv.slice(2));
+
+const PORT = args.port || 7438;
+const buildApp = (config, pkgAndDemos) => {
   const app = express();
 
   console.log('config:', config);
@@ -23,69 +35,60 @@ const buildApp = config => {
   app.set('view engine', 'pug');
 
   app.get('/', (req, res) => {
-    res.send('hi');
+    res.render('index', {
+      packages: pkgAndDemos.map(p => ({ ...p, shortName: basename(p.name) }))
+    });
   });
 
-  app.get('/:name', (req, res) => {
+  app.get('/:name.html', (req, res) => {
     const name = req.params.name;
 
     console.log('name:', name);
 
     try {
-      const data = require(resolve(
-        __dirname,
-        '../../../packages',
+      const { demo, ...pkg } = pkgAndDemos.find(k => basename(k.name) === name);
+
+      const markup = demo.markup
+        ? demo.markup
+        : generateMarkupFromData(demo.data, `${name}-el`);
+
+      res.render('package-demo', {
         name,
-        'demo/config'
-      ));
-      res.render('package-demo', { name, data });
+        data: demo.data,
+        markup: markup,
+        pkg,
+        tagName: demo.tagName
+      });
     } catch (e) {
+      console.error(e);
       res.status(500).end();
     }
   });
   return app;
 };
 
-const writeEntry = pkg => {
-  const js = `
-    import Element from '@pie-ui/${pkg}';
-    customElements.define('${pkg}-el', Element); 
-  `;
-  const outPath = resolve(__dirname, '..', '.out', `${pkg}.js`);
-  fs.mkdirpSync(dirname(outPath));
-  fs.writeFileSync(resolve(__dirname, '..', '.out', `${pkg}.js`), js, 'utf8');
-};
-
 const buildWebpackConfig = () => {
-  const pkg = require(resolve(__dirname, '../package.json'));
-  const packages = Object.keys(pkg.dependencies)
-    .filter(p => p.startsWith('@pie-ui'))
-    .map(p => p.replace('@pie-ui/', ''));
+  const pkgAndDemos = getPkgAndDemo();
 
-  console.log('packages', packages);
-
-  const entry = packages.reduce((cfg, p) => {
-    writeEntry(p);
-    cfg[p] = `./${p}.js`;
-    return cfg;
-  }, {});
+  const entry = createEntryObject(OUT_DIR, pkgAndDemos);
 
   const base = require('../webpack.config');
-  return Promise.resolve({
+  const config = {
     ...base,
     entry,
-    context: resolve(__dirname, '..', '.out'),
+    context: resolve(OUT_DIR),
     output: {
       publicPath
     }
-  });
+  };
+
+  return Promise.resolve({ config, pkgAndDemos });
 };
 
 const run = async () => {
-  const config = await buildWebpackConfig();
-  const app = buildApp(config);
-
-  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+  const { config, pkgAndDemos } = await buildWebpackConfig();
+  const app = buildApp(config, pkgAndDemos);
+  app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 };
 
 run().catch(e => {

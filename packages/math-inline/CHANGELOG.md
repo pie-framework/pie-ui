@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.0.1...@pie-ui/math-inline@1.1.0) (2019-02-13)
+
+
+### Bug Fixes
+
+* **math-inline:** model null checks ([764647c](https://github.com/pie-framework/pie-ui/commit/764647c))
+* **math-inline:** model null checks ([d611354](https://github.com/pie-framework/pie-ui/commit/d611354))
+* [@pie-lib](https://github.com/pie-lib)/render-ui version bump ([04ecce5](https://github.com/pie-framework/pie-ui/commit/04ecce5))
+* correct-answer-toggle version bump ([4334158](https://github.com/pie-framework/pie-ui/commit/4334158))
+* **math-inline:** styling fixes for mathquill as well as package usage fixes from math-input ([72a0720](https://github.com/pie-framework/pie-ui/commit/72a0720))
+
+
+### Features
+
+* **math-inline:** finalize for first release ([0f2f7fb](https://github.com/pie-framework/pie-ui/commit/0f2f7fb))
+* **math-inline:** finalize for first release ([47be10b](https://github.com/pie-framework/pie-ui/commit/47be10b))
+* **math-inline:** made player answer blocks selectable, basic rendering of expression on player-side ([3e40904](https://github.com/pie-framework/pie-ui/commit/3e40904))
+* **math-inline:** math-toolbar version bump to pull in various fixes ([142e9a5](https://github.com/pie-framework/pie-ui/commit/142e9a5))
+* **math-inline:** math-toolbar version bump to pull in various fixes ([33e1655](https://github.com/pie-framework/pie-ui/commit/33e1655))
+* **math-inline:** math-toolbar version bump to pull in various fixes ([f13be1d](https://github.com/pie-framework/pie-ui/commit/f13be1d))
+* **math-inline:** mathquill styling fix for paranthesis around custom elements ([4afa877](https://github.com/pie-framework/pie-ui/commit/4afa877))
+* **math-inline:** null checks and fixes ([e0aebd8](https://github.com/pie-framework/pie-ui/commit/e0aebd8))
+* **math-inline:** null checks and fixes ([b9bb65d](https://github.com/pie-framework/pie-ui/commit/b9bb65d))
+* **math-inline:** null checks and fixes ([c1554af](https://github.com/pie-framework/pie-ui/commit/c1554af))
+* **math-inline:** null checks and fixes ([696ae46](https://github.com/pie-framework/pie-ui/commit/696ae46))
+* **math-inline:** version bump ([d979935](https://github.com/pie-framework/pie-ui/commit/d979935))
+* **math-inline:** version bump for math-toolbar for line break support ([2366cc2](https://github.com/pie-framework/pie-ui/commit/2366cc2))
+
+
+
+
+
 ## [1.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@0.1.0...@pie-ui/math-inline@1.0.1) (2019-02-08)
 
 

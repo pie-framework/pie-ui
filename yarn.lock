@@ -1000,6 +1000,18 @@
     mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
     react-portal "^4.2.0"
 
+"@pie-lib/math-input@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.0.4.tgz#418572e25b3e23d1ba2ee4f5581d05cf86ab8fb6"
+  integrity sha512-71tG3tDSxPMkowclTOJpkDZVjx9ry2DZDigdORvYuR5aYrOHU2UhYtD+KW+BqZa4TESLsHNSrm1mgKxh5ahu+w==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    debug "^4.1.1"
+    lodash "^4.17.11"
+    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
+    react-portal "^4.2.0"
+
 "@pie-lib/math-rendering@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-1.2.1.tgz#1fba12739de5a626488cd1b1ed83550bfff02b2b"

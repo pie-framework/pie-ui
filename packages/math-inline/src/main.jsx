@@ -2,28 +2,11 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-// import { MathToolbar } from '@pie-lib/math-toolbar';
-import Static from '@pie-lib/math-toolbar/lib/mathquill/static';
+import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { Feedback } from '@pie-lib/render-ui';
-import { HorizontalKeypad } from '@pie-lib/math-input';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import AnswerBlock from './answer-block';
-
-let MQ;
-
-if (typeof window !== 'undefined') {
-  const MathQuill = require('mathquill');
-  MQ = MathQuill.getInterface(2);
-
-  MQ.registerEmbed('answerBlock', id => {
-    return {
-      htmlString: `<span style="min-height: 20px" id=${id}></span>`,
-      text: () => 'testText',
-      latex: () => '\\embed{answerBlock}[' + id + ']'
-    };
-  });
-}
 
 export class Main extends React.Component {
   static propTypes = {
@@ -238,7 +221,7 @@ export class Main extends React.Component {
             </Typography>
           </div>
           <div className={classes.expression}>
-            <Static latex={model.config.expression} />
+            <mq.Static latex={model.config.expression} />
           </div>
           <div className={classes.responseContainer}>
             {model.config.responses.map(response => response.id === activeAnswerBlock && (
@@ -295,9 +278,9 @@ const styles = theme => ({
       '& .mq-non-leaf': {
         display: 'inline-flex',
         alignItems: 'center',
-        // '& .mq-scaled': {
-        //   transform: 'scale(1,1) !important'
-        // }
+      },
+      '& .mq-non-leaf.mq-fraction': {
+        display: 'inline-block',
       },
       '& .mq-paren' : {
         verticalAlign: 'middle'

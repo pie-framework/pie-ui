@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Static from '@pie-lib/math-toolbar/lib/mathquill/static';
-import MathQuillEditor from '@pie-lib/math-toolbar/lib/mathquill/editor';
+import { mq } from '@pie-lib/math-input';
 import { withStyles } from '@material-ui/core/styles/index';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -13,7 +12,7 @@ const styles = theme => ({
   static: {
     color: 'grey',
     background: 'lightgrey',
-    fontSize: '0.8rem',
+    fontSize: '1rem',
     padding: theme.spacing.unit / 2,
     display: 'flex',
     alignItems: 'center',
@@ -103,13 +102,13 @@ class AnswerBlock extends React.Component {
                 [classes.incorrect]: showCorrect && !correct
               })
             }>
-              <Static latex={latex}/>
+              <mq.Static latex={latex}/>
             </div>
           ) :
-          <MathQuillEditor
+          <mq.Input
             className={classes.mathEditor}
             onFocus={this.onFocus}
-            ref={r => (this.input = r)}
+            innerRef={r => (this.input = r)}
             latex={latex}
             onChange={this.onEditorChange}
           />}

@@ -72,7 +72,7 @@ export class MultipleChoice extends React.Component {
 
   indexToSymbol(index) {
     if (this.props.keyMode === 'numbers') {
-      return index + 1;
+      return `${index + 1}`;
     }
 
     if (this.props.keyMode === 'letters') {

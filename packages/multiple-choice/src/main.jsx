@@ -74,7 +74,11 @@ class Main extends React.Component {
 
 const Styled = withStyles(styleSheet, { name: 'Main' })(Main);
 
-const theme = createMuiTheme();
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  }
+});
 
 const Root = props => (
   <MuiThemeProvider theme={theme}>

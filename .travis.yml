@@ -11,7 +11,7 @@ before_script:
   - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
   - echo "STATUS"
   - git status
-  - git checkout ${TRAVIS_BRANCH}
+  # - git checkout ${TRAVIS_BRANCH}
 
 stages:
   # - test

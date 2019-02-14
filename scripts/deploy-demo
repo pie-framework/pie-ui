@@ -16,6 +16,8 @@ if (!existsSync(dir)) {
   return;
 }
 
+console.log('??', execSync(`ls -la ${dir} `).toString());
+
 const token = process.env.NOW_TOKEN;
 const alias = args.alias;
 const nowPath = resolve(__dirname, '..', 'node_modules', '.bin', 'now');

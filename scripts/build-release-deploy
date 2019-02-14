@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 
-echo "GIT before release"
-git status 
-git diff 
-git log -3
-git remote --v
-
+# travis by default works w/ a detached head - lerna doesnt like this. 
 echo "checkout TRAVIS_BRANCH"
-
 git checkout ${TRAVIS_BRANCH}
-git status 
-git rev-parse --short HEAD
-git log -3
-
+SHA="${git rev-parse --short HEAD}"
+echo "master sha: ${SHA}"
 echo "commit to test: ${TRAVIS_COMMIT}"
 
-echo " ---> "
 echo "run release"
 npm run release
 

@@ -17,6 +17,7 @@ if (!existsSync(dir)) {
 }
 
 console.log('??', execSync(`ls -la ${dir} `).toString());
+console.log('?? assets:', execSync(`ls -la ${dir}/assets `).toString());
 
 const token = process.env.NOW_TOKEN;
 const alias = args.alias;

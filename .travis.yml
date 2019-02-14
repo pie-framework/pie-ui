@@ -10,17 +10,22 @@ stages:
   - checker
   - name: release-next
     if: branch = develop
+  - name: build-and-deploy-dev
+    if: branch = feature/new-demo
 
 jobs:
   include:
-    - stage: checker
-      script: npm whoami
     - stage: test
       script: 'npm run test'
     - stage: release-next
       script: 'npm run release:next'
+    - stage: build-and-deploy-dev
+      script: 'npm run build:demo && npm run deploy:demo:dev'
+
 branches:
   only:
     - develop
-
-cache: npm
+cache:
+  yarn: true
+  directories:
+    - node_modules

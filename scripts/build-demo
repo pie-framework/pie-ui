@@ -3,3 +3,8 @@
 cd packages/demo 
 rm -fr .out
 node src/build.js
+
+echo ".out:"
+ls -la .out
+echo "assets:"
+ls -la .out/assets

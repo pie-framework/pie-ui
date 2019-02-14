@@ -30,7 +30,7 @@ jobs:
     - stage: build-and-deploy-dev
       script: 'npm run build:demo && npm run deploy:demo:dev'
     - stage: build-release-deploy
-      script: 'npm run release && npm run build:demo && npm run deploy:demo'
+      script: 'npm run build-release-deploy'
 
 branches:
   only:

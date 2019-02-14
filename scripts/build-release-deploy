@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "GIT before release"
+git status 
+git diff 
+git log -3
+git remote --v
+
+echo " ---> "
+echo "run release"
+npm run release
+
+echo "run release"
+npm run build:demo 
+
+echo "deploy demo"
+npm run deploy:demo 

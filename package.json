@@ -13,7 +13,8 @@
     "build": "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files --source-maps",
     "build:demo": "scripts/build-demo",
     "deploy:demo:dev": "scripts/deploy-demo --alias pie-ui-develop",
-    "deploy:demo": "scripts/deploy-demo --alias pie-ui"
+    "deploy:demo": "scripts/deploy-demo --alias pie-ui",
+    "build-release-deploy": "scripts/build-release-deploy"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",

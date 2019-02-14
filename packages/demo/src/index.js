@@ -1,8 +1,7 @@
 const express = require('express');
 
 const minimist = require('minimist');
-const { writeFileSync } = require('fs-extra');
-const { basename, resolve, join } = require('path');
+const { basename, resolve } = require('path');
 const webpack = require('webpack');
 const middleware = require('webpack-dev-middleware');
 const {

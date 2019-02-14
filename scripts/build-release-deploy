@@ -10,6 +10,8 @@ echo "checkout TRAVIS_BRANCH"
 
 git checkout ${TRAVIS_BRANCH}
 git status 
+git rev-parse --short HEAD
+git log -3
 
 # echo " ---> "
 # echo "run release"

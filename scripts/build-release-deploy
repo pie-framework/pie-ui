@@ -6,12 +6,17 @@ git diff
 git log -3
 git remote --v
 
-echo " ---> "
-echo "run release"
-npm run release
+echo "checkout TRAVIS_BRANCH"
 
-echo "run release"
-npm run build:demo 
+git checkout ${TRAVIS_BRANCH}
+git status 
 
-echo "deploy demo"
-npm run deploy:demo 
+# echo " ---> "
+# echo "run release"
+# npm run release
+
+# echo "run release"
+# npm run build:demo 
+
+# echo "deploy demo"
+# npm run deploy:demo 

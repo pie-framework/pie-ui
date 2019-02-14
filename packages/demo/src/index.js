@@ -22,7 +22,9 @@ const OUT_DIR = resolve(__dirname, '..', BUILD_DIR);
 
 const args = minimist(process.argv.slice(2));
 
-const PORT = args.port || 7438;
+exports.DEFAULT_PORT = 7438;
+const PORT = args.port || exports.DEFAULT_PORT;
+
 const buildApp = (config, pkgAndDemos, branch) => {
   const app = express();
 
@@ -36,6 +38,8 @@ const buildApp = (config, pkgAndDemos, branch) => {
   );
 
   app.set('view engine', 'pug');
+
+  app.set('views', resolve(__dirname, '..', 'views'));
 
   app.get('/', (req, res) => {
     res.render('index', {

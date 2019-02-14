@@ -68,14 +68,9 @@ export class Main extends React.Component {
           highlightChoices={model.highlightChoices}
           maxNoOfSelections={model.maxSelections}
         />
-        {model.correctness &&
-          model.feedback &&
-          !showCorrectAnswer && (
-            <Feedback
-              correctness={model.correctness}
-              feedback={model.feedback}
-            />
-          )}
+        {model.correctness && model.feedback && !showCorrectAnswer && (
+          <Feedback correctness={model.correctness} feedback={model.feedback} />
+        )}
       </div>
     );
   }

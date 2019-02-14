@@ -1015,10 +1015,12 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@pie-framework/build-helper@^1.1.1":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.2.0.tgz#b1619ed98a83f47a1ea9947d299573656681a845"
-  integrity sha512-HvEMNzMvN2NdA4gN6f5iDwcorOP7pGMYIQRkR7TrAWBpkxE6nnueebHi01i2KhgW+9LkfzGI4VWDvCGQRSTWKA==
+"@pie-framework/build-helper@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.2.1.tgz#47768ede5ba9ab0d2f53970e561421ffed9d3a23"
+  integrity sha512-EacbFUKubq//RBPdYWju9Y92p2x6Cf49ows6SgXi1bXhKb8akiDtakybn/qgXKzJcHtahLUfG6SZRoy+aR8m7A==
+  dependencies:
+    debug "^4.1.1"
 
 "@pie-framework/expression-parser@^1.4.0":
   version "1.4.0"
@@ -6471,6 +6473,11 @@ is-windows@^1.0.2:
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
 
+is-wsl@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
+  integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
+
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
@@ -8397,6 +8404,13 @@ onetime@^2.0.0:
   integrity sha1-BnQoIw/WdEOyeUsiu6UotoZ5YtQ=
   dependencies:
     mimic-fn "^1.0.0"
+
+opn@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/opn/-/opn-5.4.0.tgz#cb545e7aab78562beb11aa3bfabc7042e1761035"
+  integrity sha512-YF9MNdVy/0qvJvDtunAOzFw9iasOQHpVthTCvGzxt61Il64AYSGdK+rYwld7NAfk9qJ7dt+hymBNSc9LNYS+Sw==
+  dependencies:
+    is-wsl "^1.1.0"
 
 optimist@^0.6.1:
   version "0.6.1"

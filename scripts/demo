@@ -5,26 +5,29 @@ const { watch, processFix } = require('@pie-framework/build-helper');
 const argv = require('minimist')(process.argv.slice(2));
 const { join, resolve } = require('path');
 const { spawn } = require('child_process');
+const opn = require('opn');
 
 let watcher = null;
-let pieServe = null;
+let demo = null;
 
 processFix(log, () => {
   if (watcher) {
     watcher.exit();
   }
-  if (pieServe) {
-    log('stopping pie serve');
-    pieServe.kill();
+  if (demo) {
+    log('stopping demo');
+    demo.kill();
   }
   process.exit();
 });
 
 log(argv);
+
 const scope =
-  Array.isArray(argv._) && argv._.length === 1 ? argv._[0].trim() : undefined;
+  Array.isArray(argv._) && argv._.length === 1 ? argv._[0].trim() : argv.scope;
 
 log('scope: ', scope);
+const { DEFAULT_PORT } = require('../packages/demo/src/index');
 
 if (scope) {
   const args = {
@@ -37,10 +40,13 @@ if (scope) {
 
   setTimeout(() => {
     log('start pie serve ... please hold...');
-    pieServe = spawn('pie', ['serve'], {
-      cwd: resolve(join('packages', scope, 'demo')),
+
+    demo = spawn('node', ['src/index.js', '--port', DEFAULT_PORT], {
+      cwd: resolve(__dirname, '..', 'packages', 'demo'),
       stdio: 'inherit'
     });
+    //TODO: Add hot reloading to page.
+    opn(`http://localhost:${DEFAULT_PORT}/${scope}.html`);
   }, 500);
 } else {
   console.error('You must specify a package name');

@@ -2,10 +2,26 @@ html
   head 
     link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
 
+    script(src="/assets/index.js")
     style. 
+
+      html, body {
+        margin-left: 0;
+        --mdc-theme-primary: !{pkg.version === 'next' ? 'orange' : '#3f51b5'};
+         /*padding: 0;*/
+      }
 
       * {
         font-family: 'Roboto', sans-serif;
+      }
+      a {
+        display: block;
+      }
+
+      .content{
+        position: relative;
+        top: 50px;
+        padding: 30px;
       }
 
     script(src=`/assets/${name}.js`)
@@ -14,16 +30,27 @@ html
 
       document.addEventListener("DOMContentLoaded", () => {
 
+        const data = !{JSON.stringify(data)};
 
-        const data = !{JSON.stringify(data.models[0])};
+        customElements.whenDefined('!{tagName}').then(() => {
 
-        console.log('data:', data);
+          if(data && data.models){
+            const el = '!{tagName}';
+            data.models.forEach( m => {
+              const n = document.querySelector(`[pie-id="${m.id}"]`); 
+              n.model = m;
+              n.session = {};
+            });
+          } else {
+            console.error('no data?', data);
+          }
 
-        const el = '!{name}-el';
-        document.querySelector(el).model = data;
-        document.querySelector(el).session = {};
+        })
       })
   body 
-    h1
-      | @pie-ui/!{name}
-    | <!{name}-el></name-el>
+    mwc-top-app-bar(title="foo") 
+      span(slot="title") @pie-ui/!{name}@!{pkg.version}
+      span(slot="title") &nbsp;| !{branch}
+    div.content
+    
+      | !{markup}

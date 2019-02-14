@@ -1,0 +1,59 @@
+html
+  head 
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css", rel="stylesheet")
+    script(src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js")
+    link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
+
+    style. 
+
+      html, body {
+        margin-left: 0;
+        --mdc-theme-primary: !{ branch !== 'master' ? 'orange' : '#3f51b5'};
+         /*padding: 0;*/
+      }
+
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+      a {
+        display: block;
+      }
+
+      .content{
+        position: relative;
+        top: 50px;
+        padding: 30px;
+      }
+
+      .name{
+        min-width: 260px;
+      }
+
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: vertical;
+        //- margin: 20px;
+      }
+
+
+  
+  body 
+    mwc-top-app-bar(title="foo") 
+      span(slot="title") @pie-ui
+      span(slot="title") &nbsp;| !{branch}
+    div.content
+      table 
+        
+        for p in packages 
+          tr 
+            td.name
+              a(href=`/${p.shortName}.html`)
+                | !{p.name}@!{p.version}
+            td 
+              | !{p.description}
+
+        
+
+    script(src="/assets/index.js")

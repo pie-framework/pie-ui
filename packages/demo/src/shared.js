@@ -1,4 +1,9 @@
-const { resolve, basename, dirname } = require('path');
+const { join, resolve, basename, dirname } = require('path');
+const { execSync } = require('child_process');
+const debug = require('debug');
+
+const log = debug('pie-ui:demo:shared');
+const err = debug('pie-ui:demo:err');
 const {
   mkdirpSync,
   writeFileSync,
@@ -7,10 +12,16 @@ const {
 } = require('fs-extra');
 const vm = require('vm');
 
-exports.getPkgAndDemo = () => {
+exports.getBranch = () => {
+  return execSync('git rev-parse --abbrev-ref HEAD')
+    .toString()
+    .trim();
+};
+
+exports.getPkgAndDemo = versionOverride => {
   return exports.getPackages().map(pkg => {
     pkg.shortName = basename(pkg.name);
-
+    pkg.version = versionOverride ? versionOverride : pkg.version;
     const { markup, data } = exports.loadDemo(dirname(pkg._path));
     pkg.demo = {
       tagName: exports.getElementNameFromDemo(data),
@@ -33,6 +44,15 @@ exports.getPackages = () => {
     pkg._path = p;
     return pkg;
   });
+};
+
+exports.writeIndex = dir => {
+  writeFileSync(
+    join(dir, 'index.js'),
+    `import {TopAppBar} from "../src/client/mwc-top-app-bar";
+    `,
+    'utf8'
+  );
 };
 
 exports.writeEntry = (pkg, tagName, outDir) => {
@@ -68,16 +88,16 @@ exports.loadDemoMarkup = pkgPath => {
     const markup = readFileSync(markupPath, 'utf8');
     return markup;
   } catch (e) {
-    console.error(e);
+    err('[loadDemoMarkup] ', e.message);
     return undefined;
   }
 };
 
 exports.loadDemoData = pkgPath => {
   try {
-    console.log('loadDemo: ', pkgPath);
+    log('loadDemo: ', pkgPath);
     const demoJsPath = resolve(pkgPath, 'demo', 'config.js');
-    console.log('demoJsPath: ', demoJsPath);
+    log('demoJsPath: ', demoJsPath);
     const demoJs = readFileSync(demoJsPath, 'utf8');
 
     const m = {
@@ -90,10 +110,10 @@ exports.loadDemoData = pkgPath => {
     });
 
     vm.runInContext(demoJs, context);
-    console.log('context:', context);
     return context.module.exports || context.exports;
   } catch (e) {
-    console.error(e);
+    err('[loadDemoData] error: ', e.message);
+    //console.error(e);
 
     return {
       models: [{}]

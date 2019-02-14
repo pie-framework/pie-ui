@@ -24,6 +24,7 @@
     "@pie-ui/select-text": "^1.4.0",
     "@pie-ui/text-entry": "^3.4.1",
     "css-loader": "^2.1.0",
+    "debug": "^4.1.1",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "fs-extra": "^7.0.1",

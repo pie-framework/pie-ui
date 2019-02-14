@@ -8,10 +8,14 @@ const middleware = require('webpack-dev-middleware');
 const {
   getPkgAndDemo,
   createEntryObject,
-  generateMarkupFromData
+  generateMarkupFromData,
+  getBranch,
+  writeIndex
 } = require('./shared');
 const publicPath = '/assets';
+const debug = require('debug');
 
+const log = debug('pie-ui:demo:server');
 const BUILD_DIR = '.out-runtime';
 
 const OUT_DIR = resolve(__dirname, '..', BUILD_DIR);
@@ -19,10 +23,9 @@ const OUT_DIR = resolve(__dirname, '..', BUILD_DIR);
 const args = minimist(process.argv.slice(2));
 
 const PORT = args.port || 7438;
-const buildApp = (config, pkgAndDemos) => {
+const buildApp = (config, pkgAndDemos, branch) => {
   const app = express();
 
-  console.log('config:', config);
   const compiler = webpack(config);
 
   app.use(
@@ -36,6 +39,7 @@ const buildApp = (config, pkgAndDemos) => {
 
   app.get('/', (req, res) => {
     res.render('index', {
+      branch,
       packages: pkgAndDemos.map(p => ({ ...p, shortName: basename(p.name) }))
     });
   });
@@ -53,6 +57,7 @@ const buildApp = (config, pkgAndDemos) => {
         : generateMarkupFromData(demo.data, `${name}-el`);
 
       res.render('package-demo', {
+        branch,
         name,
         data: demo.data,
         markup: markup,
@@ -68,25 +73,14 @@ const buildApp = (config, pkgAndDemos) => {
 };
 
 const buildWebpackConfig = () => {
-  const pkgAndDemos = getPkgAndDemo();
+  const branch = getBranch();
+  log('___________-- branch', branch);
+  const pkgAndDemos = getPkgAndDemo(branch !== 'master' && 'next');
 
-  const entry = {}; //createEntryObject(OUT_DIR, pkgAndDemos);
+  const entry = createEntryObject(OUT_DIR, pkgAndDemos);
 
   entry.index = './index.js';
-
-  writeFileSync(
-    join(OUT_DIR, 'index.js'),
-    `
-    import {Button} from "@material/mwc-button";
-  import {Icon} from "@material/mwc-icon";
-
-  import {TopAppBar} from "../src/mwc-top-app-bar";
-
-  console.log('index', Icon);
-
-`,
-    'utf8'
-  );
+  writeIndex(OUT_DIR);
 
   const base = require('../webpack.config');
   const config = {
@@ -98,12 +92,12 @@ const buildWebpackConfig = () => {
     }
   };
 
-  return Promise.resolve({ config, pkgAndDemos });
+  return Promise.resolve({ config, pkgAndDemos, branch });
 };
 
 const run = async () => {
-  const { config, pkgAndDemos } = await buildWebpackConfig();
-  const app = buildApp(config, pkgAndDemos);
+  const { config, pkgAndDemos, branch } = await buildWebpackConfig();
+  const app = buildApp(config, pkgAndDemos, branch);
   app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 };
 

@@ -9,7 +9,7 @@ html
 
       html, body {
         margin-left: 0;
-        --mdc-theme-primary: #3f51b5;
+        --mdc-theme-primary: !{ branch !== 'master' ? 'orange' : '#3f51b5'};
          /*padding: 0;*/
       }
 
@@ -22,8 +22,19 @@ html
 
       .content{
         position: relative;
-        top: 80px;
-        padding: 10px;
+        top: 50px;
+        padding: 30px;
+      }
+
+      .name{
+        min-width: 260px;
+      }
+
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: vertical;
+        //- margin: 20px;
       }
 
 
@@ -31,14 +42,18 @@ html
   body 
     mwc-top-app-bar(title="foo") 
       span(slot="title") @pie-ui
-      | foo 
+      span(slot="title") &nbsp;| !{branch}
     div.content
-      for p in packages 
-        a(href=`/${p.shortName}.html`)
-          | !{p.name}@!{p.version}
+      table 
+        
+        for p in packages 
+          tr 
+            td.name
+              a(href=`/${p.shortName}.html`)
+                | !{p.name}@!{p.version}
+            td 
+              | !{p.description}
 
-      mwc-icon sentiment_very_satisfied
-      mwc-button foo 
-
+        
 
     script(src="/assets/index.js")

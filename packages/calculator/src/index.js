@@ -10,6 +10,7 @@ export default class Calculator extends HTMLElement {
     super();
     this._model = null;
     this._session = null;
+
     this._rerender = () => {
       if (this._model) {
         let elem = React.createElement(Main, {

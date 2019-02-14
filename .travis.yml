@@ -8,6 +8,11 @@ before_install:
   - git config --global user.name "Travis CI"
   # - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
 
+before_script:
+  - echo 'STATUS'
+  - git status
+  - git checkout ${TRAVIS_BRANCH}
+
 stages:
   # - test
   # - checker

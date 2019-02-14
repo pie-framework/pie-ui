@@ -6,19 +6,19 @@ before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
 
 stages:
-  - test
-  - checker
-  - name: release-next
-    if: branch = develop
+  # - test
+  # - checker
+  # - name: release-next
+  #   if: branch = develop
   - name: build-and-deploy-dev
     if: branch = develop
 
 jobs:
   include:
-    - stage: test
-      script: 'npm run test'
-    - stage: release-next
-      script: 'npm run release:next'
+    # - stage: test
+    #   script: 'npm run test'
+    # - stage: release-next
+    #   script: 'npm run release:next'
     - stage: build-and-deploy-dev
       script: 'npm run build:demo && npm run deploy:demo:dev'
 

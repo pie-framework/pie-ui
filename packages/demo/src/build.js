@@ -72,11 +72,17 @@ const config = {
 console.log('config', config);
 const compiler = webpack(config);
 
-compiler.run(err => {
+compiler.run((err, stats) => {
   if (err) {
     console.log('error: ');
     console.log(err);
+    process.exit(1);
   } else {
+    if (stats.hasErrors()) {
+      const errors = stats.toJson({ errors: true });
+      console.error(errors);
+      process.exit(1);
+    }
     console.log('done');
   }
 });

@@ -3,7 +3,7 @@
 const minimist = require('minimist');
 
 const args = minimist(process.argv.slice(2));
-
+const { execSync } = require('child_process');
 const { deployToNow } = require('@pie-framework/build-helper');
 const { resolve } = require('path');
 

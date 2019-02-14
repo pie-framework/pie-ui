@@ -72,7 +72,7 @@ const config = {
 console.log('config', config);
 const compiler = webpack(config);
 
-compiler.run((err, stats) => {
+compiler.run(err => {
   if (err) {
     console.log('error: ');
     console.log(err);

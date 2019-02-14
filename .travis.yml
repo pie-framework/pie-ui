@@ -4,6 +4,8 @@ node_js:
 
 before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
 
 stages:
   # - test
@@ -12,7 +14,8 @@ stages:
   #   if: branch = develop
   - name: build-and-deploy-dev
     if: branch = develop
-
+  - name: build-release-deploy
+    if: branch = master
 jobs:
   include:
     # - stage: test
@@ -21,10 +24,13 @@ jobs:
     #   script: 'npm run release:next'
     - stage: build-and-deploy-dev
       script: 'npm run build:demo && npm run deploy:demo:dev'
+    - stage: build-release-deploy
+      script: 'yarn build && npm run release && npm run deploy:demo'
 
 branches:
   only:
     - develop
+    - master
 cache:
   yarn: true
   directories:

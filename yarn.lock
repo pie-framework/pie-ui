@@ -1015,10 +1015,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@pie-framework/build-helper@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.0.3.tgz#c51b1b3ebf03f4ca2aedcc0996ce18422fa4fb4d"
-  integrity sha512-Zr3we3mpSt9ki42JVegIKhPcmM5CCVixkRBLDsYyHdECFzH2rWsxp4sjCR7/a/K5AXr1ICjNjLEA2QvBg/wXLw==
+"@pie-framework/build-helper@^1.1.1":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-1.2.0.tgz#b1619ed98a83f47a1ea9947d299573656681a845"
+  integrity sha512-HvEMNzMvN2NdA4gN6f5iDwcorOP7pGMYIQRkR7TrAWBpkxE6nnueebHi01i2KhgW+9LkfzGI4VWDvCGQRSTWKA==
 
 "@pie-framework/expression-parser@^1.4.0":
   version "1.4.0"

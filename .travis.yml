@@ -6,7 +6,7 @@ before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
-  - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
+  # - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
 
 stages:
   # - test

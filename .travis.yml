@@ -11,7 +11,7 @@ stages:
   - name: release-next
     if: branch = develop
   - name: build-and-deploy-dev
-    if: branch = feature/new-demo
+    if: branch = develop
 
 jobs:
   include:

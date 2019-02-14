@@ -26,7 +26,7 @@ jobs:
     - stage: build-and-deploy-dev
       script: 'npm run build:demo && npm run deploy:demo:dev'
     - stage: build-release-deploy
-      script: 'yarn build && npm run release && npm run build:demo && npm run deploy:demo'
+      script: 'npm run release && npm run build:demo && npm run deploy:demo'
 
 branches:
   only:

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+yarn build
 cd packages/demo 
 rm -fr .out
 node src/build.js

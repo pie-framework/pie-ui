@@ -76,12 +76,12 @@ compiler.run((err, stats) => {
   if (err) {
     console.log('error: ');
     console.log(err);
-    process.exit(1);
+    throw new Error('build has errors - see logs');
   } else {
     if (stats.hasErrors()) {
       const errors = stats.toJson({ errors: true });
       console.error(errors);
-      process.exit(1);
+      throw new Error('build has errors - see logs');
     }
     console.log('done');
   }

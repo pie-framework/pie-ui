@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-# travis by default works w/ a detached head - lerna doesnt like this. 
-echo "checkout TRAVIS_BRANCH"
+if [ ! $TRAVIS ] 
+then 
+  echo "This can only be run on travis ci"
+  exit 1
+fi
+
+echo ">> travis by default works w/ a detached head - lerna doesnt like this."
+
+echo "checkout $TRAVIS_BRANCH"
+
 git checkout ${TRAVIS_BRANCH}
 SHA="${git rev-parse --short HEAD}"
 echo "master sha: ${SHA}"

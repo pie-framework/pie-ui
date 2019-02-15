@@ -2,13 +2,11 @@
 
 The pie custom elements only.
 
-Elements are in `packages`.
-
 ## install
 
 ```shell
-npm install -g lerna
-npm install # install root package and child packages
+yarn global add lerna
+yarn install # install root package and child packages
 ```
 
 ## develop
@@ -18,61 +16,40 @@ npm install # install root package and child packages
 
 ### Commands
 
-| Action  | Cmd                                   | Notes                                                                                                           |
-| ------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| test    | `npm test`                            |                                                                                                                 |
-| lint    | `npm run lint`                        |                                                                                                                 |
-| build   | `npm run build`                       |                                                                                                                 |
-| release | `npm run release`                     |                                                                                                                 |
-| watch   | `scripts/watch --scope $package-name` | This can be useful when you have a package linked elsewhere <br/>and what your changes in `src` to be picked up |
-| demo    | `scripts/demo $package-name`          | Will start a watch and run `pie serve` for the given package                                                    |
+| Action          | Cmd                                   | Notes                                                                                                           |
+| --------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| test            | `npm test`                            |                                                                                                                 |
+| lint            | `npm run lint`                        |                                                                                                                 |
+| build           | `npm run build`                       |                                                                                                                 |
+| release         | `npm run release`                     |                                                                                                                 |
+| release next    | `npm run release:next`                | Will release a new version tagged as `next`                                                                     |
+| watch           | `scripts/watch --scope $package-name` | This can be useful when you have a package linked elsewhere <br/>and what your changes in `src` to be picked up |
+| demo            | `scripts/demo --scope $package-name`  | Will start the `demo` webapp targeting the scoped package                                                       |
+| build demo      | `npm run build:demo`                  | Builds a static version of the demo site                                                                        |
+| deploy demo     | `npm run deploy:demo`                 | Deploys static site to `pie-ui.now.sh`                                                                          |
+| deploy demo dev | `npm run deploy:demo:dev`             | Deploys static site to `pie-ui-develop.now.sh`                                                                  |
 
-#### New Demo
+### test single packages
 
-There is a new demo being built that will run all the packages in 1 location:
-
-```shell
-cd packages/demo
-
-node src/index.js
-
-
-```
+````
 
 To test an individual package you can do:
 
 ```shell
 ./node_modules/.bin/jest packages/calculator
-```
+````
 
 ### running in a browser
 
 `scripts/demo $package-name`
 
-### info
-
-```shell
-cd packages/multiple-choice/demo
-pie serve
-```
-
 ### release
 
-```shell
-git checkout master
-git merge develop
-git push
-npm run release
-git checkout develop
-git merge master
-git push
-```
+Merging to `master` will create a new release and build the demo site.
 
-### prerelease
+### release @next
 
-```shell
-lerna publish --npm-tag=next
-```
+Merging to `develop` will release `@next` versions and build the next demo site.
 
 ### dependencies
 

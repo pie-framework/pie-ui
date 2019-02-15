@@ -9,10 +9,13 @@ const {
   createEntryObject,
   generateMarkupFromData,
   getBranch,
-  writeIndex
+  writeIndex,
+  getPackages
 } = require('./shared');
+const hotMiddleware = require('webpack-hot-middleware');
 const publicPath = '/assets';
 const debug = require('debug');
+const { DEFAULT_PORT } = require('./defaults');
 
 const log = debug('pie-ui:demo:server');
 const BUILD_DIR = '.out-runtime';
@@ -21,8 +24,12 @@ const OUT_DIR = resolve(__dirname, '..', BUILD_DIR);
 
 const args = minimist(process.argv.slice(2));
 
-exports.DEFAULT_PORT = 7438;
-const PORT = args.port || exports.DEFAULT_PORT;
+const PORT = args.port || DEFAULT_PORT;
+
+/**
+ * 1. scope
+ * 2. reload
+ */
 
 const buildApp = (config, pkgAndDemos, branch) => {
   const app = express();
@@ -35,6 +42,8 @@ const buildApp = (config, pkgAndDemos, branch) => {
       publicPath
     })
   );
+
+  app.use(hotMiddleware(compiler));
 
   app.set('view engine', 'pug');
 
@@ -50,7 +59,7 @@ const buildApp = (config, pkgAndDemos, branch) => {
   app.get('/:name.html', (req, res) => {
     const name = req.params.name;
 
-    console.log('name:', name);
+    log('name:', name);
 
     try {
       const { demo, ...pkg } = pkgAndDemos.find(k => basename(k.name) === name);
@@ -77,28 +86,48 @@ const buildApp = (config, pkgAndDemos, branch) => {
 
 const buildWebpackConfig = () => {
   const branch = getBranch();
-  log('___________-- branch', branch);
-  const pkgAndDemos = getPkgAndDemo(branch !== 'master' && 'next');
+  log('-> branch', branch);
 
-  const entry = createEntryObject(OUT_DIR, pkgAndDemos);
+  const packages = getPackages(args.scope ? [args.scope] : undefined);
+
+  log('packages:', packages.map(p => p.name));
+
+  const pkgAndDemos = getPkgAndDemo(branch !== 'master' && 'next', packages);
+
+  const entry = createEntryObject(OUT_DIR, pkgAndDemos, args.hotReload);
 
   entry.index = './index.js';
+
+  if (args.hotReload) {
+    Object.keys(entry).forEach(k => {
+      entry[k] = [entry[k], 'webpack-hot-middleware/client'];
+    });
+  }
+
+  log('entry:', entry);
   writeIndex(OUT_DIR);
+
+  const plugins = args.hotReload
+    ? [new webpack.HotModuleReplacementPlugin()]
+    : [];
 
   const base = require('../webpack.config');
   const config = {
     ...base,
+    mode: 'development',
     entry,
     context: resolve(OUT_DIR),
     output: {
       publicPath
-    }
+    },
+    plugins
   };
 
   return Promise.resolve({ config, pkgAndDemos, branch });
 };
 
 const run = async () => {
+  log('args', args);
   const { config, pkgAndDemos, branch } = await buildWebpackConfig();
   const app = buildApp(config, pkgAndDemos, branch);
   app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.5",
-    "@types/webpack": "^4.4.24"
+    "@types/webpack": "^4.4.24",
+    "webpack-hot-middleware": "^2.24.3"
   }
 }

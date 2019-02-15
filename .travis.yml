@@ -9,28 +9,18 @@ before_install:
 
 before_script:
   - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
-  - echo "STATUS"
-  - git status
 
 stages:
-  # - test
-  # - checker
-  # - name: release-next
-  #   if: branch = develop
   - name: build-and-deploy-dev
     if: branch = develop
-  - name: build-release-deploy
+  - name: travis-release-deploy
     if: branch = master
 jobs:
   include:
-    # - stage: test
-    #   script: 'npm run test'
-    # - stage: release-next
-    #   script: 'npm run release:next'
     - stage: build-and-deploy-dev
       script: 'npm run build:demo && npm run deploy:demo:dev'
-    - stage: build-release-deploy
-      script: 'npm run build-release-deploy'
+    - stage: travis-release-deploy
+      script: 'scripts/travis-release-deploy'
 
 branches:
   only:

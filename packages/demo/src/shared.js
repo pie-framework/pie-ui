@@ -18,8 +18,10 @@ exports.getBranch = () => {
     .trim();
 };
 
-exports.getPkgAndDemo = versionOverride => {
-  return exports.getPackages().map(pkg => {
+exports.getPkgAndDemo = (versionOverride, packages) => {
+  packages = packages || exports.getPackages(exports.getDependenciesFromPkg());
+
+  return packages.map(pkg => {
     pkg.shortName = basename(pkg.name);
     pkg.version = versionOverride ? versionOverride : pkg.version;
     const { markup, data } = exports.loadDemo(dirname(pkg._path));
@@ -32,11 +34,17 @@ exports.getPkgAndDemo = versionOverride => {
   });
 };
 
-exports.getPackages = () => {
+exports.getDependenciesFromPkg = () => {
   const pkg = require(resolve(__dirname, '../package.json'));
-  const names = Object.keys(pkg.dependencies)
+  return Object.keys(pkg.dependencies)
     .filter(p => p.startsWith('@pie-ui'))
     .map(p => p.replace('@pie-ui/', ''));
+};
+
+exports.getPackages = names => {
+  if (!names) {
+    throw new Error('api change you must pass in names');
+  }
 
   return names.map(n => {
     const p = resolve(__dirname, '../../', n, 'package.json');
@@ -55,10 +63,20 @@ exports.writeIndex = dir => {
   );
 };
 
-exports.writeEntry = (pkg, tagName, outDir) => {
+exports.writeEntry = (pkg, tagName, outDir, addHMR) => {
+  const hmr = `
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(function() {
+      document.location.reload();
+    });
+  }`;
+
   const js = `
     import Element from '@pie-ui/${pkg}';
-    customElements.define('${tagName}', Element); 
+    customElements.define('${tagName}', Element);
+    
+    ${addHMR ? hmr : '// no hmr'}
   `;
   const outPath = resolve(outDir, `${pkg}.js`);
   mkdirpSync(dirname(outPath));
@@ -127,10 +145,10 @@ exports.getElementNameFromDemo = data => {
   }
 };
 
-exports.createEntryObject = (outDir, packages) => {
+exports.createEntryObject = (outDir, packages, addHMR) => {
   return packages.reduce((cfg, p) => {
     const name = basename(p.name);
-    exports.writeEntry(name, p.demo.tagName, resolve(outDir));
+    exports.writeEntry(name, p.demo.tagName, resolve(outDir), addHMR);
     cfg[name] = `./${name}.js`;
     return cfg;
   }, {});

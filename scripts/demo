@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const debug = require('debug');
-const log = debug('@pie-ui:scripts:watch');
+const log = debug('pie-ui:scripts:watch');
 const { watch, processFix } = require('@pie-framework/build-helper');
 const argv = require('minimist')(process.argv.slice(2));
 const { join, resolve } = require('path');
@@ -27,7 +27,7 @@ const scope =
   Array.isArray(argv._) && argv._.length === 1 ? argv._[0].trim() : argv.scope;
 
 log('scope: ', scope);
-const { DEFAULT_PORT } = require('../packages/demo/src/index');
+const { DEFAULT_PORT } = require('../packages/demo/src/defaults');
 
 if (scope) {
   const args = {
@@ -39,12 +39,16 @@ if (scope) {
   watcher = watch([args]);
 
   setTimeout(() => {
-    log('start pie serve ... please hold...');
+    log('------------> starting demo..');
 
-    demo = spawn('node', ['src/index.js', '--port', DEFAULT_PORT], {
-      cwd: resolve(__dirname, '..', 'packages', 'demo'),
-      stdio: 'inherit'
-    });
+    demo = spawn(
+      'node',
+      ['src/index.js', '--port', DEFAULT_PORT, '--scope', scope, '--hotReload'],
+      {
+        cwd: resolve(__dirname, '..', 'packages', 'demo'),
+        stdio: 'inherit'
+      }
+    );
     //TODO: Add hot reloading to page.
     opn(`http://localhost:${DEFAULT_PORT}/${scope}.html`);
   }, 500);

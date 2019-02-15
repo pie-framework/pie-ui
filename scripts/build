@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+/* eslint-disable no-console */
+
+const { execSync } = require('child_process');
+const { deployToNow } = require('@pie-framework/build-helper');
+const { resolve } = require('path');
+const { existsSync } = require('fs-extra');
+const minimist = require('minimist');
+const debug = require('debug');
+const log = debug('pie-ui:scripts');
+const cmdLog = debug('pie-ui:scripts:cmd');
+
+const args = minimist(process.argv.slice(2));
+const dryRun = !!args.dryRun;
+
+const runCmds = (cmds, opts) => {
+  cmds.forEach(c => {
+    log('[cmd]: ', c);
+
+    if (args.dryRun) {
+      return;
+    }
+    execSync(c, { stdio: 'inherit', ...opts });
+  });
+};
+
+const cmds = {
+  release: () => {
+    cmdLog('----> release');
+
+    const { TRAVIS, TRAVIS_BRANCH, GITHUB_TOKEN } = process.env;
+    if (TRAVIS) {
+      log(
+        '-----> running in TRAVIS - checkout the branch (detached head doesnt work with lerna)'
+      );
+      runCmds([
+        `git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git`,
+        `git checkout ${TRAVIS_BRANCH}`
+      ]);
+    }
+
+    const releaseCmd = `./node_modules/.bin/lerna publish --conventional-commits --yes ${
+      args.next ? '--canary --preid next --dist-tag next' : ''
+    }`;
+
+    runCmds(['npm run clean', 'npm run test', 'npm run build', releaseCmd]);
+  },
+  'build-demo': () => {
+    cmdLog('----> build-demo');
+    const demoDir = resolve(__dirname, '../packages/demo');
+    runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
+  },
+  'deploy-demo': () => {
+    cmdLog('----> deploy-demo');
+
+    const dir = resolve(__dirname, '..', 'packages', 'demo', '.out');
+    const token = process.env.NOW_TOKEN;
+    const nowPath = resolve(__dirname, '..', 'node_modules', '.bin', 'now');
+
+    if (!existsSync(dir)) {
+      console.error('dir:', dir, 'does not exist');
+      return;
+    }
+
+    if (!existsSync(nowPath)) {
+      console.error('nowPath:', nowPath, 'does not exist');
+      return;
+    }
+
+    const alias = `pie-ui${args.next ? '-next' : ''}`;
+
+    if (dryRun) {
+      log('deploy to now alias: ', alias, 'token:', token);
+      return;
+    }
+    deployToNow(dir, token, alias, nowPath);
+  }
+};
+
+const knownActions = args._.filter(a => cmds[a]);
+
+if (knownActions.length !== args._.length) {
+  throw new Error(
+    `unknown actions: ${args._}, supported actions: ${Object.keys(cmds)}`
+  );
+}
+
+knownActions.forEach(a => {
+  const fn = cmds[a];
+  if (!fn) {
+    throw new Error('unknown action:', a);
+  }
+  cmds[a]();
+});

@@ -52,8 +52,6 @@ class Commands {
       ]);
     }
 
-    this.clean();
-    this.test();
     this.build();
 
     const releaseCmd = `${p.lerna} publish --conventional-commits --yes ${
@@ -65,6 +63,7 @@ class Commands {
 
   build() {
     this.clean();
+    this.test();
     this.lint();
     this.babel();
   }

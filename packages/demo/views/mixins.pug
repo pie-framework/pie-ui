@@ -1,0 +1,9 @@
+mixin top_bar(gitInfo, name = undefined, version = undefined)
+    mwc-top-app-bar(title="@pie-ui") 
+      if name && version  
+        span(slot="title") @pie-ui/!{name}@!{version}
+      else 
+        span(slot="title") @pie-ui
+      span(slot="title") &nbsp;| !{gitInfo.branch}
+      span(slot="actionItems")
+        a(target="_blank" href=`https://github.com/pie-framework/pie-ui/commit/${gitInfo.short}`)=gitInfo.short

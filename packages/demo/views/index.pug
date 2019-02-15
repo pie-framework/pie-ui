@@ -1,3 +1,5 @@
+include mixins 
+
 html
   head 
     meta(charset="utf-8")
@@ -41,9 +43,7 @@ html
 
   
   body 
-    mwc-top-app-bar(title="foo") 
-      span(slot="title") @pie-ui
-      span(slot="title") &nbsp;| !{branch}
+    +top_bar(gitInfo)
     div.content
       table 
         

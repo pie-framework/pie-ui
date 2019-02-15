@@ -9,7 +9,7 @@ const {
   createEntryObject,
   getPkgAndDemo,
   writeIndex,
-  getBranch
+  getGitInfo
 } = require('./shared');
 const { resolve, basename } = require('path');
 const { writeFileSync, mkdirpSync, removeSync } = require('fs-extra');
@@ -21,15 +21,15 @@ const packageRender = pug.compileFile(
   resolve(__dirname, '..', 'views', 'package-demo.pug')
 );
 
-const buildIndex = (packages, outDir, branch) => {
-  const out = indexRender({ packages, branch });
+const buildIndex = (packages, outDir, gitInfo) => {
+  const out = indexRender({ packages, gitInfo });
   writeFileSync(resolve(outDir, 'index.html'), out, 'utf8');
 };
 
-const buildPackagePage = (pd, branch) => {
+const buildPackagePage = (pd, gitInfo) => {
   const { demo, ...pkg } = pd;
   const opts = {
-    branch,
+    gitInfo,
     name: basename(pkg.name),
     data: demo.data,
     markup: demo.markup,
@@ -43,13 +43,13 @@ const buildPackagePage = (pd, branch) => {
 const outDir = resolve(__dirname, '..', '.out');
 removeSync(outDir);
 mkdirpSync(outDir);
-const branch = getBranch();
-log('- branch', branch);
-const pkgAndDemos = getPkgAndDemo(branch !== 'master' && 'next');
-buildIndex(pkgAndDemos, outDir, branch);
+const gitInfo = getGitInfo();
+log('- gitInfo', gitInfo);
+const pkgAndDemos = getPkgAndDemo(gitInfo.branch !== 'master' && 'next');
+buildIndex(pkgAndDemos, outDir, gitInfo);
 
 pkgAndDemos.forEach(p => {
-  buildPackagePage(p, branch);
+  buildPackagePage(p, gitInfo);
 });
 
 const entry = createEntryObject(outDir, pkgAndDemos);

@@ -1,4 +1,6 @@
-# pie-elements
+# pie-ui
+
+[![Build Status](https://travis-ci.org/pie-framework/pie-ui.svg?branch=develop)](https://travis-ci.org/pie-framework/pie-ui)
 
 The pie custom elements only.
 

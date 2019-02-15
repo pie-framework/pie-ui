@@ -7,20 +7,17 @@ before_install:
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
 
-before_script:
-  - git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git
-
 stages:
-  - name: build-and-deploy-dev
+  - name: travis-release-deploy-next
     if: branch = develop
   - name: travis-release-deploy
     if: branch = master
 jobs:
   include:
-    - stage: build-and-deploy-dev
-      script: 'npm run build:demo && npm run deploy:demo:next'
+    - stage: travis-release-deploy-next
+      script: 'scripts/build release build-demo deploy-deploy --next --dryRun'
     - stage: travis-release-deploy
-      script: 'scripts/travis-release-deploy'
+      script: 'scripts/build release build-demo deploy-demo --dryRun'
 
 branches:
   only:

@@ -18,7 +18,7 @@ stages:
 jobs:
   include:
     - stage: build-and-deploy-dev
-      script: 'npm run build:demo && npm run deploy:demo:dev'
+      script: 'npm run build:demo && npm run deploy:demo:next'
     - stage: travis-release-deploy
       script: 'scripts/travis-release-deploy'
 

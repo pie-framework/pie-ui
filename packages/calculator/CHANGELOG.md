@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.3.4...@pie-ui/calculator@3.3.6) (2019-02-15)
+
+
+### Bug Fixes
+
+* minor clean up ([cd9d869](https://github.com/pie-framework/pie-ui/commit/cd9d869))
+
+
+
+
+
 ## [3.3.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.3.4...@pie-ui/calculator@3.3.5) (2019-02-15)
 
 

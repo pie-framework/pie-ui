@@ -29,7 +29,7 @@ yarn install # install root package and child packages
 | demo            | `scripts/demo --scope $package-name`  | Will start the `demo` webapp targeting the scoped package                                                       |
 | build demo      | `npm run build:demo`                  | Builds a static version of the demo site                                                                        |
 | deploy demo     | `npm run deploy:demo`                 | Deploys static site to `pie-ui.now.sh`                                                                          |
-| deploy demo dev | `npm run deploy:demo:dev`             | Deploys static site to `pie-ui-develop.now.sh`                                                                  |
+| deploy demo dev | `npm run deploy:demo:next`            | Deploys static site to `pie-ui-next.now.sh`                                                                     |
 
 ### test single packages
 

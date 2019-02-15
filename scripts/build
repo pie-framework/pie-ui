@@ -51,7 +51,7 @@ class Commands {
       ]);
     }
 
-    const releaseCmd = `${lerna} publish --conventional-commits --yes ${
+    const releaseCmd = `${p.lerna} publish --conventional-commits --yes ${
       args.next ? '--canary --preid next --dist-tag next' : ''
     }`;
 

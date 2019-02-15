@@ -9,6 +9,7 @@ const minimist = require('minimist');
 const debug = require('debug');
 const log = debug('pie-ui:scripts');
 const cmdLog = debug('pie-ui:scripts:cmd');
+const invariant = require('invariant');
 
 const args = minimist(process.argv.slice(2));
 const dryRun =
@@ -41,7 +42,11 @@ class Commands {
     cmdLog('----> release');
 
     const { TRAVIS, TRAVIS_BRANCH, GITHUB_TOKEN } = process.env;
+
     if (TRAVIS) {
+      invariant(TRAVIS_BRANCH, 'TRAVIS_BRANCH env var must be defined');
+      invariant(GITHUB_TOKEN, 'GITHUB_TOKEN env var must be defined');
+
       log(
         '-----> running in TRAVIS - checkout the branch (detached head doesnt work with lerna)'
       );

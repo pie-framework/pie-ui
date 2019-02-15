@@ -1,136 +1,35 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
 
-const { execSync } = require('child_process');
-const { deployToNow } = require('@pie-framework/build-helper');
+const { Commands } = require('@pie-framework/build-helper');
 const { resolve } = require('path');
-const { existsSync } = require('fs-extra');
 const minimist = require('minimist');
 const debug = require('debug');
-const log = debug('pie-ui:scripts');
 const cmdLog = debug('pie-ui:scripts:cmd');
-const invariant = require('invariant');
 
 const args = minimist(process.argv.slice(2));
-const dryRun =
-  !!args.dryRun || process.env.DRY_RUN || process.env.DRY_RUN === 'true';
 
-const bin = n => resolve(__dirname, '../node_modules/.bin', n);
-const root = n => resolve(__dirname, '..', n);
-
-const p = {
-  lerna: bin('lerna'),
-  eslint: bin('eslint'),
-  jest: bin('jest'),
-  babel: bin('babel'),
-  eslintignore: root('.eslintignore')
-};
-
-const runCmds = (cmds, opts) => {
-  cmds.forEach(c => {
-    log('[cmd]: ', c);
-
-    if (dryRun) {
-      return;
-    }
-    execSync(c, { stdio: 'inherit', ...opts });
-  });
-};
-
-class Commands {
-  release() {
-    cmdLog('----> release');
-
-    const { TRAVIS, TRAVIS_BRANCH, GITHUB_TOKEN } = process.env;
-
-    if (TRAVIS) {
-      invariant(TRAVIS_BRANCH, 'TRAVIS_BRANCH env var must be defined');
-      invariant(GITHUB_TOKEN, 'GITHUB_TOKEN env var must be defined');
-
-      log(
-        '-----> running in TRAVIS - checkout the branch (detached head doesnt work with lerna)'
-      );
-      runCmds([
-        `git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git`,
-        `git checkout ${TRAVIS_BRANCH}`,
-        'git rev-parse --short HEAD'
-      ]);
-    }
-
-    this.build();
-
-    const releaseCmd = `${p.lerna} publish --conventional-commits --yes ${
-      args.next ? '--canary --preid next --dist-tag next' : ''
-    }`;
-
-    runCmds([releaseCmd]);
-  }
-
-  build() {
-    this.clean();
-    this.test();
-    this.lint();
-    this.babel();
-  }
-
-  clean() {
-    runCmds([`${p.lerna} exec -- rm -fr lib`]);
-  }
-
-  lint() {
-    runCmds([
-      `${p.lerna} exec -- ${p.eslint} --ignore-path ${
-        p.eslintignore
-      } --ext .js --ext .jsx src`
-    ]);
-  }
-
-  babel() {
-    runCmds([
-      `${p.lerna} exec -- ${
-        p.babel
-      } --ignore '/__test__/','/__tests__/' src -d lib --copy-files --source-maps`
-    ]);
-  }
-
-  test() {
-    runCmds([`${p.jest}`]);
+class UiCommands extends Commands {
+  constructor(root, args) {
+    super(root, args);
   }
 
   buildDemo() {
     cmdLog('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');
-    runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
+    this.runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
   }
 
   deployDemo() {
     cmdLog('----> deploy-demo');
 
     const dir = resolve(__dirname, '..', 'packages', 'demo', '.out');
-    const token = process.env.NOW_TOKEN;
-    const nowPath = resolve(__dirname, '..', 'node_modules', '.bin', 'now');
-
-    if (!existsSync(dir)) {
-      console.error('dir:', dir, 'does not exist');
-      return;
-    }
-
-    if (!existsSync(nowPath)) {
-      console.error('nowPath:', nowPath, 'does not exist');
-      return;
-    }
-
     const alias = `pie-ui${args.next ? '-next' : ''}`;
-
-    if (dryRun) {
-      log('deploy to now alias: ', alias, 'token:', token);
-      return;
-    }
-    deployToNow(dir, token, alias, nowPath);
+    this.staticToNow(dir, alias);
   }
 }
 
-const cmds = new Commands();
+const cmds = new UiCommands(resolve(__dirname, '..'), args);
 
 const knownActions = args._.filter(a => cmds[a]);
 

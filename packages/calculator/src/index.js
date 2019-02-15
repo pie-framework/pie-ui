@@ -5,7 +5,6 @@ import { CalculatorLayout } from './draggable-calculator';
 
 export { CalculatorLayout };
 
-// calculator?
 export default class Calculator extends HTMLElement {
   constructor() {
     super();

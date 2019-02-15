@@ -8,7 +8,7 @@ const {
   getPkgAndDemo,
   createEntryObject,
   generateMarkupFromData,
-  getBranch,
+  getGitInfo,
   writeIndex,
   getPackages
 } = require('./shared');
@@ -31,7 +31,7 @@ const PORT = args.port || DEFAULT_PORT;
  * 2. reload
  */
 
-const buildApp = (config, pkgAndDemos, branch) => {
+const buildApp = (config, pkgAndDemos, gitInfo) => {
   const app = express();
 
   const compiler = webpack(config);
@@ -51,7 +51,7 @@ const buildApp = (config, pkgAndDemos, branch) => {
 
   app.get('/', (req, res) => {
     res.render('index', {
-      branch,
+      gitInfo,
       packages: pkgAndDemos.map(p => ({ ...p, shortName: basename(p.name) }))
     });
   });
@@ -69,7 +69,7 @@ const buildApp = (config, pkgAndDemos, branch) => {
         : generateMarkupFromData(demo.data, `${name}-el`);
 
       res.render('package-demo', {
-        branch,
+        gitInfo,
         name,
         data: demo.data,
         markup: markup,
@@ -85,14 +85,17 @@ const buildApp = (config, pkgAndDemos, branch) => {
 };
 
 const buildWebpackConfig = () => {
-  const branch = getBranch();
-  log('-> branch', branch);
+  const gitInfo = getGitInfo();
+  log('-> gitInfo', gitInfo);
 
   const packages = getPackages(args.scope ? [args.scope] : undefined);
 
   log('packages:', packages.map(p => p.name));
 
-  const pkgAndDemos = getPkgAndDemo(branch !== 'master' && 'next', packages);
+  const pkgAndDemos = getPkgAndDemo(
+    gitInfo.branch !== 'master' && 'next',
+    packages
+  );
 
   const entry = createEntryObject(OUT_DIR, pkgAndDemos, args.hotReload);
 
@@ -123,13 +126,13 @@ const buildWebpackConfig = () => {
     plugins
   };
 
-  return Promise.resolve({ config, pkgAndDemos, branch });
+  return Promise.resolve({ config, pkgAndDemos, gitInfo });
 };
 
 const run = async () => {
   log('args', args);
-  const { config, pkgAndDemos, branch } = await buildWebpackConfig();
-  const app = buildApp(config, pkgAndDemos, branch);
+  const { config, pkgAndDemos, gitInfo } = await buildWebpackConfig();
+  const app = buildApp(config, pkgAndDemos, gitInfo);
   app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 };
 

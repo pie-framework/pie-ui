@@ -18,9 +18,26 @@ exports.getBranch = () => {
     .trim();
 };
 
+exports.getSha = short => {
+  const cmd = `git rev-parse ${short ? '--short' : ''} HEAD`;
+  log('[getSha] cmd:', cmd);
+
+  return execSync(cmd)
+    .toString()
+    .trim();
+};
+
+exports.getGitInfo = () => {
+  return {
+    branch: exports.getBranch(),
+    sha: exports.getSha(),
+    short: exports.getSha(true)
+  };
+};
+
 exports.getPkgAndDemo = (versionOverride, packages) => {
   packages = packages || exports.getPackages(exports.getDependenciesFromPkg());
-
+  log('packages:', packages);
   return packages.map(pkg => {
     pkg.shortName = basename(pkg.name);
     pkg.version = versionOverride ? versionOverride : pkg.version;

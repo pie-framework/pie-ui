@@ -47,15 +47,20 @@ class Commands {
       );
       runCmds([
         `git remote set-url origin https://${GITHUB_TOKEN}@github.com/pie-framework/pie-ui.git`,
-        `git checkout ${TRAVIS_BRANCH}`
+        `git checkout ${TRAVIS_BRANCH}`,
+        'git rev-parse --short HEAD'
       ]);
     }
+
+    this.clean();
+    this.test();
+    this.build();
 
     const releaseCmd = `${p.lerna} publish --conventional-commits --yes ${
       args.next ? '--canary --preid next --dist-tag next' : ''
     }`;
 
-    runCmds(['npm run clean', 'npm run test', 'npm run build', releaseCmd]);
+    runCmds([releaseCmd]);
   }
 
   build() {

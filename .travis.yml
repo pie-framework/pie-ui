@@ -15,9 +15,9 @@ stages:
 jobs:
   include:
     - stage: travis-release-deploy-next
-      script: 'scripts/build release build-demo deploy-demo --next --dryRun'
+      script: 'scripts/build release buildDemo deployDemo --next --dryRun'
     - stage: travis-release-deploy
-      script: 'scripts/build release build-demo deploy-demo --dryRun'
+      script: 'scripts/build release buildDemo deployDemo --dryRun'
 
 branches:
   only:

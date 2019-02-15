@@ -11,21 +11,33 @@ const log = debug('pie-ui:scripts');
 const cmdLog = debug('pie-ui:scripts:cmd');
 
 const args = minimist(process.argv.slice(2));
-const dryRun = !!args.dryRun;
+const dryRun =
+  !!args.dryRun || process.env.DRY_RUN || process.env.DRY_RUN === 'true';
+
+const bin = n => resolve(__dirname, '../node_modules/.bin', n);
+const root = n => resolve(__dirname, '..', n);
+
+const p = {
+  lerna: bin('lerna'),
+  eslint: bin('eslint'),
+  jest: bin('jest'),
+  babel: bin('babel'),
+  eslintignore: root('.eslintignore')
+};
 
 const runCmds = (cmds, opts) => {
   cmds.forEach(c => {
     log('[cmd]: ', c);
 
-    if (args.dryRun) {
+    if (dryRun) {
       return;
     }
     execSync(c, { stdio: 'inherit', ...opts });
   });
 };
 
-const cmds = {
-  release: () => {
+class Commands {
+  release() {
     cmdLog('----> release');
 
     const { TRAVIS, TRAVIS_BRANCH, GITHUB_TOKEN } = process.env;
@@ -39,18 +51,50 @@ const cmds = {
       ]);
     }
 
-    const releaseCmd = `./node_modules/.bin/lerna publish --conventional-commits --yes ${
+    const releaseCmd = `${lerna} publish --conventional-commits --yes ${
       args.next ? '--canary --preid next --dist-tag next' : ''
     }`;
 
     runCmds(['npm run clean', 'npm run test', 'npm run build', releaseCmd]);
-  },
-  'build-demo': () => {
+  }
+
+  build() {
+    this.clean();
+    this.lint();
+    this.babel();
+  }
+
+  clean() {
+    runCmds([`${p.lerna} exec -- rm -fr lib`]);
+  }
+
+  lint() {
+    runCmds([
+      `${p.lerna} exec -- ${p.eslint} --ignore-path ${
+        p.eslintignore
+      } --ext .js --ext .jsx src`
+    ]);
+  }
+
+  babel() {
+    runCmds([
+      `${p.lerna} exec -- ${
+        p.babel
+      } --ignore '/__test__/','/__tests__/' src -d lib --copy-files --source-maps`
+    ]);
+  }
+
+  test() {
+    runCmds([`${p.jest}`]);
+  }
+
+  buildDemo() {
     cmdLog('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');
     runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
-  },
-  'deploy-demo': () => {
+  }
+
+  deployDemo() {
     cmdLog('----> deploy-demo');
 
     const dir = resolve(__dirname, '..', 'packages', 'demo', '.out');
@@ -75,14 +119,14 @@ const cmds = {
     }
     deployToNow(dir, token, alias, nowPath);
   }
-};
+}
+
+const cmds = new Commands();
 
 const knownActions = args._.filter(a => cmds[a]);
 
 if (knownActions.length !== args._.length) {
-  throw new Error(
-    `unknown actions: ${args._}, supported actions: ${Object.keys(cmds)}`
-  );
+  throw new Error(`unknown actions: ${args._}`);
 }
 
 knownActions.forEach(a => {

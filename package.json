@@ -5,15 +5,15 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "release": "scripts/release",
-    "release:next": "scripts/release next",
-    "lint": "lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/eslint  --ignore-path \\$LERNA_ROOT_PATH/.eslintignore --ext .js --ext .jsx src",
-    "clean": "lerna exec -- rm -fr lib",
-    "build": "npm run clean && npm run lint && lerna exec -- \\$LERNA_ROOT_PATH/node_modules/.bin/babel --ignore '/__test__/','/__tests__/' src -d lib --copy-files --source-maps",
-    "build:demo": "scripts/build-demo",
-    "deploy:demo:next": "scripts/deploy-demo --alias pie-ui-next",
-    "deploy:demo": "scripts/deploy-demo --alias pie-ui"
+    "test": "scripts/build test",
+    "release": "scripts/build release",
+    "release:next": "scripts/build release --next",
+    "lint": "scripts/build lint",
+    "clean": "scripts/build clean",
+    "build": "scripts/build build",
+    "build:demo": "scripts/build buildDemo",
+    "deploy:demo:next": "scripts/build deployDemo --next",
+    "deploy:demo": "scripts/build deployDemo"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",

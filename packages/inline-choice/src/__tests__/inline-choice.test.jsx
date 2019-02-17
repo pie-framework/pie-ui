@@ -56,6 +56,6 @@ describe('inline-choice', () => {
   });
 
   describe('logic', () => {
-    xit('todo');
+    xit('todo', () => {});
   });
 });

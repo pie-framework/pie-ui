@@ -15,24 +15,13 @@ exports[`input snapshot renders 1`] = `
         onClick={[Function]}
       >
         <input
-          aria-describedby={undefined}
           aria-invalid={false}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInputBase-input-56 MuiInput-input-41"
-          defaultValue={undefined}
           disabled={false}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          onKeyDown={undefined}
-          onKeyUp={undefined}
-          placeholder={undefined}
-          readOnly={undefined}
           required={false}
-          rows={undefined}
           type="text"
           value="hi"
         />
@@ -67,24 +56,13 @@ exports[`input snapshot renders alignment 1`] = `
         onClick={[Function]}
       >
         <input
-          aria-describedby={undefined}
           aria-invalid={false}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInputBase-input-154 MuiInput-input-139 RawInput-right-8 RawInput-size4-13"
-          defaultValue={undefined}
           disabled={false}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          onKeyDown={undefined}
-          onKeyUp={undefined}
-          placeholder={undefined}
-          readOnly={undefined}
           required={false}
-          rows={undefined}
           type="text"
           value="hi"
         />
@@ -119,24 +97,13 @@ exports[`input snapshot renders correct feedback 1`] = `
         onClick={[Function]}
       >
         <input
-          aria-describedby={undefined}
           aria-invalid={false}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInputBase-input-94 MuiInput-input-79"
-          defaultValue={undefined}
           disabled={false}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          onKeyDown={undefined}
-          onKeyUp={undefined}
-          placeholder={undefined}
-          readOnly={undefined}
           required={false}
-          rows={undefined}
           type="text"
           value="hi"
         />
@@ -181,24 +148,13 @@ exports[`input snapshot renders disabled 1`] = `
         onClick={[Function]}
       >
         <input
-          aria-describedby={undefined}
           aria-invalid={false}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInputBase-input-124 MuiInput-input-109 MuiInputBase-disabled-117 MuiInput-disabled-104"
-          defaultValue={undefined}
           disabled={true}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          onKeyDown={undefined}
-          onKeyUp={undefined}
-          placeholder={undefined}
-          readOnly={undefined}
           required={false}
-          rows={undefined}
           type="text"
           value="hi"
         />

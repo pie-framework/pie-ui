@@ -9,7 +9,7 @@ exports[`main snapshot renders 1`] = `
       }
     }
   />
-  <Component
+  <_default
     onToggle={[Function]}
     toggled={false}
   />
@@ -47,7 +47,7 @@ exports[`main snapshot renders showCorrect 1`] = `
       }
     }
   />
-  <Component
+  <_default
     onToggle={[Function]}
     toggled={false}
   />

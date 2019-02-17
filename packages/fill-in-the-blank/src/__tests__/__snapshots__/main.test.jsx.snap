@@ -4,7 +4,7 @@ exports[`Main snapshot renders 1`] = `
 <[object Object]
   value="1"
 >
-  <Component
+  <_default
     onToggle={[Function]}
     show={false}
     toggled={false}

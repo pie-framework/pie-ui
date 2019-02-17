@@ -14,15 +14,6 @@ class UiCommands extends Commands {
     super(root, args);
   }
 
-  babel() {
-    console.log('>> babel override for babel 7');
-    this.runCmds([
-      `${this.p.lerna} exec -- ${
-        this.p.babel
-      } --ignore '**/__test__/**','**/__tests__/**' src -d lib --copy-files --source-maps --root-mode upward`
-    ]);
-  }
-
   buildDemo() {
     cmdLog('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');

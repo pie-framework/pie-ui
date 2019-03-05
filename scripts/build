@@ -2,12 +2,81 @@
 /* eslint-disable no-console */
 
 const { Commands } = require('@pie-framework/build-helper');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
 const minimist = require('minimist');
 const debug = require('debug');
 const cmdLog = debug('pie-ui:scripts:cmd');
-
+const { readdirSync, readJsonSync, writeFileSync } = require('fs-extra');
+const { Writable } = require('stream');
 const args = minimist(process.argv.slice(2));
+
+var conventionalChangelog = require('conventional-changelog');
+
+const getPackages = () => {
+  const parent = resolve(__dirname, '../packages');
+  const pkgs = readdirSync(parent);
+  return pkgs.map(p => {
+    const dir = join(parent, p);
+    return {
+      dir,
+      pkg: readJsonSync(join(dir, 'package.json'))
+    };
+  });
+};
+
+class StringWritable extends Writable {
+  constructor(done) {
+    super();
+    this.done = done;
+    this.parts = [];
+  }
+
+  _write(chunk, enc, next) {
+    this.parts.push(chunk);
+    next();
+  }
+  end() {
+    this.done(null, this.parts.join(''));
+  }
+}
+
+const getChangelog = pk => {
+  return new Promise((resolve, reject) => {
+    const ws = new StringWritable((err, s) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(s);
+      }
+    });
+
+    conventionalChangelog({
+      preset: 'angular',
+      pkg: {
+        path: pk.dir
+      },
+      outputUnreleased: true,
+      lernaPackage: pk.pkg.name,
+      releaseCount: 1
+    }).pipe(ws); // or any writable stream
+  });
+};
+
+const buildNextChangelogs = async () => {
+  const packages = getPackages();
+  const promises = packages.map(async p => {
+    console.log('next changelog for : ', p.dir);
+    const changelog = await getChangelog(p);
+    return { ...p, changelog };
+  });
+
+  const results = await Promise.all(promises);
+  results.forEach(r => {
+    writeFileSync(join(r.dir, 'NEXT.CHANGELOG.md'), r.changelog, 'utf8');
+  });
+
+  return results;
+};
 
 class UiCommands extends Commands {
   constructor(root, args) {
@@ -17,7 +86,16 @@ class UiCommands extends Commands {
   buildDemo() {
     cmdLog('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');
-    this.runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
+    return this.runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
+  }
+
+  beforePublish() {
+    if (this.args.next) {
+      console.log('do stuff...');
+      return buildNextChangelogs();
+    } else {
+      return Promise.resolve(undefined);
+    }
   }
 
   deployDemo() {
@@ -25,22 +103,17 @@ class UiCommands extends Commands {
 
     const dir = resolve(__dirname, '..', 'packages', 'demo', '.out');
     const alias = `pie-ui${args.next ? '-next' : ''}`;
-    this.staticToNow(dir, alias);
+    return this.staticToNow(dir, alias);
   }
 }
 
 const cmds = new UiCommands(resolve(__dirname, '..'), args);
 
-const knownActions = args._.filter(a => cmds[a]);
-
-if (knownActions.length !== args._.length) {
-  throw new Error(`unknown actions: ${args._}`);
-}
-
-knownActions.forEach(a => {
-  const fn = cmds[a];
-  if (!fn) {
-    throw new Error('unknown action:', a);
-  }
-  cmds[a]();
-});
+cmds
+  .execute()
+  .then(() => {
+    console.log('all done');
+  })
+  .catch(e => {
+    console.error(e);
+  });

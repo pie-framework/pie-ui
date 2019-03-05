@@ -1,11 +1,21 @@
-var conventionalChangelog = require('conventional-changelog');
+const minimist = require('minimist');
+const {
+  getUnreleasedChangelog,
+  getPackages
+} = require('@pie-framework/build-helper');
+var args = minimist(process.argv.slice(2));
 const { resolve } = require('path');
-conventionalChangelog({
-  preset: 'angular',
-  pkg: {
-    path: resolve(__dirname, '../packages/calculator')
-  },
-  outputUnreleased: true,
-  lernaPackage: '@pie-ui/calculator',
-  releaseCount: 1
-}).pipe(process.stdout); // or any writable stream
+
+if (args.pkg) {
+  const packages = getPackages(resolve(__dirname, '..', 'packages'));
+
+  const pk = packages.find(pk => pk.dir.endsWith(args.pkg));
+  getUnreleasedChangelog(pk)
+    .then(cl => {
+      console.log('cl:');
+      console.log(cl);
+    })
+    .catch(e => {
+      console.error(e);
+    });
+}

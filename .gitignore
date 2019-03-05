@@ -7,3 +7,4 @@ lerna-debug.log
 **/.pie
 package-lock.json
 .npmrc
+NEXT.CHANGELOG.md

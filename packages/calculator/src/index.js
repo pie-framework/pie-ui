@@ -4,7 +4,6 @@ import Main from './main';
 import { CalculatorLayout } from './draggable-calculator';
 
 export { CalculatorLayout };
-// foo
 export default class Calculator extends HTMLElement {
   constructor() {
     super();

@@ -7,10 +7,6 @@ const minimist = require('minimist');
 const debug = require('debug');
 const cmdLog = debug('pie-ui:scripts:cmd');
 const args = minimist(process.argv.slice(2));
-const {
-  buildNextChangelogs,
-  rmNextChangelogs
-} = require('@pie-framework/build-helper');
 
 class UiCommands extends Commands {
   constructor(root, args) {
@@ -21,17 +17,6 @@ class UiCommands extends Commands {
     cmdLog('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');
     return this.runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
-  }
-
-  async beforePublish() {
-    if (this.args.next) {
-      console.log('do stuff...');
-      const dir = resolve(__dirname, '..', 'packages');
-      await rmNextChangelogs(dir);
-      return buildNextChangelogs(dir);
-    } else {
-      return Promise.resolve(undefined);
-    }
   }
 
   deployDemo() {

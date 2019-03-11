@@ -35,18 +35,36 @@ exports.getGitInfo = () => {
   };
 };
 
+exports.loadChangelog = (dir, name) => {
+  try {
+    return readFileSync(join(dir, name), 'utf8');
+  } catch (e) {
+    console.log('error reading changelog:', e.message);
+    return undefined;
+  }
+};
+
 exports.getPkgAndDemo = (versionOverride, packages) => {
   packages = packages || exports.getPackages(exports.getDependenciesFromPkg());
   log('packages:', packages);
   return packages.map(pkg => {
     pkg.shortName = basename(pkg.name);
     pkg.version = versionOverride ? versionOverride : pkg.version;
-    const { markup, data } = exports.loadDemo(dirname(pkg._path));
+    const dir = dirname(pkg._path);
+    const { markup, data } = exports.loadDemo(dir);
+    const changelog = exports.loadChangelog(dir, 'CHANGELOG.md');
+    const nextChangelog = exports.loadChangelog(dir, 'NEXT.CHANGELOG.md');
+    log('changelog', changelog);
+    log('nextChangelog', nextChangelog);
     pkg.demo = {
       tagName: exports.getElementNameFromDemo(data),
       data,
       markup
     };
+
+    pkg.changelog = changelog;
+    pkg.nextChangelog = nextChangelog;
+
     return pkg;
   });
 };

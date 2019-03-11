@@ -5,7 +5,7 @@ const { Commands } = require('@pie-framework/build-helper');
 const { resolve } = require('path');
 const minimist = require('minimist');
 const debug = require('debug');
-const cmdLog = debug('pie-ui:scripts:cmd');
+const log = debug('pie-ui:scripts:cmd');
 const args = minimist(process.argv.slice(2));
 
 class UiCommands extends Commands {
@@ -14,17 +14,23 @@ class UiCommands extends Commands {
   }
 
   buildDemo() {
-    cmdLog('----> build-demo');
+    log('----> build-demo');
     const demoDir = resolve(__dirname, '../packages/demo');
     return this.runCmds(['rm -rf .out', 'node src/build.js'], { cwd: demoDir });
   }
 
   deployDemo() {
-    cmdLog('----> deploy-demo');
+    log('----> deploy-demo');
 
     const dir = resolve(__dirname, '..', 'packages', 'demo', '.out');
     const alias = `pie-ui${args.next ? '-next' : ''}`;
     return this.staticToNow(dir, alias);
+  }
+  /**
+   * Don't remove the next.changelogs
+   */
+  afterPublish() {
+    return Promise.resolve(undefined);
   }
 }
 

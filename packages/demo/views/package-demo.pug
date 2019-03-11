@@ -3,7 +3,7 @@ html
   head 
     meta(charset="utf-8")
     link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
-
+    script(src="//unpkg.com/showdown@1.9.0/dist/showdown.min.js")
     script(src="/assets/index.js", charset="utf-8")
     style. 
 
@@ -17,18 +17,42 @@ html
         font-family: 'Roboto', sans-serif;
       }
       a {
-        display: block;
+        display: inline;
       }
+      .holder{
+        display: flex;
+        position: relative;
+        top: 50px;
+        padding: 30px;
 
+      }
       .content{
         position: relative;
         top: 50px;
         padding: 30px;
       }
 
+      .element {
+        flex: 0.5 0 auto;
+      }
+
+      .changelog-holder {
+        flex: 0 1 auto;
+      }
+
     script(src=`/assets/${name}.js`, charset="utf-8")
 
     script(type="text/javascript", charset="utf-8"). 
+
+
+      function renderChangelog(el) {
+
+        if(el.textContent !== '') {
+          var converter = new showdown.Converter();
+          var html      = converter.makeHtml(el.textContent);
+          el.innerHTML = html;
+        }
+      }
 
       document.addEventListener("DOMContentLoaded", () => {
 
@@ -47,10 +71,21 @@ html
             console.error('no data?', data);
           }
 
-        })
-      })
+        });
+        renderChangelog( document.querySelector('.next-changelog'));
+        renderChangelog( document.querySelector('.changelog'));
+      });
   body 
     +top_bar(gitInfo, name, pkg.version)
-    div.content
-    
-      | !{markup}
+    div.holder
+      div.element
+        | !{markup}
+
+      div.changelog-holder
+        h2 Next Changelog
+        div.next-changelog
+          | !{nextChangelog}
+        hr/
+        div.changelog
+          | !{changelog}
+

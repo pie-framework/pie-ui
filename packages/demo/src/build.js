@@ -1,6 +1,6 @@
 const debug = require('debug');
 const log = debug('pie-ui:demo:build');
-
+const fs = require('fs-extra');
 log('build static site...');
 const pug = require('pug');
 const webpack = require('webpack');
@@ -34,7 +34,9 @@ const buildPackagePage = (pd, gitInfo) => {
     data: demo.data,
     markup: demo.markup,
     pkg,
-    tagName: demo.tagName
+    tagName: demo.tagName,
+    changelog: pkg.changelog,
+    nextChangelog: pkg.nextChangelog
   };
   const out = packageRender(opts);
   writeFileSync(resolve(outDir, `${basename(pkg.name)}.html`), out, 'utf8');

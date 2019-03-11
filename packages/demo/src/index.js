@@ -74,7 +74,9 @@ const buildApp = (config, pkgAndDemos, gitInfo) => {
         data: demo.data,
         markup: markup,
         pkg,
-        tagName: demo.tagName
+        tagName: demo.tagName,
+        changelog: pkg.changelog,
+        nextChangelog: pkg.nextChangelog
       });
     } catch (e) {
       console.error(e);

@@ -1,6 +1,5 @@
 const debug = require('debug');
 const log = debug('pie-ui:demo:build');
-const fs = require('fs-extra');
 log('build static site...');
 const pug = require('pug');
 const webpack = require('webpack');

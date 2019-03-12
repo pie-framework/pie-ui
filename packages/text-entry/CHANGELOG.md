@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.5.0 (2019-03-12)
+
+
+### Features
+
+* upgrade to latest babel ([ff89bbe](https://github.com/pie-framework/pie-ui/commit/ff89bbe))
+
+
+
+
+
 ## [3.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.4.0...@pie-ui/text-entry@3.4.1) (2019-02-08)
 
 

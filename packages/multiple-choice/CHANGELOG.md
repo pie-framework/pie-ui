@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.7.0 (2019-03-12)
+
+
+### Features
+
+* upgrade to latest babel ([ff89bbe](https://github.com/pie-framework/pie-elements/commit/ff89bbe))
+
+
+
+
+
 # [4.6.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.5.2...@pie-ui/multiple-choice@4.6.0) (2019-02-14)
 
 

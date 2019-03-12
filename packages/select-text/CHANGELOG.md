@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.5.0 (2019-03-12)
+
+
+### Features
+
+* upgrade to latest babel ([ff89bbe](https://github.com/pie-framework/pie-ui/commit/ff89bbe))
+
+
+
+
+
 ## [1.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.4.0...@pie-ui/select-text@1.4.1) (2019-02-14)
 
 **Note:** Version bump only for package @pie-ui/select-text

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.3.6...@pie-ui/calculator@3.3.7) (2019-03-12)
+
+
+### Bug Fixes
+
+* add foo ([69ff446](https://github.com/pie-framework/pie-ui/commit/69ff446))
+* foo bar ([76e51be](https://github.com/pie-framework/pie-ui/commit/76e51be))
+* foo bar fix ([5c0cf0e](https://github.com/pie-framework/pie-ui/commit/5c0cf0e))
+* foo bar test ([f16c4e7](https://github.com/pie-framework/pie-ui/commit/f16c4e7))
+* rm foo bar ([d1078ce](https://github.com/pie-framework/pie-ui/commit/d1078ce))
+* rm git head from package ([ba75185](https://github.com/pie-framework/pie-ui/commit/ba75185))
+
+
+
+
+
 ## [3.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/calculator@3.3.4...@pie-ui/calculator@3.3.6) (2019-02-15)
 
 

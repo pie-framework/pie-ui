@@ -9,13 +9,17 @@ before_install:
 
 stages:
   - name: travis-release-deploy-next
-    if: branch = develop
+    if: branch = develop AND type != pull_request
+  - name: travis-test
+    if: branch = develop AND type = pull_request
   - name: travis-release-deploy
     if: branch = master
 jobs:
   include:
     - stage: travis-release-deploy-next
       script: 'scripts/build release buildDemo deployDemo --next'
+    - stage: travis-test
+      script: 'scripts/build test'
     - stage: travis-release-deploy
       script: 'scripts/build release buildDemo deployDemo'
 

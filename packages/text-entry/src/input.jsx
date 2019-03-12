@@ -86,7 +86,7 @@ class RawInput extends React.Component {
                 }}
                 value={value}
                 onChange={onChange}
-                inputComponent={inputComponent ? inputComponent : () => { return null; }}
+                inputComponent={inputComponent === null ? undefined : inputComponent}
                 inputProps={inputProps}
               />
             </MuiThemeProvider>

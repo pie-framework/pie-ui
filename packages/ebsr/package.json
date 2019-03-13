@@ -1,0 +1,17 @@
+{
+  "name": "@pie-ui/ebsr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

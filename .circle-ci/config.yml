@@ -1,0 +1,70 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:11.10.0
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - one:
+        name: one
+        command: echo one
+#       # Download and cache dependencies
+#       - restore_cache:
+#           keys:
+#             - v1-dependencies-{{ checksum "package.json" }}
+#             # fallback to using the latest cache if no exact match is found
+#             - v1-dependencies-
+
+#       - run: yarn install
+
+#       - save_cache:
+#           paths:
+#             - node_modules
+#           key: v1-dependencies-{{ checksum "package.json" }}
+
+#       # run tests!
+#       - run:
+#           name: Running Tests
+#           command: yarn test
+
+#       - run:
+#           name: Running Lint
+#           command: yarn lint
+
+#   releaseNext:
+#     <<: *defaults
+#     branches:
+#       only:
+#         - develop
+#     steps:
+#       - attach_workspace:
+#           at: ~/repo
+#       - run:
+#           name: Authenticate with registry
+#           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+#       - run:
+#           name: Release Next
+#           command: npm run release:next
+
+# workflows:
+#   version: 2
+#   nightly:
+#     triggers:
+#       - schedule:
+#           cron: '0 0 * * *'
+#           filters:
+#             branches:
+#               only:
+#                 - develop
+#     jobs:
+#       - releaseNext

@@ -42,6 +42,7 @@ jobs:
       # - run: yarn test
       - run: echo one
       - run: echo two
+      - run: echo three
 #
 # version: 2
 

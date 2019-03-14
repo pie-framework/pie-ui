@@ -15,7 +15,7 @@ stages:
 jobs:
   include:
     - stage: travis-release-deploy-next
-      script: 'scripts/build release buildDemo deployDemo --next'
+      script: 'scripts/build release buildDemo deployDemo --next --skipForcePublish'
     - stage: travis-test
       script: 'scripts/build test'
     - stage: travis-release-deploy

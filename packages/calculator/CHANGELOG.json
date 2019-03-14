@@ -398,5 +398,20 @@
     "committerDate": "2018-03-29 12:46:18 -0400",
     "isTagged": true,
     "earliestTag": "@pie-ui/calculator@1.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rm foo comment",
+    "merge": null,
+    "header": "fix: rm foo comment",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c93cf1b5b7c01e26263ddef892753a9504758a93",
+    "gitTags": "",
+    "committerDate": "2019-03-14 16:35:10 +0000",
+    "isTagged": true,
+    "earliestTag": "@pie-ui/calculator@3.3.8"
   }
 ]

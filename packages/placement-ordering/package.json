@@ -11,7 +11,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest"
+    "prepack": "../../scripts/build changelog --scope placement-ordering"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",

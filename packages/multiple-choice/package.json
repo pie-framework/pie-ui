@@ -15,7 +15,7 @@
   },
   "license": "ISC",
   "scripts": {
-    "test": "./node_modules/.bin/jest"
+    "prepack": "../../scripts/build changelog --scope multiple-choice"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",

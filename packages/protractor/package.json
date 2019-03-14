@@ -10,7 +10,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "prepack": "../../scripts/build changelog --scope protractor"
+  },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/tools": "^0.8.1",

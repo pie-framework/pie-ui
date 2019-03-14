@@ -17,5 +17,8 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-draggable": "^3.0.5"
+  },
+  "scripts": {
+    "prepack": "../../scripts/build changelog --scope calculator"
   }
 }

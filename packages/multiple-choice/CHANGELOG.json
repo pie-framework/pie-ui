@@ -12,7 +12,7 @@
     "gitTags": " (feature/babel-7)",
     "committerDate": "2019-02-17 22:57:13 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.7.0"
+    "tag": "@pie-ui/multiple-choice@4.7.0"
   },
   {
     "type": "feat",
@@ -27,7 +27,7 @@
     "gitTags": "",
     "committerDate": "2019-02-13 20:31:28 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.6.0"
+    "tag": "@pie-ui/multiple-choice@4.6.0"
   },
   {
     "type": "chore",
@@ -42,7 +42,7 @@
     "gitTags": "",
     "committerDate": "2019-02-11 16:04:16 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.2"
+    "tag": "@pie-ui/multiple-choice@4.5.2"
   },
   {
     "type": "chore",
@@ -57,7 +57,7 @@
     "gitTags": "",
     "committerDate": "2019-02-11 13:44:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.2"
+    "tag": "@pie-ui/multiple-choice@4.5.2"
   },
   {
     "type": "chore",
@@ -72,7 +72,7 @@
     "gitTags": "",
     "committerDate": "2019-02-11 12:29:23 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.2"
+    "tag": "@pie-ui/multiple-choice@4.5.2"
   },
   {
     "type": "fix",
@@ -87,7 +87,7 @@
     "gitTags": "",
     "committerDate": "2019-02-08 10:23:00 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.1"
+    "tag": "@pie-ui/multiple-choice@4.5.1"
   },
   {
     "type": "feat",
@@ -102,7 +102,7 @@
     "gitTags": "",
     "committerDate": "2019-02-07 19:20:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "fix",
@@ -117,7 +117,7 @@
     "gitTags": "",
     "committerDate": "2019-01-11 20:00:58 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "fix",
@@ -132,7 +132,7 @@
     "gitTags": "",
     "committerDate": "2019-01-11 19:59:19 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "feat",
@@ -147,7 +147,7 @@
     "gitTags": "",
     "committerDate": "2019-01-11 19:44:04 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "feat",
@@ -162,7 +162,7 @@
     "gitTags": " (origin/feat/multiple-choice-with-layout)",
     "committerDate": "2019-01-08 11:45:27 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "feat",
@@ -177,7 +177,7 @@
     "gitTags": "",
     "committerDate": "2019-01-08 11:15:18 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.5.0"
+    "tag": "@pie-ui/multiple-choice@4.5.0"
   },
   {
     "type": "fix",
@@ -192,7 +192,7 @@
     "gitTags": " (origin/issue4/multiple-choice-partial-not-clear)",
     "committerDate": "2018-12-04 14:03:56 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.4.0"
+    "tag": "@pie-ui/multiple-choice@4.4.0"
   },
   {
     "type": "fix",
@@ -207,7 +207,7 @@
     "gitTags": "",
     "committerDate": "2018-12-04 13:59:38 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.4.0"
+    "tag": "@pie-ui/multiple-choice@4.4.0"
   },
   {
     "type": "feat",
@@ -222,7 +222,7 @@
     "gitTags": "",
     "committerDate": "2018-11-30 10:44:10 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.4.0"
+    "tag": "@pie-ui/multiple-choice@4.4.0"
   },
   {
     "type": "fix",
@@ -237,7 +237,7 @@
     "gitTags": "",
     "committerDate": "2018-11-09 16:43:33 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.3.2"
+    "tag": "@pie-ui/multiple-choice@4.3.2"
   },
   {
     "type": "fix",
@@ -252,7 +252,7 @@
     "gitTags": "",
     "committerDate": "2018-09-13 21:56:23 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.3.1"
+    "tag": "@pie-ui/multiple-choice@4.3.1"
   },
   {
     "type": "feat",
@@ -267,7 +267,7 @@
     "gitTags": "",
     "committerDate": "2018-09-13 19:33:21 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.3.0"
+    "tag": "@pie-ui/multiple-choice@4.3.0"
   },
   {
     "type": "fix",
@@ -282,7 +282,7 @@
     "gitTags": "",
     "committerDate": "2018-09-12 14:55:33 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.2.2"
+    "tag": "@pie-ui/multiple-choice@4.2.2"
   },
   {
     "type": "fix",
@@ -297,7 +297,7 @@
     "gitTags": "",
     "committerDate": "2018-08-10 12:19:20 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.2.1"
+    "tag": "@pie-ui/multiple-choice@4.2.1"
   },
   {
     "type": "feat",
@@ -312,7 +312,7 @@
     "gitTags": " (origin/feature/add-player-utils)",
     "committerDate": "2018-08-08 15:24:08 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.2.0"
+    "tag": "@pie-ui/multiple-choice@4.2.0"
   },
   {
     "type": "feat",
@@ -327,7 +327,7 @@
     "gitTags": "",
     "committerDate": "2018-05-15 22:26:01 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.1.0"
+    "tag": "@pie-ui/multiple-choice@4.1.0"
   },
   {
     "type": "chore",
@@ -342,7 +342,7 @@
     "gitTags": "",
     "committerDate": "2018-05-02 20:56:27 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.0.1"
+    "tag": "@pie-ui/multiple-choice@4.0.1"
   },
   {
     "type": "feat",
@@ -362,7 +362,7 @@
     "gitTags": "",
     "committerDate": "2018-05-02 14:38:44 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@4.0.0"
+    "tag": "@pie-ui/multiple-choice@4.0.0"
   },
   {
     "type": "fix",
@@ -377,7 +377,7 @@
     "gitTags": "",
     "committerDate": "2018-04-24 12:33:31 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.2"
+    "tag": "@pie-ui/multiple-choice@3.0.2"
   },
   {
     "type": "fix",
@@ -392,7 +392,7 @@
     "gitTags": "",
     "committerDate": "2018-04-24 12:32:46 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.2"
+    "tag": "@pie-ui/multiple-choice@3.0.2"
   },
   {
     "type": "fix",
@@ -407,7 +407,7 @@
     "gitTags": "",
     "committerDate": "2018-04-24 12:32:17 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.2"
+    "tag": "@pie-ui/multiple-choice@3.0.2"
   },
   {
     "type": "fix",
@@ -422,7 +422,7 @@
     "gitTags": "",
     "committerDate": "2018-04-24 11:24:08 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.1"
+    "tag": "@pie-ui/multiple-choice@3.0.1"
   },
   {
     "type": "fix",
@@ -437,7 +437,7 @@
     "gitTags": "",
     "committerDate": "2018-04-24 09:37:37 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.1"
+    "tag": "@pie-ui/multiple-choice@3.0.1"
   },
   {
     "type": "chore",
@@ -452,7 +452,7 @@
     "gitTags": "",
     "committerDate": "2018-04-17 12:38:08 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.0"
+    "tag": "@pie-ui/multiple-choice@3.0.0"
   },
   {
     "type": "fix",
@@ -472,7 +472,7 @@
     "gitTags": "",
     "committerDate": "2018-04-16 15:11:16 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@3.0.0"
+    "tag": "@pie-ui/multiple-choice@3.0.0"
   },
   {
     "type": "fix",
@@ -487,7 +487,7 @@
     "gitTags": "",
     "committerDate": "2018-03-06 14:03:15 -0500",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@2.0.1"
+    "tag": "@pie-ui/multiple-choice@2.0.1"
   },
   {
     "type": "fix",
@@ -502,6 +502,6 @@
     "gitTags": "",
     "committerDate": "2018-03-06 13:57:44 -0500",
     "isTagged": true,
-    "earliestTag": "@pie-ui/multiple-choice@2.0.1"
+    "tag": "@pie-ui/multiple-choice@2.0.1"
   }
 ]

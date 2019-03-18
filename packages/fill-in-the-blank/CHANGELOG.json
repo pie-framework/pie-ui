@@ -12,7 +12,7 @@
     "gitTags": " (feature/babel-7)",
     "committerDate": "2019-02-17 22:57:13 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.3.0"
+    "tag": "@pie-ui/fill-in-the-blank@1.3.0"
   },
   {
     "type": "fix",
@@ -27,7 +27,7 @@
     "gitTags": "",
     "committerDate": "2019-02-08 10:23:00 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.2.1"
+    "tag": "@pie-ui/fill-in-the-blank@1.2.1"
   },
   {
     "type": "feat",
@@ -42,7 +42,7 @@
     "gitTags": "",
     "committerDate": "2019-02-07 19:20:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.2.0"
+    "tag": "@pie-ui/fill-in-the-blank@1.2.0"
   },
   {
     "type": "fix",
@@ -57,7 +57,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:35:34 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.7"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.7"
   },
   {
     "type": "fix",
@@ -72,7 +72,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:29:46 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.7"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.7"
   },
   {
     "type": "fix",
@@ -87,7 +87,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:24:15 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.7"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.7"
   },
   {
     "type": "fix",
@@ -102,7 +102,7 @@
     "gitTags": " (origin/fix/placement-ordering-drag-context-fix)",
     "committerDate": "2018-07-18 10:14:53 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.7"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.7"
   },
   {
     "type": "fix",
@@ -117,7 +117,7 @@
     "gitTags": "",
     "committerDate": "2018-05-31 09:55:53 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.1"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.1"
   },
   {
     "type": "feat",
@@ -132,6 +132,6 @@
     "gitTags": " (origin/feature/fill-in-the-blank)",
     "committerDate": "2018-05-31 09:38:26 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/fill-in-the-blank@1.1.0"
+    "tag": "@pie-ui/fill-in-the-blank@1.1.0"
   }
 ]

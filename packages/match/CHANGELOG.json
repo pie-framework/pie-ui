@@ -12,7 +12,7 @@
     "gitTags": "",
     "committerDate": "2019-02-08 10:23:00 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.2.1"
+    "tag": "@pie-ui/match@1.2.1"
   },
   {
     "type": "feat",
@@ -27,7 +27,7 @@
     "gitTags": "",
     "committerDate": "2019-02-07 19:20:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.2.0"
+    "tag": "@pie-ui/match@1.2.0"
   },
   {
     "type": "fix",
@@ -42,7 +42,7 @@
     "gitTags": "",
     "committerDate": "2018-11-09 16:43:33 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.1.2"
+    "tag": "@pie-ui/match@1.1.2"
   },
   {
     "type": "fix",
@@ -57,7 +57,7 @@
     "gitTags": "",
     "committerDate": "2018-10-19 15:35:11 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.1.1"
+    "tag": "@pie-ui/match@1.1.1"
   },
   {
     "type": "feat",
@@ -72,7 +72,7 @@
     "gitTags": " (origin/ch467/author-can-reorder-rows)",
     "committerDate": "2018-10-17 16:18:24 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.1.0"
+    "tag": "@pie-ui/match@1.1.0"
   },
   {
     "type": "feature",
@@ -87,7 +87,7 @@
     "gitTags": "",
     "committerDate": "2018-06-30 14:12:18 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -102,7 +102,7 @@
     "gitTags": "",
     "committerDate": "2018-06-27 13:01:41 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -117,7 +117,7 @@
     "gitTags": "",
     "committerDate": "2018-06-25 13:17:38 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -132,7 +132,7 @@
     "gitTags": "",
     "committerDate": "2018-06-25 13:17:07 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -147,7 +147,7 @@
     "gitTags": "",
     "committerDate": "2018-06-21 17:50:26 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -162,7 +162,7 @@
     "gitTags": "",
     "committerDate": "2018-06-21 15:00:44 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -177,7 +177,7 @@
     "gitTags": "",
     "committerDate": "2018-06-21 15:00:12 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   },
   {
     "type": "feature",
@@ -192,6 +192,6 @@
     "gitTags": "",
     "committerDate": "2018-06-20 16:22:28 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/match@1.0.5"
+    "tag": "@pie-ui/match@1.0.5"
   }
 ]

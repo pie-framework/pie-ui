@@ -12,7 +12,7 @@
     "gitTags": " (feature/babel-7)",
     "committerDate": "2019-02-17 22:57:13 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.9.0"
+    "tag": "@pie-ui/categorize@0.9.0"
   },
   {
     "type": "fix",
@@ -27,7 +27,7 @@
     "gitTags": "",
     "committerDate": "2019-02-08 10:23:00 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.8.1"
+    "tag": "@pie-ui/categorize@0.8.1"
   },
   {
     "type": "feat",
@@ -42,7 +42,7 @@
     "gitTags": "",
     "committerDate": "2019-02-07 19:20:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.8.0"
+    "tag": "@pie-ui/categorize@0.8.0"
   },
   {
     "type": "fix",
@@ -57,7 +57,7 @@
     "gitTags": "",
     "committerDate": "2018-12-10 16:17:42 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.8.0"
+    "tag": "@pie-ui/categorize@0.8.0"
   },
   {
     "type": "fix",
@@ -72,7 +72,7 @@
     "gitTags": "",
     "committerDate": "2018-12-10 13:41:40 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.8.0"
+    "tag": "@pie-ui/categorize@0.8.0"
   },
   {
     "type": "fix",
@@ -87,7 +87,7 @@
     "gitTags": " (origin/fix/categorize-math-rendering, fix/categorize-math-rendering)",
     "committerDate": "2018-12-07 18:54:18 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.8.0"
+    "tag": "@pie-ui/categorize@0.8.0"
   },
   {
     "type": "fix",
@@ -102,7 +102,7 @@
     "gitTags": " (origin/issue76/categorize-add-feedback)",
     "committerDate": "2018-11-12 14:08:59 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.5"
+    "tag": "@pie-ui/categorize@0.7.5"
   },
   {
     "type": "fix",
@@ -117,7 +117,7 @@
     "gitTags": " (origin/fix/added-dependencies-where-needed)",
     "committerDate": "2018-11-09 17:34:48 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.4"
+    "tag": "@pie-ui/categorize@0.7.4"
   },
   {
     "type": "fix",
@@ -132,7 +132,7 @@
     "gitTags": "",
     "committerDate": "2018-11-09 17:33:15 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.5"
+    "tag": "@pie-ui/categorize@0.7.5"
   },
   {
     "type": "fix",
@@ -147,7 +147,7 @@
     "gitTags": "",
     "committerDate": "2018-11-09 16:43:33 +0200",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.4"
+    "tag": "@pie-ui/categorize@0.7.4"
   },
   {
     "type": "fix",
@@ -162,7 +162,7 @@
     "gitTags": "",
     "committerDate": "2018-10-23 13:41:52 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.3"
+    "tag": "@pie-ui/categorize@0.7.3"
   },
   {
     "type": "chore",
@@ -177,7 +177,7 @@
     "gitTags": "",
     "committerDate": "2018-10-15 11:11:09 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.2"
+    "tag": "@pie-ui/categorize@0.7.2"
   },
   {
     "type": "fix",
@@ -192,7 +192,7 @@
     "gitTags": "",
     "committerDate": "2018-10-12 12:33:35 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.2"
+    "tag": "@pie-ui/categorize@0.7.2"
   },
   {
     "type": "fix",
@@ -207,7 +207,7 @@
     "gitTags": "",
     "committerDate": "2018-10-12 10:33:03 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.2"
+    "tag": "@pie-ui/categorize@0.7.2"
   },
   {
     "type": "fix",
@@ -222,7 +222,7 @@
     "gitTags": "",
     "committerDate": "2018-09-13 21:56:23 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.1"
+    "tag": "@pie-ui/categorize@0.7.1"
   },
   {
     "type": "feat",
@@ -237,7 +237,7 @@
     "gitTags": "",
     "committerDate": "2018-09-13 19:33:21 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.7.0"
+    "tag": "@pie-ui/categorize@0.7.0"
   },
   {
     "type": "fix",
@@ -252,7 +252,7 @@
     "gitTags": "",
     "committerDate": "2018-09-12 15:04:40 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.6.3"
+    "tag": "@pie-ui/categorize@0.6.3"
   },
   {
     "type": "fix",
@@ -267,7 +267,7 @@
     "gitTags": "",
     "committerDate": "2018-09-12 14:55:33 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.6.3"
+    "tag": "@pie-ui/categorize@0.6.3"
   },
   {
     "type": "fix",
@@ -282,7 +282,7 @@
     "gitTags": "",
     "committerDate": "2018-09-07 15:37:47 +0100",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.6.2"
+    "tag": "@pie-ui/categorize@0.6.2"
   },
   {
     "type": "fix",
@@ -297,7 +297,7 @@
     "gitTags": "",
     "committerDate": "2018-08-10 12:19:20 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.6.1"
+    "tag": "@pie-ui/categorize@0.6.1"
   },
   {
     "type": "feat",
@@ -312,7 +312,7 @@
     "gitTags": "",
     "committerDate": "2018-08-08 17:21:01 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.6.0"
+    "tag": "@pie-ui/categorize@0.6.0"
   },
   {
     "type": "feat",
@@ -327,7 +327,7 @@
     "gitTags": " (origin/feature/add-player-utils)",
     "committerDate": "2018-08-08 15:24:08 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.5.0"
+    "tag": "@pie-ui/categorize@0.5.0"
   },
   {
     "type": "feat",
@@ -342,7 +342,7 @@
     "gitTags": "",
     "committerDate": "2018-08-08 14:35:43 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.4.0"
+    "tag": "@pie-ui/categorize@0.4.0"
   },
   {
     "type": "feat",
@@ -357,7 +357,7 @@
     "gitTags": "",
     "committerDate": "2018-08-08 14:34:36 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.4.0"
+    "tag": "@pie-ui/categorize@0.4.0"
   },
   {
     "type": "fix",
@@ -372,7 +372,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:35:34 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.6"
+    "tag": "@pie-ui/categorize@0.3.6"
   },
   {
     "type": "fix",
@@ -387,7 +387,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:29:46 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.6"
+    "tag": "@pie-ui/categorize@0.3.6"
   },
   {
     "type": "fix",
@@ -402,7 +402,7 @@
     "gitTags": "",
     "committerDate": "2018-07-18 10:24:15 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.6"
+    "tag": "@pie-ui/categorize@0.3.6"
   },
   {
     "type": "fix",
@@ -417,7 +417,7 @@
     "gitTags": " (origin/fix/placement-ordering-drag-context-fix)",
     "committerDate": "2018-07-18 10:14:53 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.6"
+    "tag": "@pie-ui/categorize@0.3.6"
   },
   {
     "type": "fix",
@@ -432,7 +432,7 @@
     "gitTags": "",
     "committerDate": "2018-05-31 09:53:03 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.0"
+    "tag": "@pie-ui/categorize@0.3.0"
   },
   {
     "type": "feat",
@@ -447,7 +447,7 @@
     "gitTags": " (origin/feature/fill-in-the-blank)",
     "committerDate": "2018-05-31 09:38:26 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.0"
+    "tag": "@pie-ui/categorize@0.3.0"
   },
   {
     "type": "chore",
@@ -462,7 +462,7 @@
     "gitTags": "",
     "committerDate": "2018-05-21 15:54:04 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.3.0"
+    "tag": "@pie-ui/categorize@0.3.0"
   },
   {
     "type": "fix",
@@ -477,7 +477,7 @@
     "gitTags": "",
     "committerDate": "2018-05-21 14:19:10 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.2.2"
+    "tag": "@pie-ui/categorize@0.2.2"
   },
   {
     "type": "feat",
@@ -492,7 +492,7 @@
     "gitTags": "",
     "committerDate": "2018-05-15 22:26:01 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.2.0"
+    "tag": "@pie-ui/categorize@0.2.0"
   },
   {
     "type": "feat",
@@ -507,6 +507,6 @@
     "gitTags": "",
     "committerDate": "2018-05-15 14:24:11 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/categorize@0.1.0"
+    "tag": "@pie-ui/categorize@0.1.0"
   }
 ]

@@ -12,7 +12,7 @@
     "gitTags": "",
     "committerDate": "2019-02-08 10:23:00 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.2.1"
+    "tag": "@pie-ui/point-intercept@1.2.1"
   },
   {
     "type": "feat",
@@ -27,7 +27,7 @@
     "gitTags": "",
     "committerDate": "2019-02-07 19:20:25 +0000",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.2.0"
+    "tag": "@pie-ui/point-intercept@1.2.0"
   },
   {
     "type": "feat",
@@ -42,7 +42,7 @@
     "gitTags": "",
     "committerDate": "2018-05-15 22:26:01 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.1.0"
+    "tag": "@pie-ui/point-intercept@1.1.0"
   },
   {
     "type": "chore",
@@ -57,7 +57,7 @@
     "gitTags": "",
     "committerDate": "2018-05-09 14:41:28 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.2"
+    "tag": "@pie-ui/point-intercept@1.0.2"
   },
   {
     "type": "chore",
@@ -72,7 +72,7 @@
     "gitTags": "",
     "committerDate": "2018-05-08 13:34:15 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.2"
+    "tag": "@pie-ui/point-intercept@1.0.2"
   },
   {
     "type": "chore",
@@ -87,7 +87,7 @@
     "gitTags": "",
     "committerDate": "2018-05-03 12:30:58 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.2"
+    "tag": "@pie-ui/point-intercept@1.0.2"
   },
   {
     "type": "chore",
@@ -102,7 +102,7 @@
     "gitTags": "",
     "committerDate": "2018-05-02 20:56:27 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.1"
+    "tag": "@pie-ui/point-intercept@1.0.1"
   },
   {
     "type": "feat",
@@ -122,7 +122,7 @@
     "gitTags": "",
     "committerDate": "2018-05-02 14:38:44 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.0"
+    "tag": "@pie-ui/point-intercept@1.0.0"
   },
   {
     "type": "chore",
@@ -137,7 +137,7 @@
     "gitTags": "",
     "committerDate": "2018-05-02 14:02:03 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@1.0.2"
+    "tag": "@pie-ui/point-intercept@1.0.2"
   },
   {
     "type": "chore",
@@ -152,7 +152,7 @@
     "gitTags": "",
     "committerDate": "2018-05-01 14:38:55 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -167,7 +167,7 @@
     "gitTags": "",
     "committerDate": "2018-04-25 11:53:08 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -182,7 +182,7 @@
     "gitTags": "",
     "committerDate": "2018-04-25 10:16:55 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -197,7 +197,7 @@
     "gitTags": "",
     "committerDate": "2018-04-23 14:43:18 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -212,7 +212,7 @@
     "gitTags": "",
     "committerDate": "2018-04-23 14:08:23 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -227,7 +227,7 @@
     "gitTags": "",
     "committerDate": "2018-04-17 12:12:13 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -242,7 +242,7 @@
     "gitTags": "",
     "committerDate": "2018-04-11 13:34:59 -0400",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   },
   {
     "type": "feat",
@@ -257,6 +257,6 @@
     "gitTags": "",
     "committerDate": "2018-04-10 13:26:30 +0300",
     "isTagged": true,
-    "earliestTag": "@pie-ui/point-intercept@0.1.0"
+    "tag": "@pie-ui/point-intercept@0.1.0"
   }
 ]

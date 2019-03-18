@@ -21,7 +21,7 @@ save_cache: &save_cache
   key: v1-dependencies-{{ checksum "package.json" }}
 
 jobs:
-   lint:
+  lint:
     <<: *defaults
     steps:
       - checkout
@@ -30,7 +30,6 @@ jobs:
       - run: yarn install
       - save_cache: *save_cache
       - run: scripts/build lint
-
   test:
     <<: *defaults
     steps:
@@ -40,10 +39,8 @@ jobs:
       - run: yarn install
       - save_cache: *save_cache
       - run: scripts/build babel test
-
   build:
     <<: *defaults
-
     steps:
       - checkout
       - run: *reg_auth
@@ -51,10 +48,8 @@ jobs:
       - run: yarn install
       - save_cache: *save_cache
       - run: scripts/build release --next --skipForcePublish
-
   deploy_demo:
     <<: *defaults
-
     steps:
       - checkout
       - run: *reg_auth
@@ -91,7 +86,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: '0 0 * * *'
+          cron: "0 0 * * *"
           filters:
             branches:
               only:

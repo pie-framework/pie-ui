@@ -24,6 +24,10 @@ export class SimpleQuestionBlockRaw extends React.Component {
     const showAsCorrect = showCorrect || correct;
     const showAsIncorrect = showCorrect && !correct;
 
+    if (!model.config) {
+      return;
+    }
+
     return (
       <div className={classes.expression}>
         {showCorrect || model.disabled ? (
@@ -38,7 +42,7 @@ export class SimpleQuestionBlockRaw extends React.Component {
           <MathToolbar
             classNames={{ editor: classes.responseEditor }}
             latex={session.response || ''}
-            keypadMode="everything"
+            keypadMode={model.config.equationEditor}
             onChange={onSimpleResponseChange}
             onDone={() => {
             }}

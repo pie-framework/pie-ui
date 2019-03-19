@@ -48,6 +48,15 @@ jobs:
       - run: yarn install
       - save_cache: *save_cache
       - run: scripts/build release --next --skipForcePublish
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: *reg_auth
+      - restore_cache: *restore_cache
+      - run: yarn install
+      - save_cache: *save_cache
+      - run: scripts/build release
   deploy_demo:
     <<: *defaults
     steps:
@@ -82,6 +91,13 @@ workflows:
             branches:
               only:
                 - develop
+  release:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only:
+                - master
 
   nightly:
     triggers:

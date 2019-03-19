@@ -1,12 +1,102 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
+import { MathToolbar } from '@pie-lib/math-toolbar';
 import { Feedback } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import AnswerBlock from './answer-block';
+
+export class SimpleQuestionBlockRaw extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object,
+    onSimpleResponseChange: PropTypes.func,
+    model: PropTypes.object.isRequired,
+    session: PropTypes.object.isRequired,
+    showCorrect: PropTypes.bool,
+  }
+  render() {
+    const { classes, model, showCorrect, session, onSimpleResponseChange } = this.props;
+    const correct = model.correctness && model.correctness.info && model.correctness.info.defaultResponse;
+    const showAsCorrect = showCorrect || correct;
+    const showAsIncorrect = showCorrect && !correct;
+
+    return (
+      <div className={classes.expression}>
+        {showCorrect || model.disabled ? (
+            <div className={cx(classes.static, {
+              [classes.correct]: showAsCorrect,
+              [classes.incorrect]: showAsIncorrect
+            })}>
+              <mq.Static latex={showCorrect ? model.config.response.answer : session.response}/>
+            </div>
+          )
+          :
+          <MathToolbar
+            classNames={{ editor: classes.responseEditor }}
+            latex={session.response || ''}
+            keypadMode="everything"
+            onChange={onSimpleResponseChange}
+            onDone={() => {
+            }}
+          />}
+      </div>
+    )
+  }
+}
+const SimpleQuestionBlock = withStyles(theme => ({
+  responseEditor: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: 'auto',
+    minWidth: '500px',
+    maxWidth: '900px',
+    height: 'auto',
+    minHeight: '130px',
+    textAlign: 'left',
+    padding: theme.spacing.unit
+  },
+  expression: {
+    border: '1px solid lightgray',
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
+    padding: theme.spacing.unit,
+    minHeight: '150px',
+    '& > .mq-math-mode': {
+      '& .mq-non-leaf': {
+        display: 'inline-flex',
+        alignItems: 'center',
+      },
+      '& .mq-non-leaf.mq-fraction': {
+        display: 'inline-block',
+      },
+      '& .mq-paren': {
+        verticalAlign: 'middle'
+      }
+    }
+  },
+  static: {
+    color: 'grey',
+    fontSize: '1rem',
+    padding: theme.spacing.unit / 2,
+    '& > .mq-math-mode': {
+      '& > .mq-hasCursor': {
+        '& > .mq-cursor': {
+          display: 'none'
+        },
+      }
+    }
+  },
+  correct: {
+    color: 'green'
+  },
+  incorrect: {
+    color: 'red'
+  }
+}))(SimpleQuestionBlockRaw);
 
 export class Main extends React.Component {
   static propTypes = {
@@ -46,30 +136,21 @@ export class Main extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.model.config && this.props.model.config.responses) {
-      if (this.props.model.config.responses.length !== nextProps.model.config.responses.length) {
-        const answers = {};
-        const stateAnswers = this.state.session.answers;
+    const config = this.props.model.config;
+    const nextConfig = nextProps.model.config;
 
-        nextProps.model.config.responses.forEach(response => {
-          answers[response.id] = {
-            value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
-          };
-        });
-
-        this.setState(state => ({ session: { ...state.session, answers }}));
-      }
-    } else if (!this.props.model.config && nextProps.model.config && nextProps.model.config.responses) {
+    if ((config && config.responses && config.responses.length !== nextConfig.responses.length) ||
+      (!config && nextConfig && nextConfig.responses)) {
       const answers = {};
       const stateAnswers = this.state.session.answers;
 
-      nextProps.model.config.responses.forEach(response => {
+      nextConfig.responses.forEach(response => {
         answers[response.id] = {
           value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
         };
       });
 
-      this.setState(state => ({ session: { ...state.session, answers }}));
+      this.setState(state => ({ session: { ...state.session, answers } }));
     }
   }
 
@@ -80,6 +161,10 @@ export class Main extends React.Component {
   onDone = () => {
     this.checkAnswerBlocks();
   };
+
+  onSimpleResponseChange = response => {
+    this.setState(state => ({ session: { ...state.session, response } }), this.callOnSessionChange);
+  }
 
   onAnswerBlockClick = id => {
     this.setState({ activeAnswerBlock: id }, this.checkAnswerBlocks);
@@ -140,11 +225,12 @@ export class Main extends React.Component {
     responses.forEach((response, index) => {
       const elements = document.querySelectorAll(`#${response.id}`);
 
-      if (elements.length === 2) {
-        const element = elements[1];
+      if (elements.length > 0) {
+        const element = elements.length === 2 ? elements[1] : elements[0];
+        const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
         const elementToRender = (
           <AnswerBlock
-            correct={showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id])}
+            correct={correct}
             showCorrect={showCorrect || (model.disabled && !model.view)}
             onClick={this.onAnswerBlockClick}
             id={response.id}
@@ -195,7 +281,7 @@ export class Main extends React.Component {
 
   render() {
     const { model, classes } = this.props;
-    const { showCorrect, activeAnswerBlock } = this.state;
+    const { showCorrect, activeAnswerBlock, session } = this.state;
 
     if (!this.props.model.config) {
       return null;
@@ -207,22 +293,26 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
-            show={
-              model.correctness && model.correctness.correctness !== 'correct'
-            }
+            show={model.correctness && model.correctness.correctness !== 'correct'}
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
             <Typography component="div" type="body1">
               <span>
-                Please fill out the response(s) below. You can select an answer block you wish to fill out by clicking on it to activate it.
+                {model.config.question}
               </span>
             </Typography>
           </div>
-          <div className={classes.expression}>
-            <mq.Static latex={model.config.expression} />
-          </div>
+          {model.config.mode === 'simple' && <SimpleQuestionBlock
+            onSimpleResponseChange={this.onSimpleResponseChange}
+            showCorrect={showCorrect}
+            model={model}
+            session={session}
+          />}
+          {model.config.mode === 'advanced' && <div className={classes.expression}>
+            <mq.Static latex={model.config.expression}/>
+          </div>}
           <div className={classes.responseContainer}>
             {model.config.responses.map(response => response.id === activeAnswerBlock && (
               <HorizontalKeypad
@@ -282,22 +372,11 @@ const styles = theme => ({
       '& .mq-non-leaf.mq-fraction': {
         display: 'inline-block',
       },
-      '& .mq-paren' : {
+      '& .mq-paren': {
         verticalAlign: 'middle'
       }
     }
-  },
-  responseEditor: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: 'auto',
-    minWidth: '500px',
-    maxWidth: '900px',
-    height: 'auto',
-    minHeight: '130px',
-    textAlign: 'left',
-    padding: theme.spacing.unit
-  },
+  }
 });
 
 export default withStyles(styles)(Main);

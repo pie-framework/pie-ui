@@ -373,5 +373,35 @@
     "committerDate": "2018-11-26 13:56:11 +0200",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@0.0.2"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "fix simple interaction keypad mode",
+    "merge": null,
+    "header": "fix(math-inline): fix simple interaction keypad mode",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e5c7fdb227951a508f44ab045b2a7cdafb82e65b",
+    "gitTags": " (origin/fix/math-inline-simple-mode)",
+    "committerDate": "2019-03-19 15:06:20 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.1.4"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "fix simple mode interaction and fix non-rendering answerBlocks for advanced mode",
+    "merge": null,
+    "header": "fix(math-inline): fix simple mode interaction and fix non-rendering answerBlocks for advanced mode",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8ec5ec9f86adb3cfa2014f09f7b5e9a5d4217cb4",
+    "gitTags": "",
+    "committerDate": "2019-03-19 14:58:50 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.1.4"
   }
 ]

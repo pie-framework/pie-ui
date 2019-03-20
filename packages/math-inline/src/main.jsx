@@ -9,6 +9,7 @@ import { Feedback } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import AnswerBlock from './answer-block';
+import isEqual from 'lodash/isEqual';
 
 export class SimpleQuestionBlockRaw extends React.Component {
   static propTypes = {
@@ -16,11 +17,20 @@ export class SimpleQuestionBlockRaw extends React.Component {
     onSimpleResponseChange: PropTypes.func,
     model: PropTypes.object.isRequired,
     session: PropTypes.object.isRequired,
-    showCorrect: PropTypes.bool,
-  }
+    showCorrect: PropTypes.bool
+  };
   render() {
-    const { classes, model, showCorrect, session, onSimpleResponseChange } = this.props;
-    const correct = model.correctness && model.correctness.info && model.correctness.info.defaultResponse;
+    const {
+      classes,
+      model,
+      showCorrect,
+      session,
+      onSimpleResponseChange
+    } = this.props;
+    const correct =
+      model.correctness &&
+      model.correctness.info &&
+      model.correctness.info.defaultResponse;
     const showAsCorrect = showCorrect || correct;
     const showAsIncorrect = showCorrect && !correct;
 
@@ -31,24 +41,29 @@ export class SimpleQuestionBlockRaw extends React.Component {
     return (
       <div className={classes.expression}>
         {showCorrect || model.disabled ? (
-            <div className={cx(classes.static, {
+          <div
+            className={cx(classes.static, {
               [classes.correct]: showAsCorrect,
               [classes.incorrect]: showAsIncorrect
-            })}>
-              <mq.Static latex={showCorrect ? model.config.response.answer : session.response}/>
-            </div>
-          )
-          :
+            })}
+          >
+            <mq.Static
+              latex={
+                showCorrect ? model.config.response.answer : session.response
+              }
+            />
+          </div>
+        ) : (
           <MathToolbar
             classNames={{ editor: classes.responseEditor }}
             latex={session.response || ''}
             keypadMode={model.config.equationEditor}
             onChange={onSimpleResponseChange}
-            onDone={() => {
-            }}
-          />}
+            onDone={() => {}}
+          />
+        )}
       </div>
-    )
+    );
   }
 }
 const SimpleQuestionBlock = withStyles(theme => ({
@@ -72,10 +87,10 @@ const SimpleQuestionBlock = withStyles(theme => ({
     '& > .mq-math-mode': {
       '& .mq-non-leaf': {
         display: 'inline-flex',
-        alignItems: 'center',
+        alignItems: 'center'
       },
       '& .mq-non-leaf.mq-fraction': {
-        display: 'inline-block',
+        display: 'inline-block'
       },
       '& .mq-paren': {
         verticalAlign: 'middle'
@@ -90,7 +105,7 @@ const SimpleQuestionBlock = withStyles(theme => ({
       '& > .mq-hasCursor': {
         '& > .mq-cursor': {
           display: 'none'
-        },
+        }
       }
     }
   },
@@ -118,7 +133,7 @@ export class Main extends React.Component {
     if (props.model.config && props.model.config.responses) {
       props.model.config.responses.forEach(response => {
         answers[response.id] = {
-          value: '',
+          value: ''
         };
       });
     }
@@ -143,19 +158,31 @@ export class Main extends React.Component {
     const config = this.props.model.config;
     const nextConfig = nextProps.model.config;
 
-    if ((config && config.responses && config.responses.length !== nextConfig.responses.length) ||
-      (!config && nextConfig && nextConfig.responses)) {
+    if (
+      (config &&
+        config.responses &&
+        config.responses.length !== nextConfig.responses.length) ||
+      (!config && nextConfig && nextConfig.responses)
+    ) {
       const answers = {};
       const stateAnswers = this.state.session.answers;
 
       nextConfig.responses.forEach(response => {
         answers[response.id] = {
-          value: stateAnswers[response.id] ? stateAnswers[response.id].value : '',
+          value: stateAnswers[response.id]
+            ? stateAnswers[response.id].value
+            : ''
         };
       });
 
       this.setState(state => ({ session: { ...state.session, answers } }));
     }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const sameModel = isEqual(this.props.model, nextProps.model);
+    const sameState = isEqual(this.state, nextState);
+    return !sameModel || !sameState;
   }
 
   componentDidMount() {
@@ -165,16 +192,19 @@ export class Main extends React.Component {
   onDone = () => {};
 
   onSimpleResponseChange = response => {
-    this.setState(state => ({ session: { ...state.session, response } }), this.callOnSessionChange);
-  }
+    this.setState(
+      state => ({ session: { ...state.session, response } }),
+      this.callOnSessionChange
+    );
+  };
 
   onAnswerBlockClick = id => {
     this.setState({ activeAnswerBlock: id });
-  }
+  };
 
   onAnswerBlockFocus = id => {
     this.setState({ activeAnswerBlock: id });
-  }
+  };
 
   toNodeData = data => {
     if (!data) {
@@ -196,7 +226,7 @@ export class Main extends React.Component {
 
   setInput = input => {
     this.input = input;
-  }
+  };
 
   onClick = data => {
     const c = this.toNodeData(data);
@@ -229,7 +259,11 @@ export class Main extends React.Component {
 
       if (elements.length > 0) {
         const element = elements.length === 2 ? elements[1] : elements[0];
-        const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
+        const correct =
+          showCorrect ||
+          (model.correctness &&
+            model.correctness.info &&
+            model.correctness.info[response.id]);
         const elementToRender = (
           <AnswerBlock
             correct={correct}
@@ -242,14 +276,18 @@ export class Main extends React.Component {
             onChange={this.onAnswerChange(response.id)}
             onFocus={this.onAnswerBlockFocus}
             disabled={showCorrect || model.disabled}
-            latex={showCorrect ? response.answer : session.answers[response.id].value || ''}
+            latex={
+              showCorrect
+                ? response.answer
+                : session.answers[response.id].value || ''
+            }
           />
         );
 
         ReactDOM.render(elementToRender, element);
       }
-    })
-  }
+    });
+  };
 
   callOnSessionChange = () => {
     const { onSessionChange } = this.props;
@@ -292,34 +330,42 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
-            show={model.correctness && model.correctness.correctness !== 'correct'}
+            show={
+              model.correctness && model.correctness.correctness !== 'correct'
+            }
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
             <Typography component="div" type="body1">
-              <span>
-                {model.config.question}
-              </span>
+              <span>{model.config.question}</span>
             </Typography>
           </div>
-          {model.config.mode === 'simple' && <SimpleQuestionBlock
-            onSimpleResponseChange={this.onSimpleResponseChange}
-            showCorrect={showCorrect}
-            model={model}
-            session={session}
-          />}
-          {model.config.mode === 'advanced' && <div className={classes.expression}>
-            <mq.Static latex={model.config.expression}/>
-          </div>}
+          {model.config.mode === 'simple' && (
+            <SimpleQuestionBlock
+              onSimpleResponseChange={this.onSimpleResponseChange}
+              showCorrect={showCorrect}
+              model={model}
+              session={session}
+            />
+          )}
+          {model.config.mode === 'advanced' && (
+            <div className={classes.expression}>
+              <mq.Static latex={model.config.expression} />
+            </div>
+          )}
           <div className={classes.responseContainer}>
-            {model.config.responses.map(response => response.id === activeAnswerBlock && (
-              <HorizontalKeypad
-                key={response.id}
-                mode={model.config.equationEditor}
-                onClick={this.onClick}
-              />
-            ) || null)}
+            {model.config.responses.map(
+              response =>
+                (response.id === activeAnswerBlock && (
+                  <HorizontalKeypad
+                    key={response.id}
+                    mode={model.config.equationEditor}
+                    onClick={this.onClick}
+                  />
+                )) ||
+                null
+            )}
           </div>
         </div>
         {model.feedback && (
@@ -366,10 +412,10 @@ const styles = theme => ({
     '& > .mq-math-mode': {
       '& .mq-non-leaf': {
         display: 'inline-flex',
-        alignItems: 'center',
+        alignItems: 'center'
       },
       '& .mq-non-leaf.mq-fraction': {
-        display: 'inline-block',
+        display: 'inline-block'
       },
       '& .mq-paren': {
         verticalAlign: 'middle'

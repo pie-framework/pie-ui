@@ -162,20 +162,18 @@ export class Main extends React.Component {
     this.checkAnswerBlocks();
   }
 
-  onDone = () => {
-    this.checkAnswerBlocks();
-  };
+  onDone = () => {};
 
   onSimpleResponseChange = response => {
     this.setState(state => ({ session: { ...state.session, response } }), this.callOnSessionChange);
   }
 
   onAnswerBlockClick = id => {
-    this.setState({ activeAnswerBlock: id }, this.checkAnswerBlocks);
+    this.setState({ activeAnswerBlock: id });
   }
 
   onAnswerBlockFocus = id => {
-    this.setState({ activeAnswerBlock: id }, this.checkAnswerBlocks);
+    this.setState({ activeAnswerBlock: id });
   }
 
   toNodeData = data => {
@@ -244,7 +242,7 @@ export class Main extends React.Component {
             onChange={this.onAnswerChange(response.id)}
             onFocus={this.onAnswerBlockFocus}
             disabled={showCorrect || model.disabled}
-            latex={showCorrect ? response.answer : session.answers[response.id].value}
+            latex={showCorrect ? response.answer : session.answers[response.id].value || ''}
           />
         );
 
@@ -262,10 +260,7 @@ export class Main extends React.Component {
   };
 
   toggleShowCorrect = show => {
-    this.setState({ showCorrect: show }, () => {
-      this.checkAnswerBlocks();
-      this.forceUpdate();
-    });
+    this.setState({ showCorrect: show });
   };
 
   onAnswerChange = id => (index, answer) => {

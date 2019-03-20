@@ -20,32 +20,38 @@ class Ebsr extends React.Component {
     if(!customElements.get('multiple-choice')){
       customElements.define('multiple-choice', MultipleChoice);
     }
+
+    this.state = {
+      session: {},
+    }
   }
 
   componentDidMount() {
-    this.setupParts();
+    this.updateModels();
+    this.captureSessionChanges();
   }
 
   componentDidUpdate(prevProps) {
     if (JSON.stringify(prevProps.model) !== JSON.stringify(this.props.model)) {
-      this.setupParts();
+      this.updateModels();
     }
   }
 
-  setupParts() {
-    const { partA, partB } = this;
+  updateModels() {
+    const {partA, partB} = this;
 
     if (partA && partB) {
-      this.setupOnePart(partA, 'partA');
-      this.setupOnePart(partB, 'partB');
+      this.updatePartModel(partA, 'partA');
+      this.updatePartModel(partB, 'partB');
     }
   }
 
-  setupOnePart(part, key) {
-    const { model, model: { mode } } = this.props;
+  updatePartModel(part, key) {
+    const { model, model: { mode }, session: { value } } = this.props;
     const { correctResponse, disabled, keyMode, showCorrect, choiceMode, choices, prompt } = model[key];
 
     part.model = {
+      id: key,
       choiceMode,
       choices,
       correctResponse,
@@ -56,7 +62,43 @@ class Ebsr extends React.Component {
       showCorrect
     };
 
-    part.session = this.props.session;
+    part.session = { id: key };
+
+    if (value) {
+      part.session = value[key];
+    }
+  }
+
+  captureSessionChanges() {
+    const {partA, partB} = this;
+
+    if (partA && partB) {
+      this.capturePartSessionChanged(partA, 'partA');
+      this.capturePartSessionChanged(partB, 'partB');
+    }
+  }
+
+  capturePartSessionChanged(part, key) {
+    const self = this;
+
+    part.addEventListener('session-changed', (event)  => {
+      event.stopImmediatePropagation();
+      self.updateValue(event.srcElement._session, key);
+    });
+  }
+
+  updateValue(partSession, key) {
+    const { session } = this.state;
+    const { onValueChanged } = this.props;
+
+    const sessionRepacked = {
+      ...session,
+      [key]: partSession,
+    };
+
+    this.setState({ session: sessionRepacked });
+
+    onValueChanged(sessionRepacked);
   }
 
   render() {

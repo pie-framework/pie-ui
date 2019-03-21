@@ -6,8 +6,8 @@ import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { MathToolbar } from '@pie-lib/math-toolbar';
 import { Feedback } from '@pie-lib/render-ui';
+import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import AnswerBlock from './answer-block';
 import isEqual from 'lodash/isEqual';
 
@@ -76,10 +76,12 @@ const SimpleQuestionBlock = withStyles(theme => ({
     height: 'auto',
     minHeight: '130px',
     textAlign: 'left',
-    padding: theme.spacing.unit
+    padding: theme.spacing.unit,
+    '&.mq-math-mode': {
+      border: '1px solid lightgrey'
+    }
   },
   expression: {
-    border: '1px solid lightgray',
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
     padding: theme.spacing.unit,
@@ -150,7 +152,14 @@ export class Main extends React.Component {
     this.callOnSessionChange();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    const { model } = this.props;
+    const oldModel = prevProps.model;
+
+    if (model.config.question !== oldModel.config.question) {
+      renderMath(this.root);
+    }
+
     this.checkAnswerBlocks();
   }
 
@@ -186,6 +195,7 @@ export class Main extends React.Component {
   }
 
   componentDidMount() {
+    renderMath(this.root);
     this.checkAnswerBlocks();
   }
 
@@ -254,16 +264,13 @@ export class Main extends React.Component {
 
     const responses = model.config.responses;
 
-    responses.forEach((response, index) => {
-      const elements = document.querySelectorAll(`#${response.id}`);
+    if (responses && responses.length) {
+      responses.forEach((response, index) => {
+        const elements = document.querySelectorAll(`#${response.id}`);
 
       if (elements.length > 0) {
         const element = elements.length === 2 ? elements[1] : elements[0];
-        const correct =
-          showCorrect ||
-          (model.correctness &&
-            model.correctness.info &&
-            model.correctness.info[response.id]);
+        const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
         const elementToRender = (
           <AnswerBlock
             correct={correct}
@@ -276,18 +283,15 @@ export class Main extends React.Component {
             onChange={this.onAnswerChange(response.id)}
             onFocus={this.onAnswerBlockFocus}
             disabled={showCorrect || model.disabled}
-            latex={
-              showCorrect
-                ? response.answer
-                : session.answers[response.id].value || ''
-            }
-          />
-        );
+            latex={showCorrect ? response.answer : session.answers[response.id].value || ''
+          }
+        />);
 
-        ReactDOM.render(elementToRender, element);
-      }
-    });
-  };
+          ReactDOM.render(elementToRender, element);
+        }
+      })
+    }
+  }
 
   callOnSessionChange = () => {
     const { onSessionChange } = this.props;
@@ -325,7 +329,7 @@ export class Main extends React.Component {
     }
 
     return (
-      <div className={classes.mainContainer}>
+      <div className={classes.mainContainer}  ref={r => (this.root = r)}>
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -337,9 +341,9 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
-            <Typography component="div" type="body1">
-              <span>{model.config.question}</span>
-            </Typography>
+            <div
+              dangerouslySetInnerHTML={{ __html: model.config.question }}
+            />
           </div>
           {model.config.mode === 'simple' && (
             <SimpleQuestionBlock
@@ -355,7 +359,7 @@ export class Main extends React.Component {
             </div>
           )}
           <div className={classes.responseContainer}>
-            {model.config.responses.map(
+            {model.config.mode === 'advanced' && model.config.responses && model.config.responses.map(
               response =>
                 (response.id === activeAnswerBlock && (
                   <HorizontalKeypad

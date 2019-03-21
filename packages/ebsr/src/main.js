@@ -1,44 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import MultipleChoice from '@pie-ui/multiple-choice';
 
-import debug from 'debug';
-
-const log = debug('pie-ui:ebsr');
-
-class Ebsr extends React.Component {
-  static propTypes = {
-    classes: PropTypes.object,
-    session: PropTypes.object,
-    model: PropTypes.object,
-    onValueChanged: PropTypes.func
-  };
-
-  constructor(props) {
-    super(props);
-
+export default class Main extends HTMLElement {
+  static defineMultipleChoice() {
     if(!customElements.get('multiple-choice')){
       customElements.define('multiple-choice', MultipleChoice);
     }
-
-    this.state = {
-      session: {},
-    }
   }
 
-  componentDidMount() {
+  static getParts = () => ({
+    partA: document.getElementById('part-a'),
+    partB: document.getElementById('part-b'),
+  });
+
+  constructor() {
+    super();
+
+    Main.defineMultipleChoice();
+  }
+
+
+  set modelAndSession(modelAndSession) {
+    this._main = modelAndSession;
+
     this.updateModels();
     this.captureSessionChanges();
   }
 
-  componentDidUpdate(prevProps) {
-    if (JSON.stringify(prevProps.model) !== JSON.stringify(this.props.model)) {
-      this.updateModels();
-    }
-  }
-
   updateModels() {
-    const {partA, partB} = this;
+    const { partA, partB } = Main.getParts();
 
     if (partA && partB) {
       this.updatePartModel(partA, 'partA');
@@ -47,7 +36,7 @@ class Ebsr extends React.Component {
   }
 
   updatePartModel(part, key) {
-    const { model, model: { mode }, session: { value } } = this.props;
+    const { model, model: { mode }, session: { value } } = this._main;
     const { correctResponse, disabled, keyMode, showCorrect, choiceMode, choices, prompt } = model[key];
 
     part.model = {
@@ -70,7 +59,7 @@ class Ebsr extends React.Component {
   }
 
   captureSessionChanges() {
-    const {partA, partB} = this;
+    const { partA, partB } = Main.getParts();
 
     if (partA && partB) {
       this.capturePartSessionChanged(partA, 'partA');
@@ -88,30 +77,34 @@ class Ebsr extends React.Component {
   }
 
   updateValue(partSession, key) {
-    const { session } = this.state;
-    const { onValueChanged } = this.props;
+    const { session } = this._main;
 
     const sessionRepacked = {
       ...session,
       [key]: partSession,
     };
 
-    this.setState({ session: sessionRepacked });
+    this._main.session = sessionRepacked;
 
-    onValueChanged(sessionRepacked);
+    const event = new CustomEvent('main-session-changed', {
+      detail: {
+        session: sessionRepacked,
+      }
+    });
+
+    this.dispatchEvent(event);
   }
 
-  render() {
-    const { model } = this.props;
-    log('[render] model: ', model);
+  connectedCallback() {
+    this._render();
+  }
 
-    return (
+  _render() {
+    this.innerHTML = `
       <div>
-        <multiple-choice ref={ref => { this.partA = ref; }} />
-        <multiple-choice ref={ref => { this.partB = ref; }} />
+        <multiple-choice id="part-a"></multiple-choice>
+        <multiple-choice id="part-b"></multiple-choice>
       </div>
-    );
+    `;
   }
 }
-
-export default Ebsr;

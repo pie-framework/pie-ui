@@ -2,30 +2,72 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import ReactEbsr from './ebsr';
 import debug from 'debug';
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import Main from './main';
 
 const log = debug('pie-elements:ebsr');
 
 export default class Ebsr extends HTMLElement {
+  static getMain = ()  => document.querySelector('ebsr-ui-main');
+
+  static defineMain() {
+    if (!customElements.get('ebsr-ui-main')) {
+      customElements.define('ebsr-ui-main', Main);
+    }
+  }
+
+  setModel(model) {
+    const main = Ebsr.getMain();
+
+    main.modelAndSession = {
+      ...this._main,
+      model,
+    };
+
+    this._main = {
+      ...this._main,
+      model,
+    };
+
+    this.dispatchEvent(
+      new ModelSetEvent(this.tagName.toLowerCase(), false, !!this._main)
+    );
+  }
+
+  setSession(session) {
+    const main = Ebsr.getMain();
+
+    main.modelAndSession = {
+      ...this._main,
+      session,
+    };
+
+    this._main = {
+      ...this._main,
+      session,
+    }
+  }
+
   constructor() {
     super();
+
+    Ebsr.defineMain();
+
+    this._main = {
+      model: {},
+      session: {}
+    };
+
   }
 
   set model(m) {
-    this._model = m;
-    this.dispatchEvent(
-      new ModelSetEvent(this.tagName.toLowerCase(), false, !!this._model)
-    );
-
-    this.render();
+    this.setModel(m);
   }
 
   set session(s) {
-    this._session = s;
-    this.render();
+    this.setSession(s);
   }
 
   onValueChanged(value) {
@@ -39,20 +81,22 @@ export default class Ebsr extends HTMLElement {
   }
 
   connectedCallback() {
-    this.render();
+    this._render();
+
+    const main = Ebsr.getMain();
+
+    main.addEventListener('main-session-changed', event => {
+      this._main.session.value = event.detail.session;
+
+      log('[onSessionChanged] session: ', this._session);
+
+      this.dispatchEvent(
+        new SessionChangedEvent(this.tagName.toLowerCase(), true)
+      );
+    });
   }
 
-  render() {
-    if (this._model && this._session) {
-      const e = React.createElement(ReactEbsr, {
-        model: this._model,
-        session: this._session,
-        onValueChanged: this.onValueChanged.bind(this)
-      });
-
-      ReactDOM.render(e, this, () => {
-        log('render completed');
-      });
-    }
+  _render() {
+    this.innerHTML = `<ebsr-ui-main></ebsr-ui-main>`;
   }
 }

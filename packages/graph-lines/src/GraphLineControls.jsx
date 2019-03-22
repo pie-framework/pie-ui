@@ -91,7 +91,7 @@ export class GraphLineControls extends React.Component {
                       name="from.x"
                       className={classes.input}
                       onChange={lineOnChange}
-                      value={line.from.x}
+                      value={line.from.x || '0'}
                       placeholder="Enter Value"
                     />
                   </InputContainer>
@@ -108,7 +108,7 @@ export class GraphLineControls extends React.Component {
                       type="number"
                       className={classes.input}
                       onChange={lineOnChange}
-                      value={line.from.y}
+                      value={line.from.y || '0'}
                       placeholder="Enter Value"
                     />
                   </InputContainer>
@@ -130,7 +130,7 @@ export class GraphLineControls extends React.Component {
                       type="number"
                       className={classes.input}
                       onChange={lineOnChange}
-                      value={line.to.x}
+                      value={line.to.x || '0'}
                       placeholder="Enter Value"
                     />
                   </InputContainer>
@@ -147,7 +147,7 @@ export class GraphLineControls extends React.Component {
                       type="number"
                       className={classes.input}
                       onChange={lineOnChange}
-                      value={line.to.y}
+                      value={line.to.y || '0'}
                       placeholder="Enter Value"
                     />
                   </InputContainer>

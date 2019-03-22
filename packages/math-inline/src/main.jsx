@@ -11,6 +11,8 @@ import { withStyles } from '@material-ui/core/styles';
 import AnswerBlock from './answer-block';
 import isEqual from 'lodash/isEqual';
 
+const REGEX = /\\embed\{answerBlock\}\[(.*?)\]/g;
+
 export class SimpleQuestionBlockRaw extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
@@ -96,7 +98,7 @@ const SimpleQuestionBlock = withStyles(theme => ({
       },
       '& .mq-paren': {
         verticalAlign: 'middle'
-      }
+      },
     }
   },
   static: {
@@ -216,6 +218,10 @@ export class Main extends React.Component {
     this.setState({ activeAnswerBlock: id });
   };
 
+  onFocus = ev => {
+    console.log(ev.target);
+  };
+
   toNodeData = data => {
     if (!data) {
       return;
@@ -257,6 +263,8 @@ export class Main extends React.Component {
   checkAnswerBlocks = () => {
     const { model } = this.props;
     const { activeAnswerBlock, session, showCorrect } = this.state;
+
+    return;
 
     if (!model.config) {
       return;
@@ -320,6 +328,45 @@ export class Main extends React.Component {
     );
   };
 
+  subFieldChanged = (name, subfieldValue) => {
+    this.setState(
+      state => ({
+        session: {
+          ...state.session,
+          answers: {
+            ...state.session.answers,
+            [name]: { value: subfieldValue }
+          }
+        }
+      }),
+      this.callOnSessionChange
+    );
+  }
+
+  prepareForStatic(ltx) {
+    const result = ltx.replace(
+      REGEX,
+      (match, submatch, offset, wholeString) => {
+        return `\\MathQuillMathField[${submatch}]{${this.state.session.answers[submatch].value}}`;
+      }
+    );
+
+    return result;
+  }
+
+  getFieldName = (changeField, fields) => {
+    const { model } = this.props;
+
+    if (model.config && model.config.responses && model.config.responses.length) {
+      const keys = this.props.model.config.responses.map(response => response.id);
+
+      return keys.find(k => {
+        const tf = fields[k];
+        return tf && tf.id == changeField.id;
+      });
+    }
+  }
+
   render() {
     const { model, classes } = this.props;
     const { showCorrect, activeAnswerBlock, session } = this.state;
@@ -355,7 +402,12 @@ export class Main extends React.Component {
           )}
           {model.config.mode === 'advanced' && (
             <div className={classes.expression}>
-              <mq.Static latex={model.config.expression} />
+              <mq.Static
+                latex={this.prepareForStatic(model.config.expression)}
+                onSubFieldChange={this.subFieldChanged}
+                getFieldName={this.getFieldName}
+                onFocus={this.onFocus}
+              />
             </div>
           )}
           <div className={classes.responseContainer}>
@@ -423,6 +475,13 @@ const styles = theme => ({
       },
       '& .mq-paren': {
         verticalAlign: 'middle'
+      },
+      '& > .mq-root-block': {
+        '& > .mq-editable-field': {
+          minWidth: '40px',
+          margin: theme.spacing.unit * 2 / 3,
+          padding: theme.spacing.unit / 2
+        }
       }
     }
   }

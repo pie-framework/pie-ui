@@ -18,38 +18,6 @@ export default class Ebsr extends HTMLElement {
     }
   }
 
-  setModel(model) {
-    const main = Ebsr.getMain();
-
-    main.modelAndSession = {
-      ...this._main,
-      model,
-    };
-
-    this._main = {
-      ...this._main,
-      model,
-    };
-
-    this.dispatchEvent(
-      new ModelSetEvent(this.tagName.toLowerCase(), false, !!this._main)
-    );
-  }
-
-  setSession(session) {
-    const main = Ebsr.getMain();
-
-    main.modelAndSession = {
-      ...this._main,
-      session,
-    };
-
-    this._main = {
-      ...this._main,
-      session,
-    }
-  }
-
   constructor() {
     super();
 
@@ -62,38 +30,54 @@ export default class Ebsr extends HTMLElement {
 
   }
 
-  set model(m) {
-    this.setModel(m);
+  set model(model) {
+    this.updateState({ model });
+    this.setMain({ model });
   }
 
-  set session(s) {
-    this.setSession(s);
+  set session(session) {
+    this.updateState({ session });
+    this.setMain({ session });
   }
 
-  onValueChanged(value) {
-    this._session.value = value;
+  updateState(param) {
+    this._main = {
+      ...this._main,
+      ...param
+    };
+  }
 
-    log('[onSessionChanged] session: ', this._session);
+  setMain(param) {
+    const main = Ebsr.getMain();
 
-    this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), true)
-    );
+    main.data = {
+      ...this._main,
+      ...param
+    };
   }
 
   connectedCallback() {
     this._render();
 
     const main = Ebsr.getMain();
+    const self = this;
 
     main.addEventListener('main-session-changed', event => {
-      this._main.session.value = event.detail.session;
-
-      log('[onSessionChanged] session: ', this._session);
-
-      this.dispatchEvent(
-        new SessionChangedEvent(this.tagName.toLowerCase(), true)
-      );
+      self.dispatchSessionChanged(event.detail.session);
     });
+  }
+
+  dispatchSessionChanged(session) {
+    this._main.session.value = {
+      ...this._main.session.value,
+      ...session
+    };
+
+    log('[onSessionChanged] session: ', this._main.session);
+
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), false)
+    );
   }
 
   _render() {

@@ -19,8 +19,8 @@ export default class Main extends HTMLElement {
   }
 
 
-  set modelAndSession(modelAndSession) {
-    this._main = modelAndSession;
+  set data(data) {
+    this._main = data;
 
     this.updateModels();
     this.captureSessionChanges();
@@ -77,18 +77,9 @@ export default class Main extends HTMLElement {
   }
 
   updateValue(partSession, key) {
-    const { session } = this._main;
-
-    const sessionRepacked = {
-      ...session,
-      [key]: partSession,
-    };
-
-    this._main.session = sessionRepacked;
-
     const event = new CustomEvent('main-session-changed', {
       detail: {
-        session: sessionRepacked,
+        session: { [key]: partSession },
       }
     });
 

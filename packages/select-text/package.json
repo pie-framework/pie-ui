@@ -3,13 +3,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.5.0",
+  "version": "1.5.3",
   "description": "",
   "main": "lib/index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "2.1.2",
+    "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-rendering": "^1.2.1",
     "@pie-lib/render-ui": "^4.3.1",
     "@pie-lib/text-select": "^1.4.0",
@@ -19,5 +19,8 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
+  "scripts": {
+    "prepack": "../../scripts/build changelog --scope select-text"
+  }
 }

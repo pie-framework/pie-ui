@@ -1,6 +1,6 @@
 # pie-ui
 
-[![Build Status](https://travis-ci.org/pie-framework/pie-ui.svg?branch=develop)](https://travis-ci.org/pie-framework/pie-ui)
+[![CircleCI](https://circleci.com/gh/pie-framework/pie-ui.svg?style=svg)](https://circleci.com/gh/pie-framework/pie-ui)
 
 The pie custom elements only.
 

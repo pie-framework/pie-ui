@@ -26,12 +26,6 @@ class UiCommands extends Commands {
     const alias = `pie-ui${args.next ? '-next' : ''}`;
     return this.staticToNow(dir, alias);
   }
-  /**
-   * Don't remove the next.changelogs
-   */
-  afterPublish() {
-    return Promise.resolve(undefined);
-  }
 }
 
 const cmds = new UiCommands(resolve(__dirname, '..'), args);

@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.3...@pie-ui/math-inline@1.1.4) (2019-03-19)
+
+
+### Bug Fixes
+
+* **math-inline:** fix simple interaction keypad mode ([e5c7fdb](https://github.com/pie-framework/pie-ui/commit/e5c7fdb))
+* **math-inline:** fix simple mode interaction and fix non-rendering answerBlocks for advanced mode ([8ec5ec9](https://github.com/pie-framework/pie-ui/commit/8ec5ec9))
+
+
+
+
+
+## [1.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.2...@pie-ui/math-inline@1.1.3) (2019-03-18)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [1.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.1...@pie-ui/math-inline@1.1.2) (2019-03-14)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
 ## 1.1.1 (2019-03-12)
 
 **Note:** Version bump only for package @pie-ui/math-inline

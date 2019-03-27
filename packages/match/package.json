@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.2.2",
+  "version": "1.2.5",
   "description": "In Choice Matrix, students associate choices in the first column with options in the adjacent rows. This interaction allows for either one or more correct answers.",
   "main": "lib/index.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/render-ui": "^4.3.1",
     "classnames": "^2.2.5",
-    "debug": "^3.1.0",
+    "debug": "^4.1.1",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
@@ -22,5 +22,8 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
+  "scripts": {
+    "prepack": "../../scripts/build changelog --scope match"
+  }
 }

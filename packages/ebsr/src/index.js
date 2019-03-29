@@ -1,9 +1,7 @@
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import MultipleChoice from '@pie-ui/multiple-choice';
+
 import debug from 'debug';
-import React from 'react';
-
-import Main from './main';
-
 const log = debug('pie-elements:ebsr');
 
 export default class Ebsr extends HTMLElement {
@@ -21,7 +19,7 @@ export default class Ebsr extends HTMLElement {
   constructor() {
     super();
 
-    Main.defineMultipleChoice();
+    Ebsr.defineMultipleChoice();
 
     this._model = {};
     this._session = {};
@@ -43,7 +41,7 @@ export default class Ebsr extends HTMLElement {
   }
 
   updateModels() {
-    const { partA, partB } = Main.getParts();
+    const { partA, partB } = Ebsr.getParts();
 
     if (partA && partB) {
       this.updatePartModel(partA, 'partA');
@@ -77,7 +75,7 @@ export default class Ebsr extends HTMLElement {
   }
 
   captureSessionChanges() {
-    const { partA, partB } = Main.getParts();
+    const { partA, partB } = Ebsr.getParts();
 
     if (partA && partB) {
       this.capturePartSessionChanged(partA, 'partA');

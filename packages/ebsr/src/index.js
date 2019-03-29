@@ -15,6 +15,7 @@ export default class Ebsr extends HTMLElement {
   constructor() {
     super();
     defineMultipleChoice();
+
     this._model = {};
     this._session = {};
 
@@ -28,17 +29,17 @@ export default class Ebsr extends HTMLElement {
 
   set model(m) {
     this._model = m;
-    this.updatePartModel(this.partA, 'partA');
-    this.updatePartModel(this.partB, 'partB');
+    this.setPartModel(this.partA, 'partA');
+    this.setPartModel(this.partB, 'partB');
   }
 
   set session(s) {
     this._session = s;
-    this.updatePartSession(this.partA, 'partA');
-    this.updatePartSession(this.partB, 'partB');
+    this.setPartSession(this.partA, 'partA');
+    this.setPartSession(this.partB, 'partB');
   }
 
-  updatePartModel(part, key) {
+  setPartModel(part, key) {
     const { mode } = this._model;
 
     part.model = {
@@ -47,7 +48,7 @@ export default class Ebsr extends HTMLElement {
     };
   }
 
-  updatePartSession(part, key) {
+  setPartSession(part, key) {
     const { value } = this._session;
 
     part.session = { id: key };

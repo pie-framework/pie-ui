@@ -61,7 +61,7 @@ export default class Ebsr extends HTMLElement {
   dispatchSessionChanged(partSession, key) {
     this._session.value = {
       ...this._session.value,
-      [key]: partSession,
+      [key]: partSession
     };
 
     log('[onSessionChanged] session: ', this._session);

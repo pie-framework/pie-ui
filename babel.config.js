@@ -6,5 +6,5 @@ module.exports = {
     '@babel/plugin-proposal-export-namespace-from'
   ],
   ignore: ['node_modules'],
-  sourceMaps: true,
+  sourceMaps: true
 };

@@ -2,92 +2,59 @@ import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 import MultipleChoice from '@pie-ui/multiple-choice';
 
 import debug from 'debug';
+const SESSION_CHANGED = SessionChangedEvent.TYPE;
 const log = debug('pie-elements:ebsr');
 
-export default class Ebsr extends HTMLElement {
-  static defineMultipleChoice() {
-    if(!customElements.get('multiple-choice')){
-      customElements.define('multiple-choice', MultipleChoice);
-    }
+const defineMultipleChoice = () => {
+  if(!customElements.get('multiple-choice')){
+    customElements.define('multiple-choice', MultipleChoice);
   }
+};
 
-  static getParts = () => ({
-    partA: document.getElementById('part-a'),
-    partB: document.getElementById('part-b'),
-  });
-
+export default class Ebsr extends HTMLElement {
   constructor() {
     super();
-
-    Ebsr.defineMultipleChoice();
-
+    defineMultipleChoice();
     this._model = {};
     this._session = {};
+
+    this.onPartUpdated = e => {
+      e.stopImmediatePropagation();
+      const key =
+        e.target.getAttribute('id') === 'part-a' ? 'partA' : 'partB';
+      this.dispatchSessionChanged(e.srcElement._session, key);
+    };
   }
 
   set model(m) {
     this._model = m;
-    this.setup();
+    this.updatePartModel(this.partA, 'partA');
+    this.updatePartModel(this.partB, 'partB');
   }
 
   set session(s) {
     this._session = s;
-    this.setup();
-  }
-
-  setup() {
-    this.updateModels();
-    this.captureSessionChanges();
-  }
-
-  updateModels() {
-    const { partA, partB } = Ebsr.getParts();
-
-    if (partA && partB) {
-      this.updatePartModel(partA, 'partA');
-      this.updatePartModel(partB, 'partB');
-    }
+    this.updatePartSession(this.partA, 'partA');
+    this.updatePartSession(this.partB, 'partB');
   }
 
   updatePartModel(part, key) {
     const { mode } = this._model;
-    const { value } = this._session;
-
-    const { correctResponse, disabled, keyMode, showCorrect, choiceMode, choices, prompt } = this._model[key];
 
     part.model = {
-      id: key,
-      choiceMode,
-      choices,
-      correctResponse,
-      disabled,
-      keyMode,
-      mode,
-      prompt,
-      showCorrect
+      ...this._model[key],
+      mode
     };
+  }
+
+  updatePartSession(part, key) {
+    const { value } = this._session;
 
     part.session = { id: key };
 
     if (value) {
       part.session = value[key];
     }
-  }
-
-  captureSessionChanges() {
-    const { partA, partB } = Ebsr.getParts();
-
-    if (partA && partB) {
-      this.capturePartSessionChanged(partA, 'partA');
-      this.capturePartSessionChanged(partB, 'partB');
-    }
-  }
-
-  capturePartSessionChanged(part, key) {
-    part.addEventListener('session-changed', (event)  => {
-      event.stopImmediatePropagation();
-      this.dispatchSessionChanged(event.srcElement._session, key);
-    });
   }
 
   dispatchSessionChanged(partSession, key) {
@@ -103,8 +70,23 @@ export default class Ebsr extends HTMLElement {
     );
   }
 
+  get partA() {
+    return this.querySelector('#part-a');
+  }
+
+  get partB() {
+    return this.querySelector('#part-b');
+  }
+
   connectedCallback() {
     this._render();
+    this.partA.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+    this.partB.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+  }
+
+  disconnectedCallback() {
+    this.partA.removeEventListener(SESSION_CHANGED, this.onPartUpdated);
+    this.partB.removeEventListener(SESSION_CHANGED, this.onPartUpdated);
   }
 
   _render() {

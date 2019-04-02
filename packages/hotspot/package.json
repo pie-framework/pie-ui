@@ -1,0 +1,23 @@
+{
+  "name": "@pie-ui/hotspot",
+  "description": "",
+  "keywords": [
+    "pie",
+    "pie-ui",
+    "custom-element",
+    "react"
+  ],
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "repository": "pie-framework/pie-elements.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  }
+}

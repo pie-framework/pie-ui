@@ -4,8 +4,8 @@ import debug from 'debug';
 const log = debug('@pie-ui:placement-ordering-element:test');
 
 const defaultChoices = [
-  { id: 0, moveOnDrag: true },
-  { id: 1, moveOnDrag: true }
+  { id: 0 },
+  { id: 1 }
 ];
 
 describe('ordering', () => {
@@ -53,8 +53,8 @@ describe('ordering', () => {
 
         it('updates the tiles', () => {
           expect(state.tiles).toEqual([
-            { type: 'choice', id: 0, moveOnDrag: true, draggable: true, droppable: false },
-            { type: 'choice', id: 1, moveOnDrag: true, draggable: true, droppable: false },
+            { type: 'choice', id: 0, draggable: true, droppable: false },
+            { type: 'choice', id: 1, draggable: true, droppable: false },
             { type: 'target', index: 0, draggable: false, empty: true },
             { type: 'target', index: 1, draggable: false, empty: true }
           ]);
@@ -82,9 +82,9 @@ describe('ordering', () => {
 
         it('updates the tiles', () => {
           expect(state.tiles).toEqual([
-            { type: 'choice', empty: true, draggable: false, droppable: true },
-            { type: 'choice', id: 1, moveOnDrag: true, draggable: true, droppable: false },
-            { type: 'target', index: 0, id: 0, draggable: true, empty: false, moveOnDrag: true },
+            { type: 'choice', id: 0, draggable: true, droppable: false },
+            { type: 'choice', id: 1, draggable: true, droppable: false },
+            { type: 'target', index: 0, id: 0, draggable: true, empty: false },
             { type: 'target', index: 1, draggable: false, empty: true }
           ])
         });

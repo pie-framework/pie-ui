@@ -68,8 +68,9 @@ function updateResponse(state, from, to) {
   }
 }
 
-function buildTiles(choices, response, outcomes, opts) {
+function buildTiles(choices, response, outcomes, opts, removeTile) {
   if (opts.includeTargets) {
+
     const targets = [];
     for (var i = 0; i < response.length; i++) {
       const r = response[i];
@@ -91,7 +92,7 @@ function buildTiles(choices, response, outcomes, opts) {
     }
 
     const processedChoices = choices.map(m => {
-      if (response.indexOf(m.id) !== -1 && m.moveOnDrag) {
+      if (response.indexOf(m.id) !== -1 && removeTile) {
         return {
           type: 'choice',
           empty: true,
@@ -119,7 +120,7 @@ function buildTiles(choices, response, outcomes, opts) {
   }
 }
 
-export function buildState(choices, response, outcomes, opts) {
+export function buildState(choices, response, outcomes, opts, removeTile) {
   opts = assign({ includeTargets: true }, opts);
 
   outcomes = outcomes || [];
@@ -134,7 +135,7 @@ export function buildState(choices, response, outcomes, opts) {
     response,
     opts,
     outcomes,
-    tiles: buildTiles(choices, response, outcomes, opts)
+    tiles: buildTiles(choices, response, outcomes, opts, removeTile),
   };
 }
 

@@ -17,7 +17,10 @@ export class PlacementOrdering extends React.Component {
   static propTypes = {
     onSessionChange: PropTypes.func.isRequired,
     model: PropTypes.object.isRequired,
-    session: PropTypes.object.isRequired,
+    session: PropTypes.oneOfType([
+      PropTypes.array.isRequired,
+      PropTypes.object.isRequired,
+    ]),
     classes: PropTypes.object.isRequired
   };
 
@@ -34,9 +37,44 @@ export class PlacementOrdering extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.initSessionIfNeeded(this.props);
+  }
+
   componentWillReceiveProps(nextProps) {
+    const newState = {};
+
     if (!nextProps.model.correctResponse) {
-      this.setState({ showingCorrect: false });
+      newState.showingCorrect = false;
+    }
+
+    const includeTargetsChanged = nextProps.model.config.includeTargets !== this.props.model.config.includeTargets;
+    const choicesNumberChanged = nextProps.model.choices.length !== this.props.model.choices.length;
+
+    if (includeTargetsChanged || choicesNumberChanged) {
+      this.initSessionIfNeeded(nextProps);
+    }
+
+    this.setState(newState);
+  }
+
+  initSessionIfNeeded(props) {
+    const { model, session, onSessionChange } = props;
+    const { config: newConfig } = model;
+
+    const compactSessionValues = (session && compact(session.value)) || [];
+
+    if (!newConfig.includeTargets && compactSessionValues.length !== model.choices.length) {
+      log('[initSessionIfNeeded] initing session...', newConfig.includeTargets);
+      const update = cloneDeep(session);
+      update.value = model.choices.map(m => m.id);
+      onSessionChange(update);
+    } else if (newConfig.includeTargets) {
+      const update = cloneDeep(session);
+
+      delete update.value;
+
+      onSessionChange(update);
     }
   }
 
@@ -64,32 +102,6 @@ export class PlacementOrdering extends React.Component {
     onSessionChange(sessionUpdate);
   }
 
-  componentDidUpdate() {
-    this.initSessionIfNeeded();
-  }
-
-  componentDidMount() {
-    this.initSessionIfNeeded();
-  }
-
-  initSessionIfNeeded() {
-    const { model, session, onSessionChange } = this.props;
-    const config = model.config || { includeTargets: true };
-
-    log(
-      '[initSessionIfNeeded] config:',
-      config,
-      'session.value: ',
-      session.value
-    );
-    if (!config.includeTargets && isEmpty(compact(session.value))) {
-      log('[initSessionIfNeeded] initing session...', config.includeTargets);
-      const update = cloneDeep(session);
-      update.value = model.choices.map(m => m.id);
-      onSessionChange(update);
-    }
-  }
-
   render() {
     const { classes, model, session } = this.props;
     const showToggle =
@@ -107,11 +119,14 @@ export class PlacementOrdering extends React.Component {
           model.choices,
           model.correctResponse,
           model.correctResponse.map(id => ({ id, outcome: 'correct' })),
-          { includeTargets }
+          { includeTargets },
+          model.config.removeTile
         )
       : buildState(model.choices, session.value, model.outcomes, {
           includeTargets
-        });
+        },
+        model.config.removeTile
+      );
 
     const Tiler = vertical ? VerticalTiler : HorizontalTiler;
 

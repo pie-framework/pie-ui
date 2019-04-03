@@ -68,7 +68,10 @@ class RawInput extends React.Component {
     const theme = createMuiTheme({
       palette: {
         type: dark ? 'dark' : 'light'
-      }
+      },
+      typography: {
+        useNextVariants: true,
+      },
     });
 
     return (
@@ -83,7 +86,7 @@ class RawInput extends React.Component {
                 }}
                 value={value}
                 onChange={onChange}
-                inputComponent={inputComponent}
+                inputComponent={inputComponent === null ? undefined : inputComponent}
                 inputProps={inputProps}
               />
             </MuiThemeProvider>

@@ -508,5 +508,20 @@
     "committerDate": "2018-05-15 14:24:11 -0400",
     "isTagged": true,
     "tag": "@pie-ui/categorize@0.1.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@0.9.5"
   }
 ]

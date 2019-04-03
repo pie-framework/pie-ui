@@ -54,8 +54,6 @@ exports.getPkgAndDemo = (versionOverride, packages) => {
     const { markup, data } = exports.loadDemo(dir);
     const changelog = exports.loadChangelog(dir, 'CHANGELOG.md');
     const nextChangelog = exports.loadChangelog(dir, 'NEXT.CHANGELOG.md');
-    log('changelog', changelog);
-    log('nextChangelog', nextChangelog);
     pkg.demo = {
       tagName: exports.getElementNameFromDemo(data),
       data,

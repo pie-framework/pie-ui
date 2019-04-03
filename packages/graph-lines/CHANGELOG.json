@@ -148,5 +148,20 @@
     "committerDate": "2018-05-21 14:56:18 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@1.0.2"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@1.1.7"
   }
 ]

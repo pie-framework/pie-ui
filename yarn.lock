@@ -1675,7 +1675,7 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/charting@^2.2.3", "@pie-lib/charting@^2.3.1":
+"@pie-lib/charting@^2.3.1":
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-2.3.5.tgz#5ce000fc0d7da7dd0f20117180578494625eef01"
   integrity sha512-7cuHcSyV9L33C4P4mbip+rVCuai62tsNJ71SKPFQjLbata1uIEO9h/dLNXqixKpwBlNTwQlXZG0H5keTE0iCWw==
@@ -1692,21 +1692,6 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^7.11.3":
-  version "7.11.3"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-7.11.3.tgz#dcddb9f32ebe3e1fcda3dd6f01eb883bb5ee2ce1"
-  integrity sha512-AU/R7/NAGtYeN9tLCzf0QngYFHKlwC6flIB+KDJfvn524TZEK9vSRA0P+cN0YI8Tcht92jfYQ9QNAl+1l1MhJg==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^6.16.3"
-    "@pie-lib/icons" "^2.3.1"
-    classnames "^2.2.6"
-    debug "^4.1.1"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react-measure "^2.2.2"
-
 "@pie-lib/config-ui@^7.11.9":
   version "7.11.9"
   resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-7.11.9.tgz#cb9b324ad2d22635d2086748e812afbbd7324d16"
@@ -1722,7 +1707,7 @@
     prop-types "^15.6.2"
     react-measure "^2.2.2"
 
-"@pie-lib/correct-answer-toggle@2.1.2", "@pie-lib/correct-answer-toggle@^2.1.2":
+"@pie-lib/correct-answer-toggle@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.1.2.tgz#fc035d2d271a637a98be9096639d2fff788c40a8"
   integrity sha512-QTRCYE7Y4VFRnXlOBgJqCXoOWgp1Y/OaKvOV5j4P89D+ccYl/kpATHoC+H5UZPCX0VxPGtweKNfFpQEsUKTMXA==
@@ -1734,48 +1719,16 @@
     prop-types "^15.6.2"
     react-transition-group "^2.5.2"
 
-"@pie-lib/drag@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-1.1.4.tgz#f5e7279f2ddc884d4c8c24871cca69da54fca232"
-  integrity sha512-KCZHMpIbRvQlggtMfJPimOeB8vVjZCEYQDJAG9r9bIih3eY/jr/zA1fZ2iz5HHqfZ3ub96eFRWcuyCEQ9xkxXw==
+"@pie-lib/drag@^1.1.12", "@pie-lib/drag@^1.1.4":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-1.1.12.tgz#1f4526e8f2da607ab22cbbfacd30b4eacfd9e4c0"
+  integrity sha512-Uc+a3kr57Z954JGsuBQcn9nvqWH7se4gU1ACbucVH8ltswsKW7/wZR+uqInz7/5FQii5d/CXcwma6Y6yjbpLMw==
   dependencies:
     "@material-ui/core" "^3.8.3"
     classnames "^2.2.6"
     lodash "^4.17.11"
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
-
-"@pie-lib/editable-html@^6.16.3":
-  version "6.16.3"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-6.16.3.tgz#03f5b623a505721403260176e4d421f0b0979a3c"
-  integrity sha512-LqLtFPAKR/fpR1zSDyfd8yYR0R5v2bZYHOp6fI/aaNnB8pIWMcfT9XQK49ZntnT8NUfz5TPsHXzdSA3jQmoMzA==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-input" "^4.7.3"
-    "@pie-lib/math-rendering" "^1.2.1"
-    "@pie-lib/math-toolbar" "^0.6.4"
-    change-case "^3.0.2"
-    classnames "^2.2.6"
-    debug "^4.1.1"
-    immutable "^4.0.0-rc.12"
-    keycode "^2.2.0"
-    lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    prop-types "^15.6.2"
-    react-attr-converter "^0.3.1"
-    react-jss "^8.6.1"
-    react-portal "^4.2.0"
-    slate "^0.36.2"
-    slate-dev-environment "^0.2.0"
-    slate-edit-list "^0.11.3"
-    slate-edit-table "^0.17.0"
-    slate-html-serializer "^0.6.12"
-    slate-prop-types "^0.4.38"
-    slate-react "^0.14.3"
-    slate-schema-violations "^0.1.39"
-    slate-soft-break "^0.8.1"
-    to-style "^1.3.3"
 
 "@pie-lib/editable-html@^7.0.4":
   version "7.0.4"
@@ -1808,6 +1761,37 @@
     slate-soft-break "^0.8.1"
     to-style "^1.3.3"
 
+"@pie-lib/editable-html@^7.1.17":
+  version "7.1.17"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.1.17.tgz#34e64dd1db3fb0f5163f5c05f80d463aaa08733a"
+  integrity sha512-604RK89WcEIbrFBH7ZRc4/dGtPyAQWxKicHpS+zZh5ztxDILu71+PVqZAj5HhpXytcW1Zmj3vK9+42j0oCYiIQ==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/math-rendering" "^1.2.9"
+    "@pie-lib/math-toolbar" "^0.9.13"
+    change-case "^3.0.2"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    immutable "^4.0.0-rc.12"
+    keycode "^2.2.0"
+    lodash "^4.17.11"
+    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
+    prop-types "^15.6.2"
+    react-attr-converter "^0.3.1"
+    react-jss "^8.6.1"
+    react-portal "^4.2.0"
+    slate "^0.36.2"
+    slate-dev-environment "^0.2.0"
+    slate-edit-list "^0.11.3"
+    slate-edit-table "^0.17.0"
+    slate-html-serializer "^0.6.12"
+    slate-prop-types "^0.4.38"
+    slate-react "^0.14.3"
+    slate-schema-violations "^0.1.39"
+    slate-soft-break "^0.8.1"
+    to-style "^1.3.3"
+
 "@pie-lib/icons@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.3.1.tgz#6cdfc2bfa2ad8687d9f078bea3bbfd040dbfcd95"
@@ -1815,18 +1799,6 @@
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.2"
-
-"@pie-lib/math-input@^4.7.3", "@pie-lib/math-input@^4.7.5":
-  version "4.7.5"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-4.7.5.tgz#ff8adc2e6231ecae84fb5654b0220471542dac90"
-  integrity sha512-gubz5ZSeuHcBCd2tf/RHwIDSJ5I7PPoqrKNsPEQ2xi3UOByyAesCqRaeJRx0hY9MMxvTtfiLWLO2tRIQhS49Xg==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    debug "^4.1.1"
-    lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    react-portal "^4.2.0"
 
 "@pie-lib/math-input@^5.0.4":
   version "5.0.4"
@@ -1861,18 +1833,13 @@
     mathjax3 "^3.0.0-beta.3"
     prop-types "^15.6.2"
 
-"@pie-lib/math-toolbar@^0.6.4", "@pie-lib/math-toolbar@^0.6.9":
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-0.6.9.tgz#0de718320651c0728f757fabf4832b7860e219ef"
-  integrity sha512-vC+ZlDChkPlWnThYo85bg5YLPgjgRG+iLoVRuLk4G7Sdbt2Y4/65dz7iA36pLIO8lFkbcmb9A8d962iDg1O/7g==
+"@pie-lib/math-rendering@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-1.2.9.tgz#ed9dab9ed17ec77867907c2cd4d44f0bd3f0c738"
+  integrity sha512-9hwgqAYiekHCnq1NYav0nDSnGDz+iLsEe7mWOt52TjInx8i78Nq4M7uTPrBZmj2Q9JNNDejDZYGFgrj/u7J0Yg==
   dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-input" "^4.7.5"
-    classnames "^2.2.6"
     debug "^4.1.1"
-    keycode "^2.2.0"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
+    mathjax3 "^3.0.0-beta.3"
     prop-types "^15.6.2"
 
 "@pie-lib/math-toolbar@^0.8.0":
@@ -1920,7 +1887,7 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.0.tgz#8d95e7da3c886dd222008e79f1625d6a84eafdff"
   integrity sha512-rAdL7Jy1ZdnXyGJyimMd/q6wqfxaRt+8iQ7ROS+FzYx95HIGeKlEiwCYN7eU9v9kOzdWQaQvnEQyTXPTgleAHQ==
 
-"@pie-lib/test-utils@0.0.3", "@pie-lib/test-utils@^0.0.3":
+"@pie-lib/test-utils@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.0.3.tgz#9bef3bfb236af4cda24e9ed6446794d9615175a0"
   integrity sha512-oZ5XTtdy7NiFdN9M9fRSwc56M3CgNC1YFH9P9BryuBT39GlMyWTABz/neCzBc/TGhVylfMVuGo0LJOA0IkwUOw==
@@ -1958,23 +1925,6 @@
     lodash "^4.17.11"
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
-
-"@pie-ui/math-inline@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@pie-ui/math-inline/-/math-inline-0.2.3.tgz#c7e1dd3ad907d66f907115ff8c4876f36288c7a9"
-  integrity sha512-3rH/9yp8qjMyi0EHKtfKpkNr2DcGnwCU0ABuvMfENp8geOi69F6d+QyVQuK4Jikjfw+ZdEkpTxphT3NesVk3dQ==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@pie-lib/correct-answer-toggle" "^2.1.2"
-    "@pie-lib/math-toolbar" "^0.6.9"
-    "@pie-lib/render-ui" "^4.3.1"
-    classnames "^2.2.5"
-    debug "^3.1.0"
-    lodash "^4.17.10"
-    mathquill "git+https://github.com/luxp/mathquill-webpack.git"
-    prop-types "^15.6.1"
-    react "^16.3.2"
-    react-dom "^16.3.2"
 
 "@types/anymatch@*":
   version "1.3.1"
@@ -2019,9 +1969,9 @@
     indefinite-observable "^1.0.1"
 
 "@types/lodash@^4.14.107":
-  version "4.14.117"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.117.tgz#695a7f514182771a1e0f4345d189052ee33c8778"
-  integrity sha512-xyf2m6tRbz8qQKcxYZa7PA4SllYcay+eh25DN3jmNYY6gSTL7Htc/bttVdkqj2wfJGbeWlQiX8pIyJpKU+tubw==
+  version "4.14.123"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
 
 "@types/node@*":
   version "9.6.6"
@@ -2029,9 +1979,9 @@
   integrity sha512-SJe0g5cZeGNDP5sD8mIX3scb+eq8LQQZ60FXiKZHipYSeEFZ5EKml+NNMiO76F74TY4PoMWlNxF/YRY40FOvZQ==
 
 "@types/node@^8.10.11":
-  version "8.10.36"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.36.tgz#eac05d576fbcd0b4ea3c912dc58c20475c08d9e4"
-  integrity sha512-SL6KhfM7PTqiFmbCW3eVNwVBZ+88Mrzbuvn9olPsfv43mbiWaFY+nRcz/TGGku0/lc2FepdMbImdMY1JrQ+zbw==
+  version "8.10.45"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.45.tgz#4c49ba34106bc7dced77ff6bae8eb6543cde8351"
+  integrity sha512-tGVTbA+i3qfXsLbq9rEq/hezaHY55QxQLeXQL2ejNgFAxxrgu8eMmYIOsRcl7hN1uTLVsKOOYacV/rcJM3sfgQ==
 
 "@types/prop-types@*":
   version "15.5.6"
@@ -7387,12 +7337,6 @@ mathjax3@^3.0.0-beta.3:
   dependencies:
     esm "^3.0.34"
 
-"mathquill@git+https://github.com/luxp/mathquill-webpack.git":
-  version "0.10.1"
-  resolved "git+https://github.com/luxp/mathquill-webpack.git#45340938c068373acc5e7525952fd6d89b11ac78"
-  dependencies:
-    jquery latest
-
 "mathquill@git+https://github.com/pie-framework/mathquill-webpack.git":
   version "0.10.1"
   resolved "git+https://github.com/pie-framework/mathquill-webpack.git#3777808dab77235b5854959632b2ed9333b7ad3a"
@@ -9141,7 +9085,7 @@ react-dnd@^7.0.2:
     recompose "^0.30.0"
     shallowequal "^1.1.0"
 
-react-dom@^16.3.2, react-dom@^16.8.1:
+react-dom@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.1.tgz#ec860f98853d09d39bafd3a6f1e12389d283dbb4"
   integrity sha512-N74IZUrPt6UiDjXaO7UbDDFXeUXnVhZzeRLy/6iqqN1ipfjrhR60Bp5NuBK+rv3GMdqdIuwIl22u1SYwf330bg==
@@ -9284,7 +9228,7 @@ react-transition-group@^2.5.2:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.3.2, react@^16.8.1:
+react@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.1.tgz#ae11831f6cb2a05d58603a976afc8a558e852c4a"
   integrity sha512-wLw5CFGPdo7p/AgteFz7GblI2JPOos0+biSoxf1FPsGxWQZdN/pj6oToJs1crn61DL3Ln7mN86uZ4j74p31ELQ==

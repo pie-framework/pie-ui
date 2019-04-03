@@ -308,5 +308,20 @@
     "committerDate": "2018-03-06 13:57:44 -0500",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@2.0.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.4.7"
   }
 ]

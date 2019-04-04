@@ -9,6 +9,7 @@ import isEqual from 'lodash/isEqual';
 import SimpleQuestionBlock from './simple-question-block';
 
 let registered = false;
+
 const REGEX = /\\embed\{answerBlock\}\[(.*?)\]/g;
 
 export class Main extends React.Component {

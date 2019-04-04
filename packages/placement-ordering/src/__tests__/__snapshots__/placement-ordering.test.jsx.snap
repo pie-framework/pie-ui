@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlacementOrdering render snapshot 1`] = `
-<div className="placementOrdering">
+<div
+  className="placementOrdering"
+>
   <_default
     onToggle={[Function]}
     toggled={false}

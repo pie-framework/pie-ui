@@ -89,6 +89,7 @@ describe('PlacementOrdering', () => {
   describe('session', () => {
     it('order get restored from session if present', () => {
       let ordering = wrapper.instance().createOrdering();
+
       expect(ordering.tiles.map(t => t.id)).toEqual(['c1', 'c2', 'c3', 'c4']);
 
       session = { value: ['c4', 'c2', 'c3', 'c1'] };

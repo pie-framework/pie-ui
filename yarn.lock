@@ -1662,6 +1662,13 @@
     invariant "^2.2.4"
     lodash "^4.17.10"
 
+"@pie-framework/mathquill@^0.10.2", "@pie-framework/mathquill@^0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@pie-framework/mathquill/-/mathquill-0.10.3.tgz#6e9fe502682f5ddbe7b4ce325871af997a8a3141"
+  integrity sha512-fUgdqzpwtk2eggWUw65VArX81G4gHqaU2CVs3mJ/9/1Z1SjZxM2OS6ZReuex/4j+Ta/BRC07Go2fUeKdFI5Lqg==
+  dependencies:
+    jquery "^3.3.1"
+
 "@pie-framework/pie-player-events@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@pie-framework/pie-player-events/-/pie-player-events-0.1.0.tgz#0150904118fd604559982ab658967811c053ffe3"
@@ -1800,6 +1807,14 @@
     classnames "^2.2.6"
     prop-types "^15.6.2"
 
+"@pie-lib/icons@^2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.3.8.tgz#9978a3a559375a824921354c33023ed94e14973b"
+  integrity sha512-+v44yefAiUKsScHd/Fnzzo8n692AQ5TdSOwRcCSfhp7YFPpoel7lH+Z7g2XHx8TQX8uE1cY8zvUZTbJ6uUZjXA==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
+
 "@pie-lib/math-input@^5.0.4":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.0.4.tgz#418572e25b3e23d1ba2ee4f5581d05cf86ab8fb6"
@@ -1824,6 +1839,18 @@
     mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
     react-portal "^4.2.0"
 
+"@pie-lib/math-input@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.3.0.tgz#0a3dc0120c9ab3412cfa3a1cf5cd28b178338a83"
+  integrity sha512-2ZAWdYHp92NeN7ppb+cs/sTRTEtvgbGMBN2oB6tuBvN1NZFjL6N6CmNoolSK6sND3Mrq5BjUJJTUueSZmQzJog==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-framework/mathquill" "^0.10.3"
+    debug "^4.1.1"
+    lodash "^4.17.11"
+    react-portal "^4.2.0"
+
 "@pie-lib/math-rendering@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-1.2.1.tgz#1fba12739de5a626488cd1b1ed83550bfff02b2b"
@@ -1841,6 +1868,18 @@
     debug "^4.1.1"
     mathjax3 "^3.0.0-beta.3"
     prop-types "^15.6.2"
+
+"@pie-lib/math-toolbar@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-0.10.0.tgz#aba212470dd27334fb3516075eae34b565fb6e48"
+  integrity sha512-bULibKzK4hhqQbZAG13WMQq3Ki3UfZQo3YuIjw/bbnzuOmao9Z5BRsSotttzxaSLG7iZlpW+anBLgajt5J6I/g==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/math-input" "^5.3.0"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    keycode "^2.2.0"
 
 "@pie-lib/math-toolbar@^0.8.0":
   version "0.8.0"
@@ -1878,6 +1917,18 @@
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
     "@pie-lib/icons" "^2.3.1"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    react-transition-group "^2.5.2"
+
+"@pie-lib/render-ui@^4.3.8":
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.3.8.tgz#db48ec51a02fd0be097fe3ad5fa4bba1919138ba"
+  integrity sha512-ItpXXFJ6aTn76GER3UW9GKwTbVcRCdoOmAm/wILxIyDfDx3s3B6Z42xPKCfFom8S/M+XET8DlT82C8xazxnIFw==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/icons" "^2.3.8"
     classnames "^2.2.6"
     debug "^4.1.1"
     react-transition-group "^2.5.2"
@@ -6672,7 +6723,7 @@ jest@^24.1.0:
     import-local "^2.0.0"
     jest-cli "^24.1.0"
 
-jquery@latest:
+jquery@^3.3.1, jquery@latest:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==

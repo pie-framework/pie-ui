@@ -17,10 +17,6 @@
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-ui/multiple-choice": "^4.7.7",
-    "classnames": "^2.2.5",
-    "debug": "^4.1.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "debug": "^4.1.1"
   }
 }

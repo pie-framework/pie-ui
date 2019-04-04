@@ -1662,6 +1662,13 @@
     invariant "^2.2.4"
     lodash "^4.17.10"
 
+"@pie-framework/mathquill@^0.10.2", "@pie-framework/mathquill@^0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@pie-framework/mathquill/-/mathquill-0.10.3.tgz#6e9fe502682f5ddbe7b4ce325871af997a8a3141"
+  integrity sha512-fUgdqzpwtk2eggWUw65VArX81G4gHqaU2CVs3mJ/9/1Z1SjZxM2OS6ZReuex/4j+Ta/BRC07Go2fUeKdFI5Lqg==
+  dependencies:
+    jquery "^3.3.1"
+
 "@pie-framework/pie-player-events@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@pie-framework/pie-player-events/-/pie-player-events-0.1.0.tgz#0150904118fd604559982ab658967811c053ffe3"
@@ -1730,53 +1737,21 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.0.4.tgz#707fc92a78cb771c2477bb9d6560999d6e09278e"
-  integrity sha512-7GF02MWU4xbPqaE/cmvH0neG0KBQHcHVI+qLiwkqlg8VjX7Vahz9yFbrChQp5oOfeZ7KEQAcAp0wuHwUW+7ZtA==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-rendering" "^1.2.1"
-    "@pie-lib/math-toolbar" "^0.8.0"
-    change-case "^3.0.2"
-    classnames "^2.2.6"
-    debug "^4.1.1"
-    immutable "^4.0.0-rc.12"
-    keycode "^2.2.0"
-    lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    prop-types "^15.6.2"
-    react-attr-converter "^0.3.1"
-    react-jss "^8.6.1"
-    react-portal "^4.2.0"
-    slate "^0.36.2"
-    slate-dev-environment "^0.2.0"
-    slate-edit-list "^0.11.3"
-    slate-edit-table "^0.17.0"
-    slate-html-serializer "^0.6.12"
-    slate-prop-types "^0.4.38"
-    slate-react "^0.14.3"
-    slate-schema-violations "^0.1.39"
-    slate-soft-break "^0.8.1"
-    to-style "^1.3.3"
-
-"@pie-lib/editable-html@^7.1.17":
-  version "7.1.17"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.1.17.tgz#34e64dd1db3fb0f5163f5c05f80d463aaa08733a"
-  integrity sha512-604RK89WcEIbrFBH7ZRc4/dGtPyAQWxKicHpS+zZh5ztxDILu71+PVqZAj5HhpXytcW1Zmj3vK9+42j0oCYiIQ==
+"@pie-lib/editable-html@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.2.0.tgz#5cf609394a25f76431dc6b8528e0c15a14772f31"
+  integrity sha512-a9LF4OUmGjNdIJfhkc6vQ+4RZyRZtoC3zk7kn/LGLKJh9b1WVSKVASxx3YxKaIrgsietshabgDf5tO5uAjq8eQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
     "@pie-lib/math-rendering" "^1.2.9"
-    "@pie-lib/math-toolbar" "^0.9.13"
+    "@pie-lib/math-toolbar" "^0.10.0"
     change-case "^3.0.2"
     classnames "^2.2.6"
     debug "^4.1.1"
     immutable "^4.0.0-rc.12"
     keycode "^2.2.0"
     lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
     prop-types "^15.6.2"
     react-attr-converter "^0.3.1"
     react-jss "^8.6.1"
@@ -1800,28 +1775,24 @@
     classnames "^2.2.6"
     prop-types "^15.6.2"
 
-"@pie-lib/math-input@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.0.4.tgz#418572e25b3e23d1ba2ee4f5581d05cf86ab8fb6"
-  integrity sha512-71tG3tDSxPMkowclTOJpkDZVjx9ry2DZDigdORvYuR5aYrOHU2UhYtD+KW+BqZa4TESLsHNSrm1mgKxh5ahu+w==
+"@pie-lib/icons@^2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.3.8.tgz#9978a3a559375a824921354c33023ed94e14973b"
+  integrity sha512-+v44yefAiUKsScHd/Fnzzo8n692AQ5TdSOwRcCSfhp7YFPpoel7lH+Z7g2XHx8TQX8uE1cY8zvUZTbJ6uUZjXA==
   dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    debug "^4.1.1"
-    lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    react-portal "^4.2.0"
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
 
-"@pie-lib/math-input@^5.1.13":
-  version "5.1.13"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.1.13.tgz#5462c9603b3d306c03d6037d679cea352eaae988"
-  integrity sha512-NHyfWdO1nFJaYxhV5IDOxhOVUCZIlFa/1CMK0dFSZKASLU2Yykv01u3MQLZKfzMg0o3CJwD1JQb6+Ls97Taerw==
+"@pie-lib/math-input@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-5.3.0.tgz#0a3dc0120c9ab3412cfa3a1cf5cd28b178338a83"
+  integrity sha512-2ZAWdYHp92NeN7ppb+cs/sTRTEtvgbGMBN2oB6tuBvN1NZFjL6N6CmNoolSK6sND3Mrq5BjUJJTUueSZmQzJog==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
+    "@pie-framework/mathquill" "^0.10.3"
     debug "^4.1.1"
     lodash "^4.17.11"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
     react-portal "^4.2.0"
 
 "@pie-lib/math-rendering@^1.2.1":
@@ -1842,33 +1813,17 @@
     mathjax3 "^3.0.0-beta.3"
     prop-types "^15.6.2"
 
-"@pie-lib/math-toolbar@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-0.8.0.tgz#240f2f443ffbfeb00c90f9dbd1e088c35eaa1141"
-  integrity sha512-j0hpwHgbug0YDEFcPGbN+eC14wkznKpo4gubigxvRCvTr8onP58dPE2ZsyQE89lLjcgSmz/QmGZIifyaNZT2fQ==
+"@pie-lib/math-toolbar@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-0.10.0.tgz#aba212470dd27334fb3516075eae34b565fb6e48"
+  integrity sha512-bULibKzK4hhqQbZAG13WMQq3Ki3UfZQo3YuIjw/bbnzuOmao9Z5BRsSotttzxaSLG7iZlpW+anBLgajt5J6I/g==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-input" "^5.0.4"
+    "@pie-lib/math-input" "^5.3.0"
     classnames "^2.2.6"
     debug "^4.1.1"
     keycode "^2.2.0"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    prop-types "^15.6.2"
-
-"@pie-lib/math-toolbar@^0.9.13":
-  version "0.9.13"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-0.9.13.tgz#33bc11ed111d01dbe28a77720ec1e735e2c07018"
-  integrity sha512-9PuZb3SOOn9b8fg92CW6/Z321d771D1wXAnxI0GHrj7FLBezUS5iGxnb3RfagfA8msbPcSQdziubzMJj2hceOw==
-  dependencies:
-    "@material-ui/core" "^3.8.3"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-input" "^5.1.13"
-    classnames "^2.2.6"
-    debug "^4.1.1"
-    keycode "^2.2.0"
-    mathquill "git+https://github.com/pie-framework/mathquill-webpack.git"
-    prop-types "^15.6.2"
 
 "@pie-lib/render-ui@^4.3.1":
   version "4.3.1"
@@ -1878,6 +1833,18 @@
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
     "@pie-lib/icons" "^2.3.1"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    react-transition-group "^2.5.2"
+
+"@pie-lib/render-ui@^4.3.8":
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.3.8.tgz#db48ec51a02fd0be097fe3ad5fa4bba1919138ba"
+  integrity sha512-ItpXXFJ6aTn76GER3UW9GKwTbVcRCdoOmAm/wILxIyDfDx3s3B6Z42xPKCfFom8S/M+XET8DlT82C8xazxnIFw==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/icons" "^2.3.8"
     classnames "^2.2.6"
     debug "^4.1.1"
     react-transition-group "^2.5.2"
@@ -6672,7 +6639,7 @@ jest@^24.1.0:
     import-local "^2.0.0"
     jest-cli "^24.1.0"
 
-jquery@latest:
+jquery@^3.3.1, jquery@latest:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
@@ -7336,12 +7303,6 @@ mathjax3@^3.0.0-beta.3:
   integrity sha512-MgXK56KOLk5b8/Y01RXB/C0+QgC2Kc+SJmKBilP+Jwxout/4SdV8AjsPp+WMzlotnAacQWFpn24CPdLkdej9AA==
   dependencies:
     esm "^3.0.34"
-
-"mathquill@git+https://github.com/pie-framework/mathquill-webpack.git":
-  version "0.10.1"
-  resolved "git+https://github.com/pie-framework/mathquill-webpack.git#3777808dab77235b5854959632b2ed9333b7ad3a"
-  dependencies:
-    jquery latest
 
 md5.js@^1.3.4:
   version "1.3.5"

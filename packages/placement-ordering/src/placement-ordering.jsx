@@ -78,32 +78,57 @@ export class PlacementOrdering extends React.Component {
     }
   }
 
-  onDropChoice(ordering, target, source) {
+  onDropChoice(target, source) {
     const { onSessionChange, session } = this.props;
-    const from = ordering.tiles.find(
+    const from = this.ordering.tiles.find(
       t => t.id === source.id && t.type === source.type
     );
     const to = target;
     log('[onDropChoice] ', from, to);
-    const update = reducer({ type: 'move', from, to }, ordering);
+    const update = reducer({ type: 'move', from, to }, this.ordering);
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
     onSessionChange(sessionUpdate);
   }
 
-  onRemoveChoice(ordering, target) {
+  onRemoveChoice(target) {
     const { onSessionChange, session } = this.props;
     log('[onRemoveChoice]', target);
-    const update = reducer({ type: 'remove', target }, ordering);
+    const update = reducer({ type: 'remove', target }, this.ordering);
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
+
     onSessionChange(sessionUpdate);
   }
 
+  createOrdering = () => {
+    const { model, session } = this.props;
+    const { showingCorrect } = this.state;
+    const config = model.config || {
+        orientation: 'vertical',
+        includeTargets: true
+      };
+    const { includeTargets } = config;
+
+    return showingCorrect
+      ? buildState(
+        model.choices,
+        model.correctResponse,
+        model.correctResponse.map(id => ({ id, outcome: 'correct' })),
+        { includeTargets },
+        model.config.removeTile
+      )
+      : buildState(model.choices, session.value, model.outcomes, {
+          includeTargets
+        },
+        model.config.removeTile
+      );
+  };
+
   render() {
-    const { classes, model, session } = this.props;
+    const { classes, model } = this.props;
     const showToggle =
       model.correctResponse && model.correctResponse.length > 0;
     const { showingCorrect } = this.state;
@@ -114,19 +139,7 @@ export class PlacementOrdering extends React.Component {
     const { orientation, includeTargets } = config;
     const vertical = orientation === 'vertical';
 
-    const ordering = showingCorrect
-      ? buildState(
-          model.choices,
-          model.correctResponse,
-          model.correctResponse.map(id => ({ id, outcome: 'correct' })),
-          { includeTargets },
-          model.config.removeTile
-        )
-      : buildState(model.choices, session.value, model.outcomes, {
-          includeTargets
-        },
-        model.config.removeTile
-      );
+    this.ordering = this.createOrdering();
 
     const Tiler = vertical ? VerticalTiler : HorizontalTiler;
 
@@ -147,13 +160,13 @@ export class PlacementOrdering extends React.Component {
           instanceId={this.instanceId}
           choiceLabel={config.choiceLabel}
           targetLabel={config.targetLabel}
-          tiles={ordering.tiles}
+          tiles={this.ordering.tiles}
           disabled={model.disabled}
           addGuide={model.config.showOrdering}
           tileSize={model.config && model.config.tileSize}
           includeTargets={includeTargets}
-          onDropChoice={this.onDropChoice.bind(this, ordering)}
-          onRemoveChoice={this.onRemoveChoice.bind(this, ordering)}
+          onDropChoice={this.onDropChoice.bind(this)}
+          onRemoveChoice={this.onRemoveChoice.bind(this)}
         />
 
         <br />

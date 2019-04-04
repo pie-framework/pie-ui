@@ -4,7 +4,7 @@ exports[`PlacementOrdering render snapshot 1`] = `
 <div
   className="placementOrdering"
 >
-  <Component
+  <_default
     onToggle={[Function]}
     toggled={false}
   />

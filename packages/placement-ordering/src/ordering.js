@@ -136,6 +136,7 @@ export function buildState(choices, response, outcomes, opts, removeTile) {
     opts,
     outcomes,
     tiles: buildTiles(choices, response, outcomes, opts, removeTile),
+    removeTile
   };
 }
 
@@ -148,7 +149,8 @@ export function reducer(action, state) {
         state.choices,
         response,
         state.outcomes,
-        state.opts
+        state.opts,
+        state.removeTile
       );
       return Object.assign({}, state, { response, tiles });
     }
@@ -159,7 +161,8 @@ export function reducer(action, state) {
         state.choices,
         response,
         state.outcomes,
-        state.opts
+        state.opts,
+        state.removeTile
       );
       return Object.assign({}, state, { response, tiles });
     }

@@ -1,17 +1,18 @@
 import { shallow } from 'enzyme';
 
 import React from 'react';
+import compact from 'lodash/compact';
 import { PlacementOrdering, Choice } from '../placement-ordering';
 import toJson from 'enzyme-to-json';
+import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 
-/* TODO: These tests need an update */
-
-xdescribe('PlacementOrdering', () => {
+describe('PlacementOrdering', () => {
   let wrapper, model, session;
 
   const mkWrapper = (model, session) => {
     session = { value: [], ...session };
     model = { config: {}, ...model };
+
     return shallow(
       <PlacementOrdering
         model={model}
@@ -44,10 +45,16 @@ xdescribe('PlacementOrdering', () => {
           id: 'c4',
           label: 'C4'
         }
-      ]
+      ],
+      config: {}
     };
 
     wrapper = mkWrapper(model);
+    wrapper.setProps({
+      onSessionChange: jest.fn(newSession => {
+        wrapper.setState({ session: newSession })
+      })
+    });
   });
 
   describe('render', () => {
@@ -57,78 +64,63 @@ xdescribe('PlacementOrdering', () => {
   });
 
   describe('interaction', () => {
-    it('dropping choices updates state', () => {
-      wrapper.instance().onDropChoice('c4', 0);
-      wrapper.instance().onDropChoice('c3', 1);
-      wrapper.instance().onDropChoice('c1', 2);
-      wrapper.instance().onDropChoice('c2', 3);
-      expect(wrapper.state('order')).toEqual(['c4', 'c3', 'c1', 'c2']);
+    it('dropping choices updates the order', () => {
+      wrapper.instance().onDropChoice({ id: 'c4', type: 'choice'}, { id: 'c1', type: 'choice' });
+
+      expect(wrapper.state('session').value).toEqual(['c4', 'c2', 'c3', 'c1']);
     });
 
     it('removing choices updates state', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-      wrapper.instance().onDragInvalid('c4', 0);
-      expect(wrapper.state('order')).toEqual([null, 'c2', 'c3', 'c1']);
+      session = { value: ['c1', 'c2', 'c3', 'c4'] };
+      const valuesLength = session.value.length;
+      wrapper = mkWrapper({ ...model, config: { ...model.config, removeTile: true, includeTargets: true } }, session);
+      wrapper.setProps({
+        onSessionChange: jest.fn(newSession => {
+          wrapper.setState({ session: newSession })
+        })
+      });
+
+      wrapper.instance().onRemoveChoice({ id: 'c4', type: 'target', index: 3});
+
+      expect(compact(wrapper.state('session').value).length).toEqual(valuesLength - 1);
     });
   });
 
-  xdescribe('session', () => {
+  describe('session', () => {
     it('order get restored from session if present', () => {
+      let ordering = wrapper.instance().createOrdering();
+      expect(ordering.tiles.map(t => t.id)).toEqual(['c1', 'c2', 'c3', 'c4']);
+
       session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-      const choices = wrapper.find('DragSource(DraggableChoice)');
-      expect(
-        choices.map(c => {
-          return c.props().choiceId;
-        })
-      ).toEqual(['c4', 'c2', 'c3', 'c1']);
+
+      wrapper.setProps({ session });
+
+      ordering = wrapper.instance().createOrdering();
+
+      expect(ordering.tiles.map(t => t.id)).toEqual(['c4', 'c2', 'c3', 'c1']);
     });
   });
 
-  xdescribe('show correct response', () => {
-    it('toggle is visible only if correct response is present', () => {
+  describe('show correct response', () => {
+    it('toggle is not visible if correct response is not present', () => {
       session = { value: ['c4', 'c2', 'c3', 'c1'] };
       wrapper = mkWrapper(model, session);
-      const toggler = () => wrapper.find('mockToggle');
-      expect(toggler().prop('show')).not.to.be.true;
-      expect(toggler().prop('toggled')).to.be.false;
+
+      const toggle = wrapper.find(CorrectAnswerToggle);
+
+      expect(toggle.prop('show')).not.toEqual(true);
+      expect(toggle.prop('toggled')).toEqual(false);
+    });
+
+    it('toggle is visible if correct response is present', () => {
+      session = { value: ['c4', 'c2', 'c3', 'c1'] };
       model.correctResponse = ['c1', 'c4', 'c3', 'c2'];
-      wrapper.setProps({ model: model });
-      expect(toggler().prop('show')).to.be.true;
-      expect(toggler().prop('toggled')).to.be.false;
-    });
-  });
-
-  describe('outcomes', () => {
-    it('choices are styled according to their outcome', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      model.correctResponse = ['c1', 'c2', 'c3', 'c4'];
-      model.outcomes = [
-        {
-          id: 'c1',
-          outcome: 'incorrect'
-        },
-        {
-          id: 'c2',
-          outcome: 'correct'
-        },
-        {
-          id: 'c3',
-          outcome: 'correct'
-        },
-        {
-          id: 'c4',
-          outcome: 'incorrect'
-        }
-      ];
       wrapper = mkWrapper(model, session);
-      const droppedChoices = wrapper.find('DragSource(DraggableChoice)');
-      expect(
-        droppedChoices.map(c => {
-          return c.props().outcome;
-        })
-      ).toEqual(['incorrect', 'correct', 'correct', 'incorrect']);
+
+      const toggle = wrapper.find(CorrectAnswerToggle);
+
+      expect(toggle.prop('show')).toEqual(true);
+      expect(toggle.prop('toggled')).toEqual(false);
     });
   });
 });

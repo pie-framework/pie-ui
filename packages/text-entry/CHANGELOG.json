@@ -308,5 +308,50 @@
     "committerDate": "2018-03-06 13:52:43 -0500",
     "isTagged": true,
     "tag": "@pie-ui/text-entry@1.0.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/text-entry@3.5.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "When inputComponent was null it was causing issues.",
+    "merge": null,
+    "header": "fix: When inputComponent was null it was causing issues.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "dd1a6e6a1e7373ef8c03e26c2b2ca53231646281",
+    "gitTags": " (origin/fix/text-entry)",
+    "committerDate": "2019-03-12 17:39:51 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/text-entry@3.5.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "The old typography variants will be removed in the next major release v4.0.0 (Q1 2019), so I made a quick fix by adding useNextVariants: true.",
+    "merge": null,
+    "header": "fix: The old typography variants will be removed in the next major release v4.0.0 (Q1 2019), so I made a quick fix by adding useNextVariants: true.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "adcb329f3d19152f20f30d89c5e73b135f403316",
+    "gitTags": "",
+    "committerDate": "2019-03-12 17:31:57 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/text-entry@3.5.5"
   }
 ]

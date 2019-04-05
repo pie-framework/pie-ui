@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.5...@pie-ui/text-entry@3.5.6) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/text-entry
+
+
+
+
+
+## [3.5.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.4...@pie-ui/text-entry@3.5.5) (2019-03-26)
+
+
+### Bug Fixes
+
+* The old typography variants will be removed in the next major release v4.0.0 (Q1 2019), so I made a quick fix by adding useNextVariants: true. ([adcb329](https://github.com/pie-framework/pie-ui/commit/adcb329))
+* When inputComponent was null it was causing issues. ([dd1a6e6](https://github.com/pie-framework/pie-ui/commit/dd1a6e6))
+
+
+
+
+
+## [3.5.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.3...@pie-ui/text-entry@3.5.4) (2019-03-19)
+
+**Note:** Version bump only for package @pie-ui/text-entry
+
+
+
+
+
 ## [3.5.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.2...@pie-ui/text-entry@3.5.3) (2019-03-19)
 
 **Note:** Version bump only for package @pie-ui/text-entry

@@ -503,5 +503,35 @@
     "committerDate": "2018-03-06 13:57:44 -0500",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@2.0.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump version to avoid conflict with `next` releases",
+    "merge": null,
+    "header": "fix: bump version to avoid conflict with `next` releases",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "99f22e5575a34850b5d1f7d03feb02f50896a3d6",
+    "gitTags": "",
+    "committerDate": "2019-03-19 14:06:08 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.7.5"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.7.6"
   }
 ]

@@ -3,15 +3,16 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.1.4",
+  "version": "1.2.3",
   "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
   "main": "lib/index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "@pie-framework/mathquill": "^0.10.2",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
-    "@pie-lib/math-input": "^5.0.4",
-    "@pie-lib/math-toolbar": "^0.9.13",
-    "@pie-lib/render-ui": "^4.3.1",
+    "@pie-lib/math-input": "^5.3.0",
+    "@pie-lib/math-toolbar": "^0.10.0",
+    "@pie-lib/render-ui": "^4.3.8",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",

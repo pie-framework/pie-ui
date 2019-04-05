@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.9...@pie-ui/extended-text-entry@2.4.10) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [2.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.8...@pie-ui/extended-text-entry@2.4.9) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [2.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.7...@pie-ui/extended-text-entry@2.4.8) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [2.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.6...@pie-ui/extended-text-entry@2.4.7) (2019-03-26)
+
+
+### Bug Fixes
+
+* **package.json:** Bumped editable-html version ([2f94a5b](https://github.com/pie-framework/pie-ui/commit/2f94a5b))
+
+
+
+
+
+## [2.4.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.5...@pie-ui/extended-text-entry@2.4.6) (2019-03-19)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
 ## [2.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.4.4...@pie-ui/extended-text-entry@2.4.5) (2019-03-19)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.2...@pie-ui/math-inline@1.2.3) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.1...@pie-ui/math-inline@1.2.2) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [1.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.0...@pie-ui/math-inline@1.2.1) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.5...@pie-ui/math-inline@1.2.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* add shouldComponentUpdate to check model + state, to prevent re-render loop ([f77670d](https://github.com/pie-framework/pie-ui/commit/f77670d))
+* continued mathquill math-input work ([492d2cb](https://github.com/pie-framework/pie-ui/commit/492d2cb))
+
+
+### Features
+
+* **math-inline:** math and html support for item stem ([5c8dbcc](https://github.com/pie-framework/pie-ui/commit/5c8dbcc))
+* **math-inline:** remove react render of answer blocks in favor of clean mathquill approach ([54239a3](https://github.com/pie-framework/pie-ui/commit/54239a3))
+
+
+
+
+
+## [1.1.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.4...@pie-ui/math-inline@1.1.5) (2019-03-19)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
 ## [1.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.1.3...@pie-ui/math-inline@1.1.4) (2019-03-19)
 
 

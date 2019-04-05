@@ -398,5 +398,50 @@
     "committerDate": "2018-03-06 13:50:31 -0500",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@0.0.2"
+  },
+  {
+    "type": "fix",
+    "scope": "package.json",
+    "subject": "Bumped editable-html version",
+    "merge": null,
+    "header": "fix(package.json): Bumped editable-html version",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2f94a5bfb2b600771c9448c7b8d85111b0684327",
+    "gitTags": " (origin/fix/extended-text-entry-version-bump)",
+    "committerDate": "2019-03-26 14:19:32 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@2.4.7"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "bump deps",
+    "merge": null,
+    "header": "chore: bump deps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3556934cd44f42e73bde36edfcb043dae85053df",
+    "gitTags": "",
+    "committerDate": "2019-03-22 11:33:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@2.4.7"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "remove old webquill references",
+    "merge": null,
+    "header": "chore: remove old webquill references",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "08dd96a13ad815950d63d69e6cafa4050c75db36",
+    "gitTags": "",
+    "committerDate": "2019-04-04 12:04:43 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@2.4.9"
   }
 ]

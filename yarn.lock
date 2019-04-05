@@ -1908,6 +1908,11 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.0.tgz#8d95e7da3c886dd222008e79f1625d6a84eafdff"
   integrity sha512-rAdL7Jy1ZdnXyGJyimMd/q6wqfxaRt+8iQ7ROS+FzYx95HIGeKlEiwCYN7eU9v9kOzdWQaQvnEQyTXPTgleAHQ==
 
+"@pie-lib/style-utils@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.8.tgz#d2cc01bc1822e869bf3c81f769c55251c37296ee"
+  integrity sha512-tKu2469qdQRh+NDRbEAUTacVgsc2rE8t8HZ6U5naR1IWfvuOwvbV62b3ofsuAUtQjUYaktY0UMJPdhmgOmohOA==
+
 "@pie-lib/test-utils@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.0.3.tgz#9bef3bfb236af4cda24e9ed6446794d9615175a0"
@@ -1918,12 +1923,12 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.1.1.tgz#bfc80ad978d40a5f26d1cbf1bf7ac7e7d811b2e7"
   integrity sha512-PDP/Dpqf2ngctDnNfw+889cXM8so6ymKM8xwJRF9KxnJif4CBf9MoMe90r/yys/cagfl4OpBM53DMl5Y45ckZg==
 
-"@pie-lib/text-select@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/text-select/-/text-select-1.4.0.tgz#17fcb12812f4d46e6ed79ef7a69c0d6cc5c0379f"
-  integrity sha512-9BkZ/4Xk9Oia3RszHOb013wgbcPdUDodPtlleoyEqpbWbG5++VPAE58LzDODGKPtsDKf2wpu3qsDs15VXW81Yg==
+"@pie-lib/text-select@^1.4.10":
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/@pie-lib/text-select/-/text-select-1.4.11.tgz#295cda260e5fc7764a446607f998490f947a8283"
+  integrity sha512-2WKmeUt7hSTbOGXoj0earU5c3Y8WXxPmxf62cFI1Rcewx/UqicDQzBY6MpqLSEicee9o0tXMMAQylC2gFLga8w==
   dependencies:
-    "@pie-lib/style-utils" "^0.1.0"
+    "@pie-lib/style-utils" "^0.1.8"
     classnames "^2.2.6"
     debug "^4.1.1"
     invariant "^2.2.4"

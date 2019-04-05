@@ -148,5 +148,35 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/select-text@1.5.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated with correct @pie-lib/text-select version in order to work with html content.",
+    "merge": null,
+    "header": "fix: Updated with correct @pie-lib/text-select version in order to work with html content.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f34ba1d6c39550865195c99e70d3f6476e0a1f5d",
+    "gitTags": "",
+    "committerDate": "2019-04-05 13:45:49 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/select-text@1.5.7"
+  },
+  {
+    "type": "fix",
+    "scope": "select-text",
+    "subject": "After selecting 'evaluate' mode -> 'show correct answer' and then 'gather' mode again the component was not working anymore. Fixed it by reseting the value of the toggle that is changed when 'show correct answer' is pressed.",
+    "merge": null,
+    "header": "fix(select-text): After selecting 'evaluate' mode -> 'show correct answer' and then 'gather' mode again the component was not working anymore. Fixed it by reseting the value of the toggle that is changed when 'show correct answer' is pressed.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "728d71104d83777c3a5cea46042662e7d7368a37",
+    "gitTags": "",
+    "committerDate": "2019-03-30 08:59:13 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/select-text@1.5.7"
   }
 ]

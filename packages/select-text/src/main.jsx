@@ -28,6 +28,10 @@ export class Main extends React.Component {
     };
   }
 
+  componentWillReceiveProps() {
+    this.setState({ showCorrectAnswer: false });
+  }
+
   toggleShowCorrect = () => {
     this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });
   };

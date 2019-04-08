@@ -493,5 +493,50 @@
     "committerDate": "2019-03-20 13:45:42 +0200",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@1.2.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "new mathquill mock and test fixes",
+    "merge": null,
+    "header": "chore: new mathquill mock and test fixes",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2ad60e73d357f8ab91e6c3463a7d419826a6613e",
+    "gitTags": "",
+    "committerDate": "2019-04-04 11:55:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.2.2"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "replace mathquill dependency for math-inline",
+    "merge": null,
+    "header": "chore: replace mathquill dependency for math-inline",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e54a4d10c9ec25796e2023bca2446a2dec874dc8",
+    "gitTags": "",
+    "committerDate": "2019-04-04 11:13:39 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.2.2"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "math-inline mathquill issue reproducible sample with model",
+    "merge": null,
+    "header": "chore: math-inline mathquill issue reproducible sample with model",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ff2b95f671244d14a4361c6aefea00d840efbe74",
+    "gitTags": "",
+    "committerDate": "2019-04-02 12:15:07 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.2.2"
   }
 ]

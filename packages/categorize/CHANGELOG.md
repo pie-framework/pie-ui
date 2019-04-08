@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.6...@pie-ui/categorize@0.9.7) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [0.9.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.5...@pie-ui/categorize@0.9.6) (2019-04-04)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag to 1.1.12 move react-dnd to peerDependencies ([5d76027](https://github.com/pie-framework/pie-ui/commit/5d76027))
+
+
+
+
+
 ## [0.9.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.4...@pie-ui/categorize@0.9.5) (2019-03-26)
 
 **Note:** Version bump only for package @pie-ui/categorize

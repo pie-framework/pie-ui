@@ -9,6 +9,7 @@ import isEqual from 'lodash/isEqual';
 import SimpleQuestionBlock from './simple-question-block';
 
 let registered = false;
+
 const REGEX = /\\embed\{answerBlock\}\[(.*?)\]/g;
 
 export class Main extends React.Component {
@@ -48,7 +49,7 @@ export class Main extends React.Component {
     const { classes } = this.props;
 
     if (typeof window !== 'undefined') {
-      const MathQuill = require('mathquill');
+      const MathQuill = require('@pie-framework/mathquill');
       let MQ = MathQuill.getInterface(2);
 
       if (!registered) {
@@ -83,7 +84,7 @@ export class Main extends React.Component {
         const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
 
         if (el) {
-          const MathQuill = require('mathquill');
+          const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
           const answer = answers[response.id];
 

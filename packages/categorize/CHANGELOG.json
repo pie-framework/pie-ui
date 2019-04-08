@@ -523,5 +523,20 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/categorize@0.9.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-lib/drag to 1.1.12 move react-dnd to peerDependencies",
+    "merge": null,
+    "header": "fix: bump @pie-lib/drag to 1.1.12 move react-dnd to peerDependencies",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5d76027713cb762dc7a0410791b54a65b0d25243",
+    "gitTags": "",
+    "committerDate": "2019-04-03 10:42:24 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@0.9.6"
   }
 ]

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.6...@pie-ui/fill-in-the-blank@1.3.7) (2019-04-04)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.5...@pie-ui/fill-in-the-blank@1.3.6) (2019-04-04)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag to 1.1.12 move react-dnd to peerDependencies ([56df11f](https://github.com/pie-framework/pie-ui/commit/56df11f))
+
+
+
+
+
 ## [1.3.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.4...@pie-ui/fill-in-the-blank@1.3.5) (2019-03-26)
 
 **Note:** Version bump only for package @pie-ui/fill-in-the-blank

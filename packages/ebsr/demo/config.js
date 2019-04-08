@@ -64,7 +64,7 @@ module.exports = {
     {
       id: '1',
       element: 'ebsr-element',
-      mode: 'gather',
+      mode: 'evaluate',
       partA,
       partB,
     }

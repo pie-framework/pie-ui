@@ -8,6 +8,7 @@
     "node": ">=11.2.0"
   },
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "test": "scripts/build test",
     "release": "scripts/build release",
     "release:next": "scripts/build release --next",

@@ -1,9 +1,11 @@
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
-import EbsrMC from '@pie-ui/multiple-choice';
+import MultipleChoice from '@pie-ui/multiple-choice';
 
 import debug from 'debug';
 const SESSION_CHANGED = SessionChangedEvent.TYPE;
 const log = debug('pie-elements:ebsr');
+
+class EbsrMC extends MultipleChoice {}
 
 const defineMultipleChoice = () => {
   if(!customElements.get('ebsr-multiple-choice')){

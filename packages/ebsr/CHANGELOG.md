@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.2...@pie-ui/ebsr@1.1.3) (2019-04-08)
+
+
+### Bug Fixes
+
+* scope multiple-choice UI constructor ([bf59b84](https://github.com/pie-framework/pie-elements/commit/bf59b84))
+
+
+
+
+
 ## [1.1.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.1...@pie-ui/ebsr@1.1.2) (2019-04-08)
 
 

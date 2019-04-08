@@ -67,13 +67,13 @@ export class PlacementOrdering extends React.Component {
     if (!newConfig.includeTargets && compactSessionValues.length !== model.choices.length) {
       log('[initSessionIfNeeded] initing session...', newConfig.includeTargets);
       const update = cloneDeep(session);
+
       update.value = model.choices.map(m => m.id);
       onSessionChange(update);
     } else if (newConfig.includeTargets) {
       const update = cloneDeep(session);
 
       delete update.value;
-
       onSessionChange(update);
     }
   }

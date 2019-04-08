@@ -70,7 +70,6 @@ function updateResponse(state, from, to) {
 
 function buildTiles(choices, response, outcomes, opts) {
   if (opts.includeTargets) {
-
     const targets = [];
     for (var i = 0; i < response.length; i++) {
       const r = response[i];
@@ -92,7 +91,7 @@ function buildTiles(choices, response, outcomes, opts) {
     }
 
     const processedChoices = choices.map(m => {
-      if (response.indexOf(m.id) !== -1 && opts.allowSameChoiceInTargets) {
+      if (response.indexOf(m.id) !== -1 && !opts.allowSameChoiceInTargets) {
         return {
           type: 'choice',
           empty: true,
@@ -135,7 +134,7 @@ export function buildState(choices, response, outcomes, opts) {
     response,
     opts,
     outcomes,
-    tiles: buildTiles(choices, response, outcomes, opts),
+    tiles: buildTiles(choices, response, outcomes, opts)
   };
 }
 
@@ -148,7 +147,7 @@ export function reducer(action, state) {
         state.choices,
         response,
         state.outcomes,
-        state.opts,
+        state.opts
       );
       return Object.assign({}, state, { response, tiles });
     }
@@ -159,7 +158,7 @@ export function reducer(action, state) {
         state.choices,
         response,
         state.outcomes,
-        state.opts,
+        state.opts
       );
       return Object.assign({}, state, { response, tiles });
     }

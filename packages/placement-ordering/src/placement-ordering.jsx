@@ -41,7 +41,7 @@ export class PlacementOrdering extends React.Component {
     this.initSessionIfNeeded(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const newState = {};
 
     if (!nextProps.model.correctResponse) {

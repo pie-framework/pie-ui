@@ -70,10 +70,18 @@ class HTiler extends React.Component {
 
     return (
       <div className={classes.htiler} style={style}>
-        <div className={classes.choiceLabel} style={labelStyle} dangerouslySetInnerHTML={{ __html: choiceLabel }}/>
+        <div
+          className={classes.choiceLabel}
+          style={labelStyle}
+          dangerouslySetInnerHTML={{ __html: choiceLabel }}
+        />
 
         {includeTargets && (
-          <div className={classes.targetLabel} style={labelStyle} dangerouslySetInnerHTML={{ __html: targetLabel }}/>
+          <div
+            className={classes.targetLabel}
+            style={labelStyle}
+            dangerouslySetInnerHTML={{ __html: targetLabel }}
+          />
         )}
         {tiles.map(buildTiles(this.props))}
       </div>
@@ -117,10 +125,16 @@ class VTiler extends React.Component {
 
     return (
       <div className={classes.vtiler} style={style}>
-        <div className={classes.choiceLabel} dangerouslySetInnerHTML={{ __html: choiceLabel }}/>
+        <div
+          className={classes.choiceLabel}
+          dangerouslySetInnerHTML={{ __html: choiceLabel }}
+        />
 
         {includeTargets && (
-          <div className={classes.targetLabel} dangerouslySetInnerHTML={{ __html: targetLabel }}/>
+          <div
+            className={classes.targetLabel}
+            dangerouslySetInnerHTML={{ __html: targetLabel }}
+          />
         )}
         {tiles.map(buildTiles(this.props))}
       </div>

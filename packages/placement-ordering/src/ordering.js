@@ -68,7 +68,7 @@ function updateResponse(state, from, to) {
   }
 }
 
-function buildTiles(choices, response, outcomes, opts, removeTile) {
+function buildTiles(choices, response, outcomes, opts) {
   if (opts.includeTargets) {
 
     const targets = [];
@@ -92,7 +92,7 @@ function buildTiles(choices, response, outcomes, opts, removeTile) {
     }
 
     const processedChoices = choices.map(m => {
-      if (response.indexOf(m.id) !== -1 && removeTile) {
+      if (response.indexOf(m.id) !== -1 && opts.allowSameChoiceInTargets) {
         return {
           type: 'choice',
           empty: true,
@@ -120,7 +120,7 @@ function buildTiles(choices, response, outcomes, opts, removeTile) {
   }
 }
 
-export function buildState(choices, response, outcomes, opts, removeTile) {
+export function buildState(choices, response, outcomes, opts) {
   opts = assign({ includeTargets: true }, opts);
 
   outcomes = outcomes || [];
@@ -135,8 +135,7 @@ export function buildState(choices, response, outcomes, opts, removeTile) {
     response,
     opts,
     outcomes,
-    tiles: buildTiles(choices, response, outcomes, opts, removeTile),
-    removeTile
+    tiles: buildTiles(choices, response, outcomes, opts),
   };
 }
 
@@ -150,7 +149,6 @@ export function reducer(action, state) {
         response,
         state.outcomes,
         state.opts,
-        state.removeTile
       );
       return Object.assign({}, state, { response, tiles });
     }
@@ -162,7 +160,6 @@ export function reducer(action, state) {
         response,
         state.outcomes,
         state.opts,
-        state.removeTile
       );
       return Object.assign({}, state, { response, tiles });
     }

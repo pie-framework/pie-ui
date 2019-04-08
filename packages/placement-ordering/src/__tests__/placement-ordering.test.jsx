@@ -73,7 +73,7 @@ describe('PlacementOrdering', () => {
     it('removing choices updates state', () => {
       session = { value: ['c1', 'c2', 'c3', 'c4'] };
       const valuesLength = session.value.length;
-      wrapper = mkWrapper({ ...model, config: { ...model.config, removeTile: true, includeTargets: true } }, session);
+      wrapper = mkWrapper({ ...model, config: { ...model.config, allowSameChoiceInTargets: true, includeTargets: true } }, session);
       wrapper.setProps({
         onSessionChange: jest.fn(newSession => {
           wrapper.setState({ session: newSession })

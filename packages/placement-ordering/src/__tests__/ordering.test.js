@@ -1,7 +1,4 @@
 import { buildState, reducer } from '../ordering';
-import debug from 'debug';
-
-const log = debug('@pie-ui:placement-ordering-element:test');
 
 const defaultChoices = [
   { id: 0 },
@@ -9,38 +6,33 @@ const defaultChoices = [
 ];
 
 describe('ordering', () => {
+  let assertMoveFromModel;
+
+  beforeEach(() => {
+    assertMoveFromModel = (fromIndex, toIndex, response, options) => {
+      const initialState = buildState(defaultChoices, response, [], options);
+      let from = initialState.tiles[fromIndex];
+      let to = initialState.tiles[toIndex];
+
+      return reducer({ type: 'move', from, to }, initialState);
+    }
+  });
+
   describe('reducer, includeTargets: false', () => {
     describe('swap', () => {
-      let initialState, to, from, state;
-
-      beforeEach(() => {
-        initialState = buildState(defaultChoices, [0, 1], [], { includeTargets: false });
-        from = initialState.tiles[0];
-        to = initialState.tiles[1];
-        state = reducer({ type: 'move', from, to }, initialState);
-        log('state: ', state);
-      });
       it('swaps', () => {
-        expect(state.response).toEqual([1, 0]);
+        expect(assertMoveFromModel(0, 1, [0, 1], { includeTargets: false }).response).toEqual([1, 0]);
       });
     });
   });
 
   describe('reducer, includeTargets: true', () => {
-    let initialState;
-
     describe('target -> choice', () => {
-      beforeEach(() => {
-        initialState = buildState(defaultChoices, [undefined, 1], [], { includeTargets: true });
-      });
-
       describe('moves target back to choice', () => {
-        let from, to, state;
+        let state;
 
         beforeEach(() => {
-          from = initialState.tiles[3];
-          to = initialState.tiles[1];
-          state = reducer({ type: 'move', from, to }, initialState);
+          state = assertMoveFromModel(3, 1, [undefined, 1], { includeTargets: true });
         });
 
         it('updates the response', () => {
@@ -59,18 +51,11 @@ describe('ordering', () => {
     });
 
     describe('choice -> target', () => {
-
-      beforeEach(() => {
-        initialState = buildState(defaultChoices, [], [], { includeTargets: true });
-      });
-
       describe('moves choice to target', () => {
-        let from, to, state;
+        let state;
 
         beforeEach(() => {
-          from = initialState.tiles[0];
-          to = initialState.tiles[2];
-          state = reducer({ type: 'move', from, to }, initialState);
+          state = assertMoveFromModel(0, 2, [], { includeTargets: true });
         });
 
         it('updates the response', () => {
@@ -88,26 +73,18 @@ describe('ordering', () => {
       });
 
       it('moves choice to last target', () => {
-        const from = initialState.tiles[0];
-        const to = initialState.tiles[3];
-        const state = reducer({ type: 'move', from, to }, initialState);
+        const state = assertMoveFromModel(0, 3, [], { includeTargets: true });
+
         expect(state.response).toEqual([undefined, 0]);
       });
     });
 
     describe('choice -> target with removing tiles', () => {
-
-      beforeEach(() => {
-        initialState = buildState(defaultChoices, [], [], { includeTargets: true }, true);
-      });
-
       describe('moves choice to target', () => {
-        let from, to, state;
+        let state;
 
         beforeEach(() => {
-          from = initialState.tiles[0];
-          to = initialState.tiles[2];
-          state = reducer({ type: 'move', from, to }, initialState);
+          state = assertMoveFromModel(0, 2, [], { includeTargets: true, allowSameChoiceInTargets: true });
         });
 
         it('updates the response', () => {
@@ -124,9 +101,7 @@ describe('ordering', () => {
         });
 
         it('moves to occupied target', () => {
-          from = initialState.tiles[1];
-          to = initialState.tiles[2];
-          state = reducer({ type: 'move', from, to }, initialState);
+          state = assertMoveFromModel(1, 2, [], { includeTargets: true, allowSameChoiceInTargets: true });
 
           expect(state.tiles).toEqual([
             { type: 'choice', id: 0, draggable: true, droppable: false },

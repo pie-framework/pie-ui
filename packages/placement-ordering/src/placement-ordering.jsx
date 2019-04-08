@@ -131,7 +131,6 @@ export class PlacementOrdering extends React.Component {
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
-
     onSessionChange(sessionUpdate);
   };
 

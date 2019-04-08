@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PlacementOrdering render shows toggle 1`] = `
+<div
+  className="placementOrdering"
+>
+  <_default
+    onToggle={[Function]}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  .
+  <OrderingTiler
+    instanceId="2"
+    onDropChoice={[Function]}
+    onRemoveChoice={[Function]}
+    ordering={Object {}}
+    tiler={[Function]}
+  />
+  <br />
+  <Feedback />
+</div>
+`;
+
 exports[`PlacementOrdering render snapshot 1`] = `
 <div
   className="placementOrdering"
@@ -15,42 +43,13 @@ exports[`PlacementOrdering render snapshot 1`] = `
       }
     }
   />
-  <WithStyles(HTiler)
+  .
+  <OrderingTiler
     instanceId="1"
     onDropChoice={[Function]}
     onRemoveChoice={[Function]}
-    tiles={
-      Array [
-        Object {
-          "draggable": true,
-          "droppable": true,
-          "id": "c1",
-          "label": "C1",
-          "type": "choice",
-        },
-        Object {
-          "draggable": true,
-          "droppable": true,
-          "id": "c2",
-          "label": "C2",
-          "type": "choice",
-        },
-        Object {
-          "draggable": true,
-          "droppable": true,
-          "id": "c3",
-          "label": "C3",
-          "type": "choice",
-        },
-        Object {
-          "draggable": true,
-          "droppable": true,
-          "id": "c4",
-          "label": "C4",
-          "type": "choice",
-        },
-      ]
-    }
+    ordering={Object {}}
+    tiler={[Function]}
   />
   <br />
   <Feedback />

@@ -5,29 +5,20 @@ import compact from 'lodash/compact';
 import { PlacementOrdering, Choice } from '../placement-ordering';
 import toJson from 'enzyme-to-json';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+import { buildState, reducer } from '../ordering';
 
+jest.mock('../ordering', () => ({
+  buildState: jest.fn().mockReturnValue({}),
+  reducer: jest.fn().mockReturnValue({})
+}));
 describe('PlacementOrdering', () => {
   let wrapper, model, session;
-
+  let onSessionChange;
   const mkWrapper = (model, session) => {
+    onSessionChange = jest.fn();
     session = { value: [], ...session };
-    model = { config: {}, ...model };
-
-    return shallow(
-      <PlacementOrdering
-        model={model}
-        session={session}
-        classes={{
-          placementOrdering: 'placementOrdering'
-        }}
-        onSessionChange={jest.fn()}
-      />,
-      {}
-    );
-  };
-
-  beforeEach(() => {
     model = {
+      config: {},
       choices: [
         {
           id: 'c1',
@@ -46,82 +37,106 @@ describe('PlacementOrdering', () => {
           label: 'C4'
         }
       ],
-      config: {}
+      ...model
     };
 
-    wrapper = mkWrapper(model);
-    wrapper.setProps({
-      onSessionChange: jest.fn(newSession => {
-        wrapper.setState({ session: newSession })
-      })
-    });
+    return shallow(
+      <PlacementOrdering
+        model={model}
+        session={session}
+        classes={{
+          placementOrdering: 'placementOrdering'
+        }}
+        onSessionChange={onSessionChange}
+      />,
+      {}
+    );
+  };
+
+  beforeEach(() => {
+    wrapper = mkWrapper();
   });
 
   describe('render', () => {
     it('snapshot', () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('shows toggle', () => {
+      let w = mkWrapper({ correctResponse: ['c1', 'c2', 'c3', 'c4'] });
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
-  describe('interaction', () => {
-    it('dropping choices updates the order', () => {
-      wrapper.instance().onDropChoice({ id: 'c4', type: 'choice'}, { id: 'c1', type: 'choice' });
+  const ordering = d => ({
+    opts: {},
+    ...d
+  });
 
-      expect(wrapper.state('session').value).toEqual(['c4', 'c2', 'c3', 'c1']);
-    });
+  describe('logic', () => {
+    let response;
+    describe('onDropChoice', () => {
+      beforeEach(() => {
+        response = ['c4', 'c2', 'c3', 'c1'];
 
-    it('removing choices updates state', () => {
-      session = { value: ['c1', 'c2', 'c3', 'c4'] };
-      const valuesLength = session.value.length;
-      wrapper = mkWrapper({ ...model, config: { ...model.config, allowSameChoiceInTargets: true, includeTargets: true } }, session);
-      wrapper.setProps({
-        onSessionChange: jest.fn(newSession => {
-          wrapper.setState({ session: newSession })
-        })
+        reducer.mockReturnValue({ response });
+        wrapper
+          .instance()
+          .onDropChoice(
+            { id: 'c4', type: 'choice' },
+            { id: 'c1', type: 'choice' },
+            ordering({ tiles: [{ id: 'c1', type: 'choice' }] })
+          );
       });
 
-      wrapper.instance().onRemoveChoice({ id: 'c4', type: 'target', index: 3});
+      it('calls reducer', () =>
+        expect(reducer).toHaveBeenCalledWith(
+          {
+            type: 'move',
+            from: { id: 'c1', type: 'choice' },
+            to: { id: 'c4', type: 'choice' }
+          },
+          expect.anything()
+        ));
 
-      expect(compact(wrapper.state('session').value).length).toEqual(valuesLength - 1);
-    });
-  });
-
-  describe('session', () => {
-    it('order get restored from session if present', () => {
-      let ordering = wrapper.instance().createOrdering();
-
-      expect(ordering.tiles.map(t => t.id)).toEqual(['c1', 'c2', 'c3', 'c4']);
-
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-
-      wrapper.setProps({ session });
-
-      ordering = wrapper.instance().createOrdering();
-
-      expect(ordering.tiles.map(t => t.id)).toEqual(['c4', 'c2', 'c3', 'c1']);
-    });
-  });
-
-  describe('show correct response', () => {
-    it('toggle is not visible if correct response is not present', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-
-      const toggle = wrapper.find(CorrectAnswerToggle);
-
-      expect(toggle.prop('show')).not.toEqual(true);
-      expect(toggle.prop('toggled')).toEqual(false);
+      it('dropping choices updates the order', () => {
+        expect(onSessionChange).toHaveBeenCalledWith({ value: response });
+      });
     });
 
-    it('toggle is visible if correct response is present', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      model.correctResponse = ['c1', 'c4', 'c3', 'c2'];
-      wrapper = mkWrapper(model, session);
+    describe('onRemoveChoice', () => {
+      let target;
+      beforeEach(() => {
+        reducer.mockReset();
+        reducer.mockReturnValue({ response: ['c1', 'c2', 'c3'] });
+        wrapper = mkWrapper();
 
-      const toggle = wrapper.find(CorrectAnswerToggle);
+        target = { id: 'c4', type: 'target', index: 3 };
+        wrapper.instance().onRemoveChoice(target, {});
+      });
 
-      expect(toggle.prop('show')).toEqual(true);
-      expect(toggle.prop('toggled')).toEqual(false);
+      it('calls reducer', () => {
+        expect(reducer).toHaveBeenCalledWith(
+          { type: 'remove', target },
+          expect.anything()
+        );
+      });
+
+      it('calls onSessionChange', () => {
+        expect(onSessionChange).toHaveBeenCalledWith({
+          value: ['c1', 'c2', 'c3']
+        });
+      });
+    });
+
+    describe.skip('createOrdering', () => {
+      it('todo', () => {});
+    });
+    describe.skip('initSessionIfNeeded', () => {
+      it('todo', () => {});
+    });
+    describe.skip('UNSAFE_componentWillReceiveProps', () => {
+      it('todo', () => {});
     });
   });
 });

@@ -4,177 +4,166 @@ import { AssertionError } from 'assert';
 const defaultChoices = [{ id: 0 }, { id: 1 }];
 
 describe('ordering', () => {
-  let assertMoveFromModel;
-
-  beforeEach(() => {
-    assertMoveFromModel = (fromIndex, toIndex, response, options) => {
-      const initialState = buildState(defaultChoices, response, [], options);
-      let from = initialState.tiles[fromIndex];
-      let to = initialState.tiles[toIndex];
-
-      return reducer({ type: 'move', from, to }, initialState);
-    };
-  });
-
   const toLabel = a => `${a[0]}->${a[1]}`;
 
-  const assertReducer = (choices, opts, action, a) =>
+  const choice = id => ({
+    type: 'choice',
+    id,
+    draggable: true,
+    droppable: false
+  });
+
+  const target = (id, index) => ({
+    id,
+    index,
+    type: 'target',
+    draggable: id !== undefined,
+    empty: id === undefined
+  });
+
+  const buildArgs = choiceArg => {
+    if (Array.isArray(choiceArg)) {
+      return {
+        choices: choiceArg,
+        response: [],
+        outcome: []
+      };
+    } else {
+      return { response: [], outcome: [], ...choiceArg };
+    }
+  };
+
+  const assertReducer = (firstArg, opts, action, a, mkLabel) =>
     function() {
+      const { choices, response, outcome } = buildArgs(firstArg);
       const choiceIds = choices.map(id => ({ id }));
-      const initialState = buildState(choiceIds, [], [], opts);
+      const initialState = buildState(choiceIds, response, outcome, opts);
 
       const args = Array.prototype.slice.call(arguments);
       const actions = _.initial(args);
       const expected = _.last(args);
-      it(`${initialState.tiles.map(t => t.id)} + ${actions
-        .map(toLabel)
-        .join(', ')} = ${expected}`, () => {
+
+      const label = mkLabel
+        ? mkLabel(initialState, actions, expected)
+        : 'works';
+
+      it(label, () => {
         const endState = actions.reduce((state, [fromIndex, toIndex]) => {
           const from = state.tiles[fromIndex];
           const to = state.tiles[toIndex];
           return reducer({ ...action, from, to }, state);
         }, initialState);
         a(endState, expected);
-        // expect(endState.tiles.map(t => t.id)).toEqual(expectedState);
       });
     };
-  describe.only('reducer', () => {
-    const assertSwap = assertReducer(
-      [1, 2, 3, 4],
-      { includeTargets: false },
-      { type: 'move' },
-      (s, expected) => {
-        expect(s.tiles.map(t => t.id)).toEqual(expected);
-      }
-    );
 
-    // assertSwap([0, 1], [2, 1, 3, 4]);
-    // assertSwap([0, 1], [2, 1], [2, 3, 1, 4]);
-
-    const assertMove = assertReducer(
-      [1, 2, 3, 4],
-      { includeTargets: true, allowSameChoiceInTargets: false },
-      { type: 'move' },
-      (s, expected) => {
-        console.log('s:', s);
-        // expected.choices.map(id => (id ? { id } : { empty: true }));
-        expect(_.take(s.tiles, 4).map(t => t.id)).toEqual(expected.choices);
-      }
-    );
-
-    assertMove([0, 4], {
-      choices: [undefined, 2, 3, 4],
-      targets: [1, undefined]
-    });
-    assertMove([0, 4], [2, 7], {
-      choices: [undefined, 2, undefined, 4],
-      targets: [1, undefined, undefined, 3]
-    });
-  });
-
-  describe('reducer, includeTargets: false', () => {
+  describe('reducer', () => {
     describe('swap', () => {
-      it('swaps', () => {
-        expect(
-          assertMoveFromModel(0, 1, [0, 1], { includeTargets: false }).response
-        ).toEqual([1, 0]);
-      });
-    });
-  });
+      const assertSwapLabel = (i, actions, e) =>
+        `${i.tiles.map(t => t.id)} + ${actions.map(toLabel).join(', ')} = ${e}`;
 
-  describe('reducer, includeTargets: true', () => {
-    describe('target -> choice', () => {
-      describe('moves target back to choice', () => {
-        let state;
+      const assertSwap = assertReducer(
+        [1, 2, 3, 4],
+        { includeTargets: false },
+        { type: 'move' },
+        (s, expected) => {
+          expect(s.tiles.map(t => t.id)).toEqual(expected);
+        },
+        assertSwapLabel
+      );
 
-        beforeEach(() => {
-          state = assertMoveFromModel(3, 1, [undefined, 1], {
-            includeTargets: true
-          });
-        });
-
-        it('updates the response', () => {
-          expect(state.response).toEqual([undefined, undefined]);
-        });
-
-        it('updates the tiles', () => {
-          expect(state.tiles).toEqual([
-            { type: 'choice', id: 0, draggable: true, droppable: false },
-            { type: 'choice', id: 1, draggable: true, droppable: false },
-            { type: 'target', index: 0, draggable: false, empty: true },
-            { type: 'target', index: 1, draggable: false, empty: true }
-          ]);
-        });
-      });
+      assertSwap([0, 1], [2, 1, 3, 4]);
+      assertSwap([0, 1], [2, 1], [2, 3, 1, 4]);
     });
 
-    describe('choice -> target', () => {
-      describe('moves choice to target', () => {
-        let state;
+    describe('move - with targets', () => {
+      const assertMoveLabel = (i, actions, expected) => {
+        const tiles = _.take(i.tiles, 4).map(t => t.id);
+        return `${tiles} + ${actions.map(toLabel)} = ${expected.choices.map(
+          c => c || '_'
+        )}|${expected.targets.map(t => t || '_')}`;
+      };
+      const assertMove = allowSameChoiceInTargets =>
+        assertReducer(
+          [1, 2, 3, 4],
+          { includeTargets: true, allowSameChoiceInTargets },
+          { type: 'move' },
+          (s, expected) => {
+            let [choiceTiles, targetTiles] = _.chunk(s.tiles, 4);
+            expect(choiceTiles.map(t => t.id)).toEqual(expected.choices);
+            expect(targetTiles.map(t => t.id)).toEqual(expected.targets);
+          },
+          assertMoveLabel
+        );
 
-        beforeEach(() => {
-          state = assertMoveFromModel(0, 2, [], { includeTargets: true });
-        });
-
-        it('updates the response', () => {
-          expect(state.response).toEqual([0, undefined]);
-        });
-
-        it('updates the tiles', () => {
-          expect(state.tiles).toEqual([
-            { type: 'choice', id: 0, draggable: true, droppable: false },
-            { type: 'choice', id: 1, draggable: true, droppable: false },
-            { type: 'target', index: 0, id: 0, draggable: true, empty: false },
-            { type: 'target', index: 1, draggable: false, empty: true }
-          ]);
-        });
+      assertMove(false)([0, 4], {
+        choices: [undefined, 2, 3, 4],
+        targets: [1, undefined, undefined, undefined]
       });
-
-      it('moves choice to last target', () => {
-        const state = assertMoveFromModel(0, 3, [], { includeTargets: true });
-
-        expect(state.response).toEqual([undefined, 0]);
+      assertMove(true)([0, 4], {
+        choices: [1, 2, 3, 4],
+        targets: [1, undefined, undefined, undefined]
+      });
+      assertMove(false)([0, 4], [2, 7], {
+        choices: [undefined, 2, undefined, 4],
+        targets: [1, undefined, undefined, 3]
       });
     });
 
-    describe('choice -> target with removing tiles', () => {
-      describe('moves choice to target', () => {
-        let state;
+    describe('tiles have all the props', () => {
+      let state;
 
-        beforeEach(() => {
-          state = assertMoveFromModel(0, 2, [], {
-            includeTargets: true,
-            allowSameChoiceInTargets: true
-          });
-        });
+      const assertFullProps = assertReducer(
+        [1, 2],
+        { includeTargets: true, allowSameChoiceInTargets: true },
+        { type: 'move' },
+        (s, expected) => {
+          expect(s.tiles).toEqual(expected);
+        }
+      );
 
-        it('updates the response', () => {
-          expect(state.response).toEqual([0, undefined]);
-        });
+      assertFullProps(
+        [0, 3],
+        [choice(1), choice(2), target(undefined, 0), target(1, 1)]
+      );
+    });
 
-        it('updates the tiles', () => {
-          expect(state.tiles).toEqual([
-            { type: 'choice', draggable: false, droppable: true, empty: true },
-            { type: 'choice', id: 1, draggable: true, droppable: false },
-            { type: 'target', index: 0, id: 0, draggable: true, empty: false },
-            { type: 'target', index: 1, draggable: false, empty: true }
-          ]);
-        });
+    describe('1,2|_,_', () => {
+      const assertResponse = assertReducer(
+        [1, 2],
+        { includeTargets: true, allowSameChoiceInTargets: true },
+        { type: 'move' },
+        (s, expected) => {
+          expect(s.response).toEqual(expected);
+        },
+        (s, actions, expected) => {
+          return `${actions.map(toLabel)} = response: ${expected.map(
+            v => v || '_'
+          )}`;
+        }
+      );
+      assertResponse([0, 3], [undefined, 1]);
+      assertResponse([0, 2], [1, undefined]);
+    });
 
-        it('moves to occupied target', () => {
-          state = assertMoveFromModel(1, 2, [], {
-            includeTargets: true,
-            allowSameChoiceInTargets: true
-          });
+    describe('1,2 | _,1', () => {
+      const assertTargetToChoice = assertReducer(
+        { choices: [1, 2], response: [undefined, 1] },
+        { includeTargets: true, allowSameChoiceInTargets: true },
+        { type: 'move' },
+        (s, expected) => {
+          expect(s.response).toEqual(expected);
+        },
+        (s, actions, expected) => {
+          return `${actions.map(toLabel)} = response: ${expected.map(
+            v => v || '_'
+          )}`;
+        }
+      );
 
-          expect(state.tiles).toEqual([
-            { type: 'choice', id: 0, draggable: true, droppable: false },
-            { type: 'choice', draggable: false, droppable: true, empty: true },
-            { type: 'target', index: 0, id: 1, draggable: true, empty: false },
-            { type: 'target', index: 1, draggable: false, empty: true }
-          ]);
-        });
-      });
+      assertTargetToChoice([3, 0], [undefined, undefined]);
+      assertTargetToChoice([3, 1], [undefined, undefined]);
+      assertTargetToChoice([3, 2], [1, undefined]);
     });
   });
 });

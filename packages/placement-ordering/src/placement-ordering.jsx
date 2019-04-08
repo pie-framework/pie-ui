@@ -79,12 +79,13 @@ export class PlacementOrdering extends React.Component {
 
   onDropChoice(target, source) {
     const { onSessionChange, session } = this.props;
-    const from = this.ordering.tiles.find(
+    const ordering = this.createOrdering();
+    const from = ordering.tiles.find(
       t => t.id === source.id && t.type === source.type
     );
     const to = target;
     log('[onDropChoice] ', from, to);
-    const update = reducer({ type: 'move', from, to }, this.ordering);
+    const update = reducer({ type: 'move', from, to }, ordering);
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
@@ -95,7 +96,7 @@ export class PlacementOrdering extends React.Component {
   onRemoveChoice(target) {
     const { onSessionChange, session } = this.props;
     log('[onRemoveChoice]', target);
-    const update = reducer({ type: 'remove', target }, this.ordering);
+    const update = reducer({ type: 'remove', target }, this.createOrdering());
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
@@ -117,13 +118,15 @@ export class PlacementOrdering extends React.Component {
         model.choices,
         model.correctResponse,
         model.correctResponse.map(id => ({ id, outcome: 'correct' })),
-        { includeTargets },
-        model.config.removeTile
+        {
+          includeTargets,
+          allowSameChoiceInTargets: model.config.allowSameChoiceInTargets
+        },
       )
       : buildState(model.choices, session.value, model.outcomes, {
-          includeTargets
+          includeTargets,
+          allowSameChoiceInTargets: model.config.allowSameChoiceInTargets
         },
-        model.config.removeTile
       );
   };
 
@@ -138,8 +141,6 @@ export class PlacementOrdering extends React.Component {
     };
     const { orientation, includeTargets } = config;
     const vertical = orientation === 'vertical';
-
-    this.ordering = this.createOrdering();
 
     const Tiler = vertical ? VerticalTiler : HorizontalTiler;
 
@@ -160,7 +161,7 @@ export class PlacementOrdering extends React.Component {
           instanceId={this.instanceId}
           choiceLabel={config.choiceLabel}
           targetLabel={config.targetLabel}
-          tiles={this.ordering.tiles}
+          tiles={this.createOrdering().tiles}
           disabled={model.disabled}
           addGuide={model.config.showOrdering}
           tileSize={model.config && model.config.tileSize}

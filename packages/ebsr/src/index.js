@@ -6,8 +6,8 @@ const SESSION_CHANGED = SessionChangedEvent.TYPE;
 const log = debug('pie-elements:ebsr');
 
 const defineMultipleChoice = () => {
-  if(!customElements.get('multiple-choice')){
-    customElements.define('multiple-choice', MultipleChoice);
+  if(!customElements.get('ebsr-multiple-choice')){
+    customElements.define('ebsr-multiple-choice', MultipleChoice);
   }
 };
 
@@ -29,14 +29,22 @@ export default class Ebsr extends HTMLElement {
 
   set model(m) {
     this._model = m;
-    this.setPartModel(this.partA, 'partA');
-    this.setPartModel(this.partB, 'partB');
+
+    customElements.whenDefined('ebsr-multiple-choice')
+      .then(() => {
+        this.setPartModel(this.partA, 'partA');
+        this.setPartModel(this.partB, 'partB');
+      })
   }
 
   set session(s) {
     this._session = s;
-    this.setPartSession(this.partA, 'partA');
-    this.setPartSession(this.partB, 'partB');
+
+    customElements.whenDefined('ebsr-multiple-choice')
+      .then(() => {
+        this.setPartSession(this.partA, 'partA');
+        this.setPartSession(this.partB, 'partB');
+      });
   }
 
   setPartModel(part, key) {
@@ -93,8 +101,8 @@ export default class Ebsr extends HTMLElement {
   _render() {
     this.innerHTML = `
       <div>
-        <multiple-choice id="part-a"></multiple-choice>
-        <multiple-choice id="part-b"></multiple-choice>
+        <ebsr-multiple-choice id="part-a"></ebsr-multiple-choice>
+        <ebsr-multiple-choice id="part-b"></ebsr-multiple-choice>
       </div>
     `;
   }

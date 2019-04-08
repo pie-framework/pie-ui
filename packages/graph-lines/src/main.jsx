@@ -41,7 +41,7 @@ export class Main extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const lines = nextProps.session.lines || [];
     let shouldUseSessionLines = true;
 

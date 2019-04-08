@@ -34,7 +34,7 @@ exports[`input snapshot renders 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-63 MuiFormHelperText-filled-69"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -75,7 +75,7 @@ exports[`input snapshot renders alignment 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-63 MuiFormHelperText-filled-69"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -126,7 +126,7 @@ exports[`input snapshot renders correct feedback 1`] = `
     Feedback
   </div>
   <p
-    className="MuiFormHelperText-root-63 MuiFormHelperText-filled-69"
+    className="MuiFormHelperText-root-63"
   >
     
   </p>
@@ -167,7 +167,7 @@ exports[`input snapshot renders disabled 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-63 MuiFormHelperText-disabled-65 MuiFormHelperText-filled-69"
+    className="MuiFormHelperText-root-63 MuiFormHelperText-disabled-65"
   >
     
   </p>

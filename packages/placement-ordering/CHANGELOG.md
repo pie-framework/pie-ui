@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.4.8...@pie-ui/placement-ordering@4.5.0) (2019-04-09)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag to 1.1.12, move react-dnd to peerDependencies ([d9c503b](https://github.com/pie-framework/pie-ui/commit/d9c503b))
+
+
+### Features
+
+* **placement-ordering:** Updated design for placement-ordering and added removeTile property, which indicates if the tiles have to be removed after they are dropped into another area (Removed the possibility to individually set moveOnDrag property on each choice). ([8db0acc](https://github.com/pie-framework/pie-ui/commit/8db0acc))
+
+
+
+
+
 ## [4.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.4.7...@pie-ui/placement-ordering@4.4.8) (2019-04-04)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

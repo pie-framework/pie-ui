@@ -7,17 +7,45 @@ import React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import compact from 'lodash/compact';
 import debug from 'debug';
-import isEmpty from 'lodash/isEmpty';
 import uniqueId from 'lodash/uniqueId';
 import { withStyles } from '@material-ui/core/styles';
 
 const log = debug('pie-elements:placement-ordering');
 
+const OrderingTiler = props => {
+  const {
+    tiler: Comp,
+    ordering,
+    onDropChoice,
+    onRemoveChoice,
+    ...compProps
+  } = props;
+
+  return (
+    <Comp
+      {...compProps}
+      tiles={ordering.tiles}
+      onDropChoice={(t, s) => onDropChoice(t, s, ordering)}
+      onRemoveChoice={t => onRemoveChoice(t, ordering)}
+    />
+  );
+};
+
+OrderingTiler.propTypes = {
+  tiler: PropTypes.func,
+  ordering: PropTypes.any,
+  onDropChoice: PropTypes.func,
+  onRemoveChoice: PropTypes.func
+};
+
 export class PlacementOrdering extends React.Component {
   static propTypes = {
     onSessionChange: PropTypes.func.isRequired,
     model: PropTypes.object.isRequired,
-    session: PropTypes.object.isRequired,
+    session: PropTypes.oneOfType([
+      PropTypes.array.isRequired,
+      PropTypes.object.isRequired
+    ]),
     classes: PropTypes.object.isRequired
   };
 
@@ -34,13 +62,54 @@ export class PlacementOrdering extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    this.initSessionIfNeeded(this.props);
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const newState = {};
+
     if (!nextProps.model.correctResponse) {
-      this.setState({ showingCorrect: false });
+      newState.showingCorrect = false;
+    }
+
+    const includeTargetsChanged =
+      nextProps.model.config.includeTargets !==
+      this.props.model.config.includeTargets;
+    const choicesNumberChanged =
+      nextProps.model.choices.length !== this.props.model.choices.length;
+
+    if (includeTargetsChanged || choicesNumberChanged) {
+      this.initSessionIfNeeded(nextProps);
+    }
+
+    this.setState(newState);
+  }
+
+  initSessionIfNeeded(props) {
+    const { model, session, onSessionChange } = props;
+    const { config: newConfig } = model;
+
+    const compactSessionValues = (session && compact(session.value)) || [];
+
+    if (
+      !newConfig.includeTargets &&
+      compactSessionValues.length !== model.choices.length
+    ) {
+      log('[initSessionIfNeeded] initing session...', newConfig.includeTargets);
+      const update = cloneDeep(session);
+
+      update.value = model.choices.map(m => m.id);
+      onSessionChange(update);
+    } else if (newConfig.includeTargets) {
+      const update = cloneDeep(session);
+
+      delete update.value;
+      onSessionChange(update);
     }
   }
 
-  onDropChoice(ordering, target, source) {
+  onDropChoice = (target, source, ordering) => {
     const { onSessionChange, session } = this.props;
     const from = ordering.tiles.find(
       t => t.id === source.id && t.type === source.type
@@ -51,10 +120,11 @@ export class PlacementOrdering extends React.Component {
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
-    onSessionChange(sessionUpdate);
-  }
 
-  onRemoveChoice(ordering, target) {
+    onSessionChange(sessionUpdate);
+  };
+
+  onRemoveChoice = (target, ordering) => {
     const { onSessionChange, session } = this.props;
     log('[onRemoveChoice]', target);
     const update = reducer({ type: 'remove', target }, ordering);
@@ -62,36 +132,35 @@ export class PlacementOrdering extends React.Component {
       value: update.response
     });
     onSessionChange(sessionUpdate);
-  }
+  };
 
-  componentDidUpdate() {
-    this.initSessionIfNeeded();
-  }
+  createOrdering = () => {
+    const { model, session } = this.props;
+    const { showingCorrect } = this.state;
+    const config = model.config || {
+      orientation: 'vertical',
+      includeTargets: true
+    };
+    const { includeTargets } = config;
 
-  componentDidMount() {
-    this.initSessionIfNeeded();
-  }
-
-  initSessionIfNeeded() {
-    const { model, session, onSessionChange } = this.props;
-    const config = model.config || { includeTargets: true };
-
-    log(
-      '[initSessionIfNeeded] config:',
-      config,
-      'session.value: ',
-      session.value
-    );
-    if (!config.includeTargets && isEmpty(compact(session.value))) {
-      log('[initSessionIfNeeded] initing session...', config.includeTargets);
-      const update = cloneDeep(session);
-      update.value = model.choices.map(m => m.id);
-      onSessionChange(update);
-    }
-  }
+    return showingCorrect
+      ? buildState(
+          model.choices,
+          model.correctResponse,
+          model.correctResponse.map(id => ({ id, outcome: 'correct' })),
+          {
+            includeTargets,
+            allowSameChoiceInTargets: model.config.allowSameChoiceInTargets
+          }
+        )
+      : buildState(model.choices, session.value, model.outcomes, {
+          includeTargets,
+          allowSameChoiceInTargets: model.config.allowSameChoiceInTargets
+        });
+  };
 
   render() {
-    const { classes, model, session } = this.props;
+    const { classes, model } = this.props;
     const showToggle =
       model.correctResponse && model.correctResponse.length > 0;
     const { showingCorrect } = this.state;
@@ -101,17 +170,7 @@ export class PlacementOrdering extends React.Component {
     };
     const { orientation, includeTargets } = config;
     const vertical = orientation === 'vertical';
-
-    const ordering = showingCorrect
-      ? buildState(
-          model.choices,
-          model.correctResponse,
-          model.correctResponse.map(id => ({ id, outcome: 'correct' })),
-          { includeTargets }
-        )
-      : buildState(model.choices, session.value, model.outcomes, {
-          includeTargets
-        });
+    const ordering = this.createOrdering();
 
     const Tiler = vertical ? VerticalTiler : HorizontalTiler;
 
@@ -122,25 +181,24 @@ export class PlacementOrdering extends React.Component {
           toggled={this.state.showingCorrect}
           onToggle={this.toggleCorrect}
         />
-
         <div
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: model.prompt }}
         />
-
-        <Tiler
+        .
+        <OrderingTiler
           instanceId={this.instanceId}
           choiceLabel={config.choiceLabel}
           targetLabel={config.targetLabel}
-          tiles={ordering.tiles}
+          ordering={ordering}
+          tiler={Tiler}
           disabled={model.disabled}
           addGuide={model.config.showOrdering}
           tileSize={model.config && model.config.tileSize}
           includeTargets={includeTargets}
-          onDropChoice={this.onDropChoice.bind(this, ordering)}
-          onRemoveChoice={this.onRemoveChoice.bind(this, ordering)}
+          onDropChoice={this.onDropChoice}
+          onRemoveChoice={this.onRemoveChoice}
         />
-
         <br />
         {!showingCorrect && (
           <Feedback correctness={model.correctness} feedback={model.feedback} />

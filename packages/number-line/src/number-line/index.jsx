@@ -129,7 +129,7 @@ export class NumberLine extends React.Component {
     );
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setState({ showCorrectAnswer: false });
   }
 

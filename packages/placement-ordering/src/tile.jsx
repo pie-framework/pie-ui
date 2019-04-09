@@ -12,7 +12,7 @@ const log = debug('pie-elements:placement-ordering:tile');
 const Holder = withStyles(() => ({
   number: {
     width: '100%',
-    fontSize: '30px',
+    fontSize: '18px',
     textAlign: 'center',
     color: 'rgba(0,0,0,0.6)'
   }
@@ -106,9 +106,9 @@ export class Tile extends React.Component {
     type: PropTypes.string,
     empty: PropTypes.bool,
     disabled: PropTypes.bool,
-    outcome: PropTypes.object,
+    outcome: PropTypes.string,
     index: PropTypes.number,
-    guideIndex: PropTypes.number.isRequired
+    guideIndex: PropTypes.number
   };
 
   render() {

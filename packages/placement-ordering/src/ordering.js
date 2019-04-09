@@ -91,7 +91,7 @@ function buildTiles(choices, response, outcomes, opts) {
     }
 
     const processedChoices = choices.map(m => {
-      if (response.indexOf(m.id) !== -1 && m.moveOnDrag) {
+      if (response.indexOf(m.id) !== -1 && !opts.allowSameChoiceInTargets) {
         return {
           type: 'choice',
           empty: true,

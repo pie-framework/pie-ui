@@ -116,7 +116,7 @@ export class Main extends React.Component {
     this.handleAnswerBlockDomUpdate();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const config = this.props.model.config;
     const nextConfig = nextProps.model.config;
 

@@ -98,7 +98,7 @@ export class Main extends React.Component {
       Object.keys(nextProps.session.answers).length
     );
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
     const shuffleRows = this.isShuffleRowsRequired(nextProps);
     const resetRows = this.isResetRowsRequired(nextProps);

@@ -28,7 +28,7 @@ export class Main extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setState({ showCorrectAnswer: false });
   }
 
@@ -102,7 +102,7 @@ export default class Stateful extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ model: nextProps.model, session: nextProps.session });
   }
 

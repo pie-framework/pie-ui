@@ -91,7 +91,7 @@ export class Line extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps) {
       const { position } = nextProps;
       this.setState({ left: position.left, right: position.right });

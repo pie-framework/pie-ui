@@ -36,7 +36,7 @@ export class Main extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const points = nextProps.session.points || [];
     const session = { ...nextProps.session, points };
 

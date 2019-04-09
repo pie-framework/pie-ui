@@ -323,5 +323,35 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@4.4.7"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-lib/drag to 1.1.12, move react-dnd to peerDependencies",
+    "merge": null,
+    "header": "fix: bump @pie-lib/drag to 1.1.12, move react-dnd to peerDependencies",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d9c503bfe8aa5bbde7b5c89bd453534dee69e5ff",
+    "gitTags": "",
+    "committerDate": "2019-04-03 10:39:59 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.5.0"
+  },
+  {
+    "type": "feat",
+    "scope": "placement-ordering",
+    "subject": "Updated design for placement-ordering and added removeTile property, which indicates if the tiles have to be removed after they are dropped into another area (Removed the possibility to individually set moveOnDrag property on each choice).",
+    "merge": null,
+    "header": "feat(placement-ordering): Updated design for placement-ordering and added removeTile property, which indicates if the tiles have to be removed after they are dropped into another area (Removed the possibility to individually set moveOnDrag property on each choice).",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8db0acc7015ac9d0dbe598a768482286eb9a359c",
+    "gitTags": "",
+    "committerDate": "2019-04-03 01:42:03 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.5.0"
   }
 ]

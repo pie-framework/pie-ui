@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.11...@pie-ui/select-text@1.5.12) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
 ## [1.5.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.10...@pie-ui/select-text@1.5.11) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/select-text

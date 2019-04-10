@@ -22,6 +22,7 @@ export default class Ebsr extends HTMLElement {
     this._session = {};
 
     this.onPartUpdated = e => {
+      e.preventDefault();
       e.stopImmediatePropagation();
       const key =
         e.target.getAttribute('id') === 'part-a' ? 'partA' : 'partB';

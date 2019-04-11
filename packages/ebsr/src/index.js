@@ -3,40 +3,44 @@ import MultipleChoice from '@pie-ui/multiple-choice';
 
 import debug from 'debug';
 const SESSION_CHANGED = SessionChangedEvent.TYPE;
+const MC_TAG_NAME = 'ebsr-multiple-choice';
 const log = debug('pie-elements:ebsr');
 
 class EbsrMC extends MultipleChoice {}
 
 const defineMultipleChoice = () => {
-  if(!customElements.get('ebsr-multiple-choice')){
-    customElements.define('ebsr-multiple-choice', EbsrMC);
+  if(!customElements.get(MC_TAG_NAME)){
+    customElements.define(MC_TAG_NAME, EbsrMC);
   }
 };
+
+defineMultipleChoice();
 
 export default class Ebsr extends HTMLElement {
   constructor() {
     super();
-    defineMultipleChoice();
-
     this._model = {};
     this._session = {};
-
-    this.onPartUpdated = e => {
-      const id = e.target.getAttribute('id');
-      e.preventDefault();
-      e.stopImmediatePropagation();
-
-      if (id) {
-        const key = id === 'part-a' ? 'partA' : 'partB';
-        this.dispatchSessionChanged(e.srcElement._session, key);
-      }
-    };
   }
+
+  onSessionUpdated = e => {
+    if (e.target === this) {
+      return;
+    }
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const id = e.target.getAttribute('id');
+    if (id) {
+      const key = `part${id.toUpperCase()}`;
+      this._model[key] = e.update;
+      this.dispatchSessionChanged(e.srcElement._session, key);
+    }
+  };
 
   set model(m) {
     this._model = m;
 
-    customElements.whenDefined('ebsr-multiple-choice')
+    customElements.whenDefined(MC_TAG_NAME)
       .then(() => {
         this.setPartModel(this.partA, 'partA');
         this.setPartModel(this.partB, 'partB');
@@ -46,7 +50,7 @@ export default class Ebsr extends HTMLElement {
   set session(s) {
     this._session = s;
 
-    customElements.whenDefined('ebsr-multiple-choice')
+    customElements.whenDefined(MC_TAG_NAME)
       .then(() => {
         this.setPartSession(this.partA, 'partA');
         this.setPartSession(this.partB, 'partB');
@@ -86,30 +90,27 @@ export default class Ebsr extends HTMLElement {
   }
 
   get partA() {
-    return this.querySelector('#part-a');
+    return this.querySelector(`${MC_TAG_NAME}#a`);
   }
 
   get partB() {
-    return this.querySelector('#part-b');
+    return this.querySelector(`${MC_TAG_NAME}#b`);
   }
 
   connectedCallback() {
     this._render();
-    this.addEventListener(SESSION_CHANGED, this.onPartUpdated);
-    // this.partA.addEventListener(SESSION_CHANGED, this.onPartUpdated);
-    // this.partB.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+    this.addEventListener(SESSION_CHANGED, this.onSessionUpdated);
   }
 
   disconnectedCallback() {
-    this.partA.removeEventListener(SESSION_CHANGED, this.onPartUpdated);
-    this.partB.removeEventListener(SESSION_CHANGED, this.onPartUpdated);
+    this.removeEventListener(SESSION_CHANGED, this.onSessionUpdated);
   }
 
   _render() {
     this.innerHTML = `
       <div>
-        <ebsr-multiple-choice id="part-a"></ebsr-multiple-choice>
-        <ebsr-multiple-choice id="part-b"></ebsr-multiple-choice>
+        <${MC_TAG_NAME} id="a"></${MC_TAG_NAME}>
+        <${MC_TAG_NAME} id="b"></${MC_TAG_NAME}>
       </div>
     `;
   }

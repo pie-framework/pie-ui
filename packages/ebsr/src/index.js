@@ -22,11 +22,14 @@ export default class Ebsr extends HTMLElement {
     this._session = {};
 
     this.onPartUpdated = e => {
+      const id = e.target.getAttribute('id');
       e.preventDefault();
       e.stopImmediatePropagation();
-      const key =
-        e.target.getAttribute('id') === 'part-a' ? 'partA' : 'partB';
-      this.dispatchSessionChanged(e.srcElement._session, key);
+
+      if (id) {
+        const key = id === 'part-a' ? 'partA' : 'partB';
+        this.dispatchSessionChanged(e.srcElement._session, key);
+      }
     };
   }
 
@@ -92,8 +95,9 @@ export default class Ebsr extends HTMLElement {
 
   connectedCallback() {
     this._render();
-    this.partA.addEventListener(SESSION_CHANGED, this.onPartUpdated);
-    this.partB.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+    this.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+    // this.partA.addEventListener(SESSION_CHANGED, this.onPartUpdated);
+    // this.partB.addEventListener(SESSION_CHANGED, this.onPartUpdated);
   }
 
   disconnectedCallback() {

@@ -81,17 +81,21 @@ export class Main extends React.Component {
         const el = this.root.querySelector(`#${response.id}`);
         const indexEl = this.root.querySelector(`#${response.id}Index`);
         const shouldShowCorrect = showCorrect || (model.disabled && !model.view);
-        const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
+        const correct =
+          showCorrect ||
+          (model.correctness && model.correctness.info && model.correctness.info[response.id]);
 
         if (el) {
           const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
           const answer = answers[response.id];
 
-          el.textContent = showCorrect ? response.answer : answer && answer.value || '';
+          el.textContent = showCorrect ? response.answer : (answer && answer.value) || '';
 
           if (shouldShowCorrect) {
-            el.parentElement.parentElement.classList.add(correct ? classes.correct : classes.incorrect);
+            el.parentElement.parentElement.classList.add(
+              correct ? classes.correct : classes.incorrect
+            );
           } else {
             el.parentElement.parentElement.classList.remove(classes.correct);
             el.parentElement.parentElement.classList.remove(classes.incorrect);
@@ -101,7 +105,7 @@ export class Main extends React.Component {
 
           indexEl.textContent = `R${idx + 1}`;
         }
-      })
+      });
     }
   };
 
@@ -121,9 +125,7 @@ export class Main extends React.Component {
     const nextConfig = nextProps.model.config;
 
     if (
-      (config &&
-        config.responses &&
-        config.responses.length !== nextConfig.responses.length) ||
+      (config && config.responses && config.responses.length !== nextConfig.responses.length) ||
       (!config && nextConfig && nextConfig.responses)
     ) {
       const answers = {};
@@ -131,9 +133,7 @@ export class Main extends React.Component {
 
       nextConfig.responses.forEach(response => {
         answers[response.id] = {
-          value: stateAnswers[response.id]
-            ? stateAnswers[response.id].value
-            : ''
+          value: stateAnswers[response.id] ? stateAnswers[response.id].value : ''
         };
       });
 
@@ -155,10 +155,7 @@ export class Main extends React.Component {
   onDone = () => {};
 
   onSimpleResponseChange = response => {
-    this.setState(
-      state => ({ session: { ...state.session, response } }),
-      this.callOnSessionChange
-    );
+    this.setState(state => ({ session: { ...state.session, response } }), this.callOnSessionChange);
   };
 
   onAnswerBlockClick = id => {
@@ -191,8 +188,15 @@ export class Main extends React.Component {
     this.input = input;
   };
 
-  onClick = data => {
+  onClick = responseId => data => {
+    const { model } = this.props;
+    const response = model.config.responses && model.config.responses[responseId];
     const c = this.toNodeData(data);
+
+    // if decimals are not allowed for this response, we discard the input
+    if (response && !response.allowDecimals && (c.value === '.' || c.value === ',')) {
+      return;
+    }
 
     if (c.type === 'clear') {
       this.input.clear();
@@ -234,7 +238,7 @@ export class Main extends React.Component {
       }),
       this.callOnSessionChange
     );
-  }
+  };
 
   prepareForStatic(ltx) {
     const { model } = this.props;
@@ -244,15 +248,12 @@ export class Main extends React.Component {
       return ltx;
     }
 
-    return ltx.replace(
-      REGEX,
-      (match, submatch) => {
-        const answers = this.state.session.answers;
-        const answer = answers[submatch];
+    return ltx.replace(REGEX, (match, submatch) => {
+      const answers = this.state.session.answers;
+      const answer = answers[submatch];
 
-        return `\\MathQuillMathField[${submatch}]{${answer && answer.value || ''}}`;
-      }
-    );
+      return `\\MathQuillMathField[${submatch}]{${(answer && answer.value) || ''}}`;
+    });
   }
 
   getFieldName = (changeField, fields) => {
@@ -266,7 +267,7 @@ export class Main extends React.Component {
         return tf && tf.id == changeField.id;
       });
     }
-  }
+  };
 
   render() {
     const { model, classes } = this.props;
@@ -282,16 +283,12 @@ export class Main extends React.Component {
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
-            show={
-              model.correctness && model.correctness.correctness !== 'correct'
-            }
+            show={model.correctness && model.correctness.correctness !== 'correct'}
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
-            <div
-              dangerouslySetInnerHTML={{ __html: model.config.question }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>
           {model.config.mode === 'simple' && (
             <SimpleQuestionBlock
@@ -313,24 +310,24 @@ export class Main extends React.Component {
             </div>
           )}
           <div className={classes.responseContainer}>
-            {model.config.mode === 'advanced' && model.config.responses && model.config.responses.map(
-              response =>
-                (response.id === activeAnswerBlock && !(showCorrect || model.disabled) && (
-                  <HorizontalKeypad
-                    key={response.id}
-                    mode={model.config.equationEditor}
-                    onClick={this.onClick}
-                  />
-                )) ||
-                null
-            )}
+            {model.config.mode === 'advanced' &&
+              model.config.responses &&
+              model.config.responses.map(
+                response =>
+                  (response.id === activeAnswerBlock && !(showCorrect || model.disabled) && (
+                    <HorizontalKeypad
+                      noDecimal={!response.allowDecimals}
+                      key={response.id}
+                      mode={model.config.equationEditor}
+                      onClick={this.onClick(response.id)}
+                    />
+                  )) ||
+                  null
+              )}
           </div>
         </div>
         {model.feedback && (
-          <Feedback
-            correctness={model.correctness.correctness}
-            feedback={model.feedback}
-          />
+          <Feedback correctness={model.correctness.correctness} feedback={model.feedback} />
         )}
       </div>
     );
@@ -381,7 +378,7 @@ const styles = theme => ({
       '& > .mq-root-block': {
         '& > .mq-editable-field': {
           minWidth: '40px',
-          margin: theme.spacing.unit * 2 / 3,
+          margin: (theme.spacing.unit * 2) / 3,
           padding: theme.spacing.unit / 2
         }
       }
@@ -420,7 +417,7 @@ const styles = theme => ({
       '& > .mq-hasCursor': {
         '& > .mq-cursor': {
           display: 'none'
-        },
+        }
       }
     }
   }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.5...@pie-ui/ebsr@1.1.6) (2019-04-10)
+
+
+### Bug Fixes
+
+* prevent default session.changed event [ch498] ([c032e40](https://github.com/pie-framework/pie-elements/commit/c032e40))
+
+
+
+
+
 ## [1.1.5](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.4...@pie-ui/ebsr@1.1.5) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/ebsr

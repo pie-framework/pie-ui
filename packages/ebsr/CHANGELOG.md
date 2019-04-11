@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.6...@pie-ui/ebsr@1.1.7) (2019-04-11)
+
+
+### Bug Fixes
+
+* listen for events in the outer context ([9553561](https://github.com/pie-framework/pie-elements/commit/9553561))
+
+
+
+
+
 ## [1.1.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.5...@pie-ui/ebsr@1.1.6) (2019-04-10)
 
 

@@ -1662,10 +1662,17 @@
     invariant "^2.2.4"
     lodash "^4.17.10"
 
-"@pie-framework/mathquill@^0.10.2", "@pie-framework/mathquill@^0.10.3":
+"@pie-framework/mathquill@^0.10.3":
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@pie-framework/mathquill/-/mathquill-0.10.3.tgz#6e9fe502682f5ddbe7b4ce325871af997a8a3141"
   integrity sha512-fUgdqzpwtk2eggWUw65VArX81G4gHqaU2CVs3mJ/9/1Z1SjZxM2OS6ZReuex/4j+Ta/BRC07Go2fUeKdFI5Lqg==
+  dependencies:
+    jquery "^3.3.1"
+
+"@pie-framework/mathquill@^0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@pie-framework/mathquill/-/mathquill-0.10.4.tgz#6725a1ab29381479d75439e97ad4934b86ed0991"
+  integrity sha512-qKGhcYgR9B0YfV0aAnJDM6JDAd+aYiYFpH2BSrBbWDb4C1WfaqzuceSZmZjOthl11Tatg1/coRaz5UKDWto3Rw==
   dependencies:
     jquery "^3.3.1"
 

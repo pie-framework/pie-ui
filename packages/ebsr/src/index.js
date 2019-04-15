@@ -58,21 +58,26 @@ export default class Ebsr extends HTMLElement {
   }
 
   setPartModel(part, key) {
-    const { mode } = this._model;
+    if (this._model && this._model[key]) {
+      const { mode } = this._model;
 
-    part.model = {
-      ...this._model[key],
-      mode
-    };
+      part.model = {
+        ...this._model[key],
+        mode
+      };
+    }
+
   }
 
   setPartSession(part, key) {
-    const { value } = this._session;
+    if (this._session && this._model) {
+      const { value } = this._session;
 
-    part.session = { id: key };
+      part.session = { id: key };
 
-    if (value) {
-      part.session = value[key];
+      if (value) {
+        part.session = value[key];
+      }
     }
   }
 

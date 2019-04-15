@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.8...@pie-ui/math-inline@1.3.0) (2019-04-11)
+
+
+### Features
+
+* **math-inline:** decimals support ([e589957](https://github.com/pie-framework/pie-ui/commit/e589957))
+
+
+
+
+
 ## [1.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.7...@pie-ui/math-inline@1.2.8) (2019-04-10)
 
 **Note:** Version bump only for package @pie-ui/math-inline

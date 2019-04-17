@@ -51,5 +51,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "prettier": "^1.17.0"
+  }
 }

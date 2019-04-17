@@ -6,8 +6,9 @@ import classNames from 'classnames';
 import debug from 'debug';
 import { withStyles } from '@material-ui/core/styles';
 import { PlaceHolder } from '@pie-lib/drag';
+import isEmpty from 'lodash/isEmpty';
 
-const log = debug('pie-elements:placement-ordering:tile');
+const log = debug('pie-elements:match-title:answer');
 
 const Holder = withStyles(() => ({
   number: {
@@ -16,33 +17,31 @@ const Holder = withStyles(() => ({
     textAlign: 'center',
     color: 'rgba(0,0,0,0.6)'
   }
-}))(({ classes, type, index, isOver, disabled }) => (
+}))(({ classes, index, isOver, disabled }) => (
   <PlaceHolder isOver={isOver} disabled={disabled}>
-    {type === 'target' &&
-      index !== undefined && <div className={classes.number}>{index}</div>}
+    {index !== undefined && <div className={classes.number}>{index}</div>}
   </PlaceHolder>
 ));
 
 Holder.propTypes = {
-  type: PropTypes.string,
   index: PropTypes.number,
   isOver: PropTypes.bool,
   disabled: PropTypes.bool
 };
 
-const TileContent = withStyles({
+const AnswerContent = withStyles({
   over: {
     opacity: 0.2
   },
-  tileContent: {
+  answerContent: {
+    backgroundColor: 'white',
+    border: '1px solid #c2c2c2',
     cursor: 'pointer',
     width: '100%',
     height: '100%',
     padding: '10px',
     boxSizing: 'border-box',
     overflow: 'hidden',
-    border: '1px solid #c2c2c2',
-    backgroundColor: 'white',
     transition: 'opacity 200ms linear'
   },
   dragging: {
@@ -60,72 +59,66 @@ const TileContent = withStyles({
   }
 })(props => {
   const {
-    type,
     classes,
     isDragging,
-    empty,
     isOver,
-    label,
+    title,
     disabled,
+    empty,
     outcome,
-    guideIndex
+    guideIndex,
+    type
   } = props;
 
   if (empty) {
     return (
       <Holder
-        type={type}
         index={guideIndex}
         isOver={isOver}
         disabled={disabled}
+        type={type}
       />
     );
   } else {
     const names = classNames(
-      classes.tileContent,
+      classes.answerContent,
       isDragging && !disabled && classes.dragging,
       isOver && !disabled && classes.over,
       disabled && classes.disabled,
       outcome && classes[outcome]
     );
+
     return (
-      <div className={names} dangerouslySetInnerHTML={{ __html: label }} />
+      <div className={names} dangerouslySetInnerHTML={{ __html: title }} />
     );
   }
 });
 
-export class Tile extends React.Component {
+export class Answer extends React.Component {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     connectDropTarget: PropTypes.func.isRequired,
     isDragging: PropTypes.bool.isRequired,
     id: PropTypes.any,
-    label: PropTypes.string,
+    title: PropTypes.string,
     isOver: PropTypes.bool,
     classes: PropTypes.object.isRequired,
-    type: PropTypes.string,
     empty: PropTypes.bool,
+    type: PropTypes.string,
     disabled: PropTypes.bool,
-    outcome: PropTypes.string,
-    index: PropTypes.number,
-    guideIndex: PropTypes.number
   };
 
   render() {
     const {
-      label,
+      id,
+      title,
       isDragging,
       connectDragSource,
       connectDropTarget,
+      disabled,
       classes,
       isOver,
-      type,
-      id,
-      empty,
-      disabled,
-      outcome,
-      index,
-      guideIndex
+      type
     } = this.props;
 
     log('[render], props: ', this.props);
@@ -139,16 +132,13 @@ export class Tile extends React.Component {
     return connectDragSource(
       connectDropTarget(
         <div className={name}>
-          <TileContent
-            label={label}
+          <AnswerContent
+            title={title}
             id={id}
-            empty={empty}
-            index={index}
-            guideIndex={guideIndex}
             isOver={isOver}
+            empty={isEmpty(title)}
             isDragging={isDragging}
             disabled={disabled}
-            outcome={outcome}
             type={type}
           />
         </div>
@@ -158,42 +148,39 @@ export class Tile extends React.Component {
   }
 }
 
-const StyledTile = withStyles({
+const StyledAnswer = withStyles({
   answer: {
     boxSizing: 'border-box',
+    height: 40,
+    width: 280,
     overflow: 'hidden',
-    margin: '0px',
+    margin: '10px 20px',
     padding: '0px',
     textAlign: 'center'
   }
-})(Tile);
+})(Answer);
 
-const tileTarget = {
+const answerTarget = {
   drop(props, monitor) {
     const draggedItem = monitor.getItem();
-    log(
-      'props.instanceId',
-      props.instanceId,
-      'draggedItem.instanceId:',
-      draggedItem.instanceId
-    );
+
     if (draggedItem.instanceId === props.instanceId) {
-      props.onDropChoice(draggedItem, props.index);
+      props.placeAnswer(draggedItem.id, props.index);
     }
   },
   canDrop(props, monitor) {
     const draggedItem = monitor.getItem();
-    const canDrop = draggedItem.instanceId === props.instanceId;
-    return canDrop;
+
+    return draggedItem.instanceId === props.instanceId;
   }
 };
 
-const DropTile = DropTarget('Tile', tileTarget, (connect, monitor) => ({
+const DropAnswer = DropTarget('Answer', answerTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver()
-}))(StyledTile);
+}))(StyledAnswer);
 
-const tileSource = {
+const answerSource = {
   canDrag(props) {
     return props.draggable && !props.disabled;
   },
@@ -213,9 +200,9 @@ const tileSource = {
   }
 };
 
-const DragDropTile = DragSource('Tile', tileSource, (connect, monitor) => ({
+const DragAnswer = DragSource('Answer', answerSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
-}))(DropTile);
+}))(DropAnswer);
 
-export default DragDropTile;
+export default DragAnswer;

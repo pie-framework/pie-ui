@@ -538,5 +538,20 @@
     "committerDate": "2019-04-02 12:15:07 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@1.2.2"
+  },
+  {
+    "type": "feat",
+    "scope": "math-inline",
+    "subject": "decimals support",
+    "merge": null,
+    "header": "feat(math-inline): decimals support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e589957bb99778911a79f98cdbd74ce16c459d55",
+    "gitTags": "",
+    "committerDate": "2019-04-10 11:23:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@1.3.0"
   }
 ]

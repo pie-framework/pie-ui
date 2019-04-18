@@ -34,14 +34,12 @@ describe('Main', () => {
         padding: 20
       },
       disabled: false,
-      model: {
-        config: {
-          lines: [{
-            label: 'Line One',
-            correctLine: '3x+2',
-            initialView: '3x+3'
-          }],
-        }
+      graph: {
+        lines: [{
+          label: 'Line One',
+          correctLine: '3x+2',
+          initialView: '3x+3'
+        }],
       }
     }
   };

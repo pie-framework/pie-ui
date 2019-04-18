@@ -110,7 +110,7 @@ export class Main extends React.Component {
     } else {
       const lines = [];
 
-      model.model.config.lines.forEach(line => {
+      model.graph.lines.forEach(line => {
         const lineExpression = utils.expressionFromDescriptor(line.initialView);
         const points = utils.pointsFromExpression(lineExpression);
 

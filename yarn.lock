@@ -1528,7 +1528,7 @@
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
   integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
-"@material-ui/core@^3.8.3", "@material-ui/core@^3.9.2":
+"@material-ui/core@^3.8.3", "@material-ui/core@^3.9.2", "@material-ui/core@^3.9.3":
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-3.9.3.tgz#d378c1f4beb18df9a534ca7258c2c33fb8e0e51f"
   integrity sha512-REIj62+zEvTgI/C//YL4fZxrCVIySygmpZglsu/Nl5jPqy3CDjZv1F9ubBYorHqmRgeVPh64EghMMWqk4egmfg==
@@ -1972,6 +1972,22 @@
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.2"
+
+"@pie-lib/mask-markup@next":
+  version "1.0.0-next.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.0.0-next.0.tgz#9037ac2f418d5a300827ffa41260b9d5d49c8f7d"
+  integrity sha512-NBA0PK+yTFTvdLGZg1JbYKiohl9IaXVDUjM6M75vPcspdh2B7R0BrJ5y61MTvzpDO9Q54q/BH39RctDgA5ggmA==
+  dependencies:
+    "@material-ui/core" "^3.9.3"
+    "@pie-lib/drag" "^1.1.12"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    react "^16.8.6"
+    react-dnd "^7.0.2"
+    react-dnd-html5-backend "^7.0.2"
+    slate "^0.36.2"
+    slate-prop-types "^0.4.38"
+    slate-react "^0.14.3"
 
 "@pie-lib/math-input@^6.0.0":
   version "6.0.0"
@@ -9013,7 +9029,7 @@ react-transition-group@^2.2.1, react-transition-group@^2.3.1, react-transition-g
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.8.1:
+react@^16.8.1, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==

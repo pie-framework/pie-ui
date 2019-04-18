@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { styledMain as Main }  from '../main';
 import { shallowChild } from '@pie-lib/test-utils';
-import { Feedback } from '@pie-lib/render-ui';
 import AnswerList from '../answer-list';
-import ChoicesList from '../choices-list';
+import DragAndDropAnswer from '../answer';
 
-describe('Main', () => {
+describe('AnswerList', () => {
   const defaultProps = {
     model: {
       id: '1',
@@ -55,7 +53,6 @@ describe('Main', () => {
       },
       feedback: 'Incorrect'
     },
-    onSessionChange: jest.fn(),
     session: {}
   };
 
@@ -63,13 +60,12 @@ describe('Main', () => {
   let component;
 
   beforeEach(() => {
-    wrapper = shallowChild(Main, defaultProps, 1);
+    wrapper = shallowChild(AnswerList, defaultProps, 1);
   });
 
   it('renders correctly', () => {
     component = wrapper();
 
-    expect(component.find(AnswerList).length).toEqual(1);
-    expect(component.find(ChoicesList).length).toEqual(1);
+    expect(component.find(DragAndDropAnswer).length).toEqual(4);
   });
 });

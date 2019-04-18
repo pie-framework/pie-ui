@@ -96,8 +96,8 @@ const AnswerContent = withStyles({
 
 export class Answer extends React.Component {
   static propTypes = {
-    connectDragSource: PropTypes.func.isRequired,
-    connectDropTarget: PropTypes.func.isRequired,
+    connectDragSource: PropTypes.func,
+    connectDropTarget: PropTypes.func,
     isDragging: PropTypes.bool.isRequired,
     id: PropTypes.any,
     title: PropTypes.string,
@@ -106,6 +106,7 @@ export class Answer extends React.Component {
     empty: PropTypes.bool,
     type: PropTypes.string,
     disabled: PropTypes.bool,
+    correct: PropTypes.bool
   };
 
   render() {
@@ -118,33 +119,32 @@ export class Answer extends React.Component {
       disabled,
       classes,
       isOver,
-      type
+      type,
+      correct
     } = this.props;
 
     log('[render], props: ', this.props);
 
-    const name = classNames(classes.answer);
-
-    const dragSourceOpts = {
-      //dropEffect: moveOnDrag ? 'move' : 'copy'
-    };
-
-    return connectDragSource(
-      connectDropTarget(
-        <div className={name}>
-          <AnswerContent
-            title={title}
-            id={id}
-            isOver={isOver}
-            empty={isEmpty(title)}
-            isDragging={isDragging}
-            disabled={disabled}
-            type={type}
-          />
-        </div>
-      ),
-      dragSourceOpts
+    const name = classNames(classes.answer, {
+      [classes.correct]: correct === true,
+      [classes.incorrect]: correct === false
+    });
+    const content = (
+      <div className={name}>
+        <AnswerContent
+          title={title}
+          id={id}
+          isOver={isOver}
+          empty={isEmpty(title)}
+          isDragging={isDragging}
+          disabled={disabled}
+          type={type}
+        />
+      </div>
     );
+    const droppable = connectDropTarget ? connectDropTarget(content) : content;
+
+    return connectDragSource ? connectDragSource(droppable) : droppable;
   }
 }
 
@@ -154,9 +154,15 @@ const StyledAnswer = withStyles({
     height: 40,
     width: 280,
     overflow: 'hidden',
-    margin: '10px 20px',
+    margin: '10px 0',
     padding: '0px',
     textAlign: 'center'
+  },
+  incorrect: {
+    border: '1px solid var(--feedback-incorrect-bg-color, orange)'
+  },
+  correct: {
+    border: '1px solid var(--feedback-correct-bg-color, green)'
   }
 })(Answer);
 
@@ -175,7 +181,7 @@ const answerTarget = {
   }
 };
 
-const DropAnswer = DropTarget('Answer', answerTarget, (connect, monitor) => ({
+export const DropAnswer = DropTarget('Answer', answerTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver()
 }))(StyledAnswer);
@@ -200,9 +206,14 @@ const answerSource = {
   }
 };
 
-const DragAnswer = DragSource('Answer', answerSource, (connect, monitor) => ({
+export const DragAnswer = DragSource('Answer', answerSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging()
+}))(StyledAnswer);
+
+const DragAndDropAnswer = DragSource('Answer', answerSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
 }))(DropAnswer);
 
-export default DragAnswer;
+export default DragAndDropAnswer;

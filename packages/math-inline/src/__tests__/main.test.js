@@ -4,7 +4,7 @@ import { shallowChild } from '@pie-lib/test-utils';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 
-describe('Main', () => {
+xdescribe('Main', () => {
   const defaultProps = {
     model: {
       config: {

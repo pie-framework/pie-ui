@@ -49,11 +49,19 @@ exports[`main snapshot renders showCorrect 1`] = `
   />
   <_default
     onToggle={[Function]}
-    toggled={true}
+    toggled={false}
   />
   <TextSelect
     onChange={[MockFunction]}
-    selectedTokens={Array []}
+    selectedTokens={
+      Array [
+        Object {
+          "end": 1,
+          "start": 0,
+          "text": "f",
+        },
+      ]
+    }
     text="foo"
     tokens={
       Array [

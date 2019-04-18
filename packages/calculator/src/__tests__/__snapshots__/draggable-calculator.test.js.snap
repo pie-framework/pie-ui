@@ -25,7 +25,6 @@ exports[`DraggableCalculator snapshot Creates snapshot using enzyme 1`] = `
   onStart={[Function]}
   onStop={[Function]}
   position={null}
-  scale={1}
   transform={null}
 >
   <div>

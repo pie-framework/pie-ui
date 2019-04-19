@@ -51,13 +51,14 @@ exports.getPkgAndDemo = (versionOverride, packages) => {
     pkg.shortName = basename(pkg.name);
     pkg.version = versionOverride ? versionOverride : pkg.version;
     const dir = dirname(pkg._path);
-    const { markup, data } = exports.loadDemo(dir);
+    const { markup, data, session } = exports.loadDemo(dir);
     const changelog = exports.loadChangelog(dir, 'CHANGELOG.md');
     const nextChangelog = exports.loadChangelog(dir, 'NEXT.CHANGELOG.md');
     pkg.demo = {
       tagName: exports.getElementNameFromDemo(data),
       data,
-      markup
+      markup,
+      session
     };
 
     pkg.changelog = changelog;
@@ -121,7 +122,7 @@ exports.loadDemo = pkgPath => {
 
   const markup = exports.loadDemoMarkup(pkgPath);
 
-  return { data, markup };
+  return { data: data.demo, session: data.session, markup };
 };
 
 exports.generateMarkupFromData = (data, tagName) => {
@@ -151,17 +152,43 @@ exports.loadDemoData = pkgPath => {
     log('demoJsPath: ', demoJsPath);
     const demoJs = readFileSync(demoJsPath, 'utf8');
 
-    const m = {
+    log('loadSession: ', pkgPath);
+    const sessionPath = resolve(pkgPath, 'demo', 'session.js');
+    let sessionVal;
+
+    try {
+      log('sessionPath: ', demoJsPath);
+      sessionVal = readFileSync(sessionPath, 'utf8');
+    } catch (err) {
+      sessionVal = [];
+      log('No session file.');
+    }
+
+    const demoM = {
       exports: {}
     };
 
-    const context = vm.createContext({
-      exports: m.exports,
-      module: m
+    const demoJsContext = vm.createContext({
+      exports: demoM.exports,
+      module: demoM
     });
 
-    vm.runInContext(demoJs, context);
-    return context.module.exports || context.exports;
+    const sessionM = {
+      exports: []
+    };
+
+    const sessionContext = vm.createContext({
+      exports: sessionM.exports,
+      module: sessionM
+    });
+
+    vm.runInContext(demoJs, demoJsContext);
+    vm.runInContext(sessionVal, sessionContext);
+
+    return {
+      demo: demoJsContext.module.exports || demoJsContext.exports,
+      session: sessionContext.module.exports || sessionContext.exports
+    };
   } catch (e) {
     err('[loadDemoData] error: ', e.message);
     //console.error(e);

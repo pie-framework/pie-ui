@@ -1,9 +1,10 @@
-const session = (id, value) => ({ id, value, element: 'inline-choice' });
+const session = id => ({
+  id,
+  value: {
+    0: { value: 'apple' },
+    1: { value: 'carrot' }
+  },
+  element: 'inline-choice'
+});
 
-module.exports = [
-  session('1', 'apple'),
-  session('2', 'apple'),
-  session('3', 'banana'),
-  session('4', 'apple'),
-  session('5', undefined)
-];
+module.exports = [session('1'), session('2'), session('3')];

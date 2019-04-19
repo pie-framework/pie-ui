@@ -1,64 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { withDragContext } from '@pie-lib/drag';
+import { withDragContext, swap } from '@pie-lib/drag';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
-import ArrowHead from '@material-ui/icons/ArrowDropDown';
 import { withStyles } from '@material-ui/core/styles';
 import uniqueId from 'lodash/uniqueId';
 import isEmpty from 'lodash/isEmpty';
+import Arrow from './arrow';
 import AnswerList from './answer-list';
 import ChoicesList from './choices-list';
 
-const Arrow = withStyles({
-  arrow: {
-    display: 'inline-block',
-    position: 'relative',
-    width: 80
-  },
-  line: {
-    backgroundColor: '#979797',
-    bottom: 19,
-    content: '""',
-    display: 'block',
-    height: 1,
-    left: 20,
-    position: 'absolute',
-    width: 80
-  },
-  right: {
-    bottom: 20
-  }
-})(
-  ({ direction, classes }) => {
-    const extraStyle = direction === 'left'
-      ? {}
-      : {
-        transform: 'rotate(180deg)'
-      };
-
-    return (
-      <div
-        className={classes.arrow}
-        style={extraStyle}
-      >
-        <ArrowHead
-          style={{
-            transform: 'rotate(90deg)',
-            color: '#979797',
-            fontSize: 40
-          }}
-        />
-        <span className={classnames(classes.line, {
-          [classes.right]: direction !== 'left'
-        })} />
-      </div>
-    );
-  }
-);
-
-class Main extends React.Component {
+export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
     session: PropTypes.object.isRequired,
@@ -105,7 +58,7 @@ class Main extends React.Component {
     onSessionChange(session);
   }
 
-  placeAnswer(id, place) {
+  onPlaceAnswer(place, id) {
     const { model, session, onSessionChange } = this.props;
     const { config } = model;
 
@@ -116,10 +69,7 @@ class Main extends React.Component {
     const choiceIndex = session.value.indexOf(id);
 
     if (choiceIndex >= 0) {
-      const tmp = session.value[choiceIndex];
-
-      session.value[choiceIndex] = session.value[place];
-      session.value[place] = tmp;
+      session.value = swap(session.value, choiceIndex, place);
     } else {
       session.value[place] = id;
     }
@@ -130,47 +80,6 @@ class Main extends React.Component {
   toggleShowCorrect = () => {
     this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });
   };
-
-  renderPromptList() {
-    const { classes, model } = this.props;
-    const { config } = model;
-
-    return (
-      <div className={classnames(classes.itemList, classes.promptList)}>
-        {
-          config.prompts.map((pr) => (
-            <div
-              key={pr.id}
-              className={classes.promptEntry}
-            >
-              {pr.title}
-            </div>
-          ))
-        }
-      </div>
-    );
-  }
-
-  renderArrowList() {
-    const { classes, model } = this.props;
-    const { config } = model;
-
-    return (
-      <div className={classnames(classes.itemList, classes.arrowList)}>
-        {
-          config.prompts.map((pr) => (
-            <div
-              key={pr.id}
-              className={classes.arrowEntry}
-            >
-              <Arrow direction="left" />
-              <Arrow />
-            </div>
-          ))
-        }
-      </div>
-    );
-  }
 
   render() {
     const { showCorrectAnswer } = this.state;
@@ -190,13 +99,36 @@ class Main extends React.Component {
           dangerouslySetInnerHTML={{ __html: prompt }}
         />
         <div className={classes.listContainer}>
-          {this.renderPromptList()}
-          {this.renderArrowList()}
+          <div className={classnames(classes.itemList, classes.promptList)}>
+            {
+              config.prompts.map((pr) => (
+                <div
+                  key={pr.id}
+                  className={classes.promptEntry}
+                >
+                  {pr.title}
+                </div>
+              ))
+            }
+          </div>
+          <div className={classnames(classes.itemList, classes.arrowList)}>
+            {
+              config.prompts.map((pr) => (
+                <div
+                  key={pr.id}
+                  className={classes.arrowEntry}
+                >
+                  <Arrow direction="left" />
+                  <Arrow />
+                </div>
+              ))
+            }
+          </div>
           <AnswerList
             instanceId={this.instanceId}
             model={model}
             session={session}
-            placeAnswer={(id, index) => this.placeAnswer(id, index)}
+            onPlaceAnswer={(place, id) => this.onPlaceAnswer(place, id)}
             onRemoveAnswer={index => this.onRemoveAnswer(index)}
             disabled={mode !== 'gather'}
             showCorrect={showCorrectAnswer}

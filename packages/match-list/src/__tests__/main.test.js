@@ -1,75 +1,64 @@
 import * as React from 'react';
-import { styledMain as Main }  from '../main';
-import { shallowChild } from '@pie-lib/test-utils';
-import { Feedback } from '@pie-lib/render-ui';
-import AnswerList from '../answer-list';
-import ChoicesList from '../choices-list';
+import { shallow } from 'enzyme';
+import { Main } from '../main';
+import { model } from '../../demo/config';
 
 describe('Main', () => {
+  const onSessionChange = jest.fn();
   const defaultProps = {
-    model: {
-      id: '1',
-      element: 'match-list-element',
-      config: {
-        prompt: 'Your prompt goes here',
-        prompts: [{
-          id: 1,
-          title: 'Prompt 1',
-          relatedAnswer: 1
-        }, {
-          id: 3,
-          title: 'Prompt 3',
-          relatedAnswer: 3
-        }, {
-          id: 4,
-          title: 'Prompt 4',
-          relatedAnswer: 4
-        }, {
-          id: 2,
-          title: 'Prompt 2',
-          relatedAnswer: 2
-        }],
-        answers: [{
-          id: 1,
-          title: 'Answer 1'
-        }, {
-          id: 2,
-          title: 'Answer 2'
-        }, {
-          id: 3,
-          title: 'Answer 3'
-        }, {
-          id: 4,
-          title: 'Answer 4'
-        }, {
-          id: 5,
-          title: 'Answer 5'
-        }, {
-          id: 6,
-          title: 'Answer 6'
-        }],
-        shuffled: false,
-        partialScoring: [],
-        layout: 3,
-        responseType: 'radio',
-      },
-      feedback: 'Incorrect'
+    model: model('1'),
+    session: {
+      value: [1, 4, 3, 2]
     },
-    onSessionChange: jest.fn(),
-    session: {}
+    classes: {},
+    onSessionChange
   };
 
   let wrapper;
-  let component;
 
   beforeEach(() => {
-    wrapper = shallowChild(Main, defaultProps, 1);
+    wrapper = shallow(<Main {...defaultProps} />);
   });
 
-  it('renders correctly', () => {
-    component = wrapper();
+  describe('render', () => {
+    it('renders correctly', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 
-    expect(component.find(AnswerList).length).toEqual(1);
-    expect(component.find(ChoicesList).length).toEqual(1);
+  describe('logic', () => {
+    describe('updateSessionIfNeeded', () => {
+      it('should call onSessionChange with appropriate values', () => {
+        wrapper.instance().updateSessionIfNeeded({ model: model('1'), session: {}, onSessionChange });
+        expect(onSessionChange).toHaveBeenCalledWith({
+          value: [undefined, undefined, undefined, undefined]
+        })
+      });
+    });
+
+    describe('onRemoveAnswer', () => {
+      it('should call onSessionChange with appropriate values', () => {
+        wrapper.instance().onRemoveAnswer(0);
+        expect(onSessionChange).toHaveBeenCalledWith({
+          value: [undefined, 4, 3, 2]
+        })
+      });
+    });
+
+    describe('onPlaceAnswer', () => {
+      it('should call onSessionChange with appropriate values', () => {
+        wrapper.instance().onPlaceAnswer(0, 5);
+        expect(onSessionChange).toHaveBeenCalledWith({
+          value: [5, 4, 3, 2]
+        })
+      });
+    });
+
+    describe('toggleShowCorrect', () => {
+      it('should change state the value for showCorrectAnswer to true', () => {
+        wrapper.instance().toggleShowCorrect();
+        expect(wrapper.state('showCorrectAnswer')).toBe(true);
+      });
+    });
   });
 });

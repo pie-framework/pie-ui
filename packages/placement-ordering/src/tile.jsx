@@ -130,7 +130,7 @@ export class Tile extends React.Component {
 
     log('[render], props: ', this.props);
 
-    const name = classNames(classes.answer);
+    const name = classNames(classes.title);
 
     const dragSourceOpts = {
       //dropEffect: moveOnDrag ? 'move' : 'copy'
@@ -159,7 +159,7 @@ export class Tile extends React.Component {
 }
 
 const StyledTile = withStyles({
-  answer: {
+  title: {
     boxSizing: 'border-box',
     overflow: 'hidden',
     margin: '0px',

@@ -171,7 +171,7 @@ const answerTarget = {
     const draggedItem = monitor.getItem();
 
     if (draggedItem.instanceId === props.instanceId) {
-      props.placeAnswer(draggedItem.id, props.index);
+      props.onPlaceAnswer(props.index, draggedItem.id);
     }
   },
   canDrop(props, monitor) {

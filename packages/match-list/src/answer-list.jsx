@@ -12,11 +12,18 @@ export class AnswerList extends React.Component {
     disabled: PropTypes.bool.isRequired,
     onSessionChange: PropTypes.func,
     onRemoveAnswer: PropTypes.func,
-    placeAnswer: PropTypes.func.isRequired,
+    onPlaceAnswer: PropTypes.func.isRequired,
     instanceId: PropTypes.string.isRequired,
     model: PropTypes.object.isRequired,
     prompt: PropTypes.string
   };
+
+  constructor(props) {
+    super(props);
+
+    this.getAnswerFromSession = this.getAnswerFromSession.bind(this);
+    this.getCorrectOrIncorrectArray = this.getCorrectOrIncorrectArray.bind(this);
+  }
 
   getAnswerFromSession(index) {
     const { model, session, showCorrect } = this.props;
@@ -60,13 +67,13 @@ export class AnswerList extends React.Component {
     const {
       classes,
       disabled,
-      placeAnswer,
+      onPlaceAnswer,
       instanceId,
       onRemoveAnswer,
       model
     } = this.props;
     const { config } = model;
-    const correctnesArray = this.getCorrectOrIncorrectArray();
+    const correctnessArray = this.getCorrectOrIncorrectArray();
 
     return (
       <div className={classes.itemList}>
@@ -78,12 +85,12 @@ export class AnswerList extends React.Component {
               <DragAndDropAnswer
                 key={index}
                 index={index}
-                correct={correctnesArray[index]}
+                correct={correctnessArray[index]}
                 draggable={!isEmpty(sessionAnswer)}
                 disabled={disabled}
                 instanceId={instanceId}
                 id={sessionAnswer.id}
-                placeAnswer={(id, index) => placeAnswer(id, index)}
+                onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
                 title={sessionAnswer.title}
                 type={'target'}
                 onRemoveChoice={() => onRemoveAnswer(index)}

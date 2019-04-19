@@ -18,27 +18,23 @@ export class AnswerList extends React.Component {
     prompt: PropTypes.string
   };
 
-  constructor(props) {
-    super(props);
-
-    this.getAnswerFromSession = this.getAnswerFromSession.bind(this);
-    this.getCorrectOrIncorrectArray = this.getCorrectOrIncorrectArray.bind(this);
-  }
-
-  getAnswerFromSession(index) {
+  getAnswerFromSession = index => {
     const { model, session, showCorrect } = this.props;
     const { config } = model;
 
-    const answerId = showCorrect ? config.prompts[index].relatedAnswer : (session.value && session.value[index]);
+    const answerId = showCorrect
+      ? config.prompts[index].relatedAnswer
+      : session.value && session.value[index];
     const answer = config.answers.find(answer => answer.id === answerId);
 
     return answer || {};
-  }
+  };
 
-  getCorrectOrIncorrectArray() {
+  getCorrectOrIncorrectArray = () => {
     const { model, session, showCorrect } = this.props;
     const { config } = model;
-    const sessionValue = session.value || new Array(config.prompts.length).fill(undefined);
+    const sessionValue =
+      session.value || new Array(config.prompts.length).fill(undefined);
 
     if (model.mode !== 'evaluate') {
       return [];
@@ -61,7 +57,7 @@ export class AnswerList extends React.Component {
 
       return correctPromptMap[currentPrompt.id] === val;
     });
-  }
+  };
 
   render() {
     const {
@@ -77,27 +73,25 @@ export class AnswerList extends React.Component {
 
     return (
       <div className={classes.itemList}>
-        {
-          config.prompts.map((answer, index) => {
-            const sessionAnswer = this.getAnswerFromSession(index);
+        {config.prompts.map((answer, index) => {
+          const sessionAnswer = this.getAnswerFromSession(index);
 
-            return (
-              <DragAndDropAnswer
-                key={index}
-                index={index}
-                correct={correctnessArray[index]}
-                draggable={!isEmpty(sessionAnswer)}
-                disabled={disabled}
-                instanceId={instanceId}
-                id={sessionAnswer.id}
-                onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
-                title={sessionAnswer.title}
-                type={'target'}
-                onRemoveChoice={() => onRemoveAnswer(index)}
-              />
-            );
-          })
-        }
+          return (
+            <DragAndDropAnswer
+              key={index}
+              index={index}
+              correct={correctnessArray[index]}
+              draggable={!isEmpty(sessionAnswer)}
+              disabled={disabled}
+              instanceId={instanceId}
+              id={sessionAnswer.id}
+              onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
+              title={sessionAnswer.title}
+              type={'target'}
+              onRemoveChoice={() => onRemoveAnswer(index)}
+            />
+          );
+        })}
       </div>
     );
   }

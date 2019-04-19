@@ -13,6 +13,7 @@
     "@pie-ui/function-entry": "^3.2.7",
     "@pie-ui/graph-lines": "^1.1.11",
     "@pie-ui/inline-choice": "^5.3.5",
+    "@pie-ui/inline-dropdown": "^1.0.0",
     "@pie-ui/match": "^1.2.11",
     "@pie-ui/math-inline": "^2.0.0",
     "@pie-ui/multiple-choice": "^4.7.11",

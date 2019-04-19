@@ -4,7 +4,23 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { MaskMarkup } from '@pie-lib/mask-markup';
+import { MaskMarkup, componentize, components } from '@pie-lib/mask-markup';
+
+const toConfig = fields => {
+  return Object.keys(fields).reduce((acc, k) => {
+    acc[k] = {
+      choices: fields[k]
+    };
+    return acc;
+  }, {});
+};
+
+const normalize = (v, fields) => {
+  return Object.keys(fields).reduce((acc, k) => {
+    acc[k] = acc[k] || { value: '' };
+    return acc;
+  }, v || {});
+};
 
 export default class InlineDropdown extends HTMLElement {
   constructor() {
@@ -23,12 +39,12 @@ export default class InlineDropdown extends HTMLElement {
       )
     );
 
-    this._rerender();
+    this._render();
   }
 
   set session(s) {
     this._session = s;
-    this._rerender();
+    this._render();
   }
 
   get session() {
@@ -37,10 +53,16 @@ export default class InlineDropdown extends HTMLElement {
 
   _render = () => {
     if (this._model && this._session) {
+      this._session.value = normalize(this._session.value, this._model.fields);
       let elem = React.createElement(MaskMarkup, {
-        value: {},
-        config: {},
-        feedback: {},
+        disabled: this._model.disabled,
+        markup: componentize(this._model.markup, 'dropdown'),
+        components: {
+          dropdown: components.Dropdown
+        },
+        value: this._session.value,
+        config: toConfig(this._model.fields),
+        feedback: this._model.feedback,
         onChange: this.changeSession
       });
       ReactDOM.render(elem, this);
@@ -56,13 +78,13 @@ export default class InlineDropdown extends HTMLElement {
     );
   };
 
-  changeSession = (id, value) => {
-    this.session.value[id] = value;
+  changeSession = value => {
+    this.session.value = value;
     this.dispatchChangedEvent();
-    this._rerender();
+    this._render();
   };
 
   connectedCallback() {
-    this._rerender();
+    this._render();
   }
 }

@@ -22,5 +22,19 @@ module.exports = {
   elements: {
     'inline-choice': '..'
   },
-  models: [model('1')]
+  models: [
+    model('1'),
+    model('2', { disabled: true }),
+    model('3', {
+      disabled: true,
+      feedback: {
+        0: {
+          correct: true
+        },
+        1: {
+          correct: false
+        }
+      }
+    })
+  ]
 };

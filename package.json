@@ -51,5 +51,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@pie-lib/math-rendering": "^1.2.9"
+  }
 }

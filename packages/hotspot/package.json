@@ -15,9 +15,12 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@pie-framework/pie-player-events": "^0.1.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "react-konva": "^16.8.6"
   }
 }

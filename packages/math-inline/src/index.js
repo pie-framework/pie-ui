@@ -25,7 +25,7 @@ export default class Match extends HTMLElement {
   sessionChanged(s) {
     this._session.answers = s.answers;
     this._session.response = s.response;
-    this._session.expression = s.expression;
+    this._session.completeAnswer = s.completeAnswer;
     log('session: ', this._session);
   }
 

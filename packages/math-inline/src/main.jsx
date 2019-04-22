@@ -16,13 +16,17 @@ function prepareForStatic(model, state) {
   if (model.config && model.config.expression) {
     const modelExpression = model.config.expression;
 
+    if (state.showCorrect) {
+      return model.config.mode === 'advanced' ? model.config.responses[0].answer : model.config.response.answer;
+    }
+
     let answerBlocks = 1; // assume one at least
     // build out local state model using responses declared in expression
 
     return modelExpression.replace(REGEX, function() {
       const answer = state.session.answers[`r${answerBlocks}`];
 
-      if (state.showCorrect || model.disabled) {
+      if (model.disabled) {
         return `\\embed{answerBlock}[r${answerBlocks++}]`;
       }
 
@@ -98,30 +102,23 @@ export class Main extends React.Component {
     const { session, showCorrect } = this.state;
     const answers = session.answers;
 
-    // TODO correct / incorrect response handling
-    if (this.root && (showCorrect || model.disabled)) {
+    if (this.root && model.disabled && !showCorrect) {
       Object.keys(answers).forEach((answerId, idx) => {
         const el = this.root.querySelector(`#${answerId}`);
         const indexEl = this.root.querySelector(`#${answerId}Index`);
-        const shouldShowCorrect =
-          showCorrect || (model.disabled && !model.view);
-        const correct =
-          showCorrect ||
-          (model.correctness &&
-            model.correctness.info &&
-            model.correctness.info[answerId]);
+        const correct = model.correctness && model.correctness.correct;
 
         if (el) {
           const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
           const answer = answers[answerId];
 
-          el.textContent = showCorrect
-            ? 'NEED TO HANDLE ???'
-            : (answer && answer.value) || '';
+          el.textContent = answer && answer.value || '';
 
-          if (shouldShowCorrect) {
-            el.parentElement.parentElement.classList.add(correct ? classes.correct : classes.incorrect);
+          if (!model.view) {
+            el.parentElement.parentElement.classList.add(
+              correct ? classes.correct : classes.incorrect
+            );
           } else {
             el.parentElement.parentElement.classList.remove(classes.correct);
             el.parentElement.parentElement.classList.remove(classes.incorrect);
@@ -131,7 +128,7 @@ export class Main extends React.Component {
 
           indexEl.textContent = `R${idx + 1}`;
         }
-      })
+      });
     }
 
     renderMath(this.root);
@@ -149,28 +146,37 @@ export class Main extends React.Component {
       (config &&
         config.responses &&
         config.responses.length !== nextConfig.responses.length) ||
-      (!config && nextConfig && nextConfig.responses) || (config.expression !== nextConfig.expression)
+      (!config && nextConfig && nextConfig.responses) ||
+      config.expression !== nextConfig.expression
     ) {
-        const newAnswers = {};
-        const answers = this.state.session.answers;
+      const newAnswers = {};
+      const answers = this.state.session.answers;
 
-        let answerBlocks = 1; // assume one at least
+      let answerBlocks = 1; // assume one at least
 
-        // build out local state model using responses declared in expression
-        nextConfig.expression.replace(REGEX, () => {
-          newAnswers[`r${answerBlocks}`] = {
-            value: answers && answers[`r${answerBlocks}`] && answers[`r${answerBlocks}`].value || ''
-          };
-        });
+      // build out local state model using responses declared in expression
+      nextConfig.expression.replace(REGEX, () => {
+        newAnswers[`r${answerBlocks}`] = {
+          value:
+            (answers &&
+              answers[`r${answerBlocks}`] &&
+              answers[`r${answerBlocks}`].value) ||
+            ''
+        };
+        answerBlocks++;
+      });
 
-        this.setState(state => ({
+      this.setState(
+        state => ({
           session: {
             ...state.session,
             completeAnswer: this.mqStatic.mathField.latex(),
             answers: newAnswers
           }
-        }), this.handleAnswerBlockDomUpdate);
-      }
+        }),
+        this.handleAnswerBlockDomUpdate
+      );
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -248,20 +254,22 @@ export class Main extends React.Component {
   };
 
   subFieldChanged = (name, subfieldValue) => {
-    this.setState(
-      state => ({
-        session: {
-          ...state.session,
-          completeAnswer: this.mqStatic.mathField.latex(),
-          answers: {
-            ...state.session.answers,
-            [name]: { value: subfieldValue }
+    if (name) {
+      this.setState(
+        state => ({
+          session: {
+            ...state.session,
+            completeAnswer: this.mqStatic.mathField.latex(),
+            answers: {
+              ...state.session.answers,
+              [name]: { value: subfieldValue }
+            }
           }
-        }
-      }),
-      this.callOnSessionChange
-    );
-  }
+        }),
+        this.callOnSessionChange
+      );
+    }
+  };
 
   getFieldName = (changeField, fields) => {
     const { answers } = this.state.session;
@@ -274,7 +282,7 @@ export class Main extends React.Component {
         return tf && tf.id == changeField.id;
       });
     }
-  }
+  };
 
   render() {
     const { model, classes } = this.props;
@@ -286,7 +294,10 @@ export class Main extends React.Component {
     }
 
     return (
-      <div className={classes.mainContainer} ref={r => (this.root = r || this.root)}>
+      <div
+        className={classes.mainContainer}
+        ref={r => (this.root = r || this.root)}
+      >
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -298,9 +309,7 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
-            <div
-              dangerouslySetInnerHTML={{ __html: model.config.question }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>
           {model.config.mode === 'simple' && (
             <SimpleQuestionBlock

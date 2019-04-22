@@ -5,6 +5,7 @@ import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { Feedback } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
+import { ResponseTypes } from './utils';
 import isEqual from 'lodash/isEqual';
 import SimpleQuestionBlock from './simple-question-block';
 
@@ -17,7 +18,7 @@ function prepareForStatic(model, state) {
     const modelExpression = model.config.expression;
 
     if (state.showCorrect) {
-      return model.config.mode === 'advanced' ? model.config.responses[0].answer : model.config.response.answer;
+      return model.config.mode === ResponseTypes.advanced ? model.config.responses[0].answer : model.config.response.answer;
     }
 
     let answerBlocks = 1; // assume one at least
@@ -311,7 +312,7 @@ export class Main extends React.Component {
           <div className={classes.content}>
             <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>
-          {model.config.mode === 'simple' && (
+          {model.config.mode === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
               showCorrect={showCorrect}
@@ -319,7 +320,7 @@ export class Main extends React.Component {
               session={session}
             />
           )}
-          {model.config.mode === 'advanced' && (
+          {model.config.mode === ResponseTypes.advanced && (
             <div className={classes.expression}>
               <mq.Static
                 ref={mqStatic => (this.mqStatic = mqStatic)}
@@ -332,7 +333,7 @@ export class Main extends React.Component {
             </div>
           )}
           <div className={classes.responseContainer}>
-            {model.config.mode === 'advanced' &&
+            {model.config.mode === ResponseTypes.advanced &&
               Object.keys(session.answers).map(
                 answerId =>
                   (answerId === activeAnswerBlock &&

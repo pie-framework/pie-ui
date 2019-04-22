@@ -294,7 +294,6 @@ export class Main extends React.Component {
       return null;
     }
 
-    console.log('model=', model);
     return (
       <div
         className={classes.mainContainer}

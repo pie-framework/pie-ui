@@ -163,5 +163,25 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@1.1.7"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Updated model structure and @pie-lib/config-ui version.",
+    "merge": null,
+    "header": "feat: Updated model structure and @pie-lib/config-ui version.",
+    "body": null,
+    "footer": "BREAKING CHANGE: `model.model.config` has been updated to `model.graph``.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "`model.model.config` has been updated to `model.graph``."
+      }
+    ],
+    "hash": "59f8196968444ca7736350b6df59d129e4e66fe4",
+    "gitTags": "",
+    "committerDate": "2019-04-18 18:31:34 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.0"
   }
 ]

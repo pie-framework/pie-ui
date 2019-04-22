@@ -7,7 +7,7 @@
     "custom-element",
     "react"
   ],
-  "version": "1.1.6",
+  "version": "1.1.10",
   "main": "lib/index.js",
   "repository": "pie-framework/pie-elements.git",
   "publishConfig": {
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-ui/multiple-choice": "^4.7.9",
+    "@pie-ui/multiple-choice": "^4.7.12",
     "classnames": "^2.2.5",
     "debug": "^4.1.1"
   }

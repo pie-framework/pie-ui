@@ -533,5 +533,20 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.7.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated @pie-lib/config-ui and @pie-lib/render-ui versions.",
+    "merge": null,
+    "header": "fix: Updated @pie-lib/config-ui and @pie-lib/render-ui versions.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1092ed36b831c78c2b72d010d0a107cb32421f74",
+    "gitTags": "",
+    "committerDate": "2019-04-17 18:30:08 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.7.11"
   }
 ]

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnswerList render renders correctly 1`] = `
+<div>
+  <DragSource(DropTarget(WithStyles(Answer)))
+    draggable={false}
+    index={0}
+    key="0"
+    onPlaceAnswer={[Function]}
+    onRemoveChoice={[Function]}
+    type="target"
+  />
+  <DragSource(DropTarget(WithStyles(Answer)))
+    draggable={false}
+    index={1}
+    key="1"
+    onPlaceAnswer={[Function]}
+    onRemoveChoice={[Function]}
+    type="target"
+  />
+  <DragSource(DropTarget(WithStyles(Answer)))
+    draggable={false}
+    index={2}
+    key="2"
+    onPlaceAnswer={[Function]}
+    onRemoveChoice={[Function]}
+    type="target"
+  />
+  <DragSource(DropTarget(WithStyles(Answer)))
+    draggable={false}
+    index={3}
+    key="3"
+    onPlaceAnswer={[Function]}
+    onRemoveChoice={[Function]}
+    type="target"
+  />
+</div>
+`;

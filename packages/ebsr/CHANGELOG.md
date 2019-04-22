@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.9...@pie-ui/ebsr@1.1.10) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.9](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.8...@pie-ui/ebsr@1.1.9) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.8](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.7...@pie-ui/ebsr@1.1.8) (2019-04-15)
+
+
+### Bug Fixes
+
+* **custom-element:** not setting the part model if the main model is not defined yet ([34347e6](https://github.com/pie-framework/pie-elements/commit/34347e6))
+
+
+
+
+
+## [1.1.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.6...@pie-ui/ebsr@1.1.7) (2019-04-11)
+
+
+### Bug Fixes
+
+* listen for events in the outer context ([9553561](https://github.com/pie-framework/pie-elements/commit/9553561))
+
+
+
+
+
 ## [1.1.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.5...@pie-ui/ebsr@1.1.6) (2019-04-10)
 
 

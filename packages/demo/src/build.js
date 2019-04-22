@@ -31,6 +31,7 @@ const buildPackagePage = (pd, gitInfo) => {
     gitInfo,
     name: basename(pkg.name),
     data: demo.data,
+    session: demo.session,
     markup: demo.markup,
     pkg,
     tagName: demo.tagName,

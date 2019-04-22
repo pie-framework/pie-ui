@@ -33,11 +33,12 @@ html
       }
 
       .element {
-        flex: 0.5 0 auto;
+        flex: 2;
+        margin-right: 100px;
       }
 
       .changelog-holder {
-        flex: 0 1 auto;
+        flex: 1;
       }
 
     script(src=`/assets/${name}.js`, charset="utf-8")
@@ -65,7 +66,9 @@ html
             data.models.forEach( m => {
               const n = document.querySelector(`[pie-id="${m.id}"]`); 
               n.model = m;
-              n.session = {};
+              const session = (!{JSON.stringify(session)} || []).find(s => s.id === m.id);
+
+              n.session = session || {};
             });
           } else {
             console.error('no data?', data);

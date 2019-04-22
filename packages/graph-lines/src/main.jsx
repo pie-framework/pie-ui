@@ -51,9 +51,9 @@ export class Main extends React.Component {
     if (
       !this.props.session.lines ||
       (this.props.session.lines &&
-        this.props.session.lines.length &&
-        this.state.useSessionLines &&
-        !lines.length)
+      this.props.session.lines.length &&
+      this.state.useSessionLines &&
+      !lines.length)
     ) {
       shouldUseSessionLines = false;
     }
@@ -110,7 +110,7 @@ export class Main extends React.Component {
     } else {
       const lines = [];
 
-      model.model.config.lines.forEach(line => {
+      model.graph.lines.forEach(line => {
         const lineExpression = utils.expressionFromDescriptor(line.initialView);
         const points = utils.pointsFromExpression(lineExpression);
 
@@ -223,13 +223,13 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           {!model.disabled &&
-            !model.exhibitOnly && (
-              <Controls
-                iconOnly={false}
-                disabled={!(selection && selection.length > 0)}
-                onDeleteClick={this.deleteSelection}
-              />
-            )}
+          !model.exhibitOnly && (
+            <Controls
+              iconOnly={false}
+              disabled={!(selection && selection.length > 0)}
+              onDeleteClick={this.deleteSelection}
+            />
+          )}
           <GraphLineControls
             lines={lines}
             model={model}

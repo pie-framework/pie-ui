@@ -1,5 +1,5 @@
 {
-  "name": "@pie-ui/inline-dropdown",
+  "name": "@pie-ui/explicit-constructed-response",
   "version": "1.0.0",
   "description": "",
   "repository": "pie-framework/pie-ui",
@@ -18,6 +18,5 @@
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
-  },
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+  }
 }

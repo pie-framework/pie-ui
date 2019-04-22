@@ -4,7 +4,8 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { MaskMarkup, componentize, components } from '@pie-lib/mask-markup';
+import { componentize, components } from '@pie-lib/mask-markup';
+import MarkupAndChoices from './markup-and-choices';
 
 const toConfig = fields => {
   return Object.keys(fields).reduce((acc, k) => {
@@ -53,16 +54,16 @@ export default class InlineDropdown extends HTMLElement {
 
   _render = () => {
     if (this._model && this._session) {
-      const { markup, ids } = componentize(this._model.markup, 'dropdown');
+      const { markup, ids } = componentize(this._model.markup, 'blank');
       this._session.value = normalize(this._session.value, ids);
-      let elem = React.createElement(MaskMarkup, {
+      let elem = React.createElement(MarkupAndChoices, {
         disabled: this._model.disabled,
         markup,
         components: {
-          dropdown: components.Dropdown
+          blank: components.Blank
         },
         value: this._session.value,
-        config: toConfig(this._model.fields),
+        choices: this._model.choices,
         feedback: this._model.feedback,
         onChange: this.changeSession
       });

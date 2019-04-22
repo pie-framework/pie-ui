@@ -18,7 +18,7 @@ function prepareForStatic(model, state) {
     const modelExpression = model.config.expression;
 
     if (state.showCorrect) {
-      return model.config.mode === ResponseTypes.advanced ? model.config.responses[0].answer : model.config.response.answer;
+      return model.config.responseType === ResponseTypes.advanced ? model.config.responses[0].answer : model.config.response.answer;
     }
 
     let answerBlocks = 1; // assume one at least
@@ -294,6 +294,7 @@ export class Main extends React.Component {
       return null;
     }
 
+    console.log('model=', model);
     return (
       <div
         className={classes.mainContainer}
@@ -312,7 +313,7 @@ export class Main extends React.Component {
           <div className={classes.content}>
             <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>
-          {model.config.mode === ResponseTypes.simple && (
+          {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
               showCorrect={showCorrect}
@@ -320,7 +321,7 @@ export class Main extends React.Component {
               session={session}
             />
           )}
-          {model.config.mode === ResponseTypes.advanced && (
+          {model.config.responseType === ResponseTypes.advanced && (
             <div className={classes.expression}>
               <mq.Static
                 ref={mqStatic => (this.mqStatic = mqStatic)}
@@ -333,7 +334,7 @@ export class Main extends React.Component {
             </div>
           )}
           <div className={classes.responseContainer}>
-            {model.config.mode === ResponseTypes.advanced &&
+            {model.config.responseType === ResponseTypes.advanced &&
               Object.keys(session.answers).map(
                 answerId =>
                   (answerId === activeAnswerBlock &&

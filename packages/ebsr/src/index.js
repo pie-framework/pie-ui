@@ -65,7 +65,6 @@ export default class Ebsr extends HTMLElement {
         ...this._model[key],
         mode,
         keyMode: this._model[key].choicePrefix,
-        prompt: this._model[key].itemStem
       };
     }
 

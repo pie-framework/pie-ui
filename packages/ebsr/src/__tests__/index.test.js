@@ -1,6 +1,9 @@
+import React from 'react';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import MultipleChoice from '@pie-ui/multiple-choice';
 
 jest.mock('@pie-lib/math-rendering', () => ({ renderMath: jest.fn() }));
+jest.mock('@pie-ui/multiple-choice', () => jest.fn());
 
 const PART_A = 'partA';
 const PART_B = 'partB';
@@ -15,7 +18,7 @@ const defaultModel = {
       { value: 'b', label: 'label b' },
       { value: 'c', label: 'label c', correct: true, feedback: 'great' }
     ],
-    keyMode: 'numbers',
+    choicePrefix: 'numbers',
     prompt: `prompt ${PART_A}`
   },
   partB: {
@@ -25,7 +28,7 @@ const defaultModel = {
       { value: 'e', label: 'label e' },
       { value: 'f', label: 'label f' }
     ],
-    keyMode: 'numbers',
+    choicePrefix: 'numbers',
     prompt: `prompt ${PART_B}`
   }
 };

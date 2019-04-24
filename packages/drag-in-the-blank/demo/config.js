@@ -10,16 +10,6 @@ const model = (id, extras) => {
       { label: 'Carrot', value: 'carrot' },
       { label: 'Dumpling', value: 'dumpling' }
     ]
-    // fields: {
-    //   0: [
-    //     { label: 'Apple', value: 'apple' },
-    //     { label: 'Banana', value: 'banana' }
-    //   ],
-    //   1: [
-    //     { label: 'Carrot', value: 'carrot' },
-    //     { label: 'Leek', value: 'leek' }
-    //   ]
-    // }
   };
 
   return Object.assign(defaults, { id }, extras);

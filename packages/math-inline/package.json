@@ -11,7 +11,7 @@
     "@pie-framework/mathquill": "^0.10.4",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-input": "^6.0.0",
-    "@pie-lib/math-toolbar": "^0.11.3",
+    "@pie-lib/math-toolbar": "^1.0.1",
     "@pie-lib/render-ui": "^4.3.8",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",

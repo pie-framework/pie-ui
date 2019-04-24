@@ -14,6 +14,7 @@
     "@pie-ui/graph-lines": "^2.0.0",
     "@pie-ui/inline-choice": "^5.3.5",
     "@pie-ui/match": "^1.2.11",
+    "@pie-ui/match-list": "^1.1.0",
     "@pie-ui/math-inline": "^2.0.1",
     "@pie-ui/multiple-choice": "^4.7.12",
     "@pie-ui/number-line": "^4.2.10",

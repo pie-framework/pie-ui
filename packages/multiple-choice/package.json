@@ -14,9 +14,6 @@
     "access": "public"
   },
   "license": "ISC",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope multiple-choice"
-  },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/config-ui": "^9.0.1",

@@ -22,8 +22,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope match"
-  }
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

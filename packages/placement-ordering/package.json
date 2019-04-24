@@ -10,9 +10,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope placement-ordering"
-  },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/correct-answer-toggle": "^2.1.2",

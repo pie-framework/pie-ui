@@ -4,17 +4,21 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { componentize, components } from '@pie-lib/mask-markup';
-import MarkupAndChoices from './markup-and-choices';
+import { withDragContext } from '@pie-lib/drag';
 
-const toConfig = fields => {
-  return Object.keys(fields).reduce((acc, k) => {
-    acc[k] = {
-      choices: fields[k]
-    };
-    return acc;
-  }, {});
-};
+import { DragInTheBlank, componentize } from '@pie-lib/mask-markup';
+// import MarkupAndChoices from './markup-and-choices';
+
+const Root = withDragContext(DragInTheBlank);
+
+// const toConfig = fields => {
+//   return Object.keys(fields).reduce((acc, k) => {
+//     acc[k] = {
+//       choices: fields[k]
+//     };
+//     return acc;
+//   }, {});
+// };
 
 const normalize = (v, fields) => {
   return Object.keys(fields).reduce((acc, k) => {
@@ -54,14 +58,11 @@ export default class InlineDropdown extends HTMLElement {
 
   _render = () => {
     if (this._model && this._session) {
-      const { markup, ids } = componentize(this._model.markup, 'blank');
+      const { ids } = componentize(this._model.markup);
       this._session.value = normalize(this._session.value, ids);
-      let elem = React.createElement(MarkupAndChoices, {
+      let elem = React.createElement(Root, {
         disabled: this._model.disabled,
-        markup,
-        components: {
-          blank: components.Blank
-        },
+        markup: this._model.markup,
         value: this._session.value,
         choices: this._model.choices,
         feedback: this._model.feedback,

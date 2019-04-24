@@ -1,8 +1,8 @@
 const session = id => ({
   id,
   value: {
-    0: { value: 'apple' },
-    1: { value: 'carrot' }
+    0: 'apple',
+    1: 'carrot'
   },
   element: 'inline-choice'
 });

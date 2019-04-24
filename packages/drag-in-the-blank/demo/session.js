@@ -1,10 +1,10 @@
 const session = id => ({
   id,
   value: {
-    0: { value: 'apple' },
-    1: { value: 'carrot' }
+    0: 'apple',
+    1: 'carrot'
   },
-  element: 'inline-choice'
+  element: 'drag-in-the-blank'
 });
 
-module.exports = [session('1'), session('2'), session('3')];
+module.exports = [session('1'), session('2'), session('3')]; //, session('2'), session('3')];

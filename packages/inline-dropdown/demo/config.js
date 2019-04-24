@@ -4,7 +4,7 @@ const model = (id, extras) => {
     disabled: false,
     // eslint-disable-next-line quotes
     markup: `The best fruit in the world is {{0}}, <div> The best vegetable in the world is {{1}}</div>`,
-    fields: {
+    choices: {
       0: [
         { label: 'Apple', value: 'apple' },
         { label: 'Banana', value: 'banana' }

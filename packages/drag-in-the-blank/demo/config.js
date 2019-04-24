@@ -29,18 +29,18 @@ module.exports = {
     'drag-in-the-blank': '..'
   },
   models: [
-    model('1')
-    // model('2', { disabled: true }),
-    // model('3', {
-    //   disabled: true,
-    //   feedback: {
-    //     0: {
-    //       correct: true
-    //     },
-    //     1: {
-    //       correct: false
-    //     }
-    //   }
-    // })
+    model('1'),
+    model('2', { disabled: true }),
+    model('3', {
+      disabled: true,
+      feedback: {
+        0: {
+          correct: true
+        },
+        1: {
+          correct: false
+        }
+      }
+    })
   ]
 };

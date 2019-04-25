@@ -43,5 +43,50 @@
     "committerDate": "2019-04-17 09:53:34 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": "yarn",
+    "subject": "updated to release",
+    "merge": null,
+    "header": "fix(yarn): updated to release",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "05ee1ca63eafacb899d986ac73f9c0cade906ccc",
+    "gitTags": "",
+    "committerDate": "2019-04-24 19:42:33 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.1.1"
+  },
+  {
+    "type": "fix",
+    "scope": "arrows",
+    "subject": "fixed arrows alignment",
+    "merge": null,
+    "header": "fix(arrows): fixed arrows alignment",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a812ae65825932effeadeab63a927503b57175a1",
+    "gitTags": " (origin/fix/match-list-arrows)",
+    "committerDate": "2019-04-24 19:28:48 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.1.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.1.1"
   }
 ]

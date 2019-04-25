@@ -633,5 +633,35 @@
     "committerDate": "2019-04-22 11:26:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.1.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.1.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "math-inline math-toolbar dependency bump",
+    "merge": null,
+    "header": "chore: math-inline math-toolbar dependency bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "473f438fc88f27bd16135d251f1434d3a716f80e",
+    "gitTags": "",
+    "committerDate": "2019-04-24 12:26:24 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.1.1"
   }
 ]

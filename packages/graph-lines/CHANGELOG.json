@@ -183,5 +183,20 @@
     "committerDate": "2019-04-18 18:31:34 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.0.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.2"
   }
 ]

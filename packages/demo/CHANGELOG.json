@@ -148,5 +148,35 @@
     "committerDate": "2019-03-22 11:33:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/demo@0.2.10"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.3.1"
+  },
+  {
+    "type": "chore",
+    "scope": "demo",
+    "subject": "added match-list to the demo page",
+    "merge": null,
+    "header": "chore(demo): added match-list to the demo page",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3e1d2e697a42c11aea71910a3d7d4f5fbd5ce7a7",
+    "gitTags": " (origin/chore/demo-add-match-list)",
+    "committerDate": "2019-04-24 05:46:28 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.3.1"
   }
 ]

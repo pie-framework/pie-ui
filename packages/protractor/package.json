@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/protractor",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "A protractor custom element",
   "keywords": [
     "pie",

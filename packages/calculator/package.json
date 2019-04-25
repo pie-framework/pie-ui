@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/calculator",
-  "version": "3.3.14",
+  "version": "3.3.15",
   "description": "A calculator component",
   "main": "lib/index.js",
   "publishConfig": {

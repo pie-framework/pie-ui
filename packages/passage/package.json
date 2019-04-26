@@ -1,0 +1,20 @@
+{
+  "name": "@pie-ui/passage",
+  "version": "1.0.0",
+  "description": "Element for rendering passage content",
+  "author": "pie framework developers",
+  "keywords": [
+    "pie",
+    "pie-ui",
+    "custom-element"
+  ],
+  "main": "lib/index.js",
+  "repository": "pie-framework/pie-ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@pie-framework/pie-player-events": "^0.1.0"
+  }
+}

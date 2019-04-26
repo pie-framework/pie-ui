@@ -114,6 +114,7 @@ Container.propTypes = {
   isEvaluateMode:PropTypes.bool.isRequired,
   onSelectChoice:PropTypes.func.isRequired,
   outlineColor:PropTypes.string.isRequired,
+  session:PropTypes.object.isRequired,
   shapes:PropTypes.shape([]).isRequired
 };
 

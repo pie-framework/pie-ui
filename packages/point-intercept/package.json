@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.2.8",
+  "version": "1.2.13",
   "description": "An interaction to allow students identify coordinates or plot points on a graph by clicking on the graph.",
   "main": "lib/index.js",
   "dependencies": {
@@ -18,8 +18,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope point-intercept"
-  }
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

@@ -80,7 +80,7 @@ export class Categorize extends React.Component {
     onAnswersChange(answers);
   };
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setState({ showCorrect: false });
   }
 

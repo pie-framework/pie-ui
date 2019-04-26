@@ -72,6 +72,7 @@ const buildApp = (config, pkgAndDemos, gitInfo) => {
         gitInfo,
         name,
         data: demo.data,
+        session: demo.session,
         markup: markup,
         pkg,
         tagName: demo.tagName,

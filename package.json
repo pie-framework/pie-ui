@@ -17,7 +17,8 @@
     "build": "scripts/build build",
     "build:demo": "scripts/build buildDemo",
     "deploy:demo:next": "scripts/build deployDemo --next",
-    "deploy:demo": "scripts/build deployDemo"
+    "deploy:demo": "scripts/build deployDemo",
+    "prepack": "scripts/build changelog"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

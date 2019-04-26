@@ -5,12 +5,36 @@ import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { Feedback } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
+import { ResponseTypes } from './utils';
 import isEqual from 'lodash/isEqual';
 import SimpleQuestionBlock from './simple-question-block';
 
 let registered = false;
 
-const REGEX = /\\embed\{answerBlock\}\[(.*?)\]/g;
+const REGEX = /{{response}}/gm;
+
+function prepareForStatic(model, state) {
+  if (model.config && model.config.expression) {
+    const modelExpression = model.config.expression;
+
+    if (state.showCorrect) {
+      return model.config.responseType === ResponseTypes.advanced ? model.config.responses[0].answer : model.config.response.answer;
+    }
+
+    let answerBlocks = 1; // assume one at least
+    // build out local state model using responses declared in expression
+
+    return modelExpression.replace(REGEX, function() {
+      const answer = state.session.answers[`r${answerBlocks}`];
+
+      if (model.disabled) {
+        return `\\embed{answerBlock}[r${answerBlocks++}]`;
+      }
+
+      return `\\MathQuillMathField[r${answerBlocks++}]{${(answer && answer.value) || ''}}`;
+    });
+  }
+}
 
 export class Main extends React.Component {
   static propTypes = {
@@ -25,9 +49,12 @@ export class Main extends React.Component {
 
     const answers = {};
 
-    if (props.model.config && props.model.config.responses) {
-      props.model.config.responses.forEach(response => {
-        answers[response.id] = {
+    if (props.model.config && props.model.config.expression) {
+      let answerBlocks = 1; // assume one at least
+      // build out local state model using responses declared in expression
+
+      props.model.config.expression.replace(REGEX, () => {
+        answers[`r${answerBlocks++}`] = {
           value: ''
         };
       });
@@ -76,22 +103,23 @@ export class Main extends React.Component {
     const { session, showCorrect } = this.state;
     const answers = session.answers;
 
-    if (this.root && model.config && model.config.responses) {
-      model.config.responses.forEach((response, idx) => {
-        const el = this.root.querySelector(`#${response.id}`);
-        const indexEl = this.root.querySelector(`#${response.id}Index`);
-        const shouldShowCorrect = showCorrect || (model.disabled && !model.view);
-        const correct = showCorrect || (model.correctness && model.correctness.info && model.correctness.info[response.id]);
+    if (this.root && model.disabled && !showCorrect) {
+      Object.keys(answers).forEach((answerId, idx) => {
+        const el = this.root.querySelector(`#${answerId}`);
+        const indexEl = this.root.querySelector(`#${answerId}Index`);
+        const correct = model.correctness && model.correctness.correct;
 
         if (el) {
           const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
-          const answer = answers[response.id];
+          const answer = answers[answerId];
 
-          el.textContent = showCorrect ? response.answer : answer && answer.value || '';
+          el.textContent = answer && answer.value || '';
 
-          if (shouldShowCorrect) {
-            el.parentElement.parentElement.classList.add(correct ? classes.correct : classes.incorrect);
+          if (!model.view) {
+            el.parentElement.parentElement.classList.add(
+              correct ? classes.correct : classes.incorrect
+            );
           } else {
             el.parentElement.parentElement.classList.remove(classes.correct);
             el.parentElement.parentElement.classList.remove(classes.incorrect);
@@ -101,22 +129,17 @@ export class Main extends React.Component {
 
           indexEl.textContent = `R${idx + 1}`;
         }
-      })
+      });
     }
+
+    renderMath(this.root);
   };
 
-  componentDidUpdate(prevProps) {
-    const { model } = this.props;
-    const oldModel = prevProps.model;
-
-    if (model.config.question !== oldModel.config.question) {
-      renderMath(this.root);
-    }
-
+  componentDidUpdate() {
     this.handleAnswerBlockDomUpdate();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const config = this.props.model.config;
     const nextConfig = nextProps.model.config;
 
@@ -124,32 +147,48 @@ export class Main extends React.Component {
       (config &&
         config.responses &&
         config.responses.length !== nextConfig.responses.length) ||
-      (!config && nextConfig && nextConfig.responses)
+      (!config && nextConfig && nextConfig.responses) ||
+      config.expression !== nextConfig.expression
     ) {
-      const answers = {};
-      const stateAnswers = this.state.session.answers;
+      const newAnswers = {};
+      const answers = this.state.session.answers;
 
-      nextConfig.responses.forEach(response => {
-        answers[response.id] = {
-          value: stateAnswers[response.id]
-            ? stateAnswers[response.id].value
-            : ''
+      let answerBlocks = 1; // assume one at least
+
+      // build out local state model using responses declared in expression
+      nextConfig.expression.replace(REGEX, () => {
+        newAnswers[`r${answerBlocks}`] = {
+          value:
+            (answers &&
+              answers[`r${answerBlocks}`] &&
+              answers[`r${answerBlocks}`].value) ||
+            ''
         };
+        answerBlocks++;
       });
 
-      this.setState(state => ({ session: { ...state.session, answers } }));
+      this.setState(
+        state => ({
+          session: {
+            ...state.session,
+            completeAnswer: this.mqStatic.mathField.latex(),
+            answers: newAnswers
+          }
+        }),
+        this.handleAnswerBlockDomUpdate
+      );
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const sameModel = isEqual(this.props.model, nextProps.model);
     const sameState = isEqual(this.state, nextState);
+
     return !sameModel || !sameState;
   }
 
   componentDidMount() {
     renderMath(this.root);
-    this.handleAnswerBlockDomUpdate();
   }
 
   onDone = () => {};
@@ -161,11 +200,7 @@ export class Main extends React.Component {
     );
   };
 
-  onAnswerBlockClick = id => {
-    this.setState({ activeAnswerBlock: id });
-  };
-
-  onAnswerBlockFocus = id => {
+  onSubFieldFocus = id => {
     this.setState({ activeAnswerBlock: id });
   };
 
@@ -200,8 +235,6 @@ export class Main extends React.Component {
       this.input.cmd(c.value);
     } else if (c.type === 'cursor') {
       this.input.keystroke(c.value);
-    } else if (c.type === 'answer') {
-      this.input.write(`\\embed{answerBlock}[${c.id}]`);
     } else {
       this.input.write(c.value);
     }
@@ -222,62 +255,50 @@ export class Main extends React.Component {
   };
 
   subFieldChanged = (name, subfieldValue) => {
-    this.setState(
-      state => ({
-        session: {
-          ...state.session,
-          answers: {
-            ...state.session.answers,
-            [name]: { value: subfieldValue }
+    if (name) {
+      this.setState(
+        state => ({
+          session: {
+            ...state.session,
+            completeAnswer: this.mqStatic.mathField.latex(),
+            answers: {
+              ...state.session.answers,
+              [name]: { value: subfieldValue }
+            }
           }
-        }
-      }),
-      this.callOnSessionChange
-    );
-  }
-
-  prepareForStatic(ltx) {
-    const { model } = this.props;
-    const { showCorrect } = this.state;
-
-    if (showCorrect || model.disabled) {
-      return ltx;
+        }),
+        this.callOnSessionChange
+      );
     }
-
-    return ltx.replace(
-      REGEX,
-      (match, submatch) => {
-        const answers = this.state.session.answers;
-        const answer = answers[submatch];
-
-        return `\\MathQuillMathField[${submatch}]{${answer && answer.value || ''}}`;
-      }
-    );
-  }
+  };
 
   getFieldName = (changeField, fields) => {
-    const { model } = this.props;
+    const { answers } = this.state.session;
 
-    if (model.config && model.config.responses && model.config.responses.length) {
-      const keys = this.props.model.config.responses.map(response => response.id);
+    if (Object.keys(answers || {}).length) {
+      const keys = Object.keys(answers);
 
       return keys.find(k => {
         const tf = fields[k];
         return tf && tf.id == changeField.id;
       });
     }
-  }
+  };
 
   render() {
     const { model, classes } = this.props;
-    const { showCorrect, activeAnswerBlock, session } = this.state;
+    const state = this.state;
+    const { activeAnswerBlock, showCorrect, session } = state;
 
     if (!this.props.model.config) {
       return null;
     }
 
     return (
-      <div className={classes.mainContainer} ref={r => (this.root = r || this.root)}>
+      <div
+        className={classes.mainContainer}
+        ref={r => (this.root = r || this.root)}
+      >
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -289,11 +310,9 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />
           <div className={classes.content}>
-            <div
-              dangerouslySetInnerHTML={{ __html: model.config.question }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>
-          {model.config.mode === 'simple' && (
+          {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
               showCorrect={showCorrect}
@@ -301,29 +320,32 @@ export class Main extends React.Component {
               session={session}
             />
           )}
-          {model.config.mode === 'advanced' && (
+          {model.config.responseType === ResponseTypes.advanced && (
             <div className={classes.expression}>
               <mq.Static
-                latex={this.prepareForStatic(model.config.expression)}
+                ref={mqStatic => (this.mqStatic = mqStatic)}
+                latex={prepareForStatic(model, state)}
                 onSubFieldChange={this.subFieldChanged}
                 getFieldName={this.getFieldName}
                 setInput={this.setInput}
-                onSubFieldFocus={this.onAnswerBlockFocus}
+                onSubFieldFocus={this.onSubFieldFocus}
               />
             </div>
           )}
           <div className={classes.responseContainer}>
-            {model.config.mode === 'advanced' && model.config.responses && model.config.responses.map(
-              response =>
-                (response.id === activeAnswerBlock && !(showCorrect || model.disabled) && (
-                  <HorizontalKeypad
-                    key={response.id}
-                    mode={model.config.equationEditor}
-                    onClick={this.onClick}
-                  />
-                )) ||
-                null
-            )}
+            {model.config.responseType === ResponseTypes.advanced &&
+              Object.keys(session.answers).map(
+                answerId =>
+                  (answerId === activeAnswerBlock &&
+                    !(showCorrect || model.disabled) && (
+                      <HorizontalKeypad
+                        key={answerId}
+                        mode={model.config.equationEditor}
+                        onClick={this.onClick}
+                      />
+                    )) ||
+                  null
+              )}
           </div>
         </div>
         {model.feedback && (
@@ -362,11 +384,7 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 3
   },
   expression: {
-    border: '1px solid lightgray',
     marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit,
-    minHeight: '150px',
     '& > .mq-math-mode': {
       '& .mq-non-leaf': {
         display: 'inline-flex',
@@ -380,9 +398,9 @@ const styles = theme => ({
       },
       '& > .mq-root-block': {
         '& > .mq-editable-field': {
-          minWidth: '40px',
-          margin: theme.spacing.unit * 2 / 3,
-          padding: theme.spacing.unit / 2
+          minWidth: '10px',
+          margin: (theme.spacing.unit * 2) / 3,
+          padding: theme.spacing.unit / 4
         }
       }
     }
@@ -420,7 +438,7 @@ const styles = theme => ({
       '& > .mq-hasCursor': {
         '& > .mq-cursor': {
           display: 'none'
-        },
+        }
       }
     }
   }

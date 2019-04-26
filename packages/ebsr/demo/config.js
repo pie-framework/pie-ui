@@ -2,7 +2,7 @@ const partA = {
   element: 'multiple-choice',
   id: '2',
   disabled: false,
-  keyMode: 'letters',
+  choicePrefix: 'letters',
   showCorrect: true,
   correctResponse: [{ value: 'value' }],
 
@@ -29,7 +29,7 @@ const partB =  {
   element: 'multiple-choice',
   id: '3',
   disabled: false,
-  keyMode: 'letters',
+  choicePrefix: 'letters',
   showCorrect: true,
   correctResponse: [{ value: 'purple' }],
 

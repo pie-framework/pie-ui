@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.15...@pie-ui/select-text@1.5.16) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.15](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.14...@pie-ui/select-text@1.5.15) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.13...@pie-ui/select-text@1.5.14) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.12...@pie-ui/select-text@1.5.13) (2019-04-15)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.11...@pie-ui/select-text@1.5.12) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.10...@pie-ui/select-text@1.5.11) (2019-04-09)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.9...@pie-ui/select-text@1.5.10) (2019-04-08)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.8...@pie-ui/select-text@1.5.9) (2019-04-08)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.7...@pie-ui/select-text@1.5.8) (2019-04-08)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.5.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.6...@pie-ui/select-text@1.5.7) (2019-04-05)
+
+
+### Bug Fixes
+
+* Updated with correct @pie-lib/text-select version in order to work with html content. ([f34ba1d](https://github.com/pie-framework/pie-ui/commit/f34ba1d))
+* **select-text:** After selecting 'evaluate' mode -> 'show correct answer' and then 'gather' mode again the component was not working anymore. Fixed it by reseting the value of the toggle that is changed when 'show correct answer' is pressed. ([728d711](https://github.com/pie-framework/pie-ui/commit/728d711))
+
+
+
+
+
 ## [1.5.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.5...@pie-ui/select-text@1.5.6) (2019-04-04)
 
 **Note:** Version bump only for package @pie-ui/select-text

@@ -2,16 +2,47 @@ import { shallow } from 'enzyme';
 
 import React from 'react';
 import { PlacementOrdering, Choice } from '../placement-ordering';
-import toJson from 'enzyme-to-json';
+import { buildState, reducer } from '../ordering';
 
-/* TODO: These tests need an update */
-
-xdescribe('PlacementOrdering', () => {
+jest.mock('../ordering', () => ({
+  buildState: jest.fn().mockReturnValue({}),
+  reducer: jest.fn().mockReturnValue({})
+}));
+describe('PlacementOrdering', () => {
   let wrapper, model, session;
-
-  const mkWrapper = (model, session) => {
+  let choices;
+  let correctResponse;
+  let onSessionChange;
+  const mkWrapper = (mod, session) => {
+    onSessionChange = jest.fn();
     session = { value: [], ...session };
-    model = { config: {}, ...model };
+    choices = [
+      {
+        id: 'c1',
+        label: 'C1'
+      },
+      {
+        id: 'c2',
+        label: 'C2'
+      },
+      {
+        id: 'c3',
+        label: 'C3'
+      },
+      {
+        id: 'c4',
+        label: 'C4'
+      }
+    ];
+    correctResponse = ['c1', 'c2', 'c3', 'c4'];
+    model = {
+      config: {
+        includeTargets: true
+      },
+      choices,
+      ...mod
+    };
+
     return shallow(
       <PlacementOrdering
         model={model}
@@ -19,116 +50,203 @@ xdescribe('PlacementOrdering', () => {
         classes={{
           placementOrdering: 'placementOrdering'
         }}
-        onSessionChange={jest.fn()}
+        onSessionChange={onSessionChange}
       />,
       {}
     );
   };
 
   beforeEach(() => {
-    model = {
-      choices: [
-        {
-          id: 'c1',
-          label: 'C1'
-        },
-        {
-          id: 'c2',
-          label: 'C2'
-        },
-        {
-          id: 'c3',
-          label: 'C3'
-        },
-        {
-          id: 'c4',
-          label: 'C4'
-        }
-      ]
-    };
-
-    wrapper = mkWrapper(model);
+    wrapper = mkWrapper();
   });
 
   describe('render', () => {
     it('snapshot', () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('shows toggle', () => {
+      let w = mkWrapper({ correctResponse: ['c1', 'c2', 'c3', 'c4'] });
+      expect(w).toMatchSnapshot();
     });
   });
 
-  describe('interaction', () => {
-    it('dropping choices updates state', () => {
-      wrapper.instance().onDropChoice('c4', 0);
-      wrapper.instance().onDropChoice('c3', 1);
-      wrapper.instance().onDropChoice('c1', 2);
-      wrapper.instance().onDropChoice('c2', 3);
-      expect(wrapper.state('order')).toEqual(['c4', 'c3', 'c1', 'c2']);
-    });
-
-    it('removing choices updates state', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-      wrapper.instance().onDragInvalid('c4', 0);
-      expect(wrapper.state('order')).toEqual([null, 'c2', 'c3', 'c1']);
-    });
+  const ordering = d => ({
+    opts: {},
+    ...d
   });
 
-  xdescribe('session', () => {
-    it('order get restored from session if present', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-      const choices = wrapper.find('DragSource(DraggableChoice)');
-      expect(
-        choices.map(c => {
-          return c.props().choiceId;
+  describe('logic', () => {
+    let response;
+
+    describe('onDropChoice', () => {
+      beforeEach(() => {
+        response = ['c4', 'c2', 'c3', 'c1'];
+
+        reducer.mockReturnValue({ response });
+        wrapper
+          .instance()
+          .onDropChoice(
+            { id: 'c4', type: 'choice' },
+            { id: 'c1', type: 'choice' },
+            ordering({ tiles: [{ id: 'c1', type: 'choice' }] })
+          );
+      });
+
+      it('calls reducer', () =>
+        expect(reducer).toHaveBeenCalledWith(
+          {
+            type: 'move',
+            from: { id: 'c1', type: 'choice' },
+            to: { id: 'c4', type: 'choice' }
+          },
+          expect.anything()
+        ));
+
+      it('dropping choices updates the order', () => {
+        expect(onSessionChange).toHaveBeenCalledWith({ value: response });
+      });
+    });
+
+    describe('onRemoveChoice', () => {
+      let target;
+      beforeEach(() => {
+        reducer.mockReset();
+        reducer.mockReturnValue({ response: ['c1', 'c2', 'c3'] });
+        wrapper = mkWrapper();
+
+        target = { id: 'c4', type: 'target', index: 3 };
+        wrapper.instance().onRemoveChoice(target, {});
+      });
+
+      it('calls reducer', () => {
+        expect(reducer).toHaveBeenCalledWith(
+          { type: 'remove', target },
+          expect.anything()
+        );
+      });
+
+      it('calls onSessionChange', () => {
+        expect(onSessionChange).toHaveBeenCalledWith({
+          value: ['c1', 'c2', 'c3']
+        });
+      });
+    });
+
+    describe('createOrdering', () => {
+      let opts = { includeTargets: true, allowSameChoiceInTargets: undefined };
+
+      beforeEach(() => {
+        wrapper = mkWrapper({
+          correctResponse
+        });
+      });
+
+      describe('when showingCorrect is false', () => {
+        beforeEach(() => {
+          wrapper.setState({ showingCorrect: false });
+          wrapper.instance().createOrdering();
+        });
+
+        it('calls buildState with default values', () => {
+          expect(buildState).toHaveBeenCalledWith(choices, [], undefined, opts);
+        });
+
+        it('calls buildState with session values', () => {
+          wrapper.setProps({ session: { value: ['c4', 'c2', 'c3', 'c1'] }});
+
+          wrapper.instance().createOrdering();
+
+          expect(buildState).toHaveBeenCalledWith(choices, ['c4', 'c2', 'c3', 'c1'], undefined, opts);
+        });
+      });
+
+      describe('when showingCorrect is true', () => {
+        let outcomes;
+
+        beforeEach(() => {
+          outcomes = correctResponse.map(id => ({ id, outcome: 'correct' }));
+
+          wrapper.setState({ showingCorrect: true });
+          wrapper.instance().createOrdering();
+        });
+
+        it('calls buildState with default values', () => {
+          expect(buildState).toHaveBeenCalledWith(choices, correctResponse, outcomes, opts);
+        });
+      });
+    });
+
+    describe('initSessionIfNeeded', () => {
+      describe('with targets', () => {
+        it('resets session', () => {
+          wrapper.instance().initSessionIfNeeded(wrapper.instance().props);
+
+          expect(onSessionChange).toHaveBeenCalledWith({});
         })
-      ).toEqual(['c4', 'c2', 'c3', 'c1']);
-    });
-  });
+      });
 
-  xdescribe('show correct response', () => {
-    it('toggle is visible only if correct response is present', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      wrapper = mkWrapper(model, session);
-      const toggler = () => wrapper.find('mockToggle');
-      expect(toggler().prop('show')).not.to.be.true;
-      expect(toggler().prop('toggled')).to.be.false;
-      model.correctResponse = ['c1', 'c4', 'c3', 'c2'];
-      wrapper.setProps({ model: model });
-      expect(toggler().prop('show')).to.be.true;
-      expect(toggler().prop('toggled')).to.be.false;
-    });
-  });
+      describe('without targets', () => {
+        let value;
+        let config;
 
-  describe('outcomes', () => {
-    it('choices are styled according to their outcome', () => {
-      session = { value: ['c4', 'c2', 'c3', 'c1'] };
-      model.correctResponse = ['c1', 'c2', 'c3', 'c4'];
-      model.outcomes = [
-        {
-          id: 'c1',
-          outcome: 'incorrect'
-        },
-        {
-          id: 'c2',
-          outcome: 'correct'
-        },
-        {
-          id: 'c3',
-          outcome: 'correct'
-        },
-        {
-          id: 'c4',
-          outcome: 'incorrect'
-        }
-      ];
-      wrapper = mkWrapper(model, session);
-      const droppedChoices = wrapper.find('DragSource(DraggableChoice)');
-      expect(
-        droppedChoices.map(c => {
-          return c.props().outcome;
-        })
-      ).toEqual(['incorrect', 'correct', 'correct', 'incorrect']);
+        beforeEach(() => {
+          config = {
+            includeTargets: false
+          };
+
+          value = choices.map(m => m.id);
+          wrapper = mkWrapper({ config });
+
+          wrapper.instance().initSessionIfNeeded(wrapper.instance().props);
+        });
+
+        it('calls onSessionChange', () => {
+          expect(onSessionChange).toHaveBeenCalledWith({ value });
+        });
+
+        it('does not call onSessionChange if session is set', () => {
+          wrapper = mkWrapper({ config }, { value });
+
+          wrapper.instance().initSessionIfNeeded(wrapper.instance().props);
+
+          expect(onSessionChange).not.toBeCalled();
+        });
+      });
+    });
+
+    describe('UNSAFE_componentWillReceiveProps', () => {
+      beforeEach(() => {
+        wrapper = mkWrapper({
+          config: {
+            includeTargets: false
+          }
+        });
+      });
+
+      it('calls initSessionIfNeeded if includeTargets changes', () => {
+        wrapper.setProps({
+          model: {
+            ...model,
+            config: {
+              includeTargets: true
+            }
+          }
+        });
+
+        expect(onSessionChange).toHaveBeenCalledWith({});
+      });
+
+      it('calls initSessionIfNeeded if choicesNumberChanged changes', () => {
+        wrapper.setProps({
+          model: {
+            ...model,
+            choices: choices.slice(0, 2)
+          }
+        });
+
+        expect(onSessionChange).toHaveBeenCalledWith({ value: ['c1', 'c2']});
+      });
     });
   });
 });

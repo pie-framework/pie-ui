@@ -3,6 +3,117 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.13](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.12...@pie-ui/ebsr@1.1.13) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.11...@pie-ui/ebsr@1.1.12) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.10...@pie-ui/ebsr@1.1.11) (2019-04-23)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.10](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.9...@pie-ui/ebsr@1.1.10) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.9](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.8...@pie-ui/ebsr@1.1.9) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.8](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.7...@pie-ui/ebsr@1.1.8) (2019-04-15)
+
+
+### Bug Fixes
+
+* **custom-element:** not setting the part model if the main model is not defined yet ([34347e6](https://github.com/pie-framework/pie-elements/commit/34347e6))
+
+
+
+
+
+## [1.1.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.6...@pie-ui/ebsr@1.1.7) (2019-04-11)
+
+
+### Bug Fixes
+
+* listen for events in the outer context ([9553561](https://github.com/pie-framework/pie-elements/commit/9553561))
+
+
+
+
+
+## [1.1.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.5...@pie-ui/ebsr@1.1.6) (2019-04-10)
+
+
+### Bug Fixes
+
+* prevent default session.changed event [ch498] ([c032e40](https://github.com/pie-framework/pie-elements/commit/c032e40))
+
+
+
+
+
+## [1.1.5](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.4...@pie-ui/ebsr@1.1.5) (2019-04-09)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.3...@pie-ui/ebsr@1.1.4) (2019-04-08)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.1.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.2...@pie-ui/ebsr@1.1.3) (2019-04-08)
+
+
+### Bug Fixes
+
+* scope multiple-choice UI constructor ([bf59b84](https://github.com/pie-framework/pie-elements/commit/bf59b84))
+
+
+
+
+
+## [1.1.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.1...@pie-ui/ebsr@1.1.2) (2019-04-08)
+
+
+### Bug Fixes
+
+* set model and session after multiple-choice is defined ([4e33e64](https://github.com/pie-framework/pie-elements/commit/4e33e64))
+
+
+
+
+
 ## [1.1.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.0...@pie-ui/ebsr@1.1.1) (2019-04-04)
 
 

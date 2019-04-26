@@ -16,7 +16,6 @@ exports[`PlacementOrdering render shows toggle 1`] = `
       }
     }
   />
-  .
   <OrderingTiler
     includeTargets={true}
     instanceId="3"
@@ -45,7 +44,6 @@ exports[`PlacementOrdering render snapshot 1`] = `
       }
     }
   />
-  .
   <OrderingTiler
     includeTargets={true}
     instanceId="1"

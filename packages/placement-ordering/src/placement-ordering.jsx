@@ -185,7 +185,6 @@ export class PlacementOrdering extends React.Component {
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: model.prompt }}
         />
-        .
         <OrderingTiler
           instanceId={this.instanceId}
           choiceLabel={config.choiceLabel}

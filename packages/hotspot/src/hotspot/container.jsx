@@ -6,38 +6,21 @@ import { withStyles } from '@material-ui/core/styles';
 import Rectangle from './rectangle';
 
 class Container extends React.Component {
-  handleClick = (e) => {
-    const { onUpdateShapes } = this.props;
-
-    const newShapes = this.props.shapes.slice();
-    newShapes.push({
-      height: 0,
-      width: 0,
-      x: e.evt.layerX,
-      y: e.evt.layerY
-    });
-
-    onUpdateShapes(newShapes);
-  };
-
-  isSelected(index) {
-    return this.props.session.answers.filter(answer => answer.index === index)[0];
+  isSelected(shape) {
+    const selectedShape = this.props.session.answers.filter(answer => answer.id === shape.id)[0];
+    return !!selectedShape;
   }
 
-  handleOnImageLoad = ({ target: { offsetHeight, offsetWidth } }) => {
-    // this.setState({
-    //   dimensions: {
-    //     height: offsetHeight,
-    //     width: offsetWidth
-    //   }});
-  };
+  correctness = (isCorrect, isChecked) => isCorrect ? isChecked : !isChecked;
 
   render() {
     const {
       classes,
       dimensions: { width, height },
+      disabled,
       hotspotColor,
       imageUrl,
+      isEvaluateMode,
       outlineColor,
       onSelectChoice,
       shapes
@@ -50,7 +33,6 @@ class Container extends React.Component {
             <img
               className={classes.image}
               height="auto"
-              onLoad={this.handleOnImageLoad}
               src={imageUrl}
               style={{ width, height, maxWidth: width, maxHeight: height }}
             />
@@ -60,24 +42,31 @@ class Container extends React.Component {
         <Stage
           className={classes.stage}
           height={height}
-          onClick={this.handleClick}
           width={width}
         >
           <Layer>
-            {shapes.map((shape, index) => (
-              <Rectangle
-                selected={this.isSelected(index)}
-                height={shape.height}
-                hotspotColor={hotspotColor}
-                index={index}
-                key={index}
-                onClick={onSelectChoice}
-                outlineColor={outlineColor}
-                width={shape.width}
-                x={shape.x}
-                y={shape.y}
-              />
-            ))}
+            {shapes.map((shape) => {
+              const selected = this.isSelected(shape);
+              const isCorrect = isEvaluateMode ? this.correctness(shape.correct, selected) : undefined;
+
+              return (
+                <Rectangle
+                  isEvaluateMode={isEvaluateMode}
+                  isCorrect={isCorrect}
+                  disabled={disabled}
+                  selected={selected}
+                  height={shape.height}
+                  hotspotColor={hotspotColor}
+                  id={shape.id}
+                  key={shape.id}
+                  onClick={onSelectChoice}
+                  outlineColor={outlineColor}
+                  width={shape.width}
+                  x={shape.x}
+                  y={shape.y}
+                />
+              )
+            })}
           </Layer>
         </Stage>
       </div>
@@ -87,13 +76,8 @@ class Container extends React.Component {
 
 const styles = theme => ({
   base: {
-    position: 'relative',
     marginTop: theme.spacing.unit * 3,
-  },
-  stage: {
-    left: 0,
-    top: 0,
-    position: 'absolute'
+    position: 'relative'
   },
   image: {
     alignItems: 'center',
@@ -103,6 +87,11 @@ const styles = theme => ({
   imageContainer: {
     position: 'relative',
     width: 'fit-content'
+  },
+  stage: {
+    left: 0,
+    top: 0,
+    position: 'absolute'
   },
   resize: {
     borderBottom: '1px solid #727272',
@@ -118,16 +107,14 @@ const styles = theme => ({
 
 Container.propTypes = {
   classes: PropTypes.object.isRequired,
-  disableDrag:PropTypes.func.isRequired,
-  enableDrag:PropTypes.func.isRequired,
-  imageUrl:PropTypes.string.isRequired,
+  dimensions: PropTypes.object.isRequired,
+  disabled: PropTypes.bool.isRequired,
   hotspotColor:PropTypes.string.isRequired,
-  maxImageHeight:PropTypes.number.isRequired,
-  maxImageWidth:PropTypes.number.isRequired,
-  multipleCorrect:PropTypes.bool.isRequired,
-  onUpdateShapes:PropTypes.func.isRequired,
+  imageUrl:PropTypes.string.isRequired,
+  isEvaluateMode:PropTypes.bool.isRequired,
+  onSelectChoice:PropTypes.func.isRequired,
   outlineColor:PropTypes.string.isRequired,
-  shapes:PropTypes.shape([]).isRequired,
+  shapes:PropTypes.shape([]).isRequired
 };
 
 export default withStyles(styles)(Container);

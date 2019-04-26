@@ -1,26 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 import Container from './container';
 
-export class Hotspot extends React.Component {
+class HotspotComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCorrect: false
+    };
+  }
+
+  onToggle = () => {
+    const { showCorrect } = this.state;
+    this.setState({ showCorrect: !showCorrect });
+  };
+
   render() {
-    const { session,
+    const {
+      session,
       model: {
-        question: {
-          imageUrl,
-          prompt,
-          multipleCorrect,
-          shapes,
-          outlineColor,
-          hotspotColor,
-          maxImageHeight,
-          maxImageWidth,
-          dimensions
-        }
+        disabled,
+        imageUrl,
+        prompt,
+        mode,
+        multipleCorrect,
+        shapes,
+        outlineColor,
+        hotspotColor,
+        maxImageHeight,
+        maxImageWidth,
+        dimensions
       },
       onSelectChoice
     } = this.props;
+
+    const isEvaluateMode = mode === 'evaluate';
 
     return (
       <div>
@@ -30,6 +46,7 @@ export class Hotspot extends React.Component {
 
         {imageUrl ? (
           <Container
+            isEvaluateMode={isEvaluateMode}
             session={session}
             dimensions={dimensions}
             imageUrl={imageUrl}
@@ -40,6 +57,7 @@ export class Hotspot extends React.Component {
             outlineColor={outlineColor}
             onSelectChoice={onSelectChoice}
             shapes={shapes}
+            disabled={disabled}
           />
         ) : null}
       </div>
@@ -47,4 +65,10 @@ export class Hotspot extends React.Component {
   }
 }
 
-export default Hotspot;
+HotspotComponent.propTypes = {
+  model: PropTypes.object.isRequired,
+  onSelectChoice: PropTypes.func.isRequired,
+  session: PropTypes.object.isRequired
+};
+
+export default HotspotComponent;

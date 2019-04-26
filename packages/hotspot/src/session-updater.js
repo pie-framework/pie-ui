@@ -1,14 +1,16 @@
 export function updateSessionValue(session, model, data) {
-  const { question: { multipleCorrect  } } = model;
+  const { id, selected } = data;
+  const { multipleCorrect } = model;
   session.answers = session.answers || [];
 
-  if (!data.selected) {
-    session.answers = session.answers.filter(answer => answer.index !== data.index);
+  if (!selected) {
+    session.answers = session.answers.filter(answer => answer.id !== id);
   } else {
+    const item = { id };
     if (multipleCorrect) {
-      session.answers.push(data);
+      session.answers.push(item);
     } else {
-      session.answers = [data];
+      session.answers = [item];
     }
   }
 }

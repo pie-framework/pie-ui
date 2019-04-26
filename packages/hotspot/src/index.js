@@ -52,10 +52,6 @@ export default class Hotspot extends HTMLElement {
     this._render();
   }
 
-  onShowCorrectToggle() {
-    renderMath(this);
-  }
-
   connectedCallback() {
     this._render();
   }
@@ -65,8 +61,7 @@ export default class Hotspot extends HTMLElement {
       const el = React.createElement(HotspotComponent, {
         model: this._model,
         session: this._session,
-        onSelectChoice: this.onSelectChoice.bind(this),
-        onShowCorrectToggle: this.onShowCorrectToggle.bind(this),
+        onSelectChoice: this.onSelectChoice.bind(this)
       });
       ReactDOM.render(el, this, () => {
         renderMath(this);

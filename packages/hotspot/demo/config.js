@@ -1,61 +1,3 @@
-const partA = {
-  element: 'multiple-choice',
-  id: '2',
-  disabled: false,
-  keyMode: 'letters',
-  showCorrect: true,
-  correctResponse: [{ value: 'value' }],
-
-  prompt: 'What color is the sky?',
-  choiceMode: 'radio',
-  choices: [
-    {
-      value: 'yellow',
-      label: 'Yellow',
-    },
-    {
-      value: 'green',
-      label: 'Green',
-    },
-    {
-      correct: true,
-      value: 'blue',
-      label: 'Blue',
-    },
-  ]
-};
-
-const partB =  {
-  element: 'multiple-choice',
-  id: '3',
-  disabled: false,
-  keyMode: 'letters',
-  showCorrect: true,
-  correctResponse: [{ value: 'purple' }],
-
-  prompt: 'What color do you get when you mix Red with your answer in Part 1?',
-  choiceMode: 'radio',
-  choices: [
-    {
-      value: 'orange',
-      label: 'Orange',
-    },
-    {
-      correct: true,
-      value: 'purple',
-      label: 'Purple',
-    },
-    {
-      value: 'pink',
-      label: 'Pink',
-    },
-    {
-      value: 'green',
-      label: 'Green',
-    },
-  ]
-};
-
 module.exports = {
   elements: {
     'hotspot-element': '..'
@@ -64,9 +6,27 @@ module.exports = {
     {
       id: '1',
       element: 'hotspot-element',
-      mode: 'gather',
-      partA,
-      partB,
+      prompt: 'This is the question prompt',
+      imageUrl: '',
+      shapes: [],
+      multipleCorrect: true,
+      partialScoring: false,
+      dimensions: {
+        height: 0,
+        width: 0
+      },
+      hotspotColor: 'rgba(137, 183, 244, 0.65)',
+      hotspotList: [
+        'rgba(137, 183, 244, 0.65)',
+        'rgba(217, 30, 24, 0.65)',
+        'rgba(254, 241, 96, 0.65)'
+      ],
+      outlineColor: 'blue',
+      outlineList: [
+        'blue',
+        'red',
+        'yellow'
+      ]
     }
   ]
 };

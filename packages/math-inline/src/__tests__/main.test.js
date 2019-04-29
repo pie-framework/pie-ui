@@ -16,7 +16,7 @@ jest.mock('@pie-framework/mathquill', () => ({
   getInterface: jest.fn().mockReturnThis()
 }));
 
-describe('Main', () => {
+xdescribe('Main', () => {
   const defaultProps = {
     model: {
       config: {

@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.12...@pie-ui/point-intercept@1.2.13) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/point-intercept
+
+
+
+
+
+## [1.2.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.11...@pie-ui/point-intercept@1.2.12) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/point-intercept
+
+
+
+
+
+## [1.2.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.10...@pie-ui/point-intercept@1.2.11) (2019-04-15)
+
+**Note:** Version bump only for package @pie-ui/point-intercept
+
+
+
+
+
+## [1.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.9...@pie-ui/point-intercept@1.2.10) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/point-intercept
+
+
+
+
+
 ## [1.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.8...@pie-ui/point-intercept@1.2.9) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/point-intercept

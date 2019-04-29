@@ -6,7 +6,7 @@ import pink from '@material-ui/core/colors/pink';
 import { withStyles } from '@material-ui/core/styles';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import classNames from 'classnames';
-import { PreviewLayout } from '@pie-lib/config-ui';
+import { PreviewLayout } from '@pie-lib/render-ui';
 import MultipleChoice from './multiple-choice';
 
 const styleSheet = theme => {

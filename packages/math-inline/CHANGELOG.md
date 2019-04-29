@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.1.1...@pie-ui/math-inline@2.1.2) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.1.0...@pie-ui/math-inline@2.1.1) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [2.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.0.1...@pie-ui/math-inline@2.1.0) (2019-04-23)
+
+
+### Bug Fixes
+
+* **math-inline:** centralized mode constants for simple and advanced modes ([0ab3117](https://github.com/pie-framework/pie-ui/commit/0ab3117))
+
+
+### Features
+
+* **math-inline:** formulaV2 controller integration ([cae1960](https://github.com/pie-framework/pie-ui/commit/cae1960))
+
+
+
+
+
+## [2.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.0.0...@pie-ui/math-inline@2.0.1) (2019-04-18)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.3.1...@pie-ui/math-inline@2.0.0) (2019-04-18)
+
+
+### Features
+
+* **math-inline:** updated interaction for formulaV2 model support ([2c21a5f](https://github.com/pie-framework/pie-ui/commit/2c21a5f))
+
+
+### BREAKING CHANGES
+
+* **math-inline:** only formulaV2 model is supported now, answer block syntax in expression changed from mathquill custom embeds to {{response}} delimitation
+
+
+
+
+
+## [1.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.3.0...@pie-ui/math-inline@1.3.1) (2019-04-15)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.8...@pie-ui/math-inline@1.3.0) (2019-04-11)
+
+
+### Features
+
+* **math-inline:** decimals support ([e589957](https://github.com/pie-framework/pie-ui/commit/e589957))
+
+
+
+
+
+## [1.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.7...@pie-ui/math-inline@1.2.8) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
 ## [1.2.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@1.2.6...@pie-ui/math-inline@1.2.7) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/math-inline

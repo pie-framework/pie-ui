@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.11...@pie-ui/number-line@4.2.12) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [4.2.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.10...@pie-ui/number-line@4.2.11) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [4.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.9...@pie-ui/number-line@4.2.10) (2019-04-15)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [4.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.8...@pie-ui/number-line@4.2.9) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
 ## [4.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.7...@pie-ui/number-line@4.2.8) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/number-line

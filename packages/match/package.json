@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.2.9",
+  "version": "1.2.13",
   "description": "In Choice Matrix, students associate choices in the first column with options in the adjacent rows. This interaction allows for either one or more correct answers.",
   "main": "lib/index.js",
   "dependencies": {
@@ -22,8 +22,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope match"
-  }
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

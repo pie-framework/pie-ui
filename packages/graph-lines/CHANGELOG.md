@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.2...@pie-ui/graph-lines@2.0.3) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [2.0.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.1...@pie-ui/graph-lines@2.0.2) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [2.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.0...@pie-ui/graph-lines@2.0.1) (2019-04-23)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+# [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@1.1.11...@pie-ui/graph-lines@2.0.0) (2019-04-18)
+
+
+### Features
+
+* Updated model structure and @pie-lib/config-ui version. ([59f8196](https://github.com/pie-framework/pie-ui/commit/59f8196))
+
+
+### BREAKING CHANGES
+
+* `model.model.config` has been updated to `model.graph``.
+
+
+
+
+
+## [1.1.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@1.1.10...@pie-ui/graph-lines@1.1.11) (2019-04-15)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [1.1.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@1.1.9...@pie-ui/graph-lines@1.1.10) (2019-04-10)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
 ## [1.1.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@1.1.8...@pie-ui/graph-lines@1.1.9) (2019-04-09)
 
 **Note:** Version bump only for package @pie-ui/graph-lines

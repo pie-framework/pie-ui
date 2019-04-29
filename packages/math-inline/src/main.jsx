@@ -269,7 +269,7 @@ export class Main extends React.Component {
         state => ({
           session: {
             ...state.session,
-            completeAnswer: this.mqStatic.mathField.latex(),
+            completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
             answers: {
               ...state.session.answers,
               [name]: { value: subfieldValue }

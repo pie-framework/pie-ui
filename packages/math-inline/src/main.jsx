@@ -13,6 +13,15 @@ let registered = false;
 
 const REGEX = /{{response}}/gm;
 
+function generateAdditionalKeys(keyData = []) {
+  return keyData.map(key => ({
+    name: key,
+    latex: key,
+    write: key,
+    label: key
+  }));
+}
+
 function prepareForStatic(model, state) {
   if (model.config && model.config.expression) {
     const modelExpression = model.config.expression;
@@ -290,9 +299,11 @@ export class Main extends React.Component {
     const state = this.state;
     const { activeAnswerBlock, showCorrect, session } = state;
 
-    if (!this.props.model.config) {
+    if (!model.config) {
       return null;
     }
+
+    const additionalKeys = generateAdditionalKeys(model.config.customKeys);
 
     return (
       <div
@@ -340,6 +351,7 @@ export class Main extends React.Component {
                     !(showCorrect || model.disabled) && (
                       <HorizontalKeypad
                         key={answerId}
+                        additionalKeys={additionalKeys}
                         mode={model.config.equationEditor}
                         onClick={this.onClick}
                       />

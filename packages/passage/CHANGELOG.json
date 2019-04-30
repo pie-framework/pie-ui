@@ -1,0 +1,17 @@
+[
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "minimalist passage rendering impl",
+    "merge": null,
+    "header": "feat: minimalist passage rendering impl",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "834d7e3bf349c9831cf2ee2a772a3a42c7524c6a",
+    "gitTags": "",
+    "committerDate": "2019-04-26 09:53:04 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.1.0"
+  }
+]

@@ -663,5 +663,20 @@
     "committerDate": "2019-04-24 12:26:24 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.1.1"
+  },
+  {
+    "type": "feat",
+    "scope": "math-inline",
+    "subject": "custom keys support for keypad",
+    "merge": null,
+    "header": "feat(math-inline): custom keys support for keypad",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5305bbaf2a09bc66cce1e3f9b052078348d67e59",
+    "gitTags": "",
+    "committerDate": "2019-04-25 17:04:52 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.0"
   }
 ]

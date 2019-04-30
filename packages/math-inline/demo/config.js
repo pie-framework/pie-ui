@@ -36,7 +36,12 @@ module.exports = {
             type: 'none',
             default: 'Incorrect'
           }
-        }
+        },
+        customKeys: [
+          '\\left(\\right)',
+          '\\frac{}{}',
+          'x\\frac{}{}'
+        ]
       }
     }
   ]

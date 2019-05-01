@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.2...@pie-ui/placement-ordering@4.6.3) (2019-05-01)
+
+
+### Bug Fixes
+
+* remove  period from after prompt ([4f1232a](https://github.com/pie-framework/pie-ui/commit/4f1232a))
+
+
+
+
+
 ## [4.6.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.1...@pie-ui/placement-ordering@4.6.2) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

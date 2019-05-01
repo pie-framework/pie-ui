@@ -269,7 +269,7 @@ export class Main extends React.Component {
         state => ({
           session: {
             ...state.session,
-            completeAnswer: this.mqStatic.mathField.latex(),
+            completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
             answers: {
               ...state.session.answers,
               [name]: { value: subfieldValue }
@@ -312,14 +312,12 @@ export class Main extends React.Component {
       >
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
-          <CorrectAnswerToggle
+          {model.correctness && model.correctness.correctness !== 'correct' && <CorrectAnswerToggle
             className={classes.toggle}
-            show={
-              model.correctness && model.correctness.correctness !== 'correct'
-            }
+            show
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
-          />
+          />}
           <div className={classes.content}>
             <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>

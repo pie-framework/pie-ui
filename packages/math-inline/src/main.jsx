@@ -312,14 +312,12 @@ export class Main extends React.Component {
       >
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
-          <CorrectAnswerToggle
+          {model.correctness && model.correctness.correctness !== 'correct' && <CorrectAnswerToggle
             className={classes.toggle}
-            show={
-              model.correctness && model.correctness.correctness !== 'correct'
-            }
+            show
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
-          />
+          />}
           <div className={classes.content}>
             <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
           </div>

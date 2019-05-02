@@ -1920,6 +1920,17 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
+"@pie-lib/drag@^1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-1.1.13.tgz#8d2929b712d6bce6a8597913eff1e9d499e177e9"
+  integrity sha512-JGBYvrTh7bKr+SXzMsBLegp2RAuWa9oBmJzY+tIWiFb1uPKrUS3SooxZlwhhZkTjp5p/+dW5dOJXGx4WUiZlDQ==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    classnames "^2.2.6"
+    lodash "^4.17.11"
+    react-dnd "^7.0.2"
+    react-dnd-html5-backend "^7.0.2"
+
 "@pie-lib/editable-html@^7.2.0", "@pie-lib/editable-html@^7.3.5":
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.3.5.tgz#18681fded13dcd541f63c2b2d5647ebaf45dd7fc"
@@ -1958,19 +1969,22 @@
     classnames "^2.2.6"
     prop-types "^15.6.2"
 
-"@pie-lib/mask-markup@next":
-  version "1.0.0-next.1"
-  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.0.0-next.1.tgz#9f8c37fb957a87e3de670f8aff2890bb57df4f68"
-  integrity sha512-F1XRHZJPChsTfxLRePKJQ8Tts+5AvWWn9/VJWKeMAAeORd/UdVzAxdt/OsEcc6rtXIhPdvD6Tps0ibfAkuwdwA==
+"@pie-lib/mask-markup@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.0.0.tgz#cbcb130785e656d344b0af1f7a80bedf82594eeb"
+  integrity sha512-dE5facAgsqmtzQSb7EvdlEK4qK2sSAvtXlHJoT+nR384pO720nFm2oLY0ZwZmCADi4bQch9Y2tiW8LKjKVItsw==
   dependencies:
     "@material-ui/core" "^3.9.3"
-    "@pie-lib/drag" "^1.1.12"
+    "@pie-lib/drag" "^1.1.13"
     classnames "^2.2.6"
     debug "^4.1.1"
     react "^16.8.6"
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
-    react-dnd-multi-backend "^3.2.1"
+    slate "^0.36.2"
+    slate-html-serializer "^0.6.12"
+    slate-prop-types "^0.4.38"
+    slate-react "^0.14.3"
 
 "@pie-lib/math-input@^6.0.0":
   version "6.0.0"
@@ -4341,11 +4355,6 @@ dnd-core@^7.4.4:
     asap "^2.0.6"
     invariant "^2.2.4"
     redux "^4.0.1"
-
-dnd-multi-backend@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/dnd-multi-backend/-/dnd-multi-backend-3.2.1.tgz#528c7624b831d1c23512cbed191b34fb506dcf93"
-  integrity sha512-A783JbrONpeufxX+jDMHOxR2AWh+gFv5Z/lLpDB3vdON6t0bb2fHSh8fKH2h8gOLRAJGD08m9xYXAJIWreTI5A==
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -8896,22 +8905,6 @@ react-dnd-html5-backend@^7.0.2:
   integrity sha512-X/lP92ateY0glHan8mU0JzjBuZL6VHv2Gc/H9OBBxaf/ZCN1oC16MLKdesqG4x1f/NWFTNtuG3W4B99r5gPVog==
   dependencies:
     dnd-core "^7.4.4"
-
-react-dnd-multi-backend@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/react-dnd-multi-backend/-/react-dnd-multi-backend-3.2.1.tgz#bfda3b72b738704d638c56fd5e992c3fac556652"
-  integrity sha512-UrS1Ey4l80F6Fu+QAodZGX9OJYi4EB23nWhQP3L+DSyXXJkoQLPoX3JqoCYs/tUpH9Ztkr+sRORRBRj6D22WOg==
-  dependencies:
-    dnd-multi-backend "^3.2.1"
-    prop-types "^15.6.2"
-    react-dnd-preview "^3.2.1"
-
-react-dnd-preview@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/react-dnd-preview/-/react-dnd-preview-3.2.1.tgz#8067f146d58b2d8b4b15ca785fae4320dbdd0de0"
-  integrity sha512-LeLEwNhCrl33Di0qqUPou/NmXTbuq6kFO1CyiOvpa44ZOXk0a6a0ZDwCXGmqFV4qLEkbcRvjHzvIWqz983VBWg==
-  dependencies:
-    prop-types "^15.6.2"
 
 react-dnd-test-backend@^2.6.0:
   version "2.6.0"

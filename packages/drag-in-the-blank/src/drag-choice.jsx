@@ -3,7 +3,7 @@ import React from 'react';
 // import HTML5Backend from 'react-dnd-html5-backend';
 import { withStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
-import { withDragContext, DragSource } from '@pie-lib/drag';
+import { DragSource } from '@pie-lib/drag';
 
 export const DRAG_TYPE = 'MaskBlank';
 

@@ -5,16 +5,13 @@
     "pie",
     "pie-elements"
   ],
-  "version": "3.5.7",
+  "version": "3.5.9",
   "main": "lib/index.js",
   "repository": "pie-framework/pie-ui",
   "publishConfig": {
     "access": "public"
   },
   "license": "ISC",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope text-entry"
-  },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",

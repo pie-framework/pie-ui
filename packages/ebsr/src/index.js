@@ -63,7 +63,8 @@ export default class Ebsr extends HTMLElement {
 
       part.model = {
         ...this._model[key],
-        mode
+        mode,
+        keyMode: this._model[key].choicePrefix,
       };
     }
 

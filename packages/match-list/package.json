@@ -3,15 +3,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "Match List description.",
   "main": "lib/index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
-    "@pie-lib/render-ui": "^4.3.1",
     "@pie-lib/drag": "^1.1.12",
+    "@pie-lib/render-ui": "^4.3.1",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",
@@ -24,13 +24,10 @@
     "react-dnd-html5-backend": "^7.0.2"
   },
   "devDependencies": {
-    "react-dnd-test-backend": "^2.6.0",
-    "@pie-lib/test-utils": "^0.1.1"
+    "@pie-lib/test-utils": "^0.1.1",
+    "react-dnd-test-backend": "^2.6.0"
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope match-list"
-  }
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

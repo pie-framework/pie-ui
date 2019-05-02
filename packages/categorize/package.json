@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/categorize",
-  "version": "0.9.10",
+  "version": "0.9.12",
   "description": "",
   "main": "lib/index.js",
   "publishConfig": {
@@ -29,8 +29,5 @@
   "devDependencies": {
     "react": "^16.8.1"
   },
-  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope categorize"
-  }
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

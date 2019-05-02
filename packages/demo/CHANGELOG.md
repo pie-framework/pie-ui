@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.1...@pie-ui/demo@0.3.2) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.0...@pie-ui/demo@0.3.1) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+# [0.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.2.18...@pie-ui/demo@0.3.0) (2019-04-23)
+
+
+### Features
+
+* **match-list:** implemented a ui element for the new match-list package ([a68b848](https://github.com/pie-framework/pie-ui/commit/a68b848))
+* **match-list:** implemented the rest of the functionality and edited the demo code in order to be able to use sessions from a js file ([af1a27b](https://github.com/pie-framework/pie-ui/commit/af1a27b))
+
+
+
+
+
 ## [0.2.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.2.17...@pie-ui/demo@0.2.18) (2019-04-18)
 
 **Note:** Version bump only for package @pie-ui/demo

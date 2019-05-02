@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/protractor",
-  "version": "2.2.7",
+  "version": "2.2.9",
   "description": "A protractor custom element",
   "keywords": [
     "pie",
@@ -9,9 +9,6 @@
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope protractor"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",

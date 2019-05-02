@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.1...@pie-ui/placement-ordering@4.6.2) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.6.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.0...@pie-ui/placement-ordering@4.6.1) (2019-04-25)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+# [4.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.5.2...@pie-ui/placement-ordering@4.6.0) (2019-04-23)
+
+
+### Features
+
+* **match-list:** implemented a ui element for the new match-list package ([a68b848](https://github.com/pie-framework/pie-ui/commit/a68b848))
+* **match-list:** made the requested changes ([f9dd302](https://github.com/pie-framework/pie-ui/commit/f9dd302))
+
+
+
+
+
 ## [4.5.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.5.1...@pie-ui/placement-ordering@4.5.2) (2019-04-15)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

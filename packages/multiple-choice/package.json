@@ -7,19 +7,16 @@
     "custom-element",
     "react"
   ],
-  "version": "4.7.12",
+  "version": "4.7.14",
   "main": "lib/index.js",
   "repository": "pie-framework/pie-elements.git",
   "publishConfig": {
     "access": "public"
   },
   "license": "ISC",
-  "scripts": {
-    "prepack": "../../scripts/build changelog --scope multiple-choice"
-  },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
-    "@pie-lib/config-ui": "^9.0.1",
+    "@pie-lib/config-ui": "^10.0.0",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-rendering": "^1.2.1",
     "@pie-lib/render-ui": "^4.3.9",

@@ -1,16 +1,46 @@
 import * as React from 'react';
+import { shallow } from 'enzyme';
 import Main from '../main';
+import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { shallowChild } from '@pie-lib/test-utils';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
+import SimpleQuestionBlock from '../simple-question-block';
 
-xdescribe('Main', () => {
+const Mathquill = require('@pie-framework/mathquill');
+
+jest.mock('@pie-framework/mathquill', () => ({
+  StaticMath: jest.fn().mockReturnValue({
+    latex: jest.fn()
+  }),
+  registerEmbed: jest.fn(),
+  getInterface: jest.fn().mockReturnThis()
+}));
+
+describe('Math-Inline Main', () => {
   const defaultProps = {
+    onSessionChange: jest.fn(),
+    session: {},
     model: {
+      id: '1',
+      element: 'math-inline',
+      correctness: {},
       config: {
-        responses: [],
-        id: '1',
+        responseType: 'Advanced Multi',
         element: 'math-inline',
+        question:
+          '<p>The binomial <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi>x</mi><mo>&#8722;</mo><mn>2</mn> </math> is a factor of the polynomial below.</p><p><span class="equation-block"><math xmlns="http://www.w3.org/1998/Math/MathML"> <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup> <mi>x</mi> <mn>3</mn> </msup> <mo>+</mo><msup> <mi>x</mi> <mn>2</mn> </msup> <mo>+</mo><mi>n</mi><mi>x</mi><mo>+</mo><mn>10</mn> </math> </span></p><p>What is the value of <span class="variable">n</span>? Use the on-screen keyboard&#160;to type the correct answer in the box.</p>',
+        expression:
+          '\\text{A family sized box contains} {{response}} \\text{less than} {{response}} \\text{times the number  }' +
+          '  \\frac{3}{6}=\\frac{ {{response}} }{4} + \\frac{ {{response}} }{4}',
+        equationEditor: 'everything',
+        responses: [
+          {
+            validation: 'literal',
+            answer: '\\frac{3}{6}=\\frac{1}{2}',
+            alternates: {}
+          }
+        ],
         feedback: {
           correct: {
             type: 'none',
@@ -24,53 +54,181 @@ xdescribe('Main', () => {
             type: 'none',
             default: 'Incorrect'
           }
-        }
+        },
+        customKeys: [
+          '\\left(\\right)',
+          '\\frac{}{}',
+          'x\\frac{}{}'
+        ]
       }
-    },
-    onSessionChange: jest.fn(),
-    session: {}
+    }
   };
 
   let wrapper;
   let component;
 
   beforeEach(() => {
-    wrapper = shallowChild(Main, defaultProps, 1);
+    wrapper = shallow(<Main {...defaultProps} />);
+    component = shallowChild(Main, defaultProps, 1);
   });
 
-  it('renders correctly', () => {
-    component = wrapper();
+  describe('render', () => {
+    it('renders correctly with snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
 
-    expect(component.find(CorrectAnswerToggle).length).toEqual(1);
-    expect(component.find(Feedback).length).toEqual(0);
-    //
-    // expect(component.state()).toEqual({
-    //   session: {
-    //     answers: {
-    //       1: [false, false],
-    //       2: [false, false],
-    //       3: [false, false],
-    //       4: [false, false]
-    //     }
-    //   },
-    //   showCorrect: false,
-    //   shuffledRows: [{
-    //     id: 1,
-    //     title: 'Question Text 1',
-    //     values: [false, false]
-    //   }, {
-    //     id: 2,
-    //     title: 'Question Text 2',
-    //     values: [false, false]
-    //   }, {
-    //     id: 3,
-    //     title: 'Question Text 3',
-    //     values: [false, false]
-    //   }, {
-    //     id: 4,
-    //     title: 'Question Text 4',
-    //     values: [false, false]
-    //   }]
-    // })
+    it('renders correctly', () => {
+      expect(wrapper.dive().find(CorrectAnswerToggle).length).toEqual(1);
+      expect(wrapper.dive().find(Feedback).length).toEqual(0);
+
+      expect(wrapper.dive().state()).toEqual({
+        activeAnswerBlock: '',
+        session: {
+          answers: {
+            r1: {
+              value: ''
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+
+      expect(Mathquill.getInterface().registerEmbed).toHaveBeenCalled();
+    });
+  });
+
+  describe('logic', () => {
+    it('prepares latex correctly and answer blocks and turns them into inputs', () => {
+      expect(wrapper.dive().find(mq.Static).length).toEqual(1);
+      expect(wrapper.dive().find(mq.Static).props().latex).toEqual('\\text{A family sized box contains} \\MathQuillMathField[r1]{} \\text{less than} \\MathQuillMathField[r2]{} \\text{times the number  }  \\frac{3}{6}=\\frac{ \\MathQuillMathField[r3]{} }{4} + \\frac{ \\MathQuillMathField[r4]{} }{4}');
+    });
+
+    it('correctly renders simple interaction in case of simple mode', () => {
+      expect(wrapper.dive().find(mq.Static).length).toEqual(1);
+      expect(wrapper.dive().find(SimpleQuestionBlock).length).toEqual(0);
+
+      const simpleProps = {...defaultProps};
+      simpleProps.model.config.responseType = 'Simple';
+
+      wrapper.setProps(simpleProps);
+
+      expect(wrapper.dive().find(mq.Static).length).toEqual(0);
+      expect(wrapper.dive().find(SimpleQuestionBlock).length).toEqual(1);
+    });
+
+    it('correctly shows the keypad', () => {
+      wrapper = component();
+
+      expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
+      wrapper.instance().onSubFieldFocus('r1');
+      expect(wrapper.state()).toEqual({
+        activeAnswerBlock: 'r1',
+        session: {
+          answers: {
+            r1: {
+              value: ''
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+    });
+
+    it('correctly updates session in case of model change', () => {
+      wrapper = component();
+
+      wrapper.instance().subFieldChanged('r1', 'value');
+      expect(wrapper.state()).toEqual({
+        activeAnswerBlock: '',
+        session: {
+          answers: {
+            r1: {
+              value: 'value'
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+    });
+
+    it('correctly updates session in case of subfield change', () => {
+
+      wrapper = component();
+
+      expect(wrapper.state()).toEqual({
+        activeAnswerBlock: '',
+        session: {
+          answers: {
+            r1: {
+              value: ''
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+
+      const newProps = {...defaultProps};
+
+      newProps.model.config.expression = defaultProps.model.config.expression + ' {{response}}';
+
+      wrapper.setProps(newProps);
+
+      expect(wrapper.state()).toEqual({
+        activeAnswerBlock: '',
+        session: {
+          answers: {
+            r1: {
+              value: ''
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+    })
   });
 });

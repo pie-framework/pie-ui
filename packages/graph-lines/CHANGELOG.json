@@ -183,5 +183,35 @@
     "committerDate": "2019-04-18 18:31:34 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.0.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.2"
+  },
+  {
+    "type": "Fix",
+    "scope": null,
+    "subject": "BREAKING CHANGE: Updated @pie-lib/config-ui version.",
+    "merge": null,
+    "header": "Fix: BREAKING CHANGE: Updated @pie-lib/config-ui version.",
+    "body": "The version for this pie-ui is needed in @pie-elements/graph-lines.",
+    "footer": null,
+    "notes": [],
+    "hash": "4f772dc82fb0c797764ff79ae1e233978c0ca203",
+    "gitTags": "",
+    "committerDate": "2019-04-25 14:48:35 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.3"
   }
 ]

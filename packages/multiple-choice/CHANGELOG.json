@@ -548,5 +548,35 @@
     "committerDate": "2019-04-17 18:30:08 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.7.11"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "rm prepack - only needed on root",
+    "merge": null,
+    "header": "chore: rm prepack - only needed on root",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "572a971788b25ffc318247f592b90eb9ebcf5e40",
+    "gitTags": "",
+    "committerDate": "2019-04-24 10:39:26 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.7.13"
+  },
+  {
+    "type": "Fix",
+    "scope": null,
+    "subject": "BREAKING CHANGE: Updated @pie-lib/config-ui version.",
+    "merge": null,
+    "header": "Fix: BREAKING CHANGE: Updated @pie-lib/config-ui version.",
+    "body": "The version for this pie-ui is needed in @pie-elements/multiple-choice.",
+    "footer": null,
+    "notes": [],
+    "hash": "1d383ffeca15cdbf955785bc50121243a7ab6b02",
+    "gitTags": "",
+    "committerDate": "2019-04-25 11:44:34 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.7.14"
   }
 ]

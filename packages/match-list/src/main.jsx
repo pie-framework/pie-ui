@@ -200,6 +200,8 @@ const styles = theme => ({
     width: 280
   },
   arrowEntry: {
+    alignItems: 'normal',
+    display: 'flex',
     height: 40,
     margin: '10px 20px'
   }

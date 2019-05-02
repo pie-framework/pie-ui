@@ -398,5 +398,20 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@4.6.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "remove  period from after prompt",
+    "merge": null,
+    "header": "fix: remove  period from after prompt",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4f1232a5cd2bdbed3d6e30963f7a301ab7024f9d",
+    "gitTags": "",
+    "committerDate": "2019-04-26 14:34:46 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.6.3"
   }
 ]

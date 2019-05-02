@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container snapshots hotspot color renders 1`] = `
+<Container
+  classes={
+    Object {
+      "base": "Container-base-1 base",
+      "image": "Container-image-2",
+      "imageContainer": "Container-imageContainer-3",
+      "resize": "Container-resize-5",
+      "stage": "Container-stage-4",
+    }
+  }
+  dimensions={
+    Object {
+      "height": 0,
+      "width": 0,
+    }
+  }
+  disabled={false}
+  hotspotColor="rgba(217, 30, 24, 0.65)"
+  imageUrl=""
+  isEvaluateMode={false}
+  onSelectChoice={[MockFunction]}
+  outlineColor="blue"
+  session={
+    Object {
+      "answers": Array [],
+    }
+  }
+  shapes={Array []}
+/>
+`;
+
+exports[`Container snapshots image renders 1`] = `
+<Container
+  classes={
+    Object {
+      "base": "Container-base-1 base",
+      "image": "Container-image-2",
+      "imageContainer": "Container-imageContainer-3",
+      "resize": "Container-resize-5",
+      "stage": "Container-stage-4",
+    }
+  }
+  dimensions={
+    Object {
+      "height": 0,
+      "width": 0,
+    }
+  }
+  disabled={false}
+  hotspotColor="rgba(137, 183, 244, 0.65)"
+  imageUrl="https://picsum.photos/id/102/200/300"
+  isEvaluateMode={false}
+  onSelectChoice={[MockFunction]}
+  outlineColor="blue"
+  session={
+    Object {
+      "answers": Array [],
+    }
+  }
+  shapes={Array []}
+/>
+`;
+
+exports[`Container snapshots outline color renders 1`] = `
+<Container
+  classes={
+    Object {
+      "base": "Container-base-1 base",
+      "image": "Container-image-2",
+      "imageContainer": "Container-imageContainer-3",
+      "resize": "Container-resize-5",
+      "stage": "Container-stage-4",
+    }
+  }
+  dimensions={
+    Object {
+      "height": 0,
+      "width": 0,
+    }
+  }
+  disabled={false}
+  hotspotColor="rgba(137, 183, 244, 0.65)"
+  imageUrl=""
+  isEvaluateMode={false}
+  onSelectChoice={[MockFunction]}
+  outlineColor="red"
+  session={
+    Object {
+      "answers": Array [],
+    }
+  }
+  shapes={Array []}
+/>
+`;
+
+exports[`Container snapshots shapes renders 1`] = `
+<Container
+  classes={
+    Object {
+      "base": "Container-base-1 base",
+      "image": "Container-image-2",
+      "imageContainer": "Container-imageContainer-3",
+      "resize": "Container-resize-5",
+      "stage": "Container-stage-4",
+    }
+  }
+  dimensions={
+    Object {
+      "height": 300,
+      "width": 200,
+    }
+  }
+  disabled={false}
+  hotspotColor="rgba(137, 183, 244, 0.65)"
+  imageUrl="https://picsum.photos/id/102/200/300"
+  isEvaluateMode={false}
+  onSelectChoice={[MockFunction]}
+  outlineColor="blue"
+  session={
+    Object {
+      "answers": Array [],
+    }
+  }
+  shapes={
+    Array [
+      Object {
+        "height": 5,
+        "id": "1",
+        "width": 5,
+        "x": 5,
+        "y": 5,
+      },
+      Object {
+        "height": 5,
+        "id": "2",
+        "width": 5,
+        "x": 25,
+        "y": 25,
+      },
+    ]
+  }
+/>
+`;

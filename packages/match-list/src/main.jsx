@@ -33,7 +33,7 @@ export class Main extends React.Component {
     this.updateSessionIfNeeded(this.props);
   }
 
-  componentWillReceiveProps(nProps) {
+  UNSAFE_componentWillReceiveProps(nProps) {
     this.updateSessionIfNeeded(nProps);
   }
 

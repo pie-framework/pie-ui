@@ -43,7 +43,7 @@ export class SimpleQuestionBlockRaw extends React.Component {
           >
             <mq.Static
               latex={
-                showCorrect ? model.config.response.answer : session.response
+                showCorrect ? model.config.response.answer : (session.response || '')
               }
             />
           </div>

@@ -1,0 +1,23 @@
+{
+  "name": "@pie-ui/inline-dropdown",
+  "version": "1.0.1",
+  "description": "",
+  "repository": "pie-framework/pie-ui",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "pie framework developers",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@pie-framework/pie-player-events": "^0.1.0",
+    "@pie-lib/mask-markup": "^1.0.0",
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+}

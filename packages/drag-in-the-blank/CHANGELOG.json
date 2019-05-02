@@ -1,0 +1,32 @@
+[
+  {
+    "type": "fix",
+    "scope": "lint",
+    "subject": "fixed lint errors",
+    "merge": null,
+    "header": "fix(lint): fixed lint errors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "439afbb38fc2259528b4cd627d49646dac3d9e87",
+    "gitTags": " (origin/feat/inline-dropdown)",
+    "committerDate": "2019-05-02 08:17:09 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.0.1"
+  },
+  {
+    "type": "fix",
+    "scope": "new-items",
+    "subject": "updated the pie-lib/mask-markup version in the new elements",
+    "merge": null,
+    "header": "fix(new-items): updated the pie-lib/mask-markup version in the new elements",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6148c62858db553d336b426d57e0c2ccd5375c7a",
+    "gitTags": "",
+    "committerDate": "2019-05-02 07:59:42 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.0.1"
+  }
+]

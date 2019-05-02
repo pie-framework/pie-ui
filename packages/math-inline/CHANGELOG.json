@@ -678,5 +678,50 @@
     "committerDate": "2019-04-25 17:04:52 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.2.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "finalize math-inline tests",
+    "merge": null,
+    "header": "chore: finalize math-inline tests",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "55b6c49426ff844ae6a98fda94a5e4cb9480d02a",
+    "gitTags": " (origin/elodszoposmcro/ch1207/unit-tests-for-entire-mer-interaction-suite)",
+    "committerDate": "2019-05-01 14:26:09 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "update math-inline unit tests",
+    "merge": null,
+    "header": "chore: update math-inline unit tests",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "04ed0b9b12dbe89dd47a866f05f741f47e0a5a90",
+    "gitTags": "",
+    "committerDate": "2019-04-29 19:21:15 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.1"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "unit tests for @pie-ui/math-inline",
+    "merge": null,
+    "header": "chore: unit tests for @pie-ui/math-inline",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "dfd54952c919724067edf03e0f3526ff2e5601dd",
+    "gitTags": "",
+    "committerDate": "2019-04-10 17:04:29 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.1"
   }
 ]

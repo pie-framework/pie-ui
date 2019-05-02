@@ -88,5 +88,20 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.1.1"
+  },
+  {
+    "type": "fix",
+    "scope": "lint",
+    "subject": "fixed lint errors",
+    "merge": null,
+    "header": "fix(lint): fixed lint errors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "439afbb38fc2259528b4cd627d49646dac3d9e87",
+    "gitTags": " (origin/feat/inline-dropdown)",
+    "committerDate": "2019-05-02 08:17:09 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.1.3"
   }
 ]

@@ -76,13 +76,13 @@ const compiler = webpack(config);
 
 compiler.run((err, stats) => {
   if (err) {
-    console.log('error: ');
     console.log(err);
     throw new Error('build has errors - see logs');
   } else {
     if (stats.hasErrors()) {
       const errors = stats.toJson({ errors: true });
-      console.error(errors);
+
+      console.error(errors.errors);
       throw new Error('build has errors - see logs');
     }
     console.log('done');

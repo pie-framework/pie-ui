@@ -2,8 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import Konva from 'konva';
 
 import Rectangle from '../hotspot/rectangle';
+
+Konva.isBrowser = false;
 
 describe('Rectangle', () => {
   let onClick, wrapper;

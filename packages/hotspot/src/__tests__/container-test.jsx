@@ -2,8 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import Konva from 'konva';
 
 import Container from '../hotspot/container';
+
+Konva.isBrowser = false;
 
 describe('Container', () => {
   let onSelectChoice, wrapper;

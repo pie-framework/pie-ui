@@ -28,5 +28,20 @@
     "committerDate": "2019-05-02 07:59:42 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.0.1"
+  },
+  {
+    "type": "fix",
+    "scope": "dependencies",
+    "subject": "updated version for the mask-markup elements",
+    "merge": null,
+    "header": "fix(dependencies): updated version for the mask-markup elements",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5ba17e2558bcd184b92294bdf686729068598a46",
+    "gitTags": " (origin/fix/mask-markup-version-bump)",
+    "committerDate": "2019-05-03 13:26:26 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.0.2"
   }
 ]

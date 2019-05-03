@@ -33,7 +33,7 @@ function prepareForStatic(model, state) {
     let answerBlocks = 1; // assume one at least
     // build out local state model using responses declared in expression
 
-    return modelExpression.replace(REGEX, function() {
+    return (modelExpression || '').replace(REGEX, function() {
       const answer = state.session.answers[`r${answerBlocks}`];
 
       if (model.disabled) {
@@ -62,7 +62,7 @@ export class Main extends React.Component {
       let answerBlocks = 1; // assume one at least
       // build out local state model using responses declared in expression
 
-      props.model.config.expression.replace(REGEX, () => {
+      (props.model.config.expression || '').replace(REGEX, () => {
         answers[`r${answerBlocks++}`] = {
           value: ''
         };
@@ -165,7 +165,7 @@ export class Main extends React.Component {
       let answerBlocks = 1; // assume one at least
 
       // build out local state model using responses declared in expression
-      nextConfig.expression.replace(REGEX, () => {
+      (nextConfig.expression || '').replace(REGEX, () => {
         newAnswers[`r${answerBlocks}`] = {
           value:
             (answers &&
@@ -180,7 +180,7 @@ export class Main extends React.Component {
         state => ({
           session: {
             ...state.session,
-            completeAnswer: this.mqStatic.mathField.latex(),
+            completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
             answers: newAnswers
           }
         }),
@@ -332,8 +332,8 @@ export class Main extends React.Component {
           {model.config.responseType === ResponseTypes.advanced && (
             <div className={classes.expression}>
               <mq.Static
-                ref={mqStatic => (this.mqStatic = mqStatic)}
-                latex={prepareForStatic(model, state)}
+                ref={mqStatic => (this.mqStatic = mqStatic || this.mqStatic)}
+                latex={prepareForStatic(model, state) || ''}
                 onSubFieldChange={this.subFieldChanged}
                 getFieldName={this.getFieldName}
                 setInput={this.setInput}

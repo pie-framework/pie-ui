@@ -723,5 +723,20 @@
     "committerDate": "2019-04-10 17:04:29 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.2.1"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "vital null checks and default values where needed",
+    "merge": null,
+    "header": "fix(math-inline): vital null checks and default values where needed",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "841d30e07cff08eaf7d831136b27c22b5290fe21",
+    "gitTags": "",
+    "committerDate": "2019-05-03 13:39:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.3"
   }
 ]

@@ -14,17 +14,17 @@ export class AnswerGrid extends React.Component {
     showCorrect: PropTypes.bool.isRequired,
     disabled: PropTypes.bool.isRequired,
     onAnswerChange: PropTypes.func.isRequired,
-    responseType: PropTypes.string.isRequired,
+    choiceMode: PropTypes.string.isRequired,
     rows: PropTypes.array.isRequired,
     headers: PropTypes.array.isRequired,
     answers: PropTypes.object.isRequired
   };
 
   onRowValueChange = (rowId, answerIndex) => event => {
-    const { onAnswerChange, responseType, answers } = this.props;
+    const { onAnswerChange, choiceMode, answers } = this.props;
     const newAnswers = { ...answers };
 
-    if (responseType === 'radio') {
+    if (choiceMode === 'radio') {
       for (let i = 0; i < newAnswers[rowId].length; i++) {
         newAnswers[rowId][i] = false;
       }
@@ -50,7 +50,7 @@ export class AnswerGrid extends React.Component {
   }
 
   render() {
-    const { classes, showCorrect, headers, rows, responseType, answers, disabled, view } = this.props;
+    const { classes, showCorrect, headers, rows, choiceMode, answers, disabled, view } = this.props;
 
     return (
       <div className={classes.controlsContainer}>
@@ -73,7 +73,7 @@ export class AnswerGrid extends React.Component {
               <div className={cx(classes.rowItem, classes.questionText)} dangerouslySetInnerHTML={{ __html: row.title }}></div>
               {answers[row.id].map((rowItem, answerIndex) => (
                 <div key={answerIndex} className={classes.rowItem}>
-                  {responseType === 'radio' ? (
+                  {choiceMode === 'radio' ? (
                     <Radio
                       className={cx({
                         [classes.correct]: (showCorrect && rowItem === true)

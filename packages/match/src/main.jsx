@@ -61,8 +61,8 @@ export class Main extends React.Component {
     let isRequired = false;
 
     if (
-      this.props.model.config.responseType !==
-      nextProps.model.config.responseType
+      this.props.model.config.choiceMode !==
+      nextProps.model.config.choiceMode
     ) {
       isRequired = true;
     }
@@ -107,7 +107,7 @@ export class Main extends React.Component {
       state => ({
         session: {
           ...nextProps.session,
-          // regenerate answers if layout or responseType change
+          // regenerate answers if layout or choiceMode change
           answers: regenAnswers
             ? this.generateAnswers(nextProps.model)
             : nextProps.session.answers
@@ -177,7 +177,7 @@ export class Main extends React.Component {
             disabled={model.disabled}
             view={model.view}
             onAnswerChange={this.onAnswerChange}
-            responseType={model.config.responseType}
+            choiceMode={model.config.choiceMode}
             answers={showCorrect ? model.correctResponse : session.answers}
             headers={model.config.headers}
             rows={shuffledRows}

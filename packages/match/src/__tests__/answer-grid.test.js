@@ -21,7 +21,7 @@ describe('AnswerGrid', () => {
     showCorrect: false,
     disabled: false,
     onAnswerChange: jest.fn(),
-    responseType: 'radio',
+    choiceMode: 'radio',
     rows: [{
       id: 1,
       title: 'Question Text 1',

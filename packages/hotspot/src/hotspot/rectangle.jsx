@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Rect, Group, Text } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
+import Image from './image';
+import { faCorrect, faWrong } from './icons';
+
 class RectComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -34,11 +37,8 @@ class RectComponent extends React.Component {
 
   getEvaluateOutlineColor = (isCorrect, outlineColor) => isCorrect ? outlineColor : 'red';
 
-  getEvaluateOutlineWidth = (selected, isCorrect) => selected ? 2 : (isCorrect ? 0 : 2);
+  getOutlineWidth = (selected) => selected ? 2 : 0;
 
-  getDefaultOutlineWidth = (selected) => selected ? 2 : 0;
-
-  // TODO: Replace text with icons
   getEvaluateText = (isCorrect, selected) => {
     if (selected && isCorrect) {
       return 'Correctly\nselected';
@@ -68,9 +68,14 @@ class RectComponent extends React.Component {
       ? this.getEvaluateOutlineColor(isCorrect, outlineColor)
       : outlineColor;
 
-    const outlineWidth = isEvaluateMode
-      ? this.getEvaluateOutlineWidth(selected, isCorrect)
-      : this.getDefaultOutlineWidth(selected);
+    const outlineWidth = this.getOutlineWidth(selected);
+
+    const iconX = (x + (width / 2)) - 10;
+    const iconY = (y + (height / 2)) - 10;
+    const textX = iconX - 13;
+    const textY = iconY + 25;
+
+    const iconSrc = isCorrect ? faCorrect : faWrong;
 
     return (
       <Group>
@@ -88,14 +93,20 @@ class RectComponent extends React.Component {
           x={x}
           y={y}
         />
-
+        {isEvaluateMode ? (
+          <Image
+            src={iconSrc}
+            x={iconX}
+            y={iconY}
+          />
+        ): null}
         {isEvaluateMode ? (
           <Text
             text={this.getEvaluateText(isCorrect, selected)}
-            x={x}
-            y={y}
+            x={textX}
+            y={textY}
           />
-        ) :null}
+        ) : null}
       </Group>
     );
   }

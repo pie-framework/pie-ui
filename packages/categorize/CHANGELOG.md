@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.12...@pie-ui/categorize@1.0.0) (2019-05-08)
+
+
+### Features
+
+* Removed `model.config` with properties set directly on model: `categoriesPerRow`, `choicesPerRow`, `choicesLabel`, `choicesPosition` ([7d78214](https://github.com/pie-framework/pie-ui/commit/7d78214))
+
+
+### BREAKING CHANGES
+
+* `model.config` will not be used anymore. Instead, use `model.categoriesPerRow`, `model.choicesPerRow`, `model.choicesLabel`, `model.choicesPosition`.
+
+
+
+
+
 ## [0.9.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.11...@pie-ui/categorize@0.9.12) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/categorize

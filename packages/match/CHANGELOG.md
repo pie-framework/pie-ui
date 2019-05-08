@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.2.13...@pie-ui/match@2.0.0) (2019-05-07)
+
+
+### Features
+
+* Replaced `responseType` with `choiceMode` in order to keep consistency. ([7a79108](https://github.com/pie-framework/pie-ui/commit/7a79108))
+
+
+### BREAKING CHANGES
+
+* `responseType` has been replaced with `choiceMode`.
+
+
+
+
+
 ## [1.2.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.2.12...@pie-ui/match@1.2.13) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/match

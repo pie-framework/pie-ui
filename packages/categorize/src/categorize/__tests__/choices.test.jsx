@@ -12,9 +12,6 @@ describe('choices', () => {
       id: '1',
       label: 'Category Label',
       grid: { columns: 1, rows: 1 },
-      config: {
-        columns: 2
-      }
     };
 
     const props = { ...defaults, ...extras };

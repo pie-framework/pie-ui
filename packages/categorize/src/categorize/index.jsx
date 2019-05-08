@@ -114,11 +114,9 @@ export class Categorize extends React.Component {
   render() {
     const { classes, model, session } = this.props;
     const { showCorrect } = this.state;
+    const { choicesPosition, choicesPerRow, categoriesPerRow } = model;
 
-    const choicePosition =
-      model.config && model.config.choices
-        ? model.config.choices.position
-        : 'above';
+    const choicePosition = choicesPosition || 'above';
 
     const style = {
       flexDirection: this.getPositionDirection(choicePosition)
@@ -133,9 +131,7 @@ export class Categorize extends React.Component {
 
     log('[render] disabled: ', model.disabled);
 
-    const { config } = model;
-
-    const columns = config.choices.columns / config.categories.columns;
+    const columns = choicesPerRow / categoriesPerRow;
 
     const maxLength = categories.reduce((acc, c) => {
       if (c.choices.length > acc) {
@@ -157,7 +153,7 @@ export class Categorize extends React.Component {
           />
           <div className={classes.categorize} style={style}>
             <Categories
-              config={model.config.categories}
+              model={model}
               disabled={model.disabled}
               categories={categories}
               onDropChoice={this.dropChoice}
@@ -166,7 +162,7 @@ export class Categorize extends React.Component {
             />
             <Choices
               disabled={model.disabled}
-              config={model.config.choices}
+              model={model}
               choices={choices}
               choicePosition={choicePosition}
             />

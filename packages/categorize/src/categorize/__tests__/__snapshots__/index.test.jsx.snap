@@ -19,27 +19,28 @@ exports[`categorize snapshots incorrect 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
-        }
         grid={
           Object {
-            "columns": 1,
-            "rows": 1,
+            "columns": NaN,
+            "rows": NaN,
+          }
+        }
+        model={
+          Object {
+            "categories": Array [],
+            "choices": Array [],
           }
         }
         onDropChoice={[Function]}
         onRemoveChoice={[Function]}
       />
       <WithStyles(Choices)
-        choicePosition="top"
+        choicePosition="above"
         choices={Array []}
-        config={
+        model={
           Object {
-            "columns": 2,
-            "position": "top",
+            "categories": Array [],
+            "choices": Array [],
           }
         }
       />
@@ -67,27 +68,28 @@ exports[`categorize snapshots renders 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
-        }
         grid={
           Object {
-            "columns": 1,
-            "rows": 1,
+            "columns": NaN,
+            "rows": NaN,
+          }
+        }
+        model={
+          Object {
+            "categories": Array [],
+            "choices": Array [],
           }
         }
         onDropChoice={[Function]}
         onRemoveChoice={[Function]}
       />
       <WithStyles(Choices)
-        choicePosition="top"
+        choicePosition="above"
         choices={Array []}
-        config={
+        model={
           Object {
-            "columns": 2,
-            "position": "top",
+            "categories": Array [],
+            "choices": Array [],
           }
         }
       />
@@ -115,27 +117,58 @@ exports[`categorize snapshots renders with feedback 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
-        }
         grid={
           Object {
-            "columns": 1,
-            "rows": 1,
+            "columns": NaN,
+            "rows": NaN,
+          }
+        }
+        model={
+          Object {
+            "categories": Array [],
+            "choices": Array [],
+            "correctness": "correct",
+            "feedback": Object {
+              "correct": Object {
+                "default": "Correct",
+                "type": "default",
+              },
+              "incorrect": Object {
+                "default": "Incorrect",
+                "type": "default",
+              },
+              "partial": Object {
+                "default": "Nearly",
+                "type": "default",
+              },
+            },
           }
         }
         onDropChoice={[Function]}
         onRemoveChoice={[Function]}
       />
       <WithStyles(Choices)
-        choicePosition="top"
+        choicePosition="above"
         choices={Array []}
-        config={
+        model={
           Object {
-            "columns": 2,
-            "position": "top",
+            "categories": Array [],
+            "choices": Array [],
+            "correctness": "correct",
+            "feedback": Object {
+              "correct": Object {
+                "default": "Correct",
+                "type": "default",
+              },
+              "incorrect": Object {
+                "default": "Incorrect",
+                "type": "default",
+              },
+              "partial": Object {
+                "default": "Nearly",
+                "type": "default",
+              },
+            },
           }
         }
       />

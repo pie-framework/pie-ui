@@ -16,21 +16,23 @@ export class Choices extends React.Component {
         PropTypes.shape({ empty: PropTypes.bool })
       ])
     ),
-    config: PropTypes.shape({
-      columns: PropTypes.number.isRequired
+    model: PropTypes.shape({
+      choicesPerRow: PropTypes.number,
+      choicesLabel: PropTypes.string
     }),
     disabled: PropTypes.bool,
     choicePosition: PropTypes.string
   };
 
   static defaultProps = {
-    config: {
-      columns: 4
+    model: {
+      choicesPerRow: 4,
+      choicesLabel: ''
     }
   };
 
   render() {
-    const { classes, choices, config, disabled, choicePosition } = this.props;
+    const { classes, choices, model, disabled, choicePosition } = this.props;
     let style = {
       textAlign: 'center'
     };
@@ -41,12 +43,12 @@ export class Choices extends React.Component {
 
     return (
       <div className={classes.wrapper}>
-        {config.label &&
-          config.label !== '' && (
-            <div className={classes.labelHolder}>{config.label}</div>
+        {model.choicesLabel &&
+        model.choicesLabel !== '' && (
+            <div className={classes.labelHolder}>{model.choicesLabel}</div>
           )}
         <GridContent
-          columns={config.columns}
+          columns={model.choicesPerRow}
           className={classes.choices}
           extraStyle={style}
         >

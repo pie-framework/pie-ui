@@ -396,16 +396,6 @@ const styles = theme => ({
   expression: {
     marginTop: theme.spacing.unit * 2,
     '& > .mq-math-mode': {
-      '& .mq-non-leaf': {
-        display: 'inline-flex',
-        alignItems: 'center'
-      },
-      '& .mq-non-leaf.mq-fraction': {
-        display: 'inline-block'
-      },
-      '& .mq-paren': {
-        verticalAlign: 'middle'
-      },
       '& > .mq-root-block': {
         '& > .mq-editable-field': {
           minWidth: '10px',

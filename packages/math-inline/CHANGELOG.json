@@ -738,5 +738,20 @@
     "committerDate": "2019-05-03 13:39:32 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.2.3"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "styling fixes",
+    "merge": null,
+    "header": "fix(math-inline): styling fixes",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3cddfeb9a56ebc3ba4b29bf284d38a78ca9d51ac",
+    "gitTags": "",
+    "committerDate": "2019-05-08 10:03:06 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.5"
   }
 ]

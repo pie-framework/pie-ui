@@ -45,8 +45,8 @@ export class NumberLine extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    let initialType = props.model.config
-      ? props.model.config.initialType
+    let initialType = props.model.graph
+      ? props.model.graph.initialType
       : null;
     initialType = initialType
       ? initialType.toLowerCase()
@@ -73,8 +73,8 @@ export class NumberLine extends React.Component {
   }
 
   getDomain() {
-    let config = this.props.model.config;
-    let { domain } = config;
+    let { graph } = this.props.model;
+    let { domain } = graph;
     if (domain.length !== 2) {
       throw new Error('Invalid domain array must have 2 values');
     } else {
@@ -84,10 +84,10 @@ export class NumberLine extends React.Component {
   }
 
   getTicks() {
-    let config = this.props.model.config;
+    let { graph } = this.props.model;
     return {
-      major: config.tickFrequency || 2,
-      minor: config.showMinorTicks ? config.snapPerTick || 0 : 0
+      major: graph.tickFrequency || 2,
+      minor: graph.showMinorTicks ? graph.snapPerTick || 0 : 0
     };
   }
 
@@ -118,7 +118,7 @@ export class NumberLine extends React.Component {
     let {
       answer,
       model: {
-        config: { maxNumberOfPoints }
+        graph: { maxNumberOfPoints }
       }
     } = this.props;
 
@@ -139,11 +139,11 @@ export class NumberLine extends React.Component {
 
   getSize(type, min, max, defaultValue) {
     const {
-      model: { config }
+      model: { graph }
     } = this.props;
 
-    if (config && config[type]) {
-      return Math.max(min, Math.min(max, config[type]));
+    if (graph && graph[type]) {
+      return Math.max(min, Math.min(max, graph[type]));
     } else {
       return defaultValue;
     }
@@ -198,7 +198,7 @@ export class NumberLine extends React.Component {
       : getAnswerElements();
 
     let maxPointsMessage = () =>
-      `You can only add ${model.config.maxNumberOfPoints} elements`;
+      `You can only add ${model.graph.maxNumberOfPoints} elements`;
 
     let deleteElements = () => {
       this.props.onDeleteElements(this.state.selectedElements);
@@ -206,9 +206,9 @@ export class NumberLine extends React.Component {
     };
 
     let getIcons = () => {
-      if (model.config.availableTypes) {
-        return Object.keys(model.config.availableTypes)
-          .filter(k => model.config.availableTypes[k])
+      if (model.graph.availableTypes) {
+        return Object.keys(model.graph.availableTypes)
+          .filter(k => model.graph.availableTypes[k])
           .map(k => k.toLowerCase());
       }
     };

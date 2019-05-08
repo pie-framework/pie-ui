@@ -106,12 +106,12 @@ export default class NumberLine extends HTMLElement {
   _applyInitialElements() {
     if (
       this._model &&
-      this._model.config &&
-      this._model.config.initialElements &&
+      this._model.graph &&
+      this._model.graph.initialElements &&
       this._session &&
       !this._session.answer
     ) {
-      this._session.answer = cloneDeep(this._model.config.initialElements);
+      this._session.answer = cloneDeep(this._model.graph.initialElements);
     }
   }
 

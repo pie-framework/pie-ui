@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.5...@pie-ui/match-list@1.1.6) (2019-05-09)
+
+
+### Bug Fixes
+
+* checked if session.value exists to avoid app crash. ([06a84c1](https://github.com/pie-framework/pie-ui/commit/06a84c1))
+
+
+
+
+
 ## [1.1.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.4...@pie-ui/match-list@1.1.5) (2019-05-08)
 
 **Note:** Version bump only for package @pie-ui/match-list

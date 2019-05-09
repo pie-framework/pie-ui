@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/mathquill": "^0.10.4",
+    "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-input": "^6.0.0",
     "@pie-lib/math-toolbar": "^1.0.1",

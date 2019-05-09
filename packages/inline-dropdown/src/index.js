@@ -4,7 +4,8 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { InlineDropdown as DropDown, componentize } from '@pie-lib/mask-markup';
+import { componentize } from '@pie-lib/mask-markup';
+import InlineDropdown from './inline-dropdown';
 
 const normalize = (v, fields) => {
   return Object.keys(fields).reduce((acc, k) => {
@@ -13,7 +14,7 @@ const normalize = (v, fields) => {
   }, v || {});
 };
 
-export default class InlineDropdown extends HTMLElement {
+export default class RootInlineDropdown extends HTMLElement {
   constructor() {
     super();
     this._model = null;
@@ -46,7 +47,8 @@ export default class InlineDropdown extends HTMLElement {
     if (this._model && this._session) {
       const { ids } = componentize(this._model.markup, 'dropdown');
       this._session.value = normalize(this._session.value, ids);
-      let elem = React.createElement(DropDown, {
+      let elem = React.createElement(InlineDropdown, {
+        prompt: this._model.prompt,
         disabled: this._model.disabled,
         markup: this._model.markup,
         choices: this._model.choices,

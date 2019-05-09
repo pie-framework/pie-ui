@@ -12,6 +12,7 @@ import SimpleQuestionBlock from './simple-question-block';
 let registered = false;
 
 const REGEX = /{{response}}/gm;
+const DEFAULT_KEYPAD_VARIANT = '6';
 
 function generateAdditionalKeys(keyData = []) {
   return keyData.map(key => ({
@@ -350,7 +351,7 @@ export class Main extends React.Component {
                       <HorizontalKeypad
                         key={answerId}
                         additionalKeys={additionalKeys}
-                        mode={model.config.equationEditor}
+                        mode={model.config.equationEditor || DEFAULT_KEYPAD_VARIANT}
                         onClick={this.onClick}
                       />
                     )) ||

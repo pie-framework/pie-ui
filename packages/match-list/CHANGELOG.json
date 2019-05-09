@@ -103,5 +103,20 @@
     "committerDate": "2019-05-02 08:17:09 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.1.3"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "checked if session.value exists to avoid app crash.",
+    "merge": null,
+    "header": "fix: checked if session.value exists to avoid app crash.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "06a84c1d21d60c4583d53813f7b84f52ea005ae2",
+    "gitTags": "",
+    "committerDate": "2019-05-09 09:02:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.1.6"
   }
 ]

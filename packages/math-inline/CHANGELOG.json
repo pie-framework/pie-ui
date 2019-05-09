@@ -753,5 +753,20 @@
     "committerDate": "2019-05-08 10:03:06 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.2.5"
+  },
+  {
+    "type": "chore",
+    "scope": "math-inline",
+    "subject": "session and model change events included",
+    "merge": null,
+    "header": "chore(math-inline): session and model change events included",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "df132f6eed6a22788891129679354407d0667ec1",
+    "gitTags": "",
+    "committerDate": "2019-05-09 11:40:42 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.2.7"
   }
 ]

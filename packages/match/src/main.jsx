@@ -161,6 +161,12 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
+        {model.prompt && (
+          <div
+            className={classes.prompt}
+            dangerouslySetInnerHTML={{ __html: model.prompt }}
+          />
+        )}
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -205,7 +211,11 @@ const styles = theme => ({
   },
   toggle: {
     paddingBottom: theme.spacing.unit * 3
-  }
+  },
+  prompt: {
+    verticalAlign: 'middle',
+    marginBottom: theme.spacing.unit * 2
+  },
 });
 
 export default withStyles(styles)(Main);

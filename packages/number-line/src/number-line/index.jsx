@@ -29,7 +29,11 @@ const styles = {
     '--arrow-color': 'white',
     '--point-stroke': 'white',
     '--point-fill': 'black'
-  }
+  },
+  prompt: {
+    verticalAlign: 'middle',
+    marginBottom: '16px'
+  },
 };
 
 export class NumberLine extends React.Component {
@@ -223,6 +227,12 @@ export class NumberLine extends React.Component {
 
     return (
       <div className={names} style={{ width }}>
+        {model.prompt && (
+          <div
+            className={classes.prompt}
+            dangerouslySetInnerHTML={{ __html: model.prompt }}
+          />
+        )}
         <div>
           <div style={{ width: adjustedWidth }}>
             <Toggle

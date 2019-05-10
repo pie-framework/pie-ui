@@ -28,5 +28,20 @@
     "committerDate": "2019-05-03 13:26:26 +0300",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.0.2"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added prompt support.",
+    "merge": null,
+    "header": "feat: Added prompt support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1e8bebc7a09106af0b236994274ad08b5fd73d6e",
+    "gitTags": "",
+    "committerDate": "2019-05-09 09:31:56 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.1.0"
   }
 ]

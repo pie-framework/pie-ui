@@ -243,5 +243,20 @@
     "committerDate": "2019-05-04 11:32:58 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added prompt support.",
+    "merge": null,
+    "header": "feat: Added prompt support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bae0f6ad3c7d34af3eadd5ba64fdd21278fbfee0",
+    "gitTags": "",
+    "committerDate": "2019-05-10 12:48:04 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.1.0"
   }
 ]

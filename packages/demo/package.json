@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/demo",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "private": true,
   "dependencies": {
     "@material/mwc-button": "^0.3.6",
@@ -15,12 +15,12 @@
     "@pie-ui/function-entry": "^3.2.9",
     "@pie-ui/graph-lines": "^2.0.4",
     "@pie-ui/inline-choice": "^5.3.7",
-    "@pie-ui/inline-dropdown": "^1.1.1",
-    "@pie-ui/match": "^2.1.0",
+    "@pie-ui/inline-dropdown": "^1.1.2",
+    "@pie-ui/match": "^2.1.1",
     "@pie-ui/match-list": "^1.1.8",
     "@pie-ui/math-inline": "^2.2.9",
     "@pie-ui/multiple-choice": "^4.7.15",
-    "@pie-ui/number-line": "^5.1.0",
+    "@pie-ui/number-line": "^5.1.1",
     "@pie-ui/placement-ordering": "^4.6.4",
     "@pie-ui/point-intercept": "^1.2.13",
     "@pie-ui/protractor": "^2.2.9",

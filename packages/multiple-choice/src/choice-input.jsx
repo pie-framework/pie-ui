@@ -11,7 +11,7 @@ import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 import classNames from 'classnames';
 
-const styleSheet = {
+const styleSheet = theme => ({
   label: {
     color: 'var(--choice-input-color, black)',
     display: 'inline-block',
@@ -29,8 +29,11 @@ const styleSheet = {
     '& label': {
       width: 'auto !important'
     }
+  },
+  rationale: {
+    paddingLeft: theme.spacing.unit * 16
   }
-};
+});
 
 const formStyleSheet = {
   label: {
@@ -121,13 +124,16 @@ export class ChoiceInput extends React.Component {
     disabled: PropTypes.bool.isRequired,
     feedback: PropTypes.string,
     label: PropTypes.string.isRequired,
+    rationale: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired,
     classes: PropTypes.object,
     className: PropTypes.string
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    rationale: null
+  };
 
   constructor(props) {
     super(props);
@@ -151,7 +157,8 @@ export class ChoiceInput extends React.Component {
       checked,
       correctness,
       classes,
-      className
+      className,
+      rationale
     } = this.props;
 
     const Tag = choiceMode === 'checkbox' ? StyledCheckbox : StyledRadio;
@@ -180,6 +187,12 @@ export class ChoiceInput extends React.Component {
             />
           </div>
         </div>
+        {rationale && (
+          <div
+            className={classes.rationale}
+            dangerouslySetInnerHTML={{ __html: rationale }}
+          />
+        )}
         <Feedback feedback={feedback} correctness={correctness} />
       </div>
     );

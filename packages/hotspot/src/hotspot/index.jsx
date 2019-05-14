@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-
+import { Collapsible } from '@pie-lib/render-ui';
 import Container from './container';
+import { withStyles } from '@material-ui/core/styles';
 
 class HotspotComponent extends React.Component {
   constructor(props) {
@@ -31,9 +32,11 @@ class HotspotComponent extends React.Component {
         hotspotColor,
         maxImageHeight,
         maxImageWidth,
-        dimensions
+        dimensions,
+        rationale
       },
-      onSelectChoice
+      onSelectChoice,
+      classes
     } = this.props;
 
     const isEvaluateMode = mode === 'evaluate';
@@ -60,15 +63,40 @@ class HotspotComponent extends React.Component {
             disabled={disabled}
           />
         ) : null}
+
+        {
+          rationale && (
+            <div className={classes.collapsible}>
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: rationale }} />
+            </Collapsible>
+            </div>
+          )
+        }
+
       </div>
     );
   }
 }
 
 HotspotComponent.propTypes = {
+  classes: PropTypes.object,
   model: PropTypes.object.isRequired,
   onSelectChoice: PropTypes.func.isRequired,
   session: PropTypes.object.isRequired
 };
 
-export default HotspotComponent;
+HotspotComponent.defaultProps = {
+  classes: {}
+};
+
+const styles = theme => ({
+  collapsible: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+  }
+});
+
+export default withStyles(styles)(HotspotComponent);

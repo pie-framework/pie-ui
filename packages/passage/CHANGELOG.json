@@ -28,5 +28,20 @@
     "committerDate": "2019-05-10 18:42:36 -0400",
     "isTagged": true,
     "tag": "@pie-ui/passage@1.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "update passage title style",
+    "merge": null,
+    "header": "fix: update passage title style",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f8c779fc8fb7c3f9b65f9105adb16f3effff4be9",
+    "gitTags": "",
+    "committerDate": "2019-05-14 17:42:21 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.2.2"
   }
 ]

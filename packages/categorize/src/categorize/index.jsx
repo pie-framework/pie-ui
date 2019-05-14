@@ -10,7 +10,7 @@ import {
   moveChoiceToCategory
 } from '@pie-lib/categorize';
 import { withDragContext, uid } from '@pie-lib/drag';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, Collapsible } from '@pie-lib/render-ui';
 
 import debug from 'debug';
 
@@ -168,9 +168,20 @@ export class Categorize extends React.Component {
             />
           </div>
           {
+            model.rationale && (
+              <div className={classes.collapsible}>
+                <Collapsible
+                  labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+                >
+                  <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+                </Collapsible>
+              </div>
+            )
+          }
+          {
             model.correctness &&
             model.feedback &&
-            !showCorrect &&(
+            !showCorrect && (
               <Feedback
                 correctness={model.correctness}
                 feedback={model.feedback}
@@ -187,6 +198,9 @@ const styles = (theme) => ({
     marginBottom: theme.spacing.unit,
     display: 'flex',
     flexDirection: 'column'
+  },
+  collapsible: {
+    paddingBottom: theme.spacing.unit * 2
   }
 });
 export default withDragContext(withStyles(styles)(Categorize));

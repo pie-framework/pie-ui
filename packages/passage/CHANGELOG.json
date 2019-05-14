@@ -13,5 +13,20 @@
     "committerDate": "2019-04-26 09:53:04 -0400",
     "isTagged": true,
     "tag": "@pie-ui/passage@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "initial paired passages support",
+    "merge": null,
+    "header": "feat: initial paired passages support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c978fa1456f0fdb60d24aa23bd67c3b0c0c602e7",
+    "gitTags": " (origin/evan.eustace/ch1526/support-paired-passages)",
+    "committerDate": "2019-05-10 18:42:36 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.2.0"
   }
 ]

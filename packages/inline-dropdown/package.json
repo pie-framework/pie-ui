@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/inline-dropdown",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",

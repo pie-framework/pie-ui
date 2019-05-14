@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+import { Collapsible } from '@pie-lib/tools';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { Feedback } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
@@ -359,6 +360,16 @@ export class Main extends React.Component {
               )}
           </div>
         </div>
+
+        {
+          model.rationale && (
+            <Collapsible
+              content={model.rationale}
+              collapseTitle="Hide Rationale"
+              extendTitle="Show Rationale"
+            />
+          )
+        }
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
+import { Collapsible, Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
 import isEqual from 'lodash/isEqual';
@@ -189,6 +189,16 @@ export class Main extends React.Component {
             rows={shuffledRows}
           />
         </div>
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}
@@ -216,6 +226,10 @@ const styles = theme => ({
     verticalAlign: 'middle',
     marginBottom: theme.spacing.unit * 2
   },
+  collapsible: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+  }
 });
 
 export default withStyles(styles)(Main);

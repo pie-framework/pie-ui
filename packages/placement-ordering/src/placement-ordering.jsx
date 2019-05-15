@@ -201,13 +201,12 @@ export class PlacementOrdering extends React.Component {
         <br />
         {
           model.rationale && (
-            <div className={classes.collapsible}>
-              <Collapsible
-                labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-              >
-                <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
-              </Collapsible>
-            </div>
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
           )
         }
         {!showingCorrect && (

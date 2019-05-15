@@ -69,6 +69,12 @@ describe('PlacementOrdering', () => {
       let w = mkWrapper({ correctResponse: ['c1', 'c2', 'c3', 'c4'] });
       expect(w).toMatchSnapshot();
     });
+
+    it('snapshot with rationale', () => {
+      let w = mkWrapper({ rationale: 'This is rationale.' });
+
+      expect(w).toMatchSnapshot();
+    });
   });
 
   const ordering = d => ({

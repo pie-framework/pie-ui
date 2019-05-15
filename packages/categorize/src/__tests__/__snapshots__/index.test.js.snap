@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`categorize renders snapshot 1`] = `undefined`;
+
+exports[`categorize renders snapshot with rationale 1`] = `undefined`;

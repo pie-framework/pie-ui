@@ -768,5 +768,35 @@
     "committerDate": "2019-05-09 11:40:42 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.2.7"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated rationale support.",
+    "merge": null,
+    "header": "fix: Updated rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f0b672831b91cd3e85a284386197f87033bb0567",
+    "gitTags": " (origin/andreea/ch1490/rationale-support-math-inline)",
+    "committerDate": "2019-05-14 13:22:15 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added rationale support.",
+    "merge": null,
+    "header": "feat: Added rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3b794af6fb14312e9d7c08c6185f73601a4bea8f",
+    "gitTags": "",
+    "committerDate": "2019-05-14 11:47:30 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.0"
   }
 ]

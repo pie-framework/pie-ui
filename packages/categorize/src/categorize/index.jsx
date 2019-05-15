@@ -41,7 +41,6 @@ export class Categorize extends React.Component {
 
   constructor(props) {
     super(props);
-    this.uid = uid.generateId();
 
     this.state = {
       showCorrect: false
@@ -144,54 +143,68 @@ export class Categorize extends React.Component {
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
     return (
-      <uid.Provider value={this.uid}>
-        <div>
-          <CorrectAnswerToggle
-            show={showCorrect || correct === false}
-            toggled={showCorrect}
-            onToggle={this.toggleShowCorrect}
+      <div>
+        <CorrectAnswerToggle
+          show={showCorrect || correct === false}
+          toggled={showCorrect}
+          onToggle={this.toggleShowCorrect}
+        />
+        <div className={classes.categorize} style={style}>
+          <Categories
+            model={model}
+            disabled={model.disabled}
+            categories={categories}
+            onDropChoice={this.dropChoice}
+            onRemoveChoice={this.removeChoice}
+            grid={grid}
           />
-          <div className={classes.categorize} style={style}>
-            <Categories
-              model={model}
-              disabled={model.disabled}
-              categories={categories}
-              onDropChoice={this.dropChoice}
-              onRemoveChoice={this.removeChoice}
-              grid={grid}
-            />
-            <Choices
-              disabled={model.disabled}
-              model={model}
-              choices={choices}
-              choicePosition={choicePosition}
-            />
-          </div>
-          {
-            model.rationale && (
-              <Collapsible
-                labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-                className={classes.collapsible}
-              >
-                <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
-              </Collapsible>
-            )
-          }
-          {
-            model.correctness &&
-            model.feedback &&
-            !showCorrect && (
-              <Feedback
-                correctness={model.correctness}
-                feedback={model.feedback}
-              />
-            )
-          }
+          <Choices
+            disabled={model.disabled}
+            model={model}
+            choices={choices}
+            choicePosition={choicePosition}
+          />
         </div>
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
+        {
+          model.correctness &&
+          model.feedback &&
+          !showCorrect && (
+            <Feedback
+              correctness={model.correctness}
+              feedback={model.feedback}
+            />
+          )
+        }
+      </div>
+    );
+  }
+}
+
+class CategorizeProvider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.uid = uid.generateId();
+  }
+
+  render() {
+    return (
+      <uid.Provider value={this.uid}>
+        <Categorize { ...this.props } />
       </uid.Provider>
     );
   }
 }
+
 const styles = (theme) => ({
   categorize: {
     marginBottom: theme.spacing.unit,
@@ -202,4 +215,4 @@ const styles = (theme) => ({
     paddingBottom: theme.spacing.unit * 2
   }
 });
-export default withDragContext(withStyles(styles)(Categorize));
+export default withDragContext(withStyles(styles)(CategorizeProvider));

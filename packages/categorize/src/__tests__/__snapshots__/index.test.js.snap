@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`categorize renders snapshot 1`] = `
+<div>
+  <_default
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    style={
+      Object {
+        "flexDirection": "column-reverse",
+      }
+    }
+  >
+    <WithStyles(Categories)
+      categories={Array []}
+      grid={
+        Object {
+          "columns": NaN,
+          "rows": NaN,
+        }
+      }
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
+          "correctResponse": Array [],
+        }
+      }
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices)
+      choicePosition="above"
+      choices={Array []}
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
+          "correctResponse": Array [],
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`categorize renders snapshot with rationale 1`] = `
+<div>
+  <_default
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    style={
+      Object {
+        "flexDirection": "column-reverse",
+      }
+    }
+  >
+    <WithStyles(Categories)
+      categories={Array []}
+      grid={
+        Object {
+          "columns": NaN,
+          "rows": NaN,
+        }
+      }
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
+          "correctResponse": Array [],
+          "rationale": "This is rationale",
+        }
+      }
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices)
+      choicePosition="above"
+      choices={Array []}
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
+          "correctResponse": Array [],
+          "rationale": "This is rationale",
+        }
+      }
+    />
+  </div>
+  <Component
+    labels={
+      Object {
+        "hidden": "Show Rationale",
+        "visible": "Hide Rationale",
+      }
+    }
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "This is rationale",
+        }
+      }
+    />
+  </Component>
+</div>
+`;

@@ -1,6 +1,6 @@
 import { HorizontalTiler, VerticalTiler } from './tiler';
 import { buildState, reducer } from './ordering';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, Collapsible } from '@pie-lib/render-ui';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -199,6 +199,16 @@ export class PlacementOrdering extends React.Component {
           onRemoveChoice={this.onRemoveChoice}
         />
         <br />
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
         {!showingCorrect && (
           <Feedback correctness={model.correctness} feedback={model.feedback} />
         )}
@@ -207,7 +217,7 @@ export class PlacementOrdering extends React.Component {
   }
 }
 
-const styles = {
+const styles = theme => ({
   placementOrdering: {
     display: 'flex',
     flexDirection: 'column',
@@ -217,7 +227,12 @@ const styles = {
   prompt: {
     padding: '5px',
     paddingBottom: '15px'
+  },
+  collapsible: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    alignSelf: 'flex-start'
   }
-};
+});
 
 export default withStyles(styles)(PlacementOrdering);

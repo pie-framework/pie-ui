@@ -66,13 +66,12 @@ class HotspotComponent extends React.Component {
 
         {
           rationale && (
-            <div className={classes.collapsible}>
             <Collapsible
               labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
             >
               <div dangerouslySetInnerHTML={{ __html: rationale }} />
             </Collapsible>
-            </div>
           )
         }
 

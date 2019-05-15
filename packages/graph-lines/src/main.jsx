@@ -3,7 +3,7 @@ import { GraphLines, lineUtils as utils } from '@pie-lib/charting';
 import PropTypes from 'prop-types';
 import Controls from './controls';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { Feedback } from '@pie-lib/render-ui';
 import GraphLineControls from './GraphLineControls';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -251,17 +251,6 @@ export class Main extends React.Component {
             onLineClick={this.toggleSelectLine}
           />
         </div>
-        {
-          model.rationale && (
-            <div className={classes.collapsible}>
-              <Collapsible
-                labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-              >
-                <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
-              </Collapsible>
-            </div>
-          )
-        }
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}
@@ -289,10 +278,6 @@ const styles = theme => ({
   },
   toggle: {
     paddingBottom: theme.spacing.unit * 3
-  },
-  collapsible: {
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
   }
 });
 

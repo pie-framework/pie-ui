@@ -2009,7 +2009,7 @@
     debug "^4.1.1"
     keycode "^2.2.0"
 
-"@pie-lib/render-ui@^4.3.1", "@pie-lib/render-ui@^4.3.9":
+"@pie-lib/render-ui@^4.3.1", "@pie-lib/render-ui@^4.3.8", "@pie-lib/render-ui@^4.3.9":
   version "4.3.10"
   resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.3.10.tgz#0c0d2b8157ff4956fd053c096935a01dcc4f210e"
   integrity sha512-/qPcF5ryuSMNn712txOaLueUSHNPs/6fF+WQUwXgx06ysIp5w8EsAXVKPjHQc5DaVRK35H/FWtLRyNB2QNn+4A==
@@ -2021,10 +2021,10 @@
     debug "^4.1.1"
     react-transition-group "^2.5.2"
 
-"@pie-lib/render-ui@^4.3.11":
-  version "4.3.11"
-  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.3.11.tgz#ec86e319e631e208392bfd2a590e38fad490a2a5"
-  integrity sha512-cQg5B4w/LA8Ejf9Eo0QKKUYIWfM2H5ccgKm4wIN3ip7GQb/aErWQOelaf/O5m90u8+XOIK0wO/oANnW3s7jenA==
+"@pie-lib/render-ui@^4.3.12":
+  version "4.3.12"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.3.12.tgz#8c834779d8a66548c425a07607d5be9409de46ba"
+  integrity sha512-RVRGyG4d+XED6dLxbtyztICGdvgZV2wBh5gzGfWBAbkNrW7p8o+Qha+x4xvpERPSYQDGC2jk/A/lakncBFi0DA==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"

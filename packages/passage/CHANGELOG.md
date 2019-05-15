@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.2...@pie-ui/passage@1.2.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* don't render title if only one passage ([#104](https://github.com/pie-framework/pie-ui/issues/104)) ([5632ef9](https://github.com/pie-framework/pie-ui/commit/5632ef9))
+
+
+
+
+
 ## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.1...@pie-ui/passage@1.2.2) (2019-05-14)
 
 

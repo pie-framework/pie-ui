@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.14...@pie-ui/ebsr@1.1.15) (2019-05-15)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
 ## [1.1.14](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.13...@pie-ui/ebsr@1.1.14) (2019-04-26)
 
 **Note:** Version bump only for package @pie-ui/ebsr

@@ -53,6 +53,19 @@ describe('ChoiceInput', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
       });
     });
+
+    describe('rationale', () => {
+      it('does not render', () => {
+        const wrapper = mkWrapper();
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
+
+      it('renders', () => {
+        const wrapper = mkWrapper({ rationale: 'This is rationale' });
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
+    });
+
   });
 
   describe('onToggleChoice', () => {

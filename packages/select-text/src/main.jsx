@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TextSelect } from '@pie-lib/text-select';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, Collapsible } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 
 import debug from 'debug';
@@ -72,6 +72,16 @@ export class Main extends React.Component {
           highlightChoices={model.highlightChoices}
           maxNoOfSelections={model.maxSelections}
         />
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
         {model.correctness && model.feedback && !showCorrectAnswer && (
           <Feedback correctness={model.correctness} feedback={model.feedback} />
         )}
@@ -88,6 +98,10 @@ const StyledMain = withStyles(theme => ({
   prompt: {
     verticalAlign: 'middle',
     marginBottom: theme.spacing.unit
+  },
+  collapsible: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 3
   }
 }))(Main);
 

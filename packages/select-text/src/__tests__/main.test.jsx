@@ -3,7 +3,7 @@ import React from 'react';
 import { Main } from '../main';
 
 describe('main', () => {
-  const getWrapper = () => {
+  const getWrapper = props => {
     return shallow(
       <Main
         onSelectionChange={jest.fn()}
@@ -15,6 +15,7 @@ describe('main', () => {
           selectedTokens: [{ start: 0, end: 1, text: 'f' }]
         }}
         classes={{}}
+        { ...props }
       />
     );
   };
@@ -22,6 +23,11 @@ describe('main', () => {
   describe('snapshot', () => {
     it('renders', () => {
       const w = getWrapper();
+      expect(w).toMatchSnapshot();
+    });
+
+    it('renders rationale', () => {
+      const w = getWrapper({ rationale: 'This is rationale '});
       expect(w).toMatchSnapshot();
     });
 

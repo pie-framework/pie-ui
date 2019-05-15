@@ -2,7 +2,7 @@
 
 exports[`categorize renders snapshot 1`] = `
 <ContextProvider
-  value="883166"
+  value="903793"
 >
   <div>
     <_default
@@ -53,7 +53,7 @@ exports[`categorize renders snapshot 1`] = `
 
 exports[`categorize renders snapshot with rationale 1`] = `
 <ContextProvider
-  value="282094"
+  value="899056"
 >
   <div>
     <_default

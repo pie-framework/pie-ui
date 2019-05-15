@@ -22,15 +22,17 @@ describe('categorize', () => {
         session: {},
         classes: {}
       };
-      shallow(<UnStyledCategorize { ...defaultProps } />)
+      return shallow(<UnStyledCategorize { ...defaultProps } />)
     };
 
     it('snapshot', () => {
-      expect(wrapper()).toMatchSnapshot();
+      const w = wrapper();
+      expect(w).toMatchSnapshot();
     });
 
     it('snapshot with rationale', () => {
-      expect(wrapper({ rationale: 'This is rationale'})).toMatchSnapshot();
+      const w = wrapper({ rationale: 'This is rationale'});
+      expect(w).toMatchSnapshot();
     });
   });
 

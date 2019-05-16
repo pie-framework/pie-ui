@@ -43,5 +43,20 @@
     "committerDate": "2019-05-14 17:42:21 -0400",
     "isTagged": true,
     "tag": "@pie-ui/passage@1.2.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "don't render title if only one passage (#104)",
+    "merge": null,
+    "header": "fix: don't render title if only one passage (#104)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5632ef91a48cbfd6f3c496dec1a80801db3ecf8d",
+    "gitTags": "",
+    "committerDate": "2019-05-15 09:49:13 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.2.3"
   }
 ]

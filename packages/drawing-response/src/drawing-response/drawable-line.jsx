@@ -32,7 +32,7 @@ export default class LineDrawable extends DrawableHelper {
       <Arrow
         draggable={draggable}
         points={points}
-        fill={this.paintColor || fillColor}
+        fill={this.paintColor || outlineColor}
         onClick={() => this.handleOnClick(props)}
         stroke={this.paintColor || outlineColor}
       />

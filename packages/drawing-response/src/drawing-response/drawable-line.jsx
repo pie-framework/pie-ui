@@ -15,16 +15,26 @@ export default class LineDrawable extends DrawableHelper {
     this.y = y;
   }
 
+  handleOnClick(props) {
+    const { paint, paintColor, forceUpdate } = props;
+
+    if (paint) {
+      this.paintColor = paintColor;
+      forceUpdate();
+    }
+  }
+
   render(props) {
-    const { draggable } = props;
+    const { draggable, fillColor, outlineColor } = props;
     const points = [this.startx, this.starty, this.x, this.y];
 
     return (
       <Arrow
         draggable={draggable}
         points={points}
-        fill="black"
-        stroke="black"
+        fill={this.paintColor || fillColor}
+        onClick={() => this.handleOnClick(props)}
+        stroke={this.paintColor || outlineColor}
       />
     );
   }

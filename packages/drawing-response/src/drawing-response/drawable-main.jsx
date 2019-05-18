@@ -9,6 +9,7 @@ import FreePathDrawable from './drawable-free-path';
 import LineDrawable from './drawable-line';
 import RectangleDrawable from './drawable-rectangle';
 import CircleDrawable from './drawable-circle';
+import EraserDrawable from './drawable-eraser';
 
 class DrawableMain extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class DrawableMain extends React.Component {
       LineDrawable,
       RectangleDrawable,
       CircleDrawable,
+      EraserDrawable
     };
     return new drawableClasses[type](x, y);
   };
@@ -75,15 +77,25 @@ class DrawableMain extends React.Component {
     const {
       classes,
       drawableDimensions,
+      fillColor,
       imageDimensions,
       imageUrl,
-      toolIsSelect
+      outlineColor,
+      paintColor,
+      toolActive: { type }
     } = this.props;
 
+    const draggable = type === 'Select';
+    const paint = type === 'PaintBucket';
     const drawables = [...this.state.drawables, ...this.state.newDrawable];
 
     const drawableProps = {
-      draggable: toolIsSelect
+      draggable,
+      paint,
+      paintColor,
+      fillColor,
+      forceUpdate: () => this.setState({ updatedAt: new Date() }),
+      outlineColor
     };
 
     return (
@@ -99,7 +111,7 @@ class DrawableMain extends React.Component {
           className={classes.stage}
           height={drawableDimensions.height}
           width={drawableDimensions.width}
-          {...toolIsSelect ? {} : {
+          {...draggable ? {} : {
             onMouseDown: this.handleMouseDown,
             onMouseUp: this.handleMouseUp,
             onMouseMove: this.handleMouseMove
@@ -129,10 +141,12 @@ const styles = theme => ({
 DrawableMain.propTypes = {
   classes: PropTypes.object.isRequired,
   drawableDimensions: PropTypes.object.isRequired,
+  fillColor: PropTypes.string.isRequired,
+  paintColor: PropTypes.string.isRequired,
+  outlineColor: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   session: PropTypes.object.isRequired,
-  toolActive: PropTypes.object.isRequired,
-  toolIsSelect: PropTypes.bool.isRequired
+  toolActive: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(DrawableMain);

@@ -3,7 +3,7 @@ import { Line } from 'react-konva';
 
 import DrawableHelper from './drawable-helper';
 
-export default class FreePathDrawable extends DrawableHelper {
+export default class EraserDrawable extends DrawableHelper {
   constructor(startx, starty) {
     super(startx, starty);
     this.points = [startx, starty];
@@ -13,27 +13,22 @@ export default class FreePathDrawable extends DrawableHelper {
     this.points = [...this.points, x, y];
   }
 
-  handleOnClick(props) {
-    const { paint, paintColor, forceUpdate } = props;
-
-    if (paint) {
-      this.paintColor = paintColor;
-      forceUpdate();
-    }
-  }
-
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable } = props;
 
     return (
       <Line
         draggable={draggable}
+        globalCompositeOperation="destination-out"
         tension={0}
         bezier={true}
         points={this.points}
-        fill={this.paintColor || fillColor}
-        onClick={() => this.handleOnClick(props)}
-        stroke={this.paintColor || outlineColor}
+        strokeStyle='#df4b26'
+        lineJoin="round"
+        lineWidth="5"
+        fill="white"
+        stroke="white"
+        strokeWidth={5}
       />
     );
   }

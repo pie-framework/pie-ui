@@ -15,8 +15,17 @@ export default class RectangleDrawable extends DrawableHelper {
     this.y = y;
   }
 
+  handleOnClick(props) {
+    const { paint, paintColor, forceUpdate } = props;
+
+    if (paint) {
+      this.paintColor = paintColor;
+      forceUpdate();
+    }
+  }
+
   render(props) {
-    const { draggable } = props;
+    const { draggable, fillColor, outlineColor } = props;
     const width = this.x - this.startx;
     const height = this.y - this.starty;
 
@@ -24,9 +33,10 @@ export default class RectangleDrawable extends DrawableHelper {
       <Rect
         width={width}
         height={height}
-        fill="white"
+        fill={this.paintColor || fillColor}
+        onClick={() => this.handleOnClick(props)}
+        stroke={outlineColor}
         draggable={draggable}
-        stroke="black"
         strokeWidth={2}
         x={this.startx}
         y={this.starty}

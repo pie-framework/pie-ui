@@ -15,8 +15,17 @@ export default class CircleDrawable extends DrawableHelper {
     this.y = y;
   }
 
+  handleOnClick(props) {
+    const { paint, paintColor, forceUpdate } = props;
+
+    if (paint) {
+      this.paintColor = paintColor;
+      forceUpdate();
+    }
+  }
+
   render(props) {
-    const { draggable } = props;
+    const { draggable, fillColor, outlineColor } = props;
     const dx = this.startx - this.x;
     const dy = this.starty - this.y;
     const radius = Math.sqrt(dx * dx + dy * dy);
@@ -27,7 +36,9 @@ export default class CircleDrawable extends DrawableHelper {
         radius={radius}
         x={this.startx}
         y={this.starty}
-        stroke="black"
+        fill={this.paintColor || fillColor}
+        onClick={() => this.handleOnClick(props)}
+        stroke={outlineColor}
       />
     );
   }

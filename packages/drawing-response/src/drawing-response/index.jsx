@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
+
+import Container from './container';
 
 class DrawingResponseComponent extends React.Component {
   constructor(props) {
@@ -10,9 +13,34 @@ class DrawingResponseComponent extends React.Component {
   }
 
   render() {
+    console.log('This props: ', this.props);
+    const {
+      session,
+      model: {
+        disabled,
+        imageDimensions,
+        imageUrl,
+        prompt,
+        mode
+      }
+    } = this.props;
+
+
+    const isEvaluateMode = mode === 'evaluate';
+
     return (
       <div>
-        Drawing response player
+        <Typography>
+          <span dangerouslySetInnerHTML={{ __html: prompt }} />
+        </Typography>
+
+        <Container
+          isEvaluateMode={isEvaluateMode}
+          imageDimensions={imageDimensions}
+          session={session}
+          imageUrl={imageUrl}
+          disabled={disabled}
+        />
       </div>
     );
   }

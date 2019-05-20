@@ -7,6 +7,7 @@ import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 import { ResponseTypes } from './utils';
 import isEqual from 'lodash/isEqual';
+import cx from 'classnames';
 import SimpleQuestionBlock from './simple-question-block';
 
 let registered = false;
@@ -114,10 +115,10 @@ export class Main extends React.Component {
     const answers = session.answers;
 
     if (this.root && model.disabled && !showCorrect) {
-      Object.keys(answers).forEach((answerId, idx) => {
+      Object.keys(answers).forEach(answerId => {
         const el = this.root.querySelector(`#${answerId}`);
         const indexEl = this.root.querySelector(`#${answerId}Index`);
-        const correct = model.correctness && model.correctness.correct;
+        // const correct = model.correctness && model.correctness.correct;
 
         if (el) {
           const MathQuill = require('@pie-framework/mathquill');
@@ -127,9 +128,11 @@ export class Main extends React.Component {
           el.textContent = answer && answer.value || '';
 
           if (!model.view) {
-            el.parentElement.parentElement.classList.add(
-              correct ? classes.correct : classes.incorrect
-            );
+            // for now, we're not going to be showing individual response correctness
+            // TODO re-attach the classes once we are
+            // el.parentElement.parentElement.classList.add(
+            //   correct ? classes.correct : classes.incorrect
+            // );
           } else {
             el.parentElement.parentElement.classList.remove(classes.correct);
             el.parentElement.parentElement.classList.remove(classes.incorrect);
@@ -137,7 +140,10 @@ export class Main extends React.Component {
 
           MQ.StaticMath(el);
 
-          indexEl.textContent = `R${idx + 1}`;
+          // For now, we're not going to be indexing response blocks
+          // TODO go back to indexing once we support individual response correctness
+          // indexEl.textContent = `R${idx + 1}`;
+          indexEl.textContent = 'R';
         }
       });
     }
@@ -305,6 +311,7 @@ export class Main extends React.Component {
     }
 
     const additionalKeys = generateAdditionalKeys(model.config.customKeys);
+    const correct = model.correctness && model.correctness.correct;
 
     return (
       <div
@@ -331,7 +338,11 @@ export class Main extends React.Component {
             />
           )}
           {model.config.responseType === ResponseTypes.advanced && (
-            <div className={classes.expression}>
+            <div className={cx(classes.expression, {
+              [classes.incorrect]: !correct,
+              [classes.correct]: correct,
+              [classes.showCorrectness]: model.disabled && model.correctness && !model.view
+            })}>
               <mq.Static
                 ref={mqStatic => (this.mqStatic = mqStatic || this.mqStatic)}
                 latex={prepareForStatic(model, state) || ''}
@@ -405,6 +416,9 @@ const styles = theme => ({
         }
       }
     }
+  },
+  showCorrectness: {
+    border: '2px solid',
   },
   correct: {
     borderColor: 'green !important'

@@ -13,7 +13,6 @@ class DrawingResponseComponent extends React.Component {
   }
 
   render() {
-    console.log('This props: ', this.props);
     const {
       session,
       model: {

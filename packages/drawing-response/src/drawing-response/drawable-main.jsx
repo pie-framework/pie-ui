@@ -82,6 +82,7 @@ class DrawableMain extends React.Component {
       imageUrl,
       outlineColor,
       paintColor,
+      TextEntry,
       toolActive: { type }
     } = this.props;
 
@@ -107,6 +108,8 @@ class DrawableMain extends React.Component {
           />
         )}
 
+        {TextEntry.renderTextareas(drawableProps)}
+
         <Stage
           className={classes.stage}
           height={drawableDimensions.height}
@@ -119,6 +122,8 @@ class DrawableMain extends React.Component {
         >
           <Layer>
             {drawables.map(drawable => drawable.render(drawableProps))}
+            {/* Text Entry is a special case  */}
+            {TextEntry.render(drawableProps)}
           </Layer>
         </Stage>
       </div>
@@ -133,8 +138,8 @@ const styles = theme => ({
   },
   stage: {
     left: 0,
-    top: 0,
-    position: 'absolute'
+    position: 'absolute',
+    top: 0
   },
 });
 

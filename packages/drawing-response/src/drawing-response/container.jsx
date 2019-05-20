@@ -6,12 +6,15 @@ import constants from './constants';
 import Button from './button';
 import DrawablePalette from './drawable-palette';
 import DrawableMain from './drawable-main';
+import DrawableText from './drawable-text';
 
 const { tools: TOOLS } = constants;
 
 class Container extends Component {
   constructor(props) {
     super(props);
+    const TextEntry = new DrawableText();
+
     this.state = {
       drawableDimensions: {
         height: 0,
@@ -39,7 +42,8 @@ class Container extends Component {
         'blue',
         'violet'
       ],
-    }
+      TextEntry
+    };
   }
 
   componentDidMount() {
@@ -55,13 +59,32 @@ class Container extends Component {
   handleUndo = () => { };
   handleClearAll = () => {};
 
-  makeToolActive(tool) {
-    this.setState({
-      toolActive: tool
-    });
+  handleMakeToolActive(tool) {
+    const { TextEntry } = this.state;
+    const { type } = tool;
+    if (type !== 'Text') {
+      this.setState({
+        toolActive: tool
+      });
+    } else {
+      TextEntry.addNewTextEntry();
+      // Force update
+      this.setState({
+        // Make select tool by default
+        toolActive: TOOLS[0],
+        updatedAt: new Date()
+      });
+    }
   }
 
-  isOfType = (type) => type === this.state.toolActive.type;
+  checkIfToolIsDisabled = (type) => {
+    const { toolActive } = this.state;
+    // Text will never be disabled since on each "Text Entry" click a new text is added
+    if (type === 'Text') {
+      return false;
+    }
+    return type === toolActive.type;
+  };
 
   handleColorChange(type, color) {
     const cType = `${type}Color`;
@@ -74,7 +97,7 @@ class Container extends Component {
     const {
       classes,
       imageUrl,
-      imageDimensions,
+      imageDimensions
     } = this.props;
     const {
       drawableDimensions,
@@ -84,7 +107,8 @@ class Container extends Component {
       outlineColor,
       outlineColorList,
       paintColor,
-      paintColorList
+      paintColorList,
+      TextEntry
     } = this.state;
 
     return (
@@ -110,8 +134,8 @@ class Container extends Component {
                 return (
                   <Button
                     key={type}
-                    disabled={this.isOfType(type)}
-                    onClick={() => this.makeToolActive(tool)}
+                    disabled={this.checkIfToolIsDisabled(type)}
+                    onClick={() => this.handleMakeToolActive(tool)}
                     label={label}
                   />
                 )
@@ -138,6 +162,7 @@ class Container extends Component {
               drawableDimensions={drawableDimensions}
               imageDimensions={imageDimensions}
               toolActive={toolActive}
+              TextEntry={TextEntry}
             />
           </div>
         </div>

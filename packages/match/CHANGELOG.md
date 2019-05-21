@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.0...@pie-ui/match@2.2.1) (2019-05-21)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+# [2.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.1.2...@pie-ui/match@2.2.0) (2019-05-16)
+
+
+### Features
+
+* Added rationale support. ([ce71c6e](https://github.com/pie-framework/pie-ui/commit/ce71c6e))
+
+
+
+
+
 ## [2.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.1.1...@pie-ui/match@2.1.2) (2019-05-14)
 
 **Note:** Version bump only for package @pie-ui/match

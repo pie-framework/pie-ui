@@ -43,5 +43,20 @@
     "committerDate": "2019-05-09 09:31:56 +0300",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": "mask-markup-ui",
+    "subject": "added math rendering and prompts to all elements",
+    "merge": null,
+    "header": "feat(mask-markup-ui): added math rendering and prompts to all elements",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "94b7b975c7e408a8e2dfdc8c77321747e6cf1660",
+    "gitTags": "",
+    "committerDate": "2019-05-21 06:49:47 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.2.0"
   }
 ]

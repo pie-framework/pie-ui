@@ -4,16 +4,17 @@ exports[`Math-Inline Main render renders correctly with snapshot 1`] = `
 <Main
   classes={
     Object {
-      "blockContainer": "Main-blockContainer-10",
-      "blockMath": "Main-blockMath-12",
-      "blockResponse": "Main-blockResponse-11",
+      "blockContainer": "Main-blockContainer-11",
+      "blockMath": "Main-blockMath-13",
+      "blockResponse": "Main-blockResponse-12",
       "content": "Main-content-4",
-      "correct": "Main-correct-8",
+      "correct": "Main-correct-9",
       "expression": "Main-expression-7",
-      "incorrect": "Main-incorrect-9",
+      "incorrect": "Main-incorrect-10",
       "main": "Main-main-2",
       "mainContainer": "Main-mainContainer-1",
       "responseContainer": "Main-responseContainer-5",
+      "showCorrectness": "Main-showCorrectness-8",
       "title": "Main-title-3",
       "toggle": "Main-toggle-6",
     }

@@ -107,7 +107,6 @@ exports[`Main render renders correctly 1`] = `
                 "title": "Answer 6",
               },
             ],
-            "layout": 3,
             "prompt": "Your prompt goes here",
             "prompts": Array [
               Object {
@@ -131,7 +130,6 @@ exports[`Main render renders correctly 1`] = `
                 "title": "Prompt 2",
               },
             ],
-            "responseType": "radio",
             "shuffled": false,
           },
           "element": "match-list",
@@ -186,7 +184,6 @@ exports[`Main render renders correctly 1`] = `
               "title": "Answer 6",
             },
           ],
-          "layout": 3,
           "prompt": "Your prompt goes here",
           "prompts": Array [
             Object {
@@ -210,7 +207,6 @@ exports[`Main render renders correctly 1`] = `
               "title": "Prompt 2",
             },
           ],
-          "responseType": "radio",
           "shuffled": false,
         },
         "element": "match-list",

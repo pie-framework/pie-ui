@@ -22,7 +22,7 @@ export default class TextDrawable {
 
     all.push({
       id: id,
-      label: 'Double click to edit this text',
+      label: '',
       width: 200,
       x: (all.length + 1) * 5 + 50,
       y: (all.length + 1) * 5 + 50,
@@ -31,15 +31,6 @@ export default class TextDrawable {
       textareaVisible: false
     });
   };
-
-  forceUpdate() {
-    const { forceUpdate } = props;
-
-    if (paint) {
-      this.paintColor = paintColor;
-      forceUpdate();
-    }
-  }
 
   hide(id, props) {
     this.all = this.all.map(item => {
@@ -69,6 +60,15 @@ export default class TextDrawable {
       return item;
     });
     props.forceUpdate();
+  }
+
+  removeTextarea = (id, props) => { this.show(id, props); };
+
+  handleOutsideClick(e, textareaNode) {
+    if (e.target !== textareaNode) {
+      // textNode.text(textareaNode.value);
+      // removeTextarea();
+    }
   }
 
   handleDblClick = (e, id, props) => {
@@ -118,29 +118,21 @@ export default class TextDrawable {
 
     textareaNode.focus();
 
-    const removeTextarea = () => { this.show(id, props); };
-
-    textareaNode.addEventListener('keydown', function(e) {
+    textareaNode.addEventListener('keydown', (e) => {
       // hide on enter
       // but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
         textNode.text(textareaNode.value);
-        removeTextarea();
+        this.removeTextarea();
       }
       // on esc do not set value back to node
       if (e.keyCode === 27) {
-        removeTextarea();
+        this.removeTextarea();
       }
     });
 
-    function handleOutsideClick(e) {
-      if (e.target !== textareaNode) {
-        // textNode.text(textareaNode.value);
-        // removeTextarea();
-      }
-    }
     setTimeout(() => {
-      window.addEventListener('click', handleOutsideClick);
+      window.addEventListener('click', this.handleOutsideClick);
     });
     props.forceUpdate();
   };

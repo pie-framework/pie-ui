@@ -798,5 +798,35 @@
     "committerDate": "2019-05-14 11:47:30 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.3.0"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "snapshot update",
+    "merge": null,
+    "header": "chore: snapshot update",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fcb9a29d8f3bf997c65061fc4a7308683cb47da8",
+    "gitTags": " (origin/fix/math-inline-related-fixes)",
+    "committerDate": "2019-05-21 16:52:36 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.2"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "disable individual answer correctness support for now",
+    "merge": null,
+    "header": "fix(math-inline): disable individual answer correctness support for now",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4092863ba6c5b60b9893a135d4418cc9559e0cde",
+    "gitTags": "",
+    "committerDate": "2019-05-20 12:18:31 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.2"
   }
 ]

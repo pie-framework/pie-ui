@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.2.9",
+  "version": "2.3.1",
   "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
   "main": "lib/index.js",
   "dependencies": {
@@ -13,7 +13,7 @@
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/math-input": "^6.0.0",
     "@pie-lib/math-toolbar": "^1.0.1",
-    "@pie-lib/render-ui": "^4.3.8",
+    "@pie-lib/render-ui": "^4.3.11",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",

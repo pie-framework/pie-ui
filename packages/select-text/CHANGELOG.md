@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.16...@pie-ui/select-text@1.6.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale. ([64c1aa3](https://github.com/pie-framework/pie-ui/commit/64c1aa3))
+
+
+### Features
+
+* Added rationale support. ([e4c2cf9](https://github.com/pie-framework/pie-ui/commit/e4c2cf9))
+
+
+
+
+
 ## [1.5.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.5.15...@pie-ui/select-text@1.5.16) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/select-text

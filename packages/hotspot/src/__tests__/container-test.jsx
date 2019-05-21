@@ -5,8 +5,31 @@ import toJson from 'enzyme-to-json';
 import Konva from 'konva';
 
 import Container from '../hotspot/container';
+import HotspotComponent from '../hotspot/index';
 
 Konva.isBrowser = false;
+
+describe('HotspotComponent', () => {
+  describe('renders', () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = props => shallow(<HotspotComponent { ...props } />);
+    });
+
+    it('snapshot', () => {
+      let w = wrapper();
+
+      expect(w).toMatchSnapshot();
+    });
+
+    it('snapshot with rationale', () => {
+      let w = wrapper({ rationale: 'This is rationale' });
+
+      expect(w).toMatchSnapshot();
+    });
+  });
+});
 
 describe('Container', () => {
   let onSelectChoice, wrapper;

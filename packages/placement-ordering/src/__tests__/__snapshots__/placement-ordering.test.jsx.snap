@@ -56,3 +56,47 @@ exports[`PlacementOrdering render snapshot 1`] = `
   <Feedback />
 </div>
 `;
+
+exports[`PlacementOrdering render snapshot with rationale 1`] = `
+<div
+  className="placementOrdering"
+>
+  <_default
+    onToggle={[Function]}
+    toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <OrderingTiler
+    includeTargets={true}
+    instanceId="5"
+    onDropChoice={[Function]}
+    onRemoveChoice={[Function]}
+    ordering={Object {}}
+    tiler={[Function]}
+  />
+  <br />
+  <Component
+    labels={
+      Object {
+        "hidden": "Show Rationale",
+        "visible": "Hide Rationale",
+      }
+    }
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "This is rationale.",
+        }
+      }
+    />
+  </Component>
+  <Feedback />
+</div>
+`;

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.7.15...@pie-ui/multiple-choice@4.8.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* Added snapshot test for rationale. ([594ebb0](https://github.com/pie-framework/pie-elements/commit/594ebb0))
+
+
+### Features
+
+* Added rationale support. ([b613ef3](https://github.com/pie-framework/pie-elements/commit/b613ef3))
+
+
+
+
+
 ## [4.7.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.7.14...@pie-ui/multiple-choice@4.7.15) (2019-04-26)
 
 **Note:** Version bump only for package @pie-ui/multiple-choice

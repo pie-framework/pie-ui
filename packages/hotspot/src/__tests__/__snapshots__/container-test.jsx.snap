@@ -4,11 +4,11 @@ exports[`Container snapshots hotspot color renders 1`] = `
 <Container
   classes={
     Object {
-      "base": "Container-base-1 base",
-      "image": "Container-image-2",
-      "imageContainer": "Container-imageContainer-3",
-      "resize": "Container-resize-5",
-      "stage": "Container-stage-4",
+      "base": "Container-base-2 base",
+      "image": "Container-image-3",
+      "imageContainer": "Container-imageContainer-4",
+      "resize": "Container-resize-6",
+      "stage": "Container-stage-5",
     }
   }
   dimensions={
@@ -36,11 +36,11 @@ exports[`Container snapshots image renders 1`] = `
 <Container
   classes={
     Object {
-      "base": "Container-base-1 base",
-      "image": "Container-image-2",
-      "imageContainer": "Container-imageContainer-3",
-      "resize": "Container-resize-5",
-      "stage": "Container-stage-4",
+      "base": "Container-base-2 base",
+      "image": "Container-image-3",
+      "imageContainer": "Container-imageContainer-4",
+      "resize": "Container-resize-6",
+      "stage": "Container-stage-5",
     }
   }
   dimensions={
@@ -68,11 +68,11 @@ exports[`Container snapshots outline color renders 1`] = `
 <Container
   classes={
     Object {
-      "base": "Container-base-1 base",
-      "image": "Container-image-2",
-      "imageContainer": "Container-imageContainer-3",
-      "resize": "Container-resize-5",
-      "stage": "Container-stage-4",
+      "base": "Container-base-2 base",
+      "image": "Container-image-3",
+      "imageContainer": "Container-imageContainer-4",
+      "resize": "Container-resize-6",
+      "stage": "Container-stage-5",
     }
   }
   dimensions={
@@ -100,11 +100,11 @@ exports[`Container snapshots shapes renders 1`] = `
 <Container
   classes={
     Object {
-      "base": "Container-base-1 base",
-      "image": "Container-image-2",
-      "imageContainer": "Container-imageContainer-3",
-      "resize": "Container-resize-5",
-      "stage": "Container-stage-4",
+      "base": "Container-base-2 base",
+      "image": "Container-image-3",
+      "imageContainer": "Container-imageContainer-4",
+      "resize": "Container-resize-6",
+      "stage": "Container-stage-5",
     }
   }
   dimensions={
@@ -142,5 +142,26 @@ exports[`Container snapshots shapes renders 1`] = `
       },
     ]
   }
+/>
+`;
+
+exports[`HotspotComponent renders snapshot 1`] = `
+<HotspotComponent
+  classes={
+    Object {
+      "collapsible": "HotspotComponent-collapsible-1",
+    }
+  }
+/>
+`;
+
+exports[`HotspotComponent renders snapshot with rationale 1`] = `
+<HotspotComponent
+  classes={
+    Object {
+      "collapsible": "HotspotComponent-collapsible-1",
+    }
+  }
+  rationale="This is rationale"
 />
 `;

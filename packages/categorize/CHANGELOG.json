@@ -573,5 +573,50 @@
     "committerDate": "2019-05-07 13:36:02 +0300",
     "isTagged": true,
     "tag": "@pie-ui/categorize@1.0.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Added snapshot test for rationale.",
+    "merge": null,
+    "header": "fix: Added snapshot test for rationale.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8651243645955ce5575049ddd4cf6068a7c53195",
+    "gitTags": "",
+    "committerDate": "2019-05-15 15:41:33 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "merge": null,
+    "header": "fix: Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "634b42161e4a7acec690ac4836a0e0e753a2b105",
+    "gitTags": "",
+    "committerDate": "2019-05-15 15:12:58 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added rationale support.",
+    "merge": null,
+    "header": "feat: Added rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "355548111084cb425576f9f456f402ece62405b2",
+    "gitTags": "",
+    "committerDate": "2019-05-14 15:44:05 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.1.0"
   }
 ]

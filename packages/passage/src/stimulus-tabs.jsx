@@ -70,7 +70,6 @@ class StimulusTabs extends React.Component {
     } else if (tabs && tabs[0]) {
       return (
         <div>
-         <div dangerouslySetInnerHTML={{__html: tabs[0].title}} />
          <TabContainer><div dangerouslySetInnerHTML={{__html: tabs[0].text}} /></TabContainer>
         </div>
       );

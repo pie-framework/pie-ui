@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.0...@pie-ui/math-inline@2.3.1) (2019-05-14)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [2.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.9...@pie-ui/math-inline@2.3.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* Updated rationale support. ([f0b6728](https://github.com/pie-framework/pie-ui/commit/f0b6728))
+
+
+### Features
+
+* Added rationale support. ([3b794af](https://github.com/pie-framework/pie-ui/commit/3b794af))
+
+
+
+
+
 ## [2.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.8...@pie-ui/math-inline@2.2.9) (2019-05-10)
 
 **Note:** Version bump only for package @pie-ui/math-inline

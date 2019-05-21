@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.4...@pie-ui/placement-ordering@4.7.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale. ([a8b80db](https://github.com/pie-framework/pie-ui/commit/a8b80db))
+
+
+### Features
+
+* Added rationale support. ([4d790b8](https://github.com/pie-framework/pie-ui/commit/4d790b8))
+
+
+
+
+
 ## [4.6.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.6.3...@pie-ui/placement-ordering@4.6.4) (2019-05-02)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

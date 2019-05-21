@@ -5,6 +5,7 @@ import {
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
 import { componentize } from '@pie-lib/mask-markup';
+import { renderMath } from '@pie-lib/math-rendering';
 import InlineDropdown from './inline-dropdown';
 
 const normalize = (v, fields) => {
@@ -56,7 +57,9 @@ export default class RootInlineDropdown extends HTMLElement {
         feedback: this._model.feedback,
         onChange: this.changeSession
       });
-      ReactDOM.render(elem, this);
+      ReactDOM.render(elem, this, () => {
+        renderMath(this);
+      });
     }
   };
 

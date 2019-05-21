@@ -258,5 +258,20 @@
     "committerDate": "2019-05-10 12:48:04 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added rationale support.",
+    "merge": null,
+    "header": "feat: Added rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ce71c6e3ec737d3c6ae603215dc4e1204b267717",
+    "gitTags": " (origin/andreea/ch1490/rationale-support-match)",
+    "committerDate": "2019-05-15 17:53:19 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.2.0"
   }
 ]

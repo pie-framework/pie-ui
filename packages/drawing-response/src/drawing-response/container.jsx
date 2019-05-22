@@ -56,9 +56,6 @@ class Container extends Component {
     })
   }
 
-  handleUndo = () => { };
-  handleClearAll = () => {};
-
   handleMakeToolActive(tool) {
     const { TextEntry } = this.state;
     const { type } = tool;
@@ -141,16 +138,6 @@ class Container extends Component {
                 )
               })}
             </div>
-            {/*<div>*/}
-            {/*<Button*/}
-            {/*onClick={this.handleUndo}*/}
-            {/*label="Undo"*/}
-            {/*/>*/}
-            {/*<Button*/}
-            {/*onClick={this.handleClearAll}*/}
-            {/*label="Clear all"*/}
-            {/*/>*/}
-            {/*</div>*/}
           </div>
 
           <div ref={drawable => { this.drawable = drawable; }}  className={classes.drawableHeight}>

@@ -29,7 +29,9 @@ export default class TextDrawable {
       y: (all.length + 1) * 5 + 50,
       textVisible: true,
       transformerVisible: true,
-      textareaVisible: false
+      textareaVisible: false,
+      createdAt: new Date(),
+      type: 'text-entry'
     });
   };
 

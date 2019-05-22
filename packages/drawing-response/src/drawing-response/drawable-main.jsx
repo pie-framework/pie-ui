@@ -76,12 +76,27 @@ class DrawableMain extends React.Component {
 
   handleUndo = () => {
     const { drawables } = this.state;
+    const { TextEntry } = this.props;
     const newDrawables = [...drawables];
-    newDrawables.pop();
-    this.setState({ drawables: newDrawables });
+    const allData = [...drawables, ...TextEntry.all ];
+
+    allData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    const lastElement = allData[allData.length - 1];
+
+    if (lastElement.type === 'text-entry') {
+      TextEntry.all.pop();
+      this.setState({ updatedAt: new Date() });
+    } else {
+      newDrawables.pop();
+      this.setState({ drawables: newDrawables });
+    }
   };
 
-  handleClearAll = () => this.setState({ drawables: [] });
+  handleClearAll = () => {
+    const { TextEntry } = this.props;
+    TextEntry.all.pop();
+    this.setState({ drawables: [], updatedAt: new Date() });
+  };
 
   render() {
     const {

@@ -34,7 +34,8 @@ RawButton.defaultProps = {
 
 const styles = () => ({
   addButton: {
-    marginLeft: 8
+    marginLeft: 8,
+    minWidth: 32
   }
 });
 

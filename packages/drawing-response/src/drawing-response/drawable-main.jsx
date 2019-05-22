@@ -10,6 +10,7 @@ import LineDrawable from './drawable-line';
 import RectangleDrawable from './drawable-rectangle';
 import CircleDrawable from './drawable-circle';
 import EraserDrawable from './drawable-eraser';
+import Button from './button';
 
 class DrawableMain extends React.Component {
   constructor(props) {
@@ -73,6 +74,15 @@ class DrawableMain extends React.Component {
     }
   };
 
+  handleUndo = () => {
+    const { drawables } = this.state;
+    const newDrawables = [...drawables];
+    newDrawables.pop();
+    this.setState({ drawables: newDrawables });
+  };
+
+  handleClearAll = () => this.setState({ drawables: [] });
+
   render() {
     const {
       classes,
@@ -100,32 +110,44 @@ class DrawableMain extends React.Component {
     };
 
     return (
-      <div className={classes.base}>
-        {imageUrl && (
-          <ImageBackground
-            dimensions={imageDimensions}
-            url={imageUrl}
+      <div>
+        <div className={classes.undoControls}>
+          <Button
+            onClick={this.handleUndo}
+            label="Undo"
           />
-        )}
+          <Button
+            onClick={this.handleClearAll}
+            label="Clear all"
+          />
+        </div>
+        <div className={classes.base}>
+          {imageUrl && (
+            <ImageBackground
+              dimensions={imageDimensions}
+              url={imageUrl}
+            />
+          )}
 
-        {TextEntry.renderTextareas(drawableProps)}
+          {TextEntry.renderTextareas(drawableProps)}
 
-        <Stage
-          className={classes.stage}
-          height={drawableDimensions.height}
-          width={drawableDimensions.width}
-          {...draggable ? {} : {
-            onMouseDown: this.handleMouseDown,
-            onMouseUp: this.handleMouseUp,
-            onMouseMove: this.handleMouseMove
-          }}
-        >
-          <Layer>
-            {drawables.map(drawable => drawable.render(drawableProps))}
-            {/* Text Entry is a special case  */}
-            {TextEntry.render(drawableProps)}
-          </Layer>
-        </Stage>
+          <Stage
+            className={classes.stage}
+            height={drawableDimensions.height}
+            width={drawableDimensions.width}
+            {...draggable ? {} : {
+              onMouseDown: this.handleMouseDown,
+              onMouseUp: this.handleMouseUp,
+              onMouseMove: this.handleMouseMove
+            }}
+          >
+            <Layer>
+              {drawables.map(drawable => drawable.render(drawableProps))}
+              {/* Text Entry is a special case  */}
+              {TextEntry.render(drawableProps)}
+            </Layer>
+          </Stage>
+        </div>
       </div>
     );
   }
@@ -140,6 +162,11 @@ const styles = theme => ({
     left: 0,
     position: 'absolute',
     top: 0
+  },
+  undoControls: {
+    float: 'right',
+    marginTop: -43,
+    width: 163,
   },
 });
 

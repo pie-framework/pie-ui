@@ -1,27 +1,27 @@
 export default {
   tools: [{
     type: 'Select',
-    label: 'Select'
+    label: 'S'
   },{
     type: 'FreePathDrawable',
-    label: 'Free Draw'
+    label: 'FD'
   },{
     type: 'LineDrawable',
-    label: 'Line'
+    label: 'L'
   },{
     type: 'RectangleDrawable',
-    label: 'Rectangle'
+    label: 'R'
   },{
     type: 'CircleDrawable',
-    label: 'Circle'
+    label: 'C'
   },{
     type: 'Text',
-    label: 'Text'
+    label: 'T'
   },{
     type: 'PaintBucket',
-    label: 'Paint'
+    label: 'PB'
   },{
     type: 'EraserDrawable',
-    label: 'Eraser'
+    label: 'E'
   }]
 };

@@ -22,7 +22,8 @@ export default class TextDrawable {
 
     all.push({
       id: id,
-      label: '',
+      isDefault: true,
+      label: 'Double click to edit this text. Press Enter to submit.',
       width: 200,
       x: (all.length + 1) * 5 + 50,
       y: (all.length + 1) * 5 + 50,
@@ -32,7 +33,7 @@ export default class TextDrawable {
     });
   };
 
-  hide(id, props) {
+  showTextarea(id) {
     this.all = this.all.map(item => {
       if (item.id === id) {
         return {
@@ -44,42 +45,58 @@ export default class TextDrawable {
       }
       return item;
     });
-    props.forceUpdate();
+    this.forceUpdate();
   }
 
-  show(id, props) {
+  hideTextarea(id) {
     this.all = this.all.map(item => {
       if (item.id === id) {
         return {
           ...item,
           textVisible: true,
-          transformerVisible: true,
+          transformerVisible: false,
           textareaVisible: false
         }
       }
       return item;
     });
-    props.forceUpdate();
+    this.forceUpdate();
   }
 
-  removeTextarea = (id, props) => { this.show(id, props); };
-
-  handleOutsideClick(e, textareaNode) {
-    if (e.target !== textareaNode) {
-      // textNode.text(textareaNode.value);
-      // removeTextarea();
+  updateDefault(id, isDefault) {
+    if (isDefault) {
+      const current = this.all.filter(item => item.id === id)[0];
+      current.isDefault = false;
     }
   }
 
-  handleDblClick = (e, id, props) => {
-    this.hide(id, props);
+  showTransformer(id) {
+    const current = this.all.filter(item => item.id === id)[0];
+    current.transformerVisible = true;
+  }
+
+  hideTransformer(id) {
+    const current = this.all.filter(item => item.id === id)[0];
+    current.transformerVisible = false;
+    this.forceUpdate();
+  }
+
+  handleClick = (e, id) => {
+    const current = this.all.filter(item => item.id === id)[0];
+    current.transformerVisible = !current.transformerVisible;
+    this.forceUpdate();
+  };
+
+  handleDblClick = (e, text) => {
+    const { id, isDefault, textVisible } = text;
+    this.showTextarea(id);
 
     const textNode = this[TextDrawable.getTextNode(id)];
     const textareaNode = this[TextDrawable.getTextareaNode(id)];
 
     const areaPosition = textNode._lastPos;
 
-    textareaNode.value = textNode.text();
+    textareaNode.value = isDefault ? '' : textNode.text();
     textareaNode.style.position = 'absolute';
     textareaNode.style.top = areaPosition.y + 'px';
     textareaNode.style.left = areaPosition.x + 'px';
@@ -123,18 +140,16 @@ export default class TextDrawable {
       // but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
         textNode.text(textareaNode.value);
-        this.removeTextarea();
+        this.hideTextarea(id);
       }
       // on esc do not set value back to node
       if (e.keyCode === 27) {
-        this.removeTextarea();
+        this.hideTextarea(id);
       }
     });
 
-    setTimeout(() => {
-      window.addEventListener('click', this.handleOutsideClick);
-    });
-    props.forceUpdate();
+    this.updateDefault(id, isDefault);
+    this.forceUpdate();
   };
 
   handleTransform = (e, textNode) => {
@@ -161,7 +176,15 @@ export default class TextDrawable {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable, fillColor, outlineColor, forceUpdate } = props;
+
+    if (!this.forceUpdate) {
+      this.forceUpdate = forceUpdate;
+    }
+
+    if (!this.props) {
+      this.props = forceUpdate;
+    }
 
     return this.all.map(text => {
       const {
@@ -170,18 +193,21 @@ export default class TextDrawable {
         x,
         y,
         width,
-        textVisible
+        textVisible,
+        transformerVisible
       } = text;
 
       const textNode = `text_${id}`;
-      const showTransformer = textVisible && draggable;
+      const transformerNode = `transformer_${id}`;
+      const showTransformer = transformerVisible && draggable;
 
       return ([
           <Text
             id={id}
             ref={text => { this[textNode] = text; }}
-            onDblClick={(e) => draggable ? this.handleDblClick(e, id, props) : () => {}}
-            onTransform={(e) => draggable ? this.handleTransform(e, textNode) : () => {}}
+            onClick={(e) => draggable ? this.handleClick(e, id) : {}}
+            onDblClick={(e) => draggable ? this.handleDblClick(e, text) : {}}
+            onTransform={(e) => draggable ? this.handleTransform(e, textNode) : {}}
             text={label}
             name={textNode}
             x={x}
@@ -191,7 +217,12 @@ export default class TextDrawable {
             visible={textVisible}
             fontSize={16}
           />,
-          showTransformer && <Transformer selectedShapeName={textNode}/>
+          showTransformer && (
+            <Transformer
+              ref={text => { this[transformerNode] = text; }}
+              selectedShapeName={textNode}
+            />
+          )
         ]
       )
     });

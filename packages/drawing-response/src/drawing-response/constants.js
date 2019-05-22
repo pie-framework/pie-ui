@@ -1,27 +1,35 @@
 export default {
   tools: [{
     type: 'Select',
-    label: 'S'
+    label: 'Select',
+    icon: 'faMousePointer'
   },{
     type: 'FreePathDrawable',
-    label: 'FD'
+    label: 'Free Draw',
+    icon: 'faPencilAlt'
   },{
     type: 'LineDrawable',
-    label: 'L'
+    label: 'Line',
+    icon: 'faArrowRight'
   },{
     type: 'RectangleDrawable',
-    label: 'R'
+    label: 'Rectangle',
+    icon: 'faSquare'
   },{
     type: 'CircleDrawable',
-    label: 'C'
+    label: 'Circle',
+    icon: 'faCircle'
   },{
     type: 'Text',
-    label: 'T'
+    label: 'Text Entry',
+    icon: 'faFont'
   },{
     type: 'PaintBucket',
-    label: 'PB'
+    label: 'Paint Bucket',
+    icon: 'faFillDrip'
   },{
     type: 'EraserDrawable',
-    label: 'E'
+    label: 'Eraser',
+    icon: 'faEraser'
   }]
 };

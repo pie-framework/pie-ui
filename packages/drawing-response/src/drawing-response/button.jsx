@@ -4,8 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import Button from '@material-ui/core/Button';
 
-const RawButton = ({ classes, className, label, onClick, disabled }) => (
+const RawButton = ({ classes, className, label, onClick, disabled, title }) => (
   <Button
+    title={title}
     onClick={onClick}
     disabled={disabled}
     className={classNames(classes.addButton, className)}
@@ -22,20 +23,23 @@ RawButton.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  title: PropTypes.string
 };
 
 RawButton.defaultProps = {
   className: '',
   disabled: false,
   label: 'Add',
-  onClick: () => {}
+  onClick: () => {},
+  title: ''
 };
 
 const styles = () => ({
   addButton: {
     marginLeft: 8,
-    minWidth: 32
+    minWidth: 32,
+    height: 32
   }
 });
 

@@ -2,34 +2,34 @@ export default {
   tools: [{
     type: 'Select',
     label: 'Select',
-    icon: 'faMousePointer'
+    icon: 'mdiCursorDefault'
   },{
     type: 'FreePathDrawable',
     label: 'Free Draw',
-    icon: 'faPencilAlt'
+    icon: 'mdiPencil'
   },{
     type: 'LineDrawable',
     label: 'Line',
-    icon: 'faArrowRight'
+    icon: 'mdiMinus'
   },{
     type: 'RectangleDrawable',
     label: 'Rectangle',
-    icon: 'faSquare'
+    icon: 'mdiRectangle'
   },{
     type: 'CircleDrawable',
     label: 'Circle',
-    icon: 'faCircle'
+    icon: 'mdiCircle'
   },{
     type: 'Text',
     label: 'Text Entry',
-    icon: 'faFont'
+    icon: 'mdiFormatColorText'
   },{
     type: 'PaintBucket',
     label: 'Paint Bucket',
-    icon: 'faFillDrip'
+    icon: 'mdiFormatColorFill'
   },{
     type: 'EraserDrawable',
     label: 'Eraser',
-    icon: 'faEraser'
+    icon: 'mdiEraser'
   }]
 };

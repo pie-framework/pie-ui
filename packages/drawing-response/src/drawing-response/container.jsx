@@ -18,8 +18,20 @@ import Button from './button';
 import DrawablePalette from './drawable-palette';
 import DrawableMain from './drawable-main';
 import DrawableText from './drawable-text';
+import Icon from './icon';
 
 const { tools: TOOLS } = constants;
+
+const ROGVAIV = [
+  'red',
+  'orange',
+  'yellow',
+  'violet',
+  'blue',
+  'green',
+  'white',
+  'black'
+];
 
 class Container extends Component {
   constructor(props) {
@@ -36,23 +48,13 @@ class Container extends Component {
       fillColorList: [
         'white',
         'lightblue',
-        'lightyellow'
+        'lightyellow',
+        ...ROGVAIV
       ],
       outlineColor: 'black',
-      outlineColorList: [
-        'black',
-        'blue',
-        'yellow'
-      ],
+      outlineColorList: ROGVAIV,
       paintColor: 'red',
-      paintColorList: [
-        'red',
-        'orange',
-        'yellow',
-        'green',
-        'blue',
-        'violet'
-      ],
+      paintColorList: ROGVAIV,
       TextEntry
     };
   }
@@ -158,12 +160,7 @@ class Container extends Component {
                     key={type}
                     disabled={this.checkIfToolIsDisabled(type)}
                     onClick={() => this.handleMakeToolActive(tool)}
-                    label={
-                      <FontAwesomeIcon
-                        style={{color: '#2B3963'}}
-                        icon={iconToRender()}
-                      />
-                    }
+                    label={<Icon path={icon} />}
                   />
                 )
               })}

@@ -74,7 +74,7 @@ class Palette extends React.Component {
                 key={paint}
                 value={paint}
                 className={classes.item}
-                style={{ border: `2px solid ${paint}` }}
+                style={{ backgroundColor: paint }}
               >
                 {paint}
               </MenuItem>

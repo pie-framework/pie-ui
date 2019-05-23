@@ -17,7 +17,8 @@ class DrawableMain extends React.Component {
     super(props);
     this.state = {
       drawables: [],
-      newDrawable: []
+      newDrawable: [],
+      textIsDragging: false
     }
   }
 
@@ -33,9 +34,10 @@ class DrawableMain extends React.Component {
   };
 
   handleMouseDown = e => {
-    const { newDrawable } = this.state;
+    const { newDrawable, textIsDragging } = this.state;
+    console.log('toggleTextIsDragging: ', textIsDragging);
     const { toolActive, fillColor, outlineColor } = this.props;
-    if (newDrawable.length === 0) {
+    if (newDrawable.length === 0 && !textIsDragging) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const newDrawable = this.getNewDrawableBasedOnType(
         {
@@ -53,8 +55,8 @@ class DrawableMain extends React.Component {
   };
 
   handleMouseUp = e => {
-    const { newDrawable, drawables } = this.state;
-    if (newDrawable.length === 1) {
+    const { newDrawable, drawables, textIsDragging } = this.state;
+    if (newDrawable.length === 1 && !textIsDragging) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const drawableToAdd = newDrawable[0];
       drawableToAdd.registerMovement(x, y);
@@ -67,8 +69,8 @@ class DrawableMain extends React.Component {
   };
 
   handleMouseMove = e => {
-    const { newDrawable } = this.state;
-    if (newDrawable.length === 1) {
+    const { newDrawable, textIsDragging } = this.state;
+    if (newDrawable.length === 1 && !textIsDragging) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const updatedNewDrawable = newDrawable[0];
       updatedNewDrawable.registerMovement(x, y);
@@ -112,7 +114,8 @@ class DrawableMain extends React.Component {
       outlineColor,
       paintColor,
       TextEntry,
-      toolActive: { type }
+      toolActive: { type },
+      makeTextSelected
     } = this.props;
 
     const draggable = type === 'Select';
@@ -125,7 +128,9 @@ class DrawableMain extends React.Component {
       paintColor,
       fillColor,
       forceUpdate: () => this.setState({ updatedAt: new Date() }),
-      outlineColor
+      outlineColor,
+      stage: this.stage,
+      makeTextSelected,
     };
 
     return (
@@ -148,9 +153,10 @@ class DrawableMain extends React.Component {
             />
           )}
 
-          {TextEntry.renderTextareas(drawableProps)}
+          {TextEntry.renderTextareas()}
 
           <Stage
+            ref={ref => { this.stage = ref; }}
             className={classes.stage}
             height={drawableDimensions.height}
             width={drawableDimensions.width}

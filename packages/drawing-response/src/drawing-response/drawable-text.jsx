@@ -33,6 +33,18 @@ export default class TextDrawable {
       createdAt: new Date(),
       type: 'text-entry'
     });
+
+    this.stage.on('click', (e) => {
+      if (e.target !== this.stage) {
+        return;
+      }
+      this.all.map(item => {
+        item.textVisible = true;
+        item.transformerVisible = false;
+        item.textareaVisible = false;
+      });
+      this.forceUpdate();
+    })
   };
 
   showTextarea(id) {
@@ -85,7 +97,8 @@ export default class TextDrawable {
 
   handleClick = (e, id) => {
     const current = this.all.filter(item => item.id === id)[0];
-    current.transformerVisible = !current.transformerVisible;
+    current.transformerVisible = true;
+    this.makeTextSelected();
     this.forceUpdate();
   };
 
@@ -141,12 +154,32 @@ export default class TextDrawable {
       // hide on enter
       // but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
-        textNode.text(textareaNode.value);
-        this.hideTextarea(id);
+        if (textareaNode.value) {
+          textNode.text(textareaNode.value);
+          this.hideTextarea(id);
+        } else {
+          this.all.pop();
+        }
       }
       // on esc do not set value back to node
       if (e.keyCode === 27) {
         this.hideTextarea(id);
+      }
+    });
+
+    this.stage.on('click', (e) => {
+      if (e.target !== this.stage) {
+        return;
+      }
+      if (textareaNode.value) {
+        textNode.text(textareaNode.value);
+        this.all.map(item => {
+          item.textVisible = true;
+          item.transformerVisible = false;
+          item.textareaVisible = false;
+        });
+      } else {
+        this.all.pop();
       }
     });
 
@@ -161,9 +194,7 @@ export default class TextDrawable {
     });
   };
 
-  renderTextareas(props) {
-    const { draggable, fillColor, outlineColor } = props;
-
+  renderTextareas() {
     return this.all.map(text => {
       const { id, textareaVisible } = text;
       const textareaNode = `textarea_${id}`;
@@ -178,7 +209,7 @@ export default class TextDrawable {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor, forceUpdate } = props;
+    const { forceUpdate, makeTextSelected } = props;
 
     if (!this.forceUpdate) {
       this.forceUpdate = forceUpdate;
@@ -186,6 +217,14 @@ export default class TextDrawable {
 
     if (!this.props) {
       this.props = forceUpdate;
+    }
+
+    if (!this.makeTextSelected) {
+      this.makeTextSelected = makeTextSelected;
+    }
+
+    if (props.stage && !this.props.stage) {
+      this.stage = props.stage;
     }
 
     return this.all.map(text => {
@@ -201,25 +240,25 @@ export default class TextDrawable {
 
       const textNode = `text_${id}`;
       const transformerNode = `transformer_${id}`;
-      const showTransformer = transformerVisible && draggable;
 
       return ([
           <Text
+            bubbles={true}
             id={id}
             ref={text => { this[textNode] = text; }}
-            onClick={(e) => draggable ? this.handleClick(e, id) : {}}
-            onDblClick={(e) => draggable ? this.handleDblClick(e, text) : {}}
-            onTransform={(e) => draggable ? this.handleTransform(e, textNode) : {}}
+            onClick={(e) => this.handleClick(e, id)}
+            onDblClick={(e) => this.handleDblClick(e, text)}
+            onTransform={(e) => this.handleTransform(e, textNode)}
             text={label}
             name={textNode}
             x={x}
             y={y}
             width={width}
-            draggable={draggable}
+            draggable
             visible={textVisible}
             fontSize={16}
           />,
-          showTransformer && (
+          transformerVisible && (
             <Transformer
               ref={text => { this[transformerNode] = text; }}
               selectedShapeName={textNode}

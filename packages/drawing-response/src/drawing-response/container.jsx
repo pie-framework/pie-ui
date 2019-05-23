@@ -68,7 +68,6 @@ class Container extends Component {
       TextEntry.addNewTextEntry();
       // Force update
       this.setState({
-        // Make select tool by default
         toolActive: TOOLS[0],
         updatedAt: new Date()
       });
@@ -129,19 +128,6 @@ class Container extends Component {
               {TOOLS.map(tool => {
                 const { type, label, icon } = tool;
 
-                const iconToRender = () => {
-                  switch (icon) {
-                    case 'faMousePointer': return faMousePointer;
-                    case 'faPencilAlt': return faPencilAlt;
-                    case 'faArrowRight': return faArrowRight;
-                    case 'faSquare': return faSquare;
-                    case 'faCircle': return faCircle;
-                    case 'faFont': return faFont;
-                    case 'faFillDrip': return faFillDrip;
-                    default: return faEraser;
-                  }
-                };
-
                 return (
                   <Button
                     title={label}
@@ -165,6 +151,7 @@ class Container extends Component {
               imageDimensions={imageDimensions}
               toolActive={toolActive}
               TextEntry={TextEntry}
+              makeTextSelected={() => this.setState({ toolActive: TOOLS[0] })}
             />
           </div>
         </div>

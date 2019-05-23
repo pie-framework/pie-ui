@@ -36,6 +36,8 @@ export default class LineDrawable extends DrawableHelper {
         fill={this.paintColor || this.outlineColor}
         onClick={() => this.handleOnClick(props)}
         stroke={this.paintColor || this.outlineColor}
+        pointerWidth={0}
+        pointerLength={0}
       />
     );
   }

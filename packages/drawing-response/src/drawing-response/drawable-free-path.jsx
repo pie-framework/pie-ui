@@ -4,8 +4,9 @@ import { Line } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class FreePathDrawable extends DrawableHelper {
-  constructor(startx, starty) {
-    super(startx, starty);
+  constructor(props) {
+    super(props);
+    const { startx, starty } = props;
     this.points = [startx, starty];
   }
 
@@ -23,7 +24,7 @@ export default class FreePathDrawable extends DrawableHelper {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable } = props;
 
     return (
       <Line
@@ -31,9 +32,9 @@ export default class FreePathDrawable extends DrawableHelper {
         tension={0}
         bezier={true}
         points={this.points}
-        fill={this.paintColor || fillColor}
+        fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
-        stroke={this.paintColor || outlineColor}
+        stroke={this.paintColor || this.outlineColor}
       />
     );
   }

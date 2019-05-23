@@ -4,8 +4,9 @@ import { Line } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class EraserDrawable extends DrawableHelper {
-  constructor(startx, starty) {
-    super(startx, starty);
+  constructor(props) {
+    super(props);
+    const { startx, starty } = props;
     this.points = [startx, starty];
   }
 

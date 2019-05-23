@@ -4,8 +4,9 @@ import { Circle } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class CircleDrawable extends DrawableHelper {
-  constructor(startx, starty) {
-    super(startx, starty);
+  constructor(props) {
+    super(props);
+    const { startx, starty } = props;
     this.x = startx;
     this.y = starty;
   }
@@ -25,7 +26,7 @@ export default class CircleDrawable extends DrawableHelper {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable } = props;
     const dx = this.startx - this.x;
     const dy = this.starty - this.y;
     const radius = Math.sqrt(dx * dx + dy * dy);
@@ -36,9 +37,9 @@ export default class CircleDrawable extends DrawableHelper {
         radius={radius}
         x={this.startx}
         y={this.starty}
-        fill={this.paintColor || fillColor}
+        fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
-        stroke={outlineColor}
+        stroke={this.outlineColor}
       />
     );
   }

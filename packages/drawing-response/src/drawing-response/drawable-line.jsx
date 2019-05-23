@@ -4,8 +4,9 @@ import { Arrow } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class LineDrawable extends DrawableHelper {
-  constructor(startx, starty) {
-    super(startx, starty);
+  constructor(props) {
+    super(props);
+    const { startx, starty } = props;
     this.x = startx;
     this.y = starty;
   }
@@ -25,16 +26,16 @@ export default class LineDrawable extends DrawableHelper {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable } = props;
     const points = [this.startx, this.starty, this.x, this.y];
 
     return (
       <Arrow
         draggable={draggable}
         points={points}
-        fill={this.paintColor || outlineColor}
+        fill={this.paintColor || this.outlineColor}
         onClick={() => this.handleOnClick(props)}
-        stroke={this.paintColor || outlineColor}
+        stroke={this.paintColor || this.outlineColor}
       />
     );
   }

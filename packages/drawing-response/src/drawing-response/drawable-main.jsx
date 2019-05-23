@@ -21,7 +21,7 @@ class DrawableMain extends React.Component {
     }
   }
 
-  getNewDrawableBasedOnType = (x, y, type) => {
+  getNewDrawableBasedOnType = (props, type) => {
     const drawableClasses = {
       FreePathDrawable,
       LineDrawable,
@@ -29,17 +29,21 @@ class DrawableMain extends React.Component {
       CircleDrawable,
       EraserDrawable
     };
-    return new drawableClasses[type](x, y);
+    return new drawableClasses[type](props);
   };
 
   handleMouseDown = e => {
     const { newDrawable } = this.state;
-    const { toolActive } = this.props;
+    const { toolActive, fillColor, outlineColor } = this.props;
     if (newDrawable.length === 0) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const newDrawable = this.getNewDrawableBasedOnType(
-        x,
-        y,
+        {
+          startx: x,
+          starty: y,
+          fillColor,
+          outlineColor
+        },
         toolActive.type
       );
       this.setState({

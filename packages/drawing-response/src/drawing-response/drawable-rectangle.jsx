@@ -4,8 +4,9 @@ import { Rect } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class RectangleDrawable extends DrawableHelper {
-  constructor(startx, starty) {
-    super(startx, starty);
+  constructor(props) {
+    super(props);
+    const { startx, starty } = props;
     this.x = startx;
     this.y = starty;
   }
@@ -25,7 +26,7 @@ export default class RectangleDrawable extends DrawableHelper {
   }
 
   render(props) {
-    const { draggable, fillColor, outlineColor } = props;
+    const { draggable } = props;
     const width = this.x - this.startx;
     const height = this.y - this.starty;
 
@@ -33,9 +34,9 @@ export default class RectangleDrawable extends DrawableHelper {
       <Rect
         width={width}
         height={height}
-        fill={this.paintColor || fillColor}
+        fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
-        stroke={outlineColor}
+        stroke={this.outlineColor}
         draggable={draggable}
         strokeWidth={2}
         x={this.startx}

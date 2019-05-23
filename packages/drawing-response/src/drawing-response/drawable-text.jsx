@@ -154,12 +154,8 @@ export default class TextDrawable {
       // hide on enter
       // but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
-        if (textareaNode.value) {
-          textNode.text(textareaNode.value);
-          this.hideTextarea(id);
-        } else {
-          this.all.pop();
-        }
+        textNode.text(textareaNode.value);
+        this.hideTextarea(id);
       }
       // on esc do not set value back to node
       if (e.keyCode === 27) {
@@ -171,16 +167,12 @@ export default class TextDrawable {
       if (e.target !== this.stage) {
         return;
       }
-      if (textareaNode.value) {
-        textNode.text(textareaNode.value);
-        this.all.map(item => {
-          item.textVisible = true;
-          item.transformerVisible = false;
-          item.textareaVisible = false;
-        });
-      } else {
-        this.all.pop();
-      }
+      textNode.text(textareaNode.value);
+      this.all.map(item => {
+        item.textVisible = true;
+        item.transformerVisible = false;
+        item.textareaVisible = false;
+      });
     });
 
     this.updateDefault(id, isDefault);

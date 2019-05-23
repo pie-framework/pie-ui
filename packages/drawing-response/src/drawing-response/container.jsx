@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles/index';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faMousePointer,
-  faPencilAlt,
-  faArrowRight,
-  faSquare,
-  faCircle,
-  faFont,
-  faFillDrip,
-  faEraser
-} from '@fortawesome/free-solid-svg-icons';
 
 import constants from './constants';
 import Button from './button';
@@ -21,7 +10,6 @@ import DrawableText from './drawable-text';
 import Icon from './icon';
 
 const { tools: TOOLS } = constants;
-
 const ROGVAIV = [
   'red',
   'orange',

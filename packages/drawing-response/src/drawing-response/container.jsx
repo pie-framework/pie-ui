@@ -68,7 +68,6 @@ class Container extends Component {
       TextEntry.addNewTextEntry();
       // Force update
       this.setState({
-        toolActive: TOOLS[0],
         updatedAt: new Date()
       });
     }
@@ -151,7 +150,6 @@ class Container extends Component {
               imageDimensions={imageDimensions}
               toolActive={toolActive}
               TextEntry={TextEntry}
-              makeTextSelected={() => this.setState({ toolActive: TOOLS[0] })}
             />
           </div>
         </div>

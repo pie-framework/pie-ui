@@ -33,6 +33,7 @@ export default class TransformerComponent extends React.Component {
       <Transformer
         ref={node => { this.transformer = node; }}
         enabledAnchors={['middle-left', 'middle-right']}
+        {...this.props}
       />
     );
   }

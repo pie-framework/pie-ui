@@ -31,14 +31,14 @@ class Palette extends React.Component {
             onChange={this.onChange('fill')}
             value={fillColor}
           >
-            {fillList.map(fill => (
+            {fillList.map(({ value, label }) => (
               <MenuItem
-                key={fill}
-                value={fill}
+                key={value}
+                value={value}
                 className={classes.item}
-                style={{ backgroundColor: fill }}
+                style={{ backgroundColor: value }}
               >
-                {fill}
+                {label}
               </MenuItem>
             ))}
           </Select>
@@ -50,14 +50,14 @@ class Palette extends React.Component {
             onChange={this.onChange('outline')}
             value={outlineColor}
           >
-            {outlineList.map(outline => (
+            {outlineList.map(({ value, label }) => (
               <MenuItem
-                key={outline}
-                value={outline}
+                key={value}
+                value={value}
                 className={classes.item}
-                style={{ border: `2px solid ${outline}` }}
+                style={{ border: `2px solid ${value}` }}
               >
-                {outline}
+                {label}
               </MenuItem>
             ))}
           </Select>
@@ -69,14 +69,14 @@ class Palette extends React.Component {
             onChange={this.onChange('paint')}
             value={paintColor}
           >
-            {paintList.map(paint => (
+            {paintList.map(({ value, label }) => (
               <MenuItem
-                key={paint}
-                value={paint}
+                key={value}
+                value={value}
                 className={classes.item}
-                style={{ backgroundColor: paint }}
+                style={{ backgroundColor: value }}
               >
-                {paint}
+                {label}
               </MenuItem>
             ))}
           </Select>

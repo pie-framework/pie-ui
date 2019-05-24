@@ -11,14 +11,14 @@ import Icon from './icon';
 
 const { tools: TOOLS } = constants;
 const ROGVAIV = [
-  'red',
-  'orange',
-  'yellow',
-  'violet',
-  'blue',
-  'green',
-  'white',
-  'black'
+  { value: 'red', label: 'red' },
+  { value: 'orange', label: 'orange' },
+  { value: 'yellow', label: 'yellow' },
+  { value: 'violet', label: 'violet' },
+  { value: 'blue', label: 'blue' },
+  { value: 'green', label: 'green' },
+  { value: 'white', label: 'white' },
+  { value: 'black', label: 'black' }
 ];
 
 class Container extends Component {
@@ -34,9 +34,10 @@ class Container extends Component {
       toolActive: TOOLS[0],
       fillColor: 'white',
       fillColorList: [
-        'white',
-        'lightblue',
-        'lightyellow',
+        { value: 'transparent', label: 'no fill' },
+        { value: 'white', label: 'white' },
+        { value: 'lightblue', label: 'lightblue' },
+        { value: 'lightyellow', label: 'lightyellow' },
         ...ROGVAIV
       ],
       outlineColor: 'black',

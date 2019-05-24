@@ -38,12 +38,12 @@ export default class TextDrawable {
       if (e.target !== this.stage) {
         return;
       }
-      this.showTextNodeOnly();
+      this.showOnlyTextNodes();
       this.props.forceUpdate();
     })
   };
 
-  showTextNodeOnly() {
+  showOnlyTextNodes() {
     this.all.map(item => {
       item.textVisible = true;
       item.transformerVisible = false;
@@ -70,6 +70,15 @@ export default class TextDrawable {
     if (isDefault) {
       const current = this.all.filter(item => item.id === id)[0];
       current.isDefault = false;
+    }
+  }
+
+  saveValue(id, textNode, textareaNode) {
+    if (textareaNode.value) {
+      textNode.text(textareaNode.value);
+    } else {
+      this.all = this.all.filter(text => text.id !== id);
+      this.props.forceUpdate();
     }
   }
 
@@ -133,8 +142,8 @@ export default class TextDrawable {
     textareaNode.addEventListener('keydown', (e) => {
       // hide on enter but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
-        textNode.text(textareaNode.value);
         this.toggleTextarea(id, false);
+        this.saveValue(id, textNode, textareaNode);
       }
       // on esc do not set value back to node
       if (e.keyCode === 27) {
@@ -146,8 +155,8 @@ export default class TextDrawable {
       if (e.target !== this.stage) {
         return;
       }
-      textNode.text(textareaNode.value);
-      this.showTextNodeOnly();
+      this.showOnlyTextNodes();
+      this.saveValue(id, textNode, textareaNode);
     });
 
     this.initializeDefault(id, isDefault);

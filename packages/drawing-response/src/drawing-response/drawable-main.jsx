@@ -11,6 +11,8 @@ import CircleDrawable from './drawable-circle';
 import EraserDrawable from './drawable-eraser';
 import Button from './button';
 
+import { relativePos, forEachNeighbor, isSameColor } from './drawable-paint-utils';
+
 class DrawableMain extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,54 @@ class DrawableMain extends React.Component {
       textIsSelected: false
     }
   }
+
+  componentDidMount() {
+    this.handlePaintBucket();
+  }
+
+  handlePaintBucket = () => {
+    const canvas = document.getElementsByClassName('konvajs-content')[0].children[0];
+    const { drawableDimensions } = this.props;
+    const cx = canvas.getContext('2d');
+    // cx.canvas.height = drawableDimensions.height;
+    // cx.canvas.width = drawableDimensions.width;
+    cx.canvas.height = 350;
+    cx.canvas.width = 662;
+
+    canvas.addEventListener('mousedown', (event) => {
+      event.preventDefault();
+      const { toolActive, paintColor } = this.props;
+      const isPaint = toolActive.type === 'PaintBucket';
+
+      if (isPaint && event.which === 1) {
+        const imageData = cx.getImageData(0, 0, cx.canvas.width, cx.canvas.height);
+        const sample = relativePos(event, cx.canvas);
+        const isPainted = new Array(imageData.width * imageData.height);
+        const toPaint = [sample];
+
+        while (toPaint.length) {
+          const current = toPaint.pop();
+          const id = current.x + current.y * imageData.width;
+
+          if (isPainted[id]) {
+            continue;
+          } else {
+            cx.fillRect(current.x, current.y, 1, 1);
+            cx.fillStyle = paintColor;
+            isPainted[id] = true;
+          }
+
+          forEachNeighbor(current, function (neighbor) {
+            if (neighbor.x >= 0 && neighbor.x < imageData.width &&
+              neighbor.y >= 0 && neighbor.y < imageData.height &&
+              isSameColor(imageData, sample, neighbor)) {
+              toPaint.push(neighbor);
+            }
+          });
+        }
+      }
+    });
+  };
 
   getNewDrawableBasedOnType = (props, type) => {
     const drawableClasses = {
@@ -155,8 +205,10 @@ class DrawableMain extends React.Component {
           <Stage
             ref={ref => { this.stage = ref; }}
             className={classes.stage}
-            height={drawableDimensions.height}
-            width={drawableDimensions.width}
+            // height={drawableDimensions.height}
+            // width={drawableDimensions.width}
+            height={350}
+            width={662}
             {...draggable ? {} : {
               onMouseDown: this.handleMouseDown,
               onMouseUp: this.handleMouseUp,

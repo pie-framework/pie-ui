@@ -160,7 +160,6 @@ class DrawableMain extends React.Component {
       imageDimensions,
       imageUrl,
       outlineColor,
-      paintColor,
       TextEntry,
       toolActive: { type }
     } = this.props;
@@ -172,7 +171,6 @@ class DrawableMain extends React.Component {
     const drawableProps = {
       draggable,
       paint,
-      paintColor,
       fillColor,
       forceUpdate: () => this.setState({ updatedAt: new Date() }),
       toggleTextSelected: textIsSelected => this.setState({ textIsSelected }),

@@ -5,9 +5,11 @@ export default class TransformerComponent extends React.Component {
   componentDidMount() {
     this.checkNode();
   }
+
   componentDidUpdate() {
     this.checkNode();
   }
+
   checkNode() {
     // here we need to manually attach or detach Transformer node
     const stage = this.transformer.getStage();
@@ -28,6 +30,7 @@ export default class TransformerComponent extends React.Component {
     }
     this.transformer.getLayer().batchDraw();
   }
+
   render() {
     return (
       <Transformer

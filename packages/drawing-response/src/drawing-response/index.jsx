@@ -23,8 +23,6 @@ class DrawingResponseComponent extends React.Component {
         mode
       }
     } = this.props;
-
-
     const isEvaluateMode = mode === 'evaluate';
 
     return (

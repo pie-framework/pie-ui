@@ -38,7 +38,7 @@ export default class CircleDrawable extends DrawableHelper {
         x={this.startx}
         y={this.starty}
         fill={this.paintColor || this.fillColor}
-        // onClick={() => this.handleOnClick(props)}
+        onClick={() => this.handleOnClick(props)}
         stroke={this.outlineColor}
       />
     );

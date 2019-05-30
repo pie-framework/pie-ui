@@ -33,7 +33,7 @@ export default class FreePathDrawable extends DrawableHelper {
         bezier={true}
         points={this.points}
         fill={this.paintColor || this.fillColor}
-        // onClick={() => this.handleOnClick(props)}
+        onClick={() => this.handleOnClick(props)}
         stroke={this.paintColor || this.outlineColor}
       />
     );

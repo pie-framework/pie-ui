@@ -14,7 +14,6 @@ class DrawingResponseComponent extends React.Component {
 
   render() {
     const {
-      session,
       model: {
         disabled,
         imageDimensions,
@@ -34,7 +33,6 @@ class DrawingResponseComponent extends React.Component {
         <Container
           isEvaluateMode={isEvaluateMode}
           imageDimensions={imageDimensions}
-          session={session}
           imageUrl={imageUrl}
           disabled={disabled}
         />
@@ -45,8 +43,6 @@ class DrawingResponseComponent extends React.Component {
 
 DrawingResponseComponent.propTypes = {
   model: PropTypes.object.isRequired,
-  onSelectChoice: PropTypes.func.isRequired,
-  session: PropTypes.object.isRequired
 };
 
 export default DrawingResponseComponent;

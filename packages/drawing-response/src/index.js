@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { renderMath } from '@pie-lib/math-rendering';
-import {
-  SessionChangedEvent,
-  ModelSetEvent
-} from '@pie-framework/pie-player-events';
+import { ModelSetEvent } from '@pie-framework/pie-player-events';
 
 import DrawingResponseComponent from './drawing-response';
-import { updateSessionValue } from './session-updater';
 
 export default class DrawingResponse extends HTMLElement {
   set model(m) {
@@ -42,16 +38,6 @@ export default class DrawingResponse extends HTMLElement {
     this._render();
   }
 
-  onSelectChoice(data) {
-    updateSessionValue(this._session, this._model, data);
-
-    this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
-    );
-
-    this._render();
-  }
-
   connectedCallback() {
     this._render();
   }
@@ -61,7 +47,6 @@ export default class DrawingResponse extends HTMLElement {
       const el = React.createElement(DrawingResponseComponent, {
         model: this._model,
         session: this._session,
-        onSelectChoice: this.onSelectChoice.bind(this)
       });
       ReactDOM.render(el, this, () => {
         renderMath(this);

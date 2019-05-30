@@ -8,13 +8,7 @@ module.exports = {
       element: 'drawing-response',
       prompt: 'This is the question prompt',
       imageUrl: '',
-      draws: [],
-      textEntries: [],
-      shapes: [],
-      lines: [],
-      multipleCorrect: true,
-      partialScoring: false,
-      dimensions: {
+      imageDimensions: {
         height: 0,
         width: 0
       }

@@ -129,7 +129,7 @@ export default class TextDrawable {
     let px = 0;
     let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     if (isFirefox) {
-      px += 2 + Math.round(fontSize / 20);
+      px += 2 + Math.round(textNode.fontSize() / 20);
     }
     transform += 'translateY(-' + px + 'px)';
 
@@ -177,6 +177,7 @@ export default class TextDrawable {
 
       return (
         <textarea
+          key={textareaNode}
           ref={textarea => { this[textareaNode] = textarea; }}
           style={{ display: `${textareaVisible ? 'block' : 'none'}`}}
         />
@@ -213,6 +214,7 @@ export default class TextDrawable {
 
       return ([
           <Text
+            key={id}
             bubbles={true}
             id={id}
             ref={text => { this[textNode] = text; }}

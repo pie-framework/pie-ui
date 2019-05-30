@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Transformer } from 'react-konva';
 
-export default class TransformerComponent extends React.Component {
+class TransformerComponent extends React.Component {
   componentDidMount() {
     this.checkNode();
   }
@@ -15,7 +16,7 @@ export default class TransformerComponent extends React.Component {
     const stage = this.transformer.getStage();
     const { selectedShapeName } = this.props;
 
-    const selectedNode = stage.findOne("." + selectedShapeName);
+    const selectedNode = stage.findOne(`.${selectedShapeName}`);
     // do nothing if selected node is already attached
     if (selectedNode === this.transformer.node()) {
       return;
@@ -41,3 +42,9 @@ export default class TransformerComponent extends React.Component {
     );
   }
 }
+
+TransformerComponent.propTypes = {
+  selectedShapeName: PropTypes.string.isRequired,
+};
+
+export default TransformerComponent;

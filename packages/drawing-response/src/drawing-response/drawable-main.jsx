@@ -175,7 +175,7 @@ class DrawableMain extends React.Component {
   }
 }
 
-const styles = theme => ({
+const styles = () => ({
   base: {
     position: 'relative',
     width: '100%',
@@ -195,11 +195,12 @@ const styles = theme => ({
 DrawableMain.propTypes = {
   classes: PropTypes.object.isRequired,
   drawableDimensions: PropTypes.object.isRequired,
+  imageDimensions: PropTypes.object.isRequired,
   fillColor: PropTypes.string.isRequired,
   paintColor: PropTypes.string.isRequired,
   outlineColor: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
-  session: PropTypes.object.isRequired,
+  TextEntry: PropTypes.object.isRequired,
   toolActive: PropTypes.object.isRequired
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles';
 
 const DrawableImage = ({ classes, url, dimensions: { height, width } }) => (
   <div className={classes.imageContainer}>
@@ -17,7 +17,7 @@ const DrawableImage = ({ classes, url, dimensions: { height, width } }) => (
   </div>
 );
 
-const styles = theme => ({
+const styles = () => ({
   image: {
     alignItems: 'center',
     display: 'flex',

@@ -22,7 +22,10 @@ RawButton.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   onClick: PropTypes.func,
   title: PropTypes.string
 };

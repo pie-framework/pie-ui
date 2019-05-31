@@ -50,7 +50,10 @@ describe('Container', () => {
         isEvaluateMode: false,
         outlineColor: 'blue',
         session: { answers: [] },
-        shapes: []
+        shapes: {
+          rectangles: [],
+          polygons: []
+        }
       },
       opts
     );
@@ -88,10 +91,15 @@ describe('Container', () => {
     describe('shapes', () => {
       it('renders', () => {
         const wrapper = mkWrapper({
-          shapes: [
-            { id: '1', x: 5, y: 5, width: 5, height: 5 },
-            { id: '2', x: 25, y: 25, width: 5, height: 5 }
-          ],
+          shapes: {
+            rectangles: [
+              { id: '1', x: 5, y: 5, width: 5, height: 5 },
+              { id: '2', x: 25, y: 25, width: 5, height: 5 }
+            ],
+            polygons: [
+              { id: '3', points: [{ x: 94, y: 4 }, { x: 89, y: 4 }, { x: 36, y: 40 }]}
+            ]
+          },
           imageUrl: 'https://picsum.photos/id/102/200/300',
           dimensions: {
             width: 200,

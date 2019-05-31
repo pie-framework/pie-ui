@@ -28,7 +28,12 @@ exports[`Container snapshots hotspot color renders 1`] = `
       "answers": Array [],
     }
   }
-  shapes={Array []}
+  shapes={
+    Object {
+      "polygons": Array [],
+      "rectangles": Array [],
+    }
+  }
 />
 `;
 
@@ -60,7 +65,12 @@ exports[`Container snapshots image renders 1`] = `
       "answers": Array [],
     }
   }
-  shapes={Array []}
+  shapes={
+    Object {
+      "polygons": Array [],
+      "rectangles": Array [],
+    }
+  }
 />
 `;
 
@@ -92,7 +102,12 @@ exports[`Container snapshots outline color renders 1`] = `
       "answers": Array [],
     }
   }
-  shapes={Array []}
+  shapes={
+    Object {
+      "polygons": Array [],
+      "rectangles": Array [],
+    }
+  }
 />
 `;
 
@@ -125,22 +140,43 @@ exports[`Container snapshots shapes renders 1`] = `
     }
   }
   shapes={
-    Array [
-      Object {
-        "height": 5,
-        "id": "1",
-        "width": 5,
-        "x": 5,
-        "y": 5,
-      },
-      Object {
-        "height": 5,
-        "id": "2",
-        "width": 5,
-        "x": 25,
-        "y": 25,
-      },
-    ]
+    Object {
+      "polygons": Array [
+        Object {
+          "id": "3",
+          "points": Array [
+            Object {
+              "x": 94,
+              "y": 4,
+            },
+            Object {
+              "x": 89,
+              "y": 4,
+            },
+            Object {
+              "x": 36,
+              "y": 40,
+            },
+          ],
+        },
+      ],
+      "rectangles": Array [
+        Object {
+          "height": 5,
+          "id": "1",
+          "width": 5,
+          "x": 5,
+          "y": 5,
+        },
+        Object {
+          "height": 5,
+          "id": "2",
+          "width": 5,
+          "x": 25,
+          "y": 25,
+        },
+      ],
+    }
   }
 />
 `;

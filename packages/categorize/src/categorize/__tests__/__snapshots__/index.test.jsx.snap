@@ -1,164 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`categorize snapshots incorrect 1`] = `
-<mockConstructor
-  value="1"
->
-  <div>
-    <_default
-      onToggle={[Function]}
-      show={false}
-      toggled={false}
-    />
-    <div
-      style={
+<div>
+  <_default
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    style={
+      Object {
+        "flexDirection": "column-reverse",
+      }
+    }
+  >
+    <WithStyles(Categories)
+      categories={Array []}
+      grid={
         Object {
-          "flexDirection": "column-reverse",
+          "columns": NaN,
+          "rows": NaN,
         }
       }
-    >
-      <WithStyles(Categories)
-        categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
         }
-        grid={
-          Object {
-            "columns": 1,
-            "rows": 1,
-          }
+      }
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices)
+      choicePosition="above"
+      choices={Array []}
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
         }
-        onDropChoice={[Function]}
-        onRemoveChoice={[Function]}
-      />
-      <WithStyles(Choices)
-        choicePosition="top"
-        choices={Array []}
-        config={
-          Object {
-            "columns": 2,
-            "position": "top",
-          }
-        }
-      />
-    </div>
+      }
+    />
   </div>
-</mockConstructor>
+</div>
 `;
 
 exports[`categorize snapshots renders 1`] = `
-<mockConstructor
-  value="1"
->
-  <div>
-    <_default
-      onToggle={[Function]}
-      show={false}
-      toggled={false}
-    />
-    <div
-      style={
+<div>
+  <_default
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    style={
+      Object {
+        "flexDirection": "column-reverse",
+      }
+    }
+  >
+    <WithStyles(Categories)
+      categories={Array []}
+      grid={
         Object {
-          "flexDirection": "column-reverse",
+          "columns": NaN,
+          "rows": NaN,
         }
       }
-    >
-      <WithStyles(Categories)
-        categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
         }
-        grid={
-          Object {
-            "columns": 1,
-            "rows": 1,
-          }
+      }
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices)
+      choicePosition="above"
+      choices={Array []}
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
         }
-        onDropChoice={[Function]}
-        onRemoveChoice={[Function]}
-      />
-      <WithStyles(Choices)
-        choicePosition="top"
-        choices={Array []}
-        config={
-          Object {
-            "columns": 2,
-            "position": "top",
-          }
-        }
-      />
-    </div>
+      }
+    />
   </div>
-</mockConstructor>
+</div>
 `;
 
 exports[`categorize snapshots renders with feedback 1`] = `
-<mockConstructor
-  value="1"
->
-  <div>
-    <_default
-      onToggle={[Function]}
-      show={false}
-      toggled={false}
-    />
-    <div
-      style={
+<div>
+  <_default
+    onToggle={[Function]}
+    show={false}
+    toggled={false}
+  />
+  <div
+    style={
+      Object {
+        "flexDirection": "column-reverse",
+      }
+    }
+  >
+    <WithStyles(Categories)
+      categories={Array []}
+      grid={
         Object {
-          "flexDirection": "column-reverse",
+          "columns": NaN,
+          "rows": NaN,
         }
       }
-    >
-      <WithStyles(Categories)
-        categories={Array []}
-        config={
-          Object {
-            "columns": 2,
-          }
-        }
-        grid={
-          Object {
-            "columns": 1,
-            "rows": 1,
-          }
-        }
-        onDropChoice={[Function]}
-        onRemoveChoice={[Function]}
-      />
-      <WithStyles(Choices)
-        choicePosition="top"
-        choices={Array []}
-        config={
-          Object {
-            "columns": 2,
-            "position": "top",
-          }
-        }
-      />
-    </div>
-    <Feedback
-      correctness="correct"
-      feedback={
+      model={
         Object {
-          "correct": Object {
-            "default": "Correct",
-            "type": "default",
+          "categories": Array [],
+          "choices": Array [],
+          "correctness": "correct",
+          "feedback": Object {
+            "correct": Object {
+              "default": "Correct",
+              "type": "default",
+            },
+            "incorrect": Object {
+              "default": "Incorrect",
+              "type": "default",
+            },
+            "partial": Object {
+              "default": "Nearly",
+              "type": "default",
+            },
           },
-          "incorrect": Object {
-            "default": "Incorrect",
-            "type": "default",
-          },
-          "partial": Object {
-            "default": "Nearly",
-            "type": "default",
+        }
+      }
+      onDropChoice={[Function]}
+      onRemoveChoice={[Function]}
+    />
+    <WithStyles(Choices)
+      choicePosition="above"
+      choices={Array []}
+      model={
+        Object {
+          "categories": Array [],
+          "choices": Array [],
+          "correctness": "correct",
+          "feedback": Object {
+            "correct": Object {
+              "default": "Correct",
+              "type": "default",
+            },
+            "incorrect": Object {
+              "default": "Incorrect",
+              "type": "default",
+            },
+            "partial": Object {
+              "default": "Nearly",
+              "type": "default",
+            },
           },
         }
       }
     />
   </div>
-</mockConstructor>
+  <Feedback
+    correctness="correct"
+    feedback={
+      Object {
+        "correct": Object {
+          "default": "Correct",
+          "type": "default",
+        },
+        "incorrect": Object {
+          "default": "Incorrect",
+          "type": "default",
+        },
+        "partial": Object {
+          "default": "Nearly",
+          "type": "default",
+        },
+      }
+    }
+  />
+</div>
 `;

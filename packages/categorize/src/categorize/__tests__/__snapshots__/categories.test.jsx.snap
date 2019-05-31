@@ -2,7 +2,7 @@
 
 exports[`categories snapshots disabled 1`] = `
 <WithStyles(GridContent)
-  columns={2}
+  columns={4}
 >
   <WithStyles(Category)
     choices={Array []}
@@ -24,7 +24,7 @@ exports[`categories snapshots disabled 1`] = `
 
 exports[`categories snapshots renders 1`] = `
 <WithStyles(GridContent)
-  columns={2}
+  columns={4}
 >
   <WithStyles(Category)
     choices={Array []}

@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.1.1...@pie-ui/number-line@5.1.2) (2019-05-14)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [5.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.1.0...@pie-ui/number-line@5.1.1) (2019-05-13)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+# [5.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.0.1...@pie-ui/number-line@5.1.0) (2019-05-10)
+
+
+### Features
+
+* **number-line:** Added prompt support. ([854b349](https://github.com/pie-framework/pie-ui/commit/854b349))
+
+
+
+
+
+## [5.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.0.0...@pie-ui/number-line@5.0.1) (2019-05-09)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+# [5.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.12...@pie-ui/number-line@5.0.0) (2019-05-08)
+
+
+### Features
+
+* Replaced `config` with `graph` ([9a242e1](https://github.com/pie-framework/pie-ui/commit/9a242e1))
+
+
+### BREAKING CHANGES
+
+* `model.config` will not be used anymore. Instead, use `model.graph`.
+
+
+
+
+
 ## [4.2.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@4.2.11...@pie-ui/number-line@4.2.12) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/number-line

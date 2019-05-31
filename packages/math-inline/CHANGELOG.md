@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.0...@pie-ui/math-inline@2.3.1) (2019-05-14)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [2.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.9...@pie-ui/math-inline@2.3.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* Updated rationale support. ([f0b6728](https://github.com/pie-framework/pie-ui/commit/f0b6728))
+
+
+### Features
+
+* Added rationale support. ([3b794af](https://github.com/pie-framework/pie-ui/commit/3b794af))
+
+
+
+
+
+## [2.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.8...@pie-ui/math-inline@2.2.9) (2019-05-10)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.7...@pie-ui/math-inline@2.2.8) (2019-05-10)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.2.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.6...@pie-ui/math-inline@2.2.7) (2019-05-09)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.2.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.5...@pie-ui/math-inline@2.2.6) (2019-05-08)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.4...@pie-ui/math-inline@2.2.5) (2019-05-08)
+
+
+### Bug Fixes
+
+* **math-inline:** styling fixes ([3cddfeb](https://github.com/pie-framework/pie-ui/commit/3cddfeb))
+
+
+
+
+
+## [2.2.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.3...@pie-ui/math-inline@2.2.4) (2019-05-07)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.2...@pie-ui/math-inline@2.2.3) (2019-05-03)
+
+
+### Bug Fixes
+
+* **math-inline:** vital null checks and default values where needed ([841d30e](https://github.com/pie-framework/pie-ui/commit/841d30e))
+
+
+
+
+
 ## [2.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.2.1...@pie-ui/math-inline@2.2.2) (2019-05-02)
 
 **Note:** Version bump only for package @pie-ui/math-inline

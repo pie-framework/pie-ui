@@ -10,7 +10,7 @@ import {
   moveChoiceToCategory
 } from '@pie-lib/categorize';
 import { withDragContext, uid } from '@pie-lib/drag';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, Collapsible } from '@pie-lib/render-ui';
 
 import debug from 'debug';
 
@@ -41,7 +41,6 @@ export class Categorize extends React.Component {
 
   constructor(props) {
     super(props);
-    this.uid = uid.generateId();
 
     this.state = {
       showCorrect: false
@@ -114,11 +113,9 @@ export class Categorize extends React.Component {
   render() {
     const { classes, model, session } = this.props;
     const { showCorrect } = this.state;
+    const { choicesPosition, choicesPerRow, categoriesPerRow } = model;
 
-    const choicePosition =
-      model.config && model.config.choices
-        ? model.config.choices.position
-        : 'above';
+    const choicePosition = choicesPosition || 'above';
 
     const style = {
       flexDirection: this.getPositionDirection(choicePosition)
@@ -133,9 +130,7 @@ export class Categorize extends React.Component {
 
     log('[render] disabled: ', model.disabled);
 
-    const { config } = model;
-
-    const columns = config.choices.columns / config.categories.columns;
+    const columns = choicesPerRow / categoriesPerRow;
 
     const maxLength = categories.reduce((acc, c) => {
       if (c.choices.length > acc) {
@@ -148,49 +143,76 @@ export class Categorize extends React.Component {
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
     return (
-      <uid.Provider value={this.uid}>
-        <div>
-          <CorrectAnswerToggle
-            show={showCorrect || correct === false}
-            toggled={showCorrect}
-            onToggle={this.toggleShowCorrect}
+      <div>
+        <CorrectAnswerToggle
+          show={showCorrect || correct === false}
+          toggled={showCorrect}
+          onToggle={this.toggleShowCorrect}
+        />
+        <div className={classes.categorize} style={style}>
+          <Categories
+            model={model}
+            disabled={model.disabled}
+            categories={categories}
+            onDropChoice={this.dropChoice}
+            onRemoveChoice={this.removeChoice}
+            grid={grid}
           />
-          <div className={classes.categorize} style={style}>
-            <Categories
-              config={model.config.categories}
-              disabled={model.disabled}
-              categories={categories}
-              onDropChoice={this.dropChoice}
-              onRemoveChoice={this.removeChoice}
-              grid={grid}
-            />
-            <Choices
-              disabled={model.disabled}
-              config={model.config.choices}
-              choices={choices}
-              choicePosition={choicePosition}
-            />
-          </div>
-          {
-            model.correctness &&
-            model.feedback &&
-            !showCorrect &&(
-              <Feedback
-                correctness={model.correctness}
-                feedback={model.feedback}
-              />
-            )
-          }
+          <Choices
+            disabled={model.disabled}
+            model={model}
+            choices={choices}
+            choicePosition={choicePosition}
+          />
         </div>
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
+        {
+          model.correctness &&
+          model.feedback &&
+          !showCorrect && (
+            <Feedback
+              correctness={model.correctness}
+              feedback={model.feedback}
+            />
+          )
+        }
+      </div>
+    );
+  }
+}
+
+class CategorizeProvider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.uid = uid.generateId();
+  }
+
+  render() {
+    return (
+      <uid.Provider value={this.uid}>
+        <Categorize { ...this.props } />
       </uid.Provider>
     );
   }
 }
+
 const styles = (theme) => ({
   categorize: {
     marginBottom: theme.spacing.unit,
     display: 'flex',
     flexDirection: 'column'
+  },
+  collapsible: {
+    paddingBottom: theme.spacing.unit * 2
   }
 });
-export default withDragContext(withStyles(styles)(Categorize));
+export default withDragContext(withStyles(styles)(CategorizeProvider));

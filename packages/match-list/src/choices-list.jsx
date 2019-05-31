@@ -27,7 +27,7 @@ export class ChoicesList extends React.Component {
       <div className={classes.answersContainer}>
         {
           config.answers
-            .filter(answer => (isEmpty(session) || session.value.indexOf(answer.id) === -1))
+            .filter(answer => (isEmpty(session) || !session.value || session.value.indexOf(answer.id) === -1))
             .map((answer) => (
               <DragAnswer
                 key={answer.id}

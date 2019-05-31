@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.8...@pie-ui/match-list@1.2.0) (2019-05-21)
+
+
+### Features
+
+* **mask-markup-ui:** added math rendering and prompts to all elements ([94b7b97](https://github.com/pie-framework/pie-ui/commit/94b7b97))
+
+
+
+
+
+## [1.1.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.7...@pie-ui/match-list@1.1.8) (2019-05-10)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
+## [1.1.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.6...@pie-ui/match-list@1.1.7) (2019-05-10)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
+## [1.1.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.5...@pie-ui/match-list@1.1.6) (2019-05-09)
+
+
+### Bug Fixes
+
+* checked if session.value exists to avoid app crash. ([06a84c1](https://github.com/pie-framework/pie-ui/commit/06a84c1))
+
+
+
+
+
+## [1.1.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.4...@pie-ui/match-list@1.1.5) (2019-05-08)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
+## [1.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.3...@pie-ui/match-list@1.1.4) (2019-05-03)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
 ## [1.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.1.2...@pie-ui/match-list@1.1.3) (2019-05-02)
 
 

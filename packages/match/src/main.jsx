@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
+import { Collapsible, Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
 import isEqual from 'lodash/isEqual';
@@ -61,8 +61,8 @@ export class Main extends React.Component {
     let isRequired = false;
 
     if (
-      this.props.model.config.responseType !==
-      nextProps.model.config.responseType
+      this.props.model.config.choiceMode !==
+      nextProps.model.config.choiceMode
     ) {
       isRequired = true;
     }
@@ -107,7 +107,7 @@ export class Main extends React.Component {
       state => ({
         session: {
           ...nextProps.session,
-          // regenerate answers if layout or responseType change
+          // regenerate answers if layout or choiceMode change
           answers: regenAnswers
             ? this.generateAnswers(nextProps.model)
             : nextProps.session.answers
@@ -161,6 +161,12 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
+        {model.prompt && (
+          <div
+            className={classes.prompt}
+            dangerouslySetInnerHTML={{ __html: model.prompt }}
+          />
+        )}
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -177,12 +183,22 @@ export class Main extends React.Component {
             disabled={model.disabled}
             view={model.view}
             onAnswerChange={this.onAnswerChange}
-            responseType={model.config.responseType}
+            choiceMode={model.config.choiceMode}
             answers={showCorrect ? model.correctResponse : session.answers}
             headers={model.config.headers}
             rows={shuffledRows}
           />
         </div>
+        {
+          model.rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}
@@ -205,6 +221,14 @@ const styles = theme => ({
   },
   toggle: {
     paddingBottom: theme.spacing.unit * 3
+  },
+  prompt: {
+    verticalAlign: 'middle',
+    marginBottom: theme.spacing.unit * 2
+  },
+  collapsible: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
   }
 });
 

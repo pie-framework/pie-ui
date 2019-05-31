@@ -9,8 +9,8 @@ export class Categories extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     categories: PropTypes.arrayOf(PropTypes.shape(CategoryType)),
-    config: PropTypes.shape({
-      columns: PropTypes.number.isRequired
+    model: PropTypes.shape({
+      categoriesPerRow: PropTypes.number
     }),
     disabled: PropTypes.bool,
     onDropChoice: PropTypes.func.isRequired,
@@ -19,8 +19,8 @@ export class Categories extends React.Component {
   };
 
   static defaultProps = {
-    config: {
-      columns: 4
+    model: {
+      categoriesPerRow: 4
     }
   };
 
@@ -28,7 +28,7 @@ export class Categories extends React.Component {
     const {
       classes,
       categories,
-      config,
+      model,
       disabled,
       onDropChoice,
       onRemoveChoice,
@@ -36,7 +36,7 @@ export class Categories extends React.Component {
     } = this.props;
 
     return (
-      <GridContent columns={config.columns} className={classes.categories}>
+      <GridContent columns={model.categoriesPerRow} className={classes.categories}>
         {categories.map((c, index) => (
           <Category
             grid={grid}

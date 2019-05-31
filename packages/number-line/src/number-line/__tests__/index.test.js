@@ -13,7 +13,7 @@ describe('NumberLine', () => {
     const defaults = {
       classes: {},
       model: {
-        config: {
+        graph: {
           domain: [0, 1]
         }
       },
@@ -44,7 +44,7 @@ describe('NumberLine', () => {
 
     it('sets custom width', () => {
       expect(
-        mkWrapper({ model: { config: { width: 1001 } } })
+        mkWrapper({ model: { graph: { width: 1001 } } })
           .find(Graph)
           .prop('width')
       ).toEqual(1001);
@@ -52,7 +52,7 @@ describe('NumberLine', () => {
 
     it('sets custom height', () => {
       expect(
-        mkWrapper({ model: { config: { height: 701 } } })
+        mkWrapper({ model: { graph: { height: 701 } } })
           .find(Graph)
           .prop('height')
       ).toEqual(701);

@@ -4,6 +4,8 @@ import { shallowChild } from '@pie-lib/test-utils';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from '../answer-grid';
+import { shallow } from 'enzyme/build';
+import Controls from '@pie-ui/graph-lines/src/controls';
 
 describe('Main', () => {
   const defaultProps = {
@@ -32,7 +34,7 @@ describe('Main', () => {
         partialScoring: [],
         layout: 3,
         headers: ['Column 1', 'Column 2', 'Column 3'],
-        responseType: 'radio',
+        choiceMode: 'radio',
         feedback: {
           correct: {
             type: 'none',
@@ -60,41 +62,60 @@ describe('Main', () => {
     wrapper = shallowChild(Main, defaultProps, 1);
   });
 
-  it('renders correctly', () => {
-    component = wrapper();
+  describe('render', () => {
+    let w;
 
-    expect(component.find(CorrectAnswerToggle).length).toEqual(1);
-    expect(component.find(Feedback).length).toEqual(0);
-    expect(component.find(AnswerGrid).length).toEqual(1);
+    beforeEach(() => {
+      w = props => shallow(<Main { ...props } />);
+    });
 
-    expect(component.state()).toEqual({
-      session: {
-        answers: {
-          1: [false, false],
-          2: [false, false],
-          3: [false, false],
-          4: [false, false]
-        }
-      },
-      showCorrect: false,
-      shuffledRows: [{
-        id: 1,
-        title: 'Question Text 1',
-        values: [false, false]
-      }, {
-        id: 2,
-        title: 'Question Text 2',
-        values: [false, false]
-      }, {
-        id: 3,
-        title: 'Question Text 3',
-        values: [false, false]
-      }, {
-        id: 4,
-        title: 'Question Text 4',
-        values: [false, false]
-      }]
-    })
+    it('snapshot', () => {
+      expect(w(defaultProps)).toMatchSnapshot();
+    });
+
+    it('snapshot with rationale', () => {
+      expect(w({
+        ...defaultProps,
+        rationale: 'This is rationale'
+      })).toMatchSnapshot();
+    });
+
+    it('renders correctly', () => {
+      component = wrapper();
+
+      expect(component.find(CorrectAnswerToggle).length).toEqual(1);
+      expect(component.find(Feedback).length).toEqual(0);
+      expect(component.find(AnswerGrid).length).toEqual(1);
+
+      expect(component.state()).toEqual({
+        session: {
+          answers: {
+            1: [false, false],
+            2: [false, false],
+            3: [false, false],
+            4: [false, false]
+          }
+        },
+        showCorrect: false,
+        shuffledRows: [{
+          id: 1,
+          title: 'Question Text 1',
+          values: [false, false]
+        }, {
+          id: 2,
+          title: 'Question Text 2',
+          values: [false, false]
+        }, {
+          id: 3,
+          title: 'Question Text 3',
+          values: [false, false]
+        }, {
+          id: 4,
+          title: 'Question Text 4',
+          values: [false, false]
+        }]
+      })
+    });
   });
 
   it('generates answers correctly from rows', () => {

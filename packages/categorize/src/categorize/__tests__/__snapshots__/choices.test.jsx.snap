@@ -3,7 +3,7 @@
 exports[`choices snapshots disabled 1`] = `
 <div>
   <WithStyles(GridContent)
-    columns={2}
+    columns={4}
     extraStyle={
       Object {
         "textAlign": "center",
@@ -16,7 +16,7 @@ exports[`choices snapshots disabled 1`] = `
 exports[`choices snapshots empty 1`] = `
 <div>
   <WithStyles(GridContent)
-    columns={2}
+    columns={4}
     extraStyle={
       Object {
         "textAlign": "center",
@@ -35,7 +35,7 @@ exports[`choices snapshots empty 1`] = `
 exports[`choices snapshots empty 2`] = `
 <div>
   <WithStyles(GridContent)
-    columns={2}
+    columns={4}
     extraStyle={
       Object {
         "textAlign": "center",
@@ -52,7 +52,7 @@ exports[`choices snapshots empty 2`] = `
 exports[`choices snapshots renders 1`] = `
 <div>
   <WithStyles(GridContent)
-    columns={2}
+    columns={4}
     extraStyle={
       Object {
         "textAlign": "center",

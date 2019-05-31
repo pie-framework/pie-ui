@@ -223,5 +223,55 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match@1.2.12"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Replaced `responseType` with `choiceMode` in order to keep consistency.",
+    "merge": null,
+    "header": "feat: Replaced `responseType` with `choiceMode` in order to keep consistency.",
+    "body": null,
+    "footer": "BREAKING CHANGE: `responseType` has been replaced with `choiceMode`.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "`responseType` has been replaced with `choiceMode`."
+      }
+    ],
+    "hash": "7a79108dd448ec8ffdb6eabec8289a0dc66aaa39",
+    "gitTags": "",
+    "committerDate": "2019-05-04 11:32:58 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added prompt support.",
+    "merge": null,
+    "header": "feat: Added prompt support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bae0f6ad3c7d34af3eadd5ba64fdd21278fbfee0",
+    "gitTags": "",
+    "committerDate": "2019-05-10 12:48:04 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added rationale support.",
+    "merge": null,
+    "header": "feat: Added rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ce71c6e3ec737d3c6ae603215dc4e1204b267717",
+    "gitTags": " (origin/andreea/ch1490/rationale-support-match)",
+    "committerDate": "2019-05-15 17:53:19 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.2.0"
   }
 ]

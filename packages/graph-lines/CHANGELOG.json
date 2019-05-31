@@ -213,5 +213,50 @@
     "committerDate": "2019-04-25 14:48:35 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.0.3"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated pie/lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "merge": null,
+    "header": "fix: Updated pie/lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "25442134c210715ffaa17c988dcd75f86654b41c",
+    "gitTags": "",
+    "committerDate": "2019-05-15 14:02:51 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated using className property. Added snapshot test for rationale.",
+    "merge": null,
+    "header": "fix: Updated using className property. Added snapshot test for rationale.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bea6777dd860d70adbf18f01637a6bbd83b7bfd4",
+    "gitTags": "",
+    "committerDate": "2019-05-15 13:29:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.5"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated rationale support.",
+    "merge": null,
+    "header": "fix: Updated rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3ec94278f5378ff0d07bc860e767dbd1e86542f9",
+    "gitTags": "",
+    "committerDate": "2019-05-14 13:56:42 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.0.5"
   }
 ]

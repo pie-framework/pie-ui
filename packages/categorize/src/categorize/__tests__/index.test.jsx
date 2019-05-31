@@ -18,15 +18,6 @@ describe('categorize', () => {
       answers: []
     },
     model: {
-      config: {
-        choices: {
-          position: 'top',
-          columns: 2
-        },
-        categories: {
-          columns: 2
-        }
-      },
       choices: [],
       categories: []
     }

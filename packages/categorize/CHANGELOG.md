@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.1.0...@pie-ui/categorize@1.1.1) (2019-05-16)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+# [1.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.0.1...@pie-ui/categorize@1.1.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* Added snapshot test for rationale. ([8651243](https://github.com/pie-framework/pie-ui/commit/8651243))
+* Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale. ([634b421](https://github.com/pie-framework/pie-ui/commit/634b421))
+
+
+### Features
+
+* Added rationale support. ([3555481](https://github.com/pie-framework/pie-ui/commit/3555481))
+
+
+
+
+
+## [1.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.0.0...@pie-ui/categorize@1.0.1) (2019-05-09)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+# [1.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.12...@pie-ui/categorize@1.0.0) (2019-05-08)
+
+
+### Features
+
+* Removed `model.config` with properties set directly on model: `categoriesPerRow`, `choicesPerRow`, `choicesLabel`, `choicesPosition` ([7d78214](https://github.com/pie-framework/pie-ui/commit/7d78214))
+
+
+### BREAKING CHANGES
+
+* `model.config` will not be used anymore. Instead, use `model.categoriesPerRow`, `model.choicesPerRow`, `model.choicesLabel`, `model.choicesPosition`.
+
+
+
+
+
 ## [0.9.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@0.9.11...@pie-ui/categorize@0.9.12) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/categorize

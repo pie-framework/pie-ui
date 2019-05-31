@@ -1,60 +1,16 @@
 import { ModelSetEvent } from '@pie-framework/pie-player-events';
-
+import React from 'react';
+import ReactDOM from 'react-dom';
+import StimulusTabs from './stimulus-tabs';
 export default class PiePassage extends HTMLElement {
   constructor() {
     super();
     this._model = {
-      title: '',
-      content: ''
+      passages: []
     };
     this._session = null;
   }
 
-
-  containerStyle =  `
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  `;
-
-  titleStyle = `
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-  `;
-
-  contentStyle = `
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-  `;
   set model(s) {
     this._model = s;
     this.dispatchEvent(
@@ -64,6 +20,7 @@ export default class PiePassage extends HTMLElement {
         !!this._model
       )
     );
+
     this._render();
   }
 
@@ -76,11 +33,16 @@ export default class PiePassage extends HTMLElement {
   }
 
   _render() {
-    this.innerHTML = `
-      <div style="${this.containerStyle}">
-        <h2 style="${this.titleStyle}">${this._model.title}</h2>
-        <divs tyle="${this.contentStyle}">${this._model.content}</div>
-      </div>
-    `;
+    if (this._model.passages.length > 0) {
+      const passagesTabs = this._model.passages.map((passage, index) => {
+        return {
+          id: index,
+          title: passage.title,
+          text: passage.text
+        };
+      });
+      let elem = React.createElement(StimulusTabs, { tabs: passagesTabs });
+      ReactDOM.render(elem, this);
+    }
   }
 }

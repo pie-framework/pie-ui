@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.0...@pie-ui/match@2.2.1) (2019-05-21)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+# [2.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.1.2...@pie-ui/match@2.2.0) (2019-05-16)
+
+
+### Features
+
+* Added rationale support. ([ce71c6e](https://github.com/pie-framework/pie-ui/commit/ce71c6e))
+
+
+
+
+
+## [2.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.1.1...@pie-ui/match@2.1.2) (2019-05-14)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.1.0...@pie-ui/match@2.1.1) (2019-05-13)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+# [2.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.0.1...@pie-ui/match@2.1.0) (2019-05-10)
+
+
+### Features
+
+* Added prompt support. ([bae0f6a](https://github.com/pie-framework/pie-ui/commit/bae0f6a))
+
+
+
+
+
+## [2.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.0.0...@pie-ui/match@2.0.1) (2019-05-08)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+# [2.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.2.13...@pie-ui/match@2.0.0) (2019-05-07)
+
+
+### Features
+
+* Replaced `responseType` with `choiceMode` in order to keep consistency. ([7a79108](https://github.com/pie-framework/pie-ui/commit/7a79108))
+
+
+### BREAKING CHANGES
+
+* `responseType` has been replaced with `choiceMode`.
+
+
+
+
+
 ## [1.2.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@1.2.12...@pie-ui/match@1.2.13) (2019-04-25)
 
 **Note:** Version bump only for package @pie-ui/match

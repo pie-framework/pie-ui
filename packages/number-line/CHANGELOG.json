@@ -188,5 +188,40 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@4.2.11"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Replaced `config` with `graph`",
+    "merge": null,
+    "header": "feat: Replaced `config` with `graph`",
+    "body": null,
+    "footer": "BREAKING CHANGE: `model.config` will not be used anymore. Instead, use `model.graph`.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "`model.config` will not be used anymore. Instead, use `model.graph`."
+      }
+    ],
+    "hash": "9a242e14f52506b2ab42818130204492d2157554",
+    "gitTags": " (origin/andreea/ch1308/add-separate-property-and-call-it-configuration-number_line)",
+    "committerDate": "2019-05-08 15:09:38 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@5.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": "number-line",
+    "subject": "Added prompt support.",
+    "merge": null,
+    "header": "feat(number-line): Added prompt support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "854b349832bc725c81c8c7549edffb452be4caaf",
+    "gitTags": "",
+    "committerDate": "2019-05-10 12:48:39 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@5.1.0"
   }
 ]

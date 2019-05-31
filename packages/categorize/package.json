@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/categorize",
-  "version": "0.9.12",
+  "version": "1.1.1",
   "description": "",
   "main": "lib/index.js",
   "publishConfig": {
@@ -15,7 +15,7 @@
     "@pie-lib/correct-answer-toggle": "^2.1.2",
     "@pie-lib/drag": "^1.1.12",
     "@pie-lib/math-rendering": "^1.2.1",
-    "@pie-lib/render-ui": "^4.3.1",
+    "@pie-lib/render-ui": "^4.3.12",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "prop-types": "^15.6.1",

@@ -413,5 +413,35 @@
     "committerDate": "2019-04-26 14:34:46 -0400",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@4.6.3"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "merge": null,
+    "header": "fix: Updated pie-lib/render-ui version (to use className property). Added snapshot test for rationale.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a8b80db7c8b7c37a5738a2995235c7be226a75b7",
+    "gitTags": "",
+    "committerDate": "2019-05-15 14:18:56 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.7.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added rationale support.",
+    "merge": null,
+    "header": "feat: Added rationale support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4d790b8749179975c1fc4156d0cb523872d26dad",
+    "gitTags": "",
+    "committerDate": "2019-05-14 14:39:07 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.7.0"
   }
 ]

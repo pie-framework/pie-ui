@@ -24,10 +24,11 @@ export default {
     label: 'Text Entry',
     icon: 'mdiFormatColorText'
   },{
-    type: 'PaintBucket',
-    label: 'Paint Bucket',
-    icon: 'mdiFormatColorFill'
-  },{
+    // ,{
+    //   type: 'PaintBucket',
+    //   label: 'Paint Bucket',
+    //   icon: 'mdiFormatColorFill'
+    // },
     type: 'EraserDrawable',
     label: 'Eraser',
     icon: 'mdiEraser'

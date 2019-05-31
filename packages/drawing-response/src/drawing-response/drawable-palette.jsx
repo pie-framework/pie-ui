@@ -21,7 +21,7 @@ class Palette extends React.Component {
   };
 
   render() {
-    const { classes, fillColor, outlineColor, paintColor, fillList, outlineList, paintList } = this.props;
+    const { classes, fillColor, outlineColor, fillList, outlineList } = this.props;
 
     return (
       <div className={classes.base}>
@@ -63,24 +63,24 @@ class Palette extends React.Component {
           </Select>
         </InputContainer>
 
-        <InputContainer label="Paint Color" className={classes.input}>
-          <Select
-            className={classes.select}
-            onChange={this.onChange('paint')}
-            value={paintColor}
-          >
-            {paintList.map(({ value, label }) => (
-              <MenuItem
-                key={value}
-                value={value}
-                className={classes.item}
-                style={{ backgroundColor: value }}
-              >
-                {label}
-              </MenuItem>
-            ))}
-          </Select>
-        </InputContainer>
+        {/*<InputContainer label="Paint Color" className={classes.input}>*/}
+          {/*<Select*/}
+            {/*className={classes.select}*/}
+            {/*onChange={this.onChange('paint')}*/}
+            {/*value={paintColor}*/}
+          {/*>*/}
+            {/*{paintList.map(({ value, label }) => (*/}
+              {/*<MenuItem*/}
+                {/*key={value}*/}
+                {/*value={value}*/}
+                {/*className={classes.item}*/}
+                {/*style={{ backgroundColor: value }}*/}
+              {/*>*/}
+                {/*{label}*/}
+              {/*</MenuItem>*/}
+            {/*))}*/}
+          {/*</Select>*/}
+        {/*</InputContainer>*/}
       </div>
     );
   }
@@ -112,9 +112,7 @@ Palette.propTypes = {
   onOutlineColorChange: PropTypes.func.isRequired,
   onPaintColorChange: PropTypes.func.isRequired,
   outlineColor: PropTypes.string.isRequired,
-  outlineList: PropTypes.array.isRequired,
-  paintColor: PropTypes.string.isRequired,
-  paintList: PropTypes.array.isRequired
+  outlineList: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(Palette);

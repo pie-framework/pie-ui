@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "add support for polygons  (#109)",
+    "merge": null,
+    "header": "feat: add support for polygons  (#109)",
+    "body": "* feat: add support for polygons\n\n* add tests for polygon\n\n* add a brief outline drawing-response related",
+    "footer": null,
+    "notes": [],
+    "hash": "e4334e0784d9f5af4774a638eaa78b2b257681da",
+    "gitTags": "",
+    "committerDate": "2019-05-31 14:02:43 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.1.0"
+  },
+  {
+    "type": "Fix",
+    "scope": null,
+    "subject": "allow changing paintColor without clearing filled shapes [ch1189]",
+    "merge": null,
+    "header": "Fix: allow changing paintColor without clearing filled shapes [ch1189]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "df503c2244e1e7896a85656ed4632d0f0e25d3dd",
+    "gitTags": "",
+    "committerDate": "2019-05-28 18:33:47 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.1.0"
+  }
+]

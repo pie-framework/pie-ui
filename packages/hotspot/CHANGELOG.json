@@ -28,5 +28,35 @@
     "committerDate": "2019-05-14 14:54:42 +0300",
     "isTagged": true,
     "tag": "@pie-ui/hotspot@1.1.0"
+  },
+  {
+    "type": "chore",
+    "scope": "merge",
+    "subject": "merged develop into master",
+    "merge": null,
+    "header": "chore(merge): merged develop into master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7e7a3a28e3f054edc79449b5cca351b751a0048b",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-05 21:36:48 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.2.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "add support for polygons  (#109)",
+    "merge": null,
+    "header": "feat: add support for polygons  (#109)",
+    "body": "* feat: add support for polygons\n\n* add tests for polygon\n\n* add a brief outline drawing-response related",
+    "footer": null,
+    "notes": [],
+    "hash": "e4334e0784d9f5af4774a638eaa78b2b257681da",
+    "gitTags": "",
+    "committerDate": "2019-05-31 14:02:43 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.2.0"
   }
 ]

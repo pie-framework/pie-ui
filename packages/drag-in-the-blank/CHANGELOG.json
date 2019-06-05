@@ -58,5 +58,20 @@
     "committerDate": "2019-05-21 06:49:47 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": "correct-toggle",
+    "subject": "added show correct answer",
+    "merge": null,
+    "header": "feat(correct-toggle): added show correct answer",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "764814e04d3b5a721dec9fb0740c659914892280",
+    "gitTags": " (origin/feat/dib-ui)",
+    "committerDate": "2019-06-05 17:42:52 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.2.0"
   }
 ]

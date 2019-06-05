@@ -1,18 +1,29 @@
 import { updateSessionValue } from '../session-updater';
 
 const modelCopy = {
-  shapes: [
-    {
-      id: '1',
-      correct: true
-    },
-    {
-      id: '2'
-    },
-    {
-      id: '3'
-    }
-  ],
+  shapes: {
+    rectangles: [
+      {
+        id: '1',
+        correct: true
+      },
+      {
+        id: '2'
+      },
+      {
+        id: '3'
+      }
+    ],
+    polygons: [
+      {
+        id: '4',
+        correct: true
+      },
+      {
+        id: '5'
+      }
+    ]
+  },
   configure: {},
   multipleCorrect: true
 };

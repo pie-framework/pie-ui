@@ -333,5 +333,20 @@
     "committerDate": "2019-06-05 23:39:24 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.1.0"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "bumped the packages the version of the packages that depend on editable-html",
+    "merge": null,
+    "header": "chore(version): bumped the packages the version of the packages that depend on editable-html",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fb0f2bbe68e5fec4eeeafce97778f599f3cb5a3a",
+    "gitTags": "",
+    "committerDate": "2019-06-06 12:58:00 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.1.2"
   }
 ]

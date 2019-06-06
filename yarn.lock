@@ -1977,14 +1977,14 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^10.3.0":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.3.0.tgz#f4de12e3c31dcabf132b3f88a1761b285f3a80ba"
-  integrity sha512-OT2718nQ1wqiwcOCMbBlOjzqtPyQHKj6Wldcwx0t8fBxEnTNZ1HfSsBeN2EmmJIKzmWXy8G2GjEBRf4Aq+e1Mw==
+"@pie-lib/config-ui@^10.3.1":
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.3.1.tgz#4043c0f2a65585140d3201e19a780e111bfe4402"
+  integrity sha512-L5VUKWx4sUqlw15J4zDkNkxt+XnZoEYOEgtun13gOLCAXEqiLn0cj9PNAYGB11G01tNIi6Vd6aullKSTxLFABA==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.6.0"
+    "@pie-lib/editable-html" "^7.6.1"
     "@pie-lib/icons" "^2.3.8"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -2015,10 +2015,10 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.6.0":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.6.0.tgz#ae3cace7422e6adfcc49af11a90b6808a98be7bb"
-  integrity sha512-55nb1/aGbx3HlMmttyOlSLoq7hsAq23O74k8QWIel6gZy19fJkkeb4aqUqaSoafDeSOfhNmooKI0+z/qt4bq3Q==
+"@pie-lib/editable-html@^7.6.1":
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.6.1.tgz#ce7de11ff6e115e6ed9526dfe35e7154b5256dca"
+  integrity sha512-S+ISDHJqijXtq3DcHmSxM81X+NWJGXBgA0pkqy8nhbfM0+nWH5r8jZCsY1sOs9DU0zAg65qSqV5sejg5ggfe5A==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -2261,9 +2261,9 @@
     indefinite-observable "^1.0.1"
 
 "@types/node@*":
-  version "12.0.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.4.tgz#46832183115c904410c275e34cf9403992999c32"
-  integrity sha512-j8YL2C0fXq7IONwl/Ud5Kt0PeXw22zGERt+HSSnwbKOJVsAGkEz3sFCYwaF9IOuoG1HOtE0vKCj6sXF7Q0+Vaw==
+  version "12.0.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.5.tgz#ac14404c33d1a789973c45379a67f7f7e58a01b9"
+  integrity sha512-CFLSALoE+93+Hcb5pFjp0J1uMrrbLRe+L1+gFwerJ776R3TACSF0kTVRQ7AvRa7aFx70nqYHAc7wQPlt9kY2Mg==
 
 "@types/prop-types@*":
   version "15.7.1"
@@ -3406,9 +3406,9 @@ camelcase@^5.0.0, camelcase@^5.2.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30000971:
-  version "1.0.30000973"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000973.tgz#2f8e8e54f9e6c5b7a631c9e69bfa1093d8cfd360"
-  integrity sha512-/F3t/Yo8LEdRSEPCmI15fLu5vepVh9UCg/9inJXF5AAfW7xRRJkbaM2ut52iRMQMnGCLQouLbFdbOA+VEFOIsg==
+  version "1.0.30000974"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000974.tgz#b7afe14ee004e97ce6dc73e3f878290a12928ad8"
+  integrity sha512-xc3rkNS/Zc3CmpMKuczWEdY2sZgx09BkAxfvkxlAEBTqcMHeL8QnPqhKse+5sRTi3nrw2pJwToD2WvKn1Uhvww==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -4571,9 +4571,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.137:
-  version "1.3.147"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.147.tgz#5d804484f9ab836536a9f5db6020e3eb91d0a322"
-  integrity sha512-pHE+9S2OMXOLAze6KvKMA9Te56M5e4WIdPPPeZ2JiSNvpXkDrn9FoBot1yeeXMRClWvQGI6vj06kQFqCADrspQ==
+  version "1.3.148"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.148.tgz#5796c0d9eb0358d397163413b90bf376c5d8bf08"
+  integrity sha512-nuCOlXNlGMQmdzihIPGm2K3Yf3H1hke/1rK381i02pH8wNliJU9hVNnOi/xjmxt+mjABd/BzufP5nPHWKshLWA==
 
 elliptic@^6.0.0:
   version "6.4.1"

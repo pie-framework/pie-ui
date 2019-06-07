@@ -51,7 +51,7 @@ class StimulusTabs extends React.Component {
               tabs.map( tab => (
                 <Tab
                   key={tab.id}
-                  label={tab.title}
+                  label={<span dangerouslySetInnerHTML={{__html: tab.title}}></span>}
                   value={tab.id}
                 />
                 

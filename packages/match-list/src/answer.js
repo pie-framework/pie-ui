@@ -16,9 +16,20 @@ const Holder = withStyles(() => ({
     fontSize: '18px',
     textAlign: 'center',
     color: 'rgba(0,0,0,0.6)'
+  },
+  placeholder: {
+    display: 'flex',
+    padding: '0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40px'
   }
 }))(({ classes, index, isOver, disabled }) => (
-  <PlaceHolder isOver={isOver} disabled={disabled}>
+  <PlaceHolder
+    className={classes.placeholder}
+    disabled={disabled}
+    isOver={isOver}
+  >
     {index !== undefined && <div className={classes.number}>{index}</div>}
   </PlaceHolder>
 ));
@@ -39,6 +50,7 @@ const AnswerContent = withStyles({
     cursor: 'pointer',
     width: '100%',
     height: '100%',
+    minHeight: '40px',
     padding: '10px',
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -96,6 +108,7 @@ const AnswerContent = withStyles({
 
 export class Answer extends React.Component {
   static propTypes = {
+    className: PropTypes.string,
     connectDragSource: PropTypes.func,
     connectDropTarget: PropTypes.func,
     isDragging: PropTypes.bool.isRequired,
@@ -114,6 +127,7 @@ export class Answer extends React.Component {
       id,
       title,
       isDragging,
+      className,
       connectDragSource,
       connectDropTarget,
       disabled,
@@ -125,10 +139,11 @@ export class Answer extends React.Component {
 
     log('[render], props: ', this.props);
 
-    const name = classNames(classes.answer, {
+    const name = classNames(className, classes.answer, {
       [classes.correct]: correct === true,
       [classes.incorrect]: correct === false
     });
+
     const content = (
       <div className={name}>
         <AnswerContent
@@ -152,7 +167,7 @@ const StyledAnswer = withStyles({
   answer: {
     boxSizing: 'border-box',
     height: 40,
-    width: 280,
+    minWidth: '100%',
     overflow: 'hidden',
     margin: '10px 0',
     padding: '0px',
@@ -171,7 +186,7 @@ const answerTarget = {
     const draggedItem = monitor.getItem();
 
     if (draggedItem.instanceId === props.instanceId) {
-      props.onPlaceAnswer(props.index, draggedItem.id);
+      props.onPlaceAnswer(props.promptId, draggedItem.id);
     }
   },
   canDrop(props, monitor) {

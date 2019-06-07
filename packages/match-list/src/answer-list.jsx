@@ -34,10 +34,13 @@ export class AnswerList extends React.Component {
     const { model, session, showCorrect } = this.props;
     const { config } = model;
     const sessionValue =
-      session.value || new Array(config.prompts.length).fill(undefined);
+      session.value || config.prompts.reduce((obj, prompt) => {
+        obj[prompt.id] = undefined;
+        return obj;
+      }, {});
 
     if (model.mode !== 'evaluate') {
-      return [];
+      return {};
     }
 
     if (showCorrect) {

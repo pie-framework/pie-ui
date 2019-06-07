@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import isObject from 'lodash/isObject';
 import isArray from 'lodash/isArray';
 import { AnswerList } from '../answer-list';
 import { model, answer } from '../../demo/config';
@@ -34,41 +35,40 @@ describe('AnswerList', () => {
 
           const value = wrapper.instance().getCorrectOrIncorrectMap();
 
-          expect(isArray(value)).toBe(true);
+          expect(isObject(value)).toBe(true);
           expect(value).toEqual(val);
         });
       };
 
       mkTestForFn(
-        'returns an empty array for modes different than evaluate',
+        'returns an empty object for modes different than evaluate',
         {
           model: model('1', {
             mode: 'gather'
           })
         },
-        []
+        {}
       );
 
       mkTestForFn(
-        'returns an empty array for modes different than evaluate',
+        'returns an empty object for modes different than evaluate',
         {
           model: model('1', {
             mode: 'gather'
           })
         },
-        []
+        {}
       );
 
       mkTestForFn(
-        'returns an array appropriate values when mode is evaluate',
+        'returns an object with appropriate values when mode is evaluate',
         {
           model: model('1', {
             mode: 'evaluate'
           })
         },
-        [false, false, false, false]
+        { 1: false, 2: false, 3: false, 4: false }
       );
-
       mkTestForFn(
         'returns an array with appropriate values',
         {
@@ -76,21 +76,21 @@ describe('AnswerList', () => {
             mode: 'evaluate'
           }),
           session: {
-            value: [1, 3, 4, 2]
+            value: { 1: 1, 3: 3, 4: 4, 2: 2 }
           }
         },
-        [true, true, true, true]
+        { 1: true, 2: true, 3: true, 4: true }
       );
 
       mkTestForFn(
-        'returns an array with true as value for each index when showCorrect is true',
+        'returns an object with true as value for each index when showCorrect is true',
         {
           model: model('1', {
             mode: 'evaluate'
           }),
           showCorrect: true
         },
-        [true, true, true, true]
+        { 1: true, 2: true, 3: true, 4: true }
       );
 
     });
@@ -131,9 +131,9 @@ describe('AnswerList', () => {
           model: model('1', {
             mode: 'gather'
           }),
-          session: { value: [2, 1, 4, 3] }
+          session: { value: { 1: 2, 2: 1, 3: 4, 4: 3 } }
         },
-        0,
+        1,
         { id: 2, title: "Answer 2" }
       );
 
@@ -144,10 +144,10 @@ describe('AnswerList', () => {
             mode: 'gather',
             showCorrect: true
           }),
-          session: { value: [1, 3, 4, 2] }
+          session: { value: { 1: 1, 3: 3, 4: 4, 2: 2 } }
         },
-        [0, 1, 2, 3],
-        [answer(1), answer(3), answer(4), answer(2)]
+        [1, 2, 3, 4],
+        [answer(1), answer(2), answer(3), answer(4)]
       );
 
     });

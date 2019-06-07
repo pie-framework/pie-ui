@@ -32,7 +32,7 @@ describe('AnswerList', () => {
             ...extraProps
           });
 
-          const value = wrapper.instance().getCorrectOrIncorrectArray();
+          const value = wrapper.instance().getCorrectOrIncorrectMap();
 
           expect(isArray(value)).toBe(true);
           expect(value).toEqual(val);

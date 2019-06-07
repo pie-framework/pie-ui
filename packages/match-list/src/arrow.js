@@ -43,7 +43,7 @@ const styledArrow = withStyles({
   arrow: {
     display: 'inline-block',
     position: 'relative',
-    width: 80
+    width: '100%'
   },
   line: {
     backgroundColor: '#979797',
@@ -53,7 +53,7 @@ const styledArrow = withStyles({
     height: 1,
     left: 20,
     position: 'absolute',
-    width: 80
+    width: '100%'
   },
   right: {
     bottom: 20

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import isEmpty from 'lodash/isEmpty';
+import reduce from 'lodash/reduce';
 import DragAndDropAnswer from './answer';
 
 export class AnswerList extends React.Component {
@@ -18,19 +19,18 @@ export class AnswerList extends React.Component {
     prompt: PropTypes.string
   };
 
-  getAnswerFromSession = index => {
+  getAnswerFromSession = promptId => {
     const { model, session, showCorrect } = this.props;
     const { config } = model;
-
     const answerId = showCorrect
-      ? config.prompts[index].relatedAnswer
-      : session.value && session.value[index];
+      ? config.prompts.find(p => p.id === promptId).relatedAnswer
+      : session.value && session.value[promptId];
     const answer = config.answers.find(answer => answer.id === answerId);
 
     return answer || {};
   };
 
-  getCorrectOrIncorrectArray = () => {
+  getCorrectOrIncorrectMap = () => {
     const { model, session, showCorrect } = this.props;
     const { config } = model;
     const sessionValue =
@@ -41,7 +41,11 @@ export class AnswerList extends React.Component {
     }
 
     if (showCorrect) {
-      return new Array(config.prompts.length).fill(true);
+      return config.prompts.reduce((obj, prompt) => {
+        obj[prompt.id] = true;
+
+        return obj;
+      }, {});
     }
 
     const correctPromptMap = config.prompts.reduce((obj, prompt) => {
@@ -52,11 +56,11 @@ export class AnswerList extends React.Component {
       return obj;
     }, {});
 
-    return sessionValue.map((val, index) => {
-      const currentPrompt = config.prompts[index];
+    return reduce(sessionValue, (obj, val, key) => {
+      obj[key] = correctPromptMap[key] === sessionValue[key];
 
-      return correctPromptMap[currentPrompt.id] === val;
-    });
+      return obj;
+    }, {});
   };
 
   render() {
@@ -69,18 +73,19 @@ export class AnswerList extends React.Component {
       model
     } = this.props;
     const { config } = model;
-    const correctnessArray = this.getCorrectOrIncorrectArray();
+    const correctnessMap = this.getCorrectOrIncorrectMap();
 
     return (
       <div className={classes.itemList}>
-        {config.prompts.map((answer, index) => {
-          const sessionAnswer = this.getAnswerFromSession(index);
+        {config.prompts.map((prompt, index) => {
+          const sessionAnswer = this.getAnswerFromSession(prompt.id);
 
           return (
             <DragAndDropAnswer
               key={index}
               index={index}
-              correct={correctnessArray[index]}
+              promptId={prompt.id}
+              correct={correctnessMap[prompt.id]}
               draggable={!isEmpty(sessionAnswer)}
               disabled={disabled}
               instanceId={instanceId}
@@ -88,7 +93,7 @@ export class AnswerList extends React.Component {
               onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
               title={sessionAnswer.title}
               type={'target'}
-              onRemoveChoice={() => onRemoveAnswer(index)}
+              onRemoveChoice={() => onRemoveAnswer(prompt.id)}
             />
           );
         })}

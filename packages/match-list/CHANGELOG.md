@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.2.1...@pie-ui/match-list@1.2.2) (2019-06-07)
+
+
+### Bug Fixes
+
+* **issues:** fixed some issues that were blocking qa ([02151eb](https://github.com/pie-framework/pie-ui/commit/02151eb))
+* **tests:** fixed tests ([54e7355](https://github.com/pie-framework/pie-ui/commit/54e7355))
+* **tests:** fixed tests ([0e3c2d8](https://github.com/pie-framework/pie-ui/commit/0e3c2d8))
+
+
+
+
+
 ## [1.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.2.0...@pie-ui/match-list@1.2.1) (2019-05-21)
 
 **Note:** Version bump only for package @pie-ui/match-list

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.5...@pie-ui/passage@1.2.6) (2019-06-07)
+
+
+### Bug Fixes
+
+* ch1588 ([#112](https://github.com/pie-framework/pie-ui/issues/112)) ([b4c38f9](https://github.com/pie-framework/pie-ui/commit/b4c38f9))
+
+
+
+
+
 ## [1.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.4...@pie-ui/passage@1.2.5) (2019-05-21)
 
 **Note:** Version bump only for package @pie-ui/passage

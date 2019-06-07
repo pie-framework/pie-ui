@@ -28,5 +28,35 @@
     "committerDate": "2019-05-28 18:33:47 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": "version",
+    "subject": "bumped the versions",
+    "merge": null,
+    "header": "feat(version): bumped the versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6beb8a895f09d4369712e44809ca6cf567b2c2ff",
+    "gitTags": "",
+    "committerDate": "2019-06-05 23:50:57 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.2.0"
+  },
+  {
+    "type": "chore",
+    "scope": "editable-html",
+    "subject": "version bump",
+    "merge": null,
+    "header": "chore(editable-html): version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b237afc88960a27a74df108fa5902b1ae6575b24",
+    "gitTags": "",
+    "committerDate": "2019-06-05 23:39:24 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.2.0"
   }
 ]

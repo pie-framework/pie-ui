@@ -133,5 +133,50 @@
     "committerDate": "2019-05-21 06:49:47 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": "tests",
+    "subject": "fixed tests",
+    "merge": null,
+    "header": "fix(tests): fixed tests",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "54e7355e10712ba09d810c22aa565f1caf87b2af",
+    "gitTags": "",
+    "committerDate": "2019-06-07 22:50:58 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.2.2"
+  },
+  {
+    "type": "fix",
+    "scope": "tests",
+    "subject": "fixed tests",
+    "merge": null,
+    "header": "fix(tests): fixed tests",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0e3c2d80606f9b47748c2e3de198b14211e8fa39",
+    "gitTags": "",
+    "committerDate": "2019-06-07 22:48:22 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.2.2"
+  },
+  {
+    "type": "fix",
+    "scope": "issues",
+    "subject": "fixed some issues that were blocking qa",
+    "merge": null,
+    "header": "fix(issues): fixed some issues that were blocking qa",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "02151eb5a8bc223dde0ccc8c33dcab5dcac5521c",
+    "gitTags": "",
+    "committerDate": "2019-06-07 22:13:49 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.2.2"
   }
 ]

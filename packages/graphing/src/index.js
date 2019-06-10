@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Main from './main';
 import debug from 'debug';
 
-const log = debug('pie-ui:graph-lines');
+const log = debug('pie-ui:graphing');
 
 export { Main as Component };
 

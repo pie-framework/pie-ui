@@ -1,0 +1,19 @@
+{
+  "name": "@pie-ui/graphing",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "2.0.5",
+  "description": "This interaction asks a student to draw a line that meets specific criteria. The student will draw the line by clicking on two points on the graph.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "classnames": "^2.2.5",
+    "debug": "^4.1.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+}

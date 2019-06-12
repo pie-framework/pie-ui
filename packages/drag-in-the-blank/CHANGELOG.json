@@ -118,5 +118,20 @@
     "committerDate": "2019-06-12 19:39:27 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "correct-response",
+    "subject": "added correct response to the mask markup elements",
+    "merge": null,
+    "header": "feat(correct-response): added correct response to the mask markup elements",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c6a604ce6cae7cb69d354fe07d91b513f7de2cbd",
+    "gitTags": "",
+    "committerDate": "2019-06-12 19:39:27 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.3.0"
   }
 ]

@@ -7,7 +7,6 @@ import Toggle from '@pie-lib/correct-answer-toggle';
 import { buildElementModel } from './graph/elements/builder';
 import classNames from 'classnames';
 import cloneDeep from 'lodash/cloneDeep';
-import { getInterval } from './graph/tick-utils';
 import injectSheet from 'react-jss';
 import isArray from 'lodash/isArray';
 import isNumber from 'lodash/isNumber';
@@ -15,6 +14,9 @@ import isNumber from 'lodash/isNumber';
 export { Graph };
 
 const styles = {
+  graphTitle: {
+    textAlign: 'center'
+  },
   numberLine: {
     padding: '10px'
   },
@@ -33,7 +35,7 @@ const styles = {
   prompt: {
     verticalAlign: 'middle',
     marginBottom: '16px'
-  },
+  }
 };
 
 export class NumberLine extends React.Component {
@@ -49,9 +51,7 @@ export class NumberLine extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    let initialType = props.model.graph
-      ? props.model.graph.initialType
-      : null;
+    let initialType = props.model.graph ? props.model.graph.initialType : null;
     initialType = initialType
       ? initialType.toLowerCase()
       : PointChooser.DEFAULT_TYPE;
@@ -76,25 +76,6 @@ export class NumberLine extends React.Component {
     this.setState({ elementType: t });
   }
 
-  getDomain() {
-    let { graph } = this.props.model;
-    let { domain } = graph;
-    if (domain.length !== 2) {
-      throw new Error('Invalid domain array must have 2 values');
-    } else {
-      const [min, max] = domain;
-      return { min, max };
-    }
-  }
-
-  getTicks() {
-    let { graph } = this.props.model;
-    return {
-      major: graph.tickFrequency || 2,
-      minor: graph.showMinorTicks ? graph.snapPerTick || 0 : 0
-    };
-  }
-
   addElement(x) {
     if (this.hasMaxNoOfPoints()) {
       this.setState({ showMaxPointsWarning: true });
@@ -104,13 +85,13 @@ export class NumberLine extends React.Component {
       return;
     }
 
-    let domain = this.getDomain();
-    let interval = getInterval(domain, this.getTicks());
+    const { ticks, domain } = this.props.model.graph;
+
     let elementData = buildElementModel(
       x,
       this.state.elementType,
       domain,
-      interval
+      ticks.minor
     );
 
     if (elementData) {
@@ -165,16 +146,15 @@ export class NumberLine extends React.Component {
     const width = this.getSize('width', 400, 1600, 600);
     const height = this.getSize('height', 300, 800, 400);
 
-    let domain = this.getDomain();
-    let ticks = this.getTicks();
+    const { ticks, domain, arrows } = model.graph;
 
     let graphProps = {
       disabled,
       domain,
       ticks,
-      interval: getInterval(domain, ticks),
       width,
-      height
+      height,
+      arrows
     };
 
     let getAnswerElements = () => {
@@ -184,8 +164,8 @@ export class NumberLine extends React.Component {
         out.correct = corrected.correct.includes(index)
           ? true
           : corrected.incorrect.includes(index)
-            ? false
-            : undefined;
+          ? false
+          : undefined;
         return out;
       });
     };
@@ -260,6 +240,12 @@ export class NumberLine extends React.Component {
             onDeselectElements={this.deselectElements.bind(this)}
             debug={false}
           />
+          {model.graph.title && (
+            <div
+              className={classes.graphTitle}
+              dangerouslySetInnerHTML={{ __html: model.graph.title }}
+            />
+          )}
           {this.state.showMaxPointsWarning && (
             <Feedback
               type="info"

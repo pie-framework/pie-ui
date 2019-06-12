@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.1.1...@pie-ui/explicit-constructed-response@1.2.0) (2019-06-12)
+
+
+### Features
+
+* **correct-response:** added correct response to the mask markup elements ([c6a604c](https://github.com/pie-framework/pie-ui/commit/c6a604c))
+
+
+
+
+
 ## [1.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.1.0...@pie-ui/explicit-constructed-response@1.1.1) (2019-05-21)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

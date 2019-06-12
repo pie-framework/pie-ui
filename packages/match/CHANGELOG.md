@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.2...@pie-ui/match@2.2.3) (2019-06-12)
+
+
+### Bug Fixes
+
+* **match-mode-issue:** fixed the issue with the match element showing the score and correct response toggle ([b8a2782](https://github.com/pie-framework/pie-ui/commit/b8a2782))
+
+
+
+
+
 ## [2.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.1...@pie-ui/match@2.2.2) (2019-05-21)
 
 **Note:** Version bump only for package @pie-ui/match

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.3...@pie-ui/match@2.3.0) (2019-06-12)
+
+
+### Features
+
+* **headers:** added header text as html instead of regular text ([d8dbbc2](https://github.com/pie-framework/pie-ui/commit/d8dbbc2))
+
+
+
+
+
 ## [2.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.2.2...@pie-ui/match@2.2.3) (2019-06-12)
 
 

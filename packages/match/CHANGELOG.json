@@ -318,5 +318,35 @@
     "committerDate": "2019-06-12 20:41:12 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.2.3"
+  },
+  {
+    "type": "chore",
+    "scope": "merged",
+    "subject": "merged develop into master",
+    "merge": null,
+    "header": "chore(merged): merged develop into master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "21223e3d0de70b2edc2b56c43022b7f06810c0a3",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-12 21:18:15 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "headers",
+    "subject": "added header text as html instead of regular text",
+    "merge": null,
+    "header": "feat(headers): added header text as html instead of regular text",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d8dbbc26e0ebcb4aae1a464ad0067d9ca46cfb74",
+    "gitTags": "",
+    "committerDate": "2019-06-12 21:13:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.0"
   }
 ]

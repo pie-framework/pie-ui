@@ -73,5 +73,20 @@
     "committerDate": "2019-06-12 19:39:27 +0300",
     "isTagged": true,
     "tag": "@pie-ui/explicit-constructed-response@1.2.0"
+  },
+  {
+    "type": "chore",
+    "scope": "merged",
+    "subject": "merged with master",
+    "merge": null,
+    "header": "chore(merged): merged with master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6db328a54d4ecba137ddddd1123942a90cceffb8",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-12 20:46:37 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.2.1"
   }
 ]

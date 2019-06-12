@@ -273,5 +273,35 @@
     "committerDate": "2019-05-15 17:53:19 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.2.0"
+  },
+  {
+    "type": "chore",
+    "scope": "merged",
+    "subject": "merged with master",
+    "merge": null,
+    "header": "chore(merged): merged with master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6db328a54d4ecba137ddddd1123942a90cceffb8",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-12 20:46:37 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.2.3"
+  },
+  {
+    "type": "fix",
+    "scope": "match-mode-issue",
+    "subject": "fixed the issue with the match element showing the score and correct response toggle",
+    "merge": null,
+    "header": "fix(match-mode-issue): fixed the issue with the match element showing the score and correct response toggle",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b8a2782f267fcefbb7dc2000c003dabfc96e5814",
+    "gitTags": "",
+    "committerDate": "2019-06-12 20:41:12 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.2.3"
   }
 ]

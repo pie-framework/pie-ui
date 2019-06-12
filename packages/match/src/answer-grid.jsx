@@ -61,16 +61,21 @@ export class AnswerGrid extends React.Component {
         )}
         <div className={classes.rowContainer}>
           {rows.length > 0 && headers.map((header, idx) => (
-            <div key={idx} className={cx(classes.rowItem, { [classes.questionText]: idx === 0 })}>
-              {header}
-            </div>
+            <div
+              key={idx}
+              className={cx(classes.rowItem, { [classes.questionText]: idx === 0 })}
+              dangerouslySetInnerHTML={{
+                __html: header
+              }}
+            />
           ))}
         </div>
         {rows.length > 0 && <hr className={classes.separator} />}
         {rows.map((row, idx) => (
           <div key={idx}>
             <div className={classes.rowContainer}>
-              <div className={cx(classes.rowItem, classes.questionText)} dangerouslySetInnerHTML={{ __html: row.title }}></div>
+              <div className={cx(classes.rowItem, classes.questionText)}
+                   dangerouslySetInnerHTML={{ __html: row.title }} />
               {answers[row.id].map((rowItem, answerIndex) => (
                 <div key={answerIndex} className={classes.rowItem}>
                   {choiceMode === 'radio' ? (

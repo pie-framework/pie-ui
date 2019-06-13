@@ -8,6 +8,13 @@ exports[`categorize snapshots incorrect 1`] = `
     toggled={false}
   />
   <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
     style={
       Object {
         "flexDirection": "column-reverse",
@@ -53,6 +60,13 @@ exports[`categorize snapshots renders 1`] = `
     toggled={false}
   />
   <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
     style={
       Object {
         "flexDirection": "column-reverse",
@@ -96,6 +110,13 @@ exports[`categorize snapshots renders with feedback 1`] = `
     onToggle={[Function]}
     show={false}
     toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
   />
   <div
     style={

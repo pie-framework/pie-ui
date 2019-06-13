@@ -8,6 +8,13 @@ exports[`categorize renders snapshot 1`] = `
     toggled={false}
   />
   <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <div
     style={
       Object {
         "flexDirection": "column-reverse",
@@ -53,6 +60,13 @@ exports[`categorize renders snapshot with rationale 1`] = `
     onToggle={[Function]}
     show={false}
     toggled={false}
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
   />
   <div
     style={

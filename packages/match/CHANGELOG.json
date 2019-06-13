@@ -288,5 +288,20 @@
     "committerDate": "2019-06-12 20:41:12 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.2.3"
+  },
+  {
+    "type": "feat",
+    "scope": "headers",
+    "subject": "added header text as html instead of regular text",
+    "merge": null,
+    "header": "feat(headers): added header text as html instead of regular text",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d8dbbc26e0ebcb4aae1a464ad0067d9ca46cfb74",
+    "gitTags": "",
+    "committerDate": "2019-06-12 21:13:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.0"
   }
 ]

@@ -16,6 +16,16 @@ import debug from 'debug';
 
 const log = debug('@pie-ui:categorize');
 
+const removeHTMLTags = html => {
+  const tmp = document.createElement('DIV');
+
+  tmp.innerHTML = html;
+
+  const value = tmp.textContent || tmp.innerText || '';
+
+  return value.trim();
+};
+
 export class Categorize extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
@@ -139,9 +149,9 @@ export class Categorize extends React.Component {
         return acc;
       }
     }, 0);
-
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
+
     return (
       <div>
         <CorrectAnswerToggle
@@ -149,6 +159,13 @@ export class Categorize extends React.Component {
           toggled={showCorrect}
           onToggle={this.toggleShowCorrect}
         />
+        {
+          removeHTMLTags(model.prompt) &&
+          <div
+            className={classes.prompt}
+            dangerouslySetInnerHTML={{ __html: model.prompt }}
+          />
+        }
         <div className={classes.categorize} style={style}>
           <Categories
             model={model}
@@ -206,6 +223,10 @@ class CategorizeProvider extends React.Component {
 }
 
 const styles = (theme) => ({
+  prompt: {
+    marginBottom: '35px',
+    verticalAlign: 'middle'
+  },
   categorize: {
     marginBottom: theme.spacing.unit,
     display: 'flex',

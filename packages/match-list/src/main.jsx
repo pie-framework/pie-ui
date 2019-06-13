@@ -39,7 +39,8 @@ export class Main extends React.Component {
   }
 
   onPlaceAnswer(place, id) {
-    const { session, onSessionChange } = this.props;
+    const { session, onSessionChange, model } = this.props;
+    const { config: { duplicates } } = model;
 
     if (isUndefined(session.value)) {
       session.value = {};
@@ -47,7 +48,7 @@ export class Main extends React.Component {
 
     const choiceKey = findKey(session.value, val => val === id);
 
-    if (choiceKey) {
+    if (choiceKey && !duplicates) {
       session.value = swap(session.value, choiceKey, place);
     } else {
       session.value[place] = id;

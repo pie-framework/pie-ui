@@ -23,12 +23,13 @@ export class ChoicesList extends React.Component {
       instanceId
     } = this.props;
     const { config } = model;
+    const { duplicates } = config;
 
     return (
       <div className={classes.answersContainer}>
         {
           config.answers
-            .filter(answer => (isEmpty(session) || !session.value || !find(session.value, val => val === answer.id)))
+            .filter(answer => (duplicates || isEmpty(session) || !session.value || !find(session.value, val => val === answer.id)))
             .map((answer) => (
               <DragAnswer
                 key={answer.id}

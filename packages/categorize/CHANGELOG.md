@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.1.2...@pie-ui/categorize@1.2.0) (2019-06-13)
+
+
+### Features
+
+* **update-ui:** updated ui for match-list and categorize ([f0c1d51](https://github.com/pie-framework/pie-ui/commit/f0c1d51))
+* **version:** bumped the version ([46ba90f](https://github.com/pie-framework/pie-ui/commit/46ba90f))
+
+
+
+
+
 ## [1.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.1.1...@pie-ui/categorize@1.1.2) (2019-05-21)
 
 **Note:** Version bump only for package @pie-ui/categorize

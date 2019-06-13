@@ -363,5 +363,20 @@
     "committerDate": "2019-06-12 21:13:53 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.3.0"
+  },
+  {
+    "type": "chore",
+    "scope": "merged",
+    "subject": "merged with master",
+    "merge": null,
+    "header": "chore(merged): merged with master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8881cd4ac658eb62496ae82f67d9887c8d840303",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-13 16:11:02 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.1"
   }
 ]

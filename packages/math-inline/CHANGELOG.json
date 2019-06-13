@@ -828,5 +828,35 @@
     "committerDate": "2019-05-20 12:18:31 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.3.2"
+  },
+  {
+    "type": "chore",
+    "scope": "merged",
+    "subject": "merged with master",
+    "merge": null,
+    "header": "chore(merged): merged with master",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8881cd4ac658eb62496ae82f67d9887c8d840303",
+    "gitTags": " (develop)",
+    "committerDate": "2019-06-13 16:11:02 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.4"
+  },
+  {
+    "type": "chore",
+    "scope": null,
+    "subject": "mathquill dependency version bump",
+    "merge": null,
+    "header": "chore: mathquill dependency version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "dc7b1919cf1d05a6c2e353b4ecf918d7b7db8f34",
+    "gitTags": " (origin/chore/mathquill-v-bump)",
+    "committerDate": "2019-06-12 19:08:36 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.4"
   }
 ]

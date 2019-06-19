@@ -223,5 +223,40 @@
     "committerDate": "2019-05-10 12:48:39 +0300",
     "isTagged": true,
     "tag": "@pie-ui/number-line@5.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": "lint",
+    "subject": "fixed lint error and version bumped",
+    "merge": null,
+    "header": "fix(lint): fixed lint error and version bumped",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "31ffb39c67b2a9d09ea304997c8cb742de0b46ae",
+    "gitTags": "",
+    "committerDate": "2019-06-19 08:15:31 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "number line updates",
+    "merge": null,
+    "header": "feat: number line updates",
+    "body": "* Changed tick generation to use `{major: number, minor: number}` as\ndistance between ticks.\n* added title field\n* fix snapTo",
+    "footer": "BREAKING CHANGE: some model properties have changed. `domain` is now\n`{min: number, max: number}`, `tickFrequency`, `showMinorTicks` is gone.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "some model properties have changed. `domain` is now\n`{min: number, max: number}`, `tickFrequency`, `showMinorTicks` is gone."
+      }
+    ],
+    "hash": "037bcc918afc0e7369f0d956792f86de1461971c",
+    "gitTags": " (origin/feat/number-line-play)",
+    "committerDate": "2019-06-18 12:48:56 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.0.0"
   }
 ]

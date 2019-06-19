@@ -4,16 +4,17 @@ const iconWidth = 42;
 import img from './img';
 
 const noselect = () => ({
-  '-webkit-touch-callout': 'none', /* iOS Safari */
-  '-webkit-user-select': 'none', /* Safari */
-  '-khtml-user-select': 'none', /* Konqueror HTML */
-  '-moz-user-select': 'none', /* Firefox */
-  '-ms-user-select': 'none', /* Internet Explorer/Edge */
-  'user-select': 'none' /* Non-prefixed version, currently
+  '-webkit-touch-callout': 'none' /* iOS Safari */,
+  '-webkit-user-select': 'none' /* Safari */,
+  '-khtml-user-select': 'none' /* Konqueror HTML */,
+  '-moz-user-select': 'none' /* Firefox */,
+  '-ms-user-select': 'none' /* Internet Explorer/Edge */,
+  'user-select':
+    'none' /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-})
+});
 
-const styleElement = (index) => ({
+const styleElement = index => ({
   display: 'inline-block',
   width: iconWidth,
   height: iconHeight,
@@ -52,13 +53,13 @@ export default {
       opacity: '0.5'
     }
   },
-  elementSelector: Object.assign({
-    padding: '1px'
-  }, noselect()),
+  elementSelector: Object.assign(
+    {
+      padding: '1px'
+    },
+    noselect()
+  ),
   pf: styleElement(0),
-  pe: Object.assign(styleElement(9), {
-    width: '40px'
-  }),
   lff: styleElement(1),
   lef: styleElement(2),
   lfe: styleElement(3),
@@ -67,4 +68,4 @@ export default {
   rfp: styleElement(6),
   ren: styleElement(7),
   rep: styleElement(8)
-}
+};

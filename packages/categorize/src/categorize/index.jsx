@@ -151,6 +151,7 @@ export class Categorize extends React.Component {
     }, 0);
     const rows = Math.floor(maxLength / columns) + 1;
     const grid = { rows, columns };
+    const { rowLabels } = model;
 
     return (
       <div>
@@ -167,14 +168,44 @@ export class Categorize extends React.Component {
           />
         }
         <div className={classes.categorize} style={style}>
-          <Categories
-            model={model}
-            disabled={model.disabled}
-            categories={categories}
-            onDropChoice={this.dropChoice}
-            onRemoveChoice={this.removeChoice}
-            grid={grid}
-          />
+          <div
+            style={{
+              display: 'flex'
+            }}
+          >
+            {
+              rowLabels && (
+                <div
+                  style={{
+                    display: 'grid',
+                    marginRight: '20px'
+                  }}
+                >
+                  {rowLabels.map((label, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        justifyContent: 'center'
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: label
+                      }}
+                    />
+                  ))}
+                </div>
+              )
+            }
+            <Categories
+              model={model}
+              disabled={model.disabled}
+              categories={categories}
+              onDropChoice={this.dropChoice}
+              onRemoveChoice={this.removeChoice}
+              grid={grid}
+            />
+          </div>
           <Choices
             disabled={model.disabled}
             model={model}

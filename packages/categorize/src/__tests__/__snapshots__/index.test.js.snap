@@ -21,24 +21,32 @@ exports[`categorize renders snapshot 1`] = `
       }
     }
   >
-    <WithStyles(Categories)
-      categories={Array []}
-      grid={
+    <div
+      style={
         Object {
-          "columns": NaN,
-          "rows": NaN,
+          "display": "flex",
         }
       }
-      model={
-        Object {
-          "categories": Array [],
-          "choices": Array [],
-          "correctResponse": Array [],
+    >
+      <WithStyles(Categories)
+        categories={Array []}
+        grid={
+          Object {
+            "columns": NaN,
+            "rows": NaN,
+          }
         }
-      }
-      onDropChoice={[Function]}
-      onRemoveChoice={[Function]}
-    />
+        model={
+          Object {
+            "categories": Array [],
+            "choices": Array [],
+            "correctResponse": Array [],
+          }
+        }
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+    </div>
     <WithStyles(Choices)
       choicePosition="above"
       choices={Array []}
@@ -75,25 +83,33 @@ exports[`categorize renders snapshot with rationale 1`] = `
       }
     }
   >
-    <WithStyles(Categories)
-      categories={Array []}
-      grid={
+    <div
+      style={
         Object {
-          "columns": NaN,
-          "rows": NaN,
+          "display": "flex",
         }
       }
-      model={
-        Object {
-          "categories": Array [],
-          "choices": Array [],
-          "correctResponse": Array [],
-          "rationale": "This is rationale",
+    >
+      <WithStyles(Categories)
+        categories={Array []}
+        grid={
+          Object {
+            "columns": NaN,
+            "rows": NaN,
+          }
         }
-      }
-      onDropChoice={[Function]}
-      onRemoveChoice={[Function]}
-    />
+        model={
+          Object {
+            "categories": Array [],
+            "choices": Array [],
+            "correctResponse": Array [],
+            "rationale": "This is rationale",
+          }
+        }
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+    </div>
     <WithStyles(Choices)
       choicePosition="above"
       choices={Array []}

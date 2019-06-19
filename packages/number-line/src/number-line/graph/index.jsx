@@ -6,7 +6,7 @@ import Line from './elements/line';
 import Ray from './elements/ray';
 import BaseLine from './line';
 import Arrow from './arrow';
-import Ticks, { TickValidator } from './ticks';
+import Ticks from './ticks';
 import { snapTo } from './tick-utils';
 import Stacks from './stacks';
 import { TransitionGroup } from 'react-transition-group';
@@ -23,6 +23,14 @@ const getXScale = (min, max, width, padding) => {
     .range([padding, width - padding]);
 };
 
+const Debug = props => (
+  <g>
+    <text x="00" y="20">
+      {JSON.stringify(props)}
+    </text>
+  </g>
+);
+
 export class NumberLineGraph extends React.Component {
   static childContextTypes = {
     xScale: PropTypes.func.isRequired,
@@ -34,8 +42,8 @@ export class NumberLineGraph extends React.Component {
       min: PropTypes.number.isRequired,
       max: PropTypes.number.isRequired
     }).isRequired,
-    ticks: TickValidator,
-    interval: PropTypes.number.isRequired,
+    ticks: PropTypes.shape({ minor: PropTypes.number, major: PropTypes.number })
+      .isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     onToggleElement: PropTypes.func.isRequired,
@@ -44,7 +52,8 @@ export class NumberLineGraph extends React.Component {
     debug: PropTypes.bool,
     elements: PropTypes.array,
     disabled: PropTypes.bool,
-    onDeselectElements: PropTypes.func
+    onDeselectElements: PropTypes.func,
+    arrows: PropTypes.shape({ left: PropTypes.bool, right: PropTypes.bool })
   };
 
   static defaultProps = {
@@ -62,8 +71,8 @@ export class NumberLineGraph extends React.Component {
   }
 
   snapValueFn() {
-    const { domain, interval } = this.props;
-    return snapTo.bind(null, domain.min, domain.max, interval);
+    const { domain, ticks } = this.props;
+    return snapTo.bind(null, domain.min, domain.max, ticks.minor);
   }
 
   getChildContext() {
@@ -112,12 +121,13 @@ export class NumberLineGraph extends React.Component {
       width,
       ticks,
       height,
-      interval,
       onToggleElement,
       onMoveElement,
       disabled
     } = this.props;
+    let { arrows } = this.props;
 
+    arrows = arrows || { left: true, right: true };
     const { min, max } = domain;
 
     if (domain.max <= domain.min) {
@@ -144,7 +154,7 @@ export class NumberLineGraph extends React.Component {
           key: index,
           y,
           selected: el.selected && !disabled,
-          interval,
+          interval: ticks.minor,
           disabled,
           correct: el.correct
         };
@@ -201,30 +211,26 @@ export class NumberLineGraph extends React.Component {
       });
 
       return (
-        <div>
-          <svg width={width} height={height}>
-            <BaseLine y={lineY} width={width} />
-            <Arrow y={lineY} />
-            <Arrow x={width} y={lineY} direction="right" />
-            <Ticks
-              y={lineY}
-              domain={domain}
-              ticks={ticks}
-              interval={interval}
-            />
-            <rect
-              ref={rect => (this.rect = rect)}
-              //need to have a fill for it to be clickable
-              fill="red"
-              fillOpacity="0.0"
-              width={width}
-              height={height}
-            />
-            <TransitionGroup component="g">
-              {elements.map((c, index) => <Fade key={index}>{c}</Fade>)}
-            </TransitionGroup>
-          </svg>
-        </div>
+        <svg width={width} height={height}>
+          {false && <Debug domain={domain} ticks={ticks} />}
+          <BaseLine y={lineY} width={width} />
+          {arrows.left && <Arrow y={lineY} />}
+          {arrows.right && <Arrow x={width} y={lineY} direction="right" />}
+          <Ticks y={lineY} domain={domain} ticks={ticks} />
+          <rect
+            ref={rect => (this.rect = rect)}
+            //need to have a fill for it to be clickable
+            fill="red"
+            fillOpacity="0.0"
+            width={width}
+            height={height}
+          />
+          <TransitionGroup component="g">
+            {elements.map((c, index) => (
+              <Fade key={index}>{c}</Fade>
+            ))}
+          </TransitionGroup>
+        </svg>
       );
     }
   }

@@ -6,7 +6,7 @@ import Line from './elements/line';
 import Ray from './elements/ray';
 import BaseLine from './line';
 import Arrow from './arrow';
-import Ticks, { TickValidator } from './ticks';
+import Ticks from './ticks';
 import { snapTo } from './tick-utils';
 import Stacks from './stacks';
 import { TransitionGroup } from 'react-transition-group';

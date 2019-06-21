@@ -728,5 +728,35 @@
     "committerDate": "2019-06-05 23:39:24 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.9.0"
+  },
+  {
+    "type": "feat",
+    "scope": "version",
+    "subject": "bumped the version and updated yarn lock",
+    "merge": null,
+    "header": "feat(version): bumped the version and updated yarn lock",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "60b4a08a9462a36e53ac3707e87f1a7a0f0cf5b0",
+    "gitTags": "",
+    "committerDate": "2019-06-20 22:17:48 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.0"
+  },
+  {
+    "type": "feat",
+    "scope": "version",
+    "subject": "bumped mask markup elements version",
+    "merge": null,
+    "header": "feat(version): bumped mask markup elements version",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f7df43448d46009fba0323580ce889717f9ec1b3",
+    "gitTags": "",
+    "committerDate": "2019-06-20 22:12:40 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.0"
   }
 ]

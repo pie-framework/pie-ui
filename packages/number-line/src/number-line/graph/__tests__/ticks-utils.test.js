@@ -130,19 +130,24 @@ describe('ticks', () => {
     };
 
     assertTicks(-2, 1, 0.2, 0.4, {
-      0: [tt(-2, 'min'), tt(-1.8, 'minor'), tt(-1.6, 'major')]
+      0: [tt(-2, 'major'), tt(-1.8, 'minor'), tt(-1.6, 'major')]
     });
 
     assertTicks(1, 10, 1, 2, {
-      0: [tt(1, 'min'), tt(2, 'major'), tt(3, 'minor'), tt(4, 'major')]
+      0: [tt(1, 'minor'), tt(2, 'major'), tt(3, 'minor'), tt(4, 'major')]
     });
 
     assertTicks(-2, 1, 0.5, 1, {
-      0: [tt(-2, 'min'), tt(-1.5, 'minor'), tt(-1, 'major'), tt(-0.5, 'minor')]
+      0: [
+        tt(-2, 'major'),
+        tt(-1.5, 'minor'),
+        tt(-1, 'major'),
+        tt(-0.5, 'minor')
+      ]
     });
 
     assertTicks(-2, 1, 0.1, 0.2, {
-      0: [tt(-2, 'min'), tt(-1.9, 'minor'), tt(-1.8, 'major')],
+      0: [tt(-2, 'major'), tt(-1.9, 'minor'), tt(-1.8, 'major')],
       20: [tt(0, 'major')],
       28: [tt(0.8, 'major')] //, tt(0.9, 'minor'), tt(1, 'max')]
     });
@@ -155,40 +160,37 @@ describe('ticks', () => {
       { limit: false },
       {
         0: [
-          tt(-10, 'min'),
+          tt(-10, 'minor'),
           tt(-8, 'major'),
           tt(-4, 'minor'),
           tt(0, 'major'),
           tt(4, 'minor'),
-          tt(8, 'major'),
-          tt(10, 'max')
+          tt(8, 'major')
         ]
       }
     );
 
     assertTicks(-100, 10, 8, 16, {
       0: [
-        tt(-100, 'min'),
+        tt(-100, 'minor'),
         tt(-96, 'major'),
         tt(-88, 'minor'),
         tt(-80, 'major')
-      ],
-      15: [tt(10, 'max')]
+      ]
     });
 
     assertTicks(0, 100, 1, 10, {
-      0: [tt(0, 'min')],
+      0: [tt(0, 'major')],
       90: [tt(90, 'major')],
-      100: [tt(100, 'max')]
+      100: [tt(100, 'major')]
     });
 
     //limited to 100/3 + 200/3
     assertTicks(0, 100, 50, 50, {
       0: [
-        tt(0, 'min'),
+        tt(0, 'major'),
         tt(33.333333333333336, 'minor'),
-        tt(66.666666666666666, 'major'),
-        tt(100, 'max')
+        tt(66.666666666666666, 'major')
       ]
     });
   });

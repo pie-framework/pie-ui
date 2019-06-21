@@ -198,23 +198,18 @@ export const buildTickDataAsFractions = (domain, ticks, opts) => {
   );
 
   const o = rng
-    .filter(x => x < domain.max)
+    .filter(x => math.smallerEq(x, domain.max))
     .map(x => {
       let type = 'minor';
-
       const modulo = math.mod(x, ticks.major);
       if (closeTo(math.number(modulo), 0)) {
         type = 'major';
       }
 
-      if (math.equal(x, domain.min)) {
-        type = 'min';
-      }
-
       return { x, type };
     });
 
-  return o.concat([{ x: math.fraction(domain.max), type: 'max' }]);
+  return o;
 };
 
 export const buildTickData = (domain, ticks, opts) => {

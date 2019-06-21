@@ -143,6 +143,7 @@ export class NumberLineGraph extends React.Component {
 
       const elements = this.props.elements.map((el, index) => {
         const stackIndex = stacks.add(el);
+        console.log('el:', el);
 
         if (stackIndex === -1) {
           throw new Error('stack index is -1, cant add element');

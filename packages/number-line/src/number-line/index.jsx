@@ -15,7 +15,9 @@ export { Graph };
 
 const styles = {
   graphTitle: {
-    textAlign: 'center'
+    textAlign: 'center',
+    pointerEvents: 'none',
+    userSelect: 'none'
   },
   numberLine: {
     padding: '10px'
@@ -205,6 +207,7 @@ export class NumberLine extends React.Component {
 
     const names = classNames(classes.numberLine, classes[model.colorContrast]);
 
+    console.log('elements:', elements);
     return (
       <div className={names} style={{ width }}>
         {model.prompt && (

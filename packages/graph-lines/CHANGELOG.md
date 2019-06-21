@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.1.3...@pie-ui/graph-lines@2.2.0) (2019-06-21)
+
+
+### Features
+
+* **version:** bumped mask markup elements version ([f7df434](https://github.com/pie-framework/pie-ui/commit/f7df434))
+* **version:** bumped the version and updated yarn lock ([60b4a08](https://github.com/pie-framework/pie-ui/commit/60b4a08))
+
+
+
+
+
 ## [2.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.1.2...@pie-ui/graph-lines@2.1.3) (2019-06-07)
 
 **Note:** Version bump only for package @pie-ui/graph-lines

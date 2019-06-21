@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.10.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.9.3...@pie-ui/multiple-choice@4.10.0) (2019-06-21)
+
+
+### Features
+
+* **version:** bumped mask markup elements version ([f7df434](https://github.com/pie-framework/pie-elements/commit/f7df434))
+* **version:** bumped the version and updated yarn lock ([60b4a08](https://github.com/pie-framework/pie-elements/commit/60b4a08))
+
+
+
+
+
 ## [4.9.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.9.2...@pie-ui/multiple-choice@4.9.3) (2019-06-07)
 
 **Note:** Version bump only for package @pie-ui/multiple-choice

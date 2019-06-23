@@ -40,7 +40,7 @@ const Feedback = props => {
         <div key="panel" className={className} style={{ width: props.width }}>
           <Icon iconSet="emoji" shape="square" />
           <span
-            className="message"
+            className={classes.message}
             dangerouslySetInnerHTML={{ __html: props.message }}
           />
         </div>
@@ -66,13 +66,14 @@ const styles = {
     '& svg': {
       height: '30px'
     },
-    '& message': {
-      paddingLeft: '5px'
-    },
     '& h1': {
       padding: '0px',
       margin: '0px'
     }
+  },
+  message: {
+    paddingLeft: '5px',
+    userSelect: 'none'
   },
   correct: {
     backgroundColor: 'var(--number-line-correct-bg, green)'

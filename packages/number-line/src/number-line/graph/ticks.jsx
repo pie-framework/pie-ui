@@ -66,7 +66,7 @@ export class Tick extends React.Component {
     let { x, y, type, classes, xScale } = this.props;
 
     let xText = Number(x.toFixed(2));
-    const labelTick = type === 'major' || type === 'min' || type === 'max';
+    const labelTick = type === 'major';
     let height = labelTick ? 20 : 10;
 
     return (

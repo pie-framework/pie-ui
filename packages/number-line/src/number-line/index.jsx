@@ -207,7 +207,6 @@ export class NumberLine extends React.Component {
 
     const names = classNames(classes.numberLine, classes[model.colorContrast]);
 
-    console.log('elements:', elements);
     return (
       <div className={names} style={{ width }}>
         {model.prompt && (

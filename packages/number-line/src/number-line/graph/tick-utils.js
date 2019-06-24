@@ -1,6 +1,7 @@
 import * as math from 'mathjs';
 import uniqWith from 'lodash/uniqWith';
 
+const n = v => math.number(v);
 export const fractionSnapTo = (min, max, interval, value) => {
   value = fmax(fmin(value, max), min);
   const mod = value.mod(interval);
@@ -29,6 +30,7 @@ export const snapTo = (min, max, interval, value) => {
 };
 
 export const fractionRange = (start, end, interval) => {
+  console.log('fractionRange:', n(start), n(end), n(interval));
   const m = math.mod(start, interval);
   if (!math.equal(m, 0)) {
     throw new Error('start point must be divisible by interval');
@@ -39,26 +41,41 @@ export const fractionRange = (start, end, interval) => {
   }
 
   const direction = math.larger(interval, 0) ? 'positive' : 'negative';
-  const compareFn = direction === 'positive' ? math.smaller : math.larger;
+  const compareFn = direction === 'positive' ? math.smallerEq : math.largerEq;
   const out = [];
 
   out.push(start);
 
-  let count = 0;
-  do {
-    count++;
+  // let count = 0;
+  // let n;
+  while (compareFn(out[out.length - 1], end)) {
+    out.push(n);
     const m = math.multiply(interval, count);
-    const next = math.add(start, m);
-    out.push(next);
-  } while (compareFn(out[out.length - 1], end));
-  out.pop();
+    n = math.add(start, m);
+    count++;
+  }
+  // do {
+  //   const m = math.multiply(interval, count);
+  //   const next = math.add(start, m);
+  //   out.push(next);
+  //   count++;
+  //   console.log('>>>> o:', out);
+  // } while (compareFn(out[out.length - 1], end));
+  // out.pop();
   if (direction === 'negative') {
     out.reverse();
   }
+  console.log('FR: out:', out);
   return out;
 };
 
 export const zeroBasedRange = (start, end, interval) => {
+  console.log(
+    'zbr:',
+    math.number(start),
+    math.number(end),
+    math.number(interval)
+  );
   start = math.fraction(start);
   end = math.fraction(end);
   interval = math.fraction(interval);
@@ -69,17 +86,16 @@ export const zeroBasedRange = (start, end, interval) => {
     throw new Error('can only do a positive or negative range.');
   }
 
-  const rawDiv = math.divide(start, interval);
-  const flooredStart = math.floor(rawDiv);
-  let r = fractionRange(math.multiply(flooredStart, interval), end, interval);
+  const m = math.mod(start, interval);
+  const s = math.larger(m, 0)
+    ? math.add(math.subtract(start, m), interval)
+    : start;
 
-  if (!math.equal(flooredStart, rawDiv)) {
-    if (math.larger(interval, 0)) {
-      r.shift();
-    } else {
-      r.pop();
-    }
-  }
+  const me = math.mod(end, interval);
+  const e = math.larger(me, 0)
+    ? math.add(math.subtract(end, m), interval)
+    : end;
+  let r = fractionRange(s, e, interval);
   return r;
 };
 
@@ -94,7 +110,6 @@ const fmax = (a, b) => {
   b = math.fraction(b);
   return math.larger(a, b) ? a : b;
 };
-
 /**
  * the lodash range was causing too much variance in the rounding errors
  * such that it was hard to round the numbers.
@@ -105,24 +120,36 @@ export const simpleRange = (start, end, interval) => {
   end = math.fraction(end);
   interval = math.fraction(interval);
 
+  console.log('simpleRange:', n(start), n(end), n(interval));
   const positiveRange = math.larger(end, 0)
     ? zeroBasedRange(fmax(0, start), end, interval)
     : [];
+
+  const m = math.mod(start, interval);
+  console.log(
+    'sei:',
+    math.number(start),
+    math.number(end),
+    math.number(interval),
+    'm:',
+    math.number(m)
+  );
   const negativeRange = math.smaller(start, 0)
     ? zeroBasedRange(fmin(0, end), start, math.multiply(interval, -1))
     : [];
-
+  console.log('negativeRange:', negativeRange);
   let together = negativeRange.concat(positiveRange);
 
-  if (!math.equal(together[0], start)) {
-    together = [start].concat(together);
-  }
+  // // if (!math.equal(together[0], start)) {
+  //   // together = concat(together);
+  // }
 
-  if (!math.equal(together[together.length - 1], end)) {
-    together = together.concat([end]);
-  }
+  // if (!math.equal(together[together.length - 1], end)) {
+  //   together = together.concat([end]);
+  // }
 
   const out = uniqWith(together, math.equal);
+  console.log('out:', out);
   return out; //uniqBy(together, isEqual);
 };
 
@@ -159,7 +186,7 @@ export const isMultiple = (multiple, src) => {
 };
 
 export const normalizeTicks = (domain, ticks, opts) => {
-  const l = opts ? opts.limit !== true : true;
+  const l = opts ? opts.limit !== false : true;
   const end = math.fraction(domain.max - domain.min);
   const minor = l
     ? limit(
@@ -190,12 +217,8 @@ export const normalizeTicks = (domain, ticks, opts) => {
  */
 export const buildTickDataAsFractions = (domain, ticks, opts) => {
   ticks = normalizeTicks(domain, ticks, opts);
-
-  const rng = simpleRange(
-    domain.min,
-    math.add(domain.max, ticks.minor),
-    ticks.minor
-  );
+  console.log('opts:', opts);
+  const rng = simpleRange(domain.min, domain.max, ticks.minor);
 
   const o = rng
     .filter(x => math.smallerEq(x, domain.max))

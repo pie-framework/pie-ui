@@ -114,7 +114,7 @@ export class Ticks extends React.Component {
     let { xScale } = this.context;
 
     const tickData = buildTickData(domain, ticks);
-
+    console.log('tickData:', tickData);
     return (
       <g>
         {tickData.map(({ x, type }) => {

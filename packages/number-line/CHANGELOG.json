@@ -258,5 +258,35 @@
     "committerDate": "2019-06-18 12:48:56 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.0.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rm min/max tick types",
+    "merge": null,
+    "header": "fix: rm min/max tick types",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bfd8b9dd0ade2be45bee9598bac8300253b94470",
+    "gitTags": "",
+    "committerDate": "2019-06-21 19:09:21 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "anchor ticks off zero.",
+    "merge": null,
+    "header": "feat: anchor ticks off zero.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "27be65077ef06cd2c6e3bd483a1b48ae32db544e",
+    "gitTags": "",
+    "committerDate": "2019-06-21 15:35:07 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.0"
   }
 ]

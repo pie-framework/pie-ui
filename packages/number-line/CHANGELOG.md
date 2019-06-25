@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.0.1...@pie-ui/number-line@7.1.0) (2019-06-24)
+
+
+### Bug Fixes
+
+* rm min/max tick types ([bfd8b9d](https://github.com/pie-framework/pie-ui/commit/bfd8b9d))
+
+
+### Features
+
+* anchor ticks off zero. ([27be650](https://github.com/pie-framework/pie-ui/commit/27be650))
+
+
+
+
+
 ## [7.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.0.0...@pie-ui/number-line@7.0.1) (2019-06-19)
 
 **Note:** Version bump only for package @pie-ui/number-line

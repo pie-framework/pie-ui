@@ -30,7 +30,6 @@ export const snapTo = (min, max, interval, value) => {
 };
 
 export const fractionRange = (start, end, interval) => {
-  // console.log('fractionRange:', n(start), n(end), n(interval));
   const m = math.mod(start, interval);
   if (!math.equal(m, 0)) {
     throw new Error('start point must be divisible by interval');
@@ -64,12 +63,6 @@ export const zbrErrorMessage = (start, end) =>
   `Can only do a positive or negative range, but got: start: ${start} and end:${end}`;
 
 export const zeroBasedRange = (start, end, interval) => {
-  // console.log(
-  //   'zbr:',
-  //   math.number(start),
-  //   math.number(end),
-  //   math.number(interval)
-  // );
   start = math.fraction(start);
   end = math.fraction(end);
   interval = math.fraction(interval);
@@ -91,9 +84,7 @@ export const zeroBasedRange = (start, end, interval) => {
     ? math.add(math.subtract(a.start, m), a.interval)
     : a.start;
 
-  // console.log('s:', math.number(s));
   const r = fractionRange(s, a.end, a.interval);
-  // console.log('fr result: ', r, a);
   const out = a.multiplier === -1 ? r.map(v => math.multiply(v, -1)) : r;
 
   if (math.smaller(interval, 0)) {
@@ -123,7 +114,6 @@ export const simpleRange = (start, end, interval) => {
   end = math.fraction(end);
   interval = math.fraction(interval);
 
-  // console.log('simpleRange:', n(start), n(end), n(interval));
   const positiveRange = math.larger(end, 0)
     ? zeroBasedRange(fmax(0, start), end, interval)
     : [];
@@ -201,7 +191,6 @@ export const normalizeTicks = (domain, ticks, opts) => {
  */
 export const buildTickDataAsFractions = (domain, ticks, opts) => {
   ticks = normalizeTicks(domain, ticks, opts);
-  console.log('opts:', opts);
   const rng = simpleRange(domain.min, domain.max, ticks.minor);
 
   const o = rng

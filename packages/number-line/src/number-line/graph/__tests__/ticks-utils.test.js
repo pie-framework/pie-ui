@@ -1,5 +1,6 @@
 import * as mod from '../tick-utils';
 import * as math from 'mathjs';
+import { AssertionError } from 'assert';
 
 describe('ticks', () => {
   describe('normalizeTicks', () => {
@@ -41,24 +42,41 @@ describe('ticks', () => {
     });
   });
 
-  const f = (n, d) => math.fraction(n, d);
+  const pf = f => `${f.n * f.s}/${f.d}`;
+  const f = (n, d) =>
+    math.fraction.apply(math, [n, d].filter(v => v !== undefined));
 
   describe('fractionRange', () => {
     const assertFr = (start, end, interval, expected) => {
-      it('..', () => {
+      it(`${pf(start)}<->${pf(end)} (${pf(interval)}) == ${expected.map(
+        pf
+      )}`, () => {
         const result = mod.fractionRange(start, end, interval);
         //f(0, 1), f(6, 1), f(4, 1));
         expect(result).toEqual(expected); //[f(0, 1), f(4, 1)]);
       });
     };
-    assertFr(f(-1, 2), f(-23, 10), f(-1, 2), [
-      f(-2, 1),
+    assertFr(f(-1, 2), f(-2.3), f(-1, 2), [
+      f(-1, 2),
+      f(-1),
       f(-3, 2),
-      f(-1, 1),
-      f(-1, 2)
+      f(-4, 2)
     ]);
-    assertFr(f(0, 1), f(-6, 1), f(-4, 1), [f(-4, 1), f(0, 1)]);
-    assertFr(f(0, 1), f(-10, 1), f(-8, 1), [f(-8, 1), f(0, 1)]);
+    assertFr(f(0), f(-2), f(-1), [f(0), f(-1), f(-2)]);
+    assertFr(f(0), f(-23, 10), f(-0.4), [
+      f(0),
+      f(-4, 10),
+      f(-8, 10),
+      f(-6, 5),
+      f(-8, 5),
+      f(-2)
+    ]);
+    assertFr(f(0), f(-1.99), f(-1), [f(0), f(-1)]);
+    assertFr(f(0), f(-2), f(-1), [f(0), f(-1), f(-2)]);
+    assertFr(f(0), f(-6), f(-4), [f(0), f(-4)]);
+    assertFr(f(0), f(-10), f(-8), [f(0), f(-8)]);
+    assertFr(f(-4), f(-5.3), f(-1), [f(-4), f(-5)]);
+    assertFr(f(-4), f(-4.3), f(-1), [f(-4)]);
   });
   describe('zeroBasedRange', () => {
     const assertZbr = (start, end, interval, expected) => {
@@ -67,17 +85,23 @@ describe('ticks', () => {
         expect(result).toEqual(expected);
       });
     };
+
+    const assertZbrError = (start, end, interval) => {
+      it(`throws error for ${start}, ${end}, ${interval}`, () => {
+        expect(() => mod.zeroBasedRange(start, end, interval)).toThrow(
+          mod.zbrErrorMessage(start, end)
+        );
+      });
+    };
+    assertZbrError(-1, 2, 1);
+    assertZbrError(-0.01, 2, 1);
+    assertZbrError(-1, 0.001, 1);
+    assertZbrError(-100, 100, 1);
     assertZbr(1.2, 2.3, 0.5, [f(3, 2), f(2, 1)]);
     assertZbr(-1.2, -2.3, -0.5, [f(-2, 1), f(-3, 2)]);
-    // it('..', () => {
-    //   const result = mod.zeroBasedRange(1, 6, 4);
-    //   expect(result).toEqual([f(4, 1)]);
-    // });
-
-    // it('..negative', () => {
-    //   const result = mod.zeroBasedRange(-1, -10, -8);
-    //   expect(result).toMatchObject([f(-8, 1)]);
-    // });
+    assertZbr(1, 6, 4, [f(4)]);
+    assertZbr(-1, -10, -8, [f(-8)]);
+    assertZbr(0, -10, -8, [f(-8), f(0)]);
   });
 
   describe('simpleRange', () => {
@@ -87,15 +111,9 @@ describe('ticks', () => {
         expect(result).toMatchObject(expected);
       });
     };
-    assertSimpleRange(1, 10, 8, [f(1, 1), f(8, 1), f(10, 1)]);
-    assertSimpleRange(-10, -1, 8, [f(-10, 1), f(-8, 1), f(-1, 1)]);
-    assertSimpleRange(-10, 10, 8, [
-      f(-10, 1),
-      f(-8, 1),
-      f(0, 1),
-      f(8, 1),
-      f(10, 1)
-    ]);
+    assertSimpleRange(1, 10, 8, [f(8)]);
+    assertSimpleRange(-10, -1, 8, [f(-8, 1)]);
+    assertSimpleRange(-10, 10, 8, [f(-8, 1), f(0), f(8, 1)]);
 
     assertSimpleRange(-1, f(4, 3), f(1, 3), [
       f(-1, 1),
@@ -118,7 +136,7 @@ describe('ticks', () => {
   });
 
   const tt = (x, type) => ({ x, type });
-  describe.only('buildTickData', () => {
+  describe('buildTickData', () => {
     const assertTicks = (min, max, minor, major, opts, expected) => {
       expected = expected === undefined ? opts : expected;
 
@@ -150,87 +168,81 @@ describe('ticks', () => {
         0: [tt(-5, 'minor'), tt(-4, 'major')]
       }
     );
-    // assertTicks(-5.3, 5, 1, 2, {
-    //   0: [tt(-5, 'minor'), tt(-4, 'major')]
-    // });
-    // assertTicks(
-    //   1.2,
-    //   2.3,
-    //   0.5,
-    //   1.5,
-    //   { limit: false },
-    //   {
-    //     0: [tt(1.5, 'major')]
-    //   }
-    // );
+    assertTicks(-5.3, 5, 1, 2, {
+      0: [tt(-5, 'minor'), tt(-4, 'major')]
+    });
+    assertTicks(
+      1.2,
+      2.3,
+      0.5,
+      1.5,
+      { limit: false },
+      {
+        0: [tt(1.5, 'major')]
+      }
+    );
 
-    // assertTicks(-2.4, 1, 0.9, 1.8, {
-    //   0: [tt(-1.8, 'major')]
-    // });
-    // assertTicks(-2, 1, 0.9, 1.8, {
-    //   0: [tt(-1.8, 'major')]
-    // });
+    assertTicks(-2.4, 1, 0.9, 1.8, {
+      0: [tt(-1.8, 'major')]
+    });
+    assertTicks(-2, 1, 0.9, 1.8, {
+      0: [tt(-1.8, 'major')]
+    });
 
-    // assertTicks(1, 10, 1, 2, {
-    //   0: [tt(1, 'minor'), tt(2, 'major'), tt(3, 'minor'), tt(4, 'major')]
-    // });
+    assertTicks(1, 10, 1, 2, {
+      0: [tt(1, 'minor'), tt(2, 'major'), tt(3, 'minor'), tt(4, 'major')]
+    });
 
-    // assertTicks(-2, 1, 0.5, 1, {
-    //   0: [
-    //     tt(-2, 'major'),
-    //     tt(-1.5, 'minor'),
-    //     tt(-1, 'major'),
-    //     tt(-0.5, 'minor')
-    //   ]
-    // });
+    assertTicks(-2, 1, 0.5, 1, {
+      0: [
+        tt(-2, 'major'),
+        tt(-1.5, 'minor'),
+        tt(-1, 'major'),
+        tt(-0.5, 'minor')
+      ]
+    });
 
-    // assertTicks(-2, 1, 0.1, 0.2, {
-    //   0: [tt(-2, 'major'), tt(-1.9, 'minor'), tt(-1.8, 'major')],
-    //   20: [tt(0, 'major')],
-    //   28: [tt(0.8, 'major')] //, tt(0.9, 'minor'), tt(1, 'max')]
-    // });
+    assertTicks(-2, 1, 0.1, 0.2, {
+      0: [tt(-2, 'major'), tt(-1.9, 'minor'), tt(-1.8, 'major')],
+      20: [tt(0, 'major')],
+      28: [tt(0.8, 'major')] //, tt(0.9, 'minor'), tt(1, 'max')]
+    });
 
-    // assertTicks(
-    //   -10,
-    //   10,
-    //   4,
-    //   8,
-    //   { limit: false },
-    //   {
-    //     0: [
-    //       tt(-10, 'minor'),
-    //       tt(-8, 'major'),
-    //       tt(-4, 'minor'),
-    //       tt(0, 'major'),
-    //       tt(4, 'minor'),
-    //       tt(8, 'major')
-    //     ]
-    //   }
-    // );
+    assertTicks(
+      -10,
+      10,
+      4,
+      8,
+      { limit: false },
+      {
+        0: [
+          tt(-8, 'major'),
+          tt(-4, 'minor'),
+          tt(0, 'major'),
+          tt(4, 'minor'),
+          tt(8, 'major')
+        ]
+      }
+    );
 
-    // assertTicks(-100, 10, 8, 16, {
-    //   0: [
-    //     tt(-100, 'minor'),
-    //     tt(-96, 'major'),
-    //     tt(-88, 'minor'),
-    //     tt(-80, 'major')
-    //   ]
-    // });
+    assertTicks(-100, 10, 8, 16, {
+      0: [tt(-96, 'major'), tt(-88, 'minor'), tt(-80, 'major')]
+    });
 
-    // assertTicks(0, 100, 1, 10, {
-    //   0: [tt(0, 'major')],
-    //   90: [tt(90, 'major')],
-    //   100: [tt(100, 'major')]
-    // });
+    assertTicks(0, 100, 1, 10, {
+      0: [tt(0, 'major')],
+      90: [tt(90, 'major')],
+      100: [tt(100, 'major')]
+    });
 
-    // //limited to 100/3 + 200/3
-    // assertTicks(0, 100, 50, 50, {
-    //   0: [
-    //     tt(0, 'major'),
-    //     tt(33.333333333333336, 'minor'),
-    //     tt(66.666666666666666, 'major')
-    //   ]
-    // });
+    //limited to 100/3 + 200/3
+    assertTicks(0, 100, 50, 50, {
+      0: [
+        tt(0, 'major'),
+        tt(33.333333333333336, 'minor'),
+        tt(66.666666666666666, 'major')
+      ]
+    });
   });
 
   describe('fractionSnapTo', () => {

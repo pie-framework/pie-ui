@@ -30,7 +30,7 @@ export const snapTo = (min, max, interval, value) => {
 };
 
 export const fractionRange = (start, end, interval) => {
-  console.log('fractionRange:', n(start), n(end), n(interval));
+  // console.log('fractionRange:', n(start), n(end), n(interval));
   const m = math.mod(start, interval);
   if (!math.equal(m, 0)) {
     throw new Error('start point must be divisible by interval');
@@ -40,42 +40,36 @@ export const fractionRange = (start, end, interval) => {
     return [];
   }
 
+  const e = math.subtract(end, math.mod(end, interval));
   const direction = math.larger(interval, 0) ? 'positive' : 'negative';
+
+  if (direction === 'negative' && math.largerEq(end, start)) {
+    throw new Error('start must be > than end when doing a negative decrement');
+  }
+  if (direction === 'positive' && math.smallerEq(end, start)) {
+    throw new Error('start must be < end when doing increments');
+  }
   const compareFn = direction === 'positive' ? math.smallerEq : math.largerEq;
   const out = [];
 
-  out.push(start);
-
-  // let count = 0;
-  // let n;
-  while (compareFn(out[out.length - 1], end)) {
-    out.push(n);
-    const m = math.multiply(interval, count);
-    n = math.add(start, m);
-    count++;
+  let next = start;
+  while (compareFn(next, e)) {
+    out.push(next);
+    next = math.add(next, interval);
   }
-  // do {
-  //   const m = math.multiply(interval, count);
-  //   const next = math.add(start, m);
-  //   out.push(next);
-  //   count++;
-  //   console.log('>>>> o:', out);
-  // } while (compareFn(out[out.length - 1], end));
-  // out.pop();
-  if (direction === 'negative') {
-    out.reverse();
-  }
-  console.log('FR: out:', out);
   return out;
 };
 
+export const zbrErrorMessage = (start, end) =>
+  `Can only do a positive or negative range, but got: start: ${start} and end:${end}`;
+
 export const zeroBasedRange = (start, end, interval) => {
-  console.log(
-    'zbr:',
-    math.number(start),
-    math.number(end),
-    math.number(interval)
-  );
+  // console.log(
+  //   'zbr:',
+  //   math.number(start),
+  //   math.number(end),
+  //   math.number(interval)
+  // );
   start = math.fraction(start);
   end = math.fraction(end);
   interval = math.fraction(interval);
@@ -83,20 +77,29 @@ export const zeroBasedRange = (start, end, interval) => {
   const length = math.abs(math.subtract(end, start));
 
   if (math.larger(length, math.abs(end))) {
-    throw new Error('can only do a positive or negative range.');
+    throw new Error(zbrErrorMessage(start, end));
   }
+  const a = {
+    start: math.abs(start),
+    end: math.abs(end),
+    interval: math.abs(interval),
+    multiplier: math.smaller(interval, 0) ? -1 : 1
+  };
 
-  const m = math.mod(start, interval);
+  const m = math.mod(a.start, a.interval);
   const s = math.larger(m, 0)
-    ? math.add(math.subtract(start, m), interval)
-    : start;
+    ? math.add(math.subtract(a.start, m), a.interval)
+    : a.start;
 
-  const me = math.mod(end, interval);
-  const e = math.larger(me, 0)
-    ? math.add(math.subtract(end, m), interval)
-    : end;
-  let r = fractionRange(s, e, interval);
-  return r;
+  // console.log('s:', math.number(s));
+  const r = fractionRange(s, a.end, a.interval);
+  // console.log('fr result: ', r, a);
+  const out = a.multiplier === -1 ? r.map(v => math.multiply(v, -1)) : r;
+
+  if (math.smaller(interval, 0)) {
+    out.reverse();
+  }
+  return out;
 };
 
 const fmin = (a, b) => {
@@ -120,37 +123,18 @@ export const simpleRange = (start, end, interval) => {
   end = math.fraction(end);
   interval = math.fraction(interval);
 
-  console.log('simpleRange:', n(start), n(end), n(interval));
+  // console.log('simpleRange:', n(start), n(end), n(interval));
   const positiveRange = math.larger(end, 0)
     ? zeroBasedRange(fmax(0, start), end, interval)
     : [];
 
-  const m = math.mod(start, interval);
-  console.log(
-    'sei:',
-    math.number(start),
-    math.number(end),
-    math.number(interval),
-    'm:',
-    math.number(m)
-  );
   const negativeRange = math.smaller(start, 0)
     ? zeroBasedRange(fmin(0, end), start, math.multiply(interval, -1))
     : [];
-  console.log('negativeRange:', negativeRange);
   let together = negativeRange.concat(positiveRange);
 
-  // // if (!math.equal(together[0], start)) {
-  //   // together = concat(together);
-  // }
-
-  // if (!math.equal(together[together.length - 1], end)) {
-  //   together = together.concat([end]);
-  // }
-
   const out = uniqWith(together, math.equal);
-  console.log('out:', out);
-  return out; //uniqBy(together, isEqual);
+  return out;
 };
 
 export const closeTo = (a, b, precision) => {

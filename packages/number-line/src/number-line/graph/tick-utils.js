@@ -1,7 +1,6 @@
 import * as math from 'mathjs';
 import uniqWith from 'lodash/uniqWith';
 
-const n = v => math.number(v);
 export const fractionSnapTo = (min, max, interval, value) => {
   value = fmax(fmin(value, max), min);
   const mod = value.mod(interval);

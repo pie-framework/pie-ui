@@ -288,5 +288,20 @@
     "committerDate": "2019-06-21 15:35:07 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "fix tick calculation",
+    "merge": null,
+    "header": "fix: fix tick calculation",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9e271dad0e02aef81cd37bc6d64ac66edf9987cb",
+    "gitTags": " (origin/develop, origin/HEAD)",
+    "committerDate": "2019-06-25 11:57:30 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.1"
   }
 ]

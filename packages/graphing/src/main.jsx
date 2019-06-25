@@ -76,7 +76,7 @@ export class Main extends React.Component {
     const { model: { backgroundMarks, displayedTools = tools, correctMarks } } = this.props;
 
     // TODO check which one should be used (with alternates)
-    const correctAnswerMarks = (correctMarks && correctMarks.correctAnswer) || null;
+    const correctAnswerMarks = correctMarks || null;
 
     return (
       <div>

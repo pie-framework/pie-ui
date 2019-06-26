@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
@@ -24,6 +25,12 @@ export class Main extends React.Component {
   state = {
     showCorrectAnswer: false
   };
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (isEmpty(nextProps.feedback)) {
+      this.setState({ showCorrectAnswer: false });
+    }
+  }
 
   toggleShowCorrect = () => {
     this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });

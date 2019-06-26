@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.4.2...@pie-ui/explicit-constructed-response@1.5.0) (2019-06-26)
+
+
+### Features
+
+* **config-ui:** updated the config-ui version [ch1935] ([bdf4202](https://github.com/pie-framework/pie-ui/commit/bdf4202))
+
+
+
+
+
 ## [1.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.4.1...@pie-ui/explicit-constructed-response@1.4.2) (2019-06-25)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

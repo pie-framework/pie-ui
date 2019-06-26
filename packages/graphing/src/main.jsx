@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { GraphContainer as Graph, tools } from '@pie-lib/graphing';
-import { marks } from './demo-data';
 
 export class Main extends React.Component {
   static propTypes = {
@@ -59,7 +58,7 @@ export class Main extends React.Component {
           labelStep: 1
         },
         backgroundMarks: (props.model && props.model.backgroundMarks) || [],
-        marks
+        marks: []
       }
     };
   }

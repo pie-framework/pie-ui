@@ -8,13 +8,12 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     session: PropTypes.shape({}),
     onSessionChange: PropTypes.func,
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
+    onAnswersChange: PropTypes.func
   };
 
   constructor(props) {
     super(props);
-
-    // console.log('tools:', tools.lineTwo);
 
     const toolsArr = [
       tools.point(),

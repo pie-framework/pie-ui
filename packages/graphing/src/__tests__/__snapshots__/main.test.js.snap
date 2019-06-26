@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main render snapshot 1`] = `
+<Main
+  classes={Object {}}
+  model={Object {}}
+  onSessionChange={[MockFunction]}
+  session={Object {}}
+/>
+`;

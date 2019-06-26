@@ -758,5 +758,50 @@
     "committerDate": "2019-06-20 22:12:40 -0400",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.10.0"
+  },
+  {
+    "type": "chore",
+    "scope": "yarn",
+    "subject": "removed code that caused lint error [ch2242]",
+    "merge": null,
+    "header": "chore(yarn): removed code that caused lint error [ch2242]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "87a2ad74ef40590d5475401bde5ae32c15d017ab",
+    "gitTags": " (origin/develop, origin/HEAD, develop)",
+    "committerDate": "2019-06-25 21:39:16 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.5"
+  },
+  {
+    "type": "chore",
+    "scope": "yarn",
+    "subject": "updated yarn lock [ch2242]",
+    "merge": null,
+    "header": "chore(yarn): updated yarn lock [ch2242]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "19f6fb37dc1c034e586a0c452ba1526644eece17",
+    "gitTags": "",
+    "committerDate": "2019-06-25 21:26:21 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.5"
+  },
+  {
+    "type": "chore",
+    "scope": "config-ui",
+    "subject": "updated the config-ui version [ch2242]",
+    "merge": null,
+    "header": "chore(config-ui): updated the config-ui version [ch2242]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "037959f6bb2c503097c7763f378d37534b926eb6",
+    "gitTags": "",
+    "committerDate": "2019-06-25 21:18:55 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.5"
   }
 ]

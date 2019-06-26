@@ -6,7 +6,8 @@ import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 import uniqueId from 'lodash/uniqueId';
-import isEmpty from 'lodash/isEmpty';
+import isUndefined from 'lodash/isUndefined';
+import findKey from 'lodash/findKey';
 import Arrow from './arrow';
 import AnswerList from './answer-list';
 import ChoicesList from './choices-list';
@@ -29,47 +30,26 @@ export class Main extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.updateSessionIfNeeded(this.props);
-  }
-
-  UNSAFE_componentWillReceiveProps(nProps) {
-    this.updateSessionIfNeeded(nProps);
-  }
-
-  updateSessionIfNeeded(props) {
-    const { session, onSessionChange } = props;
-
-    if (!session.value) {
-      const { model } = props;
-      const { config } = model;
-
-      session.value = new Array(config.prompts.length).fill(undefined);
-
-      onSessionChange(session);
-    }
-  }
-
-  onRemoveAnswer(index) {
+  onRemoveAnswer(id) {
     const { session, onSessionChange } = this.props;
 
-    session.value[index] = undefined;
+    session.value[id] = undefined;
 
     onSessionChange(session);
   }
 
   onPlaceAnswer(place, id) {
-    const { model, session, onSessionChange } = this.props;
-    const { config } = model;
+    const { session, onSessionChange, model } = this.props;
+    const { config: { duplicates } } = model;
 
-    if (isEmpty(session.value)) {
-      session.value = new Array(config.prompts.length);
+    if (isUndefined(session.value)) {
+      session.value = {};
     }
 
-    const choiceIndex = session.value.indexOf(id);
+    const choiceKey = findKey(session.value, val => val === id);
 
-    if (choiceIndex >= 0) {
-      session.value = swap(session.value, choiceIndex, place);
+    if (choiceKey && !duplicates) {
+      session.value = swap(session.value, choiceKey, place);
     } else {
       session.value[place] = id;
     }
@@ -105,9 +85,8 @@ export class Main extends React.Component {
                 <div
                   key={pr.id}
                   className={classes.promptEntry}
-                >
-                  {pr.title}
-                </div>
+                  dangerouslySetInnerHTML={{ __html: pr.title }}
+                />
               ))
             }
           </div>
@@ -129,7 +108,7 @@ export class Main extends React.Component {
             model={model}
             session={session}
             onPlaceAnswer={(place, id) => this.onPlaceAnswer(place, id)}
-            onRemoveAnswer={index => this.onRemoveAnswer(index)}
+            onRemoveAnswer={id => this.onRemoveAnswer(id)}
             disabled={mode !== 'gather'}
             showCorrect={showCorrectAnswer}
           />
@@ -174,8 +153,8 @@ const styles = theme => ({
     justifyContent: 'space-between'
   },
   arrowList: {
-    flex: 0,
-    minWidth: 200
+    flex: 1,
+    width: '100%'
   },
   promptList: {
     alignItems: 'flex-start'
@@ -195,15 +174,16 @@ const styles = theme => ({
     height: 40,
     overflow: 'hidden',
     margin: '10px 0',
+    width: '100%',
     textAlign: 'center',
-    padding: 10,
-    width: 280
+    padding: 10
   },
   arrowEntry: {
     alignItems: 'normal',
     display: 'flex',
     height: 40,
-    margin: '10px 20px'
+    margin: '10px 20px',
+    width: '100%'
   }
 });
 

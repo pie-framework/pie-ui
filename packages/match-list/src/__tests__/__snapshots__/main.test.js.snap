@@ -19,25 +19,37 @@ exports[`Main render renders correctly 1`] = `
       className=""
     >
       <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Prompt 1",
+          }
+        }
         key="1"
-      >
-        Prompt 1
-      </div>
+      />
       <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Prompt 3",
+          }
+        }
         key="3"
-      >
-        Prompt 3
-      </div>
+      />
       <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Prompt 4",
+          }
+        }
         key="4"
-      >
-        Prompt 4
-      </div>
+      />
       <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Prompt 2",
+          }
+        }
         key="2"
-      >
-        Prompt 2
-      </div>
+      />
     </div>
     <div
       className=""
@@ -107,7 +119,6 @@ exports[`Main render renders correctly 1`] = `
                 "title": "Answer 6",
               },
             ],
-            "layout": 3,
             "prompt": "Your prompt goes here",
             "prompts": Array [
               Object {
@@ -131,7 +142,6 @@ exports[`Main render renders correctly 1`] = `
                 "title": "Prompt 2",
               },
             ],
-            "responseType": "radio",
             "shuffled": false,
           },
           "element": "match-list",
@@ -186,7 +196,6 @@ exports[`Main render renders correctly 1`] = `
               "title": "Answer 6",
             },
           ],
-          "layout": 3,
           "prompt": "Your prompt goes here",
           "prompts": Array [
             Object {
@@ -210,7 +219,6 @@ exports[`Main render renders correctly 1`] = `
               "title": "Prompt 2",
             },
           ],
-          "responseType": "radio",
           "shuffled": false,
         },
         "element": "match-list",

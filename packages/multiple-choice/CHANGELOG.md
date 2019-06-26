@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.10.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.10.1...@pie-ui/multiple-choice@4.10.2) (2019-06-25)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.10.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.10.0...@pie-ui/multiple-choice@4.10.1) (2019-06-24)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+# [4.10.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.9.3...@pie-ui/multiple-choice@4.10.0) (2019-06-21)
+
+
+### Features
+
+* **version:** bumped mask markup elements version ([f7df434](https://github.com/pie-framework/pie-elements/commit/f7df434))
+* **version:** bumped the version and updated yarn lock ([60b4a08](https://github.com/pie-framework/pie-elements/commit/60b4a08))
+
+
+
+
+
+## [4.9.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.9.2...@pie-ui/multiple-choice@4.9.3) (2019-06-07)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.9.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.9.0...@pie-ui/multiple-choice@4.9.2) (2019-06-06)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+# [4.9.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.8.2...@pie-ui/multiple-choice@4.9.0) (2019-06-05)
+
+
+### Features
+
+* **version:** bumped the versions ([6beb8a8](https://github.com/pie-framework/pie-elements/commit/6beb8a8))
+
+
+
+
+
+## [4.8.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.8.1...@pie-ui/multiple-choice@4.8.2) (2019-05-21)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.8.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.8.0...@pie-ui/multiple-choice@4.8.1) (2019-05-16)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
 # [4.8.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.7.15...@pie-ui/multiple-choice@4.8.0) (2019-05-15)
 
 

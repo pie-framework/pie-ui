@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "type": "feat",
+    "scope": "graphing",
+    "subject": "added a new element",
+    "merge": null,
+    "header": "feat(graphing): added a new element",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f545e48d6ce6f5853808ea7a1441214eb17be16d",
+    "gitTags": "",
+    "committerDate": "2019-06-10 18:19:08 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": "graphing",
+    "subject": "Started working on pie-ui/graphing",
+    "merge": null,
+    "header": "feat(graphing): Started working on pie-ui/graphing",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "364252c638291384554ec17dbda0d808afbee0c7",
+    "gitTags": "",
+    "committerDate": "2019-06-10 17:53:52 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.1.0"
+  }
+]

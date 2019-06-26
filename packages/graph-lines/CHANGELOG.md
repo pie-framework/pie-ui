@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.2.1...@pie-ui/graph-lines@2.2.2) (2019-06-25)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [2.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.2.0...@pie-ui/graph-lines@2.2.1) (2019-06-24)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+# [2.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.1.3...@pie-ui/graph-lines@2.2.0) (2019-06-21)
+
+
+### Features
+
+* **version:** bumped mask markup elements version ([f7df434](https://github.com/pie-framework/pie-ui/commit/f7df434))
+* **version:** bumped the version and updated yarn lock ([60b4a08](https://github.com/pie-framework/pie-ui/commit/60b4a08))
+
+
+
+
+
+## [2.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.1.2...@pie-ui/graph-lines@2.1.3) (2019-06-07)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [2.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.1.0...@pie-ui/graph-lines@2.1.2) (2019-06-06)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+# [2.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.7...@pie-ui/graph-lines@2.1.0) (2019-06-05)
+
+
+### Features
+
+* **version:** bumped the versions ([6beb8a8](https://github.com/pie-framework/pie-ui/commit/6beb8a8))
+
+
+
+
+
+## [2.0.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.6...@pie-ui/graph-lines@2.0.7) (2019-05-21)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
+## [2.0.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.5...@pie-ui/graph-lines@2.0.6) (2019-05-16)
+
+**Note:** Version bump only for package @pie-ui/graph-lines
+
+
+
+
+
 ## [2.0.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.0.4...@pie-ui/graph-lines@2.0.5) (2019-05-15)
 
 

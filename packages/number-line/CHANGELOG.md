@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.0...@pie-ui/number-line@7.1.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* fix tick calculation ([9e271da](https://github.com/pie-framework/pie-ui/commit/9e271da))
+
+
+
+
+
+# [7.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.0.1...@pie-ui/number-line@7.1.0) (2019-06-24)
+
+
+### Bug Fixes
+
+* rm min/max tick types ([bfd8b9d](https://github.com/pie-framework/pie-ui/commit/bfd8b9d))
+
+
+### Features
+
+* anchor ticks off zero. ([27be650](https://github.com/pie-framework/pie-ui/commit/27be650))
+
+
+
+
+
+## [7.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.0.0...@pie-ui/number-line@7.0.1) (2019-06-19)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+# [7.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.1.2...@pie-ui/number-line@7.0.0) (2019-06-19)
+
+
+### Bug Fixes
+
+* **lint:** fixed lint error and version bumped ([31ffb39](https://github.com/pie-framework/pie-ui/commit/31ffb39))
+
+
+### Features
+
+* number line updates ([037bcc9](https://github.com/pie-framework/pie-ui/commit/037bcc9))
+
+
+### BREAKING CHANGES
+
+* some model properties have changed. `domain` is now
+`{min: number, max: number}`, `tickFrequency`, `showMinorTicks` is gone.
+
+
+
+
+
 ## [5.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@5.1.1...@pie-ui/number-line@5.1.2) (2019-05-14)
 
 **Note:** Version bump only for package @pie-ui/number-line

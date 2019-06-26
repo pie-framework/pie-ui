@@ -223,5 +223,85 @@
     "committerDate": "2019-05-10 12:48:39 +0300",
     "isTagged": true,
     "tag": "@pie-ui/number-line@5.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": "lint",
+    "subject": "fixed lint error and version bumped",
+    "merge": null,
+    "header": "fix(lint): fixed lint error and version bumped",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "31ffb39c67b2a9d09ea304997c8cb742de0b46ae",
+    "gitTags": "",
+    "committerDate": "2019-06-19 08:15:31 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "number line updates",
+    "merge": null,
+    "header": "feat: number line updates",
+    "body": "* Changed tick generation to use `{major: number, minor: number}` as\ndistance between ticks.\n* added title field\n* fix snapTo",
+    "footer": "BREAKING CHANGE: some model properties have changed. `domain` is now\n`{min: number, max: number}`, `tickFrequency`, `showMinorTicks` is gone.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "some model properties have changed. `domain` is now\n`{min: number, max: number}`, `tickFrequency`, `showMinorTicks` is gone."
+      }
+    ],
+    "hash": "037bcc918afc0e7369f0d956792f86de1461971c",
+    "gitTags": " (origin/feat/number-line-play)",
+    "committerDate": "2019-06-18 12:48:56 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.0.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rm min/max tick types",
+    "merge": null,
+    "header": "fix: rm min/max tick types",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bfd8b9dd0ade2be45bee9598bac8300253b94470",
+    "gitTags": "",
+    "committerDate": "2019-06-21 19:09:21 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "anchor ticks off zero.",
+    "merge": null,
+    "header": "feat: anchor ticks off zero.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "27be65077ef06cd2c6e3bd483a1b48ae32db544e",
+    "gitTags": "",
+    "committerDate": "2019-06-21 15:35:07 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "fix tick calculation",
+    "merge": null,
+    "header": "fix: fix tick calculation",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9e271dad0e02aef81cd37bc6d64ac66edf9987cb",
+    "gitTags": " (origin/develop, origin/HEAD)",
+    "committerDate": "2019-06-25 11:57:30 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.1"
   }
 ]

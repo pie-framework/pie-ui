@@ -4,6 +4,7 @@ import { Layer, Stage } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
 import Rectangle from './rectangle';
+import Polygon from './polygon';
 
 class Container extends React.Component {
   isSelected(shape) {
@@ -23,7 +24,7 @@ class Container extends React.Component {
       isEvaluateMode,
       outlineColor,
       onSelectChoice,
-      shapes
+      shapes: { rectangles, polygons }
     } = this.props;
 
     return (
@@ -45,7 +46,7 @@ class Container extends React.Component {
           width={width}
         >
           <Layer>
-            {shapes.map((shape) => {
+            {rectangles.map((shape) => {
               const selected = this.isSelected(shape);
               const isCorrect = isEvaluateMode ? this.correctness(shape.correct, selected) : undefined;
 
@@ -64,6 +65,25 @@ class Container extends React.Component {
                   width={shape.width}
                   x={shape.x}
                   y={shape.y}
+                />
+              )
+            })}
+            {polygons.map((polygon) => {
+              const selected = this.isSelected(polygon);
+              const isCorrect = isEvaluateMode ? this.correctness(polygon.correct, selected) : undefined;
+
+              return (
+                <Polygon
+                  isEvaluateMode={isEvaluateMode}
+                  isCorrect={isCorrect}
+                  disabled={disabled}
+                  selected={selected}
+                  hotspotColor={hotspotColor}
+                  id={polygon.id}
+                  key={polygon.id}
+                  onClick={onSelectChoice}
+                  outlineColor={outlineColor}
+                  points={polygon.points}
                 />
               )
             })}

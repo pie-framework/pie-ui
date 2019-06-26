@@ -27,14 +27,6 @@ describe('Main', () => {
   });
 
   describe('logic', () => {
-    describe('updateSessionIfNeeded', () => {
-      it('should call onSessionChange with appropriate values', () => {
-        wrapper.instance().updateSessionIfNeeded({ model: model('1'), session: {}, onSessionChange });
-        expect(onSessionChange).toHaveBeenCalledWith({
-          value: [undefined, undefined, undefined, undefined]
-        })
-      });
-    });
 
     describe('onRemoveAnswer', () => {
       it('should call onSessionChange with appropriate values', () => {

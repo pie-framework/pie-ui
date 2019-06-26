@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.2.1...@pie-ui/hotspot@1.2.2) (2019-06-06)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.2.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.2.0...@pie-ui/hotspot@1.2.1) (2019-06-05)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+# [1.2.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.1.2...@pie-ui/hotspot@1.2.0) (2019-06-05)
+
+
+### Features
+
+* add support for polygons  ([#109](https://github.com/pie-framework/pie-elements/issues/109)) ([e4334e0](https://github.com/pie-framework/pie-elements/commit/e4334e0))
+
+
+
+
+
+## [1.1.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.1.1...@pie-ui/hotspot@1.1.2) (2019-05-21)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.1.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.1.0...@pie-ui/hotspot@1.1.1) (2019-05-16)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
 # [1.1.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.0.4...@pie-ui/hotspot@1.1.0) (2019-05-15)
 
 

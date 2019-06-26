@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import isEmpty from 'lodash/isEmpty';
+import find from 'lodash/find';
 import { DragAnswer } from './answer';
 
 export class ChoicesList extends React.Component {
@@ -22,16 +23,18 @@ export class ChoicesList extends React.Component {
       instanceId
     } = this.props;
     const { config } = model;
+    const { duplicates } = config;
 
     return (
       <div className={classes.answersContainer}>
         {
           config.answers
-            .filter(answer => (isEmpty(session) || !session.value || session.value.indexOf(answer.id) === -1))
+            .filter(answer => (duplicates || isEmpty(session) || !session.value || !find(session.value, val => val === answer.id)))
             .map((answer) => (
               <DragAnswer
                 key={answer.id}
                 instanceId={instanceId}
+                className={classes.choice}
                 draggable={true}
                 disabled={disabled}
                 session={session}
@@ -53,6 +56,11 @@ const styles = () => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginTop: 50
+  },
+  choice: {
+    minHeight: '40px',
+    minWidth: '200px',
+    height: 'initial'
   }
 });
 

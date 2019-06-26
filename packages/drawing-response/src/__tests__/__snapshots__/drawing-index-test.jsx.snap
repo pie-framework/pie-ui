@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawingResponse snapshots renders 1`] = `
+<div>
+  <WithStyles(Typography)>
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "This is the question prompt",
+        }
+      }
+    />
+  </WithStyles(Typography)>
+  <WithStyles(Container)
+    disabled={false}
+    imageDimensions={
+      Object {
+        "height": 0,
+        "width": 0,
+      }
+    }
+    imageUrl=""
+    isEvaluateMode={false}
+  />
+</div>
+`;

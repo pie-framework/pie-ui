@@ -4,12 +4,10 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { withDragContext } from '@pie-lib/drag';
+import { componentize } from '@pie-lib/mask-markup';
+import Main from './main';
 
-import { DragInTheBlank, componentize } from '@pie-lib/mask-markup';
 // import MarkupAndChoices from './markup-and-choices';
-
-const Root = withDragContext(DragInTheBlank);
 
 // const toConfig = fields => {
 //   return Object.keys(fields).reduce((acc, k) => {
@@ -60,12 +58,9 @@ export default class InlineDropdown extends HTMLElement {
     if (this._model && this._session) {
       const { ids } = componentize(this._model.markup);
       this._session.value = normalize(this._session.value, ids);
-      let elem = React.createElement(Root, {
-        disabled: this._model.disabled,
-        markup: this._model.markup,
+      let elem = React.createElement(Main, {
+        model: this._model,
         value: this._session.value,
-        choices: this._model.choices,
-        feedback: this._model.feedback,
         onChange: this.changeSession
       });
       ReactDOM.render(elem, this);

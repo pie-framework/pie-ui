@@ -58,5 +58,20 @@
     "committerDate": "2019-05-15 09:49:13 -0400",
     "isTagged": true,
     "tag": "@pie-ui/passage@1.2.3"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "ch1588 (#112)",
+    "merge": null,
+    "header": "fix: ch1588 (#112)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b4c38f97787aeabb6eea23cabb5cb3901d668cee",
+    "gitTags": "",
+    "committerDate": "2019-06-07 15:16:17 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.2.6"
   }
 ]

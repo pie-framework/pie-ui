@@ -72,7 +72,7 @@ export class PointChooser extends React.Component {
   static defaultProps = {
     showDeleteButton: false,
     elementType: PointChooser.DEFAULT_TYPE,
-    icons: ['pf', 'pe', 'lff', 'lef', 'lfe', 'lee', 'rfn', 'rfp', 'ren', 'rep']
+    icons: ['pf', 'lff', 'lef', 'lfe', 'lee', 'rfn', 'rfp', 'ren', 'rep']
   };
 
   static propTypes = {

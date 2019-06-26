@@ -15,6 +15,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RootComponent from './number-line';
 import cloneDeep from 'lodash/cloneDeep';
+import { renderMath } from '@pie-lib/math-rendering';
 
 //Expose some additional modules for configuration
 export { Graph, NumberLineComponent, tickUtils, dataConverter, pointChooser };
@@ -132,7 +133,9 @@ export default class NumberLine extends HTMLElement {
         };
 
         let el = React.createElement(RootComponent, props);
-        ReactDOM.render(el, this);
+        ReactDOM.render(el, this, () => {
+          renderMath(this);
+        });
       }
     } catch (e) {
       throw e;

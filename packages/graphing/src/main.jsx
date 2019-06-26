@@ -72,8 +72,6 @@ export class Main extends React.Component {
   render() {
     const { settings, model, tools } = this.state;
     const { model: { backgroundMarks, displayedTools = tools, correctMarks, score } } = this.props;
-
-    // TODO check which one should be used (with alternates)
     const correctAnswerMarks = correctMarks || null;
 
     return (

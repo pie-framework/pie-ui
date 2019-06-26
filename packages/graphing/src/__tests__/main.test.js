@@ -5,7 +5,7 @@ import { shallow } from 'enzyme/build';
 
 describe('Main', () => {
   const defaultProps = {
-    model: {},
+    model: { backgroundMarks: [], displayedTools: [], correctMarks: [] },
     onSessionChange: jest.fn(),
     session: {}
   };

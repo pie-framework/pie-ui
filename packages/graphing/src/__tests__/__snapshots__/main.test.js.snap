@@ -3,7 +3,13 @@
 exports[`Main render snapshot 1`] = `
 <Main
   classes={Object {}}
-  model={Object {}}
+  model={
+    Object {
+      "backgroundMarks": Array [],
+      "correctMarks": Array [],
+      "displayedTools": Array [],
+    }
+  }
   onSessionChange={[MockFunction]}
   session={Object {}}
 />

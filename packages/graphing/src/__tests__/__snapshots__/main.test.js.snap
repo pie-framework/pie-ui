@@ -1,16 +1,158 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main render snapshot 1`] = `
-<Main
-  classes={Object {}}
-  model={
-    Object {
-      "backgroundMarks": Array [],
-      "correctMarks": Array [],
-      "displayedTools": Array [],
+<div>
+  <Root
+    axesSettings={
+      Object {
+        "includeArrows": true,
+      }
     }
-  }
-  onSessionChange={[MockFunction]}
-  session={Object {}}
-/>
+    backgroundMarks={Array []}
+    correctnessMarks={Array []}
+    currentTool={
+      Object {
+        "Component": [Function],
+        "addPoint": [Function],
+        "label": "Point",
+        "type": "point",
+      }
+    }
+    defaultTool="point"
+    displayedTools={
+      Array [
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "label": "Point",
+          "type": "point",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "hover": [Function],
+          "type": "circle",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "polygon",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "segment",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "vector",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "ray",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "line",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "sine",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "parabola",
+        },
+      ]
+    }
+    domain={
+      Object {
+        "labelStep": 1,
+        "max": 10,
+        "min": -10,
+        "padding": 0,
+        "step": 1,
+      }
+    }
+    marks={Array []}
+    onChangeMarks={[Function]}
+    range={
+      Object {
+        "labelStep": 1,
+        "max": 5,
+        "min": -5,
+        "padding": 0,
+        "step": 1,
+      }
+    }
+    size={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+    tools={
+      Array [
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "label": "Point",
+          "type": "point",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "hover": [Function],
+          "type": "circle",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "polygon",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "segment",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "vector",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "ray",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "type": "line",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "sine",
+        },
+        Object {
+          "Component": [Function],
+          "addPoint": [Function],
+          "complete": [Function],
+          "type": "parabola",
+        },
+      ]
+    }
+  />
+</div>
 `;

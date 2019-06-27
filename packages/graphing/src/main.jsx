@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cloneDeep from 'lodash/cloneDeep';
 import { withStyles } from '@material-ui/core/styles';
 import { GraphContainer as Graph, tools } from '@pie-lib/graphing';
 
@@ -63,20 +64,20 @@ export class Main extends React.Component {
   }
 
   changeMarks = marks => {
-    const model = { ...this.state.model, marks };
+    const model = { ...this.state.model, marks: cloneDeep(marks) };
 
     this.setState({ model });
+
     this.props.onAnswersChange(marks);
   };
 
   render() {
     const { settings, model, tools } = this.state;
-    const { model: { backgroundMarks, displayedTools = tools, correctMarks, score } } = this.props;
+    const { model: { backgroundMarks, displayedTools = tools, correctMarks } } = this.props;
     const correctAnswerMarks = correctMarks || null;
 
     return (
       <div>
-        {score && `Score: ${score}`}
         <Graph
           size={settings.size}
           domain={model.domain}

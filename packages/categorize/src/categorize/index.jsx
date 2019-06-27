@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Choices, { ChoiceType } from './choices';
-import Categories, { CategoryType } from './categories';
+import Choices from './choices';
+import Categories from './categories';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -29,10 +29,7 @@ const removeHTMLTags = html => {
 export class Categorize extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    model: PropTypes.shape({
-      choices: PropTypes.arrayOf(PropTypes.shape(ChoiceType)),
-      categories: PropTypes.arrayOf(PropTypes.shape(CategoryType))
-    }),
+    model: PropTypes.object,
     session: PropTypes.shape({
       answers: PropTypes.arrayOf(
         PropTypes.shape({

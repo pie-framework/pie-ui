@@ -783,5 +783,20 @@
     "committerDate": "2019-06-19 08:03:28 +0200",
     "isTagged": true,
     "tag": "@pie-ui/categorize@1.3.0"
+  },
+  {
+    "type": "chore",
+    "scope": "yarn",
+    "subject": "removed code that caused lint error [ch2242]",
+    "merge": null,
+    "header": "chore(yarn): removed code that caused lint error [ch2242]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "87a2ad74ef40590d5475401bde5ae32c15d017ab",
+    "gitTags": "",
+    "committerDate": "2019-06-25 21:39:16 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.3.2"
   }
 ]

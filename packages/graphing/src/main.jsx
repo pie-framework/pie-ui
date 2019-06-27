@@ -31,18 +31,7 @@ export class Main extends React.Component {
       currentTool: toolsArr[2],
       tools: toolsArr,
       displayedTools: toolsArr,
-      settings: {
-        includeArrows: true,
-        labels: true,
-        graphTitle: false,
-        coordinatesOnHover: false,
-        size: {
-          width: 400,
-          height: 400
-        }
-      },
       model: {
-        title: undefined,
         domain: {
           min: -10,
           max: 10,
@@ -72,19 +61,21 @@ export class Main extends React.Component {
   };
 
   render() {
-    const { settings, model, tools } = this.state;
-    const { model: { backgroundMarks, displayedTools = tools, correctMarks } } = this.props;
+    const { model, tools } = this.state;
+    const { model: { backgroundMarks, displayedTools = tools, correctMarks, title, labels, graph } } = this.props;
     const correctAnswerMarks = correctMarks || null;
 
     return (
       <div>
         <Graph
-          size={settings.size}
+          size={{
+            width: graph && graph.domain,
+            height: graph && graph.range
+          }}
           domain={model.domain}
           range={model.range}
-          title={model.title}
-          axesSettings={{ includeArrows: settings.includeArrows }}
-          labels={settings.labels && model.labels}
+          title={title}
+          labels={labels}
           marks={model.marks}
           correctnessMarks={correctAnswerMarks}
           backgroundMarks={backgroundMarks}

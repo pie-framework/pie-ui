@@ -3,11 +3,6 @@
 exports[`Main render snapshot 1`] = `
 <div>
   <Root
-    axesSettings={
-      Object {
-        "includeArrows": true,
-      }
-    }
     backgroundMarks={Array []}
     correctnessMarks={Array []}
     currentTool={
@@ -95,8 +90,8 @@ exports[`Main render snapshot 1`] = `
     }
     size={
       Object {
-        "height": 400,
-        "width": 400,
+        "height": undefined,
+        "width": undefined,
       }
     }
     tools={

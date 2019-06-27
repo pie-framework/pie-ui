@@ -32,21 +32,6 @@ export class Main extends React.Component {
       tools: toolsArr,
       displayedTools: toolsArr,
       model: {
-        domain: {
-          min: -10,
-          max: 10,
-          padding: 0,
-          step: 1,
-          labelStep: 1
-        },
-        range: {
-          min: -5,
-          max: 5,
-          padding: 0,
-          step: 1,
-          labelStep: 1
-        },
-        backgroundMarks: (props.model && props.model.backgroundMarks) || [],
         marks: []
       }
     };
@@ -62,7 +47,7 @@ export class Main extends React.Component {
 
   render() {
     const { model, tools } = this.state;
-    const { model: { backgroundMarks, displayedTools = tools, correctMarks, title, labels, graph } } = this.props;
+    const { model: { backgroundMarks, displayedTools = tools, correctMarks, title, labels, graph, domain, range } } = this.props;
     const correctAnswerMarks = correctMarks || null;
 
     return (
@@ -72,8 +57,8 @@ export class Main extends React.Component {
             width: graph && graph.domain,
             height: graph && graph.range
           }}
-          domain={model.domain}
-          range={model.range}
+          domain={domain}
+          range={range}
           title={title}
           labels={labels}
           marks={model.marks}

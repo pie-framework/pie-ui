@@ -54,8 +54,8 @@ export class Main extends React.Component {
       <div>
         <Graph
           size={{
-            width: graph && graph.domain,
-            height: graph && graph.range
+            width: graph && graph.width,
+            height: graph && graph.height
           }}
           domain={domain}
           range={range}

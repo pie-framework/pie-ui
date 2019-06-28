@@ -1,17 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main render snapshot 1`] = `
-<div>
-  <Root
-    backgroundMarks={Array []}
-    marks={Array []}
-    onChangeMarks={[Function]}
-    size={
-      Object {
-        "height": undefined,
-        "width": undefined,
-      }
-    }
-  />
-</div>
+<Root
+  backgroundMarks={Array []}
+  currentTool={false}
+  defaultTool={false}
+  onChangeMarks={[MockFunction]}
+  tools={Array []}
+/>
 `;

@@ -24,21 +24,4 @@ describe('Main', () => {
       expect(w(defaultProps)).toMatchSnapshot();
     });
   });
-
-  describe('logic', () => {
-    let w;
-
-    beforeEach(() => {
-      w = props => shallow(<Main { ...props } />);
-    });
-
-    it('calls onAnswersChange', () => {
-      let wrapper = w(defaultProps);
-      wrapper.instance().changeMarks([]);
-
-      expect(wrapper.instance().props.onAnswersChange).toHaveBeenCalledWith([]);
-      expect(wrapper.instance().state.model.marks).toEqual([]);
-    });
-  });
-
 });

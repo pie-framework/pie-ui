@@ -16,35 +16,8 @@ export class Main extends React.Component {
     onAnswersChange: PropTypes.func
   };
 
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     model: {
-  //       marks: []
-  //     }
-  //   };
-  // }
-
-  // changeMarks = marks => {
-  //   const model = { ...this.state.model, marks: cloneDeep(marks) };
-
-  //   this.setState({ model });
-
-  //   this.props.onAnswersChange(marks);
-  // };
-
   render() {
-    // const { model } = this.state;
     const { model, marks } = this.props;
-    // backgroundMarks,
-    // tools,
-    // title,
-    // labels,
-    // graph,
-    // domain,
-    // range,
-    // marks
 
     const tools = _(marks)
       .map(m => m.type)
@@ -60,8 +33,6 @@ export class Main extends React.Component {
       .compact()
       .value();
 
-    console.log('tools:', tools);
-
     const defaultAndCurrent = tools && tools.length > 0 && tools[0].type;
     return (
       <Graph
@@ -72,7 +43,7 @@ export class Main extends React.Component {
         labels={model.labels}
         marks={marks}
         backgroundMarks={model.backgroundMarks}
-        onChangeMarks={this.changeMarks}
+        onChangeMarks={this.props.onAnswersChange}
         tools={tools}
         currentTool={defaultAndCurrent}
         defaultTool={defaultAndCurrent}

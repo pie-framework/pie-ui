@@ -23,7 +23,7 @@ export class Main extends React.Component {
     Object.keys(graphingTools).forEach((graphingToolKey) => {
       if (typeof graphingTools[graphingToolKey] === 'function') {
         const tool = graphingTools[graphingToolKey]();
-        tool.toolbar = !!model.toolbarTools.find(tT => tT === tool.type);
+        tool.toolbar = !!(model.toolbarTools && model.toolbarTools.find(tT => tT === tool.type));
         tools.push(tool)
       }
     });

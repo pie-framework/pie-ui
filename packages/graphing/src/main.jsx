@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import { withStyles } from '@material-ui/core/styles';
-import { GraphContainer as Graph, tools } from '@pie-lib/graphing';
+import { GraphContainer as Graph } from '@pie-lib/graphing';
 
 export class Main extends React.Component {
   static propTypes = {
@@ -16,21 +16,7 @@ export class Main extends React.Component {
   constructor(props) {
     super(props);
 
-    const toolsArr = [
-      tools.point(),
-      tools.circle(),
-      tools.polygon(),
-      tools.segment(),
-      tools.vector(),
-      tools.ray(),
-      tools.line(),
-      tools.sine(),
-      tools.parabola()
-    ];
     this.state = {
-      currentTool: toolsArr[2],
-      tools: toolsArr,
-      displayedTools: toolsArr,
       model: {
         marks: []
       }
@@ -46,9 +32,8 @@ export class Main extends React.Component {
   };
 
   render() {
-    const { model, tools } = this.state;
-    const { model: { backgroundMarks, displayedTools = tools, correctMarks, title, labels, graph, domain, range } } = this.props;
-    const correctAnswerMarks = correctMarks || null;
+    const { model } = this.state;
+    const { model: { backgroundMarks, tools, title, labels, graph, domain, range, marks } } = this.props;
 
     return (
       <div>
@@ -61,14 +46,12 @@ export class Main extends React.Component {
           range={range}
           title={title}
           labels={labels}
-          marks={model.marks}
-          correctnessMarks={correctAnswerMarks}
+          marks={marks || model.marks}
           backgroundMarks={backgroundMarks}
           onChangeMarks={this.changeMarks}
-          displayedTools={displayedTools}
           tools={tools}
-          currentTool={displayedTools[0]}
-          defaultTool={displayedTools[0].type}
+          currentTool={tools && tools[0].Component}
+          defaultTool={tools && tools[0].Component.type}
         />
 
       </div>

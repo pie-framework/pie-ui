@@ -3,8 +3,6 @@
 exports[`Main render snapshot 1`] = `
 <Root
   backgroundMarks={Array []}
-  currentTool="point"
-  defaultTool="point"
   onChangeMarks={[MockFunction]}
   tools={
     Array [

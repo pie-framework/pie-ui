@@ -27,7 +27,7 @@ export class Main extends React.Component {
       }
     });
 
-    const defaultAndCurrent = tools && tools.length > 0 && tools[0].type;
+    const defaultAndCurrent = tools && tools.find(t => t.toolbar);
     return (
       <Graph
         size={model.size}

@@ -5,7 +5,6 @@ import {
   GraphContainer as Graph,
   tools as graphingTools
 } from '@pie-lib/graphing';
-import _ from 'lodash';
 export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,

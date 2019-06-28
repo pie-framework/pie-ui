@@ -50,7 +50,7 @@ export class Main extends React.Component {
           backgroundMarks={backgroundMarks}
           onChangeMarks={this.changeMarks}
           tools={tools}
-          currentTool={tools && tools[0].Component}
+          currentTool={tools && tools[0].Component.type}
           defaultTool={tools && tools[0].Component.type}
         />
 

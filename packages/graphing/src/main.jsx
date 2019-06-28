@@ -7,8 +7,6 @@ import { GraphContainer as Graph } from '@pie-lib/graphing';
 export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
-    session: PropTypes.shape({}),
-    onSessionChange: PropTypes.func,
     model: PropTypes.object.isRequired,
     onAnswersChange: PropTypes.func
   };

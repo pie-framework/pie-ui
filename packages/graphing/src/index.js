@@ -23,11 +23,6 @@ export default class GraphLines extends HTMLElement {
     this._render();
   }
 
-  sessionChanged(s) {
-    this._session.lines = s.lines;
-    log('session: ', this._session);
-  }
-
   connectedCallback() {
     this._render();
   }
@@ -59,8 +54,6 @@ export default class GraphLines extends HTMLElement {
 
     const el = React.createElement(Main, {
       model: this._model,
-      session: this._session,
-      onSessionChange: this.sessionChanged.bind(this),
       onAnswersChange: this.changeAnswers.bind(this),
     });
 

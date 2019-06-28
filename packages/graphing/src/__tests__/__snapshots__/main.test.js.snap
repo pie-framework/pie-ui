@@ -4,70 +4,6 @@ exports[`Main render snapshot 1`] = `
 <div>
   <Root
     backgroundMarks={Array []}
-    correctnessMarks={Array []}
-    currentTool={
-      Object {
-        "Component": [Function],
-        "addPoint": [Function],
-        "label": "Point",
-        "type": "point",
-      }
-    }
-    defaultTool="point"
-    displayedTools={
-      Array [
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "label": "Point",
-          "type": "point",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "hover": [Function],
-          "type": "circle",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "polygon",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "segment",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "vector",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "ray",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "line",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "sine",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "parabola",
-        },
-      ]
-    }
     marks={Array []}
     onChangeMarks={[Function]}
     size={
@@ -75,60 +11,6 @@ exports[`Main render snapshot 1`] = `
         "height": undefined,
         "width": undefined,
       }
-    }
-    tools={
-      Array [
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "label": "Point",
-          "type": "point",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "hover": [Function],
-          "type": "circle",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "polygon",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "segment",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "vector",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "ray",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "type": "line",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "sine",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "type": "parabola",
-        },
-      ]
     }
   />
 </div>

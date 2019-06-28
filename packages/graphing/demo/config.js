@@ -7,7 +7,6 @@ const model = (id, extras) =>
     {
       id,
       element: 'graphing-el',
-      marks: [],
       backgroundMarks: [],
       size: { width: 600, height: 600 },
       domain: { min: -5, max: 5, padding: 0, step: 1, labelStep: 1 },

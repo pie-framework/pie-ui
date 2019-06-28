@@ -18,20 +18,15 @@ export class Main extends React.Component {
 
   render() {
     const { model, marks } = this.props;
+    const tools = [];
 
-    const tools = _(marks)
-      .map(m => m.type)
-      .concat(model.toolbarTools)
-      .uniq()
-      .map(t => {
-        if (typeof graphingTools[t] === 'function') {
-          const out = graphingTools[t]();
-          out.toolbar = true;
-          return out;
-        }
-      })
-      .compact()
-      .value();
+    Object.keys(graphingTools).forEach((graphingToolKey) => {
+      if (typeof graphingTools[graphingToolKey] === 'function') {
+        const tool = graphingTools[graphingToolKey]();
+        tool.toolbar = !!model.toolbarTools.find(tT => tT === tool.type);
+        tools.push(tool)
+      }
+    });
 
     const defaultAndCurrent = tools && tools.length > 0 && tools[0].type;
     return (

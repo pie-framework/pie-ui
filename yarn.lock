@@ -2135,14 +2135,14 @@
     slate-soft-break "^0.8.1"
     to-style "^1.3.3"
 
-"@pie-lib/graphing@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-0.3.0.tgz#d3e4a71bcf77ccbc877bd6ca3aae2d772806456a"
-  integrity sha512-wITo3c9BeO6EGa8FVuEp5UBuuQmjhjH4qxSdkbcHuMKD4Kq1i/dp9+pOwqerXJ+1WHReJP9senMCStoAascW8g==
+"@pie-lib/graphing@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.0.1.tgz#36a39ba1cc9be6d6e6f9fa43bbaca0910e13b57c"
+  integrity sha512-jqGmu3IyfRxkDnbfx+xnRjP0fZ/n/pc7W0ZOc/39FSNAJj/vpo3uLJLcYWKbNYg8SGuMvRdMNlV5vE7GLhk6xQ==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
-    "@pie-lib/plot" "^0.2.1"
+    "@pie-lib/plot" "^0.2.2"
     "@vx/axis" "^0.0.189"
     "@vx/clip-path" "^0.0.189"
     "@vx/event" "^0.0.189"
@@ -2223,7 +2223,7 @@
     debug "^4.1.1"
     keycode "^2.2.0"
 
-"@pie-lib/plot@^0.2.1":
+"@pie-lib/plot@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@pie-lib/plot/-/plot-0.2.2.tgz#42dcb4e16d44608b31dd67090155d4936f1ee865"
   integrity sha512-bpjk4MBl9LQKFrcvm6a9Xf4tKa0TZqSWk1spSpwAoQjv7TCi7T96LEOlNXy7ZTizUsJFVQ0AE7yVjBB9A7s/JA==

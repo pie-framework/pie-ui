@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/graphing": "^1.0.1",
+    "@pie-lib/render-ui": "^4.3.12",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "react": "^16.8.1",

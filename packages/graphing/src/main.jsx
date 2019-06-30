@@ -5,6 +5,7 @@ import {
   GraphContainer as Graph,
   tools as graphingTools
 } from '@pie-lib/graphing';
+import { Collapsible } from '@pie-lib/render-ui';
 export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
@@ -29,19 +30,28 @@ export class Main extends React.Component {
 
     const defaultAndCurrent = tools && tools.find(t => t.toolbar);
     return (
-      <Graph
-        size={model.size}
-        domain={model.domain}
-        range={model.range}
-        title={model.title}
-        labels={model.labels}
-        marks={marks}
-        backgroundMarks={model.backgroundMarks}
-        onChangeMarks={this.props.onAnswersChange}
-        tools={tools}
-        currentTool={defaultAndCurrent}
-        defaultTool={defaultAndCurrent}
-      />
+      <div>
+        <Graph
+          size={model.size}
+          domain={model.domain}
+          range={model.range}
+          title={model.title}
+          labels={model.labels}
+          marks={marks}
+          backgroundMarks={model.backgroundMarks}
+          onChangeMarks={this.props.onAnswersChange}
+          tools={tools}
+          currentTool={defaultAndCurrent}
+          defaultTool={defaultAndCurrent}
+        />
+        {
+          model.rationale && (
+            <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
+      </div>
     );
   }
 }

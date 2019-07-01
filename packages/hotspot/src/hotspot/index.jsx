@@ -33,7 +33,8 @@ class HotspotComponent extends React.Component {
         maxImageHeight,
         maxImageWidth,
         dimensions,
-        rationale
+        rationale,
+        teacherInstructions
       },
       onSelectChoice,
       classes
@@ -46,6 +47,17 @@ class HotspotComponent extends React.Component {
         <Typography>
           <span dangerouslySetInnerHTML={{ __html: prompt }} />
         </Typography>
+
+        {
+          teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
 
         {imageUrl ? (
           <Container

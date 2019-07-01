@@ -5,69 +5,7 @@ exports[`Main render snapshot 1`] = `
   <Root
     backgroundMarks={Array []}
     onChangeMarks={[MockFunction]}
-    tools={
-      Array [
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "label": "Point",
-          "toolbar": false,
-          "type": "point",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "hover": [Function],
-          "toolbar": false,
-          "type": "circle",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "toolbar": false,
-          "type": "polygon",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "toolbar": false,
-          "type": "sine",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "complete": [Function],
-          "toolbar": false,
-          "type": "parabola",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "toolbar": false,
-          "type": "line",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "toolbar": false,
-          "type": "segment",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "toolbar": false,
-          "type": "ray",
-        },
-        Object {
-          "Component": [Function],
-          "addPoint": [Function],
-          "toolbar": false,
-          "type": "vector",
-        },
-      ]
-    }
+    tools={Array []}
   />
 </div>
 `;

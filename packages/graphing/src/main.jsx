@@ -22,7 +22,7 @@ export class Main extends React.Component {
     const tools = [];
     const marksTypes = marks ? marks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
     const backgroundMarksTypes = model.backgroundMarks ? model.backgroundMarks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
-    const markTypes = uniq([ ...marksTypes, ...backgroundMarksTypes, ...model.toolbarTools ]);
+    const markTypes = uniq([ ...marksTypes, ...backgroundMarksTypes, ...(model.toolbarTools || []) ]);
 
     markTypes.forEach((graphingToolKey) => {
       if (typeof graphingTools[graphingToolKey] === 'function') {

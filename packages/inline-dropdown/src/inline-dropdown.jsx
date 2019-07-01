@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { InlineDropdown as DropDown } from '@pie-lib/mask-markup';
+import { Collapsible } from '@pie-lib/render-ui';
 
 export class InlineDropdown extends React.Component {
   static propTypes = {
@@ -10,6 +11,7 @@ export class InlineDropdown extends React.Component {
     disabled: PropTypes.bool,
     markup: PropTypes.string,
     mode: PropTypes.string,
+    teacherInstructions: PropTypes.string,
     choices: PropTypes.object,
     value: PropTypes.object,
     feedback: PropTypes.object,
@@ -36,7 +38,7 @@ export class InlineDropdown extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { prompt, mode } = this.props;
+    const { prompt, mode, teacherInstructions } = this.props;
 
     return (
       <div>
@@ -45,6 +47,17 @@ export class InlineDropdown extends React.Component {
           toggled={showCorrectAnswer}
           onToggle={this.toggleShowCorrect}
         />
+        {
+          teacherInstructions && [
+            <br/>,
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>,
+            <br/>
+          ]
+        }
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <DropDown
           {...this.props}

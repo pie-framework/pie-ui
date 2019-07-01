@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import uniq from 'lodash/uniq';
 import {
   GraphContainer as Graph,
   tools as graphingTools
@@ -19,8 +20,11 @@ export class Main extends React.Component {
   render() {
     const { model, marks } = this.props;
     const tools = [];
+    const marksTypes = marks.reduce((acc, m) => ([ ...acc, m.type]), []);
+    const backgroundMarksTypes = model.backgroundMarks && model.backgroundMarks.reduce((acc, m) => ([ ...acc, m.type]), []);
+    const markTypes = uniq([ ...marksTypes, ...backgroundMarksTypes, ...model.toolbarTools ]);
 
-    Object.keys(graphingTools).forEach((graphingToolKey) => {
+    markTypes.forEach((graphingToolKey) => {
       if (typeof graphingTools[graphingToolKey] === 'function') {
         const tool = graphingTools[graphingToolKey]();
         tool.toolbar = !!(model.toolbarTools && model.toolbarTools.find(tT => tT === tool.type));

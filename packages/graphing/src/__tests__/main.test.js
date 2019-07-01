@@ -3,7 +3,7 @@ import { Main } from '../main';
 import { shallow } from 'enzyme/build';
 
 jest.mock('lodash/uniq', () => {
-  return [];
+  return () => ([]);
 });
 
 describe('Main', () => {

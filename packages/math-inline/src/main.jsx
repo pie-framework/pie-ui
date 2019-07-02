@@ -13,7 +13,7 @@ import SimpleQuestionBlock from './simple-question-block';
 let registered = false;
 
 const REGEX = /{{response}}/gm;
-const DEFAULT_KEYPAD_VARIANT = '6';
+const DEFAULT_KEYPAD_VARIANT = 6;
 
 function generateAdditionalKeys(keyData = []) {
   return keyData.map(key => ({

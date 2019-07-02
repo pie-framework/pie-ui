@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './main';
-import debug from 'debug';
-
-const log = debug('pie-ui:graphing');
+import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 
 export { Main as Component };
 
-export default class GraphLines extends HTMLElement {
+export default class Graphing extends HTMLElement {
   constructor() {
     super();
   }
@@ -22,14 +20,24 @@ export default class GraphLines extends HTMLElement {
     this._render();
   }
 
-  sessionChanged(s) {
-    this._session.lines = s.lines;
-    log('session: ', this._session);
-  }
-
   connectedCallback() {
     this._render();
   }
+
+  isComplete = answer => Array.isArray(answer) && answer.length > 0;
+
+  changeAnswers = answer => {
+    this._session.answer = answer;
+
+    this.dispatchEvent(
+      new SessionChangedEvent(
+        this.tagName.toLowerCase(),
+        this.isComplete(this._session.answer)
+      )
+    );
+
+    this._render();
+  };
 
   _render() {
     if (!this._model || !this._session) {
@@ -38,8 +46,8 @@ export default class GraphLines extends HTMLElement {
 
     const el = React.createElement(Main, {
       model: this._model,
-      session: this._session,
-      onSessionChange: this.sessionChanged.bind(this)
+      marks: this._model.answersCorrected || this._session.answer || [],
+      onAnswersChange: this.changeAnswers
     });
 
     ReactDOM.render(el, this);

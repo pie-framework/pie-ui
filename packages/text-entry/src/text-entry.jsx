@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Input from './input';
 import { getFormatTag } from './formatting-component';
+import { Collapsible } from '@pie-lib/render-ui';
 
 const log = debug('pie-elements:text-entry');
 
@@ -64,6 +65,16 @@ export class TextEntry extends React.Component {
 
     return (
       <div className={names}>
+        {
+          model.teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         {model.prompt && <Typography className={classes.prompt}>{model.prompt}</Typography>}
         <Input
           feedback={model.feedback}

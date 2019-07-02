@@ -1,8 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { InlineDropdown as DropDown } from '@pie-lib/mask-markup';
+import { renderMath } from '@pie-lib/math-rendering';
 
 export class InlineDropdown extends React.Component {
   static propTypes = {
@@ -28,6 +30,13 @@ export class InlineDropdown extends React.Component {
     if (isEmpty(nextProps.feedback)) {
       this.setState({ showCorrectAnswer: false });
     }
+  }
+
+  componentDidUpdate() {
+    // eslint-disable-next-line
+    const domNode = ReactDOM.findDOMNode(this);
+
+    renderMath(domNode);
   }
 
   toggleShowCorrect = () => {

@@ -2065,14 +2065,14 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^10.7.4":
-  version "10.7.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.4.tgz#cb219e7b35cdb5bab51684b14d442f6649ca527f"
-  integrity sha512-MlBOpqjQb36Ydo5p1npfULaipjeKRstkTXBa4NQBj4fJfinTlTT41PEyel3oLOlDhBarkAts5/LTeSVg758MYw==
+"@pie-lib/config-ui@^10.7.5":
+  version "10.7.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.5.tgz#b33998c21f9a7de4b1afa264faa1f15a4c0088d7"
+  integrity sha512-YYjlR3SazpKn2zkRQvuaxkcauteYzKGmA1w6EWA8JvC6mASbn+sPh1MPq/oV6kKeGJkd4ImJizcAM/3Z12Bohw==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.7.5"
+    "@pie-lib/editable-html" "^7.7.6"
     "@pie-lib/icons" "^2.4.2"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -2103,10 +2103,10 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.7.5":
-  version "7.7.5"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.7.5.tgz#f3dffc65ba2a2992fcc824b9c705185c1912cf9f"
-  integrity sha512-RzVWOFeqiRqJSTlBmtO1ZHGp2ONm0IMhqGHF5yDMouAuQF0goLAWWgbyLEZ38MCgYS8BP/UrL0nawzy7K9Gk2Q==
+"@pie-lib/editable-html@^7.7.6":
+  version "7.7.6"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.7.6.tgz#86af47b3ee7e3ff810dd80b99f8c06439a8fbb39"
+  integrity sha512-QrdKMd97x/TMwnYy3q7QuR7jv8htweHnUOp8U8EO3cICJKP28liUDQP76qpYrpyCMisDucIouWFW6RasljeFeA==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"

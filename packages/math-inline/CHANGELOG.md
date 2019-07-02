@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.5...@pie-ui/math-inline@2.3.6) (2019-07-02)
+
+
+### Bug Fixes
+
+* **math-inline:** default keypad mode fix ([cf9dca1](https://github.com/pie-framework/pie-ui/commit/cf9dca1))
+
+
+
+
+
 ## [2.3.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.4...@pie-ui/math-inline@2.3.5) (2019-06-19)
 
 **Note:** Version bump only for package @pie-ui/math-inline

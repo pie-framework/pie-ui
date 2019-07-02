@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.1.1...@pie-ui/graphing@2.2.0) (2019-07-02)
+
+
+### Bug Fixes
+
+* Added pie-lib/graphing in package.json ([9b06da0](https://github.com/pie-framework/pie-ui/commit/9b06da0))
+* removed displayedTools and correctAnswerMarks parameter. Used all the data needed from pie-element. ([0c4a0e0](https://github.com/pie-framework/pie-ui/commit/0c4a0e0))
+* removed usage of local domain and range and used props from model instead ([73b3e77](https://github.com/pie-framework/pie-ui/commit/73b3e77))
+* removed usage of settings and used properties from model instead ([a3909ee](https://github.com/pie-framework/pie-ui/commit/a3909ee))
+* renamed model.graph properties ([8223d90](https://github.com/pie-framework/pie-ui/commit/8223d90))
+* tools has to be an array with all possible tools, only 'toolbar' property has to be set properly in order to display it or not in toolbar menu ([3389c7f](https://github.com/pie-framework/pie-ui/commit/3389c7f))
+
+
+### Features
+
+* added rationale. ([b9134f2](https://github.com/pie-framework/pie-ui/commit/b9134f2))
+* Added score in 'evaluate' mode. ([4cdd9af](https://github.com/pie-framework/pie-ui/commit/4cdd9af))
+* save response on session, added graph representation ([3f3a9fc](https://github.com/pie-framework/pie-ui/commit/3f3a9fc))
+* updated pie-lib/graphing version ([c5b4106](https://github.com/pie-framework/pie-ui/commit/c5b4106))
+* use proper answer ([a4180af](https://github.com/pie-framework/pie-ui/commit/a4180af))
+
+
+
+
+
 ## [2.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.1.0...@pie-ui/graphing@2.1.1) (2019-06-12)
 
 **Note:** Version bump only for package @pie-ui/graphing

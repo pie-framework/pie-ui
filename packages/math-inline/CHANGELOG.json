@@ -873,5 +873,20 @@
     "committerDate": "2019-06-12 19:08:36 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.3.4"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "default keypad mode fix",
+    "merge": null,
+    "header": "fix(math-inline): default keypad mode fix",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "cf9dca1ea345565f0a3d4cc22cb1bc9d923a2dfe",
+    "gitTags": " (origin/fix/math-inline-fixes)",
+    "committerDate": "2019-06-19 11:14:31 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.3.6"
   }
 ]

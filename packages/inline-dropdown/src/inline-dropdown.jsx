@@ -51,22 +51,22 @@ export class InlineDropdown extends React.Component {
 
     return (
       <div>
+        {
+          teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+
         <CorrectAnswerToggle
           show={mode === 'evaluate'}
           toggled={showCorrectAnswer}
           onToggle={this.toggleShowCorrect}
         />
-        {
-          teacherInstructions && [
-            <br/>,
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>,
-            <br/>
-          ]
-        }
+        <br />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <DropDown
           {...this.props}

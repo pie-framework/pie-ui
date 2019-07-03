@@ -41,11 +41,6 @@ export class Main extends React.Component {
 
     return (
       <div>
-        <CorrectAnswerToggle
-          show={mode === 'evaluate'}
-          toggled={showCorrectAnswer}
-          onToggle={this.toggleShowCorrect}
-        />
         {
           teacherInstructions && (
             <div style={{ margin: '16px 0' }}>
@@ -57,6 +52,11 @@ export class Main extends React.Component {
             </div>
           )
         }
+        <CorrectAnswerToggle
+          show={mode === 'evaluate'}
+          toggled={showCorrectAnswer}
+          onToggle={this.toggleShowCorrect}
+        />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <ConstructedResponse
           {...this.props}

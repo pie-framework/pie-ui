@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
+import { Collapsible } from '@pie-lib/render-ui';
 
 const DraggableDragInTheBlank = withDragContext(DragInTheBlank);
 
@@ -47,6 +48,14 @@ export class Main extends React.Component {
 
     return (
       <div>
+        {
+          model.teacherInstructions && (
+            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <CorrectAnswerToggle
           show={mode === 'evaluate'}
           toggled={showCorrectAnswer}

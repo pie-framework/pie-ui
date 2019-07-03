@@ -318,6 +318,17 @@ export class Main extends React.Component {
         className={classes.mainContainer}
         ref={r => (this.root = r || this.root)}
       >
+        {
+          model.teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <div className={classes.main}>
           {model.correctness && <div>Score: {model.correctness.score}</div>}
           {model.correctness && model.correctness.correctness !== 'correct' && <CorrectAnswerToggle

@@ -176,6 +176,17 @@ export class PlacementOrdering extends React.Component {
 
     return (
       <div className={classes.placementOrdering}>
+        {
+          model.teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <CorrectAnswerToggle
           show={showToggle}
           toggled={this.state.showingCorrect}

@@ -2,6 +2,7 @@
 
 exports[`Main render snapshot 1`] = `
 <div>
+  <br />
   <Root
     backgroundMarks={Array []}
     onChangeMarks={[MockFunction]}

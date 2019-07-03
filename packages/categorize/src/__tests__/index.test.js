@@ -34,6 +34,11 @@ describe('categorize', () => {
       const w = wrapper({ rationale: 'This is rationale'});
       expect(w).toMatchSnapshot();
     });
+
+    it('snapshot with teacherInstructions', () => {
+      const w = wrapper({ teacherInstructions: 'These are teacher instructions'});
+      expect(w).toMatchSnapshot();
+    });
   });
 
   describe('events', () => {

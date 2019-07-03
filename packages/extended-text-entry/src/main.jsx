@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import debug from 'debug';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, Collapsible } from '@pie-lib/render-ui';
 
 const log = debug('@pie-ui:extended-text-entry');
 
@@ -30,11 +30,22 @@ class Main extends React.Component {
 
   render() {
     const { model, onChange, classes, session } = this.props;
-    const { width, height, disabled, feedback } = model;
+    const { width, height, disabled, feedback, teacherInstructions } = model;
     const { value } = session;
     log('[render] disabled? ', disabled);
     return (
       <div className={classes.main}>
+        {
+          teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         {model.prompt && (
           <Typography
             className={classes.prompt}

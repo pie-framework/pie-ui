@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { ConstructedResponse } from '@pie-lib/mask-markup';
+import { Collapsible } from '@pie-lib/render-ui';
 
 export class Main extends React.Component {
   static propTypes = {
@@ -10,6 +11,7 @@ export class Main extends React.Component {
     disabled: PropTypes.bool,
     markup: PropTypes.string,
     mode: PropTypes.string,
+    teacherInstructions: PropTypes.string,
     value: PropTypes.object,
     feedback: PropTypes.object,
     onChange: PropTypes.func
@@ -35,10 +37,21 @@ export class Main extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { mode, prompt } = this.props;
+    const { mode, prompt, teacherInstructions } = this.props;
 
     return (
       <div>
+        {
+          teacherInstructions && (
+            <div style={{ margin: '16px 0' }}>
+              <Collapsible
+                labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              >
+                <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+              </Collapsible>
+            </div>
+          )
+        }
         <CorrectAnswerToggle
           show={mode === 'evaluate'}
           toggled={showCorrectAnswer}

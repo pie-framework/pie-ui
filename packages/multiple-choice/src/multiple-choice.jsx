@@ -4,6 +4,7 @@ import ChoiceInput from './choice-input';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+import { Collapsible } from '@pie-lib/render-ui';
 
 const styles = {
   corespringChoice: {
@@ -32,6 +33,7 @@ export class MultipleChoice extends React.Component {
     keyMode: PropTypes.oneOf(['numbers', 'letters', 'none']),
     choices: PropTypes.array,
     prompt: PropTypes.string,
+    teacherInstructions: PropTypes.string,
     session: PropTypes.object,
     disabled: PropTypes.bool.isRequired,
     onChoiceChanged: PropTypes.func.isRequired,
@@ -91,6 +93,7 @@ export class MultipleChoice extends React.Component {
       prompt,
       onChoiceChanged,
       responseCorrect,
+      teacherInstructions,
       classes
     } = this.props;
 
@@ -135,6 +138,16 @@ export class MultipleChoice extends React.Component {
 
     return (
       <div className={classes.corespringChoice}>
+        {
+          teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <CorrectAnswerToggle
           show={isEvaluateMode && !responseCorrect}
           toggled={this.state.showCorrect}

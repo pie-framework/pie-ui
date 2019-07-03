@@ -4,6 +4,7 @@ exports[`PlacementOrdering render shows toggle 1`] = `
 <div
   className="placementOrdering"
 >
+  <br />
   <_default
     onToggle={[Function]}
     show={true}
@@ -33,6 +34,7 @@ exports[`PlacementOrdering render snapshot 1`] = `
 <div
   className="placementOrdering"
 >
+  <br />
   <_default
     onToggle={[Function]}
     toggled={false}
@@ -61,6 +63,7 @@ exports[`PlacementOrdering render snapshot with rationale 1`] = `
 <div
   className="placementOrdering"
 >
+  <br />
   <_default
     onToggle={[Function]}
     toggled={false}

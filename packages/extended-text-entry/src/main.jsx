@@ -35,12 +35,6 @@ class Main extends React.Component {
     log('[render] disabled? ', disabled);
     return (
       <div className={classes.main}>
-        {model.prompt && (
-          <Typography
-            className={classes.prompt}
-            dangerouslySetInnerHTML={{ __html: model.prompt }}
-          />
-        )}
         {
           teacherInstructions && (
             <Collapsible
@@ -52,6 +46,12 @@ class Main extends React.Component {
           )
         }
         <br />
+        {model.prompt && (
+          <Typography
+            className={classes.prompt}
+            dangerouslySetInnerHTML={{ __html: model.prompt }}
+          />
+        )}
         <EditableHTML
           onChange={onChange}
           markup={value || ''}

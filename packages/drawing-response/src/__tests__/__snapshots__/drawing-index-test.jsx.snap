@@ -2,6 +2,7 @@
 
 exports[`DrawingResponse snapshots renders 1`] = `
 <div>
+  <br />
   <WithStyles(Typography)>
     <span
       dangerouslySetInnerHTML={

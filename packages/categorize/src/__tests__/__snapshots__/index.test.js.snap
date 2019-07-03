@@ -2,6 +2,7 @@
 
 exports[`categorize renders snapshot 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -64,6 +65,7 @@ exports[`categorize renders snapshot 1`] = `
 
 exports[`categorize renders snapshot with rationale 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -144,6 +146,23 @@ exports[`categorize renders snapshot with rationale 1`] = `
 
 exports[`categorize renders snapshot with teacherInstructions 1`] = `
 <div>
+  <Component
+    labels={
+      Object {
+        "hidden": "Show Teacher Instructions",
+        "visible": "Hide Teacher Instructions",
+      }
+    }
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "These are teacher instructions",
+        }
+      }
+    />
+  </Component>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -203,21 +222,5 @@ exports[`categorize renders snapshot with teacherInstructions 1`] = `
       }
     />
   </div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "These are teacher instructions",
-        }
-      }
-    />
-  </Component>
 </div>
 `;

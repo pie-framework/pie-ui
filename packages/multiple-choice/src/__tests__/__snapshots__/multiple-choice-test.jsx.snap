@@ -2,6 +2,7 @@
 
 exports[`CorespringChoice snapshot renders 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -64,6 +65,7 @@ exports[`CorespringChoice snapshot renders 1`] = `
 
 exports[`CorespringChoice snapshot renders incorrect tick if one answer is correct but it is not checked renders 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={true}

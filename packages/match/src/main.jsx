@@ -161,6 +161,17 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
+        {
+          model.teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+              className={classes.collapsible}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+
         {model.prompt && (
           <div
             className={classes.prompt}

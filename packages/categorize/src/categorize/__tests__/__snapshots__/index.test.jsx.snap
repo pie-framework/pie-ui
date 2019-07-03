@@ -2,6 +2,7 @@
 
 exports[`categorize snapshots incorrect 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -62,6 +63,7 @@ exports[`categorize snapshots incorrect 1`] = `
 
 exports[`categorize snapshots renders 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}
@@ -122,6 +124,7 @@ exports[`categorize snapshots renders 1`] = `
 
 exports[`categorize snapshots renders with feedback 1`] = `
 <div>
+  <br />
   <_default
     onToggle={[Function]}
     show={false}

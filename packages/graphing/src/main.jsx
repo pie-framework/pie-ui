@@ -35,6 +35,16 @@ export class Main extends React.Component {
     const defaultAndCurrent = tools && tools.find(t => t.toolbar);
     return (
       <div>
+        {
+          model.teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <Graph
           size={model.size}
           domain={model.domain}

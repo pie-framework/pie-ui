@@ -4,6 +4,7 @@ exports[`text-entry:snapshot renders 1`] = `
 <div
   className="textEntry"
 >
+  <br />
   <WithStyles(RawInput)
     correctness="correct"
     inputComponent={null}

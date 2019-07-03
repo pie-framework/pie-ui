@@ -2247,7 +2247,7 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/render-ui@^4.3.1", "@pie-lib/render-ui@^4.3.11", "@pie-lib/render-ui@^4.3.12":
+"@pie-lib/render-ui@^4.3.1", "@pie-lib/render-ui@^4.3.11", "@pie-lib/render-ui@^4.3.12", "@pie-lib/render-ui@^4.4.1":
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.4.2.tgz#0e1f8ecfe9c9a5f155bd1437bc175500e3340d35"
   integrity sha512-ao/faFwFAHgjgedHsupymBrIH+Wd2GRrKGxHFtKMHUfnVc36m1Vud33IEn8mdYHHk/sj/A+INydwHSlLH1j+Tw==

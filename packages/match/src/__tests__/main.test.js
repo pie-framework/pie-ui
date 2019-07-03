@@ -80,6 +80,13 @@ describe('Main', () => {
       })).toMatchSnapshot();
     });
 
+    it('snapshot with teacher Instructions', () => {
+      expect(w({
+        ...defaultProps,
+        teacherInstructions: 'These are teacher instructions'
+      })).toMatchSnapshot();
+    });
+
     it('renders correctly', () => {
       component = wrapper();
 

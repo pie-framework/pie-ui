@@ -28,6 +28,15 @@ class DrawingResponseComponent extends React.Component {
 
     return (
       <div>
+        {teacherInstructions && (
+          <div style={{ margin: '16px 0' }}>
+            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          </div>
+        )}
+        <br />
+
         <Typography>
           <span dangerouslySetInnerHTML={{ __html: prompt }} />
         </Typography>
@@ -38,14 +47,6 @@ class DrawingResponseComponent extends React.Component {
           imageUrl={imageUrl}
           disabled={disabled}
         />
-
-        {teacherInstructions && (
-          <div style={{ margin: '16px 0' }}>
-            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          </div>
-        )}
       </div>
     );
   }

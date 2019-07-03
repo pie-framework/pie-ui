@@ -48,11 +48,6 @@ export class Main extends React.Component {
 
     return (
       <div>
-        <CorrectAnswerToggle
-          show={mode === 'evaluate'}
-          toggled={showCorrectAnswer}
-          onToggle={this.toggleShowCorrect}
-        />
         {
           model.teacherInstructions && (
             <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
@@ -60,6 +55,12 @@ export class Main extends React.Component {
             </Collapsible>
           )
         }
+        <br />
+        <CorrectAnswerToggle
+          show={mode === 'evaluate'}
+          toggled={showCorrectAnswer}
+          onToggle={this.toggleShowCorrect}
+        />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <DraggableDragInTheBlank
           {...modelWithValue}

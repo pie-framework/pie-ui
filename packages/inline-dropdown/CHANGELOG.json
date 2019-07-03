@@ -208,5 +208,35 @@
     "committerDate": "2019-06-26 12:45:39 -0400",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.6.0"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "version bumped the packages that depend on editable-html",
+    "merge": null,
+    "header": "chore(version): version bumped the packages that depend on editable-html",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e95d525c905344695492a809079968902b241a2e",
+    "gitTags": "",
+    "committerDate": "2019-07-02 13:06:53 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.6.1"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "version bumped and rendered math in inline-dropdown",
+    "merge": null,
+    "header": "chore(version): version bumped and rendered math in inline-dropdown",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9ba90eb941b54f62c9e7bf650196d9d676ce9af8",
+    "gitTags": "",
+    "committerDate": "2019-07-02 12:59:39 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.6.1"
   }
 ]

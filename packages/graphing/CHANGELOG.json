@@ -193,5 +193,20 @@
     "committerDate": "2019-06-19 23:09:22 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "add missing pie-player-events dependency (#121)",
+    "merge": null,
+    "header": "fix: add missing pie-player-events dependency (#121)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "55424773002645c07dff304059cffd51582082c8",
+    "gitTags": "",
+    "committerDate": "2019-07-03 11:22:37 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.2.2"
   }
 ]

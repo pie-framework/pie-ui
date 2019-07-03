@@ -44,10 +44,6 @@ class HotspotComponent extends React.Component {
 
     return (
       <div>
-        <Typography>
-          <span dangerouslySetInnerHTML={{ __html: prompt }} />
-        </Typography>
-
         {
           teacherInstructions && (
             <Collapsible
@@ -58,6 +54,10 @@ class HotspotComponent extends React.Component {
             </Collapsible>
           )
         }
+
+        <Typography>
+          <span dangerouslySetInnerHTML={{ __html: prompt }} />
+        </Typography>
 
         {imageUrl ? (
           <Container

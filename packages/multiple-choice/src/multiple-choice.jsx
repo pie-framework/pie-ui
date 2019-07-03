@@ -33,6 +33,7 @@ export class MultipleChoice extends React.Component {
     keyMode: PropTypes.oneOf(['numbers', 'letters', 'none']),
     choices: PropTypes.array,
     prompt: PropTypes.string,
+    teacherInstructions: PropTypes.string,
     session: PropTypes.object,
     disabled: PropTypes.bool.isRequired,
     onChoiceChanged: PropTypes.func.isRequired,

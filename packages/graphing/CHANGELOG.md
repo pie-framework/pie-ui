@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.2.1...@pie-ui/graphing@2.2.2) (2019-07-03)
+
+
+### Bug Fixes
+
+* add missing pie-player-events dependency ([#121](https://github.com/pie-framework/pie-ui/issues/121)) ([5542477](https://github.com/pie-framework/pie-ui/commit/5542477))
+
+
+
+
+
 ## [2.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.2.0...@pie-ui/graphing@2.2.1) (2019-07-02)
 
 **Note:** Version bump only for package @pie-ui/graphing

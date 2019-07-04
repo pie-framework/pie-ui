@@ -603,5 +603,35 @@
     "committerDate": "2019-07-03 15:27:29 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.2.11"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "editable-html dependent version bump",
+    "merge": null,
+    "header": "chore(version): editable-html dependent version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a2ab1495c3ea036b295b8de597d3f58386e5e290",
+    "gitTags": "",
+    "committerDate": "2019-07-04 11:26:36 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.2.12"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "editable-html dependent version bump",
+    "merge": null,
+    "header": "chore(version): editable-html dependent version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f75e11857a2387cc6183e0a4c53bb9a4bbce5d56",
+    "gitTags": "",
+    "committerDate": "2019-07-04 11:23:02 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.2.12"
   }
 ]

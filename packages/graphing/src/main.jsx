@@ -17,8 +17,12 @@ export class Main extends React.Component {
     onAnswersChange: PropTypes.func
   };
 
+  static defaultProps = {
+    classes: {}
+  };
+
   render() {
-    const { model, marks } = this.props;
+    const { model, marks, classes } = this.props;
     const tools = [];
     const marksTypes = marks ? marks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
     const backgroundMarksTypes = model.backgroundMarks ? model.backgroundMarks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
@@ -46,6 +50,11 @@ export class Main extends React.Component {
           )
         }
         <br />
+        <div
+          className={classes.prompt}
+          dangerouslySetInnerHTML={{ __html: model.prompt }}
+        />
+        <br />
         <Graph
           size={model.size}
           domain={model.domain}
@@ -60,6 +69,7 @@ export class Main extends React.Component {
           defaultTool={defaultAndCurrent}
           hideLabel={!showLabel}
         />
+        <br />
         {
           model.rationale && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
@@ -72,6 +82,10 @@ export class Main extends React.Component {
   }
 }
 
-const styles = () => ({});
+const styles = () => ({
+  prompt: {
+    verticalAlign: 'middle'
+  }
+});
 
 export default withStyles(styles)(Main);

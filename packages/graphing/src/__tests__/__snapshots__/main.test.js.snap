@@ -5,6 +5,7 @@ exports[`Main render snapshot 1`] = `
   <br />
   <Root
     backgroundMarks={Array []}
+    hideLabel={true}
     onChangeMarks={[MockFunction]}
     tools={Array []}
   />

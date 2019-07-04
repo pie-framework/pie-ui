@@ -31,8 +31,9 @@ export class Main extends React.Component {
         tools.push(tool)
       }
     });
-
+    const showLabel = model.toolbarTools && model.toolbarTools.some(t => t === 'label');
     const defaultAndCurrent = tools && tools.find(t => t.toolbar);
+
     return (
       <div>
         {
@@ -57,6 +58,7 @@ export class Main extends React.Component {
           tools={tools}
           currentTool={defaultAndCurrent}
           defaultTool={defaultAndCurrent}
+          hideLabel={!showLabel}
         />
         {
           model.rationale && (

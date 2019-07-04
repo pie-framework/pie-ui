@@ -17,8 +17,12 @@ export class Main extends React.Component {
     onAnswersChange: PropTypes.func
   };
 
+  static defaultProps = {
+    classes: {}
+  };
+
   render() {
-    const { model, marks } = this.props;
+    const { model, marks, classes } = this.props;
     const tools = [];
     const marksTypes = marks ? marks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
     const backgroundMarksTypes = model.backgroundMarks ? model.backgroundMarks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
@@ -31,8 +35,9 @@ export class Main extends React.Component {
         tools.push(tool)
       }
     });
-
+    const showLabel = model.toolbarTools && model.toolbarTools.some(t => t === 'label');
     const defaultAndCurrent = tools && tools.find(t => t.toolbar);
+
     return (
       <div>
         {
@@ -44,6 +49,11 @@ export class Main extends React.Component {
             </Collapsible>
           )
         }
+        <br />
+        <div
+          className={classes.prompt}
+          dangerouslySetInnerHTML={{ __html: model.prompt }}
+        />
         <br />
         <Graph
           size={model.size}
@@ -57,7 +67,9 @@ export class Main extends React.Component {
           tools={tools}
           currentTool={defaultAndCurrent}
           defaultTool={defaultAndCurrent}
+          hideLabel={!showLabel}
         />
+        <br />
         {
           model.rationale && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
@@ -70,6 +82,10 @@ export class Main extends React.Component {
   }
 }
 
-const styles = () => ({});
+const styles = () => ({
+  prompt: {
+    verticalAlign: 'middle'
+  }
+});
 
 export default withStyles(styles)(Main);

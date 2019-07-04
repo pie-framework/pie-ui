@@ -358,5 +358,20 @@
     "committerDate": "2019-07-03 15:27:29 -0400",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.3.11"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "version bumped editable-html dependent packages",
+    "merge": null,
+    "header": "chore(version): version bumped editable-html dependent packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "47c9ca2cbe323896d8d56ddee54592301b494719",
+    "gitTags": "",
+    "committerDate": "2019-07-03 15:27:29 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.3.11"
   }
 ]

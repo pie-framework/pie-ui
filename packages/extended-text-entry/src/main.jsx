@@ -30,8 +30,9 @@ class Main extends React.Component {
 
   render() {
     const { model, onChange, classes, session } = this.props;
-    const { width, height, disabled, feedback, teacherInstructions } = model;
+    const { dimensions, disabled, feedback, teacherInstructions, mathInput } = model;
     const { value } = session;
+    const { width, height } = dimensions || {};
     log('[render] disabled? ', disabled);
     return (
       <div className={classes.main}>
@@ -59,6 +60,11 @@ class Main extends React.Component {
           height={height && height.toString()}
           disabled={disabled}
           highlightShape={true}
+          pluginProps={{
+            math: {
+              disabled: !mathInput
+            }
+          }}
         />
         <br />
         {feedback && <Feedback correctness="correct" feedback={feedback} />}

@@ -208,5 +208,35 @@
     "committerDate": "2019-07-03 11:22:37 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.2.2"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Display prompt is item render.",
+    "merge": null,
+    "header": "feat: Display prompt is item render.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "835c4be28a86d5291368c988397801aaa276733e",
+    "gitTags": " (origin/fix/graphing-toggle-label)",
+    "committerDate": "2019-07-04 08:35:04 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Use toolbarTools to determine if \"label\" should be displayed or not.",
+    "merge": null,
+    "header": "feat: Use toolbarTools to determine if \"label\" should be displayed or not.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1a689286e82d32c3cbd5a6af54f3f274f091c7ba",
+    "gitTags": "",
+    "committerDate": "2019-07-03 22:42:13 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.0"
   }
 ]

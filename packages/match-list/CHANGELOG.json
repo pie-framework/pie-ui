@@ -283,5 +283,20 @@
     "committerDate": "2019-06-13 15:42:14 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "main",
+    "subject": "created a new component for rendering the answers and prompts [ch1969]",
+    "merge": null,
+    "header": "feat(main): created a new component for rendering the answers and prompts [ch1969]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "838bed86efc57f2218b0346515e458b03aebcf46",
+    "gitTags": "",
+    "committerDate": "2019-07-05 22:53:11 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.0"
   }
 ]

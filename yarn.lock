@@ -2171,10 +2171,10 @@
     slate-soft-break "^0.8.1"
     to-style "^1.3.3"
 
-"@pie-lib/editable-html@^7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.8.0.tgz#63d2dbff8e7825fcf489ccba4cf75083b3cf19a2"
-  integrity sha512-b3TiyOZOfVrEDOfx7JR3LrmlU/DfHMVZYj+TXMU43/EPXOgLon2O66STmSsI6ulANS5Q709rkskawZ7QHaEuzQ==
+"@pie-lib/editable-html@^7.9.0":
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.9.0.tgz#1c51c37acd164fe31574b102f6139bc7f3815f96"
+  integrity sha512-bR4I/AdbpwRc3pD/LD5M4zRlFGppbJli7vJ6+9ZSeww67P/6vYyMB4FsOaTiIFWODqjwe62B8ny+m7twJ6lutg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"

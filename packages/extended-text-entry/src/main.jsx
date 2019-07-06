@@ -63,11 +63,10 @@ class Main extends React.Component {
           highlightShape={true}
           pluginProps={{
             math: {
-              disabled: !mathInput
+              disabled: !mathInput,
+              keypadMode: this.props.model.equationEditor
+
             }
-          }}
-          mathProps={{
-            getMode: () => this.props.model.equationEditor
           }}
         />
         <br />

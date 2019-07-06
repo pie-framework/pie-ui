@@ -49,12 +49,11 @@ const AnswerContent = withStyles({
     border: '1px solid #c2c2c2',
     cursor: 'pointer',
     width: '100%',
-    height: '100%',
-    minHeight: '40px',
     padding: '10px',
     boxSizing: 'border-box',
     overflow: 'hidden',
-    transition: 'opacity 200ms linear'
+    transition: 'opacity 200ms linear',
+    wordBreak: 'break-word'
   },
   dragging: {
     opacity: 0.5
@@ -166,8 +165,8 @@ export class Answer extends React.Component {
 const StyledAnswer = withStyles({
   answer: {
     boxSizing: 'border-box',
-    height: 40,
-    minWidth: '100%',
+    minHeight: 40,
+    minWidth: '100px',
     overflow: 'hidden',
     margin: '10px 0',
     padding: '0px',

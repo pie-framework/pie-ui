@@ -34,6 +34,7 @@ class Main extends React.Component {
     const { value } = session;
     const { width, height } = dimensions || {};
     log('[render] disabled? ', disabled);
+
     return (
       <div className={classes.main}>
         {
@@ -64,6 +65,9 @@ class Main extends React.Component {
             math: {
               disabled: !mathInput
             }
+          }}
+          mathProps={{
+            getMode: () => this.props.model.equationEditor
           }}
         />
         <br />

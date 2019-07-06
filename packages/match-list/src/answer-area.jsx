@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import isEmpty from 'lodash/isEmpty';
+import isUndefined from 'lodash/isUndefined';
 import reduce from 'lodash/reduce';
+
+import Arrow from './arrow';
 import DragAndDropAnswer from './answer';
 
-export class AnswerList extends React.Component {
+export class AnswerArea extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
     session: PropTypes.object.isRequired,
@@ -52,7 +55,7 @@ export class AnswerList extends React.Component {
     }
 
     const correctPromptMap = config.prompts.reduce((obj, prompt) => {
-      if (prompt.relatedAnswer) {
+      if (!isUndefined(prompt.relatedAnswer)) {
         obj[prompt.id] = prompt.relatedAnswer;
       }
 
@@ -66,38 +69,70 @@ export class AnswerList extends React.Component {
     }, {});
   };
 
+  buildRows = () => {
+    const { model } = this.props;
+    const { config } = model;
+    const prompts = (config.prompts || []);
+
+    return prompts.map(prompt => {
+      const sessionAnswer = this.getAnswerFromSession(prompt.id);
+
+      return {
+        ...prompt,
+        sessionAnswer
+      };
+    });
+  };
+
   render() {
     const {
       classes,
       disabled,
       onPlaceAnswer,
       instanceId,
-      onRemoveAnswer,
-      model
+      onRemoveAnswer
     } = this.props;
-    const { config } = model;
+    const rows = this.buildRows();
     const correctnessMap = this.getCorrectOrIncorrectMap();
 
     return (
       <div className={classes.itemList}>
-        {config.prompts.map((prompt, index) => {
-          const sessionAnswer = this.getAnswerFromSession(prompt.id);
+        {rows.map(({ sessionAnswer, title, id }, index) => {
 
           return (
-            <DragAndDropAnswer
+            <div
+              className={classes.row}
+              style={{
+                display: 'flex'
+              }}
               key={index}
-              index={index}
-              promptId={prompt.id}
-              correct={correctnessMap[prompt.id]}
-              draggable={!isEmpty(sessionAnswer)}
-              disabled={disabled}
-              instanceId={instanceId}
-              id={sessionAnswer.id}
-              onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
-              title={sessionAnswer.title}
-              type={'target'}
-              onRemoveChoice={() => onRemoveAnswer(prompt.id)}
-            />
+            >
+              <div
+                className={classes.promptEntry}
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+              <div
+                className={classes.arrowEntry}
+              >
+                <Arrow direction="left" />
+                <Arrow />
+              </div>
+              <DragAndDropAnswer
+                key={index}
+                className={classes.answer}
+                index={index}
+                promptId={id}
+                correct={correctnessMap[id]}
+                draggable={!isEmpty(sessionAnswer)}
+                disabled={disabled}
+                instanceId={instanceId}
+                id={sessionAnswer.id}
+                onPlaceAnswer={(place, id) => onPlaceAnswer(place, id)}
+                title={sessionAnswer.title}
+                type={'target'}
+                onRemoveChoice={() => onRemoveAnswer(id)}
+              />
+            </div>
           );
         })}
       </div>
@@ -106,13 +141,40 @@ export class AnswerList extends React.Component {
 }
 
 const styles = () => ({
+  answer: {
+    flex: 1
+  },
+  arrowEntry: {
+    alignItems: 'normal',
+    display: 'flex',
+    height: 40,
+    margin: '10px 20px'
+  },
   itemList: {
-    alignItems: 'flex-end',
+    alignItems: 'flex-start',
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between'
+  },
+  promptEntry: {
+    border: '1px solid #c2c2c2',
+    boxSizing: 'border-box',
+    flex: 1,
+    margin: '10px 0',
+    minHeight: 40,
+    overflow: 'hidden',
+    padding: 10,
+    textAlign: 'center',
+    width: '100%',
+    wordBreak: 'break-word'
+  },
+  row: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%'
   }
 });
 
-export default withStyles(styles)(AnswerList);
+export default withStyles(styles)(AnswerArea);

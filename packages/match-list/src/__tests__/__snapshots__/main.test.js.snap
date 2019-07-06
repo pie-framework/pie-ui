@@ -14,156 +14,82 @@ exports[`Main render renders correctly 1`] = `
       }
     }
   />
-  <div>
-    <div
-      className=""
-    >
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Prompt 1",
-          }
-        }
-        key="1"
-      />
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Prompt 3",
-          }
-        }
-        key="3"
-      />
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Prompt 4",
-          }
-        }
-        key="4"
-      />
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Prompt 2",
-          }
-        }
-        key="2"
-      />
-    </div>
-    <div
-      className=""
-    >
-      <div
-        key="1"
-      >
-        <WithStyles(Arrow)
-          direction="left"
-        />
-        <WithStyles(Arrow) />
-      </div>
-      <div
-        key="3"
-      >
-        <WithStyles(Arrow)
-          direction="left"
-        />
-        <WithStyles(Arrow) />
-      </div>
-      <div
-        key="4"
-      >
-        <WithStyles(Arrow)
-          direction="left"
-        />
-        <WithStyles(Arrow) />
-      </div>
-      <div
-        key="2"
-      >
-        <WithStyles(Arrow)
-          direction="left"
-        />
-        <WithStyles(Arrow) />
-      </div>
-    </div>
-    <WithStyles(AnswerList)
-      disabled={true}
-      instanceId="1"
-      model={
-        Object {
-          "config": Object {
-            "answers": Array [
-              Object {
-                "id": 1,
-                "title": "Answer 1",
-              },
-              Object {
-                "id": 2,
-                "title": "Answer 2",
-              },
-              Object {
-                "id": 3,
-                "title": "Answer 3",
-              },
-              Object {
-                "id": 4,
-                "title": "Answer 4",
-              },
-              Object {
-                "id": 5,
-                "title": "Answer 5",
-              },
-              Object {
-                "id": 6,
-                "title": "Answer 6",
-              },
-            ],
-            "prompt": "Your prompt goes here",
-            "prompts": Array [
-              Object {
-                "id": 1,
-                "relatedAnswer": 1,
-                "title": "Prompt 1",
-              },
-              Object {
-                "id": 3,
-                "relatedAnswer": 3,
-                "title": "Prompt 3",
-              },
-              Object {
-                "id": 4,
-                "relatedAnswer": 4,
-                "title": "Prompt 4",
-              },
-              Object {
-                "id": 2,
-                "relatedAnswer": 2,
-                "title": "Prompt 2",
-              },
-            ],
-            "shuffled": false,
-          },
-          "element": "match-list",
-          "feedback": "Incorrect",
-          "id": "1",
-        }
-      }
-      onPlaceAnswer={[Function]}
-      onRemoveAnswer={[Function]}
-      session={
-        Object {
-          "value": Array [
-            1,
-            4,
-            3,
-            2,
+  <WithStyles(AnswerArea)
+    disabled={true}
+    instanceId="1"
+    model={
+      Object {
+        "config": Object {
+          "answers": Array [
+            Object {
+              "id": 1,
+              "title": "Answer 1",
+            },
+            Object {
+              "id": 2,
+              "title": "Answer 2",
+            },
+            Object {
+              "id": 3,
+              "title": "Answer 3",
+            },
+            Object {
+              "id": 4,
+              "title": "Answer 4",
+            },
+            Object {
+              "id": 5,
+              "title": "Answer 5",
+            },
+            Object {
+              "id": 6,
+              "title": "Answer 6",
+            },
           ],
-        }
+          "prompt": "Your prompt goes here",
+          "prompts": Array [
+            Object {
+              "id": 1,
+              "relatedAnswer": 1,
+              "title": "Prompt 1",
+            },
+            Object {
+              "id": 3,
+              "relatedAnswer": 3,
+              "title": "Prompt 3",
+            },
+            Object {
+              "id": 4,
+              "relatedAnswer": 4,
+              "title": "Prompt 4",
+            },
+            Object {
+              "id": 2,
+              "relatedAnswer": 2,
+              "title": "Prompt 2",
+            },
+          ],
+          "shuffled": false,
+        },
+        "element": "match-list",
+        "feedback": "Incorrect",
+        "id": "1",
       }
-      showCorrect={false}
-    />
-  </div>
+    }
+    onPlaceAnswer={[Function]}
+    onRemoveAnswer={[Function]}
+    session={
+      Object {
+        "value": Array [
+          1,
+          4,
+          3,
+          2,
+        ],
+      }
+    }
+    showCorrect={false}
+  />
   <WithStyles(ChoicesList)
     disabled={true}
     instanceId="1"

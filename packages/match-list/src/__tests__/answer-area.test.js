@@ -2,10 +2,10 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import isObject from 'lodash/isObject';
 import isArray from 'lodash/isArray';
-import { AnswerList } from '../answer-list';
+import { AnswerArea } from '../answer-area';
 import { model, answer } from '../../demo/config';
 
-describe('AnswerList', () => {
+describe('AnswerArea', () => {
   const defaultProps = {
     model: model('1'),
     session: {},
@@ -15,7 +15,7 @@ describe('AnswerList', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<AnswerList {...defaultProps} />);
+    wrapper = shallow(<AnswerArea {...defaultProps} />);
   });
 
   describe('render', () => {

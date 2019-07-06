@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import isEmpty from 'lodash/isEmpty';
+import isUndefined from 'lodash/isUndefined';
 import find from 'lodash/find';
 import { DragAnswer } from './answer';
 
@@ -29,7 +30,7 @@ export class ChoicesList extends React.Component {
       <div className={classes.answersContainer}>
         {
           config.answers
-            .filter(answer => (duplicates || isEmpty(session) || !session.value || !find(session.value, val => val === answer.id)))
+            .filter(answer => (duplicates || isEmpty(session) || !session.value || isUndefined(find(session.value, val => val === answer.id))))
             .map((answer) => (
               <DragAnswer
                 key={answer.id}

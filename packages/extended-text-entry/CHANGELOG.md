@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.5.10...@pie-ui/extended-text-entry@3.0.0) (2019-07-06)
+
+
+### Features
+
+* added the possibility to change equationEditor type via mathProps ([92d3f30](https://github.com/pie-framework/pie-ui/commit/92d3f30))
+* added the possibility to change equationEditor type via pluginProps.keypadMode ([025e819](https://github.com/pie-framework/pie-ui/commit/025e819))
+* wrapped 'width' and 'height' in 'dimensions' object. Added possibility to disable math input. ([b515669](https://github.com/pie-framework/pie-ui/commit/b515669))
+
+
+### BREAKING CHANGES
+
+* `model.width & model.height` have been moved to `model.dimensions.width & model.dimensions.height`.
+
+
+
+
+
 ## [2.5.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@2.5.9...@pie-ui/extended-text-entry@2.5.10) (2019-07-04)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

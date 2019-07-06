@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.3.1...@pie-ui/match-list@1.4.0) (2019-07-06)
+
+
+### Features
+
+* **main:** created a new component for rendering the answers and prompts [ch1969] ([838bed8](https://github.com/pie-framework/pie-ui/commit/838bed8))
+
+
+
+
+
 ## [1.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.3.0...@pie-ui/match-list@1.3.1) (2019-06-19)
 
 **Note:** Version bump only for package @pie-ui/match-list

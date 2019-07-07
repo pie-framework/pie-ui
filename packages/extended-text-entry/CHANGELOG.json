@@ -763,5 +763,70 @@
     "committerDate": "2019-07-05 00:20:31 -0400",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.0.0"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "version bumped in order to publish",
+    "merge": null,
+    "header": "chore(version): version bumped in order to publish",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "25ce1fe53d01bc6b3439039673bed527757fb791",
+    "gitTags": "",
+    "committerDate": "2019-07-05 23:06:46 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "added the possibility to change equationEditor type via pluginProps.keypadMode",
+    "merge": null,
+    "header": "feat: added the possibility to change equationEditor type via pluginProps.keypadMode",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "025e819464eaa4afdb769f66e9aea80e4b906fb7",
+    "gitTags": "",
+    "committerDate": "2019-07-05 23:01:10 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "added the possibility to change equationEditor type via mathProps",
+    "merge": null,
+    "header": "feat: added the possibility to change equationEditor type via mathProps",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "92d3f305f946b435f36f433816712de238e83399",
+    "gitTags": "",
+    "committerDate": "2019-07-05 22:14:52 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "wrapped 'width' and 'height' in 'dimensions' object. Added possibility to disable math input.",
+    "merge": null,
+    "header": "feat: wrapped 'width' and 'height' in 'dimensions' object. Added possibility to disable math input.",
+    "body": null,
+    "footer": "BREAKING CHANGE: `model.width & model.height` have been moved to `model.dimensions.width & model.dimensions.height`.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "`model.width & model.height` have been moved to `model.dimensions.width & model.dimensions.height`."
+      }
+    ],
+    "hash": "b51566996d3e6d01e26ab6e8ef227b5e02454a60",
+    "gitTags": "",
+    "committerDate": "2019-07-05 00:20:31 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.0"
   }
 ]

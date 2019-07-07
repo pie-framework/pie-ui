@@ -678,5 +678,20 @@
     "committerDate": "2019-07-07 10:31:21 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.2.14"
+  },
+  {
+    "type": "chore",
+    "scope": "config-ui",
+    "subject": "updated dependant packages",
+    "merge": null,
+    "header": "chore(config-ui): updated dependant packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ef73d0e2e996e67c73219fb6f3b1af5382560075",
+    "gitTags": "",
+    "committerDate": "2019-07-07 15:30:19 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.2.15"
   }
 ]

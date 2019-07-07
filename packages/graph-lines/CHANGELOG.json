@@ -663,5 +663,20 @@
     "committerDate": "2019-07-07 10:31:21 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.2.14"
+  },
+  {
+    "type": "chore",
+    "scope": "editable-html",
+    "subject": "version bumped the dependent packages",
+    "merge": null,
+    "header": "chore(editable-html): version bumped the dependent packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "19a32ed86232653d8f78ef2dff9de322c0f0ab3e",
+    "gitTags": "",
+    "committerDate": "2019-07-07 10:31:21 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.2.14"
   }
 ]

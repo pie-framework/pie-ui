@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "This interaction asks a student to draw a line that meets specific criteria. The student will draw the line by clicking on two points on the graph.",
   "main": "lib/index.js",
   "dependencies": {

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "Added teacher instructions support.",
+    "merge": null,
+    "header": "feat: Added teacher instructions support.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fef13483449beb51c3a297f6cac0a6b8e12beca2",
+    "gitTags": " (origin/andreea/ch2226/teacher-instructions-setting-adds-input-to-update)",
+    "committerDate": "2019-07-09 00:09:27 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.1.0"
+  }
+]

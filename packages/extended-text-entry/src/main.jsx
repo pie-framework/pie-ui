@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import debug from 'debug';
 import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { renderMath } from '@pie-lib/math-rendering';
 
 const log = debug('@pie-ui:extended-text-entry');
 
@@ -28,6 +29,12 @@ class Main extends React.Component {
     }).isRequired
   };
 
+  componentDidUpdate() {
+    if (this.containerRef) {
+      renderMath(this.containerRef);
+    }
+  }
+
   render() {
     const { model, onChange, classes, session } = this.props;
     const { dimensions, disabled, feedback, teacherInstructions, mathInput } = model;
@@ -36,7 +43,10 @@ class Main extends React.Component {
     log('[render] disabled? ', disabled);
 
     return (
-      <div className={classes.main}>
+      <div
+        className={classes.main}
+        ref={ref => { this.containerRef = ref; }}
+      >
         {
           teacherInstructions && (
             <Collapsible

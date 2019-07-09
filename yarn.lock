@@ -2085,7 +2085,7 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^10.7.14":
+"@pie-lib/config-ui@^10.7.15":
   version "10.7.15"
   resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.15.tgz#51266a80fcc0507d7bd97c0b3e6e1e22c9999491"
   integrity sha512-Z6zsZTJFsB+4E43Q8KCP/oBgL4fVxezfomuJIzCg4bQHtgcAsECsoMxAlHhr2fd0q/836f7htRUtgqTuPhISJA==
@@ -2123,7 +2123,7 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.10.3", "@pie-lib/editable-html@^7.10.4":
+"@pie-lib/editable-html@^7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.4.tgz#f56441bce8f4a3cc0ef6fa4d37619a1d046b1537"
   integrity sha512-9vfB7ZyZunCQAlhsZx6kAzEKV2cLdQNiDMDujTySDWh7woChWS5sTA4MKwm65KmJBfVCrLpPKDiTbqPicbhRJg==
@@ -9783,9 +9783,9 @@ redux@^3.7.1:
     symbol-observable "^1.0.3"
 
 redux@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
-  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.2.tgz#597cc660a99f91412e31c96c3da10ed8ace0715d"
+  integrity sha512-oAiFLWYQhbpSvzjcVfgQ90MlZ0u6uDIHFK41Q0/BnCfjEg96SACzwUFwDVUKz/LP/SwJORGaFY8AM5wOB/zf0A==
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
@@ -10960,9 +10960,9 @@ tiny-emitter@2.1.0:
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
 tiny-warning@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.2.tgz#1dfae771ee1a04396bdfde27a3adcebc6b648b28"
-  integrity sha512-rru86D9CpQRLvsFG5XFdy0KdLAvjdQDyZCsRcuu60WtzFylDM3eAWSxEVz5kzL2Gp544XiUvPbVKtOA/txLi9Q==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+  integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
 title-case@^2.1.0:
   version "2.1.1"

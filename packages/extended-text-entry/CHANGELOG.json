@@ -903,5 +903,35 @@
     "committerDate": "2019-07-08 16:00:25 +0200",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.0.3"
+  },
+  {
+    "type": "chore",
+    "scope": "version",
+    "subject": "version bumped some editable-html dependent packages",
+    "merge": null,
+    "header": "chore(version): version bumped some editable-html dependent packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "aad904c45448697f53f0f8ae13b6e4c6acb767b1",
+    "gitTags": "",
+    "committerDate": "2019-07-09 13:11:05 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.3"
+  },
+  {
+    "type": "chore",
+    "scope": "editable-html",
+    "subject": "version bumped the dependent packages",
+    "merge": null,
+    "header": "chore(editable-html): version bumped the dependent packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "116fef1762eaa05d11d8ea2566ca87409f48ac8e",
+    "gitTags": "",
+    "committerDate": "2019-07-08 16:00:25 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.0.3"
   }
 ]

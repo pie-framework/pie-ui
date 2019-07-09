@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.0.5...@pie-ui/extended-text-entry@3.1.0) (2019-07-09)
+
+
+### Features
+
+* **math:** displayed math for extended-text-entry [ch1016] ([2d08d88](https://github.com/pie-framework/pie-ui/commit/2d08d88))
+
+
+
+
+
 ## [3.0.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.0.4...@pie-ui/extended-text-entry@3.0.5) (2019-07-09)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

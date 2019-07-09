@@ -2008,9 +2008,9 @@
     url-template "^2.0.8"
 
 "@pie-framework/build-helper@^4.4.2":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-4.4.3.tgz#079386cd3fd1526444012305ef58ac8ca8536cd6"
-  integrity sha512-PvecMOR8BnqUr+Tnm+8HMPcJHVYBfFNvZDrY0nZr3TmbyqlR71FeH6JaDLbRpy6TJHWZS+EQgDHy1QCoU8NPCw==
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-4.4.4.tgz#62be2c76da136652ba0e08ff284a79101075f83c"
+  integrity sha512-Blo/QQO4Qh6NzlSJbUYBasLUdSyBneEdT49LfYGcr4r9vpm5/9C4XZ6s2uHJbFW2+LHi9mXmjhTPEqfuD77Ceg==
   dependencies:
     conventional-changelog-core "^3.1.6"
     conventional-changelog-writer "^4.0.3"
@@ -2165,9 +2165,9 @@
     lodash "^4.17.11"
 
 "@pie-lib/graphing@^1.0.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.1.1.tgz#5620f6fc5ddf579cae0663a639a429d302bb1fc1"
-  integrity sha512-ZGaANc01YEo2iqI/mIxkw6u1oq3hxJw11lLwv+Q2oLcmNE1HkIKI4XSLmj2ZlSGzjVMV+S7SGvf9JtDQ9fCOgQ==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.2.0.tgz#d3df7d1016c373453dd6477e7acb5e20725bcb7b"
+  integrity sha512-5OU/Z9AVjjTCBBfsQILtW7vRwk1mNc28eBmn4FN0zj4odQ+rk/n9f98RVTM2/RBJfN2bzx2/uA9sHHLlwL74KA==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"

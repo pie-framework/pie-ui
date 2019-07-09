@@ -8,6 +8,7 @@ import InteractiveSection from './interactive-section';
 import PossibleResponses from './possible-responses';
 
 import { getAnswersCorrectness } from './utils-correctness';
+import { Collapsible } from '@pie-lib/render-ui';
 
 const generateId = () =>
   Math.random().toString(36).substring(2)
@@ -130,7 +131,8 @@ class ImageClozeAssociationComponent extends React.Component {
         image,
         stimulus,
         responseCorrect,
-        validation
+        validation,
+        teacherInstructions
       }
     } = this.props;
     const {
@@ -146,6 +148,16 @@ class ImageClozeAssociationComponent extends React.Component {
 
     return (
       <div>
+        {
+          teacherInstructions && (
+            <Collapsible
+              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            </Collapsible>
+          )
+        }
+
         <Typography>
           <span dangerouslySetInnerHTML={{ __html: stimulus }} />
         </Typography>

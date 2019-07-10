@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './main';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import { renderMath } from '@pie-lib/math-rendering';
 
 export { Main as Component };
 
@@ -50,6 +51,8 @@ export default class Graphing extends HTMLElement {
       onAnswersChange: this.changeAnswers
     });
 
-    ReactDOM.render(el, this);
+    ReactDOM.render(el, this, () => {
+      renderMath(this);
+    });
   }
 }

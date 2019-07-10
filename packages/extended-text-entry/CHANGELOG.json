@@ -778,5 +778,20 @@
     "committerDate": "2019-07-09 13:25:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.0.4"
+  },
+  {
+    "type": "feat",
+    "scope": "math",
+    "subject": "displayed math for extended-text-entry [ch1016]",
+    "merge": null,
+    "header": "feat(math): displayed math for extended-text-entry [ch1016]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2d08d8807f61d6eae98f81374b043f11ef6f019d",
+    "gitTags": "",
+    "committerDate": "2019-07-09 17:36:18 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.1.0"
   }
 ]

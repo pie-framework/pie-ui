@@ -238,5 +238,20 @@
     "committerDate": "2019-07-03 22:42:13 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.3.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "The prompt does not render math equations.",
+    "merge": null,
+    "header": "fix: The prompt does not render math equations.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fa1b42e694536233f2f8d0aa7eb702b58745afc1",
+    "gitTags": "",
+    "committerDate": "2019-07-08 23:33:43 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.2"
   }
 ]

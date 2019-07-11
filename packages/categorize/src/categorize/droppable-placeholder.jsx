@@ -30,7 +30,7 @@ export class DroppablePlaceholder extends React.Component {
     } = this.props;
 
     return connectDropTarget(
-      <div style={{ height: '100%' }}>
+      <div style={{ flex: 1 }}>
         <PlaceHolder
           className={className}
           isOver={isOver}

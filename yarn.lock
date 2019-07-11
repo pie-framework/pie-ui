@@ -2085,14 +2085,14 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^10.7.15":
-  version "10.7.15"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.15.tgz#51266a80fcc0507d7bd97c0b3e6e1e22c9999491"
-  integrity sha512-Z6zsZTJFsB+4E43Q8KCP/oBgL4fVxezfomuJIzCg4bQHtgcAsECsoMxAlHhr2fd0q/836f7htRUtgqTuPhISJA==
+"@pie-lib/config-ui@^10.7.16":
+  version "10.7.16"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.16.tgz#2d8ea18c7b63b56271e8af4288490f32104fbb48"
+  integrity sha512-q3E/4Q0UEo1mWgFoxHYQIut0RjaF+6xTWEv/HV2c7HDxftRB8SijwM9b4pIgQN7KyeQTgc8wvtPMRYuF7MZ6XQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.10.4"
+    "@pie-lib/editable-html" "^7.10.5"
     "@pie-lib/icons" "^2.4.4"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -2123,10 +2123,10 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.10.4":
-  version "7.10.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.4.tgz#f56441bce8f4a3cc0ef6fa4d37619a1d046b1537"
-  integrity sha512-9vfB7ZyZunCQAlhsZx6kAzEKV2cLdQNiDMDujTySDWh7woChWS5sTA4MKwm65KmJBfVCrLpPKDiTbqPicbhRJg==
+"@pie-lib/editable-html@^7.10.5":
+  version "7.10.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.5.tgz#610cdd3b7b8e6edea10f9b9bd4ea969249e335ef"
+  integrity sha512-/KJk2uhRDGjeK+usYJUnbKjWWB8sWpllZFkQIepNfjkPx+BiOxPGnlHRRGGBIWUO1CrvOTOS3F7n7z4lrF8P7w==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -2201,9 +2201,9 @@
     prop-types "^15.6.2"
 
 "@pie-lib/mask-markup@^1.3.3":
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.3.5.tgz#8e752694ff762584d8c92365a23d0d2f681a5f14"
-  integrity sha512-tmi3vNg40m0uhQpTd4Q8lcWnhlEOnJSnTx0+7YwxjINb3VFtzXyWT/YlHlftP5n8tRUhCw0f9J/cxAYaWmyiLA==
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.3.6.tgz#afa9bc516dfe72de89718bad1620c3dccb80e9b9"
+  integrity sha512-9nwApS2Np8J4RovcgcqsvYOStrIjrEKF7R2HETmSN1U5X1ADNwwnIX4iA3UA+TmL8ChSNtvhFvWnWZ3OAS455g==
   dependencies:
     "@material-ui/core" "^3.9.3"
     "@pie-lib/drag" "^1.1.20"
@@ -3778,9 +3778,9 @@ camelcase@^5.0.0, camelcase@^5.2.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30000981:
-  version "1.0.30000981"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000981.tgz#5b6828803362363e5a1deba2eb550185cf6cec8f"
-  integrity sha512-JTByHj4DQgL2crHNMK6PibqAMrqqb/Vvh0JrsTJVSWG4VSUrT16EklkuRZofurlMjgA9e+zlCM4Y39F3kootMQ==
+  version "1.0.30000983"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000983.tgz#ab3c70061ca2a3467182a10ac75109b199b647f8"
+  integrity sha512-/llD1bZ6qwNkt41AsvjsmwNOoA4ZB+8iqmf5LVyeSXuBODT/hAMFNVOh84NdUzoiYiSKqo5vQ3ZzeYHSi/olDQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -4953,9 +4953,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.188:
-  version "1.3.188"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.188.tgz#e28e1afe4bb229989e280bfd3b395c7ec03c8b7a"
-  integrity sha512-tEQcughYIMj8WDMc59EGEtNxdGgwal/oLLTDw+NEqJRJwGflQvH3aiyiexrWeZOETP4/ko78PVr6gwNhdozvuQ==
+  version "1.3.189"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.189.tgz#aa84055eb36d364a68852ad2d25e1315a1d06196"
+  integrity sha512-C26Kv6/rLNmGDaPR5HORMtTQat9aWBBKjQk9aFtN1Bk6cQBSw8cYdsel/mcrQlNlMMjt1sAKsTYqf77+sK2uTw==
 
 elliptic@^6.0.0:
   version "6.5.0"
@@ -6299,9 +6299,9 @@ inquirer@^3.0.6:
     through "^2.3.6"
 
 inquirer@^6.2.0:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.4.1.tgz#7bd9e5ab0567cd23b41b0180b68e0cfa82fc3c0b"
-  integrity sha512-/Jw+qPZx4EDYsaT6uz7F4GJRNFMRdKNeUZw3ZnKV8lyuUgz/YWRCSUAJMZSVhSq4Ec0R2oYnyi6b3d4JXcL5Nw==
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.5.0.tgz#2303317efc9a4ea7ec2e2df6f86569b734accf42"
+  integrity sha512-scfHejeG/lVZSpvCXpsB4j/wQNPM5JC8kiElOI0OUTwmc1RTpXr4H32/HOlQHcZiYl2z2VElwuCVDRG8vFmbnA==
   dependencies:
     ansi-escapes "^3.2.0"
     chalk "^2.4.2"
@@ -6309,7 +6309,7 @@ inquirer@^6.2.0:
     cli-width "^2.0.0"
     external-editor "^3.0.3"
     figures "^2.0.0"
-    lodash "^4.17.11"
+    lodash "^4.17.12"
     mute-stream "0.0.7"
     run-async "^2.2.0"
     rxjs "^6.4.0"
@@ -7567,9 +7567,9 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash-es@^4.2.1:
-  version "4.17.13"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.13.tgz#2a2df2acde25a8eebf886167f7d2b5d86a606db0"
-  integrity sha512-ktNCRrL41QyGAkjVQHG50QKiMAqum17Krw1hHl0nCLGeif+omPn5N6vPQq8cFTAKVf35MGvpa8Fgfq9jI4nS0w==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.14.tgz#12a95a963cc5955683cee3b74e85458954f37ecc"
+  integrity sha512-7zchRrGa8UZXjD/4ivUWP1867jDkhzTG2c/uj739utSd7O/pFFdxspCemIFKEEjErbcqRzn8nKnGsi7mvTgRPA==
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -7641,10 +7641,10 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
-  version "4.17.13"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
-  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
+lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 longest@^1.0.1:
   version "1.0.1"
@@ -9783,9 +9783,9 @@ redux@^3.7.1:
     symbol-observable "^1.0.3"
 
 redux@^4.0.1:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.3.tgz#0ca18be085e6cf6ed50e445a125f85e8b26b266b"
-  integrity sha512-v/Iaw67Pe+na+cZvcKvPxAKT1ww5kM+M09fmaCndCQC4Lo434AYb5975HJgJlp0D7dJxfYaLxMD4VwfpLOZ1Rw==
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  integrity sha512-vKv4WdiJxOWKxK0yRoaK3Y4pxxB0ilzVx6dszU2W8wLxlb2yikRph4iV/ymtdJ6ZxpBLFbyrxklnT5yBbQSl3Q==
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
@@ -10542,9 +10542,9 @@ spdx-expression-parse@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.4.tgz#75ecd1a88de8c184ef015eafb51b5b48bfd11bb1"
-  integrity sha512-7j8LYJLeY/Yb6ACbQ7F76qy5jHkp0U6jgBfJsk97bwWlVUnUWsAgpyaCvo17h0/RQGnQ036tVDomiwoI4pDkQA==
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.5.tgz#3694b5804567a458d3c8045842a6358632f62654"
+  integrity sha512-J+FWzZoynJEXGphVIS+XEh3kFSjZX/1i9gFBaWQcB+/tmpe2qUsSBABpcxqxnAxFdiUFEgAX1bjYGQvIZmoz9Q==
 
 speech-rule-engine@^2.4.0:
   version "2.4.0"

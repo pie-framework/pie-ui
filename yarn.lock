@@ -2085,14 +2085,14 @@
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
 
-"@pie-lib/config-ui@^10.7.16":
-  version "10.7.16"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.16.tgz#2d8ea18c7b63b56271e8af4288490f32104fbb48"
-  integrity sha512-q3E/4Q0UEo1mWgFoxHYQIut0RjaF+6xTWEv/HV2c7HDxftRB8SijwM9b4pIgQN7KyeQTgc8wvtPMRYuF7MZ6XQ==
+"@pie-lib/config-ui@^10.7.17":
+  version "10.7.17"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.17.tgz#129a32916f395f027d5d13294de80971e28923be"
+  integrity sha512-37dOhufvgXS3xqR8uys9ngsHMhfV+6BHgLqBQ5zf/6uUXpbnYhweRgShlu4h7dwO/MUyG89lGb6gXTSDl7/yuw==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.10.5"
+    "@pie-lib/editable-html" "^7.10.6"
     "@pie-lib/icons" "^2.4.4"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -2123,10 +2123,10 @@
     react-dnd "^7.0.2"
     react-dnd-html5-backend "^7.0.2"
 
-"@pie-lib/editable-html@^7.10.5":
-  version "7.10.5"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.5.tgz#610cdd3b7b8e6edea10f9b9bd4ea969249e335ef"
-  integrity sha512-/KJk2uhRDGjeK+usYJUnbKjWWB8sWpllZFkQIepNfjkPx+BiOxPGnlHRRGGBIWUO1CrvOTOS3F7n7z4lrF8P7w==
+"@pie-lib/editable-html@^7.10.6":
+  version "7.10.6"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.6.tgz#5863571e31fbebbcba0a51cd47011583d82bfe60"
+  integrity sha512-6PrszKGuiWgF08XBT11apAigts9KQya7F6UAa7VQ9QsQd67PZvnkXOPC2s85fevN7vXIS5ugjodfBiV5p9yYoA==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -4953,9 +4953,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.188:
-  version "1.3.189"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.189.tgz#aa84055eb36d364a68852ad2d25e1315a1d06196"
-  integrity sha512-C26Kv6/rLNmGDaPR5HORMtTQat9aWBBKjQk9aFtN1Bk6cQBSw8cYdsel/mcrQlNlMMjt1sAKsTYqf77+sK2uTw==
+  version "1.3.190"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.190.tgz#5bf599519983bfffd9d4387817039a3ed7ca085f"
+  integrity sha512-cs9WnTnGBGnYYVFMCtLmr9jXNTOkdp95RLz5VhwzDn7dErg1Lnt9o4d01gEH69XlmRKWUr91Yu1hA+Hi8qW0PA==
 
 elliptic@^6.0.0:
   version "6.5.0"

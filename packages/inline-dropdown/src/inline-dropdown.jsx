@@ -13,6 +13,7 @@ export class InlineDropdown extends React.Component {
     disabled: PropTypes.bool,
     markup: PropTypes.string,
     mode: PropTypes.string,
+    rationale: PropTypes.string,
     teacherInstructions: PropTypes.string,
     choices: PropTypes.object,
     value: PropTypes.object,
@@ -47,7 +48,7 @@ export class InlineDropdown extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { prompt, mode, teacherInstructions } = this.props;
+    const { prompt, mode, rationale, teacherInstructions } = this.props;
 
     return (
       <div>
@@ -68,6 +69,16 @@ export class InlineDropdown extends React.Component {
         />
         <br />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
+        <br />
+        {
+          rationale && (
+            <Collapsible
+              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: rationale }}/>
+            </Collapsible>
+          )
+        }
         <DropDown
           {...this.props}
           showCorrectAnswer={showCorrectAnswer}

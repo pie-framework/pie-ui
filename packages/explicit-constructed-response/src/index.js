@@ -53,6 +53,7 @@ export default class InlineDropdown extends HTMLElement {
       let elem = React.createElement(Main, {
         teacherInstructions: this._model.teacherInstructions,
         prompt: this._model.prompt,
+        rationale: this._model.rationale,
         disabled: this._model.disabled,
         choices: this._model.choices,
         markup: this._model.markup,

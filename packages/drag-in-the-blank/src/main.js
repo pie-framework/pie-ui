@@ -11,6 +11,7 @@ const DraggableDragInTheBlank = withDragContext(DragInTheBlank);
 export class Main extends React.Component {
   static propTypes = {
     prompt: PropTypes.string,
+    rationale: PropTypes.string,
     disabled: PropTypes.bool,
     markup: PropTypes.string,
     model: PropTypes.object,
@@ -62,6 +63,15 @@ export class Main extends React.Component {
           onToggle={this.toggleShowCorrect}
         />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
+        <br />
+        {
+          model.rationale && (
+            <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
+              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+            </Collapsible>
+          )
+        }
+        <br />
         <DraggableDragInTheBlank
           {...modelWithValue}
           onChange={onChange}

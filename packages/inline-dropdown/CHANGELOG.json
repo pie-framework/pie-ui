@@ -268,5 +268,20 @@
     "committerDate": "2019-07-02 12:59:39 -0400",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.6.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "support rationale",
+    "merge": null,
+    "header": "fix: support rationale",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "85f4076819b044a0ca9d0abf52d44f1ef0d35cd2",
+    "gitTags": " (origin/sergiulucaci/ch2626/several-item-types-rationale-missing-from)",
+    "committerDate": "2019-07-15 19:06:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.6.9"
   }
 ]

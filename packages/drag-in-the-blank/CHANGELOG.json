@@ -313,5 +313,20 @@
     "committerDate": "2019-07-02 12:59:39 -0400",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.6.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "support rationale",
+    "merge": null,
+    "header": "fix: support rationale",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8a55e83c62201f905421bf1080c09535e20f1a4a",
+    "gitTags": "",
+    "committerDate": "2019-07-15 18:55:02 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.6.9"
   }
 ]

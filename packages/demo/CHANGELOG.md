@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.56](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.55...@pie-ui/demo@0.3.56) (2019-07-13)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.55](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.54...@pie-ui/demo@0.3.55) (2019-07-12)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.54](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.53...@pie-ui/demo@0.3.54) (2019-07-12)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.53](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.52...@pie-ui/demo@0.3.53) (2019-07-12)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.52](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.51...@pie-ui/demo@0.3.52) (2019-07-12)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.51](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.50...@pie-ui/demo@0.3.51) (2019-07-12)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.50](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.49...@pie-ui/demo@0.3.50) (2019-07-11)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.49](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.48...@pie-ui/demo@0.3.49) (2019-07-10)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.48](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.47...@pie-ui/demo@0.3.48) (2019-07-09)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.47](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.46...@pie-ui/demo@0.3.47) (2019-07-09)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
 ## [0.3.46](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.45...@pie-ui/demo@0.3.46) (2019-07-09)
 
 **Note:** Version bump only for package @pie-ui/demo

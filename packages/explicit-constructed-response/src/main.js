@@ -4,10 +4,13 @@ import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { ConstructedResponse } from '@pie-lib/mask-markup';
 import { Collapsible } from '@pie-lib/render-ui';
+import { withStyles } from '@material-ui/core/styles';
 
 export class Main extends React.Component {
   static propTypes = {
+    classes: PropTypes.object.isRequired,
     prompt: PropTypes.string,
+    rationale: PropTypes.string,
     disabled: PropTypes.bool,
     markup: PropTypes.string,
     mode: PropTypes.string,
@@ -37,13 +40,13 @@ export class Main extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { mode, prompt, teacherInstructions } = this.props;
+    const { classes, mode, prompt, rationale, teacherInstructions } = this.props;
 
     return (
       <div>
         {
           teacherInstructions && (
-            <div style={{ margin: '16px 0' }}>
+            <div className={classes.collapsible}>
               <Collapsible
                 labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
               >
@@ -58,6 +61,17 @@ export class Main extends React.Component {
           onToggle={this.toggleShowCorrect}
         />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
+        {
+          rationale && (
+            <div className={classes.collapsible}>
+              <Collapsible
+                labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+              >
+                <div dangerouslySetInnerHTML={{ __html: rationale }}/>
+              </Collapsible>
+            </div>
+          )
+        }
         <ConstructedResponse
           {...this.props}
           showCorrectAnswer={showCorrectAnswer}
@@ -67,4 +81,10 @@ export class Main extends React.Component {
   }
 }
 
-export default Main;
+const styles = theme => ({
+  collapsible: {
+    margin: `${theme.spacing.unit * 2} 0`,
+  }
+});
+
+export default withStyles(styles)(Main);

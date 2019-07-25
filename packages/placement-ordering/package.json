@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/placement-ordering",
-  "version": "4.7.3",
+  "version": "4.7.4",
   "main": "lib/index.js",
   "description": "A pie placement component",
   "keywords": [
@@ -13,7 +13,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
-    "@pie-lib/drag": "^1.1.12",
+    "@pie-lib/drag": "^1.1.21",
     "@pie-lib/math-rendering": "^1.2.1",
     "@pie-lib/render-ui": "^4.3.12",
     "debug": "^4.1.1",
@@ -26,8 +26,8 @@
     "react-transition-group": "^2.3.1"
   },
   "peerDependencies": {
-    "react-dnd": "^7.0.2",
-    "react-dnd-html5-backend": "^7.0.2"
+    "react-dnd": "^9.3.2",
+    "react-dnd-html5-backend": "^9.3.2"
   },
   "devDependencies": {
     "react-dnd-test-backend": "^2.6.0"

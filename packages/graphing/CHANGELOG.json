@@ -253,5 +253,20 @@
     "committerDate": "2019-07-08 23:33:43 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.3.2"
+  },
+  {
+    "type": "fix",
+    "scope": "build",
+    "subject": "missing dependency (#129)",
+    "merge": null,
+    "header": "fix(build): missing dependency (#129)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "662b51619f6fe73f425b5f2c816c2c631388e0eb",
+    "gitTags": " (origin/develop, origin/HEAD)",
+    "committerDate": "2019-07-26 12:36:40 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.6"
   }
 ]

@@ -1,8 +1,10 @@
-const getAllCorrectAnswers = (answers, validResponses) =>
+const getAllCorrectAnswers = (answers, responses) =>
   answers.map(answer => ({
     ...answer,
-    isCorrect: validResponses[answer.containerIndex].includes(answer.value)
+    isCorrect: responses[answer.containerIndex].includes(answer.value)
   }));
+
+const getValidAnswer = (answer, response) => response[answer.containerIndex].filter(res => res === answer.value);
 
 const getUniqueCorrectAnswers = (answers, validResponses) => {
   let finalAnswers = answers;
@@ -18,11 +20,11 @@ const getUniqueCorrectAnswers = (answers, validResponses) => {
       valuesToParse.forEach((value, index) => {
         finalAnswers = finalAnswers.map(finalAnswer => {
           if (finalAnswer.id === value.id) {
-            const finalAnswerValues =
-              validResponses[finalAnswer.containerIndex].filter(validResponse => validResponse === finalAnswer.value);
+            let valid = getValidAnswer(finalAnswer, validResponses);
+
             return {
               ...finalAnswer,
-              isCorrect: finalAnswerValues.length > index + 1
+              isCorrect: valid.length > index + 1
             }
           }
           return finalAnswer;
@@ -34,8 +36,22 @@ const getUniqueCorrectAnswers = (answers, validResponses) => {
 };
 
 export const getAnswersCorrectness = (answers, validation) => {
-  const { validResponse: { value } } = validation;
-  const allCorrect = getAllCorrectAnswers(answers, value);
+  const { validResponse: { value }, altResponses } = validation;
 
-  return getUniqueCorrectAnswers(allCorrect, value);
+  const allCorrect = getAllCorrectAnswers(answers, value);
+  const uniqueAnswers = getUniqueCorrectAnswers(allCorrect, value);
+  const noOfCorrect = uniqueAnswers.filter(answer => answer.isCorrect).length;
+
+  // Look for alternate correct responses if there are incorrect responses.
+  if ((noOfCorrect < uniqueAnswers.length) && (altResponses && altResponses.length)) {
+    const altUniqueStack = altResponses.map(altResponse => {
+      const altValue = altResponse.value;
+
+      const altAllCorrect = getAllCorrectAnswers(answers, altValue);
+      return getUniqueCorrectAnswers(altAllCorrect, altValue);
+    });
+    // Return the one with most correct answers.
+    return altUniqueStack.sort((a, b) => b.filter(c => c.isCorrect).length - a.filter(c => c.isCorrect).length)[0];
+  }
+  return uniqueAnswers;
 };

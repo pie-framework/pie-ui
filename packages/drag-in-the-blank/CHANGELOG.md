@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.6.11...@pie-ui/drag-in-the-blank@1.6.12) (2019-07-29)
+
+**Note:** Version bump only for package @pie-ui/drag-in-the-blank
+
+
+
+
+
 ## [1.6.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.6.10...@pie-ui/drag-in-the-blank@1.6.11) (2019-07-25)
 
 **Note:** Version bump only for package @pie-ui/drag-in-the-blank

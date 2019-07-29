@@ -13,5 +13,20 @@
     "committerDate": "2019-07-09 00:09:27 +0300",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "support alternate correct answers",
+    "merge": null,
+    "header": "feat: support alternate correct answers",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3ecca1e523ac171e2d7bc4f706c1b71a97d177b5",
+    "gitTags": " (origin/sergiulucaci/ch1955/ica-alternate-correct-answers)",
+    "committerDate": "2019-07-26 16:11:20 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.0"
   }
 ]

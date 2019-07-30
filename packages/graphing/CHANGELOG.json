@@ -264,7 +264,7 @@
     "footer": null,
     "notes": [],
     "hash": "662b51619f6fe73f425b5f2c816c2c631388e0eb",
-    "gitTags": " (origin/develop, origin/HEAD)",
+    "gitTags": "",
     "committerDate": "2019-07-26 12:36:40 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.3.6"

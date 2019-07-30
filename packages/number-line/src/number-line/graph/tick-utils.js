@@ -193,7 +193,7 @@ export const buildTickDataAsFractions = (domain, ticks, opts) => {
   const rng = simpleRange(domain.min, domain.max, ticks.minor);
 
   const o = rng
-    .filter(x => math.smallerEq(x, domain.max))
+    .filter(x => math.smallerEq(x, math.fraction(domain.max)))
     .map(x => {
       let type = 'minor';
       const modulo = math.mod(x, ticks.major);

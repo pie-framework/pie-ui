@@ -303,5 +303,20 @@
     "committerDate": "2019-06-25 11:57:30 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "CH3090 - convert to fraction before comparison",
+    "merge": null,
+    "header": "fix: CH3090 - convert to fraction before comparison",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "45771e8d285c3aff6adb024bb974da738a616cc0",
+    "gitTags": "",
+    "committerDate": "2019-07-30 18:22:38 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.4"
   }
 ]

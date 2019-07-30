@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.0...@pie-ui/image-cloze-association@1.2.1) (2019-07-30)
+
+**Note:** Version bump only for package @pie-ui/image-cloze-association
+
+
+
+
+
 # [1.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.1.4...@pie-ui/image-cloze-association@1.2.0) (2019-07-29)
 
 

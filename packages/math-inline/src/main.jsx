@@ -338,7 +338,7 @@ export class Main extends React.Component {
             onToggle={this.toggleShowCorrect}
           />}
           <div className={classes.content}>
-            <div dangerouslySetInnerHTML={{ __html: model.config.question }} />
+            <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
           </div>
           {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock

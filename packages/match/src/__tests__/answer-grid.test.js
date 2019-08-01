@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 describe('AnswerGrid', () => {
   const defaultProps = {
+    allowFeedback: false,
     classes: {
       correct: 'correct',
       incorrect: 'incorrect',
@@ -66,6 +67,7 @@ describe('AnswerGrid', () => {
   it('marks answers if they are correct correctly', () => {
     component = wrapper({
       ...defaultProps,
+      allowFeedback: true,
       showCorrect: true,
       disabled: true,
       view: false
@@ -74,11 +76,26 @@ describe('AnswerGrid', () => {
     expect(component.instance().answerIsCorrect(1, false, 1)).toEqual(false);
     expect(component.instance().answerIsCorrect(3, true, 0)).toEqual(true);
     expect(component.find(Radio).at(4).props().className.includes('correct')).toEqual(true);
-  })
+  });
+
+  it('does not show correct answers if feedback is not allowed', () => {
+    component = wrapper({
+      ...defaultProps,
+      allowFeedback: false,
+      showCorrect: true,
+      disabled: true,
+      view: false
+    });
+
+    expect(component.instance().answerIsCorrect(1, false, 1)).toEqual(false);
+    expect(component.instance().answerIsCorrect(3, true, 0)).toEqual(true);
+    expect(component.find(Radio).at(4).props().className.includes('correct')).toEqual(false);
+  });
 
   it('marks answers if they are incorrect correctly', () => {
     component = wrapper({
       ...defaultProps,
+      allowFeedback: true,
       showCorrect: true,
       disabled: true,
       view: false
@@ -87,5 +104,20 @@ describe('AnswerGrid', () => {
     expect(component.instance().answerIsCorrect(1, false, 1)).toEqual(false);
     expect(component.instance().answerIsCorrect(3, true, 0)).toEqual(true);
     expect(component.find(Radio).at(0).props().className.includes('incorrect')).toEqual(true);
-  })
+  });
+
+  it('does not show correct answers if feedback is not allowed', () => {
+    component = wrapper({
+      ...defaultProps,
+      allowFeedback: true,
+      showCorrect: true,
+      disabled: true,
+      view: false
+    });
+
+    expect(component.instance().answerIsCorrect(1, false, 1)).toEqual(false);
+    expect(component.instance().answerIsCorrect(3, true, 0)).toEqual(true);
+    expect(component.find(Radio).at(0).props().className.includes('incorrect')).toEqual(true);
+  });
+
 });

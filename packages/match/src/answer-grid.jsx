@@ -8,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 export class AnswerGrid extends React.Component {
   static propTypes = {
+    allowFeedback: PropTypes.bool.isRequired,
     classes: PropTypes.object.isRequired,
     correctAnswers: PropTypes.object,
     view: PropTypes.bool.isRequired,
@@ -39,7 +40,7 @@ export class AnswerGrid extends React.Component {
     const { correctAnswers } = this.props;
 
     return correctAnswers[rowId][rowValueIndex] === rowValue && rowValue === true;
-  }
+  };
 
   // needs a separate method because what isn't correct isn't necessarily incorrect
   answerIsIncorrect = (rowId, rowValue, rowValueIndex) => {
@@ -47,10 +48,10 @@ export class AnswerGrid extends React.Component {
 
     return correctAnswers[rowId][rowValueIndex] === true && rowValue === false
       || correctAnswers[rowId][rowValueIndex] === false && rowValue === true;
-  }
+  };
 
   render() {
-    const { classes, showCorrect, headers, rows, choiceMode, answers, disabled, view } = this.props;
+    const { allowFeedback, classes, showCorrect, headers, rows, choiceMode, answers, disabled, view } = this.props;
 
     return (
       <div className={classes.controlsContainer}>
@@ -81,9 +82,11 @@ export class AnswerGrid extends React.Component {
                   {choiceMode === 'radio' ? (
                     <Radio
                       className={cx({
-                        [classes.correct]: (showCorrect && rowItem === true)
-                          || (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex)),
-                        [classes.incorrect]: disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
+                        [classes.correct]: allowFeedback && (
+                          (showCorrect && rowItem === true) ||
+                          (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex))
+                        ),
+                        [classes.incorrect]: allowFeedback && disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
                       })}
                       disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}
@@ -92,9 +95,11 @@ export class AnswerGrid extends React.Component {
                   ) : (
                     <Checkbox
                       className={cx({
-                        [classes.correct]: (showCorrect && rowItem === true)
-                          || (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex)),
-                        [classes.incorrect]: disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
+                        [classes.correct]: allowFeedback && (
+                          (showCorrect && rowItem === true) ||
+                          (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex))
+                        ),
+                        [classes.incorrect]: allowFeedback && disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
                       })}
                       disabled={disabled}
                       onChange={this.onRowValueChange(row.id, answerIndex)}

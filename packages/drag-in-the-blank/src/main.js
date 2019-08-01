@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
 import { Collapsible } from '@pie-lib/render-ui';
+import { renderMath } from '@pie-lib/math-rendering';
 
 const DraggableDragInTheBlank = withDragContext(DragInTheBlank);
 
@@ -32,6 +34,13 @@ export class Main extends React.Component {
     if (isEmpty(nextProps.feedback)) {
       this.setState({ showCorrectAnswer: false });
     }
+  }
+
+  componentDidUpdate() {
+    // eslint-disable-next-line
+    const domNode = ReactDOM.findDOMNode(this);
+
+    renderMath(domNode);
   }
 
   toggleShowCorrect = () => {

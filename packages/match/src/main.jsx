@@ -178,6 +178,7 @@ export class Main extends React.Component {
             dangerouslySetInnerHTML={{ __html: model.prompt }}
           />
         )}
+
         <div className={classes.main}>
           {model.correctness && model.correctness.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
@@ -191,6 +192,7 @@ export class Main extends React.Component {
           />
           <AnswerGrid
             showCorrect={showCorrect}
+            allowFeedback={model.allowFeedback}
             correctAnswers={model.correctResponse}
             disabled={model.disabled}
             view={model.view}

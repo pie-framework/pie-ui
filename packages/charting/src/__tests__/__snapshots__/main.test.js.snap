@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main render snapshot 1`] = `
+<div>
+  <br />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <br />
+  <Root
+    backgroundMarks={Array []}
+    hideLabel={true}
+    onChangeMarks={[MockFunction]}
+    tools={Array []}
+  />
+  <br />
+</div>
+`;

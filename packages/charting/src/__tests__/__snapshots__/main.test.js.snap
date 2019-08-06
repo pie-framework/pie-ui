@@ -11,11 +11,36 @@ exports[`Main render snapshot 1`] = `
     }
   />
   <br />
-  <Root
-    backgroundMarks={Array []}
-    hideLabel={true}
-    onChangeMarks={[MockFunction]}
-    tools={Array []}
+  <WithStyles(Chart)
+    charts={
+      Array [
+        Object {
+          "Component": [Function],
+          "type": "bar",
+        },
+        Object {
+          "Component": [Function],
+          "type": "histogram",
+        },
+        Object {
+          "Component": [Function],
+          "type": "lineDot",
+        },
+        Object {
+          "Component": [Function],
+          "type": "lineCross",
+        },
+        Object {
+          "Component": [Function],
+          "type": "dotPlot",
+        },
+        Object {
+          "Component": [Function],
+          "type": "linePlot",
+        },
+      ]
+    }
+    onDataChange={[Function]}
   />
   <br />
 </div>

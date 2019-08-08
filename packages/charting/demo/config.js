@@ -6,19 +6,19 @@ const model = (id, extras) =>
     base,
     {
       id,
-      element: 'graphing-el',
+      element: 'charting-el',
       backgroundMarks: [],
       size: { width: 600, height: 600 },
-      domain: { min: -5, max: 5, padding: 0, step: 1, labelStep: 1 },
-      range: { min: -5, max: 5, padding: 0, step: 1, labelStep: 1 },
-      toolbarTools: ['point']
+      domain: { min: 0, max: 5, padding: 0, step: 1, labelStep: 1 },
+      range: { min: 0, max: 5, padding: 0, step: 1, labelStep: 1 },
+      addCategoryEnabled: true
     },
     extras
   );
 
 module.exports = {
   elements: {
-    'graphing-el': '..'
+    'charting-el': '..'
   },
   models: [model('1', {})]
 };

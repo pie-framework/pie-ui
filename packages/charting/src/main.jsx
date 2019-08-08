@@ -11,22 +11,23 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     model: PropTypes.object.isRequired,
     onAnswersChange: PropTypes.func,
-    data: PropTypes.array
   };
 
   static defaultProps = { classes: {} };
 
   constructor(props) {
     super(props);
+    const { model: { data = [] } } = props;
 
-    this.state = {
-      data: props.model.data
-    };
+    this.state = { data };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (!isEqual(nextProps.model.data, this.props.model.data)) {
-      this.setState({ data: nextProps.model.data })
+    const { model: { data: nextData = [] } = {} } = nextProps;
+    const { model: { data = [] } } = this.props;
+
+    if (!isEqual(nextData, data)) {
+      this.setState({ data: nextData })
     }
   }
 
@@ -37,30 +38,43 @@ export class Main extends React.Component {
   render() {
     const { model, classes } = this.props;
     const { data } = this.state;
+    const {
+      teacherInstructions,
+      prompt,
+      chartType,
+      size,
+      domain,
+      range,
+      title,
+      editCategoryEnabled,
+      addCategoryEnabled,
+      categoryDefaultLabel,
+      rationale
+    } = model;
 
     return (
       <div>
         {
-          model.teacherInstructions && (
+          teacherInstructions && (
             <Collapsible
               labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
             >
-              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
             </Collapsible>
           )
         }
         <br />
         <div
           className={classes.prompt}
-          dangerouslySetInnerHTML={{ __html: model.prompt }}
+          dangerouslySetInnerHTML={{ __html: prompt }}
         />
         <br />
 
         <Chart
-          chartType={model.chartType}
-          size={model.size}
-          domain={model.domain}
-          range={model.range}
+          chartType={chartType}
+          size={size}
+          domain={domain}
+          range={range}
           charts={[
             chartTypes.Bar(),
             chartTypes.Histogram(),
@@ -70,18 +84,18 @@ export class Main extends React.Component {
             chartTypes.LinePlot()
           ]}
           data={data}
-          title={model.title}
+          title={title}
           onDataChange={this.changeData}
-          editCategoryEnabled={model.editCategoryEnabled}
-          addCategoryEnabled={model.addCategoryEnabled}
-          categoryDefaultLabel={model.categoryDefaultLabel}
+          editCategoryEnabled={editCategoryEnabled}
+          addCategoryEnabled={addCategoryEnabled}
+          categoryDefaultLabel={categoryDefaultLabel}
         />
 
         <br />
         {
-          model.rationale && (
+          rationale && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
-              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+              <div dangerouslySetInnerHTML={{ __html: rationale }}/>
             </Collapsible>
           )
         }

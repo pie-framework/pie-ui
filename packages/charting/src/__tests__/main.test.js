@@ -7,13 +7,13 @@ jest.mock('lodash/uniq', () => {
 });
 
 describe('Main', () => {
+  const onAnswersChange = jest.fn();
   const defaultProps = {
     model: {
       backgroundMarks: [],
       correctMarks: [],
     },
-    onSessionChange: jest.fn(),
-    onAnswersChange: jest.fn(),
+    onAnswersChange,
     session: {}
   };
 
@@ -28,4 +28,18 @@ describe('Main', () => {
       expect(w(defaultProps)).toMatchSnapshot();
     });
   });
+
+  describe('logic', () => {
+    let w;
+
+    beforeEach(() => {
+      w = props => shallow(<Main { ...props } />);
+    });
+
+    it('calls onAnswersChange', () => {
+      w(defaultProps).instance().changeData([]);
+      expect(onAnswersChange).toHaveBeenCalledWith([]);
+    });
+  });
+
 });

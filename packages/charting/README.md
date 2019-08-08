@@ -1,4 +1,4 @@
-# graphing
+# charting
 
-This interaction asks a student to draw graph elements that meets specific criteria. The student will draw the elements by clicking on two points (or more) on the graph.
+This interaction asks a student to draw a chart that meets specific criteria. The student will draw a category on the chart by clicking 'Add Category' and dragging the top part of the category.
 

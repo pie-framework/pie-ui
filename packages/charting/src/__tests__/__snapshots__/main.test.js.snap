@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main render snapshot 1`] = `
+<div>
+  <br />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <br />
+  <WithStyles(Chart)
+    charts={
+      Array [
+        Object {
+          "Component": [Function],
+          "type": "bar",
+        },
+        Object {
+          "Component": [Function],
+          "type": "histogram",
+        },
+        Object {
+          "Component": [Function],
+          "type": "lineDot",
+        },
+        Object {
+          "Component": [Function],
+          "type": "lineCross",
+        },
+        Object {
+          "Component": [Function],
+          "type": "dotPlot",
+        },
+        Object {
+          "Component": [Function],
+          "type": "linePlot",
+        },
+      ]
+    }
+    data={Array []}
+    onDataChange={[Function]}
+  />
+  <br />
+</div>
+`;

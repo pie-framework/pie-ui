@@ -5,39 +5,35 @@ import { Collapsible } from '@pie-lib/render-ui';
 import { Chart, chartTypes } from '@pie-lib/charting';
 import isEqual from 'lodash/isEqual';
 
-
 export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
     model: PropTypes.object.isRequired,
     onAnswersChange: PropTypes.func,
+    categories: PropTypes.array
   };
 
   static defaultProps = { classes: {} };
 
-  constructor(props) {
-    super(props);
-    const { model: { data = [] } } = props;
+  state = {};
 
-    this.state = { data };
+  componentDidMount() {
+    this.props.onAnswersChange(this.props.model.data);
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const { model: { data: nextData = [] } = {} } = nextProps;
-    const { model: { data = [] } } = this.props;
+    const { model: { data: nextData = [] } = {}, categories } = nextProps;
+    const { model: { data = [] } = {} } = this.props;
 
-    if (!isEqual(nextData, data)) {
-      this.setState({ data: nextData })
+    if (!isEqual(nextData, data) || !categories) {
+      this.props.onAnswersChange(nextData)
     }
   }
 
-  changeData = data => {
-    this.setState({ data }, () => this.props.onAnswersChange(data));
-  };
+  changeData = data => this.props.onAnswersChange(data);
 
   render() {
-    const { model, classes } = this.props;
-    const { data } = this.state;
+    const { model, classes, categories } = this.props;
     const {
       teacherInstructions,
       prompt,
@@ -49,7 +45,8 @@ export class Main extends React.Component {
       editCategoryEnabled,
       addCategoryEnabled,
       categoryDefaultLabel,
-      rationale
+      rationale,
+      correctedAnswer
     } = model;
 
     return (
@@ -68,6 +65,7 @@ export class Main extends React.Component {
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: prompt }}
         />
+
         <br />
 
         <Chart
@@ -83,7 +81,7 @@ export class Main extends React.Component {
             chartTypes.DotPlot(),
             chartTypes.LinePlot()
           ]}
-          data={data}
+          data={correctedAnswer || categories}
           title={title}
           onDataChange={this.changeData}
           editCategoryEnabled={editCategoryEnabled}

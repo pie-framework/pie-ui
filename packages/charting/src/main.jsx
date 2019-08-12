@@ -15,23 +15,30 @@ export class Main extends React.Component {
 
   static defaultProps = { classes: {} };
 
-  componentDidMount() {
-    this.props.onAnswersChange(this.props.model.data);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      categories: props.model.data
+    };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const { model: { data: nextData = [] } = {}, categories } = nextProps;
+    const { model: { data: nextData = [] } = {} } = nextProps;
     const { model: { data = [] } = {} } = this.props;
 
-    if (!isEqual(nextData, data) || !categories) {
-      this.props.onAnswersChange(nextData)
+    if (!isEqual(nextData, data)) {
+      this.setState({ categories: nextData })
     }
   }
 
-  changeData = data => this.props.onAnswersChange(data);
+  changeData = data => this.setState({
+    categories: data
+  }, () => this.props.onAnswersChange(data));
 
   render() {
-    const { model, classes, categories } = this.props;
+    const { categories } = this.state;
+    const { model, classes } = this.props;
     const {
       teacherInstructions,
       prompt,

@@ -888,5 +888,20 @@
     "committerDate": "2019-06-19 11:14:31 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.3.6"
+  },
+  {
+    "type": "feat",
+    "scope": "math-inline",
+    "subject": "question from model changed to universtal prompt",
+    "merge": null,
+    "header": "feat(math-inline): question from model changed to universtal prompt",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "aa957fd5c974306f8007d9001646d093105950eb",
+    "gitTags": "",
+    "committerDate": "2019-07-31 12:58:26 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.4.0"
   }
 ]

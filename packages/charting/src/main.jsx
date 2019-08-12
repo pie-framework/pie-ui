@@ -15,8 +15,6 @@ export class Main extends React.Component {
 
   static defaultProps = { classes: {} };
 
-  state = {};
-
   componentDidMount() {
     this.props.onAnswersChange(this.props.model.data);
   }

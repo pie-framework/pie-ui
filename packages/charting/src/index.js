@@ -47,6 +47,7 @@ export default class Graphing extends HTMLElement {
 
     const el = React.createElement(Main, {
       model: this._model,
+      categories: this._session.answer,
       onAnswersChange: this.changeAnswers
     });
 

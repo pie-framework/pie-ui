@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "type": "feat",
+    "scope": "charting",
+    "subject": "Finished charting package.",
+    "merge": null,
+    "header": "feat(charting): Finished charting package.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "daf350225c36338286983519465ed7e00c873e4b",
+    "gitTags": "",
+    "committerDate": "2019-08-08 10:53:07 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": "charting",
+    "subject": "Ability to make changes on the chart.",
+    "merge": null,
+    "header": "fix(charting): Ability to make changes on the chart.",
+    "body": "WIP",
+    "footer": null,
+    "notes": [],
+    "hash": "b0f59815c69b30735bd57783fae4a01c73d257d3",
+    "gitTags": "",
+    "committerDate": "2019-08-06 18:11:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": "charting",
+    "subject": "Added charting package and started implementation. (WIP)",
+    "merge": null,
+    "header": "feat(charting): Added charting package and started implementation. (WIP)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d94d0fbf9cc2818ecf188b8fa17748f9b08407e3",
+    "gitTags": "",
+    "committerDate": "2019-08-05 17:36:05 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.1.0"
+  }
+]

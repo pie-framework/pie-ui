@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.1.0...@pie-ui/charting@0.2.0) (2019-08-13)
+
+
+### Features
+
+* **charting:** Use corrected answers if they are defined. ([07d5a34](https://github.com/pie-framework/pie-ui/commit/07d5a34))
+
+
+
+
+
 # 0.1.0 (2019-08-09)
 
 

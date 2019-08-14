@@ -156,8 +156,8 @@ export class Main extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const config = this.props.model.config;
-    const nextConfig = nextProps.model.config;
+    const { config } = this.props.model;
+    const { config: nextConfig = {} } = nextProps.model || {};
 
     if (
       (config &&

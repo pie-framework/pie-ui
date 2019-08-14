@@ -4,7 +4,6 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { componentize } from '@pie-lib/mask-markup';
 import Main from './main';
 
 // import MarkupAndChoices from './markup-and-choices';

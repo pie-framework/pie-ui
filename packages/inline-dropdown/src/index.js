@@ -4,16 +4,8 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
-import { componentize } from '@pie-lib/mask-markup';
 import { renderMath } from '@pie-lib/math-rendering';
 import InlineDropdown from './inline-dropdown';
-
-const normalize = (v, fields) => {
-  return Object.keys(fields).reduce((acc, k) => {
-    acc[k] = acc[k] || { value: '' };
-    return acc;
-  }, v || {});
-};
 
 export default class RootInlineDropdown extends HTMLElement {
   constructor() {

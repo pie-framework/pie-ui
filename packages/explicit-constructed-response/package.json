@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/explicit-constructed-response",
-  "version": "1.5.14",
+  "version": "1.5.15",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",

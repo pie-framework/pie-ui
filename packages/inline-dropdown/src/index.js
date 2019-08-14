@@ -46,8 +46,6 @@ export default class RootInlineDropdown extends HTMLElement {
 
   _render = () => {
     if (this._model && this._session) {
-      const { ids } = componentize(this._model.markup, 'dropdown');
-      this._session.value = normalize(this._session.value, ids);
       let elem = React.createElement(InlineDropdown, {
         prompt: this._model.prompt,
         rationale: this._model.rationale,

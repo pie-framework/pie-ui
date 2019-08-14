@@ -18,13 +18,6 @@ import Main from './main';
 //   }, {});
 // };
 
-const normalize = (v, fields) => {
-  return Object.keys(fields).reduce((acc, k) => {
-    acc[k] = acc[k] || { value: '' };
-    return acc;
-  }, v || {});
-};
-
 export default class InlineDropdown extends HTMLElement {
   constructor() {
     super();
@@ -56,8 +49,6 @@ export default class InlineDropdown extends HTMLElement {
 
   _render = () => {
     if (this._model && this._session) {
-      const { ids } = componentize(this._model.markup);
-      this._session.value = normalize(this._session.value, ids);
       let elem = React.createElement(Main, {
         model: this._model,
         value: this._session.value,

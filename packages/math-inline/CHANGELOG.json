@@ -903,5 +903,20 @@
     "committerDate": "2019-07-31 12:58:26 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.4.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Initialize nextProps.model.config if it is not defined.",
+    "merge": null,
+    "header": "fix: Initialize nextProps.model.config if it is not defined.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9a46b90741c1b4c99ab043e69c176b371f8bdee6",
+    "gitTags": " (origin/fix/nextProps-model-config-undefined)",
+    "committerDate": "2019-08-14 15:26:01 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@2.4.2"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/demo",
-  "version": "0.3.65",
+  "version": "0.3.66",
   "private": true,
   "dependencies": {
     "@material/mwc-button": "^0.3.6",
@@ -18,7 +18,7 @@
     "@pie-ui/inline-dropdown": "^1.6.15",
     "@pie-ui/match": "^2.3.6",
     "@pie-ui/match-list": "^1.4.4",
-    "@pie-ui/math-inline": "^2.4.1",
+    "@pie-ui/math-inline": "^2.4.2",
     "@pie-ui/multiple-choice": "^4.10.29",
     "@pie-ui/number-line": "^5.1.2",
     "@pie-ui/placement-ordering": "^4.7.6",

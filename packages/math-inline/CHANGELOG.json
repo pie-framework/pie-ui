@@ -918,5 +918,25 @@
     "committerDate": "2019-08-14 15:26:01 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@2.4.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Removed model.config.response.",
+    "merge": null,
+    "header": "fix: Removed model.config.response.",
+    "body": null,
+    "footer": "BREAKING CHANGE: Removed response from model.config.response. Use model.config.responses instead.",
+    "notes": [
+      {
+        "title": "BREAKING CHANGE",
+        "text": "Removed response from model.config.response. Use model.config.responses instead."
+      }
+    ],
+    "hash": "5f001cb5a4adf4c8cb1a7259f84d861d1b77eec8",
+    "gitTags": " (origin/andreea/ch3020/mer-primary-and-alternate-correct-answers)",
+    "committerDate": "2019-08-20 12:09:27 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.0"
   }
 ]

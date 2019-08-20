@@ -27,10 +27,13 @@ export class SimpleQuestionBlockRaw extends React.Component {
       model.correctness.info.defaultResponse;
     const showAsCorrect = showCorrect || correct;
     const showAsIncorrect = showCorrect && !correct;
+    const { config } = model || {};
 
-    if (!model.config) {
+    if (!config) {
       return;
     }
+
+    const { responses, equationEditor } = config;
 
     return (
       <div className={classes.expression}>
@@ -43,7 +46,7 @@ export class SimpleQuestionBlockRaw extends React.Component {
           >
             <mq.Static
               latex={
-                showCorrect ? model.config.response.answer : (session.response || '')
+                showCorrect ? (responses && responses.length && responses[0].answer) : (session.response || '')
               }
             />
           </div>
@@ -51,7 +54,7 @@ export class SimpleQuestionBlockRaw extends React.Component {
           <MathToolbar
             classNames={{ editor: classes.responseEditor }}
             latex={session.response || ''}
-            keypadMode={model.config.equationEditor}
+            keypadMode={equationEditor}
             onChange={onSimpleResponseChange}
             onDone={() => {}}
           />

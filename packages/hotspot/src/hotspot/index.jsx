@@ -30,8 +30,6 @@ class HotspotComponent extends React.Component {
         shapes,
         outlineColor,
         hotspotColor,
-        maxImageHeight,
-        maxImageWidth,
         dimensions,
         rationale,
         teacherInstructions
@@ -66,8 +64,6 @@ class HotspotComponent extends React.Component {
             dimensions={dimensions}
             imageUrl={imageUrl}
             hotspotColor={hotspotColor}
-            maxImageHeight={maxImageHeight}
-            maxImageWidth={maxImageWidth}
             multipleCorrect={multipleCorrect}
             outlineColor={outlineColor}
             onSelectChoice={onSelectChoice}

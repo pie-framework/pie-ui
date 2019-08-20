@@ -3,6 +3,70 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.69](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.68...@pie-ui/demo@0.3.69) (2019-08-19)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.68](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.67...@pie-ui/demo@0.3.68) (2019-08-16)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.67](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.66...@pie-ui/demo@0.3.67) (2019-08-16)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.66](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.65...@pie-ui/demo@0.3.66) (2019-08-15)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.65](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.64...@pie-ui/demo@0.3.65) (2019-08-14)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.64](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.63...@pie-ui/demo@0.3.64) (2019-08-08)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.63](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.62...@pie-ui/demo@0.3.63) (2019-08-02)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.62](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.61...@pie-ui/demo@0.3.62) (2019-08-01)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
 ## [0.3.61](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.60...@pie-ui/demo@0.3.61) (2019-07-29)
 
 **Note:** Version bump only for package @pie-ui/demo

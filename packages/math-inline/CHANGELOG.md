@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.4.2...@pie-ui/math-inline@2.4.3) (2019-08-16)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [2.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.4.1...@pie-ui/math-inline@2.4.2) (2019-08-15)
+
+
+### Bug Fixes
+
+* Initialize nextProps.model.config if it is not defined. ([9a46b90](https://github.com/pie-framework/pie-ui/commit/9a46b90))
+
+
+
+
+
+## [2.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.4.0...@pie-ui/math-inline@2.4.1) (2019-08-08)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [2.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.8...@pie-ui/math-inline@2.4.0) (2019-08-02)
+
+
+### Features
+
+* **math-inline:** question from model changed to universtal prompt ([aa957fd](https://github.com/pie-framework/pie-ui/commit/aa957fd))
+
+
+
+
+
 ## [2.3.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@2.3.7...@pie-ui/math-inline@2.3.8) (2019-07-03)
 
 **Note:** Version bump only for package @pie-ui/math-inline

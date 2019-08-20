@@ -25,11 +25,14 @@ function generateAdditionalKeys(keyData = []) {
 }
 
 function prepareForStatic(model, state) {
-  if (model.config && model.config.expression) {
-    const modelExpression = model.config.expression;
+  const { config, disabled } = model || {};
+  const { expression, responses } = config || {};
+
+  if (config && expression) {
+    const modelExpression = expression;
 
     if (state.showCorrect) {
-      return model.config.responseType === ResponseTypes.advanced ? model.config.responses[0].answer : model.config.response.answer;
+      return responses && responses.length && responses[0].answer;
     }
 
     let answerBlocks = 1; // assume one at least
@@ -38,7 +41,7 @@ function prepareForStatic(model, state) {
     return (modelExpression || '').replace(REGEX, function() {
       const answer = state.session.answers[`r${answerBlocks}`];
 
-      if (model.disabled) {
+      if (disabled) {
         return `\\embed{answerBlock}[r${answerBlocks++}]`;
       }
 

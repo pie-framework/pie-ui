@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/fill-in-the-blank",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "publishConfig": {
     "access": "public"
   },

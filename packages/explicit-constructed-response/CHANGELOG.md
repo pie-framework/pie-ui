@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.5.19...@pie-ui/explicit-constructed-response@1.5.20) (2019-08-21)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
 ## [1.5.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.5.18...@pie-ui/explicit-constructed-response@1.5.19) (2019-08-20)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

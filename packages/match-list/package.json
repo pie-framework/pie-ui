@@ -9,9 +9,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
-    "@pie-lib/correct-answer-toggle": "^2.1.2",
+    "@pie-lib/correct-answer-toggle": "^2.2.6",
     "@pie-lib/drag": "^1.1.21",
-    "@pie-lib/render-ui": "^4.3.1",
+    "@pie-lib/render-ui": "^4.4.5",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",
@@ -24,7 +24,7 @@
     "react-dnd-html5-backend": "^9.3.2"
   },
   "devDependencies": {
-    "@pie-lib/test-utils": "^0.1.1",
+    "@pie-lib/test-utils": "^0.2.2",
     "react-dnd-test-backend": "^2.6.0"
   },
   "author": "",

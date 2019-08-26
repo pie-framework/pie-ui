@@ -508,5 +508,20 @@
     "committerDate": "2019-07-09 13:25:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.3.17"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "set drawing area dimensions only if container shows up (#136)",
+    "merge": null,
+    "header": "fix: set drawing area dimensions only if container shows up (#136)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "312d17703616e8321a83e7e6962a39a6c1f96ebf",
+    "gitTags": " (origin/develop, origin/HEAD)",
+    "committerDate": "2019-08-23 09:11:41 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.3.34"
   }
 ]

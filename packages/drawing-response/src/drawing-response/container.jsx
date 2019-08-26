@@ -48,14 +48,23 @@ class Container extends Component {
     };
   }
 
-  componentDidMount() {
-    const { height, width } = this.drawable.getBoundingClientRect();
-    this.setState({
-      drawableDimensions: {
-        height,
-        width
+  setDimensions() {
+    const checkExist = setInterval(() => {
+      const { height, width } = this.drawable.getBoundingClientRect();
+      if (height !== 0 && width !== 0) {
+        this.setState({
+          drawableDimensions: {
+            height,
+            width
+          }
+        });
+        clearInterval(checkExist);
       }
-    })
+    }, 100);
+  }
+
+  componentDidMount() {
+    this.setDimensions();
   }
 
   handleMakeToolActive(tool) {

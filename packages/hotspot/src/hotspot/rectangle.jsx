@@ -125,7 +125,7 @@ RectComponent.propTypes = {
   height: PropTypes.number.isRequired,
   hotspotColor: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  isCorrect: PropTypes.bool.isRequired,
+  isCorrect: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   isEvaluateMode: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
@@ -134,6 +134,10 @@ RectComponent.propTypes = {
   width: PropTypes.number.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
+};
+
+RectComponent.defaultProps = {
+  isCorrect: false,
 };
 
 export default withStyles(styles)(RectComponent);

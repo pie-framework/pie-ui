@@ -135,7 +135,7 @@ Container.propTypes = {
   onSelectChoice:PropTypes.func.isRequired,
   outlineColor:PropTypes.string.isRequired,
   session:PropTypes.object.isRequired,
-  shapes:PropTypes.array.isRequired
+  shapes:PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Container);

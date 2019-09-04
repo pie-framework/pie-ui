@@ -89,7 +89,7 @@ export default class MultipleChoice extends HTMLElement {
   }
 
   isComplete() {
-    const { complete } = this._model;
+    const { complete } = this._model || {};
     if (complete) {
       const { min = -1, max = -1 } = complete;
       const choiceCount =

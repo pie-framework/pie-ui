@@ -1088,5 +1088,20 @@
     "committerDate": "2019-07-09 13:25:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.10.17"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "extract complete from empty object if _model is null",
+    "merge": null,
+    "header": "fix: extract complete from empty object if _model is null",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6da672bc825a7a222c10842d00f2d83f762a840d",
+    "gitTags": " (origin/fix/ebsr-is-complete)",
+    "committerDate": "2019-09-03 10:43:30 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.10.35"
   }
 ]

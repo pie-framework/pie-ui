@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.52...@pie-ui/ebsr@1.2.0) (2019-09-13)
+
+
+### Features
+
+* add Part Labels feature ([#139](https://github.com/pie-framework/pie-elements/issues/139)) ([824784a](https://github.com/pie-framework/pie-elements/commit/824784a))
+
+
+
+
+
 ## [1.1.52](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.1.51...@pie-ui/ebsr@1.1.52) (2019-09-04)
 
 **Note:** Version bump only for package @pie-ui/ebsr

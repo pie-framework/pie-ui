@@ -283,5 +283,20 @@
     "committerDate": "2019-03-13 18:16:08 +0200",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.1.0"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "add Part Labels feature (#139)",
+    "merge": null,
+    "header": "feat: add Part Labels feature (#139)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "824784aa20a9f5338d23cdf1202adebb80af9c77",
+    "gitTags": "",
+    "committerDate": "2019-09-11 09:49:37 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.0"
   }
 ]

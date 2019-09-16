@@ -167,7 +167,7 @@ export class Main extends React.Component {
         config.responses &&
         config.responses.length !== nextConfig.responses.length) ||
       (!config && nextConfig && nextConfig.responses) ||
-      config.expression !== nextConfig.expression
+      (config && nextConfig && config.expression !== nextConfig.expression)
     ) {
       const newAnswers = {};
       const answers = this.state.session.answers;

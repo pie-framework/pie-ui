@@ -12,12 +12,9 @@ class RectComponent extends React.Component {
   }
 
   handleClick = (e) => {
-    const { width, height, onClick, id, selected, disabled } = this.props;
+    const { onClick, id, selected, disabled } = this.props;
 
     if (!disabled) {
-      if (width < 0 && height < 0) {
-        return;
-      }
       e.cancelBubble = true;
       onClick({ id, selected: !selected });
     }

@@ -938,5 +938,20 @@
     "committerDate": "2019-08-20 12:09:27 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.0"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "null check for initial load fix (#140)",
+    "merge": null,
+    "header": "fix(math-inline): null check for initial load fix (#140)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9f6e9062268010eb2c2bbcb25d5da3a286570850",
+    "gitTags": "",
+    "committerDate": "2019-09-16 07:17:33 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.2"
   }
 ]

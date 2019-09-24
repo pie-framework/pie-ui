@@ -27,12 +27,19 @@ export default class Ebsr extends HTMLElement {
     if (e.target === this) {
       return;
     }
+
     e.preventDefault();
     e.stopImmediatePropagation();
+
     const id = e.target.getAttribute('id');
+
     if (id) {
       const key = `part${id.toUpperCase()}`;
-      this._model[key] = e.update;
+
+      if (e.update) {
+        this._model[key] = e.update;
+      }
+
       this.dispatchSessionChanged(e.srcElement._session, key);
     }
   };

@@ -298,5 +298,20 @@
     "committerDate": "2019-09-11 09:49:37 -0400",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Do not use e.update if it is not defined.",
+    "merge": null,
+    "header": "fix: Do not use e.update if it is not defined.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "205dac422a11b7ad093758d9916bd3af3ae585f0",
+    "gitTags": " (origin/abeendale/ch3549/from-ibx-ebsr-ibx-console-error-uncaught)",
+    "committerDate": "2019-09-24 11:14:42 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.2"
   }
 ]

@@ -1,50 +1,32 @@
 import * as mod from '../tick-utils';
 import * as math from 'mathjs';
 import { AssertionError } from 'assert';
+import isObject from 'lodash/isObject';
+
+const domain = (min, max) => ({ min, max });
+const ticks = (minor, major) => ({ minor, major });
+const fs = f => (isObject(f) ? `${f.n * f.s}/${f.d}` : fs(math.fraction(f)));
+const tickString = ticks =>
+  `minor:${fs(ticks.minor)}, major: ${fs(ticks.major)}`;
+const pf = f => `${f.n * f.s}/${f.d}`;
+const f = (n, d) =>
+  math.fraction.apply(math, [n, d].filter(v => v !== undefined));
 
 describe('ticks', () => {
   describe('normalizeTicks', () => {
-    it('?', () => {
-      const result = mod.normalizeTicks(
-        { min: 0, max: 1000 },
-        { minor: 1, major: 10 }
-      );
-
-      expect(result).toMatchObject({
-        minor: f(10, 1),
-        major: f(20, 1)
+    const assertNormalize = (domain, ticks, expected) => {
+      it(`${domain.min}<->${domain.max}, ${tickString(ticks)} => ${tickString(
+        expected
+      )}`, () => {
+        const result = mod.normalizeTicks(domain, ticks);
+        expect(result).toMatchObject(expected);
       });
-    });
+    };
 
-    it('?', () => {
-      const result = mod.normalizeTicks(
-        { min: -2, max: 1 },
-        { minor: 0.2, major: 0.4 }
-      );
-
-      expect(result).toMatchObject({
-        minor: { s: 1, n: 1, d: 5 },
-        major: { n: 2, d: 5, s: 1 }
-      });
-    });
-
-    it('?', () => {
-      const result = mod.normalizeTicks(
-        { min: -2, max: 1 },
-        { minor: 0.2, major: 0.5 },
-        { limit: false }
-      );
-
-      expect(result).toMatchObject({
-        minor: f(1, 5),
-        major: f(2, 5)
-      });
-    });
+    assertNormalize(domain(0, 100), ticks(1, 10), ticks(f(1, 1), f(10, 1)));
+    assertNormalize(domain(-2, 1), ticks(0.2, 0.4), ticks(f(1, 5), f(2, 5)));
+    assertNormalize(domain(-2, 1), ticks(0.2, 0.5), ticks(f(1, 5), f(2, 5)));
   });
-
-  const pf = f => `${f.n * f.s}/${f.d}`;
-  const f = (n, d) =>
-    math.fraction.apply(math, [n, d].filter(v => v !== undefined));
 
   describe('fractionRange', () => {
     const assertFr = (start, end, interval, expected) => {

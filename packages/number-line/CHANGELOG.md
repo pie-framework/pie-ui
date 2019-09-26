@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.10...@pie-ui/number-line@7.1.11) (2019-09-26)
+
+
+### Bug Fixes
+
+* major tick normalizes to minor->10*minor ([3654b4a](https://github.com/pie-framework/pie-ui/commit/3654b4a))
+
+
+
+
+
 ## [7.1.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.9...@pie-ui/number-line@7.1.10) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/number-line

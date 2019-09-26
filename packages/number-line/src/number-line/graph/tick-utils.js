@@ -1,6 +1,7 @@
 import * as math from 'mathjs';
 import uniqWith from 'lodash/uniqWith';
-
+import isObject from 'lodash/isObject';
+import { isNumber } from 'util';
 export const fractionSnapTo = (min, max, interval, value) => {
   value = fmax(fmin(value, max), min);
   const mod = value.mod(interval);
@@ -158,22 +159,27 @@ export const isMultiple = (multiple, src) => {
   return math.equal(mod, 0);
 };
 
+/**
+ * Accepts a fraction object {n,d,s} or number.
+ * @param {*} v
+ * @return mathjs.fraction
+ */
+export const fraction = v => {
+  if (isObject(v)) {
+    return math.fraction(v.n * v.s, v.d);
+  } else if (isNumber(v)) {
+    return math.fraction(v);
+  }
+};
+
 export const normalizeTicks = (domain, ticks, opts) => {
   const l = opts ? opts.limit !== false : true;
-  const end = math.fraction(domain.max - domain.min);
+  const end = fraction(domain.max - domain.min);
   const minor = l
-    ? limit(
-        math.fraction(ticks.minor),
-        math.divide(end, 100),
-        math.divide(end, 3)
-      )
+    ? limit(fraction(ticks.minor), math.divide(end, 100), math.divide(end, 3))
     : math.fraction(ticks.minor);
   const major = l
-    ? limit(
-        math.fraction(ticks.major),
-        math.divide(end, 50),
-        math.divide(end, 2)
-      )
+    ? limit(fraction(ticks.major), minor, math.multiply(minor, 10))
     : math.fraction(ticks.major);
 
   const m = isMultiple(major, minor);

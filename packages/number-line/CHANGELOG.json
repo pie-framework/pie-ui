@@ -318,5 +318,20 @@
     "committerDate": "2019-07-30 18:22:38 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.4"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "major tick normalizes to minor->10*minor",
+    "merge": null,
+    "header": "fix: major tick normalizes to minor->10*minor",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3654b4a53f881bf45fab30373625f190072fc8ee",
+    "gitTags": " (origin/fix/tick-normalize)",
+    "committerDate": "2019-09-26 11:36:29 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.11"
   }
 ]

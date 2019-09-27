@@ -39,7 +39,8 @@ export class MultipleChoice extends React.Component {
     onChoiceChanged: PropTypes.func.isRequired,
     responseCorrect: PropTypes.bool,
     classes: PropTypes.object.isRequired,
-    correctResponse: PropTypes.array
+    correctResponse: PropTypes.array,
+    feedbackEnabled: PropTypes.bool
   };
 
   constructor(props) {
@@ -94,7 +95,8 @@ export class MultipleChoice extends React.Component {
       onChoiceChanged,
       responseCorrect,
       teacherInstructions,
-      classes
+      classes,
+      feedbackEnabled
     } = this.props;
 
     const { showCorrect } = this.state;
@@ -149,7 +151,7 @@ export class MultipleChoice extends React.Component {
         }
         <br />
         <CorrectAnswerToggle
-          show={isEvaluateMode && !responseCorrect}
+          show={isEvaluateMode && !!feedbackEnabled && !responseCorrect}
           toggled={this.state.showCorrect}
           onToggle={this.onToggle.bind(this)}
         />

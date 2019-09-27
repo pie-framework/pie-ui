@@ -86,9 +86,9 @@ describe('CorespringChoice', () => {
         ).toEqual(false);
       });
 
-      it('shows toggle if mode is evaluate and responseCorrect is false', () => {
+      it('shows toggle if mode is evaluate, feedback is enabled and responseCorrect is false', () => {
         expect(
-          mkWrapper({ mode: 'evaluate', responseCorrect: false })
+          mkWrapper({ mode: 'evaluate', responseCorrect: false, feedbackEnabled: true })
             .find(CorrectAnswerToggle)
             .prop('show')
         ).toEqual(true);

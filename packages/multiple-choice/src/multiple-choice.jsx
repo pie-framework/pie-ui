@@ -151,7 +151,7 @@ export class MultipleChoice extends React.Component {
         }
         <br />
         <CorrectAnswerToggle
-          show={isEvaluateMode && feedbackEnabled && !responseCorrect}
+          show={isEvaluateMode && !!feedbackEnabled && !responseCorrect}
           toggled={this.state.showCorrect}
           onToggle={this.onToggle.bind(this)}
         />

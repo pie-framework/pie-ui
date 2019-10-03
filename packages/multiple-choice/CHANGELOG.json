@@ -1103,5 +1103,20 @@
     "committerDate": "2019-09-03 10:43:30 +0100",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.10.35"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Show Correct Answer Toggle only if feedback is enabled.",
+    "merge": null,
+    "header": "fix: Show Correct Answer Toggle only if feedback is enabled.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "52bbb6d07a142d81cb8635e38a967b9f6c86d839",
+    "gitTags": "",
+    "committerDate": "2019-09-27 09:02:04 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.2"
   }
 ]

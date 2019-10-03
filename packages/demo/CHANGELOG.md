@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.77](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.76...@pie-ui/demo@0.3.77) (2019-10-03)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
 ## [0.3.76](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.75...@pie-ui/demo@0.3.76) (2019-09-27)
 
 **Note:** Version bump only for package @pie-ui/demo

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash/debounce';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { ConstructedResponse } from '@pie-lib/mask-markup';
@@ -25,7 +26,8 @@ export class Main extends React.Component {
   };
 
   state = {
-    showCorrectAnswer: false
+    showCorrectAnswer: false,
+    value: this.props.value
   };
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -38,8 +40,16 @@ export class Main extends React.Component {
     this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });
   };
 
+  changeSession = debounce(this.props.onChange, 300);
+
+  onChange = value => {
+    this.setState({ value });
+
+    this.changeSession(value);
+  };
+
   render() {
-    const { showCorrectAnswer } = this.state;
+    const { showCorrectAnswer, value } = this.state;
     const { classes, mode, prompt, rationale, teacherInstructions } = this.props;
 
     return (
@@ -74,7 +84,9 @@ export class Main extends React.Component {
         }
         <ConstructedResponse
           {...this.props}
+          onChange={this.onChange}
           showCorrectAnswer={showCorrectAnswer}
+          value={value}
         />
       </div>
     );

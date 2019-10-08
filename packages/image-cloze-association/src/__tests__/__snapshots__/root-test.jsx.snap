@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Root snapshots model renders 1`] = `
-<Memo()
+<DndProvider
   backend={[Function]}
 >
   <ImageClozeAssociationComponent
@@ -34,5 +34,5 @@ exports[`Root snapshots model renders 1`] = `
     }
     updateAnswer={[Function]}
   />
-</Memo()>
+</DndProvider>
 `;

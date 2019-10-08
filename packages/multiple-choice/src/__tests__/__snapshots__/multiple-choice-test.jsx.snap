@@ -68,7 +68,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
   <br />
   <_default
     onToggle={[Function]}
-    show={true}
+    show={false}
     toggled={false}
   />
   <div

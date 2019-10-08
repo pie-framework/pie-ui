@@ -268,5 +268,20 @@
     "committerDate": "2019-07-15 18:39:03 +0300",
     "isTagged": true,
     "tag": "@pie-ui/explicit-constructed-response@1.5.9"
+  },
+  {
+    "type": "feat",
+    "scope": "main",
+    "subject": "debounced the onSessionChanged event",
+    "merge": null,
+    "header": "feat(main): debounced the onSessionChanged event",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b1d61e0561427ccb7ec37d4adf6867f8e76113e4",
+    "gitTags": "",
+    "committerDate": "2019-10-03 14:14:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.7.0"
   }
 ]

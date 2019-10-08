@@ -8,70 +8,31 @@ import { updateSessionValue } from './session-updater';
 
 const log = debug('pie-ui:multiple-choice');
 
-const buildAncestors = (n, acc) => {
-  if (!acc) {
-    acc = [];
-  }
-
-  if (n && n.parentNode) {
-    acc.push(n.parentNode);
-    return buildAncestors(n.parentNode, acc);
-  }
-  return acc;
-};
-
 export default class MultipleChoice extends HTMLElement {
   constructor() {
     super();
     this._model = null;
     this._session = null;
 
-    // this._rerender = debounce(
-    //   () => {
-    //     console.log('debounced re-render!!!!!!!!!!!!!!!!!!!!!!');
-    //     if (this._model && this._session) {
-    //       var element = React.createElement(Main, {
-    //         model: this._model,
-    //         session: this._session,
-    //         onChoiceChanged: this._onChange.bind(this)
-    //       });
-    //       ReactDOM.render(element, this, () => {
-    //         log('render complete - render math');
-    //         renderMath(this);
-    //       });
-    //     } else {
-    //       log('skip');
-    //     }
-    //   },
-    //   50,
-    //   { leading: false, trailing: true }
-    // );
-
-    this._rerender = () => {
-      console.log('not debounced re-render!!!!!!!!!!!!!!!!!!!!!!');
-
-      const ancestors = buildAncestors(this);
-
-      console.log('document contains this element:', document.contains(this));
-      console.log('ancestors:', ancestors);
-
-      if (this._model && this._session) {
-        console.log('model/session - render');
-        // var element = React.createElement(Main, {
-        //   model: this._model,
-        //   session: this._session,
-        //   onChoiceChanged: this._onChange.bind(this)
-        // });
-        // ReactDOM.render(element, this, () => {
-        //   log('render complete - render math');
-        //   renderMath(this);
-        // });
-        this.innerHTML = JSON.stringify(this._model);
-      } else {
-        console.log('no model/session - skip');
-        log('skip');
-      }
-    };
+    this._rerender = debounce(
+      () => {
+        if (this._model && this._session) {
+          var element = React.createElement(Main, {
+            model: this._model,
+            session: this._session,
+            onChoiceChanged: this._onChange.bind(this)
+          });
+          ReactDOM.render(element, this, () => {
+            log('render complete - render math');
+            renderMath(this);
+          });
+        } else {
+          log('skip');
+        }
+      },
+      50,
+      { leading: false, trailing: true }
+    );
 
     this._dispatchResponseChanged = debounce(() => {
       var event = new CustomEvent('session-changed', {
@@ -107,7 +68,6 @@ export default class MultipleChoice extends HTMLElement {
 
   set model(s) {
     this._model = s;
-    console.log('set model => rerender');
     this._rerender();
     this._dispatchModelSet();
   }
@@ -118,7 +78,6 @@ export default class MultipleChoice extends HTMLElement {
 
   set session(s) {
     this._session = s;
-    console.log('set session => rerender');
     this._rerender();
     this._dispatchResponseChanged();
   }
@@ -126,7 +85,6 @@ export default class MultipleChoice extends HTMLElement {
   _onChange(data) {
     updateSessionValue(this._session, this._model.choiceMode, data);
     this._dispatchResponseChanged();
-    console.log('onChange => rerender');
     this._rerender();
   }
 
@@ -144,8 +102,7 @@ export default class MultipleChoice extends HTMLElement {
     }
   }
 
-  // connectedCallback() {
-  //   console.log('connected => rerender');
-  //   this._rerender();
-  // }
+  connectedCallback() {
+    this._rerender();
+  }
 }

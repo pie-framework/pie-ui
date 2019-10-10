@@ -7,7 +7,7 @@
     "custom-element",
     "react"
   ],
-  "version": "1.2.6",
+  "version": "1.2.7",
   "main": "lib/index.js",
   "repository": "pie-framework/pie-ui.git",
   "publishConfig": {

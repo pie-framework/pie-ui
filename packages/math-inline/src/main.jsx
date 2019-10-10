@@ -68,9 +68,11 @@ export class Main extends React.Component {
       // build out local state model using responses declared in expression
 
       (props.model.config.expression || '').replace(REGEX, () => {
-        answers[`r${answerBlocks++}`] = {
-          value: ''
+        answers[`r${answerBlocks}`] = {
+          value: props.session && props.session.answers && props.session.answers[`r${answerBlocks}`] && props.session.answers[`r${answerBlocks}`].value || ''
         };
+
+        answerBlocks += 1;
       });
     }
 

@@ -55,11 +55,7 @@ describe('Math-Inline Main', () => {
             default: 'Incorrect'
           }
         },
-        customKeys: [
-          '\\left(\\right)',
-          '\\frac{}{}',
-          'x\\frac{}{}'
-        ]
+        customKeys: ['\\left(\\right)', '\\frac{}{}', 'x\\frac{}{}']
       }
     }
   };
@@ -109,14 +105,21 @@ describe('Math-Inline Main', () => {
   describe('logic', () => {
     it('prepares latex correctly and answer blocks and turns them into inputs', () => {
       expect(wrapper.dive().find(mq.Static).length).toEqual(1);
-      expect(wrapper.dive().find(mq.Static).props().latex).toEqual('\\text{A family sized box contains} \\MathQuillMathField[r1]{} \\text{less than} \\MathQuillMathField[r2]{} \\text{times the number  }  \\frac{3}{6}=\\frac{ \\MathQuillMathField[r3]{} }{4} + \\frac{ \\MathQuillMathField[r4]{} }{4}');
+      expect(
+        wrapper
+          .dive()
+          .find(mq.Static)
+          .props().latex
+      ).toEqual(
+        '\\text{A family sized box contains} \\MathQuillMathField[r1]{} \\text{less than} \\MathQuillMathField[r2]{} \\text{times the number  }  \\frac{3}{6}=\\frac{ \\MathQuillMathField[r3]{} }{4} + \\frac{ \\MathQuillMathField[r4]{} }{4}'
+      );
     });
 
     it('correctly renders simple interaction in case of simple mode', () => {
       expect(wrapper.dive().find(mq.Static).length).toEqual(1);
       expect(wrapper.dive().find(SimpleQuestionBlock).length).toEqual(0);
 
-      const simpleProps = {...defaultProps};
+      const simpleProps = { ...defaultProps };
       simpleProps.model.config.responseType = 'Simple';
 
       wrapper.setProps(simpleProps);
@@ -153,13 +156,15 @@ describe('Math-Inline Main', () => {
     });
 
     it('correctly pre-populates answers from session', () => {
-      wrapper = component({ session: {
+      wrapper = component({
+        session: {
           answers: {
             r1: {
               value: '\\frac{n-5}{6}'
             }
-          },
-        }});
+          }
+        }
+      });
       expect(wrapper.state()).toEqual({
         activeAnswerBlock: '',
         session: {
@@ -209,7 +214,6 @@ describe('Math-Inline Main', () => {
     });
 
     it('correctly updates session in case of subfield change', () => {
-
       wrapper = component();
 
       expect(wrapper.state()).toEqual({
@@ -233,9 +237,10 @@ describe('Math-Inline Main', () => {
         showCorrect: false
       });
 
-      const newProps = {...defaultProps};
+      const newProps = { ...defaultProps };
 
-      newProps.model.config.expression = defaultProps.model.config.expression + ' {{response}}';
+      newProps.model.config.expression =
+        defaultProps.model.config.expression + ' {{response}}';
 
       wrapper.setProps(newProps);
 
@@ -259,6 +264,6 @@ describe('Math-Inline Main', () => {
         },
         showCorrect: false
       });
-    })
+    });
   });
 });

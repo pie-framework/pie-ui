@@ -152,6 +152,36 @@ describe('Math-Inline Main', () => {
       });
     });
 
+    it('correctly pre-populates answers from session', () => {
+      wrapper = component({ session: {
+          answers: {
+            r1: {
+              value: '\\frac{n-5}{6}'
+            }
+          },
+        }});
+      expect(wrapper.state()).toEqual({
+        activeAnswerBlock: '',
+        session: {
+          answers: {
+            r1: {
+              value: '\\frac{n-5}{6}'
+            },
+            r2: {
+              value: ''
+            },
+            r3: {
+              value: ''
+            },
+            r4: {
+              value: ''
+            }
+          }
+        },
+        showCorrect: false
+      });
+    });
+
     it('correctly updates session in case of model change', () => {
       wrapper = component();
 

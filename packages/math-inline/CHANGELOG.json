@@ -953,5 +953,20 @@
     "committerDate": "2019-09-16 07:17:33 -0400",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.2"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "fix pre-populating input from session values - ch4687",
+    "merge": null,
+    "header": "fix(math-inline): fix pre-populating input from session values - ch4687",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6178602b3d266867078759da0545068c471fc38f",
+    "gitTags": "",
+    "committerDate": "2019-10-10 19:59:12 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.4"
   }
 ]

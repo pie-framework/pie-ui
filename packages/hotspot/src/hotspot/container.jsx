@@ -75,7 +75,7 @@ class Container extends React.Component {
               return (
                 <Polygon
                   isEvaluateMode={isEvaluateMode}
-                  isCorrect={isCorrect}
+                  isCorrect={!!isCorrect}
                   disabled={disabled}
                   selected={selected}
                   hotspotColor={hotspotColor}

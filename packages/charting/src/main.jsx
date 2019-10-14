@@ -19,7 +19,7 @@ export class Main extends React.Component {
     super(props);
 
     this.state = {
-      categories: props.model.data
+      categories: props.categories || props.model.data
     };
   }
 

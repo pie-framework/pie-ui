@@ -12,18 +12,32 @@ import { Collapsible } from '@pie-lib/render-ui';
 import _ from 'lodash';
 
 const generateId = () =>
-  Math.random().toString(36).substring(2)
-  + (new Date()).getTime().toString(36);
+  Math.random()
+    .toString(36)
+    .substring(2) + new Date().getTime().toString(36);
 
 class ImageClozeAssociationComponent extends React.Component {
   constructor(props) {
     super(props);
-    const { model: { possibleResponses, responseContainers, duplicateResponses, maxResponsePerZone }, session } = props;
+    const {
+      model: {
+        possibleResponses,
+        responseContainers,
+        duplicateResponses,
+        maxResponsePerZone
+      },
+      session
+    } = props;
     let { answers } = session || {};
     // set id for each possible response
-    const possibleResponsesWithIds = possibleResponses.map((item, index) => ({ value: item , id: `${index}` }));
+    const possibleResponsesWithIds = (possibleResponses || []).map(
+      (item, index) => ({
+        value: item,
+        id: `${index}`
+      })
+    );
 
-    answers = _(answers)
+    answers = _(answers || [])
       .groupBy('containerIndex')
       // keep only last maxResponsePerZone answers for each zone
       .map(grp => grp.slice(-(maxResponsePerZone || 1)))
@@ -34,19 +48,26 @@ class ImageClozeAssociationComponent extends React.Component {
       .filter(answer => answer.containerIndex < responseContainers.length)
       .value();
 
-    const possibleResponsesFiltered = possibleResponsesWithIds.filter(response =>
-      (!(answers.find(answer => (answer.value === response.value)))));
+    const possibleResponsesFiltered = possibleResponsesWithIds.filter(
+      response => !answers.find(answer => answer.value === response.value)
+    );
     this.state = {
       answers: answers || [],
       draggingElement: { id: '', value: '' },
-      possibleResponses: duplicateResponses ? possibleResponsesWithIds : possibleResponsesFiltered,
+      possibleResponses: duplicateResponses
+        ? possibleResponsesWithIds
+        : possibleResponsesFiltered,
       // set id for each response containers
-      responseContainers: responseContainers.map((item, index) => ({ index, ...item, id: `${index}` })),
+      responseContainers: responseContainers.map((item, index) => ({
+        index,
+        ...item,
+        id: `${index}`
+      })),
       maxResponsePerZone: maxResponsePerZone || 1
     };
   }
 
-  beginDrag = (draggingElement) => {
+  beginDrag = draggingElement => {
     this.setState({
       draggingElement
     });
@@ -66,9 +87,16 @@ class ImageClozeAssociationComponent extends React.Component {
     const { answers, possibleResponses, maxResponsePerZone } = this.state;
     let answersToStore;
 
-    if (maxResponsePerZone === answers.filter(a => a.containerIndex === responseContainerIndex).length) {
-      const answersInThisContainer = answers.filter(a => a.containerIndex === responseContainerIndex);
-      const answersInOtherContainers = answers.filter(b => b.containerIndex !== responseContainerIndex);
+    if (
+      maxResponsePerZone ===
+      answers.filter(a => a.containerIndex === responseContainerIndex).length
+    ) {
+      const answersInThisContainer = answers.filter(
+        a => a.containerIndex === responseContainerIndex
+      );
+      const answersInOtherContainers = answers.filter(
+        b => b.containerIndex !== responseContainerIndex
+      );
 
       const shiftedItem = answersInThisContainer[0];
       answersInThisContainer.shift(); // FIFO
@@ -78,7 +106,9 @@ class ImageClozeAssociationComponent extends React.Component {
         possibleResponses.push({
           ...shiftedItem,
           containerIndex: '',
-          id: `${_.max(possibleResponses.map(c => parseInt(c.id)).filter(id => !isNaN(id))) + 1}`
+          id: `${_.max(
+            possibleResponses.map(c => parseInt(c.id)).filter(id => !isNaN(id))
+          ) + 1}`
         });
       }
 
@@ -91,11 +121,13 @@ class ImageClozeAssociationComponent extends React.Component {
         ...answersInThisContainer, // shifted
         // TODO allow duplicates case Question: should we remove answer from a container if dragged to another container?
         // if yes, this should do it: add a.id !== answer.id instead of 'true'
-        ...answersInOtherContainers.filter((a => duplicateResponses ? true : a.value !== answer.value)), // un-shifted
+        ...answersInOtherContainers.filter(a =>
+          duplicateResponses ? true : a.value !== answer.value
+        ), // un-shifted
         {
           ...answer,
           containerIndex: responseContainerIndex,
-          ...duplicateResponses ? { id: generateId() } : {}
+          ...(duplicateResponses ? { id: generateId() } : {})
         }
       ];
     } else {
@@ -106,11 +138,13 @@ class ImageClozeAssociationComponent extends React.Component {
       answersToStore = [
         // TODO allow duplicates case Question: should we remove answer from a container if dragged to another container?
         // if yes, this should do it: add a.id !== answer.id instead of 'true'
-        ...answers.filter(a => duplicateResponses ? true : a.value !== answer.value),
+        ...answers.filter(a =>
+          duplicateResponses ? true : a.value !== answer.value
+        ),
         {
           ...answer,
           containerIndex: responseContainerIndex,
-          ...duplicateResponses ? { id: generateId() } : {}
+          ...(duplicateResponses ? { id: generateId() } : {})
         }
       ];
     }
@@ -118,35 +152,39 @@ class ImageClozeAssociationComponent extends React.Component {
     this.setState({
       answers: answersToStore,
       possibleResponses:
-      // for single response per container remove answer from possible responses
-        duplicateResponses ? possibleResponses : possibleResponses.filter(response => response.value !== answer.value)
+        // for single response per container remove answer from possible responses
+        duplicateResponses
+          ? possibleResponses
+          : possibleResponses.filter(
+              response => response.value !== answer.value
+            )
     });
     updateAnswer(answersToStore);
   };
 
-  handleOnAnswerRemove = (answer) => {
+  handleOnAnswerRemove = answer => {
     const {
-      model: {
-        duplicateResponses
-      },
+      model: { duplicateResponses },
       updateAnswer
     } = this.props;
     const { answers, possibleResponses } = this.state;
     const answersToStore = answers.filter(a => a.id !== answer.id);
-    const shouldNotPushInPossibleResponses = answer.containerIndex === undefined; // don't duplicate possible responses
+    const shouldNotPushInPossibleResponses =
+      answer.containerIndex === undefined; // don't duplicate possible responses
 
     this.setState({
       answers: answersToStore,
       // push back into possible responses the removed answer if responses cannot be duplicated
-      possibleResponses: duplicateResponses || shouldNotPushInPossibleResponses
-        ? possibleResponses :
-        [
-          ...possibleResponses,
-          {
-            ...answer,
-            containerIndex: undefined
-          }
-        ]
+      possibleResponses:
+        duplicateResponses || shouldNotPushInPossibleResponses
+          ? possibleResponses
+          : [
+              ...possibleResponses,
+              {
+                ...answer,
+                containerIndex: undefined
+              }
+            ]
     });
     updateAnswer(answersToStore);
   };
@@ -170,21 +208,23 @@ class ImageClozeAssociationComponent extends React.Component {
       responseContainers
     } = this.state;
 
-    const answersToShow = responseCorrect !== undefined
-      ? getAnswersCorrectness(answers, validation, duplicateResponses)
-      : answers;
+    const answersToShow =
+      responseCorrect !== undefined
+        ? getAnswersCorrectness(answers, validation, duplicateResponses)
+        : answers;
 
     return (
       <div>
-        {
-          teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
+        {teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions'
+            }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
+          </Collapsible>
+        )}
 
         <Typography>
           <span dangerouslySetInnerHTML={{ __html: stimulus }} />

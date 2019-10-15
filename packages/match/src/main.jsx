@@ -36,7 +36,7 @@ export class Main extends React.Component {
     this.state = {
       session: {
         ...props.session,
-        answers: this.generateAnswers(props.model)
+        answers: props.session && props.session.answers || this.generateAnswers(props.model)
       },
       // initially it'll be the same as the actual rows
       shuffledRows: props.model.config.rows,

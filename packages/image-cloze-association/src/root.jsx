@@ -9,25 +9,65 @@ import PossibleResponses from './possible-responses';
 
 import { getAnswersCorrectness } from './utils-correctness';
 import { Collapsible } from '@pie-lib/render-ui';
+import _ from 'lodash';
 
 const generateId = () =>
-  Math.random().toString(36).substring(2)
-  + (new Date()).getTime().toString(36);
+  Math.random()
+    .toString(36)
+    .substring(2) + new Date().getTime().toString(36);
 
 class ImageClozeAssociationComponent extends React.Component {
   constructor(props) {
     super(props);
-    const { model: { possibleResponses, responseContainers } } = props;
+    const {
+      model: {
+        possibleResponses,
+        responseContainers,
+        duplicateResponses,
+        maxResponsePerZone
+      },
+      session
+    } = props;
+    let { answers } = session || {};
+    // set id for each possible response
+    const possibleResponsesWithIds = (possibleResponses || []).map(
+      (item, index) => ({
+        value: item,
+        id: `${index}`
+      })
+    );
 
+    answers = _(answers || [])
+      .groupBy('containerIndex')
+      // keep only last maxResponsePerZone answers for each zone
+      .map(grp => grp.slice(-(maxResponsePerZone || 1)))
+      .flatMap()
+      // set id for each answer
+      .map((answer, index) => ({ ...answer, id: `${index}` }))
+      // return only answer which have a valid container index
+      .filter(answer => answer.containerIndex < responseContainers.length)
+      .value();
+
+    const possibleResponsesFiltered = possibleResponsesWithIds.filter(
+      response => !answers.find(answer => answer.value === response.value)
+    );
     this.state = {
-      answers: [],
+      answers: answers || [],
       draggingElement: { id: '', value: '' },
-      possibleResponses: possibleResponses.map(item => ({ id: generateId(), value: item })),
-      responseContainers: responseContainers.map((item, index) => ({ id: generateId(), index, ...item }))
+      possibleResponses: duplicateResponses
+        ? possibleResponsesWithIds
+        : possibleResponsesFiltered,
+      // set id for each response containers
+      responseContainers: responseContainers.map((item, index) => ({
+        index,
+        ...item,
+        id: `${index}`
+      })),
+      maxResponsePerZone: maxResponsePerZone || 1
     };
   }
 
-  beginDrag = (draggingElement) => {
+  beginDrag = draggingElement => {
     this.setState({
       draggingElement
     });
@@ -41,84 +81,110 @@ class ImageClozeAssociationComponent extends React.Component {
 
   handleOnAnswerSelect = (answer, responseContainerIndex) => {
     const {
-      model: {
-        duplicateResponses,
-        maxResponsePerZone
-      },
+      model: { duplicateResponses },
       updateAnswer
     } = this.props;
-    const { answers, possibleResponses } = this.state;
+    const { answers, possibleResponses, maxResponsePerZone } = this.state;
     let answersToStore;
 
-    if (maxResponsePerZone === answers.filter(a => a.containerIndex === responseContainerIndex).length) {
-      const a = answers.filter(a => a.containerIndex === responseContainerIndex);
-      const b = answers.filter(b => b.containerIndex !== responseContainerIndex);
-      a.shift(); // FIFO
+    if (
+      maxResponsePerZone ===
+      answers.filter(a => a.containerIndex === responseContainerIndex).length
+    ) {
+      const answersInThisContainer = answers.filter(
+        a => a.containerIndex === responseContainerIndex
+      );
+      const answersInOtherContainers = answers.filter(
+        b => b.containerIndex !== responseContainerIndex
+      );
 
+      const shiftedItem = answersInThisContainer[0];
+      answersInThisContainer.shift(); // FIFO
+
+      // if duplicates are not allowed, make sure to put the shifted value back in possible responses
+      if (!duplicateResponses) {
+        possibleResponses.push({
+          ...shiftedItem,
+          containerIndex: '',
+          id: `${_.max(
+            possibleResponses.map(c => parseInt(c.id)).filter(id => !isNaN(id))
+          ) + 1}`
+        });
+      }
+
+      // answers will be:
+      // + shifted answers for the current container
+      // + if duplicatesAllowed, all the other answers from other containers
+      //   else: all the answers from other containers that are not having the same value
+      // + new answer
       answersToStore = [
-        ...a, // shifted
-        ...b, // un-shifted
+        ...answersInThisContainer, // shifted
+        // TODO allow duplicates case Question: should we remove answer from a container if dragged to another container?
+        // if yes, this should do it: add a.id !== answer.id instead of 'true'
+        ...answersInOtherContainers.filter(a =>
+          duplicateResponses ? true : a.value !== answer.value
+        ), // un-shifted
         {
           ...answer,
           containerIndex: responseContainerIndex,
-          ...duplicateResponses ? { id: generateId() } : {}
+          ...(duplicateResponses ? { id: generateId() } : {})
         }
       ];
     } else {
-      // for single response per container push the old answer into possible responses if overlapped
-      const oldAnswer = answers.filter(a => a.containerIndex === responseContainerIndex)[0];
-
-      if (oldAnswer && !duplicateResponses) {
-        possibleResponses.push({
-          ...oldAnswer,
-          containerIndex: ''
-        });
-      }
+      // answers will be:
+      // + if duplicatesAllowed, all the other answers
+      //   else: all the answers that are not having the same value
+      // + new answer
       answersToStore = [
-        ...answers
-        // for single response per container remove the previous answer if overlapped
-          .filter(a => duplicateResponses ? true : a.containerIndex !== responseContainerIndex)
-          // remove the dragged answer if dragged fom a container area
-          .filter(a => a.id !== answer.id),
+        // TODO allow duplicates case Question: should we remove answer from a container if dragged to another container?
+        // if yes, this should do it: add a.id !== answer.id instead of 'true'
+        ...answers.filter(a =>
+          duplicateResponses ? true : a.value !== answer.value
+        ),
         {
           ...answer,
           containerIndex: responseContainerIndex,
-          ...duplicateResponses ? { id: generateId() } : {}
+          ...(duplicateResponses ? { id: generateId() } : {})
         }
       ];
     }
+
     this.setState({
       answers: answersToStore,
       possibleResponses:
-      // for single response per container remove answer from possible responses
-        duplicateResponses ? possibleResponses : possibleResponses.filter(response => response.id !== answer.id)
+        // for single response per container remove answer from possible responses
+        duplicateResponses
+          ? possibleResponses
+          : possibleResponses.filter(
+              response => response.value !== answer.value
+            )
     });
     updateAnswer(answersToStore);
   };
 
-  handleOnAnswerRemove = (answer) => {
+  handleOnAnswerRemove = answer => {
     const {
-      model: {
-        duplicateResponses
-      },
+      model: { duplicateResponses },
       updateAnswer
     } = this.props;
     const { answers, possibleResponses } = this.state;
     const answersToStore = answers.filter(a => a.id !== answer.id);
-    const shouldNotPushInPossibleResponses = answer.containerIndex === undefined; // don't duplicate possible responses
+    const shouldNotPushInPossibleResponses =
+      answer.containerIndex === undefined; // don't duplicate possible responses
 
     this.setState({
       answers: answersToStore,
       // push back into possible responses the removed answer if responses cannot be duplicated
-      possibleResponses: duplicateResponses || shouldNotPushInPossibleResponses
-        ? possibleResponses :
-        [
-          ...possibleResponses,
-          {
-            ...answer,
-            containerIndex: undefined
-          }
-        ]
+      possibleResponses:
+        duplicateResponses || shouldNotPushInPossibleResponses
+          ? possibleResponses
+          : [
+              ...possibleResponses,
+              {
+                ...answer,
+                containerIndex: undefined
+              }
+            ]
     });
     updateAnswer(answersToStore);
   };
@@ -142,21 +208,23 @@ class ImageClozeAssociationComponent extends React.Component {
       responseContainers
     } = this.state;
 
-    const answersToShow = responseCorrect !== undefined
-      ? getAnswersCorrectness(answers, validation, duplicateResponses)
-      : answers;
+    const answersToShow =
+      responseCorrect !== undefined
+        ? getAnswersCorrectness(answers, validation, duplicateResponses)
+        : answers;
 
     return (
       <div>
-        {
-          teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
+        {teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions'
+            }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
+          </Collapsible>
+        )}
 
         <Typography>
           <span dangerouslySetInnerHTML={{ __html: stimulus }} />
@@ -191,6 +259,7 @@ class ImageClozeAssociationComponent extends React.Component {
 ImageClozeAssociationComponent.propTypes = {
   classes: PropTypes.object,
   model: PropTypes.object.isRequired,
+  session: PropTypes.object,
   updateAnswer: PropTypes.func.isRequired
 };
 

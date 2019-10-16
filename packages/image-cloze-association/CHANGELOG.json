@@ -28,5 +28,20 @@
     "committerDate": "2019-07-26 16:11:20 +0300",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "image-cloze-association: use session to pre-populate player. + fixed logic issue",
+    "merge": null,
+    "header": "fix: image-cloze-association: use session to pre-populate player. + fixed logic issue",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8ac44d3e32f97bf10a68c1b72a35a5920d70a903",
+    "gitTags": "",
+    "committerDate": "2019-10-15 14:58:24 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.9"
   }
 ]

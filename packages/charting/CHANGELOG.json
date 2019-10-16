@@ -58,5 +58,20 @@
     "committerDate": "2019-08-12 10:57:24 +0300",
     "isTagged": true,
     "tag": "@pie-ui/charting@0.2.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "session was not used in order to set answers.",
+    "merge": null,
+    "header": "fix: session was not used in order to set answers.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3214a4eb5d2a477f64a37067c5096a2b0dda3d10",
+    "gitTags": "",
+    "committerDate": "2019-10-14 18:34:09 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.2.6"
   }
 ]

@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './main';
-import debug from 'debug';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 import get from 'lodash/get';
-
-const log = debug('pie-ui:graph-lines');
 
 export { Main as Component };
 

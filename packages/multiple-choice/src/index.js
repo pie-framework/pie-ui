@@ -79,6 +79,7 @@ export default class MultipleChoice extends HTMLElement {
   set session(s) {
     this._session = s;
     this._rerender();
+    //TODO: remove this session-changed should only be emit on user change
     this._dispatchResponseChanged();
   }
 

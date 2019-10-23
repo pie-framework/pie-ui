@@ -1,6 +1,7 @@
 import React from 'react';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 import MultipleChoice from '@pie-ui/multiple-choice';
+import { isSessionComplete } from '..';
 
 jest.mock('@pie-lib/math-rendering', () => ({ renderMath: jest.fn() }));
 jest.mock('@pie-ui/multiple-choice', () => jest.fn());
@@ -72,7 +73,7 @@ describe('ebsr', () => {
   describe('session', () => {
     const dispatchesSessionEvent = (key, value) => {
       it(`${key} dispatches session changed event`, () => {
-        const session = {id: key, value};
+        const session = { id: key, value };
         el.dispatchSessionChanged(session, key);
 
         expect(el.dispatchEvent).toBeCalledWith(
@@ -91,4 +92,18 @@ describe('ebsr', () => {
       dispatchesSessionEvent(PART_B, 'd');
     });
   });
+});
+describe('isSessionComplete', () => {
+  const assertComplete = (s, expected) => {
+    it.only(`${JSON.stringify(s)} => ${expected}`, () => {
+      const result = isSessionComplete(s);
+      expect(result).toEqual(expected);
+    });
+  };
+
+  assertComplete({}, false);
+  assertComplete(
+    { value: { partA: { value: [1] }, partB: { value: [2] } } },
+    true
+  );
 });

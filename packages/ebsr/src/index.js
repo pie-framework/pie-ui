@@ -1,6 +1,6 @@
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 import MultipleChoice from '@pie-ui/multiple-choice';
-
+import get from 'lodash/get';
 import debug from 'debug';
 const SESSION_CHANGED = SessionChangedEvent.TYPE;
 const MC_TAG_NAME = 'ebsr-multiple-choice';
@@ -9,12 +9,21 @@ const log = debug('pie-elements:ebsr');
 class EbsrMC extends MultipleChoice {}
 
 const defineMultipleChoice = () => {
-  if(!customElements.get(MC_TAG_NAME)){
+  if (!customElements.get(MC_TAG_NAME)) {
     customElements.define(MC_TAG_NAME, EbsrMC);
   }
 };
 
 defineMultipleChoice();
+
+const isNonEmptyArray = a => Array.isArray(a) && a.length > 0;
+
+export const isSessionComplete = session => {
+  const a = get(session, 'value.partA.value');
+  const b = get(session, 'value.partB.value');
+
+  return isNonEmptyArray(a) && isNonEmptyArray(b);
+};
 
 export default class Ebsr extends HTMLElement {
   constructor() {
@@ -47,21 +56,19 @@ export default class Ebsr extends HTMLElement {
   set model(m) {
     this._model = m;
 
-    customElements.whenDefined(MC_TAG_NAME)
-      .then(() => {
-        this.setPartModel(this.partA, 'partA');
-        this.setPartModel(this.partB, 'partB');
-      })
+    customElements.whenDefined(MC_TAG_NAME).then(() => {
+      this.setPartModel(this.partA, 'partA');
+      this.setPartModel(this.partB, 'partB');
+    });
   }
 
   set session(s) {
     this._session = s;
 
-    customElements.whenDefined(MC_TAG_NAME)
-      .then(() => {
-        this.setPartSession(this.partA, 'partA');
-        this.setPartSession(this.partB, 'partB');
-      });
+    customElements.whenDefined(MC_TAG_NAME).then(() => {
+      this.setPartSession(this.partA, 'partA');
+      this.setPartSession(this.partB, 'partB');
+    });
   }
 
   setPartModel(part, key) {
@@ -71,12 +78,14 @@ export default class Ebsr extends HTMLElement {
       part.model = {
         ...this._model[key],
         mode,
-        keyMode: this._model[key].choicePrefix,
+        keyMode: this._model[key].choicePrefix
       };
 
       const partLabel = part._model.partLabel;
       const isFirst = key === 'partA';
-      const el = document.getElementById(`${isFirst ? 'first' : 'second'}_label`);
+      const el = document.getElementById(
+        `${isFirst ? 'first' : 'second'}_label`
+      );
       el.innerHTML = partLabel || '';
     }
   }
@@ -100,9 +109,9 @@ export default class Ebsr extends HTMLElement {
     };
 
     log('[onSessionChanged] session: ', this._session);
-
+    const complete = isSessionComplete(this._session);
     this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), false)
+      new SessionChangedEvent(this.tagName.toLowerCase(), complete)
     );
   }
 

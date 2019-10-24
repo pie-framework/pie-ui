@@ -1,11 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './main';
-import debug from 'debug';
-
-const log = debug('pie-ui:graph-lines');
+import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import get from 'lodash/get';
 
 export { Main as Component };
+
+export const isComplete = (session, model) => {
+  const rows = get(model, 'config.rows');
+  const ids = rows.map(r => r.id);
+  return ids.reduce((acc, id) => {
+    if (!acc) {
+      return false;
+    }
+    const arr = session.answers && session.answers[id];
+    const hasChoice = Array.isArray(arr) && arr.includes(true);
+    return hasChoice && acc;
+  }, true);
+};
 
 export default class Match extends HTMLElement {
   constructor() {
@@ -24,7 +36,10 @@ export default class Match extends HTMLElement {
 
   sessionChanged(s) {
     this._session.answers = s.answers;
-    log('session: ', this._session);
+    const complete = isComplete(this._session, this._model);
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), complete)
+    );
   }
 
   connectedCallback() {

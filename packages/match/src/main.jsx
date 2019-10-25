@@ -36,7 +36,9 @@ export class Main extends React.Component {
     this.state = {
       session: {
         ...props.session,
-        answers: props.session && props.session.answers || this.generateAnswers(props.model)
+        answers:
+          (props.session && props.session.answers) ||
+          this.generateAnswers(props.model)
       },
       // initially it'll be the same as the actual rows
       shuffledRows: props.model.config.rows,
@@ -61,8 +63,7 @@ export class Main extends React.Component {
     let isRequired = false;
 
     if (
-      this.props.model.config.choiceMode !==
-      nextProps.model.config.choiceMode
+      this.props.model.config.choiceMode !== nextProps.model.config.choiceMode
     ) {
       isRequired = true;
     }
@@ -89,14 +90,14 @@ export class Main extends React.Component {
     nextProps.model.config.shuffled === true;
 
   isResetRowsRequired = nextProps =>
-    (this.props.model.config.shuffled === true && nextProps.model.config.shuffled === false) ||
-    this.props.model.config.rows.length !== nextProps.model.config.rows.length ||
+    (this.props.model.config.shuffled === true &&
+      nextProps.model.config.shuffled === false) ||
+    this.props.model.config.rows.length !==
+      nextProps.model.config.rows.length ||
     !isEqual(this.props.model.config.rows, nextProps.model.config.rows) ||
-    (
-      nextProps.session.answers &&
+    (nextProps.session.answers &&
       nextProps.model.config.rows.length !==
-      Object.keys(nextProps.session.answers).length
-    );
+        Object.keys(nextProps.session.answers).length);
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
@@ -116,8 +117,8 @@ export class Main extends React.Component {
         shuffledRows: shuffleRows
           ? shuffle([...nextProps.model.config.rows])
           : resetRows
-            ? nextProps.model.config.rows
-            : state.shuffledRows,
+          ? nextProps.model.config.rows
+          : state.shuffledRows,
         showCorrect:
           this.props.model.disabled &&
           !nextProps.model.disabled &&
@@ -161,16 +162,19 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
-        {
-          model.teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-              className={classes.collapsible}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
+        {model.teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions'
+            }}
+            className={classes.collapsible}
+          >
+            <div
+              dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}
+            />
+          </Collapsible>
+        )}
 
         {model.prompt && (
           <div
@@ -180,12 +184,15 @@ export class Main extends React.Component {
         )}
 
         <div className={classes.main}>
-          {model.correctness && model.correctness.correctness && <div>Score: {model.correctness.score}</div>}
+          {model.correctness && model.correctness.correctness && (
+            <div>{model.correctness.score}</div>
+          )}
           <CorrectAnswerToggle
             className={classes.toggle}
             show={
-              model.correctness && model.correctness.correctness
-              && model.correctness.correctness !== 'correct'
+              model.correctness &&
+              model.correctness.correctness &&
+              model.correctness.correctness !== 'correct'
             }
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
@@ -203,16 +210,14 @@ export class Main extends React.Component {
             rows={shuffledRows}
           />
         </div>
-        {
-          model.rationale && (
-            <Collapsible
-              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-              className={classes.collapsible}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
-            </Collapsible>
-          )
-        }
+        {model.rationale && (
+          <Collapsible
+            labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+            className={classes.collapsible}
+          >
+            <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
+          </Collapsible>
+        )}
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}
@@ -242,7 +247,7 @@ const styles = theme => ({
   },
   collapsible: {
     paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
   }
 });
 

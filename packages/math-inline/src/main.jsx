@@ -69,7 +69,12 @@ export class Main extends React.Component {
 
       (props.model.config.expression || '').replace(REGEX, () => {
         answers[`r${answerBlocks}`] = {
-          value: props.session && props.session.answers && props.session.answers[`r${answerBlocks}`] && props.session.answers[`r${answerBlocks}`].value || ''
+          value:
+            (props.session &&
+              props.session.answers &&
+              props.session.answers[`r${answerBlocks}`] &&
+              props.session.answers[`r${answerBlocks}`].value) ||
+            ''
         };
 
         answerBlocks += 1;
@@ -130,7 +135,7 @@ export class Main extends React.Component {
           let MQ = MathQuill.getInterface(2);
           const answer = answers[answerId];
 
-          el.textContent = answer && answer.value || '';
+          el.textContent = (answer && answer.value) || '';
 
           if (!model.view) {
             // for now, we're not going to be showing individual response correctness
@@ -323,25 +328,29 @@ export class Main extends React.Component {
         className={classes.mainContainer}
         ref={r => (this.root = r || this.root)}
       >
-        {
-          model.teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-              className={classes.collapsible}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
+        {model.teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions'
+            }}
+            className={classes.collapsible}
+          >
+            <div
+              dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}
+            />
+          </Collapsible>
+        )}
         <br />
         <div className={classes.main}>
-          {model.correctness && <div>Score: {model.correctness.score}</div>}
-          {model.correctness && model.correctness.correctness !== 'correct' && <CorrectAnswerToggle
-            className={classes.toggle}
-            show
-            toggled={showCorrect}
-            onToggle={this.toggleShowCorrect}
-          />}
+          {model.correctness && model.correctness.correctness !== 'correct' && (
+            <CorrectAnswerToggle
+              className={classes.toggle}
+              show
+              toggled={showCorrect}
+              onToggle={this.toggleShowCorrect}
+            />
+          )}
           <div className={classes.content}>
             <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
           </div>
@@ -354,11 +363,14 @@ export class Main extends React.Component {
             />
           )}
           {model.config.responseType === ResponseTypes.advanced && (
-            <div className={cx(classes.expression, {
-              [classes.incorrect]: !correct,
-              [classes.correct]: correct,
-              [classes.showCorrectness]: model.disabled && model.correctness && !model.view
-            })}>
+            <div
+              className={cx(classes.expression, {
+                [classes.incorrect]: !correct,
+                [classes.correct]: correct,
+                [classes.showCorrectness]:
+                  model.disabled && model.correctness && !model.view
+              })}
+            >
               <mq.Static
                 ref={mqStatic => (this.mqStatic = mqStatic || this.mqStatic)}
                 latex={prepareForStatic(model, state) || ''}
@@ -378,7 +390,9 @@ export class Main extends React.Component {
                       <HorizontalKeypad
                         key={answerId}
                         additionalKeys={additionalKeys}
-                        mode={model.config.equationEditor || DEFAULT_KEYPAD_VARIANT}
+                        mode={
+                          model.config.equationEditor || DEFAULT_KEYPAD_VARIANT
+                        }
                         onClick={this.onClick}
                       />
                     )) ||
@@ -387,15 +401,13 @@ export class Main extends React.Component {
           </div>
         </div>
 
-        {
-          model.rationale && (
-            <Collapsible
-              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
-            </Collapsible>
-          )
-        }
+        {model.rationale && (
+          <Collapsible
+            labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
+          </Collapsible>
+        )}
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}
@@ -444,7 +456,7 @@ const styles = theme => ({
     }
   },
   showCorrectness: {
-    border: '2px solid',
+    border: '2px solid'
   },
   correct: {
     borderColor: 'green !important'

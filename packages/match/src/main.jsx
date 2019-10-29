@@ -184,9 +184,6 @@ export class Main extends React.Component {
         )}
 
         <div className={classes.main}>
-          {model.correctness && model.correctness.correctness && (
-            <div>{model.correctness.score}</div>
-          )}
           <CorrectAnswerToggle
             className={classes.toggle}
             show={

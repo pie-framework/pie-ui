@@ -313,5 +313,20 @@
     "committerDate": "2019-09-24 11:14:42 +0300",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "return actual 'complete' based on session [ch5012] (#150)",
+    "merge": null,
+    "header": "fix: return actual 'complete' based on session [ch5012] (#150)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9aa5ccd03f07f812f618b20338db4aa8bb290770",
+    "gitTags": "",
+    "committerDate": "2019-10-23 10:55:12 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.8"
   }
 ]

@@ -393,5 +393,20 @@
     "committerDate": "2019-10-15 19:39:29 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match@2.3.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "dispatch 'session-changed' event [ch4390]",
+    "merge": null,
+    "header": "fix: dispatch 'session-changed' event [ch4390]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "54c0430c923d409e6f83172e78491d16c67eec35",
+    "gitTags": "",
+    "committerDate": "2019-10-23 20:36:00 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.10"
   }
 ]

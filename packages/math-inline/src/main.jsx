@@ -343,7 +343,6 @@ export class Main extends React.Component {
         )}
         <br />
         <div className={classes.main}>
-          {model.correctness && <div>{model.correctness.score}</div>}
           {model.correctness && model.correctness.correctness !== 'correct' && (
             <CorrectAnswerToggle
               className={classes.toggle}

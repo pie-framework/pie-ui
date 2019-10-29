@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.9...@pie-ui/match@2.3.10) (2019-10-29)
+
+
+### Bug Fixes
+
+* dispatch 'session-changed' event [ch4390] ([54c0430](https://github.com/pie-framework/pie-ui/commit/54c0430))
+
+
+
+
+
 ## [2.3.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.8...@pie-ui/match@2.3.9) (2019-10-16)
 
 

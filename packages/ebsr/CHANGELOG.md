@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.7...@pie-ui/ebsr@1.2.8) (2019-10-29)
+
+
+### Bug Fixes
+
+* return actual 'complete' based on session [ch5012] ([#150](https://github.com/pie-framework/pie-elements/issues/150)) ([9aa5ccd](https://github.com/pie-framework/pie-elements/commit/9aa5ccd))
+
+
+
+
+
 ## [1.2.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.6...@pie-ui/ebsr@1.2.7) (2019-10-10)
 
 **Note:** Version bump only for package @pie-ui/ebsr

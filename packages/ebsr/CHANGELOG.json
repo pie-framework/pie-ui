@@ -328,5 +328,20 @@
     "committerDate": "2019-10-23 10:55:12 -0400",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "set session object even if missing fixes: ch5165",
+    "merge": null,
+    "header": "fix: set session object even if missing fixes: ch5165",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ada0f329ace155fcabadb74bd18f8d3d5c3f6fc9",
+    "gitTags": " (origin/fix/ch5165-session)",
+    "committerDate": "2019-10-30 20:12:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.9"
   }
 ]

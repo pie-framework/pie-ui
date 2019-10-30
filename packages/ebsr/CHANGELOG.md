@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.9](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.8...@pie-ui/ebsr@1.2.9) (2019-10-30)
+
+
+### Bug Fixes
+
+* set session object even if missing fixes: ch5165 ([ada0f32](https://github.com/pie-framework/pie-elements/commit/ada0f32))
+
+
+
+
+
 ## [1.2.8](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.7...@pie-ui/ebsr@1.2.8) (2019-10-29)
 
 

@@ -1,5 +1,5 @@
 const partA = {
-  element: 'multiple-choice',
+  partLabel: 'A',
   id: '2',
   disabled: false,
   choicePrefix: 'letters',
@@ -11,22 +11,22 @@ const partA = {
   choices: [
     {
       value: 'yellow',
-      label: 'Yellow',
+      label: 'Yellow'
     },
     {
       value: 'green',
-      label: 'Green',
+      label: 'Green'
     },
     {
       correct: true,
       value: 'blue',
-      label: 'Blue',
-    },
+      label: 'Blue'
+    }
   ]
 };
 
-const partB =  {
-  element: 'multiple-choice',
+const partB = {
+  partLabel: 'B',
   id: '3',
   disabled: false,
   choicePrefix: 'letters',
@@ -38,21 +38,21 @@ const partB =  {
   choices: [
     {
       value: 'orange',
-      label: 'Orange',
+      label: 'Orange'
     },
     {
       correct: true,
       value: 'purple',
-      label: 'Purple',
+      label: 'Purple'
     },
     {
       value: 'pink',
-      label: 'Pink',
+      label: 'Pink'
     },
     {
       value: 'green',
-      label: 'Green',
-    },
+      label: 'Green'
+    }
   ]
 };
 
@@ -65,8 +65,10 @@ module.exports = {
       id: '1',
       element: 'ebsr-element',
       mode: 'evaluate',
+      partLabels: true,
+      partLabelType: 'Letters',
       partA,
-      partB,
+      partB
     }
   ]
 };

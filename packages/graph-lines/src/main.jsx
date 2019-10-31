@@ -51,9 +51,9 @@ export class Main extends React.Component {
     if (
       !this.props.session.lines ||
       (this.props.session.lines &&
-      this.props.session.lines.length &&
-      this.state.useSessionLines &&
-      !lines.length)
+        this.props.session.lines.length &&
+        this.state.useSessionLines &&
+        !lines.length)
     ) {
       shouldUseSessionLines = false;
     }
@@ -211,7 +211,6 @@ export class Main extends React.Component {
     return (
       <div className={classes.mainContainer}>
         <div className={classes.main}>
-          {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
             className={classes.toggle}
             show={
@@ -222,8 +221,7 @@ export class Main extends React.Component {
             toggled={showCorrect}
             onToggle={this.toggleShowCorrect}
           />
-          {!model.disabled &&
-          !model.exhibitOnly && (
+          {!model.disabled && !model.exhibitOnly && (
             <Controls
               iconOnly={false}
               disabled={!(selection && selection.length > 0)}
@@ -251,16 +249,14 @@ export class Main extends React.Component {
             onLineClick={this.toggleSelectLine}
           />
         </div>
-        {
-          model.rationale && (
-            <Collapsible
-              labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-              className={classes.collapsible}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
-            </Collapsible>
-          )
-        }
+        {model.rationale && (
+          <Collapsible
+            labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+            className={classes.collapsible}
+          >
+            <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
+          </Collapsible>
+        )}
         {model.feedback && (
           <Feedback
             correctness={model.correctness.correctness}

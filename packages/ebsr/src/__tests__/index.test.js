@@ -92,10 +92,23 @@ describe('ebsr', () => {
       dispatchesSessionEvent(PART_B, 'd');
     });
   });
+
+  describe('setPartSession', () => {
+    it('sets the session object even if missing from session.value', () => {
+      const part = {};
+      el.model = {};
+      el.session = {
+        value: {}
+      };
+      el.setPartSession(part, 'partA');
+      expect(part.session).toEqual({ id: 'partA' });
+    });
+  });
 });
+
 describe('isSessionComplete', () => {
   const assertComplete = (s, expected) => {
-    it.only(`${JSON.stringify(s)} => ${expected}`, () => {
+    it(`${JSON.stringify(s)} => ${expected}`, () => {
       const result = isSessionComplete(s);
       expect(result).toEqual(expected);
     });

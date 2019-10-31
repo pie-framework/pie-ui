@@ -14,10 +14,10 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     session: PropTypes.shape({
       points: PropTypes.arrayOf(
-          PropTypes.shape({
-            x: PropTypes.number.isRequired,
-            y: PropTypes.number.isRequired
-          })
+        PropTypes.shape({
+          x: PropTypes.number.isRequired,
+          y: PropTypes.number.isRequired
+        })
       )
     }),
     onSessionChange: PropTypes.func,
@@ -68,8 +68,8 @@ export class Main extends React.Component {
 
   deleteSelection = () => {
     const points = utils.removePoints(
-        this.state.session.points,
-        this.state.selection
+      this.state.session.points,
+      this.state.selection
     );
 
     const session = { ...this.state.session, points };
@@ -93,7 +93,11 @@ export class Main extends React.Component {
       } else {
         return session.points.map(p => ({
           ...p,
-          correct: utils.hasPoint(model.correctResponse, p, model.pointsMustMatchLabels)
+          correct: utils.hasPoint(
+            model.correctResponse,
+            p,
+            model.pointsMustMatchLabels
+          )
         }));
       }
     } else {
@@ -113,18 +117,19 @@ export class Main extends React.Component {
     return (
       <div style={{ width: `${model.width}px` }}>
         <div className={classes.main}>
-          {model.correctness && <div>Score: {model.correctness.score}</div>}
           <CorrectAnswerToggle
-              className={classes.toggle}
-              show={model.correctness && model.correctness.correctness !== 'correct'}
-              toggled={showCorrect}
-              onToggle={this.toggleShowCorrect}
+            className={classes.toggle}
+            show={
+              model.correctness && model.correctness.correctness !== 'correct'
+            }
+            toggled={showCorrect}
+            onToggle={this.toggleShowCorrect}
           />
           {!model.disabled && (
-              <Controls
-                  disabled={!(selection && selection.length > 0)}
-                  onDeleteClick={this.deleteSelection}
-              />
+            <Controls
+              disabled={!(selection && selection.length > 0)}
+              onDeleteClick={this.deleteSelection}
+            />
           )}
           <PlotPoints
             title={model.title}
@@ -144,11 +149,13 @@ export class Main extends React.Component {
             selection={selection}
           />
         </div>
-        {model.feedback &&
-        <Feedback
+        {model.feedback && (
+          <Feedback
             correctness={model.correctness.correctness}
             feedback={model.feedback}
-            width={model.width - 20} />}
+            width={model.width - 20}
+          />
+        )}
       </div>
     );
   }

@@ -46,6 +46,14 @@ html
     script(type="text/javascript", charset="utf-8"). 
 
 
+
+      window._demoSession = (!{JSON.stringify(session)} || []);
+
+      document.addEventListener('session-changed', e => {
+        console.log('session changed', e);
+        console.log("session:", window._demoSession );
+      });
+
       function renderChangelog(el) {
 
         if(el.textContent !== '') {
@@ -66,7 +74,7 @@ html
             data.models.forEach( m => {
               const n = document.querySelector(`[pie-id="${m.id}"]`); 
               n.model = m;
-              const session = (!{JSON.stringify(session)} || []).find(s => s.id === m.id);
+              const session = (window._demoSession).find(s => s.id === m.id);
 
               n.session = session || {};
             });

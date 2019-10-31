@@ -48,7 +48,7 @@ export default class Ebsr extends HTMLElement {
       if (e.update) {
         this._model[key] = e.update;
       }
-
+      //TODO: accessing a private property here. The session event should contain the update in future to prevent this.
       this.dispatchSessionChanged(e.srcElement._session, key);
     }
   };
@@ -80,7 +80,6 @@ export default class Ebsr extends HTMLElement {
         mode,
         keyMode: this._model[key].choicePrefix
       };
-
       const partLabel = part._model.partLabel;
       const isFirst = key === 'partA';
       const el = document.getElementById(
@@ -93,12 +92,7 @@ export default class Ebsr extends HTMLElement {
   setPartSession(part, key) {
     if (this._session && this._model) {
       const { value } = this._session;
-
-      part.session = { id: key };
-
-      if (value) {
-        part.session = value[key];
-      }
+      part.session = value && value[key] ? value[key] : { id: key };
     }
   }
 

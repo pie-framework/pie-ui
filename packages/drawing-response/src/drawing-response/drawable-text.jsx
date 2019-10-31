@@ -13,7 +13,7 @@ export default class TextDrawable {
   static getTransformerNode(id) { return `transformer_${id}`; }
 
   constructor(props) {
-    this.all = props.all || [];
+    this.all = props && props.all || [];
   }
 
   setAll = (all) => {

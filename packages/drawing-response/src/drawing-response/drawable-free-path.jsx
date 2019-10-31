@@ -34,10 +34,11 @@ export default class FreePathDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Line
+        key={key}
         draggable={draggable}
         tension={0}
         bezier={true}

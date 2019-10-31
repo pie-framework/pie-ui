@@ -33,26 +33,29 @@ class DrawableMain extends React.Component {
     if (nextProps.session) {
       const { TextEntry } = nextProps;
       const { drawables: currentDrawables } = this.state;
-      const newDrawables = cloneDeep(nextProps.session.drawables);
-      const drawablesString = JSON.stringify(currentDrawables);
-      const sessionDrawableString = JSON.stringify(newDrawables.map(drawable => omit(drawable, 'type')));
 
-      if (drawablesString !== sessionDrawableString) {
-        const drawableArray = nextProps.session.drawables;
+      if (nextProps.session.drawables) {
+        const newDrawables = cloneDeep(nextProps.session.drawables);
+        const drawablesString = JSON.stringify(currentDrawables);
+        const sessionDrawableString = JSON.stringify((newDrawables || []).map(drawable => omit(drawable, 'type')));
 
-        this.setState({
-          drawables: drawableArray.map(drawable => this.getNewDrawableBasedOnType(drawable, drawable.type))
-        });
-      }
+        if (drawablesString !== sessionDrawableString) {
+          const drawableArray = nextProps.session.drawables;
 
-      const currentTexts = TextEntry.all.map((text) => ({
-        ...text,
-        ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
-        value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
-      }));
+          this.setState({
+            drawables: drawableArray.map(drawable => this.getNewDrawableBasedOnType(drawable, drawable.type))
+          });
+        }
 
-      if (!isEqual(currentTexts, nextProps.session.texts)) {
-        TextEntry.setAll(nextProps.session.texts);
+        const currentTexts = TextEntry.all.map((text) => ({
+          ...text,
+          ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
+          value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
+        }));
+
+        if (!isEqual(currentTexts, nextProps.session.texts)) {
+          TextEntry.setAll(nextProps.session.texts);
+        }
       }
 
     } else {

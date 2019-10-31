@@ -48,7 +48,7 @@ export default class Ebsr extends HTMLElement {
       if (e.update) {
         this._model[key] = e.update;
       }
-
+      //TODO: accessing a private property here. The session event should contain the update in future to prevent this.
       this.dispatchSessionChanged(e.srcElement._session, key);
     }
   };

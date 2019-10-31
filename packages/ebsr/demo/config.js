@@ -64,9 +64,7 @@ module.exports = {
     {
       id: '1',
       element: 'ebsr-element',
-      mode: 'evaluate',
-      partLabels: true,
-      partLabelType: 'Letters',
+      mode: 'gather',
       partA,
       partB
     }

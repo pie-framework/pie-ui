@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import isEmpty from 'lodash/isEmpty';
 import { renderMath } from '@pie-lib/math-rendering';
-import { ModelSetEvent } from '@pie-framework/pie-player-events';
+import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events';
 
 import DrawingResponseComponent from './drawing-response';
 
@@ -20,20 +21,15 @@ export default class DrawingResponse extends HTMLElement {
   }
 
   isComplete() {
-    return this._session;
+    return this._session && (!isEmpty(this._session.drawables) || !isEmpty(this._session.texts));
   }
 
   sessionChanged = (update) => {
-    this._session = { drawables: update.drawables, texts: update.texts };
+    this._session.drawables = update.drawables;
+    this._session.texts = update.texts;
+
     this.dispatchEvent(
-      new CustomEvent('session-changed', {
-        bubbles: true,
-        detail: {
-          component: this.tagName.toLowerCase(),
-          drawables: this._session.drawables,
-          texts: this._session.texts
-        }
-      })
+      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
     );
 
     this._render();

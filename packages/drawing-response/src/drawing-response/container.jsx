@@ -35,7 +35,6 @@ class Container extends Component {
       fillColor: 'white',
       fillColorList: [
         { value: 'transparent', label: 'no fill' },
-        { value: 'white', label: 'white' },
         { value: 'lightblue', label: 'lightblue' },
         { value: 'lightyellow', label: 'lightyellow' },
         ...ROGVAIV

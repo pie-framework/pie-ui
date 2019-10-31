@@ -6,9 +6,10 @@ import DrawableHelper from './drawable-helper';
 export default class CircleDrawable extends DrawableHelper {
   constructor(props) {
     super(props);
-    const { startx, starty } = props;
-    this.x = startx;
-    this.y = starty;
+    const { startx, starty, x, y } = props;
+
+    this.x = x || startx;
+    this.y = y || starty;
   }
 
   registerMovement(x, y) {
@@ -25,8 +26,15 @@ export default class CircleDrawable extends DrawableHelper {
     }
   }
 
+  handleDragEnd = (props, event) => {
+    this.startx = event.target.getX();
+    this.starty = event.target.getY();
+
+    props.debouncedSessionChange();
+  };
+
   render(props) {
-    const { draggable } = props;
+    const { draggable, onMouseOverElement, onMouseOutElement } = props;
     const dx = this.startx - this.x;
     const dy = this.starty - this.y;
     const radius = Math.sqrt(dx * dx + dy * dy);
@@ -39,6 +47,9 @@ export default class CircleDrawable extends DrawableHelper {
         y={this.starty}
         fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
+        onDragEnd={this.handleDragEnd.bind(this, props)}
+        onMouseEnter={onMouseOverElement}
+        onMouseLeave={onMouseOutElement}
         stroke={this.outlineColor}
       />
     );

@@ -20,20 +20,26 @@ export default class DrawingResponse extends HTMLElement {
   }
 
   isComplete() {
-    if (!this._session) {
-      return false;
-    }
-
-    return (
-      Array.isArray(this._session.answers) && this._session.answers.length > 0
-    );
+    return this._session;
   }
 
-  set session(s) {
-    if (s && !s.answers) {
-      s.answers = [];
-    }
+  sessionChanged = (update) => {
+    this._session = { drawables: update.drawables, texts: update.texts };
+    this.dispatchEvent(
+      new CustomEvent('session-changed', {
+        bubbles: true,
+        detail: {
+          component: this.tagName.toLowerCase(),
+          drawables: this._session.drawables,
+          texts: this._session.texts
+        }
+      })
+    );
 
+    this._render();
+  };
+
+  set session(s) {
     this._session = s;
     this._render();
   }
@@ -47,6 +53,7 @@ export default class DrawingResponse extends HTMLElement {
       const el = React.createElement(DrawingResponseComponent, {
         model: this._model,
         session: this._session,
+        onSessionChange: this.sessionChanged
       });
       ReactDOM.render(el, this, () => {
         renderMath(this);

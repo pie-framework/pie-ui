@@ -6,9 +6,12 @@ import DrawableHelper from './drawable-helper';
 export default class LineDrawable extends DrawableHelper {
   constructor(props) {
     super(props);
-    const { startx, starty } = props;
-    this.x = startx;
-    this.y = starty;
+    const { startx, starty, x, y, posX, posY } = props;
+
+    this.x = x || startx;
+    this.y = y || starty;
+    this.posX = posX || 0;
+    this.posY = posY || 0;
   }
 
   registerMovement(x, y) {
@@ -25,8 +28,15 @@ export default class LineDrawable extends DrawableHelper {
     }
   }
 
+  handleDragEnd = (props, event) => {
+    this.posX = event.target.getX();
+    this.posY = event.target.getY();
+
+    props.debouncedSessionChange();
+  };
+
   render(props) {
-    const { draggable } = props;
+    const { draggable, onMouseOverElement, onMouseOutElement } = props;
     const points = [this.startx, this.starty, this.x, this.y];
 
     return (
@@ -36,6 +46,11 @@ export default class LineDrawable extends DrawableHelper {
         fill={this.paintColor || this.outlineColor}
         onClick={() => this.handleOnClick(props)}
         stroke={this.paintColor || this.outlineColor}
+        onDragEnd={this.handleDragEnd.bind(this, props)}
+        onMouseEnter={onMouseOverElement}
+        onMouseLeave={onMouseOutElement}
+        x={this.posX}
+        y={this.posY}
         pointerWidth={0}
         pointerLength={0}
       />

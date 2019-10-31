@@ -33,6 +33,7 @@ exports[`DrawingResponse DrawableText snapshot renders 1`] = `
     y={60}
   />
   <TransformerComponent
+    key="transformer_gcifqhhimf8k2d6g8hs"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     selectedShapeName="text_gcifqhhimf8k2d6g8hs"

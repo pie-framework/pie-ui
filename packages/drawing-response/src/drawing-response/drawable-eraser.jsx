@@ -25,10 +25,11 @@ export default class EraserDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Line
+        key={key}
         draggable={draggable}
         globalCompositeOperation="destination-out"
         tension={0}

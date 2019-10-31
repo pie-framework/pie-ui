@@ -34,13 +34,14 @@ export default class CircleDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
     const dx = this.startx - this.x;
     const dy = this.starty - this.y;
     const radius = Math.sqrt(dx * dx + dy * dy);
 
     return (
       <Circle
+        key={key}
         draggable={draggable}
         radius={radius}
         x={this.startx}

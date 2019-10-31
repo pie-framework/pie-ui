@@ -263,7 +263,7 @@ class DrawableMain extends React.Component {
             {...listeners}
           >
             <Layer ref={ref => { this.layer = ref; }}>
-              {drawables.map(drawable => drawable.render(drawableProps))}
+              {drawables.map((drawable, key) => drawable.render({ ...drawableProps, key }))}
               {/* Text Entry is a special case  */}
               {TextEntry.render(drawableProps)}
             </Layer>

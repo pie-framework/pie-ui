@@ -8,11 +8,12 @@ export default class RectangleDrawable extends DrawableHelper {
     super(props);
     const { startx, starty, x, y } = props;
 
-
+    this.startx = startx;
+    this.starty = starty;
     this.x = x || startx;
     this.y = y || starty;
-    this.width = x - startx;
-    this.height = y - starty;
+    this.width = (x - startx) || 0;
+    this.height = (y - starty) || 0;
   }
 
   registerMovement(x, y) {
@@ -39,10 +40,11 @@ export default class RectangleDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Rect
+        key={key}
         height={this.height}
         width={this.width}
         fill={this.paintColor || this.fillColor}

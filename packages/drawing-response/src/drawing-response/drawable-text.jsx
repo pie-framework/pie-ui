@@ -266,6 +266,7 @@ export default class TextDrawable {
           />,
           transformerVisible && (
             <Transformer
+              key={`transformer_${id}`}
               ref={text => { this[transformerNode] = text; }}
               selectedShapeName={textNode}
               onMouseDown={this.handleMouseDown}

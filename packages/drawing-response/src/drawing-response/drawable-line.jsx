@@ -36,11 +36,12 @@ export default class LineDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
     const points = [this.startx, this.starty, this.x, this.y];
 
     return (
       <Arrow
+        key={key}
         draggable={draggable}
         points={points}
         fill={this.paintColor || this.outlineColor}

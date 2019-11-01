@@ -31,7 +31,7 @@ export default class RootExtendedTextEntry extends HTMLElement {
     this._session.value = value;
 
     this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this._session)
+      new SessionChangedEvent(this.tagName.toLowerCase(), true)
     );
   }
 

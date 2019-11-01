@@ -408,5 +408,20 @@
     "committerDate": "2019-10-23 20:36:00 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match@2.3.10"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "add pie-player-events dependency",
+    "merge": null,
+    "header": "fix: add pie-player-events dependency",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0da0b622b508a31b2cf7d7b65a21c0e0fe0e4eb5",
+    "gitTags": "",
+    "committerDate": "2019-11-01 15:48:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.12"
   }
 ]

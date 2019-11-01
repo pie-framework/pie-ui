@@ -4,6 +4,8 @@ import debug from 'debug';
 import compact from 'lodash/compact';
 import Main from './main';
 
+import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+
 const log = debug('pie-ui:graph-lines');
 
 export { Main as Component };
@@ -11,6 +13,19 @@ export { Main as Component };
 export default class MatchList extends HTMLElement {
   constructor() {
     super();
+  }
+
+  isComplete() {
+    if (!this._session) {
+      return false;
+    }
+
+    const value = this._session.value;
+
+    return (
+      value &&
+      compact(value).length === (this._model.config.prompts || []).length
+    );
   }
 
   set model(m) {
@@ -25,17 +40,9 @@ export default class MatchList extends HTMLElement {
 
   sessionChanged(s) {
     this._session.value = s.value;
+
     this.dispatchEvent(
-      new CustomEvent('session-changed', {
-        bubbles: true,
-        detail: {
-          component: this.tagName.toLowerCase(),
-          complete:
-          this._session &&
-          this._session.value &&
-          compact(this._session.value).length === (this._model.config.prompts || []).length
-        }
-      })
+      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
     );
 
     log('session: ', this._session);

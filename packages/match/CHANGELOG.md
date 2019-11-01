@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.11...@pie-ui/match@2.3.12) (2019-11-01)
+
+
+### Bug Fixes
+
+* add pie-player-events dependency ([0da0b62](https://github.com/pie-framework/pie-ui/commit/0da0b62))
+
+
+
+
+
 ## [2.3.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.10...@pie-ui/match@2.3.11) (2019-10-30)
 
 **Note:** Version bump only for package @pie-ui/match

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.4.4...@pie-ui/drawing-response@1.5.0) (2019-11-01)
+
+
+### Features
+
+* **drawing-response:** changed session properly, fixed warning [ch5017] ([c3629be](https://github.com/pie-framework/pie-elements/commit/c3629be))
+* **drawing-response:** emitted session events when needed [ch5017] ([eddcecb](https://github.com/pie-framework/pie-elements/commit/eddcecb))
+* **drawing-response:** fixed rendering issues in demo mode [ch5017] ([b185136](https://github.com/pie-framework/pie-elements/commit/b185136))
+* **drawing-response:** fixed tests [ch5017] ([2639ef8](https://github.com/pie-framework/pie-elements/commit/2639ef8))
+* **drawing-response:** fixed warnings [ch5017] ([b6505ea](https://github.com/pie-framework/pie-elements/commit/b6505ea))
+* **drawing-response:** made requested changes and fixed circle issue [ch5017] ([081841e](https://github.com/pie-framework/pie-elements/commit/081841e))
+
+
+
+
+
 ## [1.4.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.4.3...@pie-ui/drawing-response@1.4.4) (2019-10-10)
 
 **Note:** Version bump only for package @pie-ui/drawing-response

@@ -248,10 +248,10 @@ export default class TextDrawable {
             onClick={(e) => this.handleClick(e, id)}
             onDblClick={(e) => this.handleDblClick(e, text)}
             onTransform={(e) => this.handleTransform(e, textNode)}
-            onTransformEnd={this.props.debouncedSessionChange}
+            onTransformEnd={this.props.handleSessionChange}
             onMouseDown={this.handleMouseDown}
             onMouseUp={this.handleMouseUp}
-            onDragEnd={this.props.debouncedSessionChange}
+            onDragEnd={this.props.handleSessionChange}
             onMouseEnter={this.props.onMouseOverElement}
             onMouseLeave={this.props.onMouseOutElement}
             text={label}

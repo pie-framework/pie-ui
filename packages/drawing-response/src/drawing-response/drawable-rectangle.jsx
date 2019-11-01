@@ -36,7 +36,7 @@ export default class RectangleDrawable extends DrawableHelper {
     this.startx = event.target.getX();
     this.starty = event.target.getY();
 
-    props.debouncedSessionChange();
+    props.handleSessionChange();
   };
 
   render(props) {

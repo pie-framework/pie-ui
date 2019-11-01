@@ -37,13 +37,13 @@ describe('DrawingResponse', () => {
   };
 
   describe('CircleDrawable', () => {
-    let debouncedSessionChange = jest.fn();
+    let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let props;
 
     beforeEach(() => {
       props = {
-        debouncedSessionChange,
+        handleSessionChange,
         forceUpdate,
         paint: true,
         paintColor: 'green',
@@ -71,19 +71,13 @@ describe('DrawingResponse', () => {
       });
 
       it('changes x and y', () => {
-        const spy = jest.spyOn(element, 'registerMovement');
-
         element.registerMovement(400, 400);
-
-        expect(spy).toHaveBeenCalled();
 
         expect(element.x).toEqual(400);
         expect(element.y).toEqual(400);
       });
 
       it('changes session when needed', () => {
-        const spy = jest.spyOn(element, 'handleDragEnd');
-
         const event = {
           target: {
             getX: jest.fn().mockReturnValue(300),
@@ -96,8 +90,7 @@ describe('DrawingResponse', () => {
         expect(event.target.getX).toHaveBeenCalled();
         expect(event.target.getY).toHaveBeenCalled();
 
-        expect(spy).toHaveBeenCalled();
-        expect(debouncedSessionChange).toHaveBeenCalled();
+        expect(handleSessionChange).toHaveBeenCalled();
       });
 
       it('changes startx and starty', () => {
@@ -119,13 +112,13 @@ describe('DrawingResponse', () => {
   });
 
   describe('EraserDrawable', () => {
-    let debouncedSessionChange = jest.fn();
+    let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let props;
 
     beforeEach(() => {
       props = {
-        debouncedSessionChange,
+        handleSessionChange,
         forceUpdate,
         points: [200, 200, 300, 300],
         posX: 200,
@@ -147,18 +140,12 @@ describe('DrawingResponse', () => {
     describe('logic', () => {
 
       it('changes points', () => {
-        const spy = jest.spyOn(element, 'registerMovement');
-
         element.registerMovement(400, 400);
-
-        expect(spy).toHaveBeenCalled();
 
         expect(element.points).toEqual([200, 200, 300, 300, 400, 400]);
       });
 
       it('changes session when needed', () => {
-        const spy = jest.spyOn(element, 'handleDragEnd');
-
         const event = {
           target: {
             getX: jest.fn().mockReturnValue(300),
@@ -171,8 +158,7 @@ describe('DrawingResponse', () => {
         expect(event.target.getX).toHaveBeenCalled();
         expect(event.target.getY).toHaveBeenCalled();
 
-        expect(spy).toHaveBeenCalled();
-        expect(debouncedSessionChange).toHaveBeenCalled();
+        expect(handleSessionChange).toHaveBeenCalled();
       });
 
       it('changes posX and posY', () => {
@@ -194,13 +180,13 @@ describe('DrawingResponse', () => {
   });
 
   describe('FreePathDrawable', () => {
-    let debouncedSessionChange = jest.fn();
+    let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let props;
 
     beforeEach(() => {
       props = {
-        debouncedSessionChange,
+        handleSessionChange,
         forceUpdate,
         paint: true,
         paintColor: 'green',
@@ -227,11 +213,7 @@ describe('DrawingResponse', () => {
       });
 
       it('changes points', () => {
-        const spy = jest.spyOn(element, 'registerMovement');
-
         element.registerMovement(400, 400);
-
-        expect(spy).toHaveBeenCalled();
 
         expect(element.points).toEqual([200, 200, 300, 300, 400, 400]);
       });
@@ -251,8 +233,7 @@ describe('DrawingResponse', () => {
         expect(event.target.getX).toHaveBeenCalled();
         expect(event.target.getY).toHaveBeenCalled();
 
-        expect(spy).toHaveBeenCalled();
-        expect(debouncedSessionChange).toHaveBeenCalled();
+        expect(handleSessionChange).toHaveBeenCalled();
       });
 
       it('changes posX and posY', () => {
@@ -274,13 +255,13 @@ describe('DrawingResponse', () => {
   });
 
   describe('LineDrawable', () => {
-    let debouncedSessionChange = jest.fn();
+    let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let props;
 
     beforeEach(() => {
       props = {
-        debouncedSessionChange,
+        handleSessionChange,
         forceUpdate,
         paint: true,
         paintColor: 'green',
@@ -310,19 +291,13 @@ describe('DrawingResponse', () => {
       });
 
       it('changes x and y', () => {
-        const spy = jest.spyOn(element, 'registerMovement');
-
         element.registerMovement(400, 400);
-
-        expect(spy).toHaveBeenCalled();
 
         expect(element.x).toEqual(400);
         expect(element.y).toEqual(400);
       });
 
       it('changes session when needed', () => {
-        const spy = jest.spyOn(element, 'handleDragEnd');
-
         const event = {
           target: {
             getX: jest.fn().mockReturnValue(300),
@@ -335,8 +310,7 @@ describe('DrawingResponse', () => {
         expect(event.target.getX).toHaveBeenCalled();
         expect(event.target.getY).toHaveBeenCalled();
 
-        expect(spy).toHaveBeenCalled();
-        expect(debouncedSessionChange).toHaveBeenCalled();
+        expect(handleSessionChange).toHaveBeenCalled();
       });
 
       it('changes posX and posY', () => {
@@ -357,13 +331,13 @@ describe('DrawingResponse', () => {
   });
 
   describe('RectangleDrawable', () => {
-    let debouncedSessionChange = jest.fn();
+    let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let props;
 
     beforeEach(() => {
       props = {
-        debouncedSessionChange,
+        handleSessionChange,
         forceUpdate,
         paint: true,
         paintColor: 'green',
@@ -391,19 +365,13 @@ describe('DrawingResponse', () => {
       });
 
       it('changes x and y', () => {
-        const spy = jest.spyOn(element, 'registerMovement');
-
         element.registerMovement(400, 400);
-
-        expect(spy).toHaveBeenCalled();
 
         expect(element.x).toEqual(400);
         expect(element.y).toEqual(400);
       });
 
       it('changes session when needed', () => {
-        const spy = jest.spyOn(element, 'handleDragEnd');
-
         const event = {
           target: {
             getX: jest.fn().mockReturnValue(300),
@@ -416,8 +384,7 @@ describe('DrawingResponse', () => {
         expect(event.target.getX).toHaveBeenCalled();
         expect(event.target.getY).toHaveBeenCalled();
 
-        expect(spy).toHaveBeenCalled();
-        expect(debouncedSessionChange).toHaveBeenCalled();
+        expect(handleSessionChange).toHaveBeenCalled();
       });
 
       it('changes posX and posY', () => {
@@ -453,7 +420,6 @@ describe('DrawingResponse', () => {
         type: 'text-entry'
       }
     ];
-    let debouncedSessionChange = jest.fn();
     let handleSessionChange = jest.fn();
     let forceUpdate = jest.fn();
     let toggleTextSelected = jest.fn();
@@ -468,7 +434,6 @@ describe('DrawingResponse', () => {
 
       props = {
         all,
-        debouncedSessionChange,
         handleSessionChange,
         forceUpdate,
         stage,

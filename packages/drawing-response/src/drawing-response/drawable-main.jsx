@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import cloneDeep from 'lodash/cloneDeep';
 import isEqual from 'lodash/isEqual';
-import debounce from 'lodash/debounce';
 import classnames from 'classnames';
 import { Layer, Stage } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
@@ -26,7 +25,6 @@ class DrawableMain extends React.Component {
       newDrawable: [],
       textIsSelected: false,
     };
-    this.debouncedSessionChange = debounce(this.handleSessionChange, 500);
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -59,7 +57,7 @@ class DrawableMain extends React.Component {
       }
 
     } else {
-      this.debouncedSessionChange();
+      this.handleSessionChange();
     }
   }
 
@@ -141,7 +139,7 @@ class DrawableMain extends React.Component {
       this.setState({
         newDrawable: [],
         drawables
-      }, this.debouncedSessionChange.bind(this, drawableToAdd));
+      }, this.handleSessionChange.bind(this, drawableToAdd));
     }
   };
 
@@ -171,10 +169,10 @@ class DrawableMain extends React.Component {
 
     if (lastElement.type === 'text-entry') {
       TextEntry.all.pop();
-      this.setState({ updatedAt: new Date() }, this.debouncedSessionChange);
+      this.setState({ updatedAt: new Date() }, this.handleSessionChange);
     } else {
       newDrawables.pop();
-      this.setState({ drawables: newDrawables }, this.debouncedSessionChange);
+      this.setState({ drawables: newDrawables }, this.handleSessionChange);
     }
   };
 
@@ -182,7 +180,7 @@ class DrawableMain extends React.Component {
     const { TextEntry } = this.props;
 
     TextEntry.all.pop();
-    this.setState({ drawables: [], updatedAt: new Date() }, this.debouncedSessionChange);
+    this.setState({ drawables: [], updatedAt: new Date() }, this.handleSessionChange);
   };
 
   toggleTextSelected = textIsSelected => {
@@ -216,7 +214,6 @@ class DrawableMain extends React.Component {
       outlineColor,
       toggleTextSelected: this.toggleTextSelected,
       handleSessionChange: this.handleSessionChange,
-      debouncedSessionChange: this.debouncedSessionChange,
       stage: this.stage,
       onMouseOverElement: this.onMouseOverElement,
       onMouseOutElement: this.onMouseOutElement

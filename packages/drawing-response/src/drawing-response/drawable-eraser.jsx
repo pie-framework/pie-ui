@@ -21,7 +21,7 @@ export default class EraserDrawable extends DrawableHelper {
     this.posX = event.target.getX();
     this.posY = event.target.getY();
 
-    props.debouncedSessionChange();
+    props.handleSessionChange();
   };
 
   render(props) {

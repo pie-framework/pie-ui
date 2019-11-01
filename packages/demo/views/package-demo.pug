@@ -51,6 +51,8 @@ html
 
       document.addEventListener('session-changed', e => {
         console.log('session changed', e);
+        // Note: this is an undocumented access to session that shouldn't be used, but here for debugging purposes 
+        console.debug(JSON.stringify(e.target._session));
         console.log("session:", window._demoSession );
       });
 
@@ -74,10 +76,19 @@ html
             data.models.forEach( m => {
               const n = document.querySelector(`[pie-id="${m.id}"]`); 
               n.model = m;
-              const session = (window._demoSession).find(s => s.id === m.id);
-
-              n.session = session || {};
+              /**
+               * Currently pie expects the outer context to pass in an object reference for the session,
+               * which the element will update. so on change we just need to look at this referenced array 
+               * defined as _demoSession here. 
+               */
+              let session = window._demoSession.find(s => s.id === m.id);
+              if(!session){
+                session = {id: m.id};
+                window._demoSession.push(session);
+              }
+              n.session = session; 
             });
+
           } else {
             console.error('no data?', data);
           }

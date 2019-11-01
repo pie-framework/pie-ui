@@ -6,14 +6,27 @@ import DrawableHelper from './drawable-helper';
 export default class CircleDrawable extends DrawableHelper {
   constructor(props) {
     super(props);
-    const { startx, starty } = props;
-    this.x = startx;
-    this.y = starty;
+    const { startx, starty, x, y } = props;
+
+    this.startx = startx;
+    this.starty = starty;
+    this.x = x || startx;
+    this.y = y || starty;
+
+    const dx = this.startx - this.x;
+    const dy = this.starty - this.y;
+
+    this.radius = Math.sqrt(dx * dx + dy * dy);
   }
 
   registerMovement(x, y) {
     this.x = x;
     this.y = y;
+
+    const dx = this.startx - this.x;
+    const dy = this.starty - this.y;
+
+    this.radius = Math.sqrt(dx * dx + dy * dy);
   }
 
   handleOnClick(props) {
@@ -25,20 +38,28 @@ export default class CircleDrawable extends DrawableHelper {
     }
   }
 
+  handleDragEnd = (props, event) => {
+    this.startx = event.target.getX();
+    this.starty = event.target.getY();
+
+    props.handleSessionChange();
+  };
+
   render(props) {
-    const { draggable } = props;
-    const dx = this.startx - this.x;
-    const dy = this.starty - this.y;
-    const radius = Math.sqrt(dx * dx + dy * dy);
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Circle
+        key={key}
         draggable={draggable}
-        radius={radius}
+        radius={this.radius}
         x={this.startx}
         y={this.starty}
         fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
+        onDragEnd={this.handleDragEnd.bind(this, props)}
+        onMouseEnter={onMouseOverElement}
+        onMouseLeave={onMouseOutElement}
         stroke={this.outlineColor}
       />
     );

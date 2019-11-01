@@ -22,7 +22,9 @@ class DrawingResponseComponent extends React.Component {
         prompt,
         mode,
         teacherInstructions
-      }
+      },
+      session,
+      onSessionChange
     } = this.props;
     const isEvaluateMode = mode === 'evaluate';
 
@@ -42,6 +44,8 @@ class DrawingResponseComponent extends React.Component {
         </Typography>
 
         <Container
+          session={session}
+          onSessionChange={onSessionChange}
           isEvaluateMode={isEvaluateMode}
           imageDimensions={imageDimensions}
           imageUrl={imageUrl}
@@ -54,6 +58,8 @@ class DrawingResponseComponent extends React.Component {
 
 DrawingResponseComponent.propTypes = {
   model: PropTypes.object.isRequired,
+  onSessionChange: PropTypes.func.isRequired,
+  session: PropTypes.object.isRequired
 };
 
 export default DrawingResponseComponent;

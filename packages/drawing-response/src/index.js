@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import isEmpty from 'lodash/isEmpty';
 import { renderMath } from '@pie-lib/math-rendering';
-import { ModelSetEvent } from '@pie-framework/pie-player-events';
+import { ModelSetEvent, SessionChangedEvent } from '@pie-framework/pie-player-events';
 
 import DrawingResponseComponent from './drawing-response';
 
@@ -20,20 +21,21 @@ export default class DrawingResponse extends HTMLElement {
   }
 
   isComplete() {
-    if (!this._session) {
-      return false;
-    }
-
-    return (
-      Array.isArray(this._session.answers) && this._session.answers.length > 0
-    );
+    return this._session && (!isEmpty(this._session.drawables) || !isEmpty(this._session.texts));
   }
 
-  set session(s) {
-    if (s && !s.answers) {
-      s.answers = [];
-    }
+  sessionChanged = (update) => {
+    this._session.drawables = update.drawables;
+    this._session.texts = update.texts;
 
+    this.dispatchEvent(
+      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
+    );
+
+    this._render();
+  };
+
+  set session(s) {
     this._session = s;
     this._render();
   }
@@ -47,6 +49,7 @@ export default class DrawingResponse extends HTMLElement {
       const el = React.createElement(DrawingResponseComponent, {
         model: this._model,
         session: this._session,
+        onSessionChange: this.sessionChanged
       });
       ReactDOM.render(el, this, () => {
         renderMath(this);

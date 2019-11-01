@@ -6,14 +6,21 @@ import DrawableHelper from './drawable-helper';
 export default class RectangleDrawable extends DrawableHelper {
   constructor(props) {
     super(props);
-    const { startx, starty } = props;
-    this.x = startx;
-    this.y = starty;
+    const { startx, starty, x, y } = props;
+
+    this.startx = startx;
+    this.starty = starty;
+    this.x = x || startx;
+    this.y = y || starty;
+    this.width = (x - startx) || 0;
+    this.height = (y - starty) || 0;
   }
 
   registerMovement(x, y) {
     this.x = x;
     this.y = y;
+    this.width = this.x - this.startx;
+    this.height = this.y - this.starty;
   }
 
   handleOnClick(props) {
@@ -25,17 +32,26 @@ export default class RectangleDrawable extends DrawableHelper {
     }
   }
 
+  handleDragEnd = (props, event) => {
+    this.startx = event.target.getX();
+    this.starty = event.target.getY();
+
+    props.handleSessionChange();
+  };
+
   render(props) {
-    const { draggable } = props;
-    const width = this.x - this.startx;
-    const height = this.y - this.starty;
+    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Rect
-        width={width}
-        height={height}
+        key={key}
+        height={this.height}
+        width={this.width}
         fill={this.paintColor || this.fillColor}
         onClick={() => this.handleOnClick(props)}
+        onDragEnd={this.handleDragEnd.bind(this, props)}
+        onMouseEnter={onMouseOverElement}
+        onMouseLeave={onMouseOutElement}
         stroke={this.outlineColor}
         draggable={draggable}
         strokeWidth={2}

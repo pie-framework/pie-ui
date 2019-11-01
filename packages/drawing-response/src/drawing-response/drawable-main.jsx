@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash/omit';
+import cloneDeep from 'lodash/cloneDeep';
+import isEqual from 'lodash/isEqual';
+import classnames from 'classnames';
 import { Layer, Stage } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -11,6 +15,8 @@ import CircleDrawable from './drawable-circle';
 import EraserDrawable from './drawable-eraser';
 import Button from './button';
 
+const drawableToJSON = drawable => JSON.parse(JSON.stringify(drawable));
+
 class DrawableMain extends React.Component {
   constructor(props) {
     super(props);
@@ -18,8 +24,66 @@ class DrawableMain extends React.Component {
       drawables: [],
       newDrawable: [],
       textIsSelected: false,
+    };
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.session) {
+      const { TextEntry } = nextProps;
+      const { drawables: currentDrawables } = this.state;
+
+      if (nextProps.session.drawables) {
+        const newDrawables = cloneDeep(nextProps.session.drawables);
+        const drawablesString = JSON.stringify(currentDrawables);
+        const sessionDrawableString = JSON.stringify((newDrawables || []).map(drawable => omit(drawable, 'type')));
+
+        if (drawablesString !== sessionDrawableString) {
+          const drawableArray = nextProps.session.drawables;
+
+          this.setState({
+            drawables: drawableArray.map(drawable => this.getNewDrawableBasedOnType(drawable, drawable.type))
+          });
+        }
+
+        const currentTexts = TextEntry.all.map((text) => ({
+          ...text,
+          ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
+          value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
+        }));
+
+        if (!isEqual(currentTexts, nextProps.session.texts)) {
+          TextEntry.setAll(nextProps.session.texts);
+        }
+      }
+
+    } else {
+      this.handleSessionChange();
     }
   }
+
+  handleSessionChange = () => {
+    const { onSessionChange, session, TextEntry } = this.props;
+    const { drawables } = this.state;
+
+    const newSession = {
+      drawables: drawables.map(drawable => ({
+        ...drawableToJSON(drawable),
+        type: drawable.constructor.name
+      })),
+      texts: TextEntry.all.map((text) => ({
+        ...text,
+        ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
+        value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
+      }))
+    };
+
+    if (!isEqual(newSession, session)) {
+      onSessionChange({
+        ...session,
+        ...newSession
+      });
+    }
+  };
 
   getNewDrawableBasedOnType = (props, type) => {
     const drawableClasses = {
@@ -32,9 +96,18 @@ class DrawableMain extends React.Component {
     return new drawableClasses[type](props);
   };
 
+  onMouseOverElement = () => this.setState({
+    isOver: true
+  });
+
+  onMouseOutElement = () => this.setState({
+    isOver: false
+  });
+
   handleMouseDown = e => {
     const { newDrawable, textIsSelected } = this.state;
     const { toolActive, fillColor, outlineColor } = this.props;
+
     if (newDrawable.length === 0 && !textIsSelected) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const newDrawable = this.getNewDrawableBasedOnType(
@@ -46,6 +119,7 @@ class DrawableMain extends React.Component {
         },
         toolActive.type
       );
+
       this.setState({
         newDrawable: [newDrawable]
       });
@@ -54,24 +128,30 @@ class DrawableMain extends React.Component {
 
   handleMouseUp = e => {
     const { newDrawable, drawables } = this.state;
+
     if (newDrawable.length === 1) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const drawableToAdd = newDrawable[0];
+
       drawableToAdd.registerMovement(x, y);
       drawables.push(drawableToAdd);
+
       this.setState({
         newDrawable: [],
         drawables
-      });
+      }, this.handleSessionChange.bind(this, drawableToAdd));
     }
   };
 
   handleMouseMove = e => {
     const { newDrawable } = this.state;
+
     if (newDrawable.length === 1) {
       const { x, y } = e.target.getStage().getPointerPosition();
       const updatedNewDrawable = newDrawable[0];
+
       updatedNewDrawable.registerMovement(x, y);
+
       this.setState({
         newDrawable: [updatedNewDrawable]
       });
@@ -89,17 +169,22 @@ class DrawableMain extends React.Component {
 
     if (lastElement.type === 'text-entry') {
       TextEntry.all.pop();
-      this.setState({ updatedAt: new Date() });
+      this.setState({ updatedAt: new Date() }, this.handleSessionChange);
     } else {
       newDrawables.pop();
-      this.setState({ drawables: newDrawables });
+      this.setState({ drawables: newDrawables }, this.handleSessionChange);
     }
   };
 
   handleClearAll = () => {
     const { TextEntry } = this.props;
+
     TextEntry.all.pop();
-    this.setState({ drawables: [], updatedAt: new Date() });
+    this.setState({ drawables: [], updatedAt: new Date() }, this.handleSessionChange);
+  };
+
+  toggleTextSelected = textIsSelected => {
+    this.setState({ textIsSelected });
   };
 
   render() {
@@ -114,6 +199,7 @@ class DrawableMain extends React.Component {
       TextEntry,
       toolActive: { type }
     } = this.props;
+    const { isOver, newDrawable } = this.state;
 
     const draggable = type === 'Select';
     const paint = type === 'PaintBucket';
@@ -126,9 +212,21 @@ class DrawableMain extends React.Component {
       forceUpdate: () => this.setState({ updatedAt: new Date() }),
       paintColor,
       outlineColor,
-      toggleTextSelected: textIsSelected => this.setState({ textIsSelected }),
-      stage: this.stage
+      toggleTextSelected: this.toggleTextSelected,
+      handleSessionChange: this.handleSessionChange,
+      stage: this.stage,
+      onMouseOverElement: this.onMouseOverElement,
+      onMouseOutElement: this.onMouseOutElement
     };
+
+    const listeners = {
+      onMouseUp: this.handleMouseUp,
+      onMouseMove: this.handleMouseMove
+    };
+
+    if (!draggable) {
+      listeners.onMouseDown = this.handleMouseDown;
+    }
 
     return (
       <div>
@@ -154,17 +252,15 @@ class DrawableMain extends React.Component {
 
           <Stage
             ref={ref => { this.stage = ref; }}
-            className={classes.stage}
+            className={classnames(classes.stage, {
+              [classes.active]: draggable && (isOver || (newDrawable && newDrawable.length === 1))
+            })}
             height={drawableDimensions.height}
             width={drawableDimensions.width}
-            {...draggable ? {} : {
-              onMouseDown: this.handleMouseDown,
-              onMouseUp: this.handleMouseUp,
-              onMouseMove: this.handleMouseMove
-            }}
+            {...listeners}
           >
             <Layer ref={ref => { this.layer = ref; }}>
-              {drawables.map(drawable => drawable.render(drawableProps))}
+              {drawables.map((drawable, key) => drawable.render({ ...drawableProps, key }))}
               {/* Text Entry is a special case  */}
               {TextEntry.render(drawableProps)}
             </Layer>
@@ -185,6 +281,9 @@ const styles = () => ({
     position: 'absolute',
     top: 0
   },
+  active: {
+    cursor: 'pointer'
+  },
   undoControls: {
     float: 'right',
     marginTop: -43,
@@ -197,11 +296,13 @@ DrawableMain.propTypes = {
   drawableDimensions: PropTypes.object.isRequired,
   imageDimensions: PropTypes.object.isRequired,
   fillColor: PropTypes.string.isRequired,
+  onSessionChange: PropTypes.func.isRequired,
   paintColor: PropTypes.string.isRequired,
   outlineColor: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   TextEntry: PropTypes.object.isRequired,
-  toolActive: PropTypes.object.isRequired
+  toolActive: PropTypes.object.isRequired,
+  session: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(DrawableMain);

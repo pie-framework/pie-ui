@@ -35,7 +35,6 @@ class Container extends Component {
       fillColor: 'white',
       fillColorList: [
         { value: 'transparent', label: 'no fill' },
-        { value: 'white', label: 'white' },
         { value: 'lightblue', label: 'lightblue' },
         { value: 'lightyellow', label: 'lightyellow' },
         ...ROGVAIV
@@ -70,6 +69,7 @@ class Container extends Component {
   handleMakeToolActive(tool) {
     const { TextEntry } = this.state;
     const { type } = tool;
+
     if (type !== 'Text') {
       this.setState({
         toolActive: tool
@@ -103,7 +103,9 @@ class Container extends Component {
     const {
       classes,
       imageUrl,
-      imageDimensions
+      imageDimensions,
+      onSessionChange,
+      session
     } = this.props;
     const {
       drawableDimensions,
@@ -152,6 +154,8 @@ class Container extends Component {
 
           <div ref={drawable => { this.drawable = drawable; }}  className={classes.drawableHeight}>
             <DrawableMain
+              session={session}
+              onSessionChange={onSessionChange}
               fillColor={fillColor}
               outlineColor={outlineColor}
               paintColor={paintColor}
@@ -193,6 +197,8 @@ const styles = theme => ({
 
 Container.propTypes = {
   classes: PropTypes.object.isRequired,
+  session: PropTypes.object.isRequired,
+  onSessionChange: PropTypes.func.isRequired,
   imageDimensions: PropTypes.object.isRequired,
   imageUrl: PropTypes.string.isRequired,
 };

@@ -3,7 +3,7 @@ import { Text } from 'react-konva';
 
 import Transformer from './drawable-transformer';
 
-const generateId = () =>
+export const generateId = () =>
   Math.random().toString(36).substring(2)
   + (new Date()).getTime().toString(36);
 
@@ -12,9 +12,14 @@ export default class TextDrawable {
   static getTextNode(id) { return `text_${id}`; }
   static getTransformerNode(id) { return `transformer_${id}`; }
 
-  constructor() {
-    this.all = [];
+  constructor(props) {
+    this.all = props && props.all || [];
   }
+
+  setAll = (all) => {
+    this.all = all;
+    this.props.forceUpdate();
+  };
 
   addNewTextEntry = () => {
     const all = this.all;
@@ -34,13 +39,18 @@ export default class TextDrawable {
       type: 'text-entry'
     });
 
-    this.stage.on('click', (e) => {
+    const stageClickHandler = (e) => {
       if (e.target !== this.stage) {
         return;
       }
+
       this.showOnlyTextNodes();
       this.props.forceUpdate();
-    })
+      this.stage.off('click', stageClickHandler);
+    };
+
+    this.stage.on('click', stageClickHandler);
+    this.props.handleSessionChange();
   };
 
   showOnlyTextNodes() {
@@ -80,6 +90,8 @@ export default class TextDrawable {
       this.all = this.all.filter(text => text.id !== id);
       this.props.forceUpdate();
     }
+
+    this.props.handleSessionChange();
   }
 
   handleMouseDown = () => this.props.toggleTextSelected(true);
@@ -105,7 +117,7 @@ export default class TextDrawable {
     textareaNode.style.top = areaPosition.y + 'px';
     textareaNode.style.left = areaPosition.x + 'px';
     textareaNode.style.width = textNode.width() - textNode.padding() * 2 + 'px';
-    textareaNode.style.height = textNode.height() - textNode.padding() * 2 + 5 + 'px';
+    textareaNode.style.height = textNode.height() - (textNode.padding() * 2) + 5 + 'px';
     textareaNode.style.fontSize = textNode.fontSize() + 'px';
     textareaNode.style.border = 'none';
     textareaNode.style.padding = '0px';
@@ -127,10 +139,12 @@ export default class TextDrawable {
     }
 
     let px = 0;
-    let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
     if (isFirefox) {
       px += 2 + Math.round(textNode.fontSize() / 20);
     }
+
     transform += 'translateY(-' + px + 'px)';
 
     textareaNode.style.transform = transform;
@@ -139,25 +153,32 @@ export default class TextDrawable {
 
     textareaNode.focus();
 
-    textareaNode.addEventListener('keydown', (e) => {
+    const keyDownHandler = (e) => {
       // hide on enter but don't hide on shift + enter
       if (e.keyCode === 13 && !e.shiftKey) {
         this.toggleTextarea(id, false);
         this.saveValue(id, textNode, textareaNode);
       }
+
       // on esc do not set value back to node
       if (e.keyCode === 27) {
         this.toggleTextarea(id, false);
       }
-    });
+    };
 
-    this.stage.on('click', (e) => {
+    textareaNode.addEventListener('keydown', keyDownHandler);
+
+    const stageClickHandler = (e) => {
       if (e.target !== this.stage) {
         return;
       }
+
       this.showOnlyTextNodes();
       this.saveValue(id, textNode, textareaNode);
-    });
+      this.stage.off('click', stageClickHandler);
+    };
+
+    this.stage.on('click', stageClickHandler);
 
     this.initializeDefault(id, isDefault);
     this.props.forceUpdate();
@@ -194,7 +215,7 @@ export default class TextDrawable {
   render(props) {
     this.setInitialProps(props);
 
-    if (props.stage && !this.props.stage) {
+    if (props.stage) {
       this.stage = props.stage;
     }
 
@@ -206,11 +227,17 @@ export default class TextDrawable {
         y,
         width,
         textVisible,
+        rotation,
         transformerVisible
       } = text;
 
       const textNode = `text_${id}`;
       const transformerNode = `transformer_${id}`;
+      const extraProps = {};
+
+      if (rotation) {
+        extraProps.rotation = rotation;
+      }
 
       return ([
           <Text
@@ -221,8 +248,12 @@ export default class TextDrawable {
             onClick={(e) => this.handleClick(e, id)}
             onDblClick={(e) => this.handleDblClick(e, text)}
             onTransform={(e) => this.handleTransform(e, textNode)}
+            onTransformEnd={this.props.handleSessionChange}
             onMouseDown={this.handleMouseDown}
             onMouseUp={this.handleMouseUp}
+            onDragEnd={this.props.handleSessionChange}
+            onMouseEnter={this.props.onMouseOverElement}
+            onMouseLeave={this.props.onMouseOutElement}
             text={label}
             name={textNode}
             x={x}
@@ -231,9 +262,11 @@ export default class TextDrawable {
             draggable
             visible={textVisible}
             fontSize={16}
+            {...extraProps}
           />,
           transformerVisible && (
             <Transformer
+              key={`transformer_${id}`}
               ref={text => { this[transformerNode] = text; }}
               selectedShapeName={textNode}
               onMouseDown={this.handleMouseDown}

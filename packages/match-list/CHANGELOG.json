@@ -298,5 +298,50 @@
     "committerDate": "2019-07-05 22:53:11 -0400",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.0"
+  },
+  {
+    "type": "fix",
+    "scope": "match-list",
+    "subject": "session completeness check fix",
+    "merge": null,
+    "header": "fix(match-list): session completeness check fix",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fde120190255a5385d35f6a58fc13256a101a6c8",
+    "gitTags": "",
+    "committerDate": "2019-11-04 15:18:50 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.6"
+  },
+  {
+    "type": "fix",
+    "scope": "match-list",
+    "subject": "add pie-player-events dependency for session change fix - ch5117",
+    "merge": null,
+    "header": "fix(match-list): add pie-player-events dependency for session change fix - ch5117",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2997d0f091bcd78454d2bf6ddbde566c379d2774",
+    "gitTags": "",
+    "committerDate": "2019-11-01 15:26:57 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.6"
+  },
+  {
+    "type": "fix",
+    "scope": "match-list",
+    "subject": "fix sessionChange api usage",
+    "merge": null,
+    "header": "fix(match-list): fix sessionChange api usage",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3638e999be6187f0d4b68b77c4fa62c80bae2413",
+    "gitTags": "",
+    "committerDate": "2019-11-01 15:23:26 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.6"
   }
 ]

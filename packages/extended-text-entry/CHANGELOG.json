@@ -963,5 +963,35 @@
     "committerDate": "2019-07-09 17:36:18 +0300",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "session change event completeness fix",
+    "merge": null,
+    "header": "fix(extended-text-entry): session change event completeness fix",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "64da860da5e673e458c15f5772e77a4c70972c50",
+    "gitTags": "",
+    "committerDate": "2019-11-04 07:57:36 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.2.5"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "fix sessionChange api usage",
+    "merge": null,
+    "header": "fix(extended-text-entry): fix sessionChange api usage",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d0ffd6558866f60534d3698750546d8c4aac0821",
+    "gitTags": "",
+    "committerDate": "2019-11-01 15:23:10 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.2.5"
   }
 ]

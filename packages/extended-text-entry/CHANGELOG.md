@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.4...@pie-ui/extended-text-entry@3.2.5) (2019-11-04)
+
+
+### Bug Fixes
+
+* **extended-text-entry:** fix sessionChange api usage ([d0ffd65](https://github.com/pie-framework/pie-ui/commit/d0ffd65))
+* **extended-text-entry:** session change event completeness fix ([64da860](https://github.com/pie-framework/pie-ui/commit/64da860))
+
+
+
+
+
 ## [3.2.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.3...@pie-ui/extended-text-entry@3.2.4) (2019-10-10)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

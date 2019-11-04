@@ -13,20 +13,181 @@ describe('isComplete', () => {
     });
   };
 
-  assertIsComplete(session([1]), { config: { prompts: [{ id: '0' }] } }, true);
   assertIsComplete(
-    session([1, 2]),
-    { config: { prompts: [{ id: '0' }] } },
+    session({
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4
+    }),
+    {
+      config: {
+        prompts: [
+          {
+            id: 3,
+            title: 'Prompt 3',
+            relatedAnswer: 3
+          },
+          {
+            id: 1,
+            title: 'Prompt 1',
+            relatedAnswer: 1
+          },
+          {
+            id: 4,
+            title: 'Prompt 4',
+            relatedAnswer: 4
+          },
+          {
+            id: 2,
+            title: 'Prompt 2',
+            relatedAnswer: 2
+          }
+        ]
+      }
+    },
+    true
+  );
+  assertIsComplete(
+    session({
+      1: 1,
+      2: 2,
+      3: 3,
+      4: undefined
+    }),
+    {
+      config: {
+        prompts: [
+          {
+            id: 3,
+            title: 'Prompt 3',
+            relatedAnswer: 3
+          },
+          {
+            id: 1,
+            title: 'Prompt 1',
+            relatedAnswer: 1
+          },
+          {
+            id: 4,
+            title: 'Prompt 4',
+            relatedAnswer: 4
+          },
+          {
+            id: 2,
+            title: 'Prompt 2',
+            relatedAnswer: 2
+          }
+        ]
+      }
+    },
+    false
+  );
+
+  assertIsComplete(
+    session({
+      1: 1,
+      2: 2,
+      3: 3
+    }),
+    {
+      config: {
+        prompts: [
+          {
+            id: 3,
+            title: 'Prompt 3',
+            relatedAnswer: 3
+          },
+          {
+            id: 1,
+            title: 'Prompt 1',
+            relatedAnswer: 1
+          },
+          {
+            id: 4,
+            title: 'Prompt 4',
+            relatedAnswer: 4
+          },
+          {
+            id: 2,
+            title: 'Prompt 2',
+            relatedAnswer: 2
+          }
+        ]
+      }
+    },
     false
   );
   assertIsComplete(
-    session([1, 2]),
-    { config: { prompts: [{ id: '1' }] } },
-    false
+    session({
+      1: 3,
+      2: 1,
+      3: 4,
+      4: 2
+    }),
+    {
+      config: {
+        prompts: [
+          {
+            id: 3,
+            title: 'Prompt 3',
+            relatedAnswer: 3
+          },
+          {
+            id: 1,
+            title: 'Prompt 1',
+            relatedAnswer: 1
+          },
+          {
+            id: 4,
+            title: 'Prompt 4',
+            relatedAnswer: 4
+          },
+          {
+            id: 2,
+            title: 'Prompt 2',
+            relatedAnswer: 2
+          }
+        ]
+      }
+    },
+    true
   );
+
   assertIsComplete(
-    session([1, 2]),
-    { config: { prompts: [{ id: '0' }, { id: '1' }] } },
+    session({
+      1: 3,
+      2: 1,
+      3: 4,
+      4: 2,
+      5: 5
+    }),
+    {
+      config: {
+        prompts: [
+          {
+            id: 3,
+            title: 'Prompt 3',
+            relatedAnswer: 3
+          },
+          {
+            id: 1,
+            title: 'Prompt 1',
+            relatedAnswer: 1
+          },
+          {
+            id: 4,
+            title: 'Prompt 4',
+            relatedAnswer: 4
+          },
+          {
+            id: 2,
+            title: 'Prompt 2',
+            relatedAnswer: 2
+          }
+        ]
+      }
+    },
     true
   );
 });

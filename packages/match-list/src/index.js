@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import debug from 'debug';
-import compact from 'lodash/compact';
 import Main from './main';
 
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
@@ -16,8 +15,17 @@ export const isComplete = (session, model) => {
   }
 
   const value = session.value;
+  let complete = true;
 
-  return value && compact(value).length === (model.config.prompts || []).length;
+  if (value) {
+    (model.config.prompts || []).forEach(prompt => {
+      if (!value[prompt.id]) {
+        complete = false;
+      }
+    })
+  }
+
+  return complete;
 };
 
 export default class MatchList extends HTMLElement {

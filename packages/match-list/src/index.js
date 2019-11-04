@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import debug from 'debug';
-import compact from 'lodash/compact';
 import Main from './main';
+
+import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 
 const log = debug('pie-ui:graph-lines');
 
 export { Main as Component };
+
+export const isComplete = (session, model) => {
+  if (!session) {
+    return false;
+  }
+
+  const value = session.value;
+  let complete = true;
+
+  if (value) {
+    (model.config.prompts || []).forEach(prompt => {
+      if (!value[prompt.id]) {
+        complete = false;
+      }
+    })
+  }
+
+  return complete;
+};
 
 export default class MatchList extends HTMLElement {
   constructor() {
@@ -25,17 +45,12 @@ export default class MatchList extends HTMLElement {
 
   sessionChanged(s) {
     this._session.value = s.value;
+
     this.dispatchEvent(
-      new CustomEvent('session-changed', {
-        bubbles: true,
-        detail: {
-          component: this.tagName.toLowerCase(),
-          complete:
-          this._session &&
-          this._session.value &&
-          compact(this._session.value).length === (this._model.config.prompts || []).length
-        }
-      })
+      new SessionChangedEvent(
+        this.tagName.toLowerCase(),
+        isComplete(this._session, this._model)
+      )
     );
 
     log('session: ', this._session);

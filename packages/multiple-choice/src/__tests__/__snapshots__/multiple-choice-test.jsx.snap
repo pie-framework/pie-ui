@@ -8,6 +8,7 @@ exports[`CorespringChoice snapshot renders 1`] = `
     show={false}
     toggled={false}
   />
+  <br />
   <div
     dangerouslySetInnerHTML={
       Object {
@@ -68,9 +69,10 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
   <br />
   <_default
     onToggle={[Function]}
-    show={false}
+    show={true}
     toggled={false}
   />
+  <br />
   <div
     dangerouslySetInnerHTML={
       Object {
@@ -115,7 +117,6 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
     <WithStyles(ChoiceInput)
       checked={false}
       className="undefined"
-      correctness="incorrect"
       disabled={false}
       displayKey=""
       feedback="great"

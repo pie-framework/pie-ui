@@ -39,8 +39,7 @@ export class MultipleChoice extends React.Component {
     onChoiceChanged: PropTypes.func.isRequired,
     responseCorrect: PropTypes.bool,
     classes: PropTypes.object.isRequired,
-    correctResponse: PropTypes.array,
-    feedbackEnabled: PropTypes.bool
+    correctResponse: PropTypes.array
   };
 
   constructor(props) {
@@ -85,6 +84,17 @@ export class MultipleChoice extends React.Component {
     return '';
   }
 
+  getCorrectness = (choice = {}) => {
+    const isCorrect = choice.correct;
+    const isChecked = this.isSelected(choice.value);
+
+    if (this.state.showCorrect) {
+      return isCorrect ? 'correct' : undefined;
+    }
+
+    return isChecked ? (isCorrect ? 'correct' : 'incorrect') : undefined;
+  };
+
   render() {
     const {
       mode,
@@ -95,14 +105,11 @@ export class MultipleChoice extends React.Component {
       onChoiceChanged,
       responseCorrect,
       teacherInstructions,
-      classes,
-      feedbackEnabled
+      classes
     } = this.props;
 
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
-
-    const correctness = (isCorrect, isChecked) => isCorrect ? (isChecked ? 'correct' : 'incorrect' ): undefined;
 
     const choiceToTag = (choice, index) => {
       const choiceClass =
@@ -120,11 +127,12 @@ export class MultipleChoice extends React.Component {
         disabled,
         feedback,
         value: choice.value,
-        correctness: isEvaluateMode ? correctness(choice.correct, checked) : undefined,
+        correctness: isEvaluateMode ? this.getCorrectness(choice) : undefined,
         displayKey: this.indexToSymbol(index),
         label: choice.label,
         rationale: choice.rationale,
-        onChange: mode === 'gather' ? onChoiceChanged : () => {}
+        onChange: mode === 'gather' ? onChoiceChanged : () => {
+        }
       };
 
       const names = classNames(classes.choice, {
@@ -133,10 +141,11 @@ export class MultipleChoice extends React.Component {
 
       return (
         <div className={choiceClass} key={index}>
-          <ChoiceInput {...choiceProps} className={names} />
+          <ChoiceInput {...choiceProps} className={names}/>
         </div>
       );
     };
+
 
     return (
       <div className={classes.corespringChoice}>
@@ -149,12 +158,13 @@ export class MultipleChoice extends React.Component {
             </Collapsible>
           )
         }
-        <br />
+        <br/>
         <CorrectAnswerToggle
-          show={isEvaluateMode && !!feedbackEnabled && !responseCorrect}
+          show={isEvaluateMode && !responseCorrect}
           toggled={this.state.showCorrect}
           onToggle={this.onToggle.bind(this)}
         />
+        <br/>
         <div
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: prompt }}

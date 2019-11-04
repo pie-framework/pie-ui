@@ -13,6 +13,33 @@ describe('isComplete', () => {
     });
   };
 
+  const testModel = {
+    config: {
+      prompts: [
+        {
+          id: 3,
+          title: 'Prompt 3',
+          relatedAnswer: 3
+        },
+        {
+          id: 1,
+          title: 'Prompt 1',
+          relatedAnswer: 1
+        },
+        {
+          id: 4,
+          title: 'Prompt 4',
+          relatedAnswer: 4
+        },
+        {
+          id: 2,
+          title: 'Prompt 2',
+          relatedAnswer: 2
+        }
+      ]
+    }
+  };
+
   assertIsComplete(
     session({
       1: 1,
@@ -20,32 +47,7 @@ describe('isComplete', () => {
       3: 3,
       4: 4
     }),
-    {
-      config: {
-        prompts: [
-          {
-            id: 3,
-            title: 'Prompt 3',
-            relatedAnswer: 3
-          },
-          {
-            id: 1,
-            title: 'Prompt 1',
-            relatedAnswer: 1
-          },
-          {
-            id: 4,
-            title: 'Prompt 4',
-            relatedAnswer: 4
-          },
-          {
-            id: 2,
-            title: 'Prompt 2',
-            relatedAnswer: 2
-          }
-        ]
-      }
-    },
+    testModel,
     true
   );
   assertIsComplete(
@@ -55,32 +57,7 @@ describe('isComplete', () => {
       3: 3,
       4: undefined
     }),
-    {
-      config: {
-        prompts: [
-          {
-            id: 3,
-            title: 'Prompt 3',
-            relatedAnswer: 3
-          },
-          {
-            id: 1,
-            title: 'Prompt 1',
-            relatedAnswer: 1
-          },
-          {
-            id: 4,
-            title: 'Prompt 4',
-            relatedAnswer: 4
-          },
-          {
-            id: 2,
-            title: 'Prompt 2',
-            relatedAnswer: 2
-          }
-        ]
-      }
-    },
+    testModel,
     false
   );
 
@@ -90,32 +67,7 @@ describe('isComplete', () => {
       2: 2,
       3: 3
     }),
-    {
-      config: {
-        prompts: [
-          {
-            id: 3,
-            title: 'Prompt 3',
-            relatedAnswer: 3
-          },
-          {
-            id: 1,
-            title: 'Prompt 1',
-            relatedAnswer: 1
-          },
-          {
-            id: 4,
-            title: 'Prompt 4',
-            relatedAnswer: 4
-          },
-          {
-            id: 2,
-            title: 'Prompt 2',
-            relatedAnswer: 2
-          }
-        ]
-      }
-    },
+    testModel,
     false
   );
   assertIsComplete(
@@ -125,32 +77,7 @@ describe('isComplete', () => {
       3: 4,
       4: 2
     }),
-    {
-      config: {
-        prompts: [
-          {
-            id: 3,
-            title: 'Prompt 3',
-            relatedAnswer: 3
-          },
-          {
-            id: 1,
-            title: 'Prompt 1',
-            relatedAnswer: 1
-          },
-          {
-            id: 4,
-            title: 'Prompt 4',
-            relatedAnswer: 4
-          },
-          {
-            id: 2,
-            title: 'Prompt 2',
-            relatedAnswer: 2
-          }
-        ]
-      }
-    },
+    testModel,
     true
   );
 
@@ -162,32 +89,7 @@ describe('isComplete', () => {
       4: 2,
       5: 5
     }),
-    {
-      config: {
-        prompts: [
-          {
-            id: 3,
-            title: 'Prompt 3',
-            relatedAnswer: 3
-          },
-          {
-            id: 1,
-            title: 'Prompt 1',
-            relatedAnswer: 1
-          },
-          {
-            id: 4,
-            title: 'Prompt 4',
-            relatedAnswer: 4
-          },
-          {
-            id: 2,
-            title: 'Prompt 2',
-            relatedAnswer: 2
-          }
-        ]
-      }
-    },
+    testModel,
     true
   );
 });

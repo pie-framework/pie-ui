@@ -10,22 +10,19 @@ const log = debug('pie-ui:graph-lines');
 
 export { Main as Component };
 
+export const isComplete = (session, model) => {
+  if (!session) {
+    return false;
+  }
+
+  const value = session.value;
+
+  return value && compact(value).length === (model.config.prompts || []).length;
+};
+
 export default class MatchList extends HTMLElement {
   constructor() {
     super();
-  }
-
-  isComplete() {
-    if (!this._session) {
-      return false;
-    }
-
-    const value = this._session.value;
-
-    return (
-      value &&
-      compact(value).length === (this._model.config.prompts || []).length
-    );
   }
 
   set model(m) {
@@ -42,7 +39,10 @@ export default class MatchList extends HTMLElement {
     this._session.value = s.value;
 
     this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), this.isComplete())
+      new SessionChangedEvent(
+        this.tagName.toLowerCase(),
+        isComplete(this._session, this._model)
+      )
     );
 
     log('session: ', this._session);

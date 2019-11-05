@@ -12,7 +12,7 @@
     "@pie-lib/charting": "^2.3.1",
     "@pie-lib/config-ui": "^10.7.36",
     "@pie-lib/correct-answer-toggle": "^2.1.2",
-    "@pie-lib/render-ui": "^4.3.12",
+    "@pie-lib/render-ui": "^4.4.5",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "react": "^16.8.1",

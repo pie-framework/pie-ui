@@ -63,6 +63,45 @@ describe('CorespringChoice', () => {
       });
     });
 
+    describe('getCorrectness', () => {
+      let itemChoices = [
+        { value: 'a', label: 'label a', correct: true, feedback: 'great' },
+        { value: 'b', label: 'label b' },
+        { value: 'c', label: 'label c', feedback: 'great' }
+      ];
+      let w = mkWrapper({
+        mode: 'evaluate',
+        choices: itemChoices,
+        session: {
+          value: ['a', 'c']
+        }
+      });
+
+      describe('showCorrectToggle disabled', () => {
+        it('shows choice correctness only if was checked', () => {
+          // this one was selected
+          expect(w.instance().getCorrectness(itemChoices[0])).toEqual('correct');
+          // this one was not selected
+          expect(w.instance().getCorrectness(itemChoices[1])).toEqual(undefined);
+          // this one was selected, but not correct
+          expect(w.instance().getCorrectness(itemChoices[2])).toEqual('incorrect');
+        });
+      });
+
+      describe('showCorrectToggle enabled', () => {
+        it('shows choice correctness no matter if was checked or not', () => {
+          w.instance().state.showCorrect = true;
+
+          // this one is correct
+          expect(w.instance().getCorrectness(itemChoices[0])).toEqual('correct');
+          // this one is not correct
+          expect(w.instance().getCorrectness(itemChoices[1])).toEqual(undefined);
+          // this one is not correct
+          expect(w.instance().getCorrectness(itemChoices[2])).toEqual(undefined);
+        });
+      });
+    });
+
     describe('onToggle', () => {
       it('toggles the state', () => {
         let w = mkWrapper({ mode: 'evaluate' });

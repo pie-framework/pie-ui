@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.6...@pie-ui/match-list@1.4.7) (2019-11-05)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
+## [1.4.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.5...@pie-ui/match-list@1.4.6) (2019-11-04)
+
+
+### Bug Fixes
+
+* **match-list:** add pie-player-events dependency for session change fix - ch5117 ([2997d0f](https://github.com/pie-framework/pie-ui/commit/2997d0f))
+* **match-list:** fix sessionChange api usage ([3638e99](https://github.com/pie-framework/pie-ui/commit/3638e99))
+* **match-list:** session completeness check fix ([fde1201](https://github.com/pie-framework/pie-ui/commit/fde1201))
+
+
+
+
+
 ## [1.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.4...@pie-ui/match-list@1.4.5) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/match-list

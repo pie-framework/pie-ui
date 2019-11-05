@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.12...@pie-ui/match@2.3.13) (2019-11-04)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
 ## [2.3.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.11...@pie-ui/match@2.3.12) (2019-11-01)
 
 

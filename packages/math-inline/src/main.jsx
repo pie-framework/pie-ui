@@ -102,6 +102,7 @@ export class Main extends React.Component {
 
       if (!registered) {
         MQ.registerEmbed('answerBlock', data => {
+          console.log('!! data:', data);
           return {
             htmlString: `<div class="${classes.blockContainer}">
                 <div class="${classes.blockResponse}" id="${data}Index">R</div>
@@ -124,17 +125,21 @@ export class Main extends React.Component {
     const { session, showCorrect } = this.state;
     const answers = session.answers;
 
+    console.log('handleAnswerBlockDomUpdate', answers);
+
     if (this.root && model.disabled && !showCorrect) {
       Object.keys(answers).forEach(answerId => {
         const el = this.root.querySelector(`#${answerId}`);
         const indexEl = this.root.querySelector(`#${answerId}Index`);
         // const correct = model.correctness && model.correctness.correct;
 
+        console.log('handleAnswerBlockDomUpdate, el:', el);
         if (el) {
           const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
           const answer = answers[answerId];
 
+          console.log('handleAnswerBlockDomUpdate', answer);
           el.textContent = (answer && answer.value) || '';
 
           if (!model.view) {
@@ -214,7 +219,8 @@ export class Main extends React.Component {
   }
 
   componentDidMount() {
-    renderMath(this.root);
+    this.handleAnswerBlockDomUpdate();
+    // renderMath(this.root);
   }
 
   onDone = () => {};
@@ -322,7 +328,9 @@ export class Main extends React.Component {
 
     const additionalKeys = generateAdditionalKeys(model.config.customKeys);
     const correct = model.correctness && model.correctness.correct;
+    const staticLatex = prepareForStatic(model, state) || '';
 
+    console.log('static latex:', staticLatex);
     return (
       <div
         className={classes.mainContainer}
@@ -373,7 +381,7 @@ export class Main extends React.Component {
             >
               <mq.Static
                 ref={mqStatic => (this.mqStatic = mqStatic || this.mqStatic)}
-                latex={prepareForStatic(model, state) || ''}
+                latex={staticLatex}
                 onSubFieldChange={this.subFieldChanged}
                 getFieldName={this.getFieldName}
                 setInput={this.setInput}

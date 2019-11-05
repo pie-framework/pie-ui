@@ -1148,5 +1148,20 @@
     "committerDate": "2019-10-23 10:55:12 -0400",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.11.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PIE-58 - `feedbackEnabled` does not affect show correct answer.",
+    "merge": null,
+    "header": "fix: PIE-58 - `feedbackEnabled` does not affect show correct answer.",
+    "body": "feedbackEnabled should not be the property that decides whether the Show Correct Answer Toggle should be displayed or not. At evaluate, we should show if the selected answer is correct or not, and when clicking on the toggle we should show the correct answer.",
+    "footer": null,
+    "notes": [],
+    "hash": "188d8b881ad40974ab4d7d4373e677cacf0d38c7",
+    "gitTags": " (origin/fix/pie-58, origin/develop, origin/HEAD, develop)",
+    "committerDate": "2019-11-05 11:39:13 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.8"
   }
 ]

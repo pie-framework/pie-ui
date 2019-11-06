@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.7...@pie-ui/math-inline@3.0.8) (2019-11-06)
+
+
+### Bug Fixes
+
+* **math-inline:** fix session value population for evaluate mode and small styling adjustment ([c24ad26](https://github.com/pie-framework/pie-ui/commit/c24ad26))
+
+
+
+
+
 ## [3.0.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.6...@pie-ui/math-inline@3.0.7) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/math-inline

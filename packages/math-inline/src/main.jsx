@@ -214,7 +214,8 @@ export class Main extends React.Component {
   }
 
   componentDidMount() {
-    renderMath(this.root);
+    this.handleAnswerBlockDomUpdate();
+    setTimeout(() => renderMath(this.root), 100);
   }
 
   onDone = () => {};
@@ -368,7 +369,8 @@ export class Main extends React.Component {
                 [classes.incorrect]: !correct,
                 [classes.correct]: correct,
                 [classes.showCorrectness]:
-                  model.disabled && model.correctness && !model.view
+                  model.disabled && model.correctness && !model.view,
+                [classes.correctAnswerShown]: showCorrect
               })}
             >
               <mq.Static
@@ -456,7 +458,11 @@ const styles = theme => ({
     }
   },
   showCorrectness: {
-    border: '2px solid'
+    border: '2px solid',
+  },
+  correctAnswerShown: {
+    padding: theme.spacing.unit,
+    letterSpacing: '0.5px'
   },
   correct: {
     borderColor: 'green !important'

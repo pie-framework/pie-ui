@@ -968,5 +968,20 @@
     "committerDate": "2019-10-10 19:59:12 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.4"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "fix session value population for evaluate mode and small styling adjustment",
+    "merge": null,
+    "header": "fix(math-inline): fix session value population for evaluate mode and small styling adjustment",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c24ad26589bcc800a3a5949d3bb6801719c0641c",
+    "gitTags": "",
+    "committerDate": "2019-11-06 13:12:32 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.8"
   }
 ]

@@ -328,5 +328,20 @@
     "committerDate": "2019-07-15 18:55:02 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.6.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PIE-110 upgrade @pie-lib/mask-markup@^1.5.3",
+    "merge": null,
+    "header": "fix: PIE-110 upgrade @pie-lib/mask-markup@^1.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8fd8d8a9d5151881757eb4c2929e2c0bd0dfa8c0",
+    "gitTags": "",
+    "committerDate": "2019-11-07 11:04:25 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.7.6"
   }
 ]

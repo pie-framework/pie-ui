@@ -283,5 +283,20 @@
     "committerDate": "2019-07-15 19:06:32 +0300",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.6.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PIE-110 upgrade @pie-lib/mask-markup@^1.5.3",
+    "merge": null,
+    "header": "fix: PIE-110 upgrade @pie-lib/mask-markup@^1.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "09c72c7d29c457f497c52f87ebcd9334327d949d",
+    "gitTags": "",
+    "committerDate": "2019-11-07 11:04:51 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.7.6"
   }
 ]

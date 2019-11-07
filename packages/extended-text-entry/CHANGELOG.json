@@ -993,5 +993,20 @@
     "committerDate": "2019-11-01 15:23:10 +0200",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.2.5"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "completeness check to include empty or broken html too - PIE-173",
+    "merge": null,
+    "header": "fix(extended-text-entry): completeness check to include empty or broken html too - PIE-173",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0437d53c1d0ae13ac810c72960a88d4093e2f23e",
+    "gitTags": "",
+    "committerDate": "2019-11-07 13:44:31 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.2.8"
   }
 ]

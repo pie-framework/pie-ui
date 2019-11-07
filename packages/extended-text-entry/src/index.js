@@ -5,6 +5,31 @@ import {
   ModelSetEvent,
   SessionChangedEvent
 } from '@pie-framework/pie-player-events';
+import debug from 'debug';
+
+const log = debug('@pie-ui:extended-text-entry');
+
+const domParser = new DOMParser();
+
+export function isComplete(value) {
+  if (!value || value.length === 0) {
+    return false;
+  }
+
+  if (value.length > 0) {
+    try {
+      const document = domParser.parseFromString(value, 'text/html');
+      const textContent = document.body.textContent;
+
+      return textContent.length > 0;
+    } catch (err) {
+      log('tried to parse as dom and failed', value);
+      return true;
+    }
+  }
+
+  return false;
+}
 
 export default class RootExtendedTextEntry extends HTMLElement {
   constructor() {
@@ -31,7 +56,7 @@ export default class RootExtendedTextEntry extends HTMLElement {
     this._session.value = value;
 
     this.dispatchEvent(
-      new SessionChangedEvent(this.tagName.toLowerCase(), value && value.length > 0)
+      new SessionChangedEvent(this.tagName.toLowerCase(), isComplete(value))
     );
   }
 

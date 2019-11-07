@@ -9,26 +9,27 @@ import debug from 'debug';
 
 const log = debug('@pie-ui:extended-text-entry');
 
-const domParser = new DOMParser();
+const domParser =
+  typeof window !== undefined ? new DOMParser() : { parseFromString: v => v };
+
+export function textContent(value) {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+  try {
+    const document = domParser.parseFromString(value, 'text/html');
+    const textContent = document.body.textContent;
+    return textContent;
+  } catch (err) {
+    log('tried to parse as dom and failed', value);
+    return value;
+  }
+}
 
 export function isComplete(value) {
-  if (!value || value.length === 0) {
-    return false;
-  }
-
-  if (value.length > 0) {
-    try {
-      const document = domParser.parseFromString(value, 'text/html');
-      const textContent = document.body.textContent;
-
-      return textContent.length > 0;
-    } catch (err) {
-      log('tried to parse as dom and failed', value);
-      return true;
-    }
-  }
-
-  return false;
+  const tc = textContent(value);
+  const out = tc !== undefined && tc.length > 0;
+  return out;
 }
 
 export default class RootExtendedTextEntry extends HTMLElement {

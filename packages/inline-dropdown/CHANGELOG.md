@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.7.5...@pie-ui/inline-dropdown@1.7.6) (2019-11-07)
+
+
+### Bug Fixes
+
+* PIE-110 upgrade @pie-lib/mask-markup@^1.5.3 ([09c72c7](https://github.com/pie-framework/pie-ui/commit/09c72c7))
+
+
+
+
+
 ## [1.7.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.7.4...@pie-ui/inline-dropdown@1.7.5) (2019-10-10)
 
 **Note:** Version bump only for package @pie-ui/inline-dropdown

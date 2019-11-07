@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.3...@pie-ui/explicit-constructed-response@1.7.4) (2019-11-07)
+
+
+### Bug Fixes
+
+* PIE-110 upgrade @pie-lib/mask-markup@^1.5.3 ([ae5caaa](https://github.com/pie-framework/pie-ui/commit/ae5caaa))
+
+
+
+
+
 ## [1.7.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.2...@pie-ui/explicit-constructed-response@1.7.3) (2019-10-10)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

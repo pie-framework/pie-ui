@@ -2213,10 +2213,10 @@
     classnames "^2.2.6"
     prop-types "^15.6.2"
 
-"@pie-lib/mask-markup@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.5.0.tgz#e545299bbc25b6e46316d5e189947bb989795586"
-  integrity sha512-1tXnc8cKdA532NKvFtl2CaYTJi/uGfj2DYqs6xutOgUVnLI1Pb7rZpsDJX1ANPWQcrf47q0ViEU6gctnHwiKZw==
+"@pie-lib/mask-markup@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.5.3.tgz#88dfeb5d6471252ddac9ef3b4179d54c87e96aa3"
+  integrity sha512-+cqlpvhIcvnXB4TddJbvojB3UiW7Z5IUG06mJFfqsn65puzI+rG9qsCRpdjA5J+48fMMA6F7M9eYdLoA1Jyikg==
   dependencies:
     "@material-ui/core" "^3.9.3"
     "@pie-lib/drag" "^1.1.21"

@@ -55,6 +55,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "@pie-lib/math-rendering": "^1.2.9"
+    "@pie-lib/math-rendering": "^1.2.9",
+    "ncu": "^0.2.1"
   }
 }

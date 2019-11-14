@@ -46,7 +46,6 @@ export default class TextDrawable {
 
       this.showOnlyTextNodes();
       this.props.forceUpdate();
-      this.stage.off('click', stageClickHandler);
     };
 
     this.stage.on('click', stageClickHandler);
@@ -168,17 +167,14 @@ export default class TextDrawable {
 
     textareaNode.addEventListener('keydown', keyDownHandler);
 
-    const stageClickHandler = (e) => {
-      if (e.target !== this.stage) {
-        return;
-      }
-
+    const blurHandler = () => {
       this.showOnlyTextNodes();
       this.saveValue(id, textNode, textareaNode);
-      this.stage.off('click', stageClickHandler);
+
+      textareaNode.removeEventListener('blur', blurHandler);
     };
 
-    this.stage.on('click', stageClickHandler);
+    textareaNode.addEventListener('blur', blurHandler);
 
     this.initializeDefault(id, isDefault);
     this.props.forceUpdate();

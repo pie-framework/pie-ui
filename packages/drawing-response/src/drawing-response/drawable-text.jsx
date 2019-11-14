@@ -39,16 +39,6 @@ export default class TextDrawable {
       type: 'text-entry'
     });
 
-    const stageClickHandler = (e) => {
-      if (e.target !== this.stage) {
-        return;
-      }
-
-      this.showOnlyTextNodes();
-      this.props.forceUpdate();
-    };
-
-    this.stage.on('click', stageClickHandler);
     this.props.handleSessionChange();
   };
 
@@ -170,8 +160,6 @@ export default class TextDrawable {
     const blurHandler = () => {
       this.showOnlyTextNodes();
       this.saveValue(id, textNode, textareaNode);
-
-      textareaNode.removeEventListener('blur', blurHandler);
     };
 
     textareaNode.addEventListener('blur', blurHandler);
@@ -212,7 +200,23 @@ export default class TextDrawable {
     this.setInitialProps(props);
 
     if (props.stage) {
-      this.stage = props.stage;
+      const newStage = props.stage;
+
+      // setting the handler only once
+      if (newStage !== this.stage) {
+        const stageClickHandler = (e) => {
+          if (e.target !== this.stage) {
+            return;
+          }
+
+          this.showOnlyTextNodes();
+          this.props.forceUpdate();
+        };
+
+        newStage.on('click', stageClickHandler);
+      }
+
+      this.stage = newStage;
     }
 
     return this.all.map(text => {

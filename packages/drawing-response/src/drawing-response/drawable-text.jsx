@@ -14,7 +14,10 @@ export default class TextDrawable {
 
   constructor(props) {
     this.all = props && props.all || [];
+    this.eventListenersDetachArray = [];
   }
+
+  removeEventListeners = () => this.eventListenersDetachArray.forEach(fn => fn());
 
   setAll = (all) => {
     this.all = all;
@@ -157,12 +160,16 @@ export default class TextDrawable {
 
     textareaNode.addEventListener('keydown', keyDownHandler);
 
+    this.eventListenersDetachArray.push(() => textareaNode.removeEventListener('keydown', keyDownHandler));
+
     const blurHandler = () => {
       this.showOnlyTextNodes();
       this.saveValue(id, textNode, textareaNode);
     };
 
     textareaNode.addEventListener('blur', blurHandler);
+
+    this.eventListenersDetachArray.push(() => textareaNode.removeEventListener('blur', blurHandler));
 
     this.initializeDefault(id, isDefault);
     this.props.forceUpdate();
@@ -214,6 +221,8 @@ export default class TextDrawable {
         };
 
         newStage.on('click', stageClickHandler);
+
+        this.eventListenersDetachArray.push(() => newStage.off('click', stageClickHandler));
       }
 
       this.stage = newStage;

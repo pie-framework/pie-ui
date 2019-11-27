@@ -14,7 +14,10 @@ export default class TextDrawable {
 
   constructor(props) {
     this.all = props && props.all || [];
+    this.eventListenersDetachArray = [];
   }
+
+  removeEventListeners = () => this.eventListenersDetachArray.forEach(fn => fn());
 
   setAll = (all) => {
     this.all = all;
@@ -39,17 +42,6 @@ export default class TextDrawable {
       type: 'text-entry'
     });
 
-    const stageClickHandler = (e) => {
-      if (e.target !== this.stage) {
-        return;
-      }
-
-      this.showOnlyTextNodes();
-      this.props.forceUpdate();
-      this.stage.off('click', stageClickHandler);
-    };
-
-    this.stage.on('click', stageClickHandler);
     this.props.handleSessionChange();
   };
 
@@ -168,17 +160,16 @@ export default class TextDrawable {
 
     textareaNode.addEventListener('keydown', keyDownHandler);
 
-    const stageClickHandler = (e) => {
-      if (e.target !== this.stage) {
-        return;
-      }
+    this.eventListenersDetachArray.push(() => textareaNode.removeEventListener('keydown', keyDownHandler));
 
+    const blurHandler = () => {
       this.showOnlyTextNodes();
       this.saveValue(id, textNode, textareaNode);
-      this.stage.off('click', stageClickHandler);
     };
 
-    this.stage.on('click', stageClickHandler);
+    textareaNode.addEventListener('blur', blurHandler);
+
+    this.eventListenersDetachArray.push(() => textareaNode.removeEventListener('blur', blurHandler));
 
     this.initializeDefault(id, isDefault);
     this.props.forceUpdate();
@@ -216,7 +207,25 @@ export default class TextDrawable {
     this.setInitialProps(props);
 
     if (props.stage) {
-      this.stage = props.stage;
+      const newStage = props.stage;
+
+      // setting the handler only once
+      if (newStage !== this.stage) {
+        const stageClickHandler = (e) => {
+          if (e.target !== this.stage) {
+            return;
+          }
+
+          this.showOnlyTextNodes();
+          this.props.forceUpdate();
+        };
+
+        newStage.on('click', stageClickHandler);
+
+        this.eventListenersDetachArray.push(() => newStage.off('click', stageClickHandler));
+      }
+
+      this.stage = newStage;
     }
 
     return this.all.map(text => {

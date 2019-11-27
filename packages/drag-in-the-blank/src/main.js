@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
@@ -12,10 +11,6 @@ const DraggableDragInTheBlank = withDragContext(DragInTheBlank);
 
 export class Main extends React.Component {
   static propTypes = {
-    prompt: PropTypes.string,
-    rationale: PropTypes.string,
-    disabled: PropTypes.bool,
-    markup: PropTypes.string,
     model: PropTypes.object,
     value: PropTypes.object,
     feedback: PropTypes.object,
@@ -29,12 +24,6 @@ export class Main extends React.Component {
   state = {
     showCorrectAnswer: false
   };
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (isEmpty(nextProps.feedback)) {
-      this.setState({ showCorrectAnswer: false });
-    }
-  }
 
   componentDidUpdate() {
     // eslint-disable-next-line

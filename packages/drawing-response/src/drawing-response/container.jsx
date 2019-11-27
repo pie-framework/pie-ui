@@ -66,6 +66,12 @@ class Container extends Component {
     this.setDimensions();
   }
 
+  componentWillUnmount() {
+    const { TextEntry } = this.state;
+
+    TextEntry.removeEventListeners();
+  }
+
   handleMakeToolActive(tool) {
     const { TextEntry } = this.state;
     const { type } = tool;

@@ -6,17 +6,6 @@ import {
 } from '@pie-framework/pie-player-events';
 import Main from './main';
 
-// import MarkupAndChoices from './markup-and-choices';
-
-// const toConfig = fields => {
-//   return Object.keys(fields).reduce((acc, k) => {
-//     acc[k] = {
-//       choices: fields[k]
-//     };
-//     return acc;
-//   }, {});
-// };
-
 export default class InlineDropdown extends HTMLElement {
   constructor() {
     super();

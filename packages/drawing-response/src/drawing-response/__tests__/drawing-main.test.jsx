@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import cloneDeep from 'lodash/cloneDeep';
 import FreePathDrawable from '../drawable-free-path';
 import LineDrawable from '../drawable-line';
 import RectangleDrawable from '../drawable-rectangle';
@@ -499,29 +500,6 @@ describe('DrawingResponse', () => {
           expect(handleSessionChange).toHaveBeenCalled();
         });
 
-        it('shoud handle stage click properly', () => {
-          element.addNewTextEntry();
-
-          expect(stage.on).toHaveBeenCalled();
-          expect(handleSessionChange).toHaveBeenCalled();
-
-          const spy = jest.spyOn(element, 'showOnlyTextNodes');
-          const event = { target: null };
-
-          stage.on.mock.calls[0][1](event);
-
-          expect(spy).not.toBeCalled();
-          expect(stage.off).not.toBeCalled();
-
-          event.target = stage;
-
-          stage.on.mock.calls[0][1](event);
-
-          expect(forceUpdate).toHaveBeenCalled();
-          expect(spy).toHaveBeenCalled();
-          expect(stage.off).toHaveBeenCalled();
-        });
-
       });
 
       describe('showOnlyTextNodes', () => {
@@ -694,10 +672,11 @@ describe('DrawingResponse', () => {
           });
 
           expect(textareaNode.focus).toHaveBeenCalled();
-          expect(textareaNode.addEventListener).toHaveBeenCalled();
           expect(stage.on).toHaveBeenCalled();
           expect(initSpy).toHaveBeenCalledWith('gcifqhhimf8k2d6g8hs', false);
           expect(forceUpdate).toHaveBeenCalled();
+          expect(textareaNode.addEventListener.mock.calls[0][0]).toEqual('keydown');
+          expect(textareaNode.addEventListener.mock.calls[1][0]).toEqual('blur');
 
           const event = {
             keyCode: 13,
@@ -725,20 +704,12 @@ describe('DrawingResponse', () => {
 
           const showTextSpy = jest.spyOn(element, 'showOnlyTextNodes');
 
-          event.target = null;
-
-          stage.on.mock.calls[0][1](event);
-
-          expect(showTextSpy).not.toBeCalled();
-          expect(saveValueSpy).toHaveBeenCalledTimes(1);
-
           event.target = stage;
 
           stage.on.mock.calls[0][1](event);
 
           expect(showTextSpy).toHaveBeenCalled();
           expect(saveValueSpy).toHaveBeenCalledWith('gcifqhhimf8k2d6g8hs', textNode, textareaNode);
-          expect(stage.off).toHaveBeenCalled();
         });
 
       });
@@ -771,6 +742,32 @@ describe('DrawingResponse', () => {
           element.setInitialProps(props);
 
           expect(element.props).toEqual(props);
+
+        });
+
+      });
+
+      describe('render', () => {
+
+        it('should set the stage listener only once', () => {
+          const separateStage = {
+            on: jest.fn(),
+            off: jest.fn()
+          };
+          const newProps = {
+            ...cloneDeep(props),
+            stage: separateStage
+          };
+          const newElement = new drawableClasses['DrawableText'](newProps);
+
+          expect(newElement.stage).toEqual(undefined);
+
+          newElement.render(newProps);
+          expect(newElement.stage).toEqual(separateStage);
+
+          newElement.render(newProps);
+
+          expect(separateStage.on.mock.calls.length).toEqual(1);
 
         });
 

@@ -613,5 +613,50 @@
     "committerDate": "2019-10-31 10:18:29 +0200",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.5.0"
+  },
+  {
+    "type": "feat",
+    "scope": "drawing-response",
+    "subject": "removed event listeners on unmount",
+    "merge": null,
+    "header": "feat(drawing-response): removed event listeners on unmount",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "721eb91d3a6ae1774b43029c1c9c9d55f5d14ba2",
+    "gitTags": " (origin/PIE-196/text-not-saved)",
+    "committerDate": "2019-11-14 15:28:04 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.0"
+  },
+  {
+    "type": "feat",
+    "scope": "drawing-response",
+    "subject": "text not being saved when it shouldve",
+    "merge": null,
+    "header": "feat(drawing-response): text not being saved when it shouldve",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3bd472598357e74f917001b24d57126d2874d041",
+    "gitTags": "",
+    "committerDate": "2019-11-14 12:17:33 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.0"
+  },
+  {
+    "type": "feat",
+    "scope": "drawing-response",
+    "subject": "text not being saved when it shouldve",
+    "merge": null,
+    "header": "feat(drawing-response): text not being saved when it shouldve",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "99551cf3f62e73d9c981b4941ea4d22eb8dc82bb",
+    "gitTags": "",
+    "committerDate": "2019-11-14 11:50:34 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.0"
   }
 ]

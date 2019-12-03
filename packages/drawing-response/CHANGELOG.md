@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.5.2...@pie-ui/drawing-response@1.6.0) (2019-12-03)
+
+
+### Features
+
+* **drawing-response:** removed event listeners on unmount ([721eb91](https://github.com/pie-framework/pie-elements/commit/721eb91))
+* **drawing-response:** text not being saved when it shouldve ([3bd4725](https://github.com/pie-framework/pie-elements/commit/3bd4725))
+* **drawing-response:** text not being saved when it shouldve ([99551cf](https://github.com/pie-framework/pie-elements/commit/99551cf))
+
+
+
+
+
 ## [1.5.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.5.1...@pie-ui/drawing-response@1.5.2) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/drawing-response

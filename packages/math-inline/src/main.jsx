@@ -312,6 +312,14 @@ export class Main extends React.Component {
     }
   };
 
+  onBlur = (e) => {
+    const { relatedTarget, currentTarget } = e || {};
+
+    if (!relatedTarget || !currentTarget || (relatedTarget.offsetParent !== currentTarget.offsetParent)) {
+      this.setState({ activeAnswerBlock: '' });
+    }
+  };
+
   render() {
     const { model, classes } = this.props;
     const state = this.state;
@@ -381,13 +389,7 @@ export class Main extends React.Component {
                 getFieldName={this.getFieldName}
                 setInput={this.setInput}
                 onSubFieldFocus={this.onSubFieldFocus}
-                onBlur={(e) => {
-                  const { relatedTarget, currentTarget } = e || {};
-
-                  if (!relatedTarget || !currentTarget || (relatedTarget.offsetParent !== currentTarget.offsetParent)) {
-                    this.setState({ activeAnswerBlock: '' });
-                  }
-                }}
+                onBlur={this.onBlur}
               />
             </div>
           )}

@@ -155,6 +155,29 @@ describe('Math-Inline Main', () => {
       });
     });
 
+    it('correctly keeps the keypad open', () => {
+      wrapper = component();
+
+      expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
+      wrapper.instance().onSubFieldFocus('r1');
+      wrapper.instance().onBlur({
+        relatedTarget: { offsetParent: 'editor1'},
+        currentTarget: { offsetParent: 'editor1'}
+      });
+      expect(wrapper.state().activeAnswerBlock).toEqual('r1');
+    });
+
+    it('correctly hides the keypad', () => {
+      wrapper = component();
+
+      expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
+      wrapper.instance().onBlur({
+        relatedTarget: { offsetParent: 'editor1'},
+        currentTarget: { offsetParent: 'editor2'}
+      });
+      expect(wrapper.state().activeAnswerBlock).toEqual('');
+    });
+
     it('correctly pre-populates answers from session', () => {
       wrapper = component({
         session: {

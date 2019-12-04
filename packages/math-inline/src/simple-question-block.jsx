@@ -13,6 +13,11 @@ export class SimpleQuestionBlockRaw extends React.Component {
     session: PropTypes.object.isRequired,
     showCorrect: PropTypes.bool
   };
+
+  state = {
+    showKeypad: true
+  };
+
   render() {
     const {
       classes,
@@ -57,6 +62,17 @@ export class SimpleQuestionBlockRaw extends React.Component {
             keypadMode={equationEditor}
             onChange={onSimpleResponseChange}
             onDone={() => {}}
+            onFocus={() => this.setState({ showKeypad: true })}
+            onBlur={(e) => {
+              const { relatedTarget, currentTarget } = e || {};
+
+              if (!relatedTarget || !currentTarget || (relatedTarget.offsetParent !== currentTarget.offsetParent)) {
+                this.setState({ showKeypad: false });
+              }
+            }}
+            controlledKeypad={true}
+            showKeypad={this.state.showKeypad}
+            hideDoneButton={true}
           />
         )}
       </div>

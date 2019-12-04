@@ -381,6 +381,13 @@ export class Main extends React.Component {
                 getFieldName={this.getFieldName}
                 setInput={this.setInput}
                 onSubFieldFocus={this.onSubFieldFocus}
+                onBlur={(e) => {
+                  const { relatedTarget, currentTarget } = e || {};
+
+                  if (!relatedTarget || !currentTarget || (relatedTarget.offsetParent !== currentTarget.offsetParent)) {
+                    this.setState({ activeAnswerBlock: '' });
+                  }
+                }}
               />
             </div>
           )}

@@ -92,7 +92,23 @@ export class MultipleChoice extends React.Component {
       return isCorrect ? 'correct' : undefined;
     }
 
-    return isChecked ? (isCorrect ? 'correct' : 'incorrect') : undefined;
+    if (isCorrect) {
+      if (isChecked) {
+        // A correct answer is selected: marked with a green checkmark
+        return 'correct';
+      } else {
+        // A correct answer is NOT selected: marked with an orange X
+        return 'incorrect';
+      }
+    } else {
+      if (isChecked) {
+        // An incorrect answer is selected: marked with an orange X
+        return 'incorrect';
+      } else {
+        // An incorrect answer is NOT selected: not marked
+        return undefined;
+      }
+    }
   };
 
   render() {

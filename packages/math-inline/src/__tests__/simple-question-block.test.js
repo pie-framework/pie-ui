@@ -73,4 +73,29 @@ describe('SimpleQuestionBlock', () => {
     expect(component.find(MathToolbar).length).toEqual(0);
     expect(component.find(mq.Static).props().latex).toEqual('n=-11');
   });
+
+  it('correctly keeps the keypad open', () => {
+    component = wrapper();
+
+    component.instance().onFocus();
+    expect(component.state().showKeypad).toEqual(true);
+    component.instance().onBlur({
+      relatedTarget: { offsetParent: 'editor1'},
+      currentTarget: { offsetParent: 'editor1'}
+    });
+    expect(component.state().showKeypad).toEqual(true);
+  });
+
+  it('correctly hides the keypad', () => {
+    component = wrapper();
+
+    component.instance().onFocus();
+    expect(component.state().showKeypad).toEqual(true);
+    component.instance().onBlur({
+      relatedTarget: { offsetParent: 'editor1'},
+      currentTarget: { offsetParent: 'editor2'}
+    });
+    expect(component.state().showKeypad).toEqual(false);
+
+  });
 });

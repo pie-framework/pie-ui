@@ -117,6 +117,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
     <WithStyles(ChoiceInput)
       checked={false}
       className="undefined"
+      correctness="incorrect"
       disabled={false}
       displayKey=""
       feedback="great"

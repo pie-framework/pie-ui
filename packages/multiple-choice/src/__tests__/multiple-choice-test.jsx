@@ -67,7 +67,8 @@ describe('CorespringChoice', () => {
       let itemChoices = [
         { value: 'a', label: 'label a', correct: true, feedback: 'great' },
         { value: 'b', label: 'label b' },
-        { value: 'c', label: 'label c', feedback: 'great' }
+        { value: 'c', label: 'label c', feedback: 'great' },
+        { value: 'd', label: 'label d', correct: true, feedback: 'great' }
       ];
       let w = mkWrapper({
         mode: 'evaluate',
@@ -77,18 +78,20 @@ describe('CorespringChoice', () => {
         }
       });
 
-      describe('showCorrectToggle disabled', () => {
+      describe('showCorrectToggle disabled (state.showCorrect is false)', () => {
         it('shows choice correctness only if was checked', () => {
-          // this one was selected
+          // this one was selected and is correct
           expect(w.instance().getCorrectness(itemChoices[0])).toEqual('correct');
-          // this one was not selected
+          // this one was not selected and is incorrect
           expect(w.instance().getCorrectness(itemChoices[1])).toEqual(undefined);
-          // this one was selected, but not correct
+          // this one was selected, but is incorrect
           expect(w.instance().getCorrectness(itemChoices[2])).toEqual('incorrect');
+          // this one was not selected and is correct
+          expect(w.instance().getCorrectness(itemChoices[3])).toEqual('incorrect');
         });
       });
 
-      describe('showCorrectToggle enabled', () => {
+      describe('showCorrectToggle enabled (state.showCorrect is true)', () => {
         it('shows choice correctness no matter if was checked or not', () => {
           w.instance().state.showCorrect = true;
 
@@ -98,6 +101,8 @@ describe('CorespringChoice', () => {
           expect(w.instance().getCorrectness(itemChoices[1])).toEqual(undefined);
           // this one is not correct
           expect(w.instance().getCorrectness(itemChoices[2])).toEqual(undefined);
+          // this one is correct
+          expect(w.instance().getCorrectness(itemChoices[3])).toEqual('correct');
         });
       });
     });

@@ -1163,5 +1163,20 @@
     "committerDate": "2019-11-05 11:39:13 +0000",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.11.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "ch6010: Updated the way a choice correctness is determined.",
+    "merge": null,
+    "header": "fix: ch6010: Updated the way a choice correctness is determined.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0352d10deb37677ea8d204a478d1297faaab084e",
+    "gitTags": " (origin/andreea/ch6010/evaluate-not-working-correctly-for-multiple)",
+    "committerDate": "2019-12-06 16:19:22 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.10"
   }
 ]

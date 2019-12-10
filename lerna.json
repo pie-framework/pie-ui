@@ -6,7 +6,12 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "ignoreChanges": ["yarn.lock", "CHANGELOG.md", "CHANGELOG.json"],
+      "ignoreChanges": [
+        "yarn.lock",
+        "CHANGELOG.md",
+        "CHANGELOG.json",
+        "LICENSE.md"
+      ],
       "message": "[ci skip] chore: publish"
     }
   }

@@ -4,16 +4,16 @@ import { Rect } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class RectangleDrawable extends DrawableHelper {
+  static TYPE = 'RectangleDrawable';
   constructor(props) {
-    super(props);
+    super(props, RectangleDrawable.TYPE);
     const { startx, starty, x, y } = props;
-
     this.startx = startx;
     this.starty = starty;
     this.x = x || startx;
     this.y = y || starty;
-    this.width = (x - startx) || 0;
-    this.height = (y - starty) || 0;
+    this.width = x - startx || 0;
+    this.height = y - starty || 0;
   }
 
   registerMovement(x, y) {
@@ -40,7 +40,7 @@ export default class RectangleDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Rect

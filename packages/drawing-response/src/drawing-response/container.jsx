@@ -11,17 +11,24 @@ import Icon from './icon';
 
 const { tools: TOOLS } = constants;
 const ROGVAIV = [
-  { value: 'red', label: 'red' },
-  { value: 'orange', label: 'orange' },
-  { value: 'yellow', label: 'yellow' },
-  { value: 'violet', label: 'violet' },
-  { value: 'blue', label: 'blue' },
-  { value: 'green', label: 'green' },
-  { value: 'white', label: 'white' },
-  { value: 'black', label: 'black' }
-];
+  'red',
+  'orange',
+  'yellow',
+  'violet',
+  'blue',
+  'green',
+  'white',
+  'black'
+].map(c => ({ value: c, label: c }));
 
-class Container extends Component {
+export class Container extends Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    session: PropTypes.object.isRequired,
+    onSessionChange: PropTypes.func.isRequired,
+    imageDimensions: PropTypes.object.isRequired,
+    imageUrl: PropTypes.string.isRequired
+  };
   constructor(props) {
     super(props);
     const TextEntry = new DrawableText();
@@ -49,14 +56,20 @@ class Container extends Component {
 
   setDimensions() {
     const checkExist = setInterval(() => {
-      const { height, width } = this.drawable.getBoundingClientRect();
-      if (height !== 0 && width !== 0) {
-        this.setState({
-          drawableDimensions: {
-            height,
-            width
-          }
-        });
+      try {
+        const { height, width } = this.drawable.getBoundingClientRect();
+        if (height !== 0 && width !== 0) {
+          this.setState({
+            drawableDimensions: {
+              height,
+              width
+            }
+          });
+        }
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn('setDimensions Error: ', e);
+      } finally {
         clearInterval(checkExist);
       }
     }, 100);
@@ -89,7 +102,7 @@ class Container extends Component {
     }
   }
 
-  checkIfToolIsDisabled = (type) => {
+  checkIfToolIsDisabled = type => {
     const { toolActive } = this.state;
     // Text will never be disabled since on each "Text Entry" click a new text is added
     if (type === 'Text') {
@@ -126,7 +139,7 @@ class Container extends Component {
     } = this.state;
 
     return (
-      <div className={classes.base} >
+      <div className={classes.base}>
         <DrawablePalette
           fillColor={fillColor}
           fillList={fillColorList}
@@ -135,7 +148,9 @@ class Container extends Component {
           paintColor={paintColor}
           paintList={paintColorList}
           onFillColorChange={color => this.handleColorChange('fill', color)}
-          onOutlineColorChange={color => this.handleColorChange('outline', color)}
+          onOutlineColorChange={color =>
+            this.handleColorChange('outline', color)
+          }
           onPaintColorChange={color => this.handleColorChange('paint', color)}
         />
 
@@ -153,12 +168,17 @@ class Container extends Component {
                     onClick={() => this.handleMakeToolActive(tool)}
                     label={<Icon path={icon} />}
                   />
-                )
+                );
               })}
             </div>
           </div>
 
-          <div ref={drawable => { this.drawable = drawable; }}  className={classes.drawableHeight}>
+          <div
+            ref={drawable => {
+              this.drawable = drawable;
+            }}
+            className={classes.drawableHeight}
+          >
             <DrawableMain
               session={session}
               onSessionChange={onSessionChange}
@@ -200,13 +220,5 @@ const styles = theme => ({
     padding: '12px 8px'
   }
 });
-
-Container.propTypes = {
-  classes: PropTypes.object.isRequired,
-  session: PropTypes.object.isRequired,
-  onSessionChange: PropTypes.func.isRequired,
-  imageDimensions: PropTypes.object.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-};
 
 export default withStyles(styles)(Container);

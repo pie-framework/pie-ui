@@ -8,14 +8,8 @@ import { Layer, Stage } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
 import ImageBackground from './drawable-image';
-import FreePathDrawable from './drawable-free-path';
-import LineDrawable from './drawable-line';
-import RectangleDrawable from './drawable-rectangle';
-import CircleDrawable from './drawable-circle';
-import EraserDrawable from './drawable-eraser';
 import Button from './button';
-
-const drawableToJSON = drawable => JSON.parse(JSON.stringify(drawable));
+import factory from './factory';
 
 class DrawableMain extends React.Component {
   constructor(props) {
@@ -23,7 +17,7 @@ class DrawableMain extends React.Component {
     this.state = {
       drawables: [],
       newDrawable: [],
-      textIsSelected: false,
+      textIsSelected: false
     };
   }
 
@@ -35,27 +29,33 @@ class DrawableMain extends React.Component {
       if (nextProps.session.drawables) {
         const newDrawables = cloneDeep(nextProps.session.drawables);
         const drawablesString = JSON.stringify(currentDrawables);
-        const sessionDrawableString = JSON.stringify((newDrawables || []).map(drawable => omit(drawable, 'type')));
+        const sessionDrawableString = JSON.stringify(
+          (newDrawables || []).map(drawable => omit(drawable, 'type'))
+        );
 
         if (drawablesString !== sessionDrawableString) {
           const drawableArray = nextProps.session.drawables;
 
           this.setState({
-            drawables: drawableArray.map(drawable => this.getNewDrawableBasedOnType(drawable, drawable.type))
+            drawables: drawableArray.map(drawable =>
+              factory(drawable.type, drawable)
+            )
           });
         }
 
-        const currentTexts = TextEntry.all.map((text) => ({
+        const currentTexts = TextEntry.all.map(text => ({
           ...text,
-          ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
-          value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
+          ...(TextEntry[`text_${text.id}`] &&
+            TextEntry[`text_${text.id}`].attrs),
+          value:
+            TextEntry[`textarea_${text.id}`] &&
+            TextEntry[`textarea_${text.id}`].value
         }));
 
         if (!isEqual(currentTexts, nextProps.session.texts)) {
-          TextEntry.setAll(nextProps.session.texts);
+          TextEntry.setAll(nextProps.session.texts || []);
         }
       }
-
     } else {
       this.handleSessionChange();
     }
@@ -66,14 +66,13 @@ class DrawableMain extends React.Component {
     const { drawables } = this.state;
 
     const newSession = {
-      drawables: drawables.map(drawable => ({
-        ...drawableToJSON(drawable),
-        type: drawable.constructor.name
-      })),
-      texts: TextEntry.all.map((text) => ({
+      drawables: drawables.map(d => d.toJson()),
+      texts: TextEntry.all.map(text => ({
         ...text,
-        ...TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs,
-        value: TextEntry[`textarea_${text.id}`] && TextEntry[`textarea_${text.id}`].value
+        ...(TextEntry[`text_${text.id}`] && TextEntry[`text_${text.id}`].attrs),
+        value:
+          TextEntry[`textarea_${text.id}`] &&
+          TextEntry[`textarea_${text.id}`].value
       }))
     };
 
@@ -85,24 +84,15 @@ class DrawableMain extends React.Component {
     }
   };
 
-  getNewDrawableBasedOnType = (props, type) => {
-    const drawableClasses = {
-      FreePathDrawable,
-      LineDrawable,
-      RectangleDrawable,
-      CircleDrawable,
-      EraserDrawable
-    };
-    return new drawableClasses[type](props);
-  };
+  onMouseOverElement = () =>
+    this.setState({
+      isOver: true
+    });
 
-  onMouseOverElement = () => this.setState({
-    isOver: true
-  });
-
-  onMouseOutElement = () => this.setState({
-    isOver: false
-  });
+  onMouseOutElement = () =>
+    this.setState({
+      isOver: false
+    });
 
   handleMouseDown = e => {
     const { newDrawable, textIsSelected } = this.state;
@@ -110,15 +100,12 @@ class DrawableMain extends React.Component {
 
     if (newDrawable.length === 0 && !textIsSelected) {
       const { x, y } = e.target.getStage().getPointerPosition();
-      const newDrawable = this.getNewDrawableBasedOnType(
-        {
-          startx: x,
-          starty: y,
-          fillColor,
-          outlineColor
-        },
-        toolActive.type
-      );
+      const newDrawable = factory(toolActive.type, {
+        startx: x,
+        starty: y,
+        fillColor,
+        outlineColor
+      });
 
       this.setState({
         newDrawable: [newDrawable]
@@ -136,10 +123,13 @@ class DrawableMain extends React.Component {
       drawableToAdd.registerMovement(x, y);
       drawables.push(drawableToAdd);
 
-      this.setState({
-        newDrawable: [],
-        drawables
-      }, this.handleSessionChange.bind(this, drawableToAdd));
+      this.setState(
+        {
+          newDrawable: [],
+          drawables
+        },
+        this.handleSessionChange.bind(this, drawableToAdd)
+      );
     }
   };
 
@@ -162,7 +152,7 @@ class DrawableMain extends React.Component {
     const { drawables } = this.state;
     const { TextEntry } = this.props;
     const newDrawables = [...drawables];
-    const allData = [...drawables, ...TextEntry.all ];
+    const allData = [...drawables, ...TextEntry.all];
 
     allData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     const lastElement = allData[allData.length - 1];
@@ -180,7 +170,10 @@ class DrawableMain extends React.Component {
     const { TextEntry } = this.props;
 
     TextEntry.all.pop();
-    this.setState({ drawables: [], updatedAt: new Date() }, this.handleSessionChange);
+    this.setState(
+      { drawables: [], updatedAt: new Date() },
+      this.handleSessionChange
+    );
   };
 
   toggleTextSelected = textIsSelected => {
@@ -231,36 +224,37 @@ class DrawableMain extends React.Component {
     return (
       <div>
         <div className={classes.undoControls}>
-          <Button
-            onClick={this.handleUndo}
-            label="Undo"
-          />
-          <Button
-            onClick={this.handleClearAll}
-            label="Clear all"
-          />
+          <Button onClick={this.handleUndo} label="Undo" />
+          <Button onClick={this.handleClearAll} label="Clear all" />
         </div>
         <div className={classes.base}>
           {imageUrl && (
-            <ImageBackground
-              dimensions={imageDimensions}
-              url={imageUrl}
-            />
+            <ImageBackground dimensions={imageDimensions} url={imageUrl} />
           )}
 
           {TextEntry.renderTextareas()}
 
           <Stage
-            ref={ref => { this.stage = ref; }}
+            ref={ref => {
+              this.stage = ref;
+            }}
             className={classnames(classes.stage, {
-              [classes.active]: draggable && (isOver || (newDrawable && newDrawable.length === 1))
+              [classes.active]:
+                draggable &&
+                (isOver || (newDrawable && newDrawable.length === 1))
             })}
             height={drawableDimensions.height}
             width={drawableDimensions.width}
             {...listeners}
           >
-            <Layer ref={ref => { this.layer = ref; }}>
-              {drawables.map((drawable, key) => drawable.render({ ...drawableProps, key }))}
+            <Layer
+              ref={ref => {
+                this.layer = ref;
+              }}
+            >
+              {drawables.map((drawable, key) =>
+                drawable.render({ ...drawableProps, key })
+              )}
               {/* Text Entry is a special case  */}
               {TextEntry.render(drawableProps)}
             </Layer>
@@ -274,7 +268,7 @@ class DrawableMain extends React.Component {
 const styles = () => ({
   base: {
     position: 'relative',
-    width: '100%',
+    width: '100%'
   },
   stage: {
     left: 0,
@@ -287,8 +281,8 @@ const styles = () => ({
   undoControls: {
     float: 'right',
     marginTop: -43,
-    width: 163,
-  },
+    width: 163
+  }
 });
 
 DrawableMain.propTypes = {

@@ -4,8 +4,10 @@ import { Line } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class FreePathDrawable extends DrawableHelper {
+  static TYPE = 'FreePathDrawable';
+
   constructor(props) {
-    super(props);
+    super(props, FreePathDrawable.TYPE);
     const { startx, starty, points, posX, posY } = props;
 
     this.points = points || [startx, starty];

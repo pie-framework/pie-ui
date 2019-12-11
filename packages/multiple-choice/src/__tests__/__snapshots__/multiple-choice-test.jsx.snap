@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Choice snapshot renders 1`] = `
+<div
+  className="choice last"
+  key="0"
+>
+  <WithStyles(ChoiceInput)
+    checked={true}
+    choiceMode="radio"
+    className="undefined"
+    correctness="correct"
+    disabled={true}
+    displayKey="0"
+    feedback=""
+    onChange={[Function]}
+  />
+</div>
+`;
+
 exports[`CorespringChoice snapshot renders 1`] = `
 <div>
   <br />
@@ -16,51 +34,61 @@ exports[`CorespringChoice snapshot renders 1`] = `
       }
     }
   />
-  <div
-    className="choice"
-    key="0"
-  >
-    <WithStyles(ChoiceInput)
-      checked={false}
-      className=""
-      disabled={false}
-      displayKey="A"
-      feedback=""
-      label="label a"
-      onChange={[MockFunction]}
-      value="a"
-    />
-  </div>
-  <div
-    className="choice"
-    key="1"
-  >
-    <WithStyles(ChoiceInput)
-      checked={false}
-      className=""
-      disabled={false}
-      displayKey="B"
-      feedback=""
-      label="label b"
-      onChange={[MockFunction]}
-      value="b"
-    />
-  </div>
-  <div
-    className="choice last"
-    key="2"
-  >
-    <WithStyles(ChoiceInput)
-      checked={false}
-      className="undefined"
-      disabled={false}
-      displayKey="C"
-      feedback=""
-      label="label c"
-      onChange={[MockFunction]}
-      value="c"
-    />
-  </div>
+  <WithStyles(Choice)
+    checked={false}
+    choice={
+      Object {
+        "correct": true,
+        "feedback": "great",
+        "label": "label a",
+        "value": "a",
+      }
+    }
+    choicesLength={3}
+    disabled={false}
+    displayKey="A"
+    index={0}
+    isEvaluateMode={false}
+    key="choice-0"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
+  <WithStyles(Choice)
+    checked={false}
+    choice={
+      Object {
+        "label": "label b",
+        "value": "b",
+      }
+    }
+    choicesLength={3}
+    disabled={false}
+    displayKey="B"
+    index={1}
+    isEvaluateMode={false}
+    key="choice-1"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
+  <WithStyles(Choice)
+    checked={false}
+    choice={
+      Object {
+        "correct": true,
+        "feedback": "great",
+        "label": "label c",
+        "value": "c",
+      }
+    }
+    choicesLength={3}
+    disabled={false}
+    displayKey="C"
+    index={2}
+    isEvaluateMode={false}
+    key="choice-2"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
 </div>
 `;
 
@@ -80,51 +108,62 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
       }
     }
   />
-  <div
-    className="choice"
-    key="0"
-  >
-    <WithStyles(ChoiceInput)
-      checked={true}
-      className=""
-      correctness="correct"
-      disabled={false}
-      displayKey=""
-      feedback="great"
-      label="label a"
-      onChange={[Function]}
-      value="a"
-    />
-  </div>
-  <div
-    className="choice"
-    key="1"
-  >
-    <WithStyles(ChoiceInput)
-      checked={false}
-      className=""
-      disabled={false}
-      displayKey=""
-      label="label b"
-      onChange={[Function]}
-      value="b"
-    />
-  </div>
-  <div
-    className="choice last"
-    key="2"
-  >
-    <WithStyles(ChoiceInput)
-      checked={false}
-      className="undefined"
-      correctness="incorrect"
-      disabled={false}
-      displayKey=""
-      feedback="great"
-      label="label c"
-      onChange={[Function]}
-      value="c"
-    />
-  </div>
+  <WithStyles(Choice)
+    checked={true}
+    choice={
+      Object {
+        "correct": true,
+        "feedback": "great",
+        "label": "label a",
+        "value": "a",
+      }
+    }
+    choicesLength={3}
+    correctness="correct"
+    disabled={false}
+    displayKey=""
+    index={0}
+    isEvaluateMode={true}
+    key="choice-0"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
+  <WithStyles(Choice)
+    checked={false}
+    choice={
+      Object {
+        "label": "label b",
+        "value": "b",
+      }
+    }
+    choicesLength={3}
+    disabled={false}
+    displayKey=""
+    index={1}
+    isEvaluateMode={true}
+    key="choice-1"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
+  <WithStyles(Choice)
+    checked={false}
+    choice={
+      Object {
+        "correct": true,
+        "feedback": "great",
+        "label": "label c",
+        "value": "c",
+      }
+    }
+    choicesLength={3}
+    correctness="incorrect"
+    disabled={false}
+    displayKey=""
+    index={2}
+    isEvaluateMode={true}
+    key="choice-2"
+    onChoiceChanged={[MockFunction]}
+    showCorrect={false}
+  />
 </div>
 `;

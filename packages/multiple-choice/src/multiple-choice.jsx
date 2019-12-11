@@ -6,16 +6,75 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { Collapsible } from '@pie-lib/render-ui';
 
-const styles = {
-  corespringChoice: {
-    '& *': {
-      fontFamily: "'Roboto', Arial, Helvetica, sans-serif", //eslint-disable-line
-      '-webkit-font-smoothing': 'antialiased'
+// Choice
+
+export class Choice extends React.Component {
+  onChange = (choice) => {
+    const { disabled, onChoiceChanged } = this.props;
+
+    if (!disabled) {
+      onChoiceChanged(choice);
     }
-  },
-  prompt: {
-    verticalAlign: 'middle'
-  },
+  };
+
+  render() {
+    const {
+      choice,
+      index,
+      choicesLength,
+      showCorrect,
+      isEvaluateMode,
+      choiceMode,
+      disabled,
+      checked,
+      correctness,
+      displayKey,
+      classes
+    } = this.props;
+    const choiceClass =
+      'choice' + (index === choicesLength - 1 ? ' last' : '');
+
+    const feedback = !isEvaluateMode || showCorrect ? '' : choice.feedback;
+
+    const choiceProps = {
+      ...choice,
+      checked,
+      choiceMode,
+      disabled,
+      feedback,
+      correctness,
+      displayKey,
+      onChange: this.onChange
+    };
+
+    const names = classNames(classes.choice, {
+      [classes.last]: index === choicesLength - 1
+    });
+
+    return (
+      <div className={choiceClass} key={index}>
+        <ChoiceInput {...choiceProps} className={names}/>
+      </div>
+    );
+  }
+}
+
+Choice.propTypes = {
+  choiceMode: PropTypes.oneOf(['radio', 'checkbox']),
+  choice: PropTypes.object,
+  disabled: PropTypes.bool.isRequired,
+  onChoiceChanged: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
+  index: PropTypes.number,
+  choicesLength: PropTypes.number,
+  showCorrect: PropTypes.bool,
+  isEvaluateMode: PropTypes.bool,
+  checked: PropTypes.bool,
+  correctness: PropTypes.string,
+  displayKey: PropTypes.string
+};
+
+const StyledChoice = withStyles({
   choice: {
     paddingTop: '20px',
     paddingBottom: '10px',
@@ -23,6 +82,20 @@ const styles = {
   },
   last: {
     borderBottom: 'none'
+  }
+})(Choice);
+
+// MultipleChoice
+
+const styles = {
+  corespringChoice: {
+    '& *': {
+      fontFamily: '\'Roboto\', Arial, Helvetica, sans-serif', //eslint-disable-line
+      '-webkit-font-smoothing': 'antialiased'
+    }
+  },
+  prompt: {
+    verticalAlign: 'middle'
   }
 };
 
@@ -123,45 +196,8 @@ export class MultipleChoice extends React.Component {
       teacherInstructions,
       classes
     } = this.props;
-
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
-
-    const choiceToTag = (choice, index) => {
-      const choiceClass =
-        'choice' + (index === choices.length - 1 ? ' last' : '');
-
-      const checked = showCorrect
-        ? choice.correct || false
-        : this.isSelected(choice.value);
-
-      const feedback = !isEvaluateMode || showCorrect ? '' : choice.feedback;
-
-      const choiceProps = {
-        checked,
-        choiceMode,
-        disabled,
-        feedback,
-        value: choice.value,
-        correctness: isEvaluateMode ? this.getCorrectness(choice) : undefined,
-        displayKey: this.indexToSymbol(index),
-        label: choice.label,
-        rationale: choice.rationale,
-        onChange: mode === 'gather' ? onChoiceChanged : () => {
-        }
-      };
-
-      const names = classNames(classes.choice, {
-        [classes.last]: index === choices.length - 1
-      });
-
-      return (
-        <div className={choiceClass} key={index}>
-          <ChoiceInput {...choiceProps} className={names}/>
-        </div>
-      );
-    };
-
 
     return (
       <div className={classes.corespringChoice}>
@@ -185,7 +221,21 @@ export class MultipleChoice extends React.Component {
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: prompt }}
         />
-        {choices.map(choiceToTag)}
+        {choices.map((choice, index) => (
+          <StyledChoice
+            key={`choice-${index}`}
+            choice={choice}
+            index={index}
+            choicesLength={choices.length}
+            showCorrect={showCorrect}
+            isEvaluateMode={isEvaluateMode}
+            choiceMode={choiceMode}
+            disabled={disabled}
+            onChoiceChanged={onChoiceChanged}
+            checked={showCorrect ? choice.correct || false : this.isSelected(choice.value)}
+            correctness={isEvaluateMode ? this.getCorrectness(choice) : undefined}
+            displayKey={this.indexToSymbol(index)}
+          />))}
       </div>
     );
   }

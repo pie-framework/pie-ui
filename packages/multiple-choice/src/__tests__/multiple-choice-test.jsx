@@ -1,8 +1,58 @@
 import React from 'react';
 import _ from 'lodash';
 import { shallow } from 'enzyme';
-import { MultipleChoice } from '../multiple-choice';
+import { MultipleChoice, Choice } from '../multiple-choice';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+
+
+describe('Choice', () => {
+  let wrapper, onChoiceChanged = jest.fn();
+
+  beforeEach(() => {
+    wrapper = extras => {
+      const props = {
+        classes: {},
+        choice: {},
+        index: 0,
+        choicesLength: 1,
+        showCorrect: false,
+        isEvaluateMode: false,
+        choiceMode: 'radio',
+        disabled: true,
+        onChoiceChanged,
+        checked: true,
+        correctness: 'correct',
+        displayKey: '0',
+        ...extras
+      };
+      return shallow(<Choice {...props}/>);
+    };
+  });
+
+  describe('snapshot', () => {
+    it('renders', () => {
+      expect(wrapper()).toMatchSnapshot();
+    });
+  });
+
+  describe('logic', () => {
+    it('does not call onChoiceChanged if disabled is true', () => {
+      let w = wrapper();
+
+      w.instance().onChange();
+
+      expect(onChoiceChanged).not.toHaveBeenCalled();
+    });
+
+    it('calls onChoiceChanged if disabled is false', () => {
+      let w = wrapper({ disabled: false });
+
+      w.instance().onChange();
+
+      expect(onChoiceChanged).toHaveBeenCalled();
+    });
+  });
+});
 
 describe('CorespringChoice', () => {
   let wrapper, toggle;
@@ -16,16 +66,16 @@ describe('CorespringChoice', () => {
   let mkWrapper = (opts, clone = true) => {
     opts = clone
       ? (opts = _.merge(
-          {
-            classes: {},
-            choices: [],
-            disabled: false,
-            keyMode: 'letters',
-            onChoiceChanged: jest.fn(),
-            mode: 'gather'
-          },
-          opts
-        ))
+        {
+          classes: {},
+          choices: [],
+          disabled: false,
+          keyMode: 'letters',
+          onChoiceChanged: jest.fn(),
+          mode: 'gather'
+        },
+        opts
+      ))
       : opts;
 
     return shallow(<MultipleChoice {...opts} />);

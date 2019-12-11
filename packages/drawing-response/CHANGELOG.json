@@ -658,5 +658,20 @@
     "committerDate": "2019-11-14 11:50:34 +0200",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "explicitly set type (breaks when minified) [ch6084]",
+    "merge": null,
+    "header": "fix: explicitly set type (breaks when minified) [ch6084]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "58f8d2f341c1676127cc01263ccc9c22cd27e925",
+    "gitTags": " (origin/fix/6084-dr-bad-types)",
+    "committerDate": "2019-12-11 10:57:19 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.1"
   }
 ]

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.10...@pie-ui/multiple-choice@4.11.11) (2019-12-11)
+
+
+### Bug Fixes
+
+* ch6085: Use `disabled` in order to disable clicking on a choice instead of using `mode`. ([898b679](https://github.com/pie-framework/pie-elements/commit/898b679))
+
+
+
+
+
 ## [4.11.10](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.9...@pie-ui/multiple-choice@4.11.10) (2019-12-09)
 
 

@@ -4,12 +4,18 @@
  * this interaction will not have performance leaks in pie-website nor in pits.
  */
 export default class DrawableHelper {
-  constructor(props) {
+  constructor(props, type) {
     const { startx, starty, fillColor, outlineColor } = props;
     this.startx = startx;
     this.starty = starty;
     this.createdAt = new Date();
     this.fillColor = fillColor;
     this.outlineColor = outlineColor;
+    this.type = type;
+  }
+
+  toJson() {
+    const base = JSON.parse(JSON.stringify(this));
+    return base;
   }
 }

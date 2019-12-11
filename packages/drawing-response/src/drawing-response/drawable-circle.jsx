@@ -4,8 +4,9 @@ import { Circle } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class CircleDrawable extends DrawableHelper {
+  static TYPE = 'CircleDrawable';
   constructor(props) {
-    super(props);
+    super(props, CircleDrawable.TYPE);
     const { startx, starty, x, y } = props;
 
     this.startx = startx;

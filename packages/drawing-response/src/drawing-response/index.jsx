@@ -9,8 +9,13 @@ class DrawingResponseComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCorrect: false
+      showCorrect: false,
+      hasError: false
     };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, errorMessage: error.message };
   }
 
   render() {
@@ -26,14 +31,22 @@ class DrawingResponseComponent extends React.Component {
       session,
       onSessionChange
     } = this.props;
+    const { hasError, errorMessage } = this.state;
     const isEvaluateMode = mode === 'evaluate';
 
-    return (
+    return hasError ? (
+      <div>An error occured: {errorMessage}</div>
+    ) : (
       <div>
         {teacherInstructions && (
           <div style={{ margin: '16px 0' }}>
-            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+            <Collapsible
+              labels={{
+                hidden: 'Show Teacher Instructions',
+                visible: 'Hide Teacher Instructions'
+              }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
             </Collapsible>
           </div>
         )}

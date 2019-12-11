@@ -4,8 +4,9 @@ import { Line } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class EraserDrawable extends DrawableHelper {
+  static TYPE = 'EraserDrawable';
   constructor(props) {
-    super(props);
+    super(props, EraserDrawable.TYPE);
     const { startx, starty, points, posX, posY } = props;
 
     this.points = points || [startx, starty];
@@ -25,7 +26,7 @@ export default class EraserDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
 
     return (
       <Line
@@ -38,7 +39,7 @@ export default class EraserDrawable extends DrawableHelper {
         onDragEnd={this.handleDragEnd.bind(this, props)}
         onMouseEnter={onMouseOverElement}
         onMouseLeave={onMouseOutElement}
-        strokeStyle='#df4b26'
+        strokeStyle="#df4b26"
         lineJoin="round"
         lineWidth="5"
         fill="white"

@@ -4,8 +4,10 @@ import { Arrow } from 'react-konva';
 import DrawableHelper from './drawable-helper';
 
 export default class LineDrawable extends DrawableHelper {
+  static TYPE = 'LineDrawable';
+
   constructor(props) {
-    super(props);
+    super(props, LineDrawable.TYPE);
     const { startx, starty, x, y, posX, posY } = props;
 
     this.x = x || startx;
@@ -36,7 +38,7 @@ export default class LineDrawable extends DrawableHelper {
   };
 
   render(props) {
-    const { draggable, key,  onMouseOverElement, onMouseOutElement } = props;
+    const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
     const points = [this.startx, this.starty, this.x, this.y];
 
     return (

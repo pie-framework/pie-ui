@@ -4,6 +4,7 @@ import debug from 'debug';
 import Main from './main';
 
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import { renderMath } from '@pie-lib/math-rendering';
 
 const log = debug('pie-ui:graph-lines');
 
@@ -72,6 +73,8 @@ export default class MatchList extends HTMLElement {
       onSessionChange: this.sessionChanged.bind(this)
     });
 
-    ReactDOM.render(el, this);
+    ReactDOM.render(el, this, () => {
+      renderMath(this);
+    });
   }
 }

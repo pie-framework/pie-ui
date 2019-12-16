@@ -75,7 +75,7 @@ export class AnswerGrid extends React.Component {
         {rows.map((row, idx) => (
           <div key={idx}>
             <div className={classes.rowContainer}>
-              <div className={cx(classes.rowItem, classes.questionText)}
+              <div className={cx(classes.rowItem, classes.questionText, classes.rowText)}
                    dangerouslySetInnerHTML={{ __html: row.title }} />
               {answers[row.id].map((rowItem, answerIndex) => (
                 <div key={answerIndex} className={classes.rowItem}>
@@ -153,6 +153,9 @@ const styles = theme => ({
     flex: 2,
     display: 'flex',
     justifyContent: 'flex-start'
+  },
+  rowText: {
+    display: 'inline'
   }
 });
 

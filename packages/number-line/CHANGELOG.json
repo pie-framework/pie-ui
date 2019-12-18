@@ -333,5 +333,20 @@
     "committerDate": "2019-09-26 11:36:29 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "566ff4bf5b342b30bfb9d3415430b598c45449cc",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.15"
   }
 ]

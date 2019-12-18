@@ -298,5 +298,50 @@
     "committerDate": "2019-11-07 11:04:51 +0000",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.7.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f193c94562c19e04469da620c7ad1932f85db251",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.7.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "954b765b7437f4e3651f1747c78897152fca6690",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.7.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump mask-markup [ch5774]",
+    "merge": null,
+    "header": "fix: bump mask-markup [ch5774]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "22990e3a6b337be0f5548070f1492547db656310",
+    "gitTags": "",
+    "committerDate": "2019-12-18 10:07:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.7.8"
   }
 ]

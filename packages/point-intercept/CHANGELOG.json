@@ -288,5 +288,20 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/point-intercept@1.2.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6cc5fd658baf4ebc7813a530f60c681619d6d128",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/point-intercept@1.2.16"
   }
 ]

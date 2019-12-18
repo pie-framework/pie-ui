@@ -983,5 +983,20 @@
     "committerDate": "2019-11-06 13:12:32 +0200",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fd425ddc0cb303989b22ba7a9b39a2fb3587e657",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.10"
   }
 ]

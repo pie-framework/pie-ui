@@ -298,5 +298,50 @@
     "committerDate": "2019-11-07 11:04:39 +0000",
     "isTagged": true,
     "tag": "@pie-ui/explicit-constructed-response@1.7.4"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8f5910b5067c6531fc99e1fdaa15f9d6ed003a7d",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.7.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c35a85bee5d1a165772731ca16e9c47469f28959",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.7.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump mask-markup [ch5774]",
+    "merge": null,
+    "header": "fix: bump mask-markup [ch5774]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f685886386fff1d5e3675802f573c4e5cb689477",
+    "gitTags": "",
+    "committerDate": "2019-12-18 10:07:46 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.7.6"
   }
 ]

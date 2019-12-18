@@ -268,5 +268,35 @@
     "committerDate": "2019-07-26 12:36:40 -0400",
     "isTagged": true,
     "tag": "@pie-ui/graphing@2.3.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "86d6ecdc8566a1a6e55df81878e601554453c126",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.13"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d30588b30fffa3fdc40007823983be80ba9b4fca",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@2.3.13"
   }
 ]

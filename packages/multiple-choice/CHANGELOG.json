@@ -1193,5 +1193,35 @@
     "committerDate": "2019-12-10 16:29:13 +0200",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.11.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4c2a55b6d7511e44fe334f0db6d3006103de490d",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e4f25bb50170edb6f72f6ce12f9369dcfb06206a",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.12"
   }
 ]

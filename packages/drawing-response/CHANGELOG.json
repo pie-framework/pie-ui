@@ -673,5 +673,35 @@
     "committerDate": "2019-12-11 10:57:19 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5c5b4d45b979b4ebb3c026f0bdc5c12f6815a51e",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "043121b495321121aeeeb6ca4c34a692b24a11ca",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.2"
   }
 ]

@@ -343,5 +343,50 @@
     "committerDate": "2019-11-01 15:23:26 +0200",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0ce51fac8669260eb1ac77223778fd3bb3d2612c",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c73b3b23f213cbf750fff628f6c95884f5791b62",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "ch5496 - Math markup does not display properly for Match List.",
+    "merge": null,
+    "header": "fix: ch5496 - Math markup does not display properly for Match List.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8651b6ace61872b9882933a1fa001a5b567fc950",
+    "gitTags": "",
+    "committerDate": "2019-12-18 10:23:09 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.9"
   }
 ]

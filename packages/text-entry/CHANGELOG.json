@@ -368,5 +368,20 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/text-entry@3.5.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b8e3d807343ef85b0e33fc0e7a3b5e80d1340f40",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/text-entry@3.5.12"
   }
 ]

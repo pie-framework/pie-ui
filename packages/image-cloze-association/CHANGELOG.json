@@ -43,5 +43,35 @@
     "committerDate": "2019-10-15 14:58:24 +0300",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.2.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d573f7b5ff6239c83ca0820f6921ccf6dde9ce4d",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7221ce59918882ee168a1770f8cf020885900a07",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.11"
   }
 ]

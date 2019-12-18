@@ -443,5 +443,35 @@
     "committerDate": "2019-05-14 14:39:07 +0300",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@4.7.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "972b41fcefd3cefc6e38ec02053b9610eeb1fd22",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.7.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2fcb13d1243ea37aee38e899a1473ee00cd73bbe",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.7.11"
   }
 ]

@@ -223,5 +223,35 @@
     "committerDate": "2019-05-14 15:06:26 +0300",
     "isTagged": true,
     "tag": "@pie-ui/select-text@1.6.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9f561df6ee7e7486384ed64f6bc6e145d6824c28",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/select-text@1.6.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4c981e97d23fd9289773e7b87a0c0bbbc844eb60",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/select-text@1.6.8"
   }
 ]

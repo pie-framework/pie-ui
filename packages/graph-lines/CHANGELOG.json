@@ -738,5 +738,20 @@
     "committerDate": "2019-07-09 13:25:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graph-lines@2.2.17"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "349831229aad73b78d3c06f08ef9b82474f4397c",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/graph-lines@2.3.7"
   }
 ]

@@ -323,5 +323,20 @@
     "committerDate": "2019-04-24 10:39:26 +0100",
     "isTagged": true,
     "tag": "@pie-ui/function-entry@3.2.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e11772667aaaf46a12d1f49623ce26f076ed20ec",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/function-entry@3.2.11"
   }
 ]

@@ -73,5 +73,35 @@
     "committerDate": "2019-10-14 18:34:09 +0300",
     "isTagged": true,
     "tag": "@pie-ui/charting@0.2.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e4aebbc87f9fc622d886eb0bec7a987acb670ef0",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.2.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "196912783e4f1f5931fd84a2ae49c4a66ec53438",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.2.8"
   }
 ]

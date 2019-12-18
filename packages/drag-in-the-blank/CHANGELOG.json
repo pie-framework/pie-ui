@@ -343,5 +343,50 @@
     "committerDate": "2019-11-07 11:04:25 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drag-in-the-blank@1.7.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.5.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.5.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "813dcc97e3900a61d96638649863a339b0be59ef",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:57:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.7.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump math-rendering",
+    "merge": null,
+    "header": "fix: bump math-rendering",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a25a54669883a51a9c87640c58a4b28459c5dfdc",
+    "gitTags": "",
+    "committerDate": "2019-12-18 11:40:43 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.7.8"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump mask-markup [ch5774]",
+    "merge": null,
+    "header": "fix: bump mask-markup [ch5774]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f28e0d59144e24ad8bc2ad42db2e4b24f0cf3789",
+    "gitTags": "",
+    "committerDate": "2019-12-18 10:07:28 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drag-in-the-blank@1.7.8"
   }
 ]

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.10...@pie-ui/math-inline@3.0.11) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump @pie-lib/math-input@^6.3.7 ch5653 ([b77e1ea](https://github.com/pie-framework/pie-ui/commit/b77e1ea))
+
+
+
+
+
 ## [3.0.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.9...@pie-ui/math-inline@3.0.10) (2019-12-18)
 
 

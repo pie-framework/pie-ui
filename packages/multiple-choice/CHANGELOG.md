@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.11...@pie-ui/multiple-choice@4.11.12) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([e4f25bb](https://github.com/pie-framework/pie-elements/commit/e4f25bb))
+* bump render-ui@^4.5.3 ([4c2a55b](https://github.com/pie-framework/pie-elements/commit/4c2a55b))
+
+
+
+
+
 ## [4.11.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.10...@pie-ui/multiple-choice@4.11.11) (2019-12-11)
 
 

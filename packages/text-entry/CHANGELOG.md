@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.11...@pie-ui/text-entry@3.5.12) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.5.3 ([b8e3d80](https://github.com/pie-framework/pie-ui/commit/b8e3d80))
+
+
+
+
+
 ## [3.5.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/text-entry@3.5.10...@pie-ui/text-entry@3.5.11) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/text-entry

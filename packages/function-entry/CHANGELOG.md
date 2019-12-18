@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@3.2.10...@pie-ui/function-entry@3.2.11) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.5.3 ([e117726](https://github.com/pie-framework/pie-ui/commit/e117726))
+
+
+
+
+
 ## [3.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/function-entry@3.2.9...@pie-ui/function-entry@3.2.10) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/function-entry

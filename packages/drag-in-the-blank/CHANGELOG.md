@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.7...@pie-ui/drag-in-the-blank@1.7.8) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump mask-markup [ch5774] ([f28e0d5](https://github.com/pie-framework/pie-ui/commit/f28e0d5))
+* bump math-rendering ([a25a546](https://github.com/pie-framework/pie-ui/commit/a25a546))
+* bump render-ui@^4.5.3 ([813dcc9](https://github.com/pie-framework/pie-ui/commit/813dcc9))
+
+
+
+
+
 ## [1.7.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.6...@pie-ui/drag-in-the-blank@1.7.7) (2019-12-03)
 
 **Note:** Version bump only for package @pie-ui/drag-in-the-blank

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.15](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.14...@pie-ui/match@2.3.15) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([6157468](https://github.com/pie-framework/pie-ui/commit/6157468))
+* bump render-ui@^4.5.3 ([c49077c](https://github.com/pie-framework/pie-ui/commit/c49077c))
+* ch5496 - Math markup does not display properly for Match. ([af77854](https://github.com/pie-framework/pie-ui/commit/af77854))
+* Text layout problems in a Multiple Binary table with math markup [ch5793] ([25d6c1a](https://github.com/pie-framework/pie-ui/commit/25d6c1a))
+
+
+
+
+
 ## [2.3.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.13...@pie-ui/match@2.3.14) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/match

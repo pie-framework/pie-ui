@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.10...@pie-ui/placement-ordering@4.7.11) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([2fcb13d](https://github.com/pie-framework/pie-ui/commit/2fcb13d))
+* bump render-ui@^4.5.3 ([972b41f](https://github.com/pie-framework/pie-ui/commit/972b41f))
+
+
+
+
+
 ## [4.7.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.9...@pie-ui/placement-ordering@4.7.10) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

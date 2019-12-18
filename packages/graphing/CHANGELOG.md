@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.12...@pie-ui/graphing@2.3.13) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([d30588b](https://github.com/pie-framework/pie-ui/commit/d30588b))
+* bump render-ui@^4.5.3 ([86d6ecd](https://github.com/pie-framework/pie-ui/commit/86d6ecd))
+
+
+
+
+
 ## [2.3.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.11...@pie-ui/graphing@2.3.12) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/graphing

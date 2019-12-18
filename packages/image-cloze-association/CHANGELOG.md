@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.10...@pie-ui/image-cloze-association@1.2.11) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([7221ce5](https://github.com/pie-framework/pie-ui/commit/7221ce5))
+* bump render-ui@^4.5.3 ([d573f7b](https://github.com/pie-framework/pie-ui/commit/d573f7b))
+
+
+
+
+
 ## [1.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.9...@pie-ui/image-cloze-association@1.2.10) (2019-10-29)
 
 **Note:** Version bump only for package @pie-ui/image-cloze-association

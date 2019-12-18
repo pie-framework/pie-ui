@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.1...@pie-ui/drawing-response@1.6.2) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([043121b](https://github.com/pie-framework/pie-elements/commit/043121b))
+* bump render-ui@^4.5.3 ([5c5b4d4](https://github.com/pie-framework/pie-elements/commit/5c5b4d4))
+
+
+
+
+
 ## [1.6.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.0...@pie-ui/drawing-response@1.6.1) (2019-12-11)
 
 

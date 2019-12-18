@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.9...@pie-ui/math-inline@3.0.10) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.5.3 ([fd425dd](https://github.com/pie-framework/pie-ui/commit/fd425dd))
+
+
+
+
+
 ## [3.0.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.8...@pie-ui/math-inline@3.0.9) (2019-12-09)
 
 **Note:** Version bump only for package @pie-ui/math-inline

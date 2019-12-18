@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.8...@pie-ui/extended-text-entry@3.2.9) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([f0deec4](https://github.com/pie-framework/pie-ui/commit/f0deec4))
+* bump render-ui@^4.5.3 ([d955833](https://github.com/pie-framework/pie-ui/commit/d955833))
+
+
+
+
+
 ## [3.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.7...@pie-ui/extended-text-entry@3.2.8) (2019-11-07)
 
 

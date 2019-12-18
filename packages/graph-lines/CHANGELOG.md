@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.3.6...@pie-ui/graph-lines@2.3.7) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.5.3 ([3498312](https://github.com/pie-framework/pie-ui/commit/3498312))
+
+
+
+
+
 ## [2.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graph-lines@2.3.5...@pie-ui/graph-lines@2.3.6) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/graph-lines

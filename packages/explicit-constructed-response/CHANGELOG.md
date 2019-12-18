@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.5...@pie-ui/explicit-constructed-response@1.7.6) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump mask-markup [ch5774] ([f685886](https://github.com/pie-framework/pie-ui/commit/f685886))
+* bump math-rendering ([c35a85b](https://github.com/pie-framework/pie-ui/commit/c35a85b))
+* bump render-ui@^4.5.3 ([8f5910b](https://github.com/pie-framework/pie-ui/commit/8f5910b))
+
+
+
+
+
 ## [1.7.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.4...@pie-ui/explicit-constructed-response@1.7.5) (2019-12-03)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

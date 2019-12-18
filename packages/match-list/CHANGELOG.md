@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.8...@pie-ui/match-list@1.4.9) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump math-rendering ([c73b3b2](https://github.com/pie-framework/pie-ui/commit/c73b3b2))
+* bump render-ui@^4.5.3 ([0ce51fa](https://github.com/pie-framework/pie-ui/commit/0ce51fa))
+* ch5496 - Math markup does not display properly for Match List. ([8651b6a](https://github.com/pie-framework/pie-ui/commit/8651b6a))
+
+
+
+
+
 ## [1.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.7...@pie-ui/match-list@1.4.8) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/match-list

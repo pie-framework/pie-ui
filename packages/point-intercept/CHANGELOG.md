@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.15...@pie-ui/point-intercept@1.2.16) (2019-12-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.5.3 ([6cc5fd6](https://github.com/pie-framework/pie-ui/commit/6cc5fd6))
+
+
+
+
+
 ## [1.2.15](https://github.com/pie-framework/pie-ui/compare/@pie-ui/point-intercept@1.2.14...@pie-ui/point-intercept@1.2.15) (2019-11-05)
 
 **Note:** Version bump only for package @pie-ui/point-intercept

@@ -2263,6 +2263,14 @@
     debug "^4.1.1"
     mathjax-full "^3.0.0"
 
+"@pie-lib/math-rendering@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-2.1.0.tgz#84060bf597b445493aa2c06388b839486b3b1ef8"
+  integrity sha512-ZLZJ2sBUCu8bkcwgEHCIgb4lX7DmRd+YY4w3MHAhPII83X/GrJ/R6tb33DwvT7ajGye/AuU7YTPhofhmEqrM+w==
+  dependencies:
+    debug "^4.1.1"
+    mathjax-full "^3.0.0"
+
 "@pie-lib/math-toolbar@^1.4.8":
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.4.8.tgz#bfe3eae478906184329ea710ca590ae94df93c86"

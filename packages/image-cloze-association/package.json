@@ -20,7 +20,7 @@
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/drag": "^1.1.21",
     "@pie-lib/math-rendering": "^2.1.0",
-    "@pie-lib/render-ui": "^4.4.5",
+    "@pie-lib/render-ui": "^4.5.3",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"

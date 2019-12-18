@@ -998,5 +998,20 @@
     "committerDate": "2019-12-18 11:57:57 +0000",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.10"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-lib/math-input@^6.3.7 ch5653",
+    "merge": null,
+    "header": "fix: bump @pie-lib/math-input@^6.3.7 ch5653",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b77e1ea9453882911ab1f0a95440172277d133c8",
+    "gitTags": " (origin/develop, origin/HEAD)",
+    "committerDate": "2019-12-18 20:10:20 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.11"
   }
 ]

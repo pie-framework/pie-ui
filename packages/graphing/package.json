@@ -11,7 +11,7 @@
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/graphing": "^1.2.4",
     "@pie-lib/math-rendering": "^2.1.0",
-    "@pie-lib/render-ui": "^4.4.5",
+    "@pie-lib/render-ui": "^4.5.3",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "react": "^16.8.1",

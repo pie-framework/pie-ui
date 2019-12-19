@@ -2246,10 +2246,10 @@
     lodash "^4.17.11"
     react-portal "^4.2.0"
 
-"@pie-lib/math-input@^6.3.7":
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-6.3.7.tgz#9713ebb8367bf8588dc01e76a9fd30ecde5552b5"
-  integrity sha512-GtR7nVxC29EuDd0rMd/BJRwoKg4B40ZSZtHHPBOLNeo5/GLt2yfxOewbv3+6IEFnWAUQCz/aoz3hwBMYlD9VcA==
+"@pie-lib/math-input@^6.3.8":
+  version "6.3.8"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-6.3.8.tgz#6c99359434134810a1b75340d8a8e049d3ac82e8"
+  integrity sha512-cRzZZD7jjNFv1LX0KfFnchuicog8xZAMjb7MTPzUqc/rJ9uwwy6c4+PRnls+TwkG7//T6SzrzkB1LX9904vTUg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"

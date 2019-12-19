@@ -32,7 +32,8 @@ class HotspotComponent extends React.Component {
         hotspotColor,
         dimensions,
         rationale,
-        teacherInstructions
+        teacherInstructions,
+        strokeWidth
       },
       onSelectChoice,
       classes
@@ -69,6 +70,7 @@ class HotspotComponent extends React.Component {
             onSelectChoice={onSelectChoice}
             shapes={shapes}
             disabled={disabled}
+            strokeWidth={strokeWidth}
           />
         ) : null}
 

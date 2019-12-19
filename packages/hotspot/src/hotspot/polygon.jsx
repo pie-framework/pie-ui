@@ -53,7 +53,7 @@ class PolygonComponent extends React.Component {
 
   getEvaluateOutlineColor = (isCorrect, outlineColor) => isCorrect ? outlineColor : 'red';
 
-  getOutlineWidth = (selected) => selected ? 2 : 0;
+  getOutlineWidth = (selected, strokeWidth) => selected ? strokeWidth : 0;
 
   getEvaluateText = (isCorrect, selected) => {
     if (selected && isCorrect) {
@@ -75,12 +75,13 @@ class PolygonComponent extends React.Component {
       outlineColor,
       selected,
       points,
+      strokeWidth = 5
     } = this.props;
 
     const outlineColorParsed = isEvaluateMode
       ? this.getEvaluateOutlineColor(isCorrect, outlineColor)
       : outlineColor;
-    const outlineWidth = this.getOutlineWidth(selected);
+    const outlineWidth = this.getOutlineWidth(selected, strokeWidth);
     const iconSrc = isCorrect ? faCorrect : faWrong;
     const pointsParsed = this.parsePointsForKonva(points);
 
@@ -141,7 +142,8 @@ PolygonComponent.propTypes = {
   onClick: PropTypes.func.isRequired,
   outlineColor: PropTypes.string.isRequired,
   points: PropTypes.array.isRequired,
-  selected: PropTypes.bool.isRequired
+  selected: PropTypes.bool.isRequired,
+  strokeWidth: PropTypes.number
 };
 
 export default withStyles(styles)(PolygonComponent);

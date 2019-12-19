@@ -46,6 +46,19 @@ describe('Polygon', () => {
       });
     });
 
+    describe('outline width', () => {
+      it('renders with default border width', () => {
+        const wrapper = mkWrapper();
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
+
+      it('renders with given border width', () => {
+        const wrapper = mkWrapper({ strokeWidth: 10 });
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
+    });
+
+
     describe('hotspot color', () => {
       it('renders', () => {
         const wrapper = mkWrapper({ hotspotColor: 'rgba(217, 30, 24, 0.65)' });

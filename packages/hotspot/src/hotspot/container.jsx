@@ -24,7 +24,8 @@ class Container extends React.Component {
       isEvaluateMode,
       outlineColor,
       onSelectChoice,
-      shapes: { rectangles, polygons }
+      shapes: { rectangles, polygons },
+      strokeWidth
     } = this.props;
 
     return (
@@ -65,6 +66,7 @@ class Container extends React.Component {
                   width={shape.width}
                   x={shape.x}
                   y={shape.y}
+                  strokeWidth={strokeWidth}
                 />
               )
             })}
@@ -84,6 +86,7 @@ class Container extends React.Component {
                   onClick={onSelectChoice}
                   outlineColor={outlineColor}
                   points={polygon.points}
+                  strokeWidth={strokeWidth}
                 />
               )
             })}
@@ -135,7 +138,8 @@ Container.propTypes = {
   onSelectChoice:PropTypes.func.isRequired,
   outlineColor:PropTypes.string.isRequired,
   session:PropTypes.object.isRequired,
-  shapes:PropTypes.object.isRequired
+  shapes:PropTypes.object.isRequired,
+  strokeWidth: PropTypes.number
 };
 
 export default withStyles(styles)(Container);

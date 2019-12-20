@@ -59,7 +59,7 @@ class RectComponent extends React.Component {
       width,
       x,
       y,
-      strokeWidth = 5
+      strokeWidth
     } = this.props;
 
     const outlineColorParsed = isEvaluateMode
@@ -137,6 +137,7 @@ RectComponent.propTypes = {
 
 RectComponent.defaultProps = {
   isCorrect: false,
+  strokeWidth: 5
 };
 
 export default withStyles(styles)(RectComponent);

@@ -75,7 +75,7 @@ class PolygonComponent extends React.Component {
       outlineColor,
       selected,
       points,
-      strokeWidth = 5
+      strokeWidth
     } = this.props;
 
     const outlineColorParsed = isEvaluateMode
@@ -144,6 +144,10 @@ PolygonComponent.propTypes = {
   points: PropTypes.array.isRequired,
   selected: PropTypes.bool.isRequired,
   strokeWidth: PropTypes.number
+};
+
+PolygonComponent.defaultProps = {
+  strokeWidth: 5
 };
 
 export default withStyles(styles)(PolygonComponent);

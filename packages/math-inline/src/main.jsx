@@ -89,8 +89,6 @@ export class Main extends React.Component {
       activeAnswerBlock: '',
       showCorrect: false
     };
-
-    this.callOnSessionChange();
   }
 
   UNSAFE_componentWillMount() {

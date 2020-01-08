@@ -1028,5 +1028,20 @@
     "committerDate": "2019-12-19 09:25:51 +0000",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.12"
+  },
+  {
+    "type": "fix",
+    "scope": "math-inline",
+    "subject": "no session change to be emitted upon mounting - ch5517 - PIE-181",
+    "merge": null,
+    "header": "fix(math-inline): no session change to be emitted upon mounting - ch5517 - PIE-181",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0a46eb220ba05f48b9b66977664773db3d54cb58",
+    "gitTags": " (origin/fix/ch5517/PIE-181)",
+    "committerDate": "2019-12-23 17:20:26 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.13"
   }
 ]

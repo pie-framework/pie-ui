@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.12...@pie-ui/math-inline@3.0.13) (2020-01-08)
+
+
+### Bug Fixes
+
+* **math-inline:** no session change to be emitted upon mounting - ch5517 - PIE-181 ([0a46eb2](https://github.com/pie-framework/pie-ui/commit/0a46eb2))
+
+
+
+
+
 ## [3.0.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.11...@pie-ui/math-inline@3.0.12) (2019-12-19)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.4...@pie-ui/hotspot@1.3.5) (2020-01-08)
+
+
+### Bug Fixes
+
+* ch2880: For some hotspot items, the distinction between selected and not selected areas is quite subtle (increased border width) ([82b39a4](https://github.com/pie-framework/pie-elements/commit/82b39a4))
+* ch2880: For some hotspot items, the distinction between selected and not selected areas is quite subtle (increased border width) ([e4fab66](https://github.com/pie-framework/pie-elements/commit/e4fab66))
+
+
+
+
+
 ## [1.3.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.3...@pie-ui/hotspot@1.3.4) (2019-12-18)
 
 

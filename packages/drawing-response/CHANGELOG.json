@@ -703,5 +703,20 @@
     "committerDate": "2019-12-18 11:40:43 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "render value first, fallback to label [ch6084]",
+    "merge": null,
+    "header": "fix: render value first, fallback to label [ch6084]",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4af2d2d902dc9e7cb203b095a14f32ca6f376c35",
+    "gitTags": " (origin/fix/6084-drawing-response-not-showing-text)",
+    "committerDate": "2020-01-21 12:01:09 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.3"
   }
 ]

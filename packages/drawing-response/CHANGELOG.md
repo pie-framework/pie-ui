@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.2...@pie-ui/drawing-response@1.6.3) (2020-01-21)
+
+
+### Bug Fixes
+
+* render value first, fallback to label [ch6084] ([4af2d2d](https://github.com/pie-framework/pie-elements/commit/4af2d2d))
+
+
+
+
+
 ## [1.6.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.1...@pie-ui/drawing-response@1.6.2) (2019-12-18)
 
 

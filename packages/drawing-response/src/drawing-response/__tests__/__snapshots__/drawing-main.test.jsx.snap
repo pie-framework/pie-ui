@@ -26,7 +26,7 @@ exports[`DrawingResponse DrawableText snapshot renders 1`] = `
     onMouseUp={[Function]}
     onTransform={[Function]}
     onTransformEnd={[MockFunction]}
-    text="Double click to edit this text. Press Enter to submit."
+    text="This is what the user entered"
     visible={true}
     width={200}
     x={60}
@@ -50,6 +50,37 @@ exports[`DrawingResponse DrawableText snapshot renders textAreas 1`] = `
         "display": "none",
       }
     }
+  />
+</div>
+`;
+
+exports[`DrawingResponse DrawableText snapshot when there is no value renders 1`] = `
+<div>
+  <Text
+    bubbles={true}
+    draggable={true}
+    fontSize={16}
+    id="gcifqhhimf8k2d6g8hs"
+    key="gcifqhhimf8k2d6g8hs"
+    name="text_gcifqhhimf8k2d6g8hs"
+    onClick={[Function]}
+    onDblClick={[Function]}
+    onDragEnd={[MockFunction]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTransform={[Function]}
+    onTransformEnd={[MockFunction]}
+    text="Double click to edit this text. Press Enter to submit."
+    visible={true}
+    width={200}
+    x={60}
+    y={60}
+  />
+  <TransformerComponent
+    key="transformer_gcifqhhimf8k2d6g8hs"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    selectedShapeName="text_gcifqhhimf8k2d6g8hs"
   />
 </div>
 `;

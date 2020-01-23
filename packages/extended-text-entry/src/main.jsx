@@ -15,7 +15,8 @@ const style = theme => ({
   },
   prompt: {
     width: '100%',
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit * 2,
+    fontSize: 'inherit'
   }
 });
 

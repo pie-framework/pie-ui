@@ -8,7 +8,8 @@ module.exports = {
       id: '1',
       width: '200px',
       height: '100px',
-      disabled: false
+      disabled: false,
+      prompt: 'Text'
       //
       //feedback: '...'
     }

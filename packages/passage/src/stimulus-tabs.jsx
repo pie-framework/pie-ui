@@ -15,12 +15,15 @@ const styles = theme => ({
   },
   colorPrimary: {
     color: 'red',
+  },
+  tab: {
+    fontSize: '0.8125em'
   }
 });
 
 function TabContainer(props) {
   return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
+    <Typography component="div" style={{ padding: 8 * 3, fontSize: '0.875em' }}>
       {props.children}
     </Typography>
   );
@@ -50,6 +53,7 @@ class StimulusTabs extends React.Component {
               {
               tabs.map( tab => (
                 <Tab
+                  className={classes.tab}
                   key={tab.id}
                   label={<span dangerouslySetInnerHTML={{__html: tab.title}}></span>}
                   value={tab.id}

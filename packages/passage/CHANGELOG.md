@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.7...@pie-ui/passage@1.2.8) (2020-01-28)
+
+
+### Bug Fixes
+
+* ch6219: In DNA OT, when a pair of passages for an item are laid out in two tabs, the labels for the tabs (which display the title of each passage) are rendered too small to comfortably read. (override font-size of 0.875rem from Tab with '0.875em' and 0.8125rem from Typography with '0.8125em') ([fedfbe1](https://github.com/pie-framework/pie-ui/commit/fedfbe1))
+
+
+
+
+
 ## [1.2.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.6...@pie-ui/passage@1.2.7) (2019-06-12)
 
 **Note:** Version bump only for package @pie-ui/passage

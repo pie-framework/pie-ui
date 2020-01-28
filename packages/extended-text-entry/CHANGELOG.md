@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.9...@pie-ui/extended-text-entry@3.2.10) (2020-01-28)
+
+
+### Bug Fixes
+
+* ch7131: OT Text size difference in IBX/OT (override font-size of 0.875rem from Typography with 'inherit') ([716d771](https://github.com/pie-framework/pie-ui/commit/716d771))
+
+
+
+
+
 ## [3.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.8...@pie-ui/extended-text-entry@3.2.9) (2019-12-18)
 
 

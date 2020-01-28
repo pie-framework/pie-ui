@@ -6,6 +6,7 @@ exports[`stimulus tabs snapshot should render component 1`] = `
     Object {
       "colorPrimary": "StimulusTabs-colorPrimary-2",
       "root": "StimulusTabs-root-1",
+      "tab": "StimulusTabs-tab-3",
     }
   }
   tabs={

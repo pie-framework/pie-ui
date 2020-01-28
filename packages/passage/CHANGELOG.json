@@ -73,5 +73,20 @@
     "committerDate": "2019-06-07 15:16:17 -0400",
     "isTagged": true,
     "tag": "@pie-ui/passage@1.2.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "ch6219: In DNA OT, when a pair of passages for an item are laid out in two tabs, the labels for the tabs (which display the title of each passage) are rendered too small to comfortably read. (override font-size of 0.875rem from Tab with '0.875em' and 0.8125rem from Typography with '0.8125em')",
+    "merge": null,
+    "header": "fix: ch6219: In DNA OT, when a pair of passages for an item are laid out in two tabs, the labels for the tabs (which display the title of each passage) are rendered too small to comfortably read. (override font-size of 0.875rem from Tab with '0.875em' and 0.8125rem from Typography with '0.8125em')",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "fedfbe1307b745e4191e75a23b354d0c569ced4f",
+    "gitTags": "",
+    "committerDate": "2020-01-27 18:12:37 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/passage@1.2.8"
   }
 ]

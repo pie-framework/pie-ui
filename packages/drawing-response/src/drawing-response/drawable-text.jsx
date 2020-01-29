@@ -254,8 +254,7 @@ export default class TextDrawable {
         width,
         textVisible,
         rotation,
-        transformerVisible,
-        value
+        transformerVisible
       } = text;
 
       const textNode = `text_${id}`;
@@ -283,7 +282,7 @@ export default class TextDrawable {
           onDragEnd={this.props.handleSessionChange}
           onMouseEnter={this.props.onMouseOverElement}
           onMouseLeave={this.props.onMouseOutElement}
-          text={value || label}
+          text={text.text || label}
           name={textNode}
           x={x}
           y={y}

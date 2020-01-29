@@ -718,5 +718,20 @@
     "committerDate": "2020-01-21 12:01:09 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.3"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "use text not 'value' ch6084",
+    "merge": null,
+    "header": "fix: use text not 'value' ch6084",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c6af51b2bd255f15bbe1c9fcececb3fe3455c1d2",
+    "gitTags": " (develop)",
+    "committerDate": "2020-01-29 21:23:57 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.4"
   }
 ]

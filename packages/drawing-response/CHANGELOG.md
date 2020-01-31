@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.3...@pie-ui/drawing-response@1.6.4) (2020-01-29)
+
+
+### Bug Fixes
+
+* use text not 'value' ch6084 ([c6af51b](https://github.com/pie-framework/pie-elements/commit/c6af51b))
+
+
+
+
+
 ## [1.6.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.2...@pie-ui/drawing-response@1.6.3) (2020-01-21)
 
 

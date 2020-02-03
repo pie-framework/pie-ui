@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.8...@pie-ui/passage@1.3.0) (2020-02-03)
+
+
+### Features
+
+* **tabs:** made sure header is sticky [ch5727] ([f182a45](https://github.com/pie-framework/pie-ui/commit/f182a45))
+
+
+
+
+
 ## [1.2.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.2.7...@pie-ui/passage@1.2.8) (2020-01-28)
 
 

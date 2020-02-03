@@ -18,12 +18,20 @@ const styles = theme => ({
   },
   tab: {
     fontSize: '0.8125em'
+  },
+  stickyTabs: {
+    background: '#fff',
+    paddingBottom: '20px',
+    position: 'sticky',
+    top: 0
   }
 });
 
 function TabContainer(props) {
+  const padding = props.multiple ? '0 24px 24px 24px' : '24px';
+
   return (
-    <Typography component="div" style={{ padding: 8 * 3, fontSize: '0.875em' }}>
+    <Typography component="div" style={{ padding, fontSize: '0.875em' }}>
       {props.children}
     </Typography>
   );
@@ -31,6 +39,7 @@ function TabContainer(props) {
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
+  multiple: PropTypes.bool
 };
  
 class StimulusTabs extends React.Component {
@@ -49,7 +58,13 @@ class StimulusTabs extends React.Component {
       return (
         <div className={classes.root}>
          
-            <Tabs value={activeTab} onChange={this.handleChange}>
+            <Tabs
+              classes={{
+                root: classes.stickyTabs
+              }}
+              value={activeTab}
+              onChange={this.handleChange}
+            >
               {
               tabs.map( tab => (
                 <Tab
@@ -65,7 +80,7 @@ class StimulusTabs extends React.Component {
               {
                 tabs.map( tab => (
                   activeTab === tab.id
-                    ? <TabContainer key={tab.id}><div key={tab.id}  dangerouslySetInnerHTML={{__html: tab.text}} /></TabContainer>
+                    ? <TabContainer multiple key={tab.id}><div key={tab.id}  dangerouslySetInnerHTML={{__html: tab.text}} /></TabContainer>
                     : null
                 ))
               }

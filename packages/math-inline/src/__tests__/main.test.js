@@ -20,7 +20,22 @@ jest.mock('@pie-framework/mathquill', () => ({
 describe('Math-Inline Main', () => {
   const defaultProps = {
     onSessionChange: jest.fn(),
-    session: {},
+    session: {
+      answers: {
+        r1: {
+          value: ''
+        },
+        r2: {
+          value: ''
+        },
+        r3: {
+          value: ''
+        },
+        r4: {
+          value: ''
+        }
+      }
+    },
     model: {
       id: '1',
       element: 'math-inline',
@@ -78,24 +93,7 @@ describe('Math-Inline Main', () => {
       expect(wrapper.dive().find(Feedback).length).toEqual(0);
 
       expect(wrapper.dive().state()).toEqual({
-        activeAnswerBlock: '',
-        session: {
-          answers: {
-            r1: {
-              value: ''
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
-          }
-        },
-        showCorrect: false
+        activeAnswerBlock: ''
       });
 
       expect(Mathquill.getInterface().registerEmbed).toHaveBeenCalled();
@@ -134,24 +132,7 @@ describe('Math-Inline Main', () => {
       expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
       wrapper.instance().onSubFieldFocus('r1');
       expect(wrapper.state()).toEqual({
-        activeAnswerBlock: 'r1',
-        session: {
-          answers: {
-            r1: {
-              value: ''
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
-          }
-        },
-        showCorrect: false
+        activeAnswerBlock: 'r1'
       });
     });
 
@@ -178,61 +159,31 @@ describe('Math-Inline Main', () => {
       expect(wrapper.state().activeAnswerBlock).toEqual('');
     });
 
-    it('correctly pre-populates answers from session', () => {
-      wrapper = component({
-        session: {
-          answers: {
-            r1: {
-              value: '\\frac{n-5}{6}'
-            }
-          }
-        }
-      });
-      expect(wrapper.state()).toEqual({
-        activeAnswerBlock: '',
-        session: {
-          answers: {
-            r1: {
-              value: '\\frac{n-5}{6}'
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
-          }
-        },
-        showCorrect: false
-      });
-    });
-
     it('correctly updates session in case of model change', () => {
-      wrapper = component();
+      const sessionChangeFn = jest.fn();
+      wrapper = component({
+        onSessionChange: sessionChangeFn
+      });
 
       wrapper.instance().subFieldChanged('r1', 'value');
       expect(wrapper.state()).toEqual({
-        activeAnswerBlock: '',
-        session: {
-          answers: {
-            r1: {
-              value: 'value'
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
+        activeAnswerBlock: ''
+      });
+      expect(sessionChangeFn).toHaveBeenCalledWith({
+        answers: {
+          r1: {
+            value: 'value'
+          },
+          r2: {
+            value: ''
+          },
+          r3: {
+            value: ''
+          },
+          r4: {
+            value: ''
           }
-        },
-        showCorrect: false
+        }
       });
     });
 
@@ -240,24 +191,7 @@ describe('Math-Inline Main', () => {
       wrapper = component();
 
       expect(wrapper.state()).toEqual({
-        activeAnswerBlock: '',
-        session: {
-          answers: {
-            r1: {
-              value: ''
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
-          }
-        },
-        showCorrect: false
+        activeAnswerBlock: ''
       });
 
       const newProps = { ...defaultProps };
@@ -268,24 +202,7 @@ describe('Math-Inline Main', () => {
       wrapper.setProps(newProps);
 
       expect(wrapper.state()).toEqual({
-        activeAnswerBlock: '',
-        session: {
-          answers: {
-            r1: {
-              value: ''
-            },
-            r2: {
-              value: ''
-            },
-            r3: {
-              value: ''
-            },
-            r4: {
-              value: ''
-            }
-          }
-        },
-        showCorrect: false
+        activeAnswerBlock: ''
       });
     });
   });

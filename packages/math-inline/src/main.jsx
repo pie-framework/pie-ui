@@ -24,22 +24,21 @@ function generateAdditionalKeys(keyData = []) {
   }));
 }
 
-function prepareForStatic(model, state) {
+function prepareForStatic(model, session, showCorrect) {
   const { config, disabled } = model || {};
   const { expression, responses } = config || {};
 
   if (config && expression) {
     const modelExpression = expression;
 
-    if (state.showCorrect) {
+    if (showCorrect) {
       return responses && responses.length && responses[0].answer;
     }
 
     let answerBlocks = 1; // assume one at least
-    // build out local state model using responses declared in expression
 
     return (modelExpression || '').replace(REGEX, function() {
-      const answer = state.session.answers[`r${answerBlocks}`];
+      const answer = session.answers[`r${answerBlocks}`];
 
       if (disabled) {
         return `\\embed{answerBlock}[r${answerBlocks++}]`;
@@ -65,7 +64,6 @@ export class Main extends React.Component {
 
     if (props.model.config && props.model.config.expression) {
       let answerBlocks = 1; // assume one at least
-      // build out local state model using responses declared in expression
 
       (props.model.config.expression || '').replace(REGEX, () => {
         answers[`r${answerBlocks}`] = {
@@ -81,14 +79,16 @@ export class Main extends React.Component {
       });
     }
 
-    this.state = {
-      session: {
-        ...props.session,
-        answers
-      },
-      activeAnswerBlock: '',
-      showCorrect: false
+    const newSession = {
+      ...props.session,
+      answers
     };
+
+    this.state = {
+      activeAnswerBlock: '',
+    };
+
+    this.callOnSessionChange(newSession);
   }
 
   UNSAFE_componentWillMount() {
@@ -118,8 +118,8 @@ export class Main extends React.Component {
   }
 
   handleAnswerBlockDomUpdate = () => {
-    const { model, classes } = this.props;
-    const { session, showCorrect } = this.state;
+    const { model, classes, session } = this.props;
+    const { showCorrect } = this.state;
     const answers = session.answers;
 
     if (this.root && model.disabled && !showCorrect) {
@@ -175,11 +175,10 @@ export class Main extends React.Component {
       (config && nextConfig && config.expression !== nextConfig.expression)
     ) {
       const newAnswers = {};
-      const answers = this.state.session.answers;
+      const answers = this.props.session.answers;
 
       let answerBlocks = 1; // assume one at least
 
-      // build out local state model using responses declared in expression
       (nextConfig.expression || '').replace(REGEX, () => {
         newAnswers[`r${answerBlocks}`] = {
           value:
@@ -191,24 +190,24 @@ export class Main extends React.Component {
         answerBlocks++;
       });
 
-      this.setState(
-        state => ({
-          session: {
-            ...state.session,
-            completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
-            answers: newAnswers
-          }
-        }),
-        this.handleAnswerBlockDomUpdate
-      );
+      const newSession = {
+        ...this.props.session,
+        completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
+        answers: newAnswers
+      };
+
+      this.callOnSessionChange(newSession);
+
+      setTimeout(this.handleAnswerBlockDomUpdate, 0);
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const sameModel = isEqual(this.props.model, nextProps.model);
+    const sameSession = isEqual(this.props.session, nextProps.session);
     const sameState = isEqual(this.state, nextState);
 
-    return !sameModel || !sameState;
+    return !sameModel || !sameSession || !sameState;
   }
 
   componentDidMount() {
@@ -219,10 +218,7 @@ export class Main extends React.Component {
   onDone = () => {};
 
   onSimpleResponseChange = response => {
-    this.setState(
-      state => ({ session: { ...state.session, response } }),
-      this.callOnSessionChange
-    );
+    this.callOnSessionChange({ ...this.props.session, response });
   };
 
   onSubFieldFocus = id => {
@@ -267,11 +263,11 @@ export class Main extends React.Component {
     this.input.focus();
   };
 
-  callOnSessionChange = () => {
+  callOnSessionChange = (session) => {
     const { onSessionChange } = this.props;
 
     if (onSessionChange) {
-      onSessionChange(this.state.session);
+      onSessionChange(session);
     }
   };
 
@@ -281,24 +277,21 @@ export class Main extends React.Component {
 
   subFieldChanged = (name, subfieldValue) => {
     if (name) {
-      this.setState(
-        state => ({
-          session: {
-            ...state.session,
-            completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
-            answers: {
-              ...state.session.answers,
-              [name]: { value: subfieldValue }
-            }
-          }
-        }),
-        this.callOnSessionChange
-      );
+      const newSession = {
+        ...this.props.session,
+        completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
+        answers: {
+          ...this.props.session.answers,
+          [name]: { value: subfieldValue }
+        }
+      };
+
+      this.callOnSessionChange(newSession)
     }
   };
 
   getFieldName = (changeField, fields) => {
-    const { answers } = this.state.session;
+    const { answers } = this.props.session;
 
     if (Object.keys(answers || {}).length) {
       const keys = Object.keys(answers);
@@ -319,9 +312,8 @@ export class Main extends React.Component {
   };
 
   render() {
-    const { model, classes } = this.props;
-    const state = this.state;
-    const { activeAnswerBlock, showCorrect, session } = state;
+    const { model, classes, session } = this.props;
+    const { activeAnswerBlock, showCorrect } = this.state;
 
     if (!model.config) {
       return null;
@@ -329,7 +321,7 @@ export class Main extends React.Component {
 
     const additionalKeys = generateAdditionalKeys(model.config.customKeys);
     const correct = model.correctness && model.correctness.correct;
-    const staticLatex = prepareForStatic(model, state) || '';
+    const staticLatex = prepareForStatic(model, session, showCorrect) || '';
 
     return (
       <div

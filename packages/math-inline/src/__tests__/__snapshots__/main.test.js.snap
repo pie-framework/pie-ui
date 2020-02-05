@@ -61,6 +61,23 @@ exports[`Math-Inline Main render renders correctly with snapshot 1`] = `
     }
   }
   onSessionChange={[MockFunction]}
-  session={Object {}}
+  session={
+    Object {
+      "answers": Object {
+        "r1": Object {
+          "value": "",
+        },
+        "r2": Object {
+          "value": "",
+        },
+        "r3": Object {
+          "value": "",
+        },
+        "r4": Object {
+          "value": "",
+        },
+      },
+    }
+  }
 />
 `;

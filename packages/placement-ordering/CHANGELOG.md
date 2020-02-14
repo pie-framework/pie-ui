@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.11...@pie-ui/placement-ordering@4.7.12) (2020-02-14)
+
+
+### Bug Fixes
+
+* bump react-dnd@^10 ([95a05e5](https://github.com/pie-framework/pie-ui/commit/95a05e5))
+
+
+
+
+
 ## [4.7.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.10...@pie-ui/placement-ordering@4.7.11) (2019-12-18)
 
 

@@ -2147,6 +2147,17 @@
     react-dnd "^10.0.2"
     react-dnd-html5-backend "^10.0.2"
 
+"@pie-lib/drag@^1.1.24":
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/@pie-lib/drag/-/drag-1.1.24.tgz#7af6382dad1bf7a146eb5aee92b47d21515bc231"
+  integrity sha512-aexjZQufdH62Re+LNMvfOX+bD+0GXO0AsSC+5h55Td1FWBI2dDhceF4cdm5CqXmvqNZUn2LjaHcq7M7etT2b2A==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    classnames "^2.2.6"
+    lodash "^4.17.11"
+    react-dnd "^9.3.2"
+    react-dnd-html5-backend "^9.3.2"
+
 "@pie-lib/editable-html@^7.10.27":
   version "7.10.27"
   resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.10.27.tgz#f69eafc44930332a77503c26bea30e4015f1d8cb"

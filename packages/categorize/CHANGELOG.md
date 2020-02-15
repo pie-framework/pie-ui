@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.16...@pie-ui/categorize@1.3.17) (2020-02-15)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag#^1.1.24 ([82a6403](https://github.com/pie-framework/pie-ui/commit/82a6403))
+* rollback dnd bump ([195c1ba](https://github.com/pie-framework/pie-ui/commit/195c1ba))
+
+
+
+
+
 ## [1.3.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.15...@pie-ui/categorize@1.3.16) (2020-02-14)
 
 

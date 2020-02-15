@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.10...@pie-ui/match-list@1.4.11) (2020-02-15)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag#^1.1.24 ([82a6403](https://github.com/pie-framework/pie-ui/commit/82a6403))
+* rollback dnd bump ([195c1ba](https://github.com/pie-framework/pie-ui/commit/195c1ba))
+
+
+
+
+
 ## [1.4.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.9...@pie-ui/match-list@1.4.10) (2020-02-14)
 
 

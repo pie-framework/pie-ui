@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.12...@pie-ui/placement-ordering@4.7.13) (2020-02-15)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag#^1.1.24 ([82a6403](https://github.com/pie-framework/pie-ui/commit/82a6403))
+* rollback dnd bump ([195c1ba](https://github.com/pie-framework/pie-ui/commit/195c1ba))
+
+
+
+
+
 ## [4.7.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.11...@pie-ui/placement-ordering@4.7.12) (2020-02-14)
 
 

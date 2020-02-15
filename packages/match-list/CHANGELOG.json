@@ -403,5 +403,35 @@
     "committerDate": "2020-02-14 12:55:59 +0000",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.10"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-lib/drag#^1.1.24",
+    "merge": null,
+    "header": "fix: bump @pie-lib/drag#^1.1.24",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "82a64034d9a516fc753d0ce76e401c462f77179e",
+    "gitTags": "",
+    "committerDate": "2020-02-15 21:45:35 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rollback dnd bump",
+    "merge": null,
+    "header": "fix: rollback dnd bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "195c1ba57edb32c33aa352c77b55d9ebd7b43710",
+    "gitTags": "",
+    "committerDate": "2020-02-15 21:43:11 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.11"
   }
 ]

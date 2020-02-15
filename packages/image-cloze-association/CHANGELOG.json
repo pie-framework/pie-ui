@@ -88,5 +88,20 @@
     "committerDate": "2020-02-14 12:55:59 +0000",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.2.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-lib/drag#^1.1.24",
+    "merge": null,
+    "header": "fix: bump @pie-lib/drag#^1.1.24",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "82a64034d9a516fc753d0ce76e401c462f77179e",
+    "gitTags": "",
+    "committerDate": "2020-02-15 21:45:35 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.13"
   }
 ]

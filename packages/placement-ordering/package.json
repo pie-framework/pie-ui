@@ -13,7 +13,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-lib/correct-answer-toggle": "^2.2.6",
-    "@pie-lib/drag": "^1.1.23",
+    "@pie-lib/drag": "^1.1.24",
     "@pie-lib/math-rendering": "^2.1.0",
     "@pie-lib/render-ui": "^4.5.3",
     "debug": "^4.1.1",

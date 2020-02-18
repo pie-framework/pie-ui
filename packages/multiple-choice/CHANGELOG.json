@@ -1223,5 +1223,20 @@
     "committerDate": "2019-12-18 11:40:43 +0000",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.11.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "4020: Alignment issue with answer choices for MC and MS",
+    "merge": null,
+    "header": "fix: 4020: Alignment issue with answer choices for MC and MS",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "bb7196c6c876f068c6b6908acc7fa7c5300fb6b1",
+    "gitTags": "",
+    "committerDate": "2020-02-18 08:36:01 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.11.13"
   }
 ]

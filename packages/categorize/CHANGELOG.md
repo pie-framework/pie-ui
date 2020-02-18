@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.15...@pie-ui/categorize@1.3.16) (2020-02-14)
+
+
+### Bug Fixes
+
+* bump react-dnd@^10 ([95a05e5](https://github.com/pie-framework/pie-ui/commit/95a05e5))
+
+
+
+
+
 ## [1.3.15](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.14...@pie-ui/categorize@1.3.15) (2019-12-18)
 
 

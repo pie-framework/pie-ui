@@ -25,9 +25,8 @@ const styleSheet = theme => ({
   checkboxHolder: {
     display: 'flex',
     alignItems: 'center',
-    width: 'auto',
+    flex: 1,
     '& label': {
-      width: 'auto !important'
     }
   },
   rationale: {

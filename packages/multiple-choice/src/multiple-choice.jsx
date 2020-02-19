@@ -138,11 +138,9 @@ export class MultipleChoice extends React.Component {
   }
 
   isSelected(value) {
-    if (this.props.session.value) {
-      return this.props.session.value.indexOf(value) >= 0;
-    } else {
-      return false;
-    }
+    const sessionValue = this.props.session && this.props.session.value;
+
+    return sessionValue && sessionValue.indexOf && sessionValue.indexOf(value) >= 0;
   }
 
   indexToSymbol(index) {

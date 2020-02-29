@@ -1,7 +1,8 @@
 import * as math from 'mathjs';
 import uniqWith from 'lodash/uniqWith';
 import isObject from 'lodash/isObject';
-import { isNumber } from 'util';
+import isNumber from 'lodash/isNumber';
+
 export const fractionSnapTo = (min, max, interval, value) => {
   value = fmax(fmin(value, max), min);
   const mod = value.mod(interval);

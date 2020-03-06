@@ -733,5 +733,20 @@
     "committerDate": "2020-01-29 21:23:57 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.4"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "upgrade config-ui (shouldn't be there at all",
+    "merge": null,
+    "header": "fix: upgrade config-ui (shouldn't be there at all",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "06f9f0c2b2f3aea1722f002490cc75b4e33f9440",
+    "gitTags": "",
+    "committerDate": "2020-03-06 14:46:51 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.6"
   }
 ]

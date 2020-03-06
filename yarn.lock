@@ -2140,7 +2140,7 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/config-ui@^10.7.36":
+"@pie-lib/config-ui@^10.7.36", "@pie-lib/config-ui@^10.7.56":
   version "10.7.56"
   resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.7.56.tgz#5d830ebf46b0615e3cce56d0f19199de3922bc94"
   integrity sha512-9HldW+LOAEHEeMXFmD3E4OX9Hv4b5RLkYIk1RMAepZ9jYo/p2nBe0HCUPUw+WgkfVWonNohgkvkhv00R6AB/Ew==

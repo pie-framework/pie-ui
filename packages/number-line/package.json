@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/number-line",
-  "version": "7.1.16",
+  "version": "7.1.17",
   "description": "A number line interaction for pie",
   "main": "lib/index.js",
   "publishConfig": {

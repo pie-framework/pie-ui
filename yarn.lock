@@ -2431,6 +2431,50 @@
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
 
+"@pie-ui/function-entry@^3.2.11":
+  version "3.2.11"
+  resolved "https://registry.yarnpkg.com/@pie-ui/function-entry/-/function-entry-3.2.11.tgz#ce3aca6e29c31b7da5dd47acac4e4b19147c31dc"
+  integrity sha512-VUTEzhTBHxkxBPrm8iZzn6/de/is5kn2BaXjnzSy08+Q4okTRImhbYq70VQM97J0E4BlsQVjtTDD1wu7X95cSA==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-framework/pie-player-events" "^0.1.0"
+    "@pie-lib/render-ui" "^4.5.3"
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+
+"@pie-ui/graph-lines@^2.3.7":
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/@pie-ui/graph-lines/-/graph-lines-2.3.7.tgz#44d25ae747132d1ebcc00db02678a6a97222ee30"
+  integrity sha512-RLtQQZz2PmnXVRuEvy6gKIQCVHhNI+4kavVohGFTBhzpZ++ELqcTXNrDKAaBrNNid6JMjVrhVDuQl+n0ewT+gg==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/charting" "^2.3.1"
+    "@pie-lib/config-ui" "^10.7.36"
+    "@pie-lib/correct-answer-toggle" "^2.1.2"
+    "@pie-lib/render-ui" "^4.5.3"
+    classnames "^2.2.5"
+    debug "^4.1.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+
+"@pie-ui/inline-choice@^5.3.9":
+  version "5.3.9"
+  resolved "https://registry.yarnpkg.com/@pie-ui/inline-choice/-/inline-choice-5.3.9.tgz#c3a2a75d11f3bae530c3859d686533d4f39d9263"
+  integrity sha512-V1oQYTtmFKPVUT8w5NJtkxiI36w9qDXVGhwxw7u5r42yWA+lIlnhGv51VnNeJDbDDjfQJqmdB3MrRC92h7fuzA==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-framework/pie-player-events" "^0.1.0"
+    "@pie-lib/icons" "^2.4.5"
+    "@pie-lib/render-ui" "^4.5.3"
+    classnames "^2.2.5"
+    lodash "^4.17.10"
+    prop-types "^15.6.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+
 "@pie-ui/number-line@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@pie-ui/number-line/-/number-line-5.1.2.tgz#a3c896467556363944b8158e6cad015de851ebf6"
@@ -2448,6 +2492,36 @@
     react-dom "^16.8.1"
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
+    react-transition-group "^2.3.1"
+
+"@pie-ui/point-intercept@^1.2.16":
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/@pie-ui/point-intercept/-/point-intercept-1.2.16.tgz#6a43eb0eca66f021bc87d1bb6845428bcc16d94f"
+  integrity sha512-QhdJ/SL3PZQ6nL+1dLPytLSEnCntDto+s5PtSLyFxqyQcYhrBMF4bqtxkO8/ZijwXHjP413LsM7fhyJ38h9bOg==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/charting" "^2.3.1"
+    "@pie-lib/correct-answer-toggle" "^2.1.2"
+    "@pie-lib/render-ui" "^4.5.3"
+    debug "^4.1.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+
+"@pie-ui/text-entry@^3.5.12":
+  version "3.5.12"
+  resolved "https://registry.yarnpkg.com/@pie-ui/text-entry/-/text-entry-3.5.12.tgz#dd86899f5fa04e02bc0c7f457a603d1190e4d340"
+  integrity sha512-Y3nGqbu3zzLa3u0jVu9udufuxsqyLf1unwrgo0Qlt5g3TkuZoCu6Yiis2hooZNWB96i12faMFCdrWb4jwKtI9g==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-framework/pie-player-events" "^0.1.0"
+    "@pie-lib/render-ui" "^4.5.3"
+    debug "^4.1.1"
+    lodash "^4.17.10"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+    react-number-format PieElements/react-number-format#feature/bad-input
     react-transition-group "^2.3.1"
 
 "@react-dnd/asap@^4.0.0":
@@ -9890,7 +9964,7 @@ react-measure@^2.2.2:
     prop-types "^15.6.2"
     resize-observer-polyfill "^1.5.0"
 
-react-number-format@PieElements/react-number-format#feature/bad-input:
+"react-number-format@github:PieElements/react-number-format#feature/bad-input":
   version "3.2.0"
   resolved "https://codeload.github.com/PieElements/react-number-format/tar.gz/ca13da7e71b4aeba759365fc0b08536185749123"
   dependencies:

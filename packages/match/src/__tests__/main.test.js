@@ -5,7 +5,6 @@ import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from '../answer-grid';
 import { shallow } from 'enzyme/build';
-import Controls from '@pie-ui/graph-lines/src/controls';
 
 describe('Main', () => {
   const defaultProps = {

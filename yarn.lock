@@ -2053,23 +2053,6 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/charting@^2.3.1":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-2.3.5.tgz#5ce000fc0d7da7dd0f20117180578494625eef01"
-  integrity sha512-7cuHcSyV9L33C4P4mbip+rVCuai62tsNJ71SKPFQjLbata1uIEO9h/dLNXqixKpwBlNTwQlXZG0H5keTE0iCWw==
-  dependencies:
-    "@vx/axis" "^0.0.160"
-    "@vx/grid" "^0.0.160"
-    "@vx/point" "^0.0.153"
-    "@vx/shape" "^0.0.160"
-    classnames "^2.2.5"
-    d3-scale "^2.0.0"
-    d3-selection "^1.3.0"
-    invariant "^2.2.4"
-    lodash "^4.17.5"
-    react-draggable "^3.0.5"
-    react-jss "^8.4.0"
-
 "@pie-lib/charting@^4.2.3":
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.2.4.tgz#3062d0127f5fa8ab16af9aaa6ac0138bdec4ccfa"
@@ -2431,50 +2414,6 @@
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
 
-"@pie-ui/function-entry@^3.2.11":
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/@pie-ui/function-entry/-/function-entry-3.2.11.tgz#ce3aca6e29c31b7da5dd47acac4e4b19147c31dc"
-  integrity sha512-VUTEzhTBHxkxBPrm8iZzn6/de/is5kn2BaXjnzSy08+Q4okTRImhbYq70VQM97J0E4BlsQVjtTDD1wu7X95cSA==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@pie-framework/pie-player-events" "^0.1.0"
-    "@pie-lib/render-ui" "^4.5.3"
-    classnames "^2.2.5"
-    prop-types "^15.6.1"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-
-"@pie-ui/graph-lines@^2.3.7":
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/@pie-ui/graph-lines/-/graph-lines-2.3.7.tgz#44d25ae747132d1ebcc00db02678a6a97222ee30"
-  integrity sha512-RLtQQZz2PmnXVRuEvy6gKIQCVHhNI+4kavVohGFTBhzpZ++ELqcTXNrDKAaBrNNid6JMjVrhVDuQl+n0ewT+gg==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/charting" "^2.3.1"
-    "@pie-lib/config-ui" "^10.7.36"
-    "@pie-lib/correct-answer-toggle" "^2.1.2"
-    "@pie-lib/render-ui" "^4.5.3"
-    classnames "^2.2.5"
-    debug "^4.1.1"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-
-"@pie-ui/inline-choice@^5.3.9":
-  version "5.3.9"
-  resolved "https://registry.yarnpkg.com/@pie-ui/inline-choice/-/inline-choice-5.3.9.tgz#c3a2a75d11f3bae530c3859d686533d4f39d9263"
-  integrity sha512-V1oQYTtmFKPVUT8w5NJtkxiI36w9qDXVGhwxw7u5r42yWA+lIlnhGv51VnNeJDbDDjfQJqmdB3MrRC92h7fuzA==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@pie-framework/pie-player-events" "^0.1.0"
-    "@pie-lib/icons" "^2.4.5"
-    "@pie-lib/render-ui" "^4.5.3"
-    classnames "^2.2.5"
-    lodash "^4.17.10"
-    prop-types "^15.6.1"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-
 "@pie-ui/number-line@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@pie-ui/number-line/-/number-line-5.1.2.tgz#a3c896467556363944b8158e6cad015de851ebf6"
@@ -2492,36 +2431,6 @@
     react-dom "^16.8.1"
     react-draggable "^3.0.5"
     react-jss "^8.4.0"
-    react-transition-group "^2.3.1"
-
-"@pie-ui/point-intercept@^1.2.16":
-  version "1.2.16"
-  resolved "https://registry.yarnpkg.com/@pie-ui/point-intercept/-/point-intercept-1.2.16.tgz#6a43eb0eca66f021bc87d1bb6845428bcc16d94f"
-  integrity sha512-QhdJ/SL3PZQ6nL+1dLPytLSEnCntDto+s5PtSLyFxqyQcYhrBMF4bqtxkO8/ZijwXHjP413LsM7fhyJ38h9bOg==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-lib/charting" "^2.3.1"
-    "@pie-lib/correct-answer-toggle" "^2.1.2"
-    "@pie-lib/render-ui" "^4.5.3"
-    debug "^4.1.1"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-
-"@pie-ui/text-entry@^3.5.12":
-  version "3.5.12"
-  resolved "https://registry.yarnpkg.com/@pie-ui/text-entry/-/text-entry-3.5.12.tgz#dd86899f5fa04e02bc0c7f457a603d1190e4d340"
-  integrity sha512-Y3nGqbu3zzLa3u0jVu9udufuxsqyLf1unwrgo0Qlt5g3TkuZoCu6Yiis2hooZNWB96i12faMFCdrWb4jwKtI9g==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@material-ui/icons" "^3.0.2"
-    "@pie-framework/pie-player-events" "^0.1.0"
-    "@pie-lib/render-ui" "^4.5.3"
-    debug "^4.1.1"
-    lodash "^4.17.10"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-    react-number-format PieElements/react-number-format#feature/bad-input
     react-transition-group "^2.3.1"
 
 "@react-dnd/asap@^4.0.0":
@@ -2765,18 +2674,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vx/axis@^0.0.160":
-  version "0.0.160"
-  resolved "https://registry.yarnpkg.com/@vx/axis/-/axis-0.0.160.tgz#b6a59e1ea2984474e8afcf01dfbf6c6ac8d1d763"
-  integrity sha512-DJ//HmogNLLN5sIFG8MdjrRk60FLMqK0E/RThdd4z3OhiWnFgEKhSQE26i7G2dUg/3k+NMajJi75ldl8Xeq2fw==
-  dependencies:
-    "@vx/group" "0.0.153"
-    "@vx/point" "0.0.153"
-    "@vx/shape" "^0.0.160"
-    "@vx/text" "0.0.159"
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-
 "@vx/axis@^0.0.183":
   version "0.0.183"
   resolved "https://registry.yarnpkg.com/@vx/axis/-/axis-0.0.183.tgz#20da1a331922a8a9f7c477c649f3c190471749b4"
@@ -2808,13 +2705,6 @@
   dependencies:
     prop-types "^15.5.10"
 
-"@vx/curve@0.0.153":
-  version "0.0.153"
-  resolved "https://registry.yarnpkg.com/@vx/curve/-/curve-0.0.153.tgz#6829c3454f9ec16b7e6925aecbad5a1e3c8b3169"
-  integrity sha512-llaI1Lcbsj0cUHOiN1D5QJp4bDOqQl8+cymDkQvY8u/miaSJTB4H/PsSzOWVBKGHAkwiXmeS7ug837iXDIDhjA==
-  dependencies:
-    d3-shape "^1.0.6"
-
 "@vx/curve@0.0.182":
   version "0.0.182"
   resolved "https://registry.yarnpkg.com/@vx/curve/-/curve-0.0.182.tgz#55487fe71fb00ccc2299437e76b2c68b88c37c7f"
@@ -2843,16 +2733,6 @@
   dependencies:
     "@vx/point" "0.0.189"
 
-"@vx/grid@^0.0.160":
-  version "0.0.160"
-  resolved "https://registry.yarnpkg.com/@vx/grid/-/grid-0.0.160.tgz#067a0b7413b10956b19c00ee2e3b90597c72957c"
-  integrity sha512-RRU6B0/1eksMbiTNkDtg/lJjTlkFd/p15lfPrYwmmnZqS5yB2FqvMNu8KwcBEcwXov0i8wIkxCeO4ihJXv+fRw==
-  dependencies:
-    "@vx/group" "0.0.153"
-    "@vx/point" "0.0.153"
-    "@vx/shape" "^0.0.160"
-    classnames "^2.2.5"
-
 "@vx/grid@^0.0.183":
   version "0.0.183"
   resolved "https://registry.yarnpkg.com/@vx/grid/-/grid-0.0.183.tgz#7d45c75e639f213ce11a42592a584e3daaafccda"
@@ -2875,13 +2755,6 @@
     classnames "^2.2.5"
     prop-types "^15.6.2"
 
-"@vx/group@0.0.153":
-  version "0.0.153"
-  resolved "https://registry.yarnpkg.com/@vx/group/-/group-0.0.153.tgz#4ec2ce37cf31b0f0b3d46dd8ee6b0eaf7e763bc6"
-  integrity sha512-9sNhTDo45qNw8aJSrHAvRoLxP9oR31brLCw0UG7OM8/eHCXSVfMbd6fXy6pd3e+XfA3MsmwUB4HLj1noTpa6dA==
-  dependencies:
-    classnames "^2.2.5"
-
 "@vx/group@0.0.183", "@vx/group@^0.0.183":
   version "0.0.183"
   resolved "https://registry.yarnpkg.com/@vx/group/-/group-0.0.183.tgz#15c8b14c5cadbe5f76c3ddcab8c5698cae24b443"
@@ -2897,11 +2770,6 @@
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.2"
-
-"@vx/point@0.0.153", "@vx/point@^0.0.153":
-  version "0.0.153"
-  resolved "https://registry.yarnpkg.com/@vx/point/-/point-0.0.153.tgz#c0623f72804026a5afe7e1602bb27cd7b0847afc"
-  integrity sha512-eAFFt25Wi+GAjHImLBop1oV7mXNE5mB/zi+OsQJxcRM1C5xc2TWs1OFUZpxuQ71DeGkUCIVM6YvAMD740MWniA==
 
 "@vx/point@0.0.182", "@vx/point@^0.0.182":
   version "0.0.182"
@@ -2945,28 +2813,6 @@
     d3-path "^1.0.5"
     d3-shape "^1.2.0"
     prop-types "^15.5.10"
-
-"@vx/shape@^0.0.160":
-  version "0.0.160"
-  resolved "https://registry.yarnpkg.com/@vx/shape/-/shape-0.0.160.tgz#407e33cec672c343aa451d734f395dda2cc1acb4"
-  integrity sha512-bNE3APQVWJkhNLOZRhZcPggDkadbBLK3w7yyaIowTnz+/n3Iwum5ttGHvT/qtstvNsfGT0Fa8oIpJK9eMDNsPw==
-  dependencies:
-    "@vx/curve" "0.0.153"
-    "@vx/group" "0.0.153"
-    "@vx/point" "0.0.153"
-    classnames "^2.2.5"
-    d3-path "^1.0.5"
-    d3-shape "^1.2.0"
-    prop-types "^15.5.10"
-
-"@vx/text@0.0.159":
-  version "0.0.159"
-  resolved "https://registry.yarnpkg.com/@vx/text/-/text-0.0.159.tgz#5aa26ea0136f13d1a3d99cb104e0ce36bb179496"
-  integrity sha512-TUtOzTp3+hI5AOX7UOEz7q4KXQjVOq3cQIn1tyQsgCLl7mT8DAPIHmVlmqmwPP9E51NLjJxfiGMpgiJMCX62KQ==
-  dependencies:
-    classnames "^2.2.5"
-    lodash "^4.17.4"
-    reduce-css-calc "^1.3.0"
 
 "@vx/text@0.0.183":
   version "0.0.183"
@@ -8046,7 +7892,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -9963,12 +9809,6 @@ react-measure@^2.2.2:
     get-node-dimensions "^1.2.1"
     prop-types "^15.6.2"
     resize-observer-polyfill "^1.5.0"
-
-"react-number-format@github:PieElements/react-number-format#feature/bad-input":
-  version "3.2.0"
-  resolved "https://codeload.github.com/PieElements/react-number-format/tar.gz/ca13da7e71b4aeba759365fc0b08536185749123"
-  dependencies:
-    prop-types "^15.6.0"
 
 react-portal@^3.1.0:
   version "3.2.0"

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.13](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.12...@pie-ui/multiple-choice@4.11.13) (2020-02-18)
+
+
+### Bug Fixes
+
+* 4020: Alignment issue with answer choices for MC and MS ([bb7196c](https://github.com/pie-framework/pie-elements/commit/bb7196c))
+
+
+
+
+
 ## [4.11.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.11...@pie-ui/multiple-choice@4.11.12) (2019-12-18)
 
 

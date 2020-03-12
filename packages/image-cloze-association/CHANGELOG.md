@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.12...@pie-ui/image-cloze-association@1.2.13) (2020-02-15)
+
+
+### Bug Fixes
+
+* bump @pie-lib/drag#^1.1.24 ([82a6403](https://github.com/pie-framework/pie-ui/commit/82a6403))
+
+
+
+
+
 ## [1.2.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.11...@pie-ui/image-cloze-association@1.2.12) (2020-02-14)
 
 

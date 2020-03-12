@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "Match List description.",
   "main": "lib/index.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "@material-ui/icons": "^3.0.2",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/correct-answer-toggle": "^2.2.6",
-    "@pie-lib/drag": "^1.1.23",
+    "@pie-lib/drag": "^1.1.24",
     "@pie-lib/math-rendering": "^2.1.0",
     "@pie-lib/render-ui": "^4.5.3",
     "classnames": "^2.2.5",
@@ -19,7 +19,7 @@
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
-    "react-dnd": "^10.0.2",
+    "react-dnd": "^9.3.2",
     "react-dom": "^16.8.1"
   },
   "devDependencies": {

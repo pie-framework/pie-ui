@@ -1043,5 +1043,20 @@
     "committerDate": "2019-12-23 17:20:26 +0200",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.13"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump @pie-framework/mathquill@^1.1.0",
+    "merge": null,
+    "header": "fix: bump @pie-framework/mathquill@^1.1.0",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c21f1aa22ea269c9eb1987413fbb68547cdd8a4d",
+    "gitTags": "",
+    "committerDate": "2020-03-06 14:11:16 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.16"
   }
 ]

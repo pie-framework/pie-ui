@@ -2477,23 +2477,6 @@
     react "^16.8.1"
     react-dom "^16.8.1"
 
-"@pie-ui/inline-dropdown@^1.7.8":
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/@pie-ui/inline-dropdown/-/inline-dropdown-1.7.8.tgz#8bc1bfc7a2cb3d5b49778063f5a7529df1a8fd7c"
-  integrity sha512-RfodW4+JsPAScZkMgTUk/QEAcp2wp1KDGjUjx8Q34bcRTT6VBSqiXiPubdAddVCwmjsSZUks/om2j1uWFi5R4g==
-  dependencies:
-    "@material-ui/core" "^3.9.2"
-    "@pie-framework/pie-player-events" "^0.1.0"
-    "@pie-lib/correct-answer-toggle" "^2.2.6"
-    "@pie-lib/mask-markup" "^1.7.3"
-    "@pie-lib/math-rendering" "^2.1.0"
-    "@pie-lib/render-ui" "^4.5.3"
-    classnames "^2.2.5"
-    lodash "^4.17.10"
-    prop-types "^15.6.1"
-    react "^16.8.1"
-    react-dom "^16.8.1"
-
 "@pie-ui/number-line@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@pie-ui/number-line/-/number-line-5.1.2.tgz#a3c896467556363944b8158e6cad015de851ebf6"

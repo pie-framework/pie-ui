@@ -9,6 +9,7 @@
   ],
   "version": "1.2.13",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "repository": "pie-framework/pie-ui.git",
   "publishConfig": {
     "access": "public"

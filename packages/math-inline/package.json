@@ -6,6 +6,7 @@
   "version": "3.0.17",
   "description": "A math interaction, fill-in-the-blank type for expressions or equations.",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/mathquill": "^1.1.0",

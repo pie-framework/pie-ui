@@ -6,6 +6,7 @@
   "version": "1.4.11",
   "description": "Match List description.",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",

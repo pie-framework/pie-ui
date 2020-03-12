@@ -9,6 +9,7 @@
     "custom-element"
   ],
   "main": "lib/index.js",
+  "module": "src/index.js",
   "repository": "pie-framework/pie-ui",
   "publishConfig": {
     "access": "public"

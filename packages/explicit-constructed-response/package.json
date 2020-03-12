@@ -4,6 +4,7 @@
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "publishConfig": {
     "access": "public"
   },

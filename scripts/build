@@ -26,6 +26,16 @@ class UiCommands extends Commands {
     const alias = `pie-ui${args.next ? '-next' : ''}`;
     return this.staticToNow(dir, alias);
   }
+
+  sharedBuild() {
+    return this.runCmd(
+      `yarn pslb --config shared-lib-build/pslb.config.js --publishLibs --token ${args.token} --cleanLibs`
+    );
+  }
+
+  build() {
+    return super.build().then(this.sharedBuild);
+  }
 }
 
 const cmds = new UiCommands(resolve(__dirname, '..'), args);

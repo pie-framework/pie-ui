@@ -3,6 +3,7 @@
   "version": "7.1.18",
   "description": "A number line interaction for pie",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "publishConfig": {
     "access": "public"
   },

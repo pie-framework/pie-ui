@@ -2237,7 +2237,7 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/graphing@^1.2.4":
+"@pie-lib/graphing@^1.2.10":
   version "1.2.10"
   resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.2.10.tgz#341a5dea6763cb606596308afc1fd1acc54aba2c"
   integrity sha512-2QAVJHT64Yh71tZSxvTUpeomMIhgaHuIxP70nWrm0gtUqSMLkX/wnbt4TFbSAzfd4KsqbaRC5KvVLac6M/GPYw==
@@ -2358,7 +2358,7 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/render-ui@^4.5.3":
+"@pie-lib/render-ui@^4.5.3", "@pie-lib/render-ui@^4.5.8":
   version "4.5.8"
   resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.5.8.tgz#16f50ce1974be80fddd02907b782b0a2a65841da"
   integrity sha512-PVFTeyGIw83wTLFB2V9htjDaczfkkES972b5hZ48VYzhoNx5KmSW15EMBhaatb2HVLVUxfsXfA3iAlpYNXB6Aw==

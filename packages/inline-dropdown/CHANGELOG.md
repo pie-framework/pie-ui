@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.7.8...@pie-ui/inline-dropdown@1.8.0) (2020-03-13)
+
+
+### Features
+
+* add pie-shared-lib-builder ([16a7300](https://github.com/pie-framework/pie-ui/commit/16a7300))
+
+
+
+
+
 ## [1.7.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.7.7...@pie-ui/inline-dropdown@1.7.8) (2019-12-18)
 
 

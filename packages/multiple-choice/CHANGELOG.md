@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.13...@pie-ui/multiple-choice@4.12.0) (2020-03-13)
+
+
+### Bug Fixes
+
+* **multiple-choice:** fix isSelected logic, better null checks ch6661 ([8820ae8](https://github.com/pie-framework/pie-elements/commit/8820ae8))
+
+
+### Features
+
+* add pie-shared-lib-builder ([16a7300](https://github.com/pie-framework/pie-elements/commit/16a7300))
+
+
+
+
+
 ## [4.11.13](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.11.12...@pie-ui/multiple-choice@4.11.13) (2020-02-18)
 
 

@@ -164,9 +164,9 @@ module.exports = {
           'lodash'
         ],
         namespace: [
-          '@material-ui/core',
-          '@material-ui/core/styles',
           '@material-ui/core/styles/colorManipulator',
+          '@material-ui/core/styles',
+          '@material-ui/core',
           '@pie-framework/pie-player-events',
           '@pie-lib/drag',
           '@pie-lib/math-rendering',

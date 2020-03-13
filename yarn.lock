@@ -2451,13 +2451,13 @@
     magic-string "^0.25.2"
     resolve "^1.11.0"
 
-"@pslb/pslb@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-1.1.0.tgz#970dc5b2ec76d4987fa77355012a8cd465f44094"
-  integrity sha512-92C5WVt4uW1F2nDxBtzxjckAbAj+4Glij0v+kGngmqIVGO55ZAJvGI4oEGzEmiNgHUBmEJSG43fKcEjC30+MZw==
+"@pslb/pslb@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-1.1.1.tgz#2d6a71c719e20bff0a28e31f8fb51d81f52a5b19"
+  integrity sha512-NgDtFl8ErVzTQP+fLp2xWB+qkv4kOBleyCh11n+aKTB36kAq2ORVuCGTE3+wUEpptkhUw8dJPctSEObPEkJC4g==
   dependencies:
     "@pslb/plugin-commonjs" "^11.0.3"
-    "@pslb/rollup-plugin-dll" "^1.0.4"
+    "@pslb/rollup-plugin-dll" "^1.1.1"
     "@rollup/plugin-json" "^4.0.2"
     "@rollup/plugin-node-resolve" "^7.1.1"
     "@rollup/plugin-replace" "^2.3.1"
@@ -2480,10 +2480,10 @@
     semver "^7.1.3"
     winston "^3.2.1"
 
-"@pslb/rollup-plugin-dll@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@pslb/rollup-plugin-dll/-/rollup-plugin-dll-1.0.4.tgz#92136af03f42b018762cefb1b7414b176d96b514"
-  integrity sha512-dU7IIdp6kfalfPoyAoEUhZCur/u420YiBxagihqENGHRS3AhLWCPOHTnQ+S6C0t1v3VF7BvP9YG9bD+dB0xByA==
+"@pslb/rollup-plugin-dll@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@pslb/rollup-plugin-dll/-/rollup-plugin-dll-1.1.1.tgz#ea614e65f164a3644ab6fc21a6daac1a6b406e6b"
+  integrity sha512-j5gkYskjj0qrG6C7ZgB7eymP4Ale5W8EB351eolwHNHZDDs5ZUetyXt10gdWU9cZecI4baLFXkyQ3ZVqhqlDNA==
   dependencies:
     "@pslb/estree-helper" "^1.0.4"
     acorn "^7.1.0"

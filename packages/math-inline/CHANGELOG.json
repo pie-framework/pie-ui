@@ -1058,5 +1058,20 @@
     "committerDate": "2020-03-06 14:11:16 +0000",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.16"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "import mathquill - require no longer supported",
+    "merge": null,
+    "header": "fix: import mathquill - require no longer supported",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "acf140bc161b5f4d813caf579e3e9db1802603ea",
+    "gitTags": " (develop)",
+    "committerDate": "2020-03-13 21:56:39 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.23"
   }
 ]

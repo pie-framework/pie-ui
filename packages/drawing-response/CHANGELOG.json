@@ -748,5 +748,20 @@
     "committerDate": "2020-03-06 14:46:51 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "material-ui import",
+    "merge": null,
+    "header": "fix: material-ui import",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0aa6b6b6e0b1c3c7d93c9dfe926f89f89fdeda83",
+    "gitTags": "",
+    "committerDate": "2020-03-13 11:21:32 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.11"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/extended-text-entry",
-  "version": "3.2.14",
+  "version": "3.2.15",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",

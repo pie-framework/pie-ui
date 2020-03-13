@@ -178,5 +178,20 @@
     "committerDate": "2019-04-24 05:46:28 +0300",
     "isTagged": true,
     "tag": "@pie-ui/demo@0.3.1"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rm old packages",
+    "merge": null,
+    "header": "fix: rm old packages",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c0dbeb688d53cc504bbf82327c71c4a53f35d1fa",
+    "gitTags": "",
+    "committerDate": "2020-03-13 10:14:02 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.3.108"
   }
 ]

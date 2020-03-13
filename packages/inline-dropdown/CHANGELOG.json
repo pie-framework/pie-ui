@@ -343,5 +343,20 @@
     "committerDate": "2019-12-18 10:07:57 +0000",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.7.8"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "add pie-shared-lib-builder",
+    "merge": null,
+    "header": "feat: add pie-shared-lib-builder",
+    "body": "This is something we're trialling to set up builds in the repo w/ shared\nlibs using browser modules.",
+    "footer": null,
+    "notes": [],
+    "hash": "16a7300976156d732767a4dbee5365daa688b9cc",
+    "gitTags": "",
+    "committerDate": "2020-03-12 14:28:22 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.8.0"
   }
 ]

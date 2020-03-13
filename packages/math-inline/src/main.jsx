@@ -9,7 +9,7 @@ import { ResponseTypes } from './utils';
 import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 import SimpleQuestionBlock from './simple-question-block';
-
+import MathQuill from '@pie-framework/mathquill';
 let registered = false;
 
 const REGEX = /{{response}}/gm;
@@ -95,7 +95,6 @@ export class Main extends React.Component {
     const { classes } = this.props;
 
     if (typeof window !== 'undefined') {
-      const MathQuill = require('@pie-framework/mathquill');
       let MQ = MathQuill.getInterface(2);
 
       if (!registered) {
@@ -129,7 +128,6 @@ export class Main extends React.Component {
         // const correct = model.correctness && model.correctness.correct;
 
         if (el) {
-          const MathQuill = require('@pie-framework/mathquill');
           let MQ = MathQuill.getInterface(2);
           const answer = answers[answerId];
 
@@ -310,10 +308,14 @@ export class Main extends React.Component {
     }
   };
 
-  onBlur = (e) => {
+  onBlur = e => {
     const { relatedTarget, currentTarget } = e || {};
 
-    if (!relatedTarget || !currentTarget || (relatedTarget.offsetParent !== currentTarget.offsetParent)) {
+    if (
+      !relatedTarget ||
+      !currentTarget ||
+      relatedTarget.offsetParent !== currentTarget.offsetParent
+    ) {
       this.setState({ activeAnswerBlock: '' });
     }
   };

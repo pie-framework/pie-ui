@@ -10,4 +10,5 @@ package-lock.json
 NEXT.CHANGELOG.md
 NEXT.CHANGELOG.json
 packages/shared-lib@*
+packages/shared-*
 packages/**/module

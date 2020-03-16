@@ -178,6 +178,26 @@ module.exports = {
           'react-transition-group'
         ]
       }
+    },
+    /** earlier libs are fed in to subsequent libs .. */
+    {
+      name: '@pie-ui/shared-graphing',
+      // add dependency here? or use the order?
+      output: path.resolve(__dirname, '../packages'),
+      mode: 'development',
+      minify: false,
+      extensions: {
+        commonJs
+      },
+      imports: {
+        default: [],
+        namespace: [
+          '@pie-lib/plot',
+          '@pie-lib/graphing',
+          'd3-scale',
+          'd3-selection'
+        ]
+      }
     }
   ]
 };

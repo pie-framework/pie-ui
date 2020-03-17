@@ -198,6 +198,20 @@ module.exports = {
           'd3-selection'
         ]
       }
+    },
+    {
+      name: '@pie-ui/shared-konva',
+      // add dependency here? or use the order?
+      output: path.resolve(__dirname, '../packages'),
+      mode: 'development',
+      minify: false,
+      extensions: {
+        commonJs
+      },
+      imports: {
+        default: [],
+        namespace: ['react-konva', 'konva']
+      }
     }
   ]
 };

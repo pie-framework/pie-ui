@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.10...@pie-ui/hotspot@1.3.11) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-elements/commit/7abbb8d))
+
+
+
+
+
 ## [1.3.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.5...@pie-ui/hotspot@1.3.6) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/hotspot

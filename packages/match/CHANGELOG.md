@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.21](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.20...@pie-ui/match@2.3.21) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
 ## [2.3.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.15...@pie-ui/match@2.3.16) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/match

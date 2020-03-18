@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.4...@pie-ui/inline-dropdown@1.8.5) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
 # [1.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.7.8...@pie-ui/inline-dropdown@1.8.0) (2020-03-13)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.13...@pie-ui/charting@0.2.14) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
 ## [0.2.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.8...@pie-ui/charting@0.2.9) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/charting

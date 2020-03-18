@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.16...@pie-ui/extended-text-entry@3.2.17) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
 ## [3.2.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.11...@pie-ui/extended-text-entry@3.2.12) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

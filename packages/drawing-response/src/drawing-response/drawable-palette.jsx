@@ -1,27 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InputContainer } from '@pie-lib/config-ui';
+import { InputContainer } from '@pie-lib/render-ui';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from '@material-ui/core/styles';
 
 // TODO: Change Palette so will render inputs and colors dynamically
 class Palette extends React.Component {
-  onChange = (name) => event => {
+  onChange = name => event => {
     const { value } = event.target;
-    const { onFillColorChange, onOutlineColorChange, onPaintColorChange } = this.props;
+    const {
+      onFillColorChange,
+      onOutlineColorChange,
+      onPaintColorChange
+    } = this.props;
 
     if (name === 'fill') {
       onFillColorChange(value);
     } else if (name === 'outline') {
-      onOutlineColorChange(value)
+      onOutlineColorChange(value);
     } else {
-      onPaintColorChange(value)
+      onPaintColorChange(value);
     }
   };
 
   render() {
-    const { classes, fillColor, outlineColor, fillList, outlineList } = this.props;
+    const {
+      classes,
+      fillColor,
+      outlineColor,
+      fillList,
+      outlineList
+    } = this.props;
 
     return (
       <div className={classes.base}>
@@ -62,25 +72,6 @@ class Palette extends React.Component {
             ))}
           </Select>
         </InputContainer>
-
-        {/*<InputContainer label="Paint Color" className={classes.input}>*/}
-          {/*<Select*/}
-            {/*className={classes.select}*/}
-            {/*onChange={this.onChange('paint')}*/}
-            {/*value={paintColor}*/}
-          {/*>*/}
-            {/*{paintList.map(({ value, label }) => (*/}
-              {/*<MenuItem*/}
-                {/*key={value}*/}
-                {/*value={value}*/}
-                {/*className={classes.item}*/}
-                {/*style={{ backgroundColor: value }}*/}
-              {/*>*/}
-                {/*{label}*/}
-              {/*</MenuItem>*/}
-            {/*))}*/}
-          {/*</Select>*/}
-        {/*</InputContainer>*/}
       </div>
     );
   }
@@ -101,7 +92,7 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * 2,
     marginRight: theme.spacing.unit * 2,
     marginTop: theme.spacing.unit * 2
-  },
+  }
 });
 
 Palette.propTypes = {

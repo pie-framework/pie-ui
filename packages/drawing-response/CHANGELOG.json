@@ -763,5 +763,35 @@
     "committerDate": "2020-03-13 11:21:32 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.11"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "spacing",
+    "merge": null,
+    "header": "fix: spacing",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "02aefc8a496af876d008ad0000a6c5066a9494db",
+    "gitTags": "",
+    "committerDate": "2020-03-18 10:41:28 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "rm config-ui (use render-ui)",
+    "merge": null,
+    "header": "fix: rm config-ui (use render-ui)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1b2e8e474bbbdb4c0f9e7fa5c4f5583a283a76fa",
+    "gitTags": "",
+    "committerDate": "2020-03-18 09:39:03 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.12"
   }
 ]

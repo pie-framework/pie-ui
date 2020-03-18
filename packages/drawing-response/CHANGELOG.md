@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.11...@pie-ui/drawing-response@1.6.12) (2020-03-18)
+
+
+### Bug Fixes
+
+* rm config-ui (use render-ui) ([1b2e8e4](https://github.com/pie-framework/pie-elements/commit/1b2e8e4))
+* spacing ([02aefc8](https://github.com/pie-framework/pie-elements/commit/02aefc8))
+
+
+
+
+
 ## [1.6.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.6...@pie-ui/drawing-response@1.6.7) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/drawing-response

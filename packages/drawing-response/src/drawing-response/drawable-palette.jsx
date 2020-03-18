@@ -92,6 +92,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * 2,
     marginRight: theme.spacing.unit * 2,
     marginTop: theme.spacing.unit * 2
+  },
+  select: {
+    transform: 'translate(0%, 40%)'
   }
 });
 

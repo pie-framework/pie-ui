@@ -19,6 +19,7 @@
     "@pie-lib/render-ui": "^4.6.3",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
+    "lodash": "^4.17.15",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dnd": "^9.3.2",

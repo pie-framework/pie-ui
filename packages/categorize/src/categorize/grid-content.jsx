@@ -12,16 +12,19 @@ export class GridContent extends React.Component {
       PropTypes.node
     ]).isRequired,
     columns: PropTypes.number,
+    rows: PropTypes.number,
     extraStyle: PropTypes.object
   };
   static defaultProps = {
-    columns: 2
+    columns: 2,
+    rows: 2,
   };
 
   render() {
-    const { classes, className, children, columns, extraStyle } = this.props;
+    const { classes, className, children, columns, extraStyle, rows } = this.props;
     const style = {
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      gridTemplateRows: `repeat(${rows}, auto)`,
       ...extraStyle
     };
 

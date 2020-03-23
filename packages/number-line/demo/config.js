@@ -64,9 +64,9 @@ module.exports = {
     'number-line': '..'
   },
   models: [
-    gen('1', [-2, 1], { minor: 0.1, major: 0.3 }),
-    gen('2', [-10, 10], { minor: 0.5, major: 2 }),
-    gen('3', [-100, 10], { minor: 10, major: 20 }),
-    gen('4', [-100, 10], { minor: 2, major: 4 })
+    gen('1', { min: -2, max: 1 }, { minor: 0.1, major: 0.3 }),
+    gen('2', { min: -10, max: 10 }, { minor: 0.5, major: 2 }),
+    gen('3', { min: -100, max: 10 }, { minor: 10, major: 20 }),
+    gen('4', { min: -100, max: 10 }, { minor: 2, major: 4 })
   ]
 };

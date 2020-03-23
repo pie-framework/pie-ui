@@ -103,5 +103,20 @@
     "committerDate": "2020-02-15 21:45:35 +0000",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.2.13"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.6.3",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.6.3",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7abbb8da77ce53cbfca495acc201cb02d9054b19",
+    "gitTags": "",
+    "committerDate": "2020-03-18 15:48:27 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.19"
   }
 ]

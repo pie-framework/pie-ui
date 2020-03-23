@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.18...@pie-ui/graphing@2.3.19) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
 ## [2.3.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.13...@pie-ui/graphing@2.3.14) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/graphing

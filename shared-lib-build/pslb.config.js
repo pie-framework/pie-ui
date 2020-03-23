@@ -124,6 +124,7 @@ const listPackages = () => {
 module.exports = {
   packages: listPackages(),
   pkg: {
+    type: 'npm-package',
     mode: 'production',
     // eslint-disable-next-line no-undef
     root: path.resolve(__dirname, '../packages'),

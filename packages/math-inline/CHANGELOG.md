@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.24...@pie-ui/math-inline@3.0.25) (2020-03-18)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.6.3 ([7abbb8d](https://github.com/pie-framework/pie-ui/commit/7abbb8d))
+
+
+
+
+
+## [3.0.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.23...@pie-ui/math-inline@3.0.24) (2020-03-18)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.22...@pie-ui/math-inline@3.0.23) (2020-03-13)
+
+
+### Bug Fixes
+
+* import mathquill - require no longer supported ([acf140b](https://github.com/pie-framework/pie-ui/commit/acf140b))
+
+
+
+
+
 ## [3.0.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.17...@pie-ui/math-inline@3.0.18) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/math-inline

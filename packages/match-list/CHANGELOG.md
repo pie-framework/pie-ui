@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.17...@pie-ui/match-list@1.4.18) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [1.4.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.16...@pie-ui/match-list@1.4.17) (2020-03-18)
 
 

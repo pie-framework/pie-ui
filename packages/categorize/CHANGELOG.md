@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.23...@pie-ui/categorize@1.4.0) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+* ch7733: Categorize layout issue when different column headers require different amounts of space ([52e27ee](https://github.com/pie-framework/pie-ui/commit/52e27ee))
+
+
+### Features
+
+* **packaging:** updated render-ui version ([4f9eb20](https://github.com/pie-framework/pie-ui/commit/4f9eb20))
+
+
+
+
+
 ## [1.3.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.22...@pie-ui/categorize@1.3.23) (2020-03-18)
 
 

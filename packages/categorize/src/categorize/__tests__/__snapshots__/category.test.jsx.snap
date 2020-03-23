@@ -4,17 +4,6 @@ exports[`category snapshots disabled 1`] = `
 <div
   className="category"
 >
-  <WithStyles(Typography)
-    className="label"
-  >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Category Label",
-        }
-      }
-    />
-  </WithStyles(Typography)>
   <Wrapped
     className="placeholder"
     disabled={true}
@@ -32,17 +21,6 @@ exports[`category snapshots incorrect 1`] = `
 <div
   className="category"
 >
-  <WithStyles(Typography)
-    className="label"
-  >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Category Label",
-        }
-      }
-    />
-  </WithStyles(Typography)>
   <Wrapped
     className="placeholder"
     grid={
@@ -66,17 +44,6 @@ exports[`category snapshots renders 1`] = `
 <div
   className="category"
 >
-  <WithStyles(Typography)
-    className="label"
-  >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Category Label",
-        }
-      }
-    />
-  </WithStyles(Typography)>
   <Wrapped
     className="placeholder"
     grid={

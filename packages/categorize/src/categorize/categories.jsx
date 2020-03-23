@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Category, { CategoryType } from './category';
-export { CategoryType };
+import Typography from '@material-ui/core/Typography';
+
+import chunk from 'lodash/chunk';
+
 import GridContent from './grid-content';
+import Category, { CategoryType } from './category';
+
+export { CategoryType };
 
 export class Categories extends React.Component {
   static propTypes = {
@@ -34,28 +39,63 @@ export class Categories extends React.Component {
       onRemoveChoice,
       grid
     } = this.props;
+    // split categories into an array of arrays (inner array),
+    // where each inner array represents how many categories should be displayed on one row
+    const { categoriesPerRow = 0 } = model;
+    const chunkedCategories = chunk(categories, categoriesPerRow);
 
     return (
-      <GridContent columns={model.categoriesPerRow} className={classes.categories}>
-        {categories.map((c, index) => (
-          <Category
-            grid={grid}
-            onDropChoice={h => onDropChoice(c.id, h)}
-            onRemoveChoice={onRemoveChoice}
-            disabled={disabled}
-            className={classes.category}
-            key={index}
-            {...c}
-          />
-        ))}
+      <GridContent
+        columns={categoriesPerRow}
+        className={classes.categories}
+        rows={Math.ceil(categories.length / categoriesPerRow) * 2}
+      >
+        {
+          chunkedCategories.map(cat => {
+            let items = [];
+
+            // for each inner array of categories, create a row with category titles
+            cat.forEach(c => {
+              items.push((
+                <Typography className={classes.label} key={`category-label-${c.label}`}>
+                  <span dangerouslySetInnerHTML={{ __html: c.label }}/>
+                </Typography>));
+            });
+
+            // if the last row has less categories than max on a row, fill the spaces with divs
+            items = items.concat(Array(categoriesPerRow - cat.length).fill(<div/>));
+
+            // for each inner array of categories, create a row with category containers
+            cat.forEach((c, index) => {
+              items.push(<Category
+                grid={grid}
+                onDropChoice={h => onDropChoice(c.id, h)}
+                onRemoveChoice={onRemoveChoice}
+                disabled={disabled}
+                className={classes.category}
+                key={index}
+                {...c}
+              />);
+            });
+
+            // if the last row has less categories than max on a row, fill the spaces with divs
+            items = items.concat(Array(categoriesPerRow - cat.length).fill(<div/>));
+
+            return items;
+          })
+        }
       </GridContent>
     );
   }
 }
 
-const styles = () => ({
+const styles = theme => ({
   categories: {
     flex: 1
+  },
+  label: {
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit
   }
 });
 export default withStyles(styles)(Categories);

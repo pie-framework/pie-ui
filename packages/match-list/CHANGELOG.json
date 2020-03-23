@@ -448,5 +448,35 @@
     "committerDate": "2020-03-18 15:48:27 +0000",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.17"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.7.1",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.7.1",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "cae7aedc3f723725a482ca46e07d2c581b884f4a",
+    "gitTags": "",
+    "committerDate": "2020-03-23 22:08:56 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.18"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump render-ui@^4.7.0",
+    "merge": null,
+    "header": "fix: bump render-ui@^4.7.0",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a5c69fbcff5d45b118c8cf24bd1739aa98d348c1",
+    "gitTags": "",
+    "committerDate": "2020-03-23 22:03:59 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.18"
   }
 ]

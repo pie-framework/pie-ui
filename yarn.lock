@@ -2385,10 +2385,10 @@
     prop-types "^15.7.2"
     react-transition-group "^2.5.2"
 
-"@pie-lib/render-ui@^4.7.0":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.7.0.tgz#79154efbf71edadfbef536825c083df52150843b"
-  integrity sha512-y1T4sqwJkfWgjQgYJjO4mYbVO1VlxbsIyk63Lei2j+vQbAqNYbHNjZNvn2mMFJP13EFV6vTJuMON7A5ZPjN+Qg==
+"@pie-lib/render-ui@^4.7.1":
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.7.1.tgz#e63a587129c46c7bb24722230df013d00a92983a"
+  integrity sha512-6aQQs3Lj+Y4oV0JPMLvDi7/w09p0QBHOIraBLrSru4Z5FIQsYq88kHwjjpnQvsMnWL2vBxnsfWdM7fWlF008Ng==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"

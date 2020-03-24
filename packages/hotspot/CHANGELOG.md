@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.13...@pie-ui/hotspot@1.3.15) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
 ## [1.3.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.11...@pie-ui/hotspot@1.3.12) (2020-03-23)
 
 

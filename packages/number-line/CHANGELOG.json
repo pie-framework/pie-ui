@@ -363,5 +363,20 @@
     "committerDate": "2020-02-29 21:32:42 +0000",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.16"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump number-line",
+    "merge": null,
+    "header": "fix: bump number-line",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "435d6f068250a13481d5abc3494543561e2d6708",
+    "gitTags": "",
+    "committerDate": "2020-03-25 22:08:23 +0000",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.1.29"
   }
 ]

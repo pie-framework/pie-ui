@@ -138,6 +138,7 @@ module.exports = {
       output: path.resolve(__dirname, '../packages'),
       minify: false,
       mode: 'development',
+      repository: 'pie-framework/pie-ui',
       extensions: {
         commonJs
       },

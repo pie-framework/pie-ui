@@ -163,6 +163,7 @@ module.exports = {
           'react',
           'prop-types',
           '@pie-lib/correct-answer-toggle',
+          '@pie-framework/mathquill',
           'lodash'
         ],
         namespace: [

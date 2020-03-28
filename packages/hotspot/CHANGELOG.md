@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.16](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.15...@pie-ui/hotspot@1.3.16) (2020-03-28)
+
+
+### Bug Fixes
+
+* ch7799: the Item Preview for a legacy hot spot item appears to show the wrong answer because the lines that are too close to the margins are not visible. Solution: add padding and move content accordingly so that the lines will be displayed entirely. ([8941943](https://github.com/pie-framework/pie-elements/commit/8941943))
+
+
+
+
+
 ## [1.3.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.13...@pie-ui/hotspot@1.3.15) (2020-03-24)
 
 **Note:** Version bump only for package @pie-ui/hotspot

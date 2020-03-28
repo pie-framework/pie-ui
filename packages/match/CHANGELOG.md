@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.25...@pie-ui/match@2.3.26) (2020-03-28)
+
+
+### Bug Fixes
+
+* ch7701: Line break issue in a column header for a Match Table item ([48a264a](https://github.com/pie-framework/pie-ui/commit/48a264a))
+
+
+
+
+
 ## [2.3.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.23...@pie-ui/match@2.3.25) (2020-03-24)
 
 **Note:** Version bump only for package @pie-ui/match

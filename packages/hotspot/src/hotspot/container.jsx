@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Rectangle from './rectangle';
 import Polygon from './polygon';
 
-class Container extends React.Component {
+export class Container extends React.Component {
   isSelected(shape) {
     const selectedShape = this.props.session.answers.filter(answer => answer.id === shape.id)[0];
     return !!selectedShape;
@@ -29,7 +29,10 @@ class Container extends React.Component {
     } = this.props;
 
     return (
-      <div className={classes.base}>
+      <div
+        className={classes.base}
+        style={{ padding: strokeWidth / 2 }}
+      >
         {imageUrl ? (
           <div className={classes.imageContainer}>
             <img
@@ -43,8 +46,10 @@ class Container extends React.Component {
 
         <Stage
           className={classes.stage}
-          height={height}
-          width={width}
+          height={height + strokeWidth}
+          width={width + strokeWidth}
+          x={strokeWidth / 2}
+          y={strokeWidth / 2}
         >
           <Layer>
             {rectangles.map((shape) => {

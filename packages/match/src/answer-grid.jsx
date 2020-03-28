@@ -65,10 +65,9 @@ export class AnswerGrid extends React.Component {
             <div
               key={idx}
               className={cx(classes.rowItem, { [classes.questionText]: idx === 0 })}
-              dangerouslySetInnerHTML={{
-                __html: header
-              }}
-            />
+            >
+              <div className={classes.rowHeader} dangerouslySetInnerHTML={{ __html: header }} />
+            </div>
           ))}
         </div>
         {rows.length > 0 && <hr className={classes.separator} />}
@@ -156,6 +155,9 @@ const styles = theme => ({
   },
   rowText: {
     display: 'inline'
+  },
+  rowHeader: {
+    padding: '0px 8px'
   }
 });
 

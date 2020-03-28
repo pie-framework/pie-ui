@@ -2309,7 +2309,7 @@
     debug "^4.1.1"
     mathjax-full "^3.0.0"
 
-"@pie-lib/math-toolbar@^1.4.18", "@pie-lib/math-toolbar@^1.4.8":
+"@pie-lib/math-toolbar@^1.4.18":
   version "1.4.18"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.4.18.tgz#7abe9a774a3ca56d9cde3f172dfb5c825a7eacdf"
   integrity sha512-FW9GYDmMetAnDPS1e/kQpq2MxLGLjVo0IMRUuJNEI6UIRwmbO85tdhO97lYiHFo92XZvzzuQ1pGW98j3eWpxcw==

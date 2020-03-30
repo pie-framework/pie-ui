@@ -2104,14 +2104,14 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/charting@^4.2.3":
-  version "4.2.9"
-  resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.2.9.tgz#d375964f7418ce1004dc8e148e0a3daa74624c52"
-  integrity sha512-mhvG1yVSA4smlncYpXIUH5MapRLuYZ4SiI7zObtEyQDF5UoQYRvxUx7GcW70owH/30wEGzOv47Utfgq/fcb1Zw==
+"@pie-lib/charting@^4.2.11":
+  version "4.2.11"
+  resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.2.11.tgz#e3fa4c30fed3e5f86bc93acebf75331d95901176"
+  integrity sha512-KCEHjN5K9nRcaKsoU7uO39SRB1s+GcIr6xQfvOo0LGOlK88Lx2wAPfiEXFuXEeQFiUAWnQi9hBjAPfcOg87R7w==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
-    "@pie-lib/plot" "^1.3.4"
+    "@pie-lib/plot" "^1.3.6"
     "@vx/axis" "^0.0.183"
     "@vx/event" "^0.0.182"
     "@vx/grid" "^0.0.183"
@@ -2215,24 +2215,24 @@
     slate-soft-break "^0.8.1"
     to-style "^1.3.3"
 
-"@pie-lib/graphing-utils@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@pie-lib/graphing-utils/-/graphing-utils-1.1.3.tgz#3bf31ffe790bed85689ae19e2079b084896f8edd"
-  integrity sha512-7zXsXdb4nbJCKPKDvh8ecutB3zQC8hDzEBObEklYpz+l/XNSA33+FRFZOBw02bnjZyNddqQZQ/k0bFS0KAA+JQ==
+"@pie-lib/graphing-utils@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/graphing-utils/-/graphing-utils-1.1.5.tgz#be94817fedc9d2149cb3f61e1dc55e4350d7fc44"
+  integrity sha512-MjP2CiOkila+dopxKhoNbrspB57zTtVxsfwmEShr0H22bkQpXm5oXj4jWEVb1itt3maYkC1zFfSac41512VMJQ==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/graphing@^1.2.10":
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.2.11.tgz#e13218fb80fa4fec930714f19d4c51c6939828c9"
-  integrity sha512-/Bzvb6ou33vDrPGJmYK7te31VYatlGUuc8KyWIaq+ZNFGftYvvn7YtPWC1lZbQiNom/cFWEO0gmhUgWQeN/UCg==
+"@pie-lib/graphing@^1.2.13":
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-1.2.13.tgz#ad20dfa315b200ce35a2c59e335eba18e15995fe"
+  integrity sha512-Cv1MrjX3CYGMbuASg8e/op7feLSYi1Ip3VdSbz1FuxuWZ1/hPaJrQR5gNxjGowIbs/dxu0IGnFuZhp8mlLKOZA==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
-    "@pie-lib/graphing-utils" "^1.1.3"
-    "@pie-lib/plot" "^1.3.4"
+    "@pie-lib/graphing-utils" "^1.1.5"
+    "@pie-lib/plot" "^1.3.6"
     "@vx/axis" "^0.0.189"
     "@vx/clip-path" "^0.0.189"
     "@vx/event" "^0.0.189"
@@ -2256,6 +2256,14 @@
   version "2.4.5"
   resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.4.5.tgz#b8346c7d1a0b65dbd628e39a4d1e5b900ba0f647"
   integrity sha512-fVRERZFOLRNsTu+/DsLKCtlFgjCIC8IwzWokWTHUFQllLkF1qFTSF6KTbZkHbRHTtpZFVIptpUlNKccH/CWp/Q==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
+
+"@pie-lib/icons@^2.4.10":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@pie-lib/icons/-/icons-2.4.10.tgz#0dd10c748aa2988b5ed7a24483e0ab40bcb1cd83"
+  integrity sha512-bvy6LaxYBP+CGqxBOIHtZqasYwVIjJNophpEtRb5o3e8HdM2ZfQ4RYG7pufX6oNPXir4+IVA41XTwlVLhrQRpA==
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.2"
@@ -2309,6 +2317,14 @@
     debug "^4.1.1"
     mathjax-full "^3.0.0"
 
+"@pie-lib/math-rendering@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-2.1.2.tgz#06ab30069647735a8d230df0aa81c6de9475ad78"
+  integrity sha512-5Eg+N6RAU2tRUgAKxhtZi34Hxt2pRnjrV64kXvZRdkudcQbh62lIuXBXZR4ORlOu3N9CWImAGrCGGZq7licRzw==
+  dependencies:
+    debug "^4.1.1"
+    mathjax-full "^3.0.0"
+
 "@pie-lib/math-toolbar@^1.4.18":
   version "1.4.18"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.4.18.tgz#7abe9a774a3ca56d9cde3f172dfb5c825a7eacdf"
@@ -2321,10 +2337,10 @@
     debug "^4.1.1"
     keycode "^2.2.0"
 
-"@pie-lib/plot@^1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/plot/-/plot-1.3.4.tgz#bf965944c702d8ef0733232bcb3957043aedbed6"
-  integrity sha512-Y5ESYm31/1YE3i3eKHqVHljh+J6b41K45s11Ocp3tP5jZBSUD6H2Cw8IntF9SLP2Pn1Y7ZDZ1NhQtfBZN8Jhmg==
+"@pie-lib/plot@^1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@pie-lib/plot/-/plot-1.3.6.tgz#5585a5f76e0dca74fb16e30b4387c76074c10d90"
+  integrity sha512-e0p3ZAaVDnz76G3QY3UwhcEkn4I1vgU92u+TbqlUL9PetqGe5ScA4UWo8vF3C3Xyb13by0YJHs3kz13U9De2eQ==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
@@ -2368,6 +2384,20 @@
     "@material-ui/icons" "^3.0.2"
     "@pie-lib/icons" "^2.4.8"
     "@pie-lib/math-rendering" "^2.1.0"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    prop-types "^15.7.2"
+    react-transition-group "^2.5.2"
+
+"@pie-lib/render-ui@^4.7.5":
+  version "4.7.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.7.5.tgz#2307158ce5e281856c2fb699ec0fbded01e50097"
+  integrity sha512-UzV3FXst4gIWQpAC+tukqFsVDNlk95lbQ+F7gHFj11acvNE8fzwd5r14Im1DRF7WfHi5ICzjhUXe4Nb0nSkLcw==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/icons" "^2.4.10"
+    "@pie-lib/math-rendering" "^2.1.2"
     classnames "^2.2.6"
     debug "^4.1.1"
     prop-types "^15.7.2"

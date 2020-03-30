@@ -63,6 +63,7 @@ const konva = [
 
 const commonJs = {
   namedExports: {
+    'node_modules/react-draggable/dist/react-draggable.js': ['DraggableCore'],
     'node_modules/react-konva/lib/ReactKonva.js': konva,
     'node_modules/react-redux/node_modules/react-is/index.js': reactIsExports,
     //TODO: common js should be picking these up?

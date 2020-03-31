@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/drag-in-the-blank",
-  "version": "1.7.22",
+  "version": "1.7.23",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",

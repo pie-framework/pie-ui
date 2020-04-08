@@ -58,8 +58,10 @@ class Main extends React.Component {
   render() {
     const { model, onChoiceChanged, session, classes } = this.props;
 
+    // model.partLabel is a property used for ebsr
     return (
       <PreviewLayout>
+        {model.partLabel && <p>{model.partLabel}</p>}
         <div className={classNames(classes.root, classes[model.className])}>
           <MultipleChoice
             {...model}

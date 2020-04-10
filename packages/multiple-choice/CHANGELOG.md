@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.14...@pie-ui/multiple-choice@4.12.15) (2020-04-10)
+
+
+### Bug Fixes
+
+* Issues with EBSR Part Labels in IBX PD-90. ([7823056](https://github.com/pie-framework/pie-elements/commit/7823056))
+
+
+
+
+
 ## [4.12.14](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.13...@pie-ui/multiple-choice@4.12.14) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/multiple-choice

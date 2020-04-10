@@ -8,8 +8,8 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.2.19",
-    "@pie-lib/drag": "^1.1.38",
+    "@pie-lib/correct-answer-toggle": "^2.2.20",
+    "@pie-lib/drag": "^1.1.39",
     "react": "^16.8.1",
     "react-dnd": "^9.3.2",
     "react-dom": "^16.8.1"

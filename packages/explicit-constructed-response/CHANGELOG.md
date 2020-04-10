@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.21](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.20...@pie-ui/explicit-constructed-response@1.7.21) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
+## [1.7.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.19...@pie-ui/explicit-constructed-response@1.7.20) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
+## [1.7.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.18...@pie-ui/explicit-constructed-response@1.7.19) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
+## [1.7.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.17...@pie-ui/explicit-constructed-response@1.7.18) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
+## [1.7.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.16...@pie-ui/explicit-constructed-response@1.7.17) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [1.7.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.14...@pie-ui/explicit-constructed-response@1.7.16) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/explicit-constructed-response
+
+
+
+
+
+## [1.7.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.12...@pie-ui/explicit-constructed-response@1.7.13) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [1.7.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.11...@pie-ui/explicit-constructed-response@1.7.12) (2020-03-18)
 
 

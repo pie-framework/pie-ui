@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.27...@pie-ui/fill-in-the-blank@1.3.28) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.3.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.26...@pie-ui/fill-in-the-blank@1.3.27) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.3.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.25...@pie-ui/fill-in-the-blank@1.3.26) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.3.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.24...@pie-ui/fill-in-the-blank@1.3.25) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.3.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.23...@pie-ui/fill-in-the-blank@1.3.24) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [1.3.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.21...@pie-ui/fill-in-the-blank@1.3.23) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
 ## [1.3.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.16...@pie-ui/fill-in-the-blank@1.3.17) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/fill-in-the-blank

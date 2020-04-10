@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.31...@pie-ui/match@2.3.32) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.31](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.30...@pie-ui/match@2.3.31) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.29...@pie-ui/match@2.3.30) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.28...@pie-ui/match@2.3.29) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.27...@pie-ui/match@2.3.28) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [2.3.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.26...@pie-ui/match@2.3.27) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.25...@pie-ui/match@2.3.26) (2020-03-28)
+
+
+### Bug Fixes
+
+* ch7701: Line break issue in a column header for a Match Table item ([48a264a](https://github.com/pie-framework/pie-ui/commit/48a264a))
+
+
+
+
+
+## [2.3.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.23...@pie-ui/match@2.3.25) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.3.22](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.21...@pie-ui/match@2.3.22) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [2.3.21](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.20...@pie-ui/match@2.3.21) (2020-03-18)
 
 

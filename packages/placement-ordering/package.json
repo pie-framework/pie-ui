@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/placement-ordering",
-  "version": "4.7.19",
+  "version": "4.7.28",
   "main": "lib/index.js",
   "module": "src/index.js",
   "description": "A pie placement component",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
-    "@pie-lib/correct-answer-toggle": "^2.2.6",
-    "@pie-lib/drag": "^1.1.24",
-    "@pie-lib/math-rendering": "^2.1.0",
-    "@pie-lib/render-ui": "^4.7.1",
+    "@pie-lib/correct-answer-toggle": "^2.2.19",
+    "@pie-lib/drag": "^1.1.38",
+    "@pie-lib/math-rendering": "^2.1.10",
+    "@pie-lib/render-ui": "^4.7.13",
     "debug": "^4.1.1",
     "decimal.js": "^10.0.0",
     "lodash": "^4.17.10",

@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.7...@pie-ui/categorize@1.4.8) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.6...@pie-ui/categorize@1.4.7) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.4.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.5...@pie-ui/categorize@1.4.6) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.4...@pie-ui/categorize@1.4.5) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.4.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.3...@pie-ui/categorize@1.4.4) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [1.4.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.1...@pie-ui/categorize@1.4.3) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.23...@pie-ui/categorize@1.4.0) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+* ch7733: Categorize layout issue when different column headers require different amounts of space ([52e27ee](https://github.com/pie-framework/pie-ui/commit/52e27ee))
+
+
+### Features
+
+* **packaging:** updated render-ui version ([4f9eb20](https://github.com/pie-framework/pie-ui/commit/4f9eb20))
+
+
+
+
+
 ## [1.3.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.3.22...@pie-ui/categorize@1.3.23) (2020-03-18)
 
 

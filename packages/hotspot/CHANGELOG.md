@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.22](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.21...@pie-ui/hotspot@1.3.22) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.21](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.20...@pie-ui/hotspot@1.3.21) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.20](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.19...@pie-ui/hotspot@1.3.20) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.19](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.18...@pie-ui/hotspot@1.3.19) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.18](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.17...@pie-ui/hotspot@1.3.18) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-elements/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-elements/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-elements/commit/0ce62f8))
+
+
+
+
+
+## [1.3.17](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.16...@pie-ui/hotspot@1.3.17) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.16](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.15...@pie-ui/hotspot@1.3.16) (2020-03-28)
+
+
+### Bug Fixes
+
+* ch7799: the Item Preview for a legacy hot spot item appears to show the wrong answer because the lines that are too close to the margins are not visible. Solution: add padding and move content accordingly so that the lines will be displayed entirely. ([8941943](https://github.com/pie-framework/pie-elements/commit/8941943))
+
+
+
+
+
+## [1.3.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.13...@pie-ui/hotspot@1.3.15) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.3.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.11...@pie-ui/hotspot@1.3.12) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-elements/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-elements/commit/cae7aed))
+
+
+
+
+
 ## [1.3.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.10...@pie-ui/hotspot@1.3.11) (2020-03-18)
 
 

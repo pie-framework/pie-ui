@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.13...@pie-ui/inline-dropdown@1.8.14) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/inline-dropdown
+
+
+
+
+
+## [1.8.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.12...@pie-ui/inline-dropdown@1.8.13) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/inline-dropdown
+
+
+
+
+
+## [1.8.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.11...@pie-ui/inline-dropdown@1.8.12) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/inline-dropdown
+
+
+
+
+
+## [1.8.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.10...@pie-ui/inline-dropdown@1.8.11) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/inline-dropdown
+
+
+
+
+
+## [1.8.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.9...@pie-ui/inline-dropdown@1.8.10) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [1.8.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.7...@pie-ui/inline-dropdown@1.8.9) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/inline-dropdown
+
+
+
+
+
+## [1.8.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.5...@pie-ui/inline-dropdown@1.8.6) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [1.8.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.4...@pie-ui/inline-dropdown@1.8.5) (2020-03-18)
 
 

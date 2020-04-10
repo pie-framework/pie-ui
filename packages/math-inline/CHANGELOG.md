@@ -3,6 +3,87 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.35...@pie-ui/math-inline@3.0.36) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.34...@pie-ui/math-inline@3.0.35) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.34](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.33...@pie-ui/math-inline@3.0.34) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.32...@pie-ui/math-inline@3.0.33) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.31...@pie-ui/math-inline@3.0.32) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [3.0.31](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.30...@pie-ui/math-inline@3.0.31) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.29...@pie-ui/math-inline@3.0.30) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.27...@pie-ui/math-inline@3.0.29) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.0.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.25...@pie-ui/math-inline@3.0.26) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [3.0.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.24...@pie-ui/math-inline@3.0.25) (2020-03-18)
 
 

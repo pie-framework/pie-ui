@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.27...@pie-ui/graphing@2.3.28) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [2.3.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.26...@pie-ui/graphing@2.3.27) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [2.3.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.25...@pie-ui/graphing@2.3.26) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [2.3.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.24...@pie-ui/graphing@2.3.25) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [2.3.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.23...@pie-ui/graphing@2.3.24) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump @pie-lib/charting/graphing ([c72419b](https://github.com/pie-framework/pie-ui/commit/c72419b))
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [2.3.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.21...@pie-ui/graphing@2.3.23) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [2.3.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.19...@pie-ui/graphing@2.3.20) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [2.3.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.18...@pie-ui/graphing@2.3.19) (2020-03-18)
 
 

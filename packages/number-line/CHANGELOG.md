@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.35...@pie-ui/number-line@7.1.36) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.34...@pie-ui/number-line@7.1.35) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.34](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.33...@pie-ui/number-line@7.1.34) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.32...@pie-ui/number-line@7.1.33) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.31...@pie-ui/number-line@7.1.32) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [7.1.31](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.30...@pie-ui/number-line@7.1.31) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.29...@pie-ui/number-line@7.1.30) (2020-03-28)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.27...@pie-ui/number-line@7.1.29) (2020-03-25)
+
+
+### Bug Fixes
+
+* bump number-line ([435d6f0](https://github.com/pie-framework/pie-ui/commit/435d6f0))
+
+
+
+
+
+## [7.1.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.25...@pie-ui/number-line@7.1.27) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.1.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.23...@pie-ui/number-line@7.1.24) (2020-03-23)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
 ## [7.1.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.18...@pie-ui/number-line@7.1.19) (2020-03-13)
 
 **Note:** Version bump only for package @pie-ui/number-line

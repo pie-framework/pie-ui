@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.4.17",
+  "version": "1.4.26",
   "description": "Match List description.",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -11,10 +11,10 @@
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.2.6",
-    "@pie-lib/drag": "^1.1.24",
-    "@pie-lib/math-rendering": "^2.1.0",
-    "@pie-lib/render-ui": "^4.7.1",
+    "@pie-lib/correct-answer-toggle": "^2.2.19",
+    "@pie-lib/drag": "^1.1.38",
+    "@pie-lib/math-rendering": "^2.1.10",
+    "@pie-lib/render-ui": "^4.7.13",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",
@@ -24,7 +24,7 @@
     "react-dom": "^16.8.1"
   },
   "devDependencies": {
-    "@pie-lib/test-utils": "^0.2.2",
+    "@pie-lib/test-utils": "^0.2.12",
     "react-dnd-test-backend": "^2.6.0"
   },
   "author": "",

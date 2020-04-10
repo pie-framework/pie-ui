@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.22](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.21...@pie-ui/drawing-response@1.6.22) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.21](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.20...@pie-ui/drawing-response@1.6.21) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.20](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.19...@pie-ui/drawing-response@1.6.20) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.19](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.18...@pie-ui/drawing-response@1.6.19) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.18](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.17...@pie-ui/drawing-response@1.6.18) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-elements/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-elements/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-elements/commit/0ce62f8))
+
+
+
+
+
+## [1.6.17](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.15...@pie-ui/drawing-response@1.6.17) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.14](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.13...@pie-ui/drawing-response@1.6.14) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-elements/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-elements/commit/cae7aed))
+
+
+
+
+
 ## [1.6.13](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.12...@pie-ui/drawing-response@1.6.13) (2020-03-18)
 
 

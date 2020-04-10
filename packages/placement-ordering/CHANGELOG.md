@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.27...@pie-ui/placement-ordering@4.7.28) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.7.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.26...@pie-ui/placement-ordering@4.7.27) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.7.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.25...@pie-ui/placement-ordering@4.7.26) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.7.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.24...@pie-ui/placement-ordering@4.7.25) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.7.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.23...@pie-ui/placement-ordering@4.7.24) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [4.7.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.21...@pie-ui/placement-ordering@4.7.23) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/placement-ordering
+
+
+
+
+
+## [4.7.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.19...@pie-ui/placement-ordering@4.7.20) (2020-03-23)
+
+
+### Bug Fixes
+
+* bump render-ui@^4.7.0 ([a5c69fb](https://github.com/pie-framework/pie-ui/commit/a5c69fb))
+* bump render-ui@^4.7.1 ([cae7aed](https://github.com/pie-framework/pie-ui/commit/cae7aed))
+
+
+
+
+
 ## [4.7.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.18...@pie-ui/placement-ordering@4.7.19) (2020-03-18)
 
 

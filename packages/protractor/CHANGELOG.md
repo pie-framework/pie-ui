@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.18...@pie-ui/protractor@2.2.19) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/protractor
+
+
+
+
+
+## [2.2.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.17...@pie-ui/protractor@2.2.18) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/protractor
+
+
+
+
+
+## [2.2.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.16...@pie-ui/protractor@2.2.17) (2020-03-31)
+
+**Note:** Version bump only for package @pie-ui/protractor
+
+
+
+
+
+## [2.2.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.15...@pie-ui/protractor@2.2.16) (2020-03-30)
+
+**Note:** Version bump only for package @pie-ui/protractor
+
+
+
+
+
+## [2.2.15](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.14...@pie-ui/protractor@2.2.15) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump lib versions ([fa4aa70](https://github.com/pie-framework/pie-ui/commit/fa4aa70))
+* bump lib versions ([118625a](https://github.com/pie-framework/pie-ui/commit/118625a))
+* bump lib versions ([0ce62f8](https://github.com/pie-framework/pie-ui/commit/0ce62f8))
+
+
+
+
+
+## [2.2.14](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.12...@pie-ui/protractor@2.2.14) (2020-03-24)
+
+**Note:** Version bump only for package @pie-ui/protractor
+
+
+
+
+
 ## [2.2.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/protractor@2.2.9...@pie-ui/protractor@2.2.10) (2019-08-21)
 
 **Note:** Version bump only for package @pie-ui/protractor

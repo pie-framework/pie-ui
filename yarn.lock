@@ -2445,13 +2445,13 @@
     magic-string "^0.25.2"
     resolve "^1.11.0"
 
-"@pslb/pslb@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-2.1.6.tgz#d60f6c200c488fe1a4136e7c42dc372143d5b9ca"
-  integrity sha512-9MBbdFSqwtr5zX0CJGvWgf9eDDemqHlbjgO4/+G/vlnI1ZBM+wC/aFrcpGf091ZSSokGf9L3imms0/ErYKlz0A==
+"@pslb/pslb@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-2.2.3.tgz#5087ceb2651091e364169aa6d350c973f4740110"
+  integrity sha512-7iFQ1YZdQuIuDZYb0SdaHY/dQWaT6JWKkJUPiR9EAv7pMywAOBFUu+BT3dL83FXUyTXRjLgXk6CJrS2CBf6khQ==
   dependencies:
     "@pslb/plugin-commonjs" "^11.0.3"
-    "@pslb/rollup-plugin-dll" "^2.1.5"
+    "@pslb/rollup-plugin-dll" "^2.2.1"
     "@rollup/plugin-json" "^4.0.2"
     "@rollup/plugin-node-resolve" "^7.1.1"
     "@rollup/plugin-replace" "^2.3.1"
@@ -2475,10 +2475,10 @@
     semver "^7.1.3"
     winston "^3.2.1"
 
-"@pslb/rollup-plugin-dll@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@pslb/rollup-plugin-dll/-/rollup-plugin-dll-2.1.5.tgz#8b36bb8a3a273bf518a2479e7ab707c02e0c17e5"
-  integrity sha512-m03njDOoN/ajdZHW+SuBlMN3sJE65+aiVIa+VVrRhcX7J4XabOn3AIW/uk/k7n/aGqhrjgNaQ2DUJDzH+L8WwQ==
+"@pslb/rollup-plugin-dll@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@pslb/rollup-plugin-dll/-/rollup-plugin-dll-2.2.1.tgz#a57b6444f6bd85c4cc06816eaca6aefed4880337"
+  integrity sha512-qkZ7riu4yVSuKvju5GqACjBY8dFdIltoOyCnyznAW+7jRd/W8ksLM2c6te2iINY5ghtDQg4HFqZ54PZ0JlVG1g==
   dependencies:
     "@pslb/estree-helper" "^2.0.0"
     acorn "^7.1.0"
@@ -9093,9 +9093,9 @@ minimist@0.0.8:
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
 minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.2.tgz#b00a00230a1108c48c169e69a291aafda3aacd63"
-  integrity sha512-rIqbOrKb8GJmx/5bc2M0QchhUouMXSpd1RTclXsB41JdL+VtnojfaJR+h7F9k18/4kHUsBFgk80Uk+q569vjPA==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.3.tgz#3db5c0765545ab8637be71f333a104a965a9ca3f"
+  integrity sha512-+bMdgqjMN/Z77a6NlY/I3U5LlRDbnmaAk6lDveAPKwSpcPM4tKAuYsvYF8xjhOPXhOYGe/73vVLVez5PW+jqhw==
 
 minimist@~0.0.1:
   version "0.0.10"

@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.4.26",
+  "version": "1.4.27",
   "description": "Match List description.",
   "main": "lib/index.js",
   "module": "src/index.js",

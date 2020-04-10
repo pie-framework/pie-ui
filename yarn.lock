@@ -2410,6 +2410,26 @@
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
 
+"@pie-ui/multiple-choice@^4.12.15":
+  version "4.12.15"
+  resolved "https://registry.yarnpkg.com/@pie-ui/multiple-choice/-/multiple-choice-4.12.15.tgz#93ee7d6ecad21ef471fe29124c2640233e18cc5b"
+  integrity sha512-wnsQ5Ppd+gH5WFbaV4RgBIr0MyNIQpfLzcDgEG6GywiRMKfSTzI9lCkvbuexvAv4p7WSUGsXFvcbsPxe18e5zg==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-lib/config-ui" "^10.8.14"
+    "@pie-lib/correct-answer-toggle" "^2.2.19"
+    "@pie-lib/math-rendering" "^2.1.10"
+    "@pie-lib/render-ui" "^4.7.13"
+    classnames "^2.2.5"
+    debug "^4.1.1"
+    enzyme-to-json "^3.3.3"
+    lodash "^4.17.10"
+    prop-types "^15.6.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+    react-test-renderer "^16.3.2"
+    react-transition-group "^2.3.1"
+
 "@pie-ui/number-line@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@pie-ui/number-line/-/number-line-5.1.2.tgz#a3c896467556363944b8158e6cad015de851ebf6"

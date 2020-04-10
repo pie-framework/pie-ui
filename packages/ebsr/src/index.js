@@ -80,12 +80,6 @@ export default class Ebsr extends HTMLElement {
         mode,
         keyMode: this._model[key].choicePrefix
       };
-      const partLabel = part._model.partLabel;
-      const isFirst = key === 'partA';
-      const el = document.getElementById(
-        `${isFirst ? 'first' : 'second'}_label`
-      );
-      el.innerHTML = partLabel || '';
     }
   }
 
@@ -129,9 +123,7 @@ export default class Ebsr extends HTMLElement {
   _render() {
     this.innerHTML = `
       <div>
-        <p id="first_label"></p>
         <${MC_TAG_NAME} id="a"></${MC_TAG_NAME}>
-        <p id="second_label"></p>
         <${MC_TAG_NAME} id="b"></${MC_TAG_NAME}>
       </div>
     `;

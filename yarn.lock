@@ -2371,10 +2371,10 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.18.tgz#0e5dae9fb77930b22da59a65ea1188bd02401740"
   integrity sha512-KHBUFbO7fCk1Q+qgfvH/nTjdcumKKNCW1dgY2e3TbcqzcodPslZmsamFAV1glOY1ILT2M42VLyupV5JpwPLbHw==
 
-"@pie-lib/test-utils@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.0.3.tgz#9bef3bfb236af4cda24e9ed6446794d9615175a0"
-  integrity sha512-oZ5XTtdy7NiFdN9M9fRSwc56M3CgNC1YFH9P9BryuBT39GlMyWTABz/neCzBc/TGhVylfMVuGo0LJOA0IkwUOw==
+"@pie-lib/test-utils@0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.2.13.tgz#9ceabefc3945eb402d90d1fc3ed399eb0aa57312"
+  integrity sha512-w37JIKAwsp+v6A/UdswuBKsx+scYyThjL4EIx9Y3Myl6uaklo3p/4k3a7h1qcrUFty4mFiGcAVXmbzzFRoMXKw==
 
 "@pie-lib/test-utils@^0.2.12":
   version "0.2.12"
@@ -2409,6 +2409,26 @@
     lodash "^4.17.11"
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
+
+"@pie-ui/multiple-choice@^4.12.15":
+  version "4.12.15"
+  resolved "https://registry.yarnpkg.com/@pie-ui/multiple-choice/-/multiple-choice-4.12.15.tgz#93ee7d6ecad21ef471fe29124c2640233e18cc5b"
+  integrity sha512-wnsQ5Ppd+gH5WFbaV4RgBIr0MyNIQpfLzcDgEG6GywiRMKfSTzI9lCkvbuexvAv4p7WSUGsXFvcbsPxe18e5zg==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-lib/config-ui" "^10.8.14"
+    "@pie-lib/correct-answer-toggle" "^2.2.19"
+    "@pie-lib/math-rendering" "^2.1.10"
+    "@pie-lib/render-ui" "^4.7.13"
+    classnames "^2.2.5"
+    debug "^4.1.1"
+    enzyme-to-json "^3.3.3"
+    lodash "^4.17.10"
+    prop-types "^15.6.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+    react-test-renderer "^16.3.2"
+    react-transition-group "^2.3.1"
 
 "@pie-ui/number-line@^5.1.2":
   version "5.1.2"

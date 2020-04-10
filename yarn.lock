@@ -2445,10 +2445,10 @@
     magic-string "^0.25.2"
     resolve "^1.11.0"
 
-"@pslb/pslb@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-2.2.3.tgz#5087ceb2651091e364169aa6d350c973f4740110"
-  integrity sha512-7iFQ1YZdQuIuDZYb0SdaHY/dQWaT6JWKkJUPiR9EAv7pMywAOBFUu+BT3dL83FXUyTXRjLgXk6CJrS2CBf6khQ==
+"@pslb/pslb@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@pslb/pslb/-/pslb-2.2.4.tgz#1f690078eeed55d5289d5967a8bdc576f9f02e80"
+  integrity sha512-9THePs0HqBij2omNYiBiODlQy7ncKqgeyajW8OZla56sKApbpaV3eAQDmIVDTVYyHJdci1wed9R+TkOOdkSCwQ==
   dependencies:
     "@pslb/plugin-commonjs" "^11.0.3"
     "@pslb/rollup-plugin-dll" "^2.2.1"

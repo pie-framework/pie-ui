@@ -343,5 +343,20 @@
     "committerDate": "2019-10-30 20:12:56 +0000",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.9"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Issues with EBSR Part Labels in IBX PD-90.",
+    "merge": null,
+    "header": "fix: Issues with EBSR Part Labels in IBX PD-90.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c3b0ce865f0d4b4a348e5c76c43a52677e81eddf",
+    "gitTags": "",
+    "committerDate": "2020-04-03 17:44:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.33"
   }
 ]

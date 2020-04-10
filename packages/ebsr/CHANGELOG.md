@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.33](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.32...@pie-ui/ebsr@1.2.33) (2020-04-10)
+
+
+### Bug Fixes
+
+* Issues with EBSR Part Labels in IBX PD-90. ([c3b0ce8](https://github.com/pie-framework/pie-elements/commit/c3b0ce8))
+
+
+
+
+
 ## [1.2.32](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.31...@pie-ui/ebsr@1.2.32) (2020-04-10)
 
 **Note:** Version bump only for package @pie-ui/ebsr

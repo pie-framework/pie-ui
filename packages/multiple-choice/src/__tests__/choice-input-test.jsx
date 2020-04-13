@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { ChoiceInput } from '../choice-input';
 import toJson from 'enzyme-to-json';
 
@@ -75,6 +75,31 @@ describe('ChoiceInput', () => {
         value: 'value',
         selected: true
       });
+    });
+  });
+
+  describe('clicking on choice text triggers toggle choice', () => {
+    it('calls handler', () => {
+      const onChange = jest.fn();
+      const props =       {
+        checked: false,
+        disabled: false,
+        choiceMode: 'checkbox',
+        label: 'label',
+        displayKey: '1',
+        correctness: 'correct',
+        value: 'value',
+        classes: {
+          label: 'label'
+        },
+        onChange
+      };
+      const item = mount(<ChoiceInput { ...props } />);
+      const label = item.find('.label');
+
+      label.simulate('click');
+
+      expect(onChange).toHaveBeenCalledWith({ value: 'value', selected: true });
     });
   });
 });

@@ -131,7 +131,8 @@ export class ChoiceInput extends React.Component {
   };
 
   static defaultProps = {
-    rationale: null
+    rationale: null,
+    checked: false
   };
 
   constructor(props) {

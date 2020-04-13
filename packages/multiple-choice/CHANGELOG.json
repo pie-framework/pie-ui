@@ -1388,5 +1388,20 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.12.16"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-129: Answers not getting selected on clicking choices text for MC/MS () (#189)",
+    "merge": null,
+    "header": "fix: PD-129: Answers not getting selected on clicking choices text for MC/MS () (#189)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9164478c499fb6420588a3aff655b38da4d73027",
+    "gitTags": "",
+    "committerDate": "2020-04-13 10:04:24 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.12.17"
   }
 ]

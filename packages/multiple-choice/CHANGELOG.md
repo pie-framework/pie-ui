@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.17](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.16...@pie-ui/multiple-choice@4.12.17) (2020-04-13)
+
+
+### Bug Fixes
+
+* PD-129: Answers not getting selected on clicking choices text for MC/MS () ([#189](https://github.com/pie-framework/pie-elements/issues/189)) ([9164478](https://github.com/pie-framework/pie-elements/commit/9164478))
+
+
+
+
+
 ## [4.12.16](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.15...@pie-ui/multiple-choice@4.12.16) (2020-04-10)
 
 

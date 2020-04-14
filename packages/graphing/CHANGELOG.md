@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.29...@pie-ui/graphing@2.3.30) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
 ## [2.3.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@2.3.28...@pie-ui/graphing@2.3.29) (2020-04-10)
 
 

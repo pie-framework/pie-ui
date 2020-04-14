@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.24...@pie-ui/charting@0.2.25) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
 ## [0.2.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.23...@pie-ui/charting@0.2.24) (2020-04-10)
 
 

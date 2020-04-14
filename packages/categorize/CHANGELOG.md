@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.9...@pie-ui/categorize@1.4.10) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
 ## [1.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.8...@pie-ui/categorize@1.4.9) (2020-04-10)
 
 

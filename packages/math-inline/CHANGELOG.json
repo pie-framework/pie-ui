@@ -1178,5 +1178,20 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.37"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "libs version bump",
+    "merge": null,
+    "header": "fix: libs version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a16b0da7e5361c88aabee9502c98896261e08090",
+    "gitTags": "",
+    "committerDate": "2020-04-14 14:40:03 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.38"
   }
 ]

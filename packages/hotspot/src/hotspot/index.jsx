@@ -54,7 +54,7 @@ class HotspotComponent extends React.Component {
           )
         }
 
-        <Typography>
+        <Typography className={classes.prompt}>
           <span dangerouslySetInnerHTML={{ __html: prompt }} />
         </Typography>
 
@@ -105,6 +105,9 @@ const styles = theme => ({
   collapsible: {
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
+  },
+  prompt: {
+    fontSize: 'inherit'
   }
 });
 

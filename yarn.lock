@@ -2308,6 +2308,18 @@
     lodash "^4.17.11"
     react-portal "^4.2.0"
 
+"@pie-lib/math-input@^6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-6.4.15.tgz#2e0a3ef2f1100f41470bc4e8d22bd1c23967f1ec"
+  integrity sha512-f9UIzVK9l/R+JckU5PXgCInOVfNx7rC2N3eb1e23dSS3BngnaDmmT4FltpdHAa2eLR44jC2vLKdrakWmMZFKLg==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-framework/mathquill" "^1.1.0"
+    debug "^4.1.1"
+    lodash "^4.17.11"
+    react-portal "^4.2.0"
+
 "@pie-lib/math-rendering@^2.1.11", "@pie-lib/math-rendering@^2.1.12":
   version "2.1.12"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-2.1.12.tgz#8471b14168f310f6d87defff57eca8b4e87e6bd0"

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.25](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.24...@pie-ui/hotspot@1.3.25) (2020-04-22)
+
+
+### Bug Fixes
+
+* PD-55: In IBX OT, prompt text is too small for HotSpot ([2898515](https://github.com/pie-framework/pie-elements/commit/2898515))
+
+
+
+
+
 ## [1.3.24](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.23...@pie-ui/hotspot@1.3.24) (2020-04-14)
 
 

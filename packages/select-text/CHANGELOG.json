@@ -373,5 +373,20 @@
     "committerDate": "2020-04-14 14:40:03 +0100",
     "isTagged": true,
     "tag": "@pie-ui/select-text@1.6.25"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-19: Updated pie-lib/text-select version.",
+    "merge": null,
+    "header": "fix: PD-19: Updated pie-lib/text-select version.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1a65f901fb265cbaeaa2881a3fef92f88a7f9a46",
+    "gitTags": "",
+    "committerDate": "2020-04-21 17:24:38 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/select-text@1.6.26"
   }
 ]

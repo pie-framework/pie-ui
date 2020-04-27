@@ -373,5 +373,20 @@
     "committerDate": "2020-04-14 16:17:53 +0300",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.36"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "dont ignore src dir",
+    "merge": null,
+    "header": "fix: dont ignore src dir",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "092c4e679adc2e4976de59ea505456c2267e2160",
+    "gitTags": "",
+    "committerDate": "2020-04-27 13:36:22 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.37"
   }
 ]

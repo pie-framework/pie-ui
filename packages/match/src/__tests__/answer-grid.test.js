@@ -57,6 +57,8 @@ describe('AnswerGrid', () => {
   });
 
   it('renders', () => {
+    component = wrapper();
+
     expect(component).toMatchSnapshot();
   });
 

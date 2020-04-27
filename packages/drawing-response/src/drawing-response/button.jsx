@@ -40,10 +40,18 @@ RawButton.defaultProps = {
 
 const styles = () => ({
   addButton: {
+    fontSize: '0.9em',
     marginLeft: 8,
     minWidth: 32,
-    height: 32
-  }
+    height: 32,
+
+    '& span': {
+      '& svg': {
+        width: '1.3em !important',
+        height: '1.3em !important',
+      }
+    }
+  },
 });
 
 const ButtonStyled = withStyles(styles)(RawButton);

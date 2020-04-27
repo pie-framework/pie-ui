@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.34...@pie-ui/match@2.3.35) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
 ## [2.3.34](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.33...@pie-ui/match@2.3.34) (2020-04-14)
 
 

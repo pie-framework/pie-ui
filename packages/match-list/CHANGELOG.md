@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.28...@pie-ui/match-list@1.4.29) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
 ## [1.4.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.27...@pie-ui/match-list@1.4.28) (2020-04-14)
 
 

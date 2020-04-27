@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { Collapsible } from '@pie-lib/render-ui';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from './container';
 
@@ -29,7 +30,8 @@ class DrawingResponseComponent extends React.Component {
         teacherInstructions
       },
       session,
-      onSessionChange
+      onSessionChange,
+      classes
     } = this.props;
     const { hasError, errorMessage } = this.state;
     const isEvaluateMode = mode === 'evaluate';
@@ -52,7 +54,7 @@ class DrawingResponseComponent extends React.Component {
         )}
         <br />
 
-        <Typography>
+        <Typography className={classes.prompt}>
           <span dangerouslySetInnerHTML={{ __html: prompt }} />
         </Typography>
 
@@ -70,9 +72,16 @@ class DrawingResponseComponent extends React.Component {
 }
 
 DrawingResponseComponent.propTypes = {
+  classes: PropTypes.object,
   model: PropTypes.object.isRequired,
   onSessionChange: PropTypes.func.isRequired,
   session: PropTypes.object.isRequired
 };
 
-export default DrawingResponseComponent;
+const styles = () => ({
+  prompt: {
+    fontSize: 'inherit'
+  }
+});
+
+export default withStyles(styles)(DrawingResponseComponent);

@@ -84,17 +84,20 @@ const styles = theme => ({
   },
   input: {
     flex: 1,
-    width: '90%'
+    fontSize: 'inherit',
+    width: '90%',
   },
   item: {
     borderRadius: '2px',
+    fontSize: 'inherit',
     height: '22px',
     marginLeft: theme.spacing.unit * 2,
     marginRight: theme.spacing.unit * 2,
     marginTop: theme.spacing.unit * 2
   },
   select: {
-    transform: 'translate(0%, 40%)'
+    fontSize: 'inherit',
+    transform: 'translate(0%, 40%)',
   }
 });
 

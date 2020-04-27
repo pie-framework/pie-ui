@@ -1,27 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawingResponse snapshots renders 1`] = `
-<div>
-  <br />
-  <WithStyles(Typography)>
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "This is the question prompt",
-        }
-      }
-    />
-  </WithStyles(Typography)>
-  <WithStyles(Container)
-    disabled={false}
-    imageDimensions={
-      Object {
+<DrawingResponseComponent
+  classes={
+    Object {
+      "prompt": "DrawingResponseComponent-prompt-1",
+    }
+  }
+  model={
+    Object {
+      "disabled": false,
+      "imageDimensions": Object {
         "height": 0,
         "width": 0,
-      }
+      },
+      "imageUrl": "",
+      "mode": "gather",
+      "prompt": "This is the question prompt",
     }
-    imageUrl=""
-    isEvaluateMode={false}
-  />
-</div>
+  }
+/>
 `;

@@ -2091,6 +2091,16 @@
   dependencies:
     jquery "^3.3.1"
 
+"@pie-framework/parse-english@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pie-framework/parse-english/-/parse-english-1.0.0.tgz#75557ae960be97625a9684169f7404b2b2b98290"
+  integrity sha512-LL2DTekKtT36af5Li+qWOZidXJMap6BECEZ7fSR82PgTZe38ktzK4TUw5m1UbyDyr1fONOZ3u8vhEi8UqbvG/g==
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    parse-latin "^4.0.0"
+    unist-util-modify-children "^1.0.0"
+    unist-util-visit-children "^1.0.0"
+
 "@pie-framework/pie-player-events@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@pie-framework/pie-player-events/-/pie-player-events-0.1.0.tgz#0150904118fd604559982ab658967811c053ffe3"
@@ -2393,17 +2403,17 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.2.14.tgz#2692a92838d6baf2c45172e48d9c600bd842094e"
   integrity sha512-CWtR+ihnwWXEX78wFFvTIXcvvrKwYtbk7b8d1dpsUnCOVlHaPE7hZK4/t1T+NA5NkrNKfjybMCX4vwI9WT/eEw==
 
-"@pie-lib/text-select@^1.5.22":
-  version "1.5.22"
-  resolved "https://registry.yarnpkg.com/@pie-lib/text-select/-/text-select-1.5.22.tgz#f6df978dd5827796e56923acb7a3bf494b9d7780"
-  integrity sha512-AjezYK79V/lr4mmqBdYKRLu9MtX7u12Rodr0gF9pGxR08bv0EBtnscE0U1wPHszUqvDWelfFTYP8iEp1MIftzg==
+"@pie-lib/text-select@^1.5.23":
+  version "1.5.23"
+  resolved "https://registry.yarnpkg.com/@pie-lib/text-select/-/text-select-1.5.23.tgz#c3d20ead1db3d392764aa23069781d0bfd0b1bb2"
+  integrity sha512-ZGsq5bg9lDfAXe3bzlKmkF4kkknWfASX4Tk5JGjA7/PiLt1f0bJ3+EgguOy8vG8+qLQiVrWVYMa2jmYjVUlQUw==
   dependencies:
+    "@pie-framework/parse-english" "^1.0.0"
     "@pie-lib/style-utils" "^0.1.20"
     classnames "^2.2.6"
     debug "^4.1.1"
     invariant "^2.2.4"
     lodash "^4.17.11"
-    parse-english "^4.1.1"
     prop-types "^15.6.2"
     unist-util-inspect "^4.1.3"
 
@@ -10127,16 +10137,6 @@ parse-asn1@^5.0.0:
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
-
-parse-english@^4.1.1:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/parse-english/-/parse-english-4.1.3.tgz#692ec002e515b4b9b3e9e64ee1224b082667a20b"
-  integrity sha512-IQl1v/ik9gw437T8083coohMihae0rozpc7JYC/9h6hi9xKBSxFwh5HWRpzVC2ZhEs2nUlze2aAktpNBJXdJKA==
-  dependencies:
-    nlcst-to-string "^2.0.0"
-    parse-latin "^4.0.0"
-    unist-util-modify-children "^1.0.0"
-    unist-util-visit-children "^1.0.0"
 
 parse-github-repo-url@^1.3.0:
   version "1.4.1"

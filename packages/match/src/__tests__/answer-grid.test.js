@@ -56,6 +56,12 @@ describe('AnswerGrid', () => {
     wrapper = shallowChild(AnswerGrid, defaultProps, 1);
   });
 
+  it('renders', () => {
+    component = wrapper();
+
+    expect(component).toMatchSnapshot();
+  });
+
   it('renders correctly', () => {
     component = wrapper();
 

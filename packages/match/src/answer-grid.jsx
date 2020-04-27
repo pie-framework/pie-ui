@@ -52,34 +52,58 @@ export class AnswerGrid extends React.Component {
 
   render() {
     const { allowFeedback, classes, showCorrect, headers, rows, choiceMode, answers, disabled, view } = this.props;
+    const Tag = choiceMode === 'radio' ? Radio : Checkbox;
+
+    if (!rows || rows.length === 0) {
+      return (
+        <div className={classes.controlsContainer}>
+          <Typography className={classes.empty} component="div">
+            There are currently no questions to show.
+          </Typography>
+        </div>);
+    }
 
     return (
       <div className={classes.controlsContainer}>
-        {rows.length === 0 && (
-          <Typography component="div" className={classes.empty}>
-            There are currently no questions to show.
-          </Typography>
-        )}
-        <div className={classes.rowContainer}>
-          {rows.length > 0 && headers.map((header, idx) => (
-            <div
-              key={idx}
-              className={cx(classes.rowItem, { [classes.questionText]: idx === 0 })}
-            >
-              <div className={classes.rowHeader} dangerouslySetInnerHTML={{ __html: header }} />
-            </div>
-          ))}
-        </div>
-        {rows.length > 0 && <hr className={classes.separator} />}
-        {rows.map((row, idx) => (
-          <div key={idx}>
-            <div className={classes.rowContainer}>
-              <div className={cx(classes.rowItem, classes.questionText, classes.rowText)}
-                   dangerouslySetInnerHTML={{ __html: row.title }} />
+        <table className={classes.table}>
+          <colgroup>
+            {headers.map((header, idx) => (<col key={`col-${idx}`}/>))}
+          </colgroup>
+
+          <thead>
+          <tr>
+            {headers.map((header, idx) => (
+              <th key={`th-${idx}`} data-colno={`${idx}`} scope="row">
+                <div
+                  className={cx(classes.rowItem, classes.rowHeader, { [classes.questionText]: idx === 0 })}
+                  dangerouslySetInnerHTML={{ __html: header }}
+                />
+              </th>
+            ))}
+          </tr>
+          </thead>
+
+          {rows.map((row, idx) => (
+            <tbody key={`row-${idx}`} role="group">
+            <tr className={classes.separator}>
+              <td
+                key={`td-title-${idx}`}
+                data-colno={'0'}
+              >
+                <div
+                  className={cx(classes.rowItem, classes.questionText, classes.rowText)}
+                  dangerouslySetInnerHTML={{ __html: row.title }}
+                />
+              </td>
+
               {answers[row.id].map((rowItem, answerIndex) => (
-                <div key={answerIndex} className={classes.rowItem}>
-                  {choiceMode === 'radio' ? (
-                    <Radio
+                <td
+                  key={`td-${idx}-${answerIndex}`}
+                  className={classes.column}
+                  data-colno={`${answerIndex + 1}`}
+                >
+                  <div className={classes.rowItem}>
+                    <Tag
                       className={cx({
                         [classes.correct]: allowFeedback && (
                           (showCorrect && rowItem === true) ||
@@ -91,32 +115,28 @@ export class AnswerGrid extends React.Component {
                       onChange={this.onRowValueChange(row.id, answerIndex)}
                       checked={rowItem === true}
                     />
-                  ) : (
-                    <Checkbox
-                      className={cx({
-                        [classes.correct]: allowFeedback && (
-                          (showCorrect && rowItem === true) ||
-                          (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex))
-                        ),
-                        [classes.incorrect]: allowFeedback && disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
-                      })}
-                      disabled={disabled}
-                      onChange={this.onRowValueChange(row.id, answerIndex)}
-                      checked={rowItem === true}
-                    />
-                  )}
-                </div>
+                  </div>
+                </td>
               ))}
-            </div>
-            <hr className={classes.separator} />
-          </div>
-        ))}
+            </tr>
+            </tbody>
+          ))}
+        </table>
       </div>
     );
   }
 }
 
 const styles = theme => ({
+  controlsContainer: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit
+  },
+  column: {
+    padding: '16px',
+  },
   correct: {
     color: 'green !important'
   },
@@ -126,39 +146,36 @@ const styles = theme => ({
   empty: {
     margin: theme.spacing.unit * 2
   },
-  controlsContainer: {
-    width: '90%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: theme.spacing.unit,
-    marginBottom: theme.spacing.unit
-  },
-  separator: {
-    border: 0,
-    borderTop: '2px solid lightgray',
-    width: '100%'
-  },
   rowContainer: {
     display: 'flex',
     alignItems: 'center',
-    flex: 1
+  },
+  rowHeader: {
+    padding: '20px 8px'
   },
   rowItem: {
-    flex: 1,
     display: 'flex',
-    justifyContent: 'center'
-  },
-  questionText: {
-    flex: 2,
-    display: 'flex',
-    justifyContent: 'flex-start'
+    justifyContent: 'center',
+    padding: '12px',
   },
   rowText: {
     display: 'inline'
   },
-  rowHeader: {
-    padding: '0px 8px'
-  }
+  separator: {
+    border: 0,
+    borderTop: '2.5px solid lightgray',
+    width: '100%'
+  },
+  table: {
+    backgroundColor: '#fff',
+    borderCollapse: 'collapse',
+    borderSpacing: 0,
+    marginBottom: 0
+  },
+  questionText: {
+    display: 'flex',
+    justifyContent: 'flex-start'
+  },
 });
 
 export default withStyles(styles)(AnswerGrid);

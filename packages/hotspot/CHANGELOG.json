@@ -253,5 +253,35 @@
     "committerDate": "2020-03-30 22:51:04 +0100",
     "isTagged": true,
     "tag": "@pie-ui/hotspot@1.3.18"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-55: In IBX OT, prompt text is too small for HotSpot",
+    "merge": null,
+    "header": "fix: PD-55: In IBX OT, prompt text is too small for HotSpot",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2898515d7c9aba45b01d10b745544e3466caca16",
+    "gitTags": "",
+    "committerDate": "2020-04-17 09:52:12 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.3.25"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "libs version bump",
+    "merge": null,
+    "header": "fix: libs version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a16b0da7e5361c88aabee9502c98896261e08090",
+    "gitTags": "",
+    "committerDate": "2020-04-14 14:40:03 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.3.24"
   }
 ]

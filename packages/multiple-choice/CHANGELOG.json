@@ -1373,5 +1373,35 @@
     "committerDate": "2020-04-03 17:42:57 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.12.15"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "libs version bump",
+    "merge": null,
+    "header": "fix: libs version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a16b0da7e5361c88aabee9502c98896261e08090",
+    "gitTags": "",
+    "committerDate": "2020-04-14 14:40:03 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.12.18"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-129: Answers not getting selected on clicking choices text for MC/MS () (#189)",
+    "merge": null,
+    "header": "fix: PD-129: Answers not getting selected on clicking choices text for MC/MS () (#189)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9164478c499fb6420588a3aff655b38da4d73027",
+    "gitTags": "",
+    "committerDate": "2020-04-13 10:04:24 -0400",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.12.17"
   }
 ]

@@ -358,5 +358,20 @@
     "committerDate": "2020-04-03 17:44:32 +0300",
     "isTagged": true,
     "tag": "@pie-ui/ebsr@1.2.33"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Update versions of pie-ui/multiple choice.",
+    "merge": null,
+    "header": "fix: Update versions of pie-ui/multiple choice.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "00b2a9da87e86a71ee6550f73f0aea57297365f9",
+    "gitTags": "",
+    "committerDate": "2020-04-14 16:17:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/ebsr@1.2.36"
   }
 ]

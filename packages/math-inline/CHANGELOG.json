@@ -1163,5 +1163,35 @@
     "committerDate": "2020-03-30 22:51:04 +0100",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.32"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-155, PD-156, PD-157, PD-158: Updated pie-lib/math-input version.",
+    "merge": null,
+    "header": "fix: PD-155, PD-156, PD-157, PD-158: Updated pie-lib/math-input version.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7bd2c3498bec7f441633b143b6c650a077e43775",
+    "gitTags": "",
+    "committerDate": "2020-04-22 08:34:26 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.39"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "libs version bump",
+    "merge": null,
+    "header": "fix: libs version bump",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a16b0da7e5361c88aabee9502c98896261e08090",
+    "gitTags": "",
+    "committerDate": "2020-04-14 14:40:03 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.38"
   }
 ]

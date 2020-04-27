@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.37](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.36...@pie-ui/ebsr@1.2.37) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-elements/commit/092c4e6))
+
+
+
+
+
+## [1.2.36](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.35...@pie-ui/ebsr@1.2.36) (2020-04-14)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.35](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.34...@pie-ui/ebsr@1.2.35) (2020-04-13)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.34](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.33...@pie-ui/ebsr@1.2.34) (2020-04-10)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.33](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.32...@pie-ui/ebsr@1.2.33) (2020-04-10)
+
+
+### Bug Fixes
+
+* Issues with EBSR Part Labels in IBX PD-90. ([c3b0ce8](https://github.com/pie-framework/pie-elements/commit/c3b0ce8))
+
+
+
+
+
+## [1.2.32](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.31...@pie-ui/ebsr@1.2.32) (2020-04-10)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
 ## [1.2.31](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.30...@pie-ui/ebsr@1.2.31) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/ebsr

@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.22](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@2.2.21...@pie-ui/ruler@2.2.22) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
+## [2.2.21](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@2.2.20...@pie-ui/ruler@2.2.21) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
+## [2.2.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@2.2.19...@pie-ui/ruler@2.2.20) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-ui/commit/403bada))
+
+
+
+
+
 ## [2.2.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/ruler@2.2.18...@pie-ui/ruler@2.2.19) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/ruler

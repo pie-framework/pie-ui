@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.40](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.39...@pie-ui/math-inline@3.0.40) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
+## [3.0.39](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.38...@pie-ui/math-inline@3.0.39) (2020-04-22)
+
+
+### Bug Fixes
+
+* PD-155, PD-156, PD-157, PD-158: Updated pie-lib/math-input version. ([7bd2c34](https://github.com/pie-framework/pie-ui/commit/7bd2c34))
+
+
+
+
+
+## [3.0.38](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.37...@pie-ui/math-inline@3.0.38) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
+## [3.0.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.36...@pie-ui/math-inline@3.0.37) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-ui/commit/403bada))
+
+
+
+
+
 ## [3.0.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.35...@pie-ui/math-inline@3.0.36) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/math-inline

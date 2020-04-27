@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.28...@pie-ui/extended-text-entry@3.2.29) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
+## [3.2.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.27...@pie-ui/extended-text-entry@3.2.28) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
+## [3.2.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.26...@pie-ui/extended-text-entry@3.2.27) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-ui/commit/403bada))
+
+
+
+
+
 ## [3.2.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.25...@pie-ui/extended-text-entry@3.2.26) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

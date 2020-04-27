@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.19](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.18...@pie-ui/multiple-choice@4.12.19) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-elements/commit/092c4e6))
+
+
+
+
+
+## [4.12.18](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.17...@pie-ui/multiple-choice@4.12.18) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-elements/commit/a16b0da))
+
+
+
+
+
+## [4.12.17](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.16...@pie-ui/multiple-choice@4.12.17) (2020-04-13)
+
+
+### Bug Fixes
+
+* PD-129: Answers not getting selected on clicking choices text for MC/MS () ([#189](https://github.com/pie-framework/pie-elements/issues/189)) ([9164478](https://github.com/pie-framework/pie-elements/commit/9164478))
+
+
+
+
+
+## [4.12.16](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.15...@pie-ui/multiple-choice@4.12.16) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-elements/commit/403bada))
+
+
+
+
+
+## [4.12.15](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.14...@pie-ui/multiple-choice@4.12.15) (2020-04-10)
+
+
+### Bug Fixes
+
+* Issues with EBSR Part Labels in IBX PD-90. ([7823056](https://github.com/pie-framework/pie-elements/commit/7823056))
+
+
+
+
+
 ## [4.12.14](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.13...@pie-ui/multiple-choice@4.12.14) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/multiple-choice

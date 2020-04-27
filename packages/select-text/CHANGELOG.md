@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.26...@pie-ui/select-text@1.6.27) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
+## [1.6.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.25...@pie-ui/select-text@1.6.26) (2020-04-22)
+
+
+### Bug Fixes
+
+* PD-19: Updated pie-lib/text-select version. ([1a65f90](https://github.com/pie-framework/pie-ui/commit/1a65f90))
+
+
+
+
+
+## [1.6.25](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.24...@pie-ui/select-text@1.6.25) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
+## [1.6.24](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.23...@pie-ui/select-text@1.6.24) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-ui/commit/403bada))
+
+
+
+
+
 ## [1.6.23](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.22...@pie-ui/select-text@1.6.23) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/select-text

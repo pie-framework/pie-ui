@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.29](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.28...@pie-ui/match-list@1.4.29) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-ui/commit/092c4e6))
+
+
+
+
+
+## [1.4.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.27...@pie-ui/match-list@1.4.28) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-ui/commit/a16b0da))
+
+
+
+
+
+## [1.4.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.26...@pie-ui/match-list@1.4.27) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-ui/commit/403bada))
+
+
+
+
+
 ## [1.4.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.25...@pie-ui/match-list@1.4.26) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/match-list

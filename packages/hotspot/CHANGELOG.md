@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.26](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.25...@pie-ui/hotspot@1.3.26) (2020-04-27)
+
+
+### Bug Fixes
+
+* dont ignore src dir ([092c4e6](https://github.com/pie-framework/pie-elements/commit/092c4e6))
+
+
+
+
+
+## [1.3.25](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.24...@pie-ui/hotspot@1.3.25) (2020-04-22)
+
+
+### Bug Fixes
+
+* PD-55: In IBX OT, prompt text is too small for HotSpot ([2898515](https://github.com/pie-framework/pie-elements/commit/2898515))
+
+
+
+
+
+## [1.3.24](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.23...@pie-ui/hotspot@1.3.24) (2020-04-14)
+
+
+### Bug Fixes
+
+* libs version bump ([a16b0da](https://github.com/pie-framework/pie-elements/commit/a16b0da))
+
+
+
+
+
+## [1.3.23](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.22...@pie-ui/hotspot@1.3.23) (2020-04-10)
+
+
+### Bug Fixes
+
+* bump libs ([403bada](https://github.com/pie-framework/pie-elements/commit/403bada))
+
+
+
+
+
 ## [1.3.22](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.21...@pie-ui/hotspot@1.3.22) (2020-03-31)
 
 **Note:** Version bump only for package @pie-ui/hotspot

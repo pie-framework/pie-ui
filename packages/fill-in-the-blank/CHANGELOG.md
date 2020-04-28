@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.32...@pie-ui/fill-in-the-blank@1.3.33) (2020-04-28)
+
+
+### Bug Fixes
+
+* bump lib versions ([b731527](https://github.com/pie-framework/pie-ui/commit/b731527))
+
+
+
+
+
 ## [1.3.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.31...@pie-ui/fill-in-the-blank@1.3.32) (2020-04-28)
 
 

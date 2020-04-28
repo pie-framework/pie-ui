@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.26](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.25...@pie-ui/drawing-response@1.6.26) (2020-04-28)
+
+
+### Bug Fixes
+
+* PD-54: Small font and button sizes for Drawing Response items in OT ([9c649ac](https://github.com/pie-framework/pie-elements/commit/9c649ac))
+* Updated pie-lib/render-ui version. ([b268daf](https://github.com/pie-framework/pie-elements/commit/b268daf))
+
+
+
+
+
 ## [1.6.25](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.24...@pie-ui/drawing-response@1.6.25) (2020-04-27)
 
 

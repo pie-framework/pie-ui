@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.35...@pie-ui/match@2.3.36) (2020-04-28)
+
+
+### Bug Fixes
+
+* bump lib versions ([2b02e62](https://github.com/pie-framework/pie-ui/commit/2b02e62))
+* PD-22: Matching table item is wider than necessary or desirable. ([eac0b16](https://github.com/pie-framework/pie-ui/commit/eac0b16))
+
+
+
+
+
 ## [2.3.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.34...@pie-ui/match@2.3.35) (2020-04-27)
 
 

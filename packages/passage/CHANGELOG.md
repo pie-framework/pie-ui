@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.3.8...@pie-ui/passage@1.3.9) (2020-04-28)
+
+**Note:** Version bump only for package @pie-ui/passage
+
+
+
+
+
 ## [1.3.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.3.7...@pie-ui/passage@1.3.8) (2020-04-27)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.28](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.27...@pie-ui/select-text@1.6.28) (2020-04-28)
+
+
+### Bug Fixes
+
+* bump lib versions ([2b02e62](https://github.com/pie-framework/pie-ui/commit/2b02e62))
+
+
+
+
+
 ## [1.6.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.26...@pie-ui/select-text@1.6.27) (2020-04-27)
 
 

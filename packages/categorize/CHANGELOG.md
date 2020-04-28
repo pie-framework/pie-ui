@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.11...@pie-ui/categorize@1.4.12) (2020-04-28)
+
+
+### Bug Fixes
+
+* bump lib versions ([2b02e62](https://github.com/pie-framework/pie-ui/commit/2b02e62))
+* PD-193: Updated pie-lib/categorize version. ([8a9759f](https://github.com/pie-framework/pie-ui/commit/8a9759f))
+* PD-40: In both the PRB and IBX OT, for Classification items, the response containers and draggable tokens are often larger than desirable. (Each row of categories will have its own grid value, each card will occupy only the needed height) ([ba81b4f](https://github.com/pie-framework/pie-ui/commit/ba81b4f))
+
+
+
+
+
 ## [1.4.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.10...@pie-ui/categorize@1.4.11) (2020-04-27)
 
 

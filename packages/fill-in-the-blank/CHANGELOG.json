@@ -313,5 +313,20 @@
     "committerDate": "2020-04-28 13:53:55 +0100",
     "isTagged": true,
     "tag": "@pie-ui/fill-in-the-blank@1.3.32"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b731527dc73aae26ac1d531c726043105173dd04",
+    "gitTags": "",
+    "committerDate": "2020-04-28 14:51:20 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/fill-in-the-blank@1.3.33"
   }
 ]

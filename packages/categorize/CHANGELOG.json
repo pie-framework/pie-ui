@@ -1098,5 +1098,20 @@
     "committerDate": "2020-04-28 08:53:34 +0300",
     "isTagged": true,
     "tag": "@pie-ui/categorize@1.4.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b731527dc73aae26ac1d531c726043105173dd04",
+    "gitTags": "",
+    "committerDate": "2020-04-28 14:51:20 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.4.13"
   }
 ]

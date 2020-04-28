@@ -2,7 +2,7 @@
 
 exports[`categories snapshots disabled 1`] = `
 <WithStyles(GridContent)
-  columns={4}
+  columns={1}
   rows={2}
 >
   <WithStyles(Typography)
@@ -16,9 +16,6 @@ exports[`categories snapshots disabled 1`] = `
       }
     />
   </WithStyles(Typography)>
-  <div />
-  <div />
-  <div />
   <WithStyles(Category)
     choices={Array []}
     disabled={true}
@@ -34,15 +31,12 @@ exports[`categories snapshots disabled 1`] = `
     onDropChoice={[Function]}
     onRemoveChoice={[MockFunction]}
   />
-  <div />
-  <div />
-  <div />
 </WithStyles(GridContent)>
 `;
 
 exports[`categories snapshots renders 1`] = `
 <WithStyles(GridContent)
-  columns={4}
+  columns={1}
   rows={2}
 >
   <WithStyles(Typography)
@@ -56,9 +50,6 @@ exports[`categories snapshots renders 1`] = `
       }
     />
   </WithStyles(Typography)>
-  <div />
-  <div />
-  <div />
   <WithStyles(Category)
     choices={Array []}
     grid={
@@ -73,8 +64,5 @@ exports[`categories snapshots renders 1`] = `
     onDropChoice={[Function]}
     onRemoveChoice={[MockFunction]}
   />
-  <div />
-  <div />
-  <div />
 </WithStyles(GridContent)>
 `;

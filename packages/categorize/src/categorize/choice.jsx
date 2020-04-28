@@ -57,7 +57,6 @@ export class Layout extends React.Component {
 
 const styles = () => ({
   choice: {
-    border: 'solid 1px white',
     cursor: 'pointer',
     height: '100%',
     width: '100%',
@@ -75,7 +74,6 @@ const styles = () => ({
     cursor: 'move'
   },
   card: {
-    height: '100%',
     width: '100%'
   }
 });

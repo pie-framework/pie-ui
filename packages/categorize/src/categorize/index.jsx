@@ -120,7 +120,7 @@ export class Categorize extends React.Component {
   render() {
     const { classes, model, session } = this.props;
     const { showCorrect } = this.state;
-    const { choicesPosition, choicesPerRow, categoriesPerRow } = model;
+    const { choicesPosition } = model;
 
     const choicePosition = choicesPosition || 'above';
 
@@ -137,17 +137,6 @@ export class Categorize extends React.Component {
 
     log('[render] disabled: ', model.disabled);
 
-    const columns = choicesPerRow / categoriesPerRow;
-
-    const maxLength = categories.reduce((acc, c) => {
-      if (c.choices.length > acc) {
-        return c.choices.length;
-      } else {
-        return acc;
-      }
-    }, 0);
-    const rows = Math.floor(maxLength / columns) + 1;
-    const grid = { rows, columns };
     const { rowLabels } = model;
 
     return (
@@ -176,19 +165,10 @@ export class Categorize extends React.Component {
           />
         }
         <div className={classes.categorize} style={style}>
-          <div
-            style={{
-              display: 'flex'
-            }}
-          >
+          <div style={{ display: 'flex' }}>
             {
               rowLabels && (
-                <div
-                  style={{
-                    display: 'grid',
-                    marginRight: '20px'
-                  }}
-                >
+                <div style={{ display: 'grid', marginRight: '20px' }}>
                   {rowLabels.map((label, index) => (
                     <div
                       key={index}
@@ -211,7 +191,6 @@ export class Categorize extends React.Component {
               categories={categories}
               onDropChoice={this.dropChoice}
               onRemoveChoice={this.removeChoice}
-              grid={grid}
             />
           </div>
           <Choices

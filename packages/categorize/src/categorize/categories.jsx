@@ -15,17 +15,18 @@ export class Categories extends React.Component {
     classes: PropTypes.object.isRequired,
     categories: PropTypes.arrayOf(PropTypes.shape(CategoryType)),
     model: PropTypes.shape({
-      categoriesPerRow: PropTypes.number
+      categoriesPerRow: PropTypes.number,
+      choicesPerRow: PropTypes.number,
     }),
     disabled: PropTypes.bool,
     onDropChoice: PropTypes.func.isRequired,
     onRemoveChoice: PropTypes.func.isRequired,
-    grid: PropTypes.object
   };
 
   static defaultProps = {
     model: {
-      categoriesPerRow: 4
+      categoriesPerRow: 1,
+      choicesPerRow: 1
     }
   };
 
@@ -37,11 +38,13 @@ export class Categories extends React.Component {
       disabled,
       onDropChoice,
       onRemoveChoice,
-      grid
     } = this.props;
+    const { choicesPerRow, categoriesPerRow } = model;
+
+    const columns = choicesPerRow / categoriesPerRow;
+
     // split categories into an array of arrays (inner array),
     // where each inner array represents how many categories should be displayed on one row
-    const { categoriesPerRow = 0 } = model;
     const chunkedCategories = chunk(categories, categoriesPerRow);
 
     return (
@@ -67,8 +70,10 @@ export class Categories extends React.Component {
 
             // for each inner array of categories, create a row with category containers
             cat.forEach((c, index) => {
+              const rows = Math.floor(c.choices.length / columns) + 1;
+
               items.push(<Category
-                grid={grid}
+                grid={{ rows, columns }}
                 onDropChoice={h => onDropChoice(c.id, h)}
                 onRemoveChoice={onRemoveChoice}
                 disabled={disabled}

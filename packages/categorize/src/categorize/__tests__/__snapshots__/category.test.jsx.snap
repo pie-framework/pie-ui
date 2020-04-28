@@ -11,6 +11,7 @@ exports[`category snapshots disabled 1`] = `
       Object {
         "columns": 1,
         "rows": 1,
+        "rowsRepeatValue": "minmax(60px, auto)",
       }
     }
   />
@@ -27,6 +28,7 @@ exports[`category snapshots incorrect 1`] = `
       Object {
         "columns": 1,
         "rows": 1,
+        "rowsRepeatValue": "minmax(60px, auto)",
       }
     }
   >
@@ -50,6 +52,7 @@ exports[`category snapshots renders 1`] = `
       Object {
         "columns": 1,
         "rows": 1,
+        "rowsRepeatValue": "minmax(60px, auto)",
       }
     }
   />

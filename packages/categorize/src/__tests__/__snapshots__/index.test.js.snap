@@ -31,12 +31,6 @@ exports[`categorize renders snapshot 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],
@@ -94,12 +88,6 @@ exports[`categorize renders snapshot with rationale 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],
@@ -191,12 +179,6 @@ exports[`categorize renders snapshot with teacherInstructions 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],

@@ -46,7 +46,10 @@ export class Category extends React.Component {
     return (
       <div className={names}>
         <PlaceHolder
-          grid={grid}
+          grid={{
+            ...grid,
+            rowsRepeatValue: 'minmax(60px, auto)'
+          }}
           onDropChoice={onDropChoice}
           disabled={disabled}
           className={placeholderNames}
@@ -71,7 +74,7 @@ const styles = () => ({
     border: `solid 1px ${orange[500]}`
   },
   placeholder: {
-    minHeight: '100px',
+    minHeight: '60px',
     flex: '1',
     display: 'grid'
   },

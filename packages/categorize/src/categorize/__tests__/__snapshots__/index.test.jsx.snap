@@ -31,12 +31,6 @@ exports[`categorize snapshots incorrect 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],
@@ -92,12 +86,6 @@ exports[`categorize snapshots renders 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],
@@ -153,12 +141,6 @@ exports[`categorize snapshots renders with feedback 1`] = `
     >
       <WithStyles(Categories)
         categories={Array []}
-        grid={
-          Object {
-            "columns": NaN,
-            "rows": NaN,
-          }
-        }
         model={
           Object {
             "categories": Array [],

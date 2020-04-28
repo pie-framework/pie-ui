@@ -1053,5 +1053,50 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/categorize@1.4.10"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2b02e62e0d36ef21f02a1bee5e0c1e7e87488aef",
+    "gitTags": "",
+    "committerDate": "2020-04-28 13:53:55 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.4.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-40: In both the PRB and IBX OT, for Classification items, the response containers and draggable tokens are often larger than desirable. (Each row of categories will have its own grid value, each card will occupy only the needed height)",
+    "merge": null,
+    "header": "fix: PD-40: In both the PRB and IBX OT, for Classification items, the response containers and draggable tokens are often larger than desirable. (Each row of categories will have its own grid value, each card will occupy only the needed height)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ba81b4fa8c6ecdff9aedb1d4b7552b37499b949d",
+    "gitTags": "",
+    "committerDate": "2020-04-28 11:12:39 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.4.12"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-193: Updated pie-lib/categorize version.",
+    "merge": null,
+    "header": "fix: PD-193: Updated pie-lib/categorize version.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8a9759f7a798bd0b8346dc59f1b15ff4fc13c793",
+    "gitTags": " (origin/fix/PD-193-version-update)",
+    "committerDate": "2020-04-28 08:53:34 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.4.12"
   }
 ]

@@ -648,5 +648,35 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match@2.3.33"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2b02e62e0d36ef21f02a1bee5e0c1e7e87488aef",
+    "gitTags": "",
+    "committerDate": "2020-04-28 13:53:55 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.36"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-22: Matching table item is wider than necessary or desirable.",
+    "merge": null,
+    "header": "fix: PD-22: Matching table item is wider than necessary or desirable.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "eac0b16a8ea97454028b446f7819e1b67a664dc5",
+    "gitTags": "",
+    "committerDate": "2020-04-27 11:45:40 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.3.36"
   }
 ]

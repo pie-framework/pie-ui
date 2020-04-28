@@ -928,5 +928,35 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.23"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Updated pie-lib/render-ui version.",
+    "merge": null,
+    "header": "fix: Updated pie-lib/render-ui version.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b268daf8c64d3f91bb90e82a900c6f17fd409c0e",
+    "gitTags": " (origin/fix/PD-54-small-font-sizes)",
+    "committerDate": "2020-04-27 14:37:35 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.26"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "PD-54: Small font and button sizes for Drawing Response items in OT",
+    "merge": null,
+    "header": "fix: PD-54: Small font and button sizes for Drawing Response items in OT",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9c649ac58db1d44c01af4ab27951469ca1855c42",
+    "gitTags": "",
+    "committerDate": "2020-04-27 09:47:23 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.26"
   }
 ]

@@ -238,5 +238,20 @@
     "committerDate": "2020-04-10 16:46:33 +0100",
     "isTagged": true,
     "tag": "@pie-ui/image-cloze-association@1.2.29"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2b02e62e0d36ef21f02a1bee5e0c1e7e87488aef",
+    "gitTags": "",
+    "committerDate": "2020-04-28 13:53:55 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/image-cloze-association@1.2.32"
   }
 ]

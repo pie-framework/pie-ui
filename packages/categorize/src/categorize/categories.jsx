@@ -70,7 +70,7 @@ export class Categories extends React.Component {
 
             // for each inner array of categories, create a row with category containers
             cat.forEach((c, index) => {
-              const rows = columns ? Math.floor(c.choices.length / columns) + 1 : 1;
+              const rows = Math.floor(c.choices.length / columns) + 1;
 
               items.push(<Category
                 grid={{ rows, columns }}

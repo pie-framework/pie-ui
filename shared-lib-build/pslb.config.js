@@ -31,7 +31,7 @@ const reactIsExports = [
   'isStrictMode',
   'isSuspense',
   'isValidElementType',
-  'typeOf'
+  'typeOf',
 ];
 
 const konva = [
@@ -58,7 +58,7 @@ const konva = [
   'Arrow',
   'Shape',
   'useStrictMode',
-  'Stage'
+  'Stage',
 ];
 
 const commonJs = {
@@ -83,7 +83,7 @@ const commonJs = {
       'useRef',
 
       'createRef',
-      'Component'
+      'Component',
     ],
     'node_modules/react-dom/server.browser.js': ['renderToStaticMarkup'],
     'node_modules/esrever/esrever.js': ['reverse'],
@@ -101,9 +101,9 @@ const commonJs = {
       'Range',
       'Repeat',
       'is',
-      'fromJS'
-    ]
-  }
+      'fromJS',
+    ],
+  },
 };
 
 const listPackages = () => {
@@ -112,8 +112,8 @@ const listPackages = () => {
 
   return _.compact(
     files
-      .filter(f => !f.includes('@'))
-      .map(f => {
+      .filter((f) => !f.includes('@'))
+      .map((f) => {
         const p = fs.readJsonSync(path.join(root, f, 'package.json'));
         if (!p.module) {
           return;
@@ -124,25 +124,35 @@ const listPackages = () => {
 };
 module.exports = {
   packages: listPackages(),
+  commonLib: {
+    packageDir: path.resolve(__dirname, '../packages'),
+    minify: false,
+    mode: 'development',
+    repository: 'pie-framework/pie-ui',
+    extensions: {
+      commonJs,
+    },
+  },
   pkg: {
     type: 'npm-package',
     mode: 'production',
     // eslint-disable-next-line no-undef
     root: path.resolve(__dirname, '../packages'),
-    output: '$pkg/module/index.js',
-    extensions: { commonJs }
+    output: (name, version, filename) => {
+      filename == filename || 'index.js';
+      return path.resolve(
+        __dirname,
+        'packages',
+        path.basename(name),
+        'module',
+        filename
+      ); //'$pkg/module/index.js',
+    },
+    extensions: { commonJs },
   },
   libs: [
     {
       name: '@pie-ui/shared-lib',
-      // eslint-disable-next-line no-undef
-      output: path.resolve(__dirname, '../packages'),
-      minify: false,
-      mode: 'development',
-      repository: 'pie-framework/pie-ui',
-      extensions: {
-        commonJs
-      },
       /**
        * Ideally namespace imports would be the default import method.
        * But this can cause problems if a library does the following:
@@ -164,7 +174,7 @@ module.exports = {
           'react',
           'prop-types',
           '@pie-lib/correct-answer-toggle',
-          'lodash'
+          'lodash',
         ],
         namespace: [
           '@material-ui/core/styles/colorManipulator',
@@ -178,59 +188,41 @@ module.exports = {
           'mathjs',
           'react-dnd',
           'react-dnd-html5-backend',
-          'react-transition-group'
-        ]
-      }
+          'react-transition-group',
+        ],
+      },
     },
 
     {
       name: '@pie-ui/shared-math-edit',
       // eslint-disable-next-line no-undef
-      output: path.resolve(__dirname, '../packages'),
-      minify: false,
-      mode: 'development',
-      repository: 'pie-framework/pie-ui',
-      extensions: {
-        commonJs
-      },
       imports: {
         default: ['@pie-framework/mathquill'],
-        namespace: ['@pie-lib/math-input', '@pie-lib/math-toolbar']
-      }
+        namespace: ['@pie-lib/math-input', '@pie-lib/math-toolbar'],
+      },
     },
-    /** earlier libs are fed in to subsequent libs .. */
     {
       name: '@pie-ui/shared-graphing',
       // add dependency here? or use the order?
-      output: path.resolve(__dirname, '../packages'),
-      mode: 'development',
-      minify: false,
-      extensions: {
-        commonJs
-      },
+      // output: path.resolve(__dirname, '../packages'),
       imports: {
         default: [],
         namespace: [
           '@pie-lib/plot',
           '@pie-lib/graphing',
           'd3-scale',
-          'd3-selection'
-        ]
-      }
+          'd3-selection',
+        ],
+      },
     },
     {
       name: '@pie-ui/shared-konva',
       // add dependency here? or use the order?
-      output: path.resolve(__dirname, '../packages'),
-      mode: 'development',
-      minify: false,
-      extensions: {
-        commonJs
-      },
+      // output: path.resolve(__dirname, '../packages'),
       imports: {
         default: [],
-        namespace: ['react-konva', 'konva']
-      }
-    }
-  ]
+        namespace: ['react-konva', 'konva'],
+      },
+    },
+  ],
 };

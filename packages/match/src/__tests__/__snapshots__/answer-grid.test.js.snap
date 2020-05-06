@@ -5,7 +5,7 @@ exports[`AnswerGrid renders 1`] = `
   className="AnswerGrid-controlsContainer-1"
 >
   <table
-    className="AnswerGrid-table-11"
+    className="AnswerGrid-table-10"
   >
     <colgroup>
       <col
@@ -21,12 +21,13 @@ exports[`AnswerGrid renders 1`] = `
     <thead>
       <tr>
         <th
+          className="AnswerGrid-rowHeader-7"
           data-colno="0"
           key="th-0"
           scope="row"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-rowHeader-7 AnswerGrid-questionText-12"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Column 1",
@@ -35,12 +36,13 @@ exports[`AnswerGrid renders 1`] = `
           />
         </th>
         <th
+          className="AnswerGrid-rowHeader-7"
           data-colno="1"
           key="th-1"
           scope="row"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-rowHeader-7"
+            className="AnswerGrid-rowItem-8"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Column 2",
@@ -49,12 +51,13 @@ exports[`AnswerGrid renders 1`] = `
           />
         </th>
         <th
+          className="AnswerGrid-rowHeader-7"
           data-colno="2"
           key="th-2"
           scope="row"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-rowHeader-7"
+            className="AnswerGrid-rowItem-8"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Column 3",
@@ -69,14 +72,14 @@ exports[`AnswerGrid renders 1`] = `
       role="group"
     >
       <tr
-        className="AnswerGrid-separator-10"
+        className="AnswerGrid-separator-9"
       >
         <td
           data-colno="0"
           key="td-title-0"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-12 AnswerGrid-rowText-9"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 1",
@@ -123,14 +126,14 @@ exports[`AnswerGrid renders 1`] = `
       role="group"
     >
       <tr
-        className="AnswerGrid-separator-10"
+        className="AnswerGrid-separator-9"
       >
         <td
           data-colno="0"
           key="td-title-1"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-12 AnswerGrid-rowText-9"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 2",
@@ -177,14 +180,14 @@ exports[`AnswerGrid renders 1`] = `
       role="group"
     >
       <tr
-        className="AnswerGrid-separator-10"
+        className="AnswerGrid-separator-9"
       >
         <td
           data-colno="0"
           key="td-title-2"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-12 AnswerGrid-rowText-9"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 3",
@@ -231,14 +234,14 @@ exports[`AnswerGrid renders 1`] = `
       role="group"
     >
       <tr
-        className="AnswerGrid-separator-10"
+        className="AnswerGrid-separator-9"
       >
         <td
           data-colno="0"
           key="td-title-3"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-12 AnswerGrid-rowText-9"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 4",

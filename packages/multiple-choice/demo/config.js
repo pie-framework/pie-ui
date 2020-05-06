@@ -1,6 +1,6 @@
 module.exports = {
   elements: {
-    'multiple-choice': '..'
+    'multiple-choice': '..',
   },
   models: [
     {
@@ -12,19 +12,20 @@ module.exports = {
       choiceMode: 'radio',
       keyMode: 'letters',
       showCorrect: true,
-      correctResponse: [{ value: 'b' }],
+      responseCorrect: true,
+      // correctResponse: [{ value: 'b' }],
 
       choices: [
         {
           label: 'apple <span data-latex="">$\\frac{2}{2}$</span>',
           value: 'a',
-          correct: false
+          correct: true,
         },
         {
           label: 'banana <span data-latex="">\\(\\frac{1}{2}\\)</span>',
-          value: 'b'
-        }
-      ]
-    }
-  ]
+          value: 'b',
+        },
+      ],
+    },
+  ],
 };

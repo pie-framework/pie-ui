@@ -10,6 +10,9 @@ module.exports = {
   //     }
   //   }
   // },
+  resolve: {
+    mainFields: ['browser', 'main'],
+  },
   module: {
     rules: [
       {
@@ -19,10 +22,10 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: false
-            }
-          }
-        ]
+              modules: false,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|otf)$/,
@@ -30,11 +33,11 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 10000
-            }
-          }
-        ]
-      }
-    ]
-  }
+              limit: 10000,
+            },
+          },
+        ],
+      },
+    ],
+  },
 };

@@ -107,22 +107,21 @@ const commonJs = {
 };
 
 const listPackages = () => {
-  return [];
-  // const root = path.resolve(__dirname, '..', 'packages');
-  // const files = fs.readdirSync(root);
+  const root = path.resolve(__dirname, '..', 'packages');
+  const files = fs.readdirSync(root);
 
-  // return _.compact(
-  //   files
-  //     .filter((f) => !f.includes('@'))
-  //     .filter((f) => fs.lstatSync(path.join(root, f)).isDirectory())
-  //     .map((f) => {
-  //       const p = fs.readJsonSync(path.join(root, f, 'package.json'));
-  //       if (!p.module) {
-  //         return;
-  //       }
-  //       return p.name;
-  //     })
-  // );
+  return _.compact(
+    files
+      .filter((f) => !f.includes('@'))
+      .filter((f) => fs.lstatSync(path.join(root, f)).isDirectory())
+      .map((f) => {
+        const p = fs.readJsonSync(path.join(root, f, 'package.json'));
+        if (!p.module) {
+          return;
+        }
+        return p.name;
+      })
+  );
 };
 module.exports = {
   packages: listPackages(),

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.27](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.26...@pie-ui/explicit-constructed-response@1.7.27) (2020-05-08)
+
+
+### Bug Fixes
+
+* bump lib versions ([7110d20](https://github.com/pie-framework/pie-ui/commit/7110d20))
+
+
+
+
+
 ## [1.7.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.25...@pie-ui/explicit-constructed-response@1.7.26) (2020-04-28)
 
 

@@ -1,24 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Main Component should match snapshot 1`] = `
-<Main
-  classes={
-    Object {
-      "main": "Main-main-1",
-      "prompt": "Main-prompt-2",
+<div>
+  <[object Object]
+    highlightShape={true}
+    markup="hi"
+    onChange={[Function]}
+    pluginProps={
+      Object {
+        "math": Object {
+          "disabled": true,
+          "keypadMode": undefined,
+        },
+      }
     }
-  }
-  model={
-    Object {
-      "height": 50,
-      "width": 100,
+  />
+</div>
+`;
+
+exports[`Render Main Component should match snapshot with teacher instructions 1`] = `
+<div>
+  <div>
+    <Component
+      labels={
+        Object {
+          "hidden": "Show Teacher Instructions",
+          "visible": "Hide Teacher Instructions",
+        }
+      }
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Teacher Instructions",
+          }
+        }
+      />
+    </Component>
+    <br />
+  </div>
+  <[object Object]
+    highlightShape={true}
+    markup="hi"
+    onChange={[Function]}
+    pluginProps={
+      Object {
+        "math": Object {
+          "disabled": true,
+          "keypadMode": undefined,
+        },
+      }
     }
-  }
-  onChange={[Function]}
-  session={
-    Object {
-      "value": "hi",
-    }
-  }
-/>
+  />
+</div>
 `;

@@ -113,6 +113,7 @@ const listPackages = () => {
   return _.compact(
     files
       .filter((f) => !f.includes('@'))
+      .filter((f) => fs.lstatSync(path.join(root, f)).isDirectory())
       .map((f) => {
         const p = fs.readJsonSync(path.join(root, f, 'package.json'));
         if (!p.module) {

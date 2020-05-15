@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.43](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.42...@pie-ui/math-inline@3.0.43) (2020-05-08)
+
+
+### Bug Fixes
+
+* bump lib versions ([7110d20](https://github.com/pie-framework/pie-ui/commit/7110d20))
+
+
+
+
+
 ## [3.0.42](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.41...@pie-ui/math-inline@3.0.42) (2020-04-28)
 
 

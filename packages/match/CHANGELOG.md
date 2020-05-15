@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.36...@pie-ui/match@2.3.37) (2020-05-08)
+
+
+### Bug Fixes
+
+* bump lib versions ([7110d20](https://github.com/pie-framework/pie-ui/commit/7110d20))
+
+
+
+
+
 ## [2.3.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.35...@pie-ui/match@2.3.36) (2020-04-28)
 
 

@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import uniq from 'lodash/uniq';
-import {
-  GraphContainer as Graph,
-  tools as graphingTools
-} from '@pie-lib/graphing';
+import { GraphContainer } from '@pie-lib/graphing';
 import { Collapsible } from '@pie-lib/render-ui';
+import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+
 export class Main extends React.Component {
   static propTypes = {
     classes: PropTypes.object,
     model: PropTypes.object.isRequired,
-    marks: PropTypes.arrayOf(
-      PropTypes.shape({ type: PropTypes.string.isRequired })
-    ),
+    session: PropTypes.object.isRequired,
     onAnswersChange: PropTypes.func
   };
 
@@ -21,59 +17,93 @@ export class Main extends React.Component {
     classes: {}
   };
 
-  render() {
-    const { model, marks, classes } = this.props;
-    const tools = [];
-    const marksTypes = marks ? marks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
-    const backgroundMarksTypes = model.backgroundMarks ? model.backgroundMarks.reduce((acc, m) => ([ ...acc, m.type]), []) : [];
-    const markTypes = uniq([ ...marksTypes, ...backgroundMarksTypes, ...(model.toolbarTools || []) ]);
+  state = { showingCorrect: false };
 
-    markTypes.forEach((graphingToolKey) => {
-      if (typeof graphingTools[graphingToolKey] === 'function') {
-        const tool = graphingTools[graphingToolKey]();
-        tool.toolbar = !!(model.toolbarTools && model.toolbarTools.find(tT => tT === tool.type));
-        tools.push(tool)
-      }
-    });
-    const showLabel = model.toolbarTools && model.toolbarTools.some(t => t === 'label');
-    const defaultAndCurrent = tools && tools.find(t => t.toolbar);
+  toggleCorrect = showingCorrect => this.setState({ showingCorrect });
+
+  render() {
+    const { model, classes, onAnswersChange, session } = this.props;
+    const { showingCorrect } = this.state;
+    const { answer } = session || {};
+    const {
+      answersCorrected,
+      arrows,
+      backgroundMarks,
+      correctResponse,
+      disabled,
+      domain,
+      labels,
+      prompt,
+      range,
+      rationale,
+      size,
+      showToggle,
+      title,
+      teacherInstructions,
+      toolbarTools
+    } = model || {};
+
+    const marks = answersCorrected || answer || [];
+
 
     return (
       <div>
+        <CorrectAnswerToggle
+          show={showToggle}
+          toggled={showingCorrect}
+          onToggle={this.toggleCorrect}
+        />
+
+        {(showingCorrect && showToggle) && (
+          <GraphContainer
+            axesSettings={{ includeArrows: arrows }}
+            backgroundMarks={backgroundMarks}
+            disabled={true}
+            domain={domain}
+            labels={labels}
+            marks={correctResponse}
+            onChangeMarks={onAnswersChange}
+            range={range}
+            size={size}
+            title={title}
+            toolbarTools={toolbarTools}
+          />
+        )}
+
         {
-          model.teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
+          teacherInstructions && (
+            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
+              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
             </Collapsible>
           )
         }
-        <br />
-        <div
-          className={classes.prompt}
-          dangerouslySetInnerHTML={{ __html: model.prompt }}
-        />
-        <br />
-        <Graph
-          size={model.size}
-          domain={model.domain}
-          range={model.range}
-          title={model.title}
-          labels={model.labels}
+
+        <br/>
+
+        <div className={classes.prompt} dangerouslySetInnerHTML={{ __html: prompt }}/>
+
+        <br/>
+
+        <GraphContainer
+          axesSettings={{ includeArrows: arrows }}
+          backgroundMarks={backgroundMarks}
+          disabled={disabled}
+          domain={domain}
+          labels={labels}
           marks={marks}
-          backgroundMarks={model.backgroundMarks}
-          onChangeMarks={this.props.onAnswersChange}
-          tools={tools}
-          currentTool={defaultAndCurrent}
-          defaultTool={defaultAndCurrent}
-          hideLabel={!showLabel}
+          onChangeMarks={onAnswersChange}
+          range={range}
+          size={size}
+          title={title}
+          toolbarTools={toolbarTools}
         />
-        <br />
+
+        <br/>
+
         {
-          model.rationale && (
+          rationale && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
-              <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
+              <div dangerouslySetInnerHTML={{ __html: rationale }}/>
             </Collapsible>
           )
         }
@@ -83,9 +113,7 @@ export class Main extends React.Component {
 }
 
 const styles = () => ({
-  prompt: {
-    verticalAlign: 'middle'
-  }
+  prompt: { verticalAlign: 'middle' }
 });
 
 export default withStyles(styles)(Main);

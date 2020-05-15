@@ -73,9 +73,14 @@ export class AnswerGrid extends React.Component {
           <thead>
           <tr>
             {headers.map((header, idx) => (
-              <th key={`th-${idx}`} data-colno={`${idx}`} scope="row">
+              <th
+                className={classes.rowHeader}
+                key={`th-${idx}`}
+                data-colno={`${idx}`}
+                scope="row"
+              >
                 <div
-                  className={cx(classes.rowItem, classes.rowHeader, { [classes.questionText]: idx === 0 })}
+                  className={cx(classes.rowItem, { [classes.questionText]: idx === 0 })}
                   dangerouslySetInnerHTML={{ __html: header }}
                 />
               </th>
@@ -91,7 +96,7 @@ export class AnswerGrid extends React.Component {
                 data-colno={'0'}
               >
                 <div
-                  className={cx(classes.rowItem, classes.questionText, classes.rowText)}
+                  className={cx(classes.rowItem, classes.questionText)}
                   dangerouslySetInnerHTML={{ __html: row.title }}
                 />
               </td>
@@ -135,7 +140,7 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit
   },
   column: {
-    padding: '16px',
+    padding: '10px 20px 0',
   },
   correct: {
     color: 'green !important'
@@ -151,15 +156,11 @@ const styles = theme => ({
     alignItems: 'center',
   },
   rowHeader: {
-    padding: '20px 8px'
+    padding: 0
   },
   rowItem: {
-    display: 'flex',
-    justifyContent: 'center',
     padding: '12px',
-  },
-  rowText: {
-    display: 'inline'
+    textAlign: 'center'
   },
   separator: {
     border: 0,
@@ -173,8 +174,7 @@ const styles = theme => ({
     marginBottom: 0
   },
   questionText: {
-    display: 'flex',
-    justifyContent: 'flex-start'
+    textAlign: 'left'
   },
 });
 

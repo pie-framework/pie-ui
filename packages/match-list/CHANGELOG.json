@@ -598,5 +598,20 @@
     "committerDate": "2020-04-28 14:51:20 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.31"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7110d203faa7b3b834a5153179b3266eae892659",
+    "gitTags": "",
+    "committerDate": "2020-05-06 12:36:09 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.4.32"
   }
 ]

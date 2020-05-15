@@ -11,7 +11,7 @@ const log = debug('@pie-ui:extended-text-entry');
 
 const style = theme => ({
   main: {
-    margin: '20px'
+    padding: '10px 20px'
   },
   prompt: {
     width: '100%',
@@ -20,7 +20,7 @@ const style = theme => ({
   }
 });
 
-class Main extends React.Component {
+export class Main extends React.Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     model: PropTypes.object,
@@ -46,19 +46,23 @@ class Main extends React.Component {
     return (
       <div
         className={classes.main}
-        ref={ref => { this.containerRef = ref; }}
+        ref={ref => {
+          this.containerRef = ref;
+        }}
       >
         {
           teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-              className={classes.collapsible}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
+            <div>
+              <Collapsible
+                labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
+                className={classes.collapsible}
+              >
+                <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
+              </Collapsible>
+              <br/>
+            </div>
           )
         }
-        <br />
         {model.prompt && (
           <Typography
             className={classes.prompt}
@@ -80,8 +84,12 @@ class Main extends React.Component {
             }
           }}
         />
-        <br />
-        {feedback && <Feedback correctness="correct" feedback={feedback} />}
+        {feedback && (
+          <div>
+            <br/>
+            <Feedback correctness="correct" feedback={feedback}/>
+          </div>
+        )}
       </div>
     );
   }

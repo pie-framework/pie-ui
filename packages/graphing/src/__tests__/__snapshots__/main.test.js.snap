@@ -2,6 +2,10 @@
 
 exports[`Main render snapshot 1`] = `
 <div>
+  <_default
+    onToggle={[Function]}
+    toggled={false}
+  />
   <br />
   <div
     dangerouslySetInnerHTML={
@@ -12,10 +16,14 @@ exports[`Main render snapshot 1`] = `
   />
   <br />
   <Root
+    axesSettings={
+      Object {
+        "includeArrows": undefined,
+      }
+    }
     backgroundMarks={Array []}
-    hideLabel={true}
+    marks={Array []}
     onChangeMarks={[MockFunction]}
-    tools={Array []}
   />
   <br />
 </div>

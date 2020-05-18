@@ -29,6 +29,11 @@ describe('Container', () => {
       w = wrapper();
       expect(w).toMatchSnapshot();
     });
+
+    it('renders disabled', () => {
+      w = wrapper({ disabled: true });
+      expect(w).toMatchSnapshot();
+    });
   });
 
   describe('logic', () => {

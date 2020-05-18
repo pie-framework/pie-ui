@@ -10,6 +10,7 @@ import DrawableText from './drawable-text';
 import Icon from './icon';
 
 const { tools: TOOLS } = constants;
+
 const ROGVAIV = [
   'red',
   'orange',
@@ -24,11 +25,13 @@ const ROGVAIV = [
 export class Container extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    disabled: PropTypes.bool,
     session: PropTypes.object.isRequired,
     onSessionChange: PropTypes.func.isRequired,
     imageDimensions: PropTypes.object.isRequired,
     imageUrl: PropTypes.string.isRequired
   };
+
   constructor(props) {
     super(props);
     const TextEntry = new DrawableText();
@@ -103,6 +106,9 @@ export class Container extends Component {
   }
 
   checkIfToolIsDisabled = type => {
+    if (this.props.disabled) return true;
+
+
     const { toolActive } = this.state;
     // Text will never be disabled since on each "Text Entry" click a new text is added
     if (type === 'Text') {
@@ -121,6 +127,7 @@ export class Container extends Component {
   render() {
     const {
       classes,
+      disabled,
       imageUrl,
       imageDimensions,
       onSessionChange,
@@ -181,6 +188,7 @@ export class Container extends Component {
           >
             <DrawableMain
               session={session}
+              disabled={disabled}
               onSessionChange={onSessionChange}
               fillColor={fillColor}
               outlineColor={outlineColor}

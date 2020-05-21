@@ -328,5 +328,20 @@
     "committerDate": "2020-04-28 13:53:55 +0100",
     "isTagged": true,
     "tag": "@pie-ui/hotspot@1.3.27"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "onClick from react-konva not working for iPad, added onTap. PD-60",
+    "merge": null,
+    "header": "fix: onClick from react-konva not working for iPad, added onTap. PD-60",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a04242e3a70b797af2f7d8c667a2b950d870b1e8",
+    "gitTags": " (origin/fix/PD-60/hotspot-selection-not-working-on-tablet)",
+    "committerDate": "2020-05-18 11:31:35 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.3.28"
   }
 ]

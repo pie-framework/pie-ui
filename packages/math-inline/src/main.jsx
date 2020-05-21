@@ -311,11 +311,7 @@ export class Main extends React.Component {
   onBlur = e => {
     const { relatedTarget, currentTarget } = e || {};
 
-    if (
-      !relatedTarget ||
-      !currentTarget ||
-      relatedTarget.offsetParent !== currentTarget.offsetParent
-    ) {
+    if (!relatedTarget || !currentTarget || (this.root && !this.root.contains(relatedTarget))) {
       this.setState({ activeAnswerBlock: '' });
     }
   };

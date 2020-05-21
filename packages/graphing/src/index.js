@@ -47,7 +47,7 @@ export default class Graphing extends HTMLElement {
 
     const el = React.createElement(Main, {
       model: this._model,
-      marks: this._model.answersCorrected || this._session.answer || [],
+      session: this._session,
       onAnswersChange: this.changeAnswers
     });
 

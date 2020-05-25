@@ -8,6 +8,8 @@ import { updateSessionValue } from './session-updater';
 
 const log = debug('pie-ui:multiple-choice');
 
+export const isComplete = session => !!(session && session.value && session.value.length);
+
 export default class MultipleChoice extends HTMLElement {
   constructor() {
     super();
@@ -39,7 +41,7 @@ export default class MultipleChoice extends HTMLElement {
         bubbles: true,
         composed: true,
         detail: {
-          complete: this.isComplete(),
+          complete: isComplete(this._session),
           component: this.tagName.toLowerCase()
         }
       });
@@ -54,7 +56,7 @@ export default class MultipleChoice extends HTMLElement {
             bubbles: true,
             composed: true,
             detail: {
-              complete: this.isComplete(),
+              complete: isComplete(this._session),
               component: this.tagName.toLowerCase(),
               hasModel: this._model !== undefined
             }
@@ -87,20 +89,6 @@ export default class MultipleChoice extends HTMLElement {
     updateSessionValue(this._session, this._model.choiceMode, data);
     this._dispatchResponseChanged();
     this._rerender();
-  }
-
-  isComplete() {
-    const { complete } = this._model || {};
-    if (complete) {
-      const { min = -1, max = -1 } = complete;
-      const choiceCount =
-        this._session && this._session.value ? this._session.value.length : 0;
-      const overMin = min === -1 || choiceCount >= min;
-      const underMax = max === -1 || choiceCount <= max;
-      return overMin && underMax;
-    } else {
-      return true;
-    }
   }
 
   connectedCallback() {

@@ -693,5 +693,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match@2.3.37"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "properly aligned rows, fixed math rendering issues PD-62",
+    "merge": null,
+    "header": "feat: properly aligned rows, fixed math rendering issues PD-62",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e0ac46680e79f30081c0f2127724108b5be4122c",
+    "gitTags": " (origin/feat/PD-62/match-alignment-issue)",
+    "committerDate": "2020-05-06 18:02:55 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.4.0"
   }
 ]

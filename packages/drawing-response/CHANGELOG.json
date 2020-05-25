@@ -958,5 +958,20 @@
     "committerDate": "2020-04-27 09:47:23 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.26"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "For Drawing Response, \"View\" mode is acting like \"Gather\" Mode. PD-274",
+    "merge": null,
+    "header": "fix: For Drawing Response, \"View\" mode is acting like \"Gather\" Mode. PD-274",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "cd8f56b9b1af06702fc2eddbf09fdb6f4c943fea",
+    "gitTags": "",
+    "committerDate": "2020-05-18 14:21:19 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.27"
   }
 ]

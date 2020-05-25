@@ -1233,5 +1233,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.2.32"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Excessive white space between the \"parts\" of \"multi-part\" Extended Text items. PD-37",
+    "merge": null,
+    "header": "fix: Excessive white space between the \"parts\" of \"multi-part\" Extended Text items. PD-37",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7578a51c856565c68ee79110353b569dc328bfc7",
+    "gitTags": "",
+    "committerDate": "2020-05-08 14:35:31 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.2.33"
   }
 ]

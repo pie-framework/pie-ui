@@ -125,7 +125,7 @@ const listPackages = () => {
 };
 module.exports = {
   packages: listPackages(),
-  range: 'exact',
+  range: '^',
   mode: 'production',
   minify: false,
   packagesDir: path.resolve(__dirname, '../packages'),

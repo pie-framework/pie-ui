@@ -969,7 +969,7 @@
     "footer": null,
     "notes": [],
     "hash": "cd8f56b9b1af06702fc2eddbf09fdb6f4c943fea",
-    "gitTags": " (origin/fix/PD-274/drawing-response-View-acting-like-Gather)",
+    "gitTags": "",
     "committerDate": "2020-05-18 14:21:19 +0300",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.27"

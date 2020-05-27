@@ -1279,7 +1279,7 @@
     "footer": null,
     "notes": [],
     "hash": "da2f68a3df5a8f637bb68d08401ba6a4aefac100",
-    "gitTags": " (origin/fix/PD-277/keyboard-closing)",
+    "gitTags": "",
     "committerDate": "2020-05-20 21:00:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.44"

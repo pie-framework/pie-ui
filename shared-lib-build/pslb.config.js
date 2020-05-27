@@ -125,105 +125,88 @@ const listPackages = () => {
 };
 module.exports = {
   packages: listPackages(),
-  commonLib: {
-    packageDir: path.resolve(__dirname, '../packages'),
-    minify: false,
-    mode: 'development',
+  range: '^',
+  mode: 'production',
+  minify: false,
+  packagesDir: path.resolve(__dirname, '../packages'),
+  extensions: { commonJs },
+  type: 'npm-package',
+  libs: {
     repository: 'pie-framework/pie-ui',
-    extensions: {
-      commonJs,
-    },
-  },
-  pkg: {
-    type: 'npm-package',
-    mode: 'production',
-    // eslint-disable-next-line no-undef
-    root: path.resolve(__dirname, '../packages'),
-    output: (name, version, filename) => {
-      filename == filename || 'index.js';
-      return path.resolve(
-        __dirname,
-        'packages',
-        path.basename(name),
-        'module',
-        filename
-      ); //'$pkg/module/index.js',
-    },
-    extensions: { commonJs },
-  },
-  libs: [
-    {
-      name: '@pie-ui/shared-lib',
-      /**
-       * Ideally namespace imports would be the default import method.
-       * But this can cause problems if a library does the following:
-       * `module.exports = require("path");` - this causes the properties to get lost,
-       * when really we'd like all the properties to be set on the module.
-       * For now - specify the import method as a key of `imports`.
-       *
-       * To fix this we'd probably need to make a change to rollup,
-       * get it to follow the var until it gets to the object definition,
-       * then to use the keys to set the export object.
-       *
-       * @see rollup/src/ast/NamespaceVariable
-       * @see rollup/plugin-commonjs/ too
-       */
-      imports: {
-        default: [
-          'react-dom',
-          'react-dom/server',
-          'react',
-          'prop-types',
-          '@pie-lib/correct-answer-toggle',
-          'lodash',
-        ],
-        namespace: [
-          '@material-ui/core/styles/colorManipulator',
-          '@material-ui/core/styles',
-          '@material-ui/core',
-          '@pie-framework/pie-player-events',
-          '@pie-lib/drag',
-          '@pie-lib/math-rendering',
-          '@pie-lib/mask-markup',
-          '@pie-lib/render-ui',
-          'mathjs',
-          'react-dnd',
-          'react-dnd-html5-backend',
-          'react-transition-group',
-        ],
+    packages: [
+      {
+        name: '@pie-ui/shared-lib',
+        /**
+         * Ideally namespace imports would be the default import method.
+         * But this can cause problems if a library does the following:
+         * `module.exports = require("path");` - this causes the properties to get lost,
+         * when really we'd like all the properties to be set on the module.
+         * For now - specify the import method as a key of `imports`.
+         *
+         * To fix this we'd probably need to make a change to rollup,
+         * get it to follow the var until it gets to the object definition,
+         * then to use the keys to set the export object.
+         *
+         * @see rollup/src/ast/NamespaceVariable
+         * @see rollup/plugin-commonjs/ too
+         */
+        imports: {
+          default: [
+            'react-dom',
+            'react-dom/server',
+            'react',
+            'prop-types',
+            '@pie-lib/correct-answer-toggle',
+            'lodash',
+          ],
+          namespace: [
+            '@material-ui/core/styles/colorManipulator',
+            '@material-ui/core/styles',
+            '@material-ui/core',
+            '@pie-framework/pie-player-events',
+            '@pie-lib/drag',
+            '@pie-lib/math-rendering',
+            '@pie-lib/mask-markup',
+            '@pie-lib/render-ui',
+            'mathjs',
+            'react-dnd',
+            'react-dnd-html5-backend',
+            'react-transition-group',
+          ],
+        },
       },
-    },
 
-    {
-      name: '@pie-ui/shared-math-edit',
-      // eslint-disable-next-line no-undef
-      imports: {
-        default: ['@pie-framework/mathquill'],
-        namespace: ['@pie-lib/math-input', '@pie-lib/math-toolbar'],
+      {
+        name: '@pie-ui/shared-math-edit',
+        // eslint-disable-next-line no-undef
+        imports: {
+          default: ['@pie-framework/mathquill'],
+          namespace: ['@pie-lib/math-input', '@pie-lib/math-toolbar'],
+        },
       },
-    },
-    {
-      name: '@pie-ui/shared-graphing',
-      // add dependency here? or use the order?
-      // output: path.resolve(__dirname, '../packages'),
-      imports: {
-        default: [],
-        namespace: [
-          '@pie-lib/plot',
-          '@pie-lib/graphing',
-          'd3-scale',
-          'd3-selection',
-        ],
+      {
+        name: '@pie-ui/shared-graphing',
+        // add dependency here? or use the order?
+        // output: path.resolve(__dirname, '../packages'),
+        imports: {
+          default: [],
+          namespace: [
+            '@pie-lib/plot',
+            '@pie-lib/graphing',
+            'd3-scale',
+            'd3-selection',
+          ],
+        },
       },
-    },
-    {
-      name: '@pie-ui/shared-konva',
-      // add dependency here? or use the order?
-      // output: path.resolve(__dirname, '../packages'),
-      imports: {
-        default: [],
-        namespace: ['react-konva', 'konva'],
+      {
+        name: '@pie-ui/shared-konva',
+        // add dependency here? or use the order?
+        // output: path.resolve(__dirname, '../packages'),
+        imports: {
+          default: [],
+          namespace: ['react-konva', 'konva'],
+        },
       },
-    },
-  ],
+    ],
+  },
 };

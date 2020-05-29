@@ -4,20 +4,25 @@ exports[`Math-Inline Main render renders correctly with snapshot 1`] = `
 <Main
   classes={
     Object {
-      "blockContainer": "Main-blockContainer-12",
-      "blockMath": "Main-blockMath-14",
-      "blockResponse": "Main-blockResponse-13",
-      "content": "Main-content-4",
-      "correct": "Main-correct-10",
-      "correctAnswerShown": "Main-correctAnswerShown-9",
-      "expression": "Main-expression-7",
-      "incorrect": "Main-incorrect-11",
-      "main": "Main-main-2",
+      "blockContainer": "Main-blockContainer-17",
+      "blockMath": "Main-blockMath-19",
+      "blockResponse": "Main-blockResponse-18",
+      "collapsible": "Main-collapsible-9",
+      "content": "Main-content-8",
+      "correct": "Main-correct-15",
+      "correctAnswerShown": "Main-correctAnswerShown-14",
+      "expression": "Main-expression-11",
+      "incorrect": "Main-incorrect-16",
+      "inputAndKeypadContainer": "Main-inputAndKeypadContainer-12",
+      "keypadTooltip": "Main-keypadTooltip-4",
+      "keypadTooltipPopper": "Main-keypadTooltipPopper-5",
+      "main": "Main-main-6",
       "mainContainer": "Main-mainContainer-1",
-      "responseContainer": "Main-responseContainer-5",
-      "showCorrectness": "Main-showCorrectness-8",
-      "title": "Main-title-3",
-      "toggle": "Main-toggle-6",
+      "responseContainer": "Main-responseContainer-10",
+      "showCorrectness": "Main-showCorrectness-13",
+      "title": "Main-title-7",
+      "tooltip": "Main-tooltip-2",
+      "tooltipPopper": "Main-tooltipPopper-3",
     }
   }
   model={

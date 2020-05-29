@@ -11,10 +11,10 @@ const Mathquill = require('@pie-framework/mathquill');
 
 jest.mock('@pie-framework/mathquill', () => ({
   StaticMath: jest.fn().mockReturnValue({
-    latex: jest.fn()
+    latex: jest.fn(),
   }),
   registerEmbed: jest.fn(),
-  getInterface: jest.fn().mockReturnThis()
+  getInterface: jest.fn().mockReturnThis(),
 }));
 
 describe('Math-Inline Main', () => {
@@ -38,26 +38,26 @@ describe('Math-Inline Main', () => {
           {
             validation: 'literal',
             answer: '\\frac{3}{6}=\\frac{1}{2}',
-            alternates: {}
-          }
+            alternates: {},
+          },
         ],
         feedback: {
           correct: {
             type: 'none',
-            default: 'Correct'
+            default: 'Correct',
           },
           partial: {
             type: 'none',
-            default: 'Nearly'
+            default: 'Nearly',
           },
           incorrect: {
             type: 'none',
-            default: 'Incorrect'
-          }
+            default: 'Incorrect',
+          },
         },
-        customKeys: ['\\left(\\right)', '\\frac{}{}', 'x\\frac{}{}']
-      }
-    }
+        customKeys: ['\\left(\\right)', '\\frac{}{}', 'x\\frac{}{}'],
+      },
+    },
   };
 
   let wrapper;
@@ -74,7 +74,7 @@ describe('Math-Inline Main', () => {
     });
 
     it('renders correctly', () => {
-      expect(wrapper.dive().find(CorrectAnswerToggle).length).toEqual(1);
+      expect(wrapper.dive().find(CorrectAnswerToggle).length).toEqual(0);
       expect(wrapper.dive().find(Feedback).length).toEqual(0);
 
       expect(wrapper.dive().state()).toEqual({
@@ -82,20 +82,20 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: ''
+              value: '',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
 
       expect(Mathquill.getInterface().registerEmbed).toHaveBeenCalled();
@@ -105,12 +105,7 @@ describe('Math-Inline Main', () => {
   describe('logic', () => {
     it('prepares latex correctly and answer blocks and turns them into inputs', () => {
       expect(wrapper.dive().find(mq.Static).length).toEqual(1);
-      expect(
-        wrapper
-          .dive()
-          .find(mq.Static)
-          .props().latex
-      ).toEqual(
+      expect(wrapper.dive().find(mq.Static).props().latex).toEqual(
         '\\text{A family sized box contains} \\MathQuillMathField[r1]{} \\text{less than} \\MathQuillMathField[r2]{} \\text{times the number  }  \\frac{3}{6}=\\frac{ \\MathQuillMathField[r3]{} }{4} + \\frac{ \\MathQuillMathField[r4]{} }{4}'
       );
     });
@@ -138,20 +133,20 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: ''
+              value: '',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
     });
 
@@ -161,8 +156,8 @@ describe('Math-Inline Main', () => {
       expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
       wrapper.instance().onSubFieldFocus('r1');
       wrapper.instance().onBlur({
-        relatedTarget: { offsetParent: 'editor1'},
-        currentTarget: { offsetParent: 'editor1'}
+        relatedTarget: { offsetParent: { children: [{ attributes: { 'data-keypad': true } }] } },
+        currentTarget: { offsetParent: 'editor1' },
       });
       expect(wrapper.state().activeAnswerBlock).toEqual('r1');
     });
@@ -172,8 +167,8 @@ describe('Math-Inline Main', () => {
 
       expect(wrapper.find(HorizontalKeypad).length).toEqual(0);
       wrapper.instance().onBlur({
-        relatedTarget: { offsetParent: 'editor1'},
-        currentTarget: { offsetParent: 'editor2'}
+        relatedTarget: { offsetParent: { children: [{ attributes: { 'data-keypad': false } }] } },
+        currentTarget: { offsetParent: 'editor2' },
       });
       expect(wrapper.state().activeAnswerBlock).toEqual('');
     });
@@ -183,30 +178,30 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: '\\frac{n-5}{6}'
-            }
-          }
-        }
+              value: '\\frac{n-5}{6}',
+            },
+          },
+        },
       });
       expect(wrapper.state()).toEqual({
         activeAnswerBlock: '',
         session: {
           answers: {
             r1: {
-              value: '\\frac{n-5}{6}'
+              value: '\\frac{n-5}{6}',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
     });
 
@@ -219,20 +214,20 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: 'value'
+              value: 'value',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
     });
 
@@ -244,26 +239,25 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: ''
+              value: '',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
 
       const newProps = { ...defaultProps };
 
-      newProps.model.config.expression =
-        defaultProps.model.config.expression + ' {{response}}';
+      newProps.model.config.expression = defaultProps.model.config.expression + ' {{response}}';
 
       wrapper.setProps(newProps);
 
@@ -272,20 +266,20 @@ describe('Math-Inline Main', () => {
         session: {
           answers: {
             r1: {
-              value: ''
+              value: '',
             },
             r2: {
-              value: ''
+              value: '',
             },
             r3: {
-              value: ''
+              value: '',
             },
             r4: {
-              value: ''
-            }
-          }
+              value: '',
+            },
+          },
         },
-        showCorrect: false
+        showCorrect: false,
       });
     });
   });

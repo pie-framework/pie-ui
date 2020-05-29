@@ -99,6 +99,7 @@ class PolygonComponent extends React.Component {
           classes={classes.base}
           fill={hotspotColor}
           onClick={this.handleClick}
+          onTap={this.handleClick}
           draggable={false}
           stroke={outlineColorParsed}
           strokeWidth={outlineWidth}

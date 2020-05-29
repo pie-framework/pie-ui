@@ -1268,5 +1268,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.43"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "For a particular equation response item, the math editor doesn't work. (The onBlur function was not working properly) PD-277",
+    "merge": null,
+    "header": "fix: For a particular equation response item, the math editor doesn't work. (The onBlur function was not working properly) PD-277",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "da2f68a3df5a8f637bb68d08401ba6a4aefac100",
+    "gitTags": "",
+    "committerDate": "2020-05-20 21:00:21 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.0.44"
   }
 ]

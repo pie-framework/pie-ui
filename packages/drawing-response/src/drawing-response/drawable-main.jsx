@@ -84,15 +84,9 @@ class DrawableMain extends React.Component {
     }
   };
 
-  onMouseOverElement = () =>
-    this.setState({
-      isOver: true
-    });
+  onMouseOverElement = () => this.setState({ isOver: true });
 
-  onMouseOutElement = () =>
-    this.setState({
-      isOver: false
-    });
+  onMouseOutElement = () => this.setState({ isOver: false });
 
   handleMouseDown = e => {
     const { newDrawable, textIsSelected } = this.state;
@@ -151,6 +145,7 @@ class DrawableMain extends React.Component {
   handleUndo = () => {
     const { drawables } = this.state;
     const { TextEntry } = this.props;
+
     const newDrawables = [...drawables];
     const allData = [...drawables, ...TextEntry.all];
 
@@ -176,13 +171,12 @@ class DrawableMain extends React.Component {
     );
   };
 
-  toggleTextSelected = textIsSelected => {
-    this.setState({ textIsSelected });
-  };
+  toggleTextSelected = textIsSelected => this.setState({ textIsSelected });
 
   render() {
     const {
       classes,
+      disabled,
       drawableDimensions,
       fillColor,
       imageDimensions,
@@ -199,7 +193,8 @@ class DrawableMain extends React.Component {
     const drawables = [...this.state.drawables, ...this.state.newDrawable];
 
     const drawableProps = {
-      draggable,
+      draggable: draggable && !disabled,
+      disabled,
       paint,
       fillColor,
       forceUpdate: () => this.setState({ updatedAt: new Date() }),
@@ -212,20 +207,24 @@ class DrawableMain extends React.Component {
       onMouseOutElement: this.onMouseOutElement
     };
 
-    const listeners = {
-      onMouseUp: this.handleMouseUp,
-      onMouseMove: this.handleMouseMove
-    };
+    let listeners = {};
 
-    if (!draggable) {
-      listeners.onMouseDown = this.handleMouseDown;
+    if (!disabled) {
+      listeners = {
+        onMouseUp: this.handleMouseUp,
+        onMouseMove: this.handleMouseMove
+      };
+
+      if (!draggable) {
+        listeners.onMouseDown = this.handleMouseDown;
+      }
     }
 
     return (
       <div>
         <div className={classes.undoControls}>
-          <Button onClick={this.handleUndo} label="Undo" />
-          <Button onClick={this.handleClearAll} label="Clear all" />
+          <Button disabled={disabled} onClick={this.handleUndo} label="Undo" />
+          <Button disabled={disabled} onClick={this.handleClearAll} label="Clear all" />
         </div>
         <div className={classes.base}>
           {imageUrl && (
@@ -287,6 +286,7 @@ const styles = () => ({
 
 DrawableMain.propTypes = {
   classes: PropTypes.object.isRequired,
+  disabled: PropTypes.bool,
   drawableDimensions: PropTypes.object.isRequired,
   imageDimensions: PropTypes.object.isRequired,
   fillColor: PropTypes.string.isRequired,

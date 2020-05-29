@@ -12,9 +12,11 @@ export default class TextDrawable {
   static getTextareaNode(id) {
     return `textarea_${id}`;
   }
+
   static getTextNode(id) {
     return `text_${id}`;
   }
+
   static getTransformerNode(id) {
     return `transformer_${id}`;
   }
@@ -259,7 +261,21 @@ export default class TextDrawable {
 
       const textNode = `text_${id}`;
       const transformerNode = `transformer_${id}`;
-      const extraProps = {};
+      let extraProps = {};
+
+      if (!props.disabled) {
+        extraProps = {
+          onClick: e => this.handleClick(e, id),
+          onDblClick: e => this.handleDblClick(e, text),
+          onTransform: e => this.handleTransform(e, textNode),
+          onTransformEnd: this.props.handleSessionChange,
+          onMouseDown: this.handleMouseDown,
+          onMouseUp: this.handleMouseUp,
+          onDragEnd: this.props.handleSessionChange,
+          onMouseEnter: this.props.onMouseOverElement,
+          onMouseLeave: this.props.onMouseOutElement,
+        }
+      }
 
       if (rotation) {
         extraProps.rotation = rotation;
@@ -273,21 +289,12 @@ export default class TextDrawable {
           ref={text => {
             this[textNode] = text;
           }}
-          onClick={e => this.handleClick(e, id)}
-          onDblClick={e => this.handleDblClick(e, text)}
-          onTransform={e => this.handleTransform(e, textNode)}
-          onTransformEnd={this.props.handleSessionChange}
-          onMouseDown={this.handleMouseDown}
-          onMouseUp={this.handleMouseUp}
-          onDragEnd={this.props.handleSessionChange}
-          onMouseEnter={this.props.onMouseOverElement}
-          onMouseLeave={this.props.onMouseOutElement}
           text={text.text || label}
           name={textNode}
           x={x}
           y={y}
           width={width}
-          draggable
+          draggable={!props.disabled}
           visible={textVisible}
           fontSize={16}
           {...extraProps}

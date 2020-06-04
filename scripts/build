@@ -29,7 +29,7 @@ class UiCommands extends Commands {
 
   sharedBuild() {
     return this.runCmd(
-      `yarn pslb --config shared-lib-build/pslb.config.js --publishLibs --token ${args.token} --cleanLibs`
+      `yarn pslb --publishLibs --token ${args.token} --cleanLibs`
     );
   }
 
@@ -46,7 +46,7 @@ cmds
     console.log('all done');
     process.exit(0);
   })
-  .catch(e => {
+  .catch((e) => {
     console.error(e);
     process.exit(1);
   });

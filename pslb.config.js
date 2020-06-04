@@ -156,7 +156,7 @@ module.exports = {
             'react-dom/server',
             'react',
             'prop-types',
-            '@pie-lib/correct-answer-toggle',
+            // '@pie-lib/correct-answer-toggle',
             'lodash',
           ],
           namespace: [
@@ -167,7 +167,7 @@ module.exports = {
             '@pie-lib/drag',
             '@pie-lib/math-rendering',
             '@pie-lib/mask-markup',
-            '@pie-lib/render-ui',
+            // '@pie-lib/render-ui',
             'mathjs',
             'react-dnd',
             'react-dnd-html5-backend',

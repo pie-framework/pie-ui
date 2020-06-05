@@ -7,8 +7,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { Feedback, color } from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
-import green from '@material-ui/core/colors/green';
-import orange from '@material-ui/core/colors/orange';
 import classNames from 'classnames';
 
 const styleSheet = (theme) => ({

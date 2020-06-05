@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.44](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.43...@pie-ui/math-inline@3.0.44) (2020-05-21)
+
+
+### Bug Fixes
+
+* For a particular equation response item, the math editor doesn't work. (The onBlur function was not working properly) PD-277 ([da2f68a](https://github.com/pie-framework/pie-ui/commit/da2f68a))
+
+
+
+
+
 ## [3.0.43](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.42...@pie-ui/math-inline@3.0.43) (2020-05-08)
 
 

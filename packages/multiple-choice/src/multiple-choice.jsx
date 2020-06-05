@@ -29,10 +29,9 @@ export class Choice extends React.Component {
       checked,
       correctness,
       displayKey,
-      classes
+      classes,
     } = this.props;
-    const choiceClass =
-      'choice' + (index === choicesLength - 1 ? ' last' : '');
+    const choiceClass = 'choice' + (index === choicesLength - 1 ? ' last' : '');
 
     const feedback = !isEvaluateMode || showCorrect ? '' : choice.feedback;
 
@@ -44,16 +43,16 @@ export class Choice extends React.Component {
       feedback,
       correctness,
       displayKey,
-      onChange: this.onChange
+      onChange: this.onChange,
     };
 
     const names = classNames(classes.choice, {
-      [classes.last]: index === choicesLength - 1
+      [classes.last]: index === choicesLength - 1,
     });
 
     return (
       <div className={choiceClass} key={index}>
-        <ChoiceInput {...choiceProps} className={names}/>
+        <ChoiceInput {...choiceProps} className={names} />
       </div>
     );
   }
@@ -71,18 +70,18 @@ Choice.propTypes = {
   isEvaluateMode: PropTypes.bool,
   checked: PropTypes.bool,
   correctness: PropTypes.string,
-  displayKey: PropTypes.string
+  displayKey: PropTypes.string,
 };
 
 const StyledChoice = withStyles({
   choice: {
     paddingTop: '20px',
     paddingBottom: '10px',
-    borderBottom: '1px solid #E0DEE0'
+    borderBottom: '1px solid #E0DEE0',
   },
   last: {
-    borderBottom: 'none'
-  }
+    borderBottom: 'none',
+  },
 })(Choice);
 
 // MultipleChoice
@@ -90,13 +89,14 @@ const StyledChoice = withStyles({
 const styles = {
   corespringChoice: {
     '& *': {
-      fontFamily: '\'Roboto\', Arial, Helvetica, sans-serif', //eslint-disable-line
-      '-webkit-font-smoothing': 'antialiased'
-    }
+      fontFamily: "'Roboto', Arial, Helvetica, sans-serif", //eslint-disable-line
+      '-webkit-font-smoothing': 'antialiased',
+    },
   },
   prompt: {
-    verticalAlign: 'middle'
-  }
+    verticalAlign: 'middle',
+    color: 'var(--pie-primary-text, var(--pie-text, #000000))',
+  },
 };
 
 export class MultipleChoice extends React.Component {
@@ -112,14 +112,14 @@ export class MultipleChoice extends React.Component {
     onChoiceChanged: PropTypes.func.isRequired,
     responseCorrect: PropTypes.bool,
     classes: PropTypes.object.isRequired,
-    correctResponse: PropTypes.array
+    correctResponse: PropTypes.array,
   };
 
   constructor(props) {
     super(props);
 
     this.state = {
-      showCorrect: false
+      showCorrect: false,
     };
 
     this.onToggle = this.onToggle.bind(this);
@@ -140,7 +140,9 @@ export class MultipleChoice extends React.Component {
   isSelected(value) {
     const sessionValue = this.props.session && this.props.session.value;
 
-    return sessionValue && sessionValue.indexOf && sessionValue.indexOf(value) >= 0;
+    return (
+      sessionValue && sessionValue.indexOf && sessionValue.indexOf(value) >= 0
+    );
   }
 
   indexToSymbol(index) {
@@ -192,29 +194,30 @@ export class MultipleChoice extends React.Component {
       onChoiceChanged,
       responseCorrect,
       teacherInstructions,
-      classes
+      classes,
     } = this.props;
     const { showCorrect } = this.state;
     const isEvaluateMode = mode === 'evaluate';
 
     return (
       <div className={classes.corespringChoice}>
-        {
-          teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
-        <br/>
+        {teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions',
+            }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
+          </Collapsible>
+        )}
+        <br />
         <CorrectAnswerToggle
           show={isEvaluateMode && !responseCorrect}
           toggled={this.state.showCorrect}
           onToggle={this.onToggle.bind(this)}
         />
-        <br/>
+        <br />
         <div
           className={classes.prompt}
           dangerouslySetInnerHTML={{ __html: prompt }}
@@ -230,10 +233,17 @@ export class MultipleChoice extends React.Component {
             choiceMode={choiceMode}
             disabled={disabled}
             onChoiceChanged={onChoiceChanged}
-            checked={showCorrect ? choice.correct || false : this.isSelected(choice.value)}
-            correctness={isEvaluateMode ? this.getCorrectness(choice) : undefined}
+            checked={
+              showCorrect
+                ? choice.correct || false
+                : this.isSelected(choice.value)
+            }
+            correctness={
+              isEvaluateMode ? this.getCorrectness(choice) : undefined
+            }
             displayKey={this.indexToSymbol(index)}
-          />))}
+          />
+        ))}
       </div>
     );
   }
@@ -241,8 +251,8 @@ export class MultipleChoice extends React.Component {
 
 MultipleChoice.defaultProps = {
   session: {
-    value: []
-  }
+    value: [],
+  },
 };
 
 export default withStyles(styles)(MultipleChoice);

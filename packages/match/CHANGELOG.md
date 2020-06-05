@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.37...@pie-ui/match@2.4.0) (2020-05-21)
+
+
+### Features
+
+* properly aligned rows, fixed math rendering issues PD-62 ([e0ac466](https://github.com/pie-framework/pie-ui/commit/e0ac466))
+
+
+
+
+
 ## [2.3.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.3.36...@pie-ui/match@2.3.37) (2020-05-08)
 
 

@@ -107,7 +107,7 @@ const commonJs = {
 };
 
 const listPackages = () => {
-  const root = path.resolve(__dirname, '..', 'packages');
+  const root = path.resolve(__dirname, 'packages');
   const files = fs.readdirSync(root);
 
   return _.compact(
@@ -128,7 +128,7 @@ module.exports = {
   range: '^',
   mode: 'production',
   minify: false,
-  packagesDir: path.resolve(__dirname, '../packages'),
+  packagesDir: path.resolve(__dirname, 'packages'),
   extensions: { commonJs },
   type: 'npm-package',
   libs: {

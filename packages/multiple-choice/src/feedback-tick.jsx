@@ -2,13 +2,14 @@ import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { color } from '@pie-lib/render-ui';
 
 const stylesheet = {
   incorrect: {
-    fill: 'var(--feedback-incorrect-bg-color, orange)'
+    fill: `var(--feedback-incorrect-bg-color, ${color.incorrect()})`,
   },
   correct: {
-    fill: 'var(--feedback-correct-bg-color, green)'
+    fill: `var(--feedback-correct-bg-color, ${color.correct()})`,
   },
   feedbackTick: {
     width: '33px',
@@ -20,34 +21,34 @@ const stylesheet = {
       height: '33px',
       verticalAlign: 'middle',
       '& hide': {
-        display: 'none'
-      }
-    }
+        display: 'none',
+      },
+    },
   },
   feedbackTickEnter: {
     opacity: '0',
-    left: '-50px'
+    left: '-50px',
   },
   feedbackTickEnterActive: {
     opacity: '1',
     left: '0px',
-    transition: 'left 500ms ease-in 200ms, opacity 500ms linear 200ms'
+    transition: 'left 500ms ease-in 200ms, opacity 500ms linear 200ms',
   },
   feedbackTickLeave: {
     opacity: '1',
-    left: '0px'
+    left: '0px',
   },
   feedbackTickLeaveActive: {
     opacity: '0',
     left: '-50px',
-    transition: 'left 300ms ease-in, opacity 300ms'
-  }
+    transition: 'left 300ms ease-in, opacity 300ms',
+  },
 };
 
 class FeedbackTick extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    correctness: PropTypes.string
+    correctness: PropTypes.string,
   };
   constructor(props) {
     super(props);
@@ -119,7 +120,7 @@ class FeedbackTick extends React.Component {
                 enter: classes.feedbackTickEnter,
                 enterActive: classes.feedbackTickEnterActive,
                 exit: classes.feedbackTickLeave,
-                exitActive: classes.feedbackTickLeaveActive
+                exitActive: classes.feedbackTickLeaveActive,
               }}
               timeout={{ enter: 700, exit: 300 }}
             >

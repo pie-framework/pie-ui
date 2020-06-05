@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.23](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.22...@pie-ui/multiple-choice@4.12.23) (2020-05-25)
+
+
+### Bug Fixes
+
+* Multiple Select should report a question as "answered" as soon as a selection has been made (remove unintended clue about how many answer choices are correct) PD-253 ([1fe7a4a](https://github.com/pie-framework/pie-elements/commit/1fe7a4a))
+
+
+
+
+
 ## [4.12.22](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.21...@pie-ui/multiple-choice@4.12.22) (2020-05-08)
 
 

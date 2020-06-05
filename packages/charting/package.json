@@ -10,9 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/charting": "^4.2.21",
+    "@pie-lib/charting": "^4.2.22",
     "@pie-lib/math-rendering": "^2.1.12",
-    "@pie-lib/render-ui": "^4.7.16",
+    "@pie-lib/render-ui": "^4.8.0",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.15",

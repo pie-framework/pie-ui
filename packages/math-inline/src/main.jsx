@@ -5,6 +5,7 @@ import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { Feedback, Collapsible } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 import { ResponseTypes } from './utils';
 import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
@@ -16,12 +17,16 @@ const REGEX = /{{response}}/gm;
 const DEFAULT_KEYPAD_VARIANT = 6;
 
 function generateAdditionalKeys(keyData = []) {
-  return keyData.map(key => ({
+  return keyData.map((key) => ({
     name: key,
     latex: key,
     write: key,
-    label: key
+    label: key,
   }));
+}
+
+function getKeyPadWidth(additionalKeys = [], equationEditor) {
+  return Math.floor(additionalKeys.length / 5) * 30 + (equationEditor === 'everything' ? 600 : 500);
 }
 
 function prepareForStatic(model, state) {
@@ -38,7 +43,7 @@ function prepareForStatic(model, state) {
     let answerBlocks = 1; // assume one at least
     // build out local state model using responses declared in expression
 
-    return (modelExpression || '').replace(REGEX, function() {
+    return (modelExpression || '').replace(REGEX, function () {
       const answer = state.session.answers[`r${answerBlocks}`];
 
       if (disabled) {
@@ -55,7 +60,7 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     session: PropTypes.object.isRequired,
     onSessionChange: PropTypes.func,
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -74,7 +79,7 @@ export class Main extends React.Component {
               props.session.answers &&
               props.session.answers[`r${answerBlocks}`] &&
               props.session.answers[`r${answerBlocks}`].value) ||
-            ''
+            '',
         };
 
         answerBlocks += 1;
@@ -84,10 +89,10 @@ export class Main extends React.Component {
     this.state = {
       session: {
         ...props.session,
-        answers
+        answers,
       },
       activeAnswerBlock: '',
-      showCorrect: false
+      showCorrect: false,
     };
   }
 
@@ -98,7 +103,7 @@ export class Main extends React.Component {
       let MQ = MathQuill.getInterface(2);
 
       if (!registered) {
-        MQ.registerEmbed('answerBlock', data => {
+        MQ.registerEmbed('answerBlock', (data) => {
           return {
             htmlString: `<div class="${classes.blockContainer}">
                 <div class="${classes.blockResponse}" id="${data}Index">R</div>
@@ -107,7 +112,7 @@ export class Main extends React.Component {
                 </div>
               </div>`,
             text: () => 'text',
-            latex: () => `\\embed{answerBlock}[${data}]`
+            latex: () => `\\embed{answerBlock}[${data}]`,
           };
         });
 
@@ -122,7 +127,7 @@ export class Main extends React.Component {
     const answers = session.answers;
 
     if (this.root && model.disabled && !showCorrect) {
-      Object.keys(answers).forEach(answerId => {
+      Object.keys(answers).forEach((answerId) => {
         const el = this.root.querySelector(`#${answerId}`);
         const indexEl = this.root.querySelector(`#${answerId}Index`);
         // const correct = model.correctness && model.correctness.correct;
@@ -166,9 +171,7 @@ export class Main extends React.Component {
     const { config: nextConfig = {} } = nextProps.model || {};
 
     if (
-      (config &&
-        config.responses &&
-        config.responses.length !== nextConfig.responses.length) ||
+      (config && config.responses && config.responses.length !== nextConfig.responses.length) ||
       (!config && nextConfig && nextConfig.responses) ||
       (config && nextConfig && config.expression !== nextConfig.expression)
     ) {
@@ -181,21 +184,18 @@ export class Main extends React.Component {
       (nextConfig.expression || '').replace(REGEX, () => {
         newAnswers[`r${answerBlocks}`] = {
           value:
-            (answers &&
-              answers[`r${answerBlocks}`] &&
-              answers[`r${answerBlocks}`].value) ||
-            ''
+            (answers && answers[`r${answerBlocks}`] && answers[`r${answerBlocks}`].value) || '',
         };
         answerBlocks++;
       });
 
       this.setState(
-        state => ({
+        (state) => ({
           session: {
             ...state.session,
             completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
-            answers: newAnswers
-          }
+            answers: newAnswers,
+          },
         }),
         this.handleAnswerBlockDomUpdate
       );
@@ -216,18 +216,18 @@ export class Main extends React.Component {
 
   onDone = () => {};
 
-  onSimpleResponseChange = response => {
+  onSimpleResponseChange = (response) => {
     this.setState(
-      state => ({ session: { ...state.session, response } }),
+      (state) => ({ session: { ...state.session, response } }),
       this.callOnSessionChange
     );
   };
 
-  onSubFieldFocus = id => {
+  onSubFieldFocus = (id) => {
     this.setState({ activeAnswerBlock: id });
   };
 
-  toNodeData = data => {
+  toNodeData = (data) => {
     if (!data) {
       return;
     }
@@ -245,11 +245,11 @@ export class Main extends React.Component {
     }
   };
 
-  setInput = input => {
+  setInput = (input) => {
     this.input = input;
   };
 
-  onClick = data => {
+  onClick = (data) => {
     const c = this.toNodeData(data);
 
     if (c.type === 'clear') {
@@ -273,22 +273,22 @@ export class Main extends React.Component {
     }
   };
 
-  toggleShowCorrect = show => {
+  toggleShowCorrect = (show) => {
     this.setState({ showCorrect: show }, this.handleAnswerBlockDomUpdate);
   };
 
   subFieldChanged = (name, subfieldValue) => {
     if (name) {
       this.setState(
-        state => ({
+        (state) => ({
           session: {
             ...state.session,
             completeAnswer: this.mqStatic && this.mqStatic.mathField.latex(),
             answers: {
               ...state.session.answers,
-              [name]: { value: subfieldValue }
-            }
-          }
+              [name]: { value: subfieldValue },
+            },
+          },
         }),
         this.callOnSessionChange
       );
@@ -301,17 +301,27 @@ export class Main extends React.Component {
     if (Object.keys(answers || {}).length) {
       const keys = Object.keys(answers);
 
-      return keys.find(k => {
+      return keys.find((k) => {
         const tf = fields[k];
         return tf && tf.id == changeField.id;
       });
     }
   };
 
-  onBlur = e => {
+  onBlur = (e) => {
     const { relatedTarget, currentTarget } = e || {};
 
-    if (!relatedTarget || !currentTarget || (this.root && !this.root.contains(relatedTarget))) {
+    if (
+      !relatedTarget ||
+      !currentTarget ||
+      !(
+        relatedTarget.offsetParent &&
+        relatedTarget.offsetParent.children &&
+        relatedTarget.offsetParent.children[0] &&
+        relatedTarget.offsetParent.children[0].attributes &&
+        relatedTarget.offsetParent.children[0].attributes['data-keypad']
+      )
+    ) {
       this.setState({ activeAnswerBlock: '' });
     }
   };
@@ -329,37 +339,14 @@ export class Main extends React.Component {
     const correct = model.correctness && model.correctness.correct;
     const staticLatex = prepareForStatic(model, state) || '';
 
-    return (
-      <div
-        className={classes.mainContainer}
-        ref={r => (this.root = r || this.root)}
-      >
-        {model.teacherInstructions && (
-          <Collapsible
-            labels={{
-              hidden: 'Show Teacher Instructions',
-              visible: 'Hide Teacher Instructions'
-            }}
-            className={classes.collapsible}
-          >
-            <div
-              dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}
-            />
-          </Collapsible>
-        )}
-        <br />
-        <div className={classes.main}>
-          {model.correctness && model.correctness.correctness !== 'correct' && (
-            <CorrectAnswerToggle
-              className={classes.toggle}
-              show
-              toggled={showCorrect}
-              onToggle={this.toggleShowCorrect}
-            />
-          )}
-          <div className={classes.content}>
-            <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
-          </div>
+    const tooltipModeEnabled = model.disabled && model.correctness;
+
+    const midContent = (
+      <div className={classes.main}>
+        <div className={classes.content}>
+          <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
+        </div>
+        <div className={classes.inputAndKeypadContainer}>
           {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
@@ -373,113 +360,203 @@ export class Main extends React.Component {
               className={cx(classes.expression, {
                 [classes.incorrect]: !correct,
                 [classes.correct]: correct,
-                [classes.showCorrectness]:
-                  model.disabled && model.correctness && !model.view,
-                [classes.correctAnswerShown]: showCorrect
+                [classes.showCorrectness]: model.disabled && model.correctness && !model.view,
+                [classes.correctAnswerShown]: showCorrect,
               })}
             >
-              <mq.Static
-                ref={mqStatic => (this.mqStatic = mqStatic || this.mqStatic)}
-                latex={staticLatex}
-                onSubFieldChange={this.subFieldChanged}
-                getFieldName={this.getFieldName}
-                setInput={this.setInput}
-                onSubFieldFocus={this.onSubFieldFocus}
-                onBlur={this.onBlur}
-              />
+              <Tooltip
+                interactive
+                open={!!activeAnswerBlock}
+                classes={{ tooltip: classes.keypadTooltip, popper: classes.keypadTooltipPopper }}
+                title={Object.keys(session.answers).map(
+                  (answerId) =>
+                    (answerId === activeAnswerBlock && !(showCorrect || model.disabled) && (
+                      <div
+                        data-keypad={true}
+                        key={answerId}
+                        className={classes.responseContainer}
+                        style={{
+                          // marginTop: this.mqStatic && this.mqStatic.input.offsetHeight - 20,
+                          width: getKeyPadWidth(additionalKeys, model.config.equationEditor),
+                        }}
+                      >
+                        <HorizontalKeypad
+                          additionalKeys={additionalKeys}
+                          mode={model.config.equationEditor || DEFAULT_KEYPAD_VARIANT}
+                          onClick={this.onClick}
+                        />
+                      </div>
+                    )) ||
+                    null
+                )}
+              >
+                <mq.Static
+                  ref={(mqStatic) => (this.mqStatic = mqStatic || this.mqStatic)}
+                  latex={staticLatex}
+                  onSubFieldChange={this.subFieldChanged}
+                  getFieldName={this.getFieldName}
+                  setInput={this.setInput}
+                  onSubFieldFocus={this.onSubFieldFocus}
+                  onBlur={this.onBlur}
+                />
+              </Tooltip>
             </div>
           )}
-          <div className={classes.responseContainer}>
-            {model.config.responseType === ResponseTypes.advanced &&
-              Object.keys(session.answers).map(
-                answerId =>
-                  (answerId === activeAnswerBlock &&
-                    !(showCorrect || model.disabled) && (
-                      <HorizontalKeypad
-                        key={answerId}
-                        additionalKeys={additionalKeys}
-                        mode={
-                          model.config.equationEditor || DEFAULT_KEYPAD_VARIANT
-                        }
-                        onClick={this.onClick}
-                      />
-                    )) ||
-                  null
-              )}
-          </div>
         </div>
+      </div>
+    );
 
-        {model.rationale && (
-          <Collapsible
-            labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
-          >
-            <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
-          </Collapsible>
-        )}
-        {model.feedback && (
-          <Feedback
-            correctness={model.correctness.correctness}
-            feedback={model.feedback}
-          />
-        )}
+    if (tooltipModeEnabled) {
+      return (
+        <Tooltip
+          interactive
+          classes={{
+            tooltip: classes.tooltip,
+            popper: classes.tooltipPopper,
+          }}
+          title={
+            <div>
+              <div className={classes.main}>
+                {model.correctness && model.correctness.correctness !== 'correct' && (
+                  <CorrectAnswerToggle
+                    className={classes.toggle}
+                    show
+                    toggled={showCorrect}
+                    onToggle={this.toggleShowCorrect}
+                  />
+                )}
+              </div>
+              {model.teacherInstructions && [
+                <Collapsible
+                  key="collapsible"
+                  labels={{
+                    hidden: 'Show Teacher Instructions',
+                    visible: 'Hide Teacher Instructions',
+                  }}
+                  className={classes.collapsible}
+                >
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: model.teacherInstructions,
+                    }}
+                  />
+                </Collapsible>,
+                <br key="br" />,
+              ]}
+              {model.rationale && [
+                <Collapsible
+                  key="collapsible"
+                  labels={{
+                    hidden: 'Show Rationale',
+                    visible: 'Hide Rationale',
+                  }}
+                >
+                  <div dangerouslySetInnerHTML={{ __html: model.rationale }} />
+                </Collapsible>,
+                <br key="br" />,
+              ]}
+              {model.feedback && (
+                <Feedback correctness={model.correctness.correctness} feedback={model.feedback} />
+              )}
+            </div>
+          }
+        >
+          <div className={classes.mainContainer} ref={(r) => (this.root = r || this.root)}>
+            {midContent}
+          </div>
+        </Tooltip>
+      );
+    }
+    return (
+      <div className={classes.mainContainer} ref={(r) => (this.root = r || this.root)}>
+        {midContent}
       </div>
     );
   }
 }
 
-const styles = theme => ({
+const styles = (theme) => ({
   mainContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
+    display: 'inline-block',
+  },
+  tooltip: {
+    background: 'white',
+    color: 'black',
+    padding: theme.spacing.unit * 2,
+    border: '1px solid black',
+    fontSize: '16px',
+  },
+  tooltipPopper: {
+    opacity: 1,
+  },
+  keypadTooltip: {
+    fontSize: 'initial',
+    background: 'transparent',
+    width: '600px',
+    marginTop: 0,
+    paddingTop: 0,
+  },
+  keypadTooltipPopper: {
+    background: 'transparent',
+    width: '650px',
+    opacity: 1,
   },
   main: {
-    width: '100%'
+    width: '100%',
+    position: 'relative',
   },
   title: {
     fontSize: '1.1rem',
     display: 'block',
     marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit
+    marginBottom: theme.spacing.unit,
   },
   content: {
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing.unit * 2,
+  },
+  collapsible: {
+    marginTop: theme.spacing.unit * 2,
   },
   responseContainer: {
-    marginTop: theme.spacing.unit * 2
-  },
-  toggle: {
-    paddingBottom: theme.spacing.unit * 3
+    zIndex: 10,
+    // position: 'absolute',
+    // right: 0,
+    minWidth: '400px',
+    marginTop: theme.spacing.unit * 2,
   },
   expression: {
+    maxWidth: 'fit-content',
     marginTop: theme.spacing.unit * 2,
     '& > .mq-math-mode': {
       '& > .mq-root-block': {
         '& > .mq-editable-field': {
           minWidth: '10px',
           margin: (theme.spacing.unit * 2) / 3,
-          padding: theme.spacing.unit / 4
-        }
-      }
-    }
+          padding: theme.spacing.unit / 4,
+        },
+      },
+    },
+  },
+  inputAndKeypadContainer: {
+    position: 'relative',
   },
   showCorrectness: {
-    border: '2px solid'
+    border: '2px solid',
   },
   correctAnswerShown: {
     padding: theme.spacing.unit,
-    letterSpacing: '0.5px'
+    letterSpacing: '0.5px',
   },
   correct: {
-    borderColor: 'green !important'
+    borderColor: 'green !important',
   },
   incorrect: {
-    borderColor: 'red !important'
+    borderColor: 'red !important',
   },
   blockContainer: {
     margin: theme.spacing.unit,
     display: 'inline-flex',
-    border: '2px solid grey'
+    border: '2px solid grey',
   },
   blockResponse: {
     flex: 2,
@@ -490,7 +567,7 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRight: '2px solid grey'
+    borderRight: '2px solid grey',
   },
   blockMath: {
     color: '#bdbdbd',
@@ -502,11 +579,11 @@ const styles = theme => ({
     '& > .mq-math-mode': {
       '& > .mq-hasCursor': {
         '& > .mq-cursor': {
-          display: 'none'
-        }
-      }
-    }
-  }
+          display: 'none',
+        },
+      },
+    },
+  },
 });
 
 export default withStyles(styles)(Main);

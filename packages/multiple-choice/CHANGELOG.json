@@ -1478,5 +1478,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.12.22"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Multiple Select should report a question as \"answered\" as soon as a selection has been made (remove unintended clue about how many answer choices are correct) PD-253",
+    "merge": null,
+    "header": "fix: Multiple Select should report a question as \"answered\" as soon as a selection has been made (remove unintended clue about how many answer choices are correct) PD-253",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1fe7a4a1d8bd7660f5b41b5287b929aa8e67f7ca",
+    "gitTags": " (origin/fix/PD-253/multiple-choice-item-not-answered)",
+    "committerDate": "2020-05-21 16:18:35 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.12.23"
   }
 ]

@@ -4,45 +4,44 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import { Feedback } from '@pie-lib/render-ui';
+import { Feedback, color } from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
 import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 import classNames from 'classnames';
 
-const styleSheet = theme => ({
+const styleSheet = (theme) => ({
   label: {
-    color: 'var(--choice-input-color, black)',
+    color: color.text(), //'var(--choice-input-color, black)',
     display: 'inline-block',
     verticalAlign: 'middle',
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   row: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   checkboxHolder: {
     display: 'flex',
     alignItems: 'center',
     flex: 1,
-    '& label': {
-    }
+    '& label': {},
   },
   rationale: {
-    paddingLeft: theme.spacing.unit * 16
-  }
+    paddingLeft: theme.spacing.unit * 16,
+  },
 });
 
 const formStyleSheet = {
   label: {
-    color: 'var(--choice-input-color, black)'
-  }
+    color: color.text(), //'var(--choice-input-color, black)'
+  },
 };
 
 export const StyledFormControlLabel = withStyles(formStyleSheet, {
-  name: 'FormControlLabel'
-})(props => (
+  name: 'FormControlLabel',
+})((props) => (
   <FormControlLabel {...props} classes={{ label: props.classes.label }} />
 ));
 
@@ -50,30 +49,33 @@ const CLASS_NAME = 'multiple-choice-component';
 
 const colorStyle = (varName, fallback) => ({
   [`&.${CLASS_NAME}`]: {
-    color: `var(--choice-input-${varName}, ${fallback})`
-  }
+    color: `var(--choice-input-${varName}, ${fallback})`,
+  },
 });
 
 const inputStyles = {
-  'correct-root': colorStyle('correct-color', 'black'),
-  'correct-checked': colorStyle('correct-selected-color', green[500]),
-  'correct-disabled': colorStyle('correct-disabled-color', 'grey'),
-  'incorrect-root': colorStyle('incorrect-color', 'black'),
-  'incorrect-checked': colorStyle('incorrect-checked', orange[500]),
-  'incorrect-disabled': colorStyle('incorrect-disabled-color', 'grey'),
-  root: colorStyle('color', 'black'),
-  checked: colorStyle('selected-color', 'black'),
-  disabled: colorStyle('disabled-color', 'black')
+  'correct-root': colorStyle('correct-color', color.text()),
+  'correct-checked': colorStyle('correct-selected-color', color.correct()), //green[500]),
+  'correct-disabled': colorStyle('correct-disabled-color', color.disabled()), //'grey'),
+  'incorrect-root': colorStyle('incorrect-color', color.text()),
+  'incorrect-checked': colorStyle('incorrect-checked', color.incorrect()), //orange[500]),
+  'incorrect-disabled': colorStyle(
+    'incorrect-disabled-color',
+    color.disabled()
+  ),
+  root: colorStyle('color', color.text()),
+  checked: colorStyle('selected-color', color.text()),
+  disabled: colorStyle('disabled-color', color.text()),
 };
 
-export const StyledCheckbox = withStyles(inputStyles)(props => {
+export const StyledCheckbox = withStyles(inputStyles)((props) => {
   const { correctness, classes, checked, onChange, disabled } = props;
-  const key = k => (correctness ? `${correctness}-${k}` : k);
+  const key = (k) => (correctness ? `${correctness}-${k}` : k);
 
   const resolved = {
     root: classes[key('root')],
     checked: classes[key('checked')],
-    disabled: classes[key('disabled')]
+    disabled: classes[key('disabled')],
   };
 
   const miniProps = { checked, onChange, disabled };
@@ -84,20 +86,20 @@ export const StyledCheckbox = withStyles(inputStyles)(props => {
       classes={{
         root: resolved.root,
         checked: resolved.checked,
-        disabled: resolved.disabled
+        disabled: resolved.disabled,
       }}
     />
   );
 });
 
-export const StyledRadio = withStyles(inputStyles)(props => {
+export const StyledRadio = withStyles(inputStyles)((props) => {
   const { correctness, classes, checked, onChange, disabled } = props;
-  const key = k => (correctness ? `${correctness}-${k}` : k);
+  const key = (k) => (correctness ? `${correctness}-${k}` : k);
 
   const resolved = {
     root: classes[key('root')],
     checked: classes[key('checked')],
-    disabled: classes[key('disabled')]
+    disabled: classes[key('disabled')],
   };
 
   const miniProps = { checked, onChange, disabled };
@@ -108,7 +110,7 @@ export const StyledRadio = withStyles(inputStyles)(props => {
       className={CLASS_NAME}
       classes={{
         root: resolved.root,
-        checked: resolved.checked
+        checked: resolved.checked,
       }}
     />
   );
@@ -127,12 +129,12 @@ export class ChoiceInput extends React.Component {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired,
     classes: PropTypes.object,
-    className: PropTypes.string
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     rationale: null,
-    checked: false
+    checked: false,
   };
 
   constructor(props) {
@@ -143,7 +145,7 @@ export class ChoiceInput extends React.Component {
   onToggleChoice() {
     this.props.onChange({
       value: this.props.value,
-      selected: !this.props.checked
+      selected: !this.props.checked,
     });
   }
 
@@ -158,7 +160,7 @@ export class ChoiceInput extends React.Component {
       correctness,
       classes,
       className,
-      rationale
+      rationale,
     } = this.props;
 
     const Tag = choiceMode === 'checkbox' ? StyledCheckbox : StyledRadio;

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.32...@pie-ui/match-list@1.4.33) (2020-06-05)
+
+**Note:** Version bump only for package @pie-ui/match-list
+
+
+
+
+
 ## [1.4.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.31...@pie-ui/match-list@1.4.32) (2020-05-08)
 
 

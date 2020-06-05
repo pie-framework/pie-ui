@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.42](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.41...@pie-ui/number-line@7.1.42) (2020-06-05)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
 ## [7.1.41](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.40...@pie-ui/number-line@7.1.41) (2020-05-08)
 
 

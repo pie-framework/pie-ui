@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.13.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.23...@pie-ui/multiple-choice@4.13.0) (2020-06-05)
+
+
+### Features
+
+* use colors from @pie-lib/render-ui PD-308 ([83a330a](https://github.com/pie-framework/pie-elements/commit/83a330a))
+
+
+
+
+
 ## [4.12.23](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.22...@pie-ui/multiple-choice@4.12.23) (2020-05-25)
 
 

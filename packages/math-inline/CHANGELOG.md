@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.44...@pie-ui/math-inline@3.1.0) (2020-06-05)
+
+
+### Features
+
+* **math-inline:** keypad moved to a tooltip / pop-up and interaction made truly in-line ([2e8bb11](https://github.com/pie-framework/pie-ui/commit/2e8bb11))
+
+
+
+
+
 ## [3.0.44](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.43...@pie-ui/math-inline@3.0.44) (2020-05-21)
 
 

@@ -208,5 +208,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/demo@0.3.135"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump number-line in demo",
+    "merge": null,
+    "header": "fix: bump number-line in demo",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7262c06e084f81913535eda6b2ffdd26b7e5c920",
+    "gitTags": "",
+    "committerDate": "2020-06-05 12:07:18 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.3.138"
   }
 ]

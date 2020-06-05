@@ -1283,5 +1283,20 @@
     "committerDate": "2020-05-20 21:00:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/math-inline@3.0.44"
+  },
+  {
+    "type": "feat",
+    "scope": "math-inline",
+    "subject": "keypad moved to a tooltip / pop-up and interaction made truly in-line",
+    "merge": null,
+    "header": "feat(math-inline): keypad moved to a tooltip / pop-up and interaction made truly in-line",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2e8bb119f0797b722b907f8550df4c3fcf2dc1a1",
+    "gitTags": "",
+    "committerDate": "2020-05-29 16:21:33 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/math-inline@3.1.0"
   }
 ]

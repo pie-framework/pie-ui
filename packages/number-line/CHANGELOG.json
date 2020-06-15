@@ -483,5 +483,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.1.41"
+  },
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "bump pslb@^4.0.0 - update for breaking changes",
+    "merge": null,
+    "header": "feat: bump pslb@^4.0.0 - update for breaking changes",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ff4a9faffd4804f40b967fcb31352a3b9cf0ba1e",
+    "gitTags": "",
+    "committerDate": "2020-06-15 12:08:03 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.2.0"
   }
 ]

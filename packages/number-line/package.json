@@ -30,5 +30,11 @@
   "devDependencies": {
     "@types/mathjs": "^5.0.1"
   },
+  "pslb": {
+    "overrides": {
+      "d3-scale": "*",
+      "mathjs": "*"
+    }
+  },
   "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
 }

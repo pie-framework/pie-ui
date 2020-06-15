@@ -25,5 +25,10 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-konva": "^16.9.0-0"
+  },
+  "pslb": {
+    "overrides": {
+      "react-konva": "*"
+    }
   }
 }

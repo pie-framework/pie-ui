@@ -125,6 +125,7 @@ const listPackages = () => {
 };
 module.exports = {
   packages: listPackages(),
+
   range: '^',
   mode: 'production',
   minify: false,
@@ -193,6 +194,7 @@ module.exports = {
           namespace: [
             '@pie-lib/plot',
             '@pie-lib/graphing',
+            // take d3-scale from the repo root... so 2.x
             'd3-scale',
             'd3-selection',
           ],

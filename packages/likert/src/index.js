@@ -1,58 +1,97 @@
+import Main from './main';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './main';
-import { SessionChangedEvent } from '@pie-framework/pie-player-events';
+import debounce from 'lodash/debounce';
+import debug from 'debug';
 import { renderMath } from '@pie-lib/math-rendering';
+import { updateSessionValue } from './session-updater';
 
-export { Main as Component };
+const log = debug('pie-ui:likert');
+
+export const isComplete = session => !!(session && session.value && session.value.length);
 
 export default class Likert extends HTMLElement {
   constructor() {
     super();
+    this._model = null;
+    this._session = null;
+
+    this._rerender = debounce(
+      () => {
+        if (this._model && this._session) {
+          const element = React.createElement(Main, {
+            model: this._model,
+            session: this._session,
+            onChoiceChanged: this._onChange.bind(this)
+          });
+          ReactDOM.render(element, this, () => {
+            log('render complete - render math');
+            renderMath(this);
+          });
+        } else {
+          log('skip');
+        }
+      },
+      50,
+      { leading: false, trailing: true }
+    );
+
+    this._dispatchResponseChanged = debounce(() => {
+      const event = new CustomEvent('session-changed', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          complete: isComplete(this._session),
+          component: this.tagName.toLowerCase()
+        }
+      });
+
+      this.dispatchEvent(event);
+    });
+
+    this._dispatchModelSet = debounce(
+      () => {
+        this.dispatchEvent(
+          new CustomEvent('model-set', {
+            bubbles: true,
+            composed: true,
+            detail: {
+              complete: isComplete(this._session),
+              component: this.tagName.toLowerCase(),
+              hasModel: this._model !== undefined
+            }
+          })
+        );
+      },
+      50,
+      { leading: false, trailing: true }
+    );
   }
 
-  set model(m) {
-    this._model = m;
-    this._render();
+  set model(s) {
+    this._model = s;
+    this._rerender();
+    this._dispatchModelSet();
+  }
+
+  get session() {
+    return this._session;
   }
 
   set session(s) {
     this._session = s;
-    this._render();
+    this._rerender();
+    //TODO: remove this session-changed should only be emit on user change
+    this._dispatchResponseChanged();
+  }
+
+  _onChange(data) {
+    updateSessionValue(this._session, data);
+    this._dispatchResponseChanged();
+    this._rerender();
   }
 
   connectedCallback() {
-    this._render();
-  }
-
-  isComplete = answer => Array.isArray(answer) && answer.length > 0;
-
-  changeAnswers = answer => {
-    this._session.answer = answer;
-
-    this.dispatchEvent(
-      new SessionChangedEvent(
-        this.tagName.toLowerCase(),
-        this.isComplete(this._session.answer)
-      )
-    );
-
-    this._render();
-  };
-
-  _render() {
-    if (!this._model || !this._session) {
-      return;
-    }
-
-    const el = React.createElement(Main, {
-      model: this._model,
-      session: this._session,
-      onAnswersChange: this.changeAnswers
-    });
-
-    ReactDOM.render(el, this, () => {
-      renderMath(this);
-    });
+    this._rerender();
   }
 }

@@ -29,7 +29,7 @@ export class Likert extends React.Component {
     teacherInstructions: PropTypes.string,
     session: PropTypes.object,
     disabled: PropTypes.bool.isRequired,
-    onChoiceChanged: PropTypes.func.isRequired,
+    onSessionChange: PropTypes.func.isRequired,
     likertOrientation: PropTypes.string.isRequired,
     classes: PropTypes.object.isRequired
   };
@@ -38,11 +38,7 @@ export class Likert extends React.Component {
   }
 
   isSelected(value) {
-    const sessionValue = this.props.session && this.props.session.value;
-
-    return (
-      sessionValue && sessionValue.indexOf && sessionValue.indexOf(value) >= 0
-    );
+    return this.props.session && this.props.session.value === value;
   }
 
   render() {
@@ -50,7 +46,7 @@ export class Likert extends React.Component {
       disabled,
       choices,
       prompt,
-      onChoiceChanged,
+      onSessionChange,
       teacherInstructions,
       classes,
       likertOrientation
@@ -84,10 +80,11 @@ export class Likert extends React.Component {
               value={choice.value}
               index={index}
               disabled={disabled}
-              onChange={onChoiceChanged}
+              onChange={onSessionChange}
               likertOrientation={likertOrientation}
               checked={this.isSelected(choice.value)}
-            />
+            >
+            </ChoiceInput>
           ))}
         </div>
       </div>

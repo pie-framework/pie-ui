@@ -1,119 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { GraphContainer } from '@pie-lib/graphing';
-import { Collapsible } from '@pie-lib/render-ui';
-import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import classNames from 'classnames';
+import { PreviewLayout } from '@pie-lib/render-ui';
+import Likert from './likert';
 
-export class Main extends React.Component {
+class Main extends React.Component {
   static propTypes = {
-    classes: PropTypes.object,
-    model: PropTypes.object.isRequired,
-    session: PropTypes.object.isRequired,
-    onAnswersChange: PropTypes.func
+    model: PropTypes.object,
+    session: PropTypes.object,
+    onSessionChange: PropTypes.func,
+    classes: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
-    classes: {}
+    model: {},
+    session: {},
   };
 
-  state = { showingCorrect: false };
-
-  toggleCorrect = showingCorrect => this.setState({ showingCorrect });
-
   render() {
-    const { model, classes, onAnswersChange, session } = this.props;
-    const { showingCorrect } = this.state;
-    const { answer } = session || {};
-    const {
-      answersCorrected,
-      arrows,
-      backgroundMarks,
-      correctResponse,
-      disabled,
-      domain,
-      labels,
-      prompt,
-      range,
-      rationale,
-      size,
-      showToggle,
-      title,
-      teacherInstructions,
-      toolbarTools
-    } = model || {};
-
-    const marks = answersCorrected || answer || [];
-
-
+    const { model, onSessionChange, session, classes } = this.props;
+    console.error('session', session);
     return (
-      <div>
-        <CorrectAnswerToggle
-          show={showToggle}
-          toggled={showingCorrect}
-          onToggle={this.toggleCorrect}
-        />
-
-        {(showingCorrect && showToggle) && (
-          <GraphContainer
-            axesSettings={{ includeArrows: arrows }}
-            backgroundMarks={backgroundMarks}
-            disabled={true}
-            domain={domain}
-            labels={labels}
-            marks={correctResponse}
-            onChangeMarks={onAnswersChange}
-            range={range}
-            size={size}
-            title={title}
-            toolbarTools={toolbarTools}
+      <PreviewLayout>
+        <div className={classNames(classes.root, classes[model.className])}>
+          <Likert
+            {...model}
+            session={session}
+            onSessionChange={onSessionChange}
           />
-        )}
-
-        {
-          teacherInstructions && (
-            <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
-
-        <br/>
-
-        <div className={classes.prompt} dangerouslySetInnerHTML={{ __html: prompt }}/>
-
-        <br/>
-
-        <GraphContainer
-          axesSettings={{ includeArrows: arrows }}
-          backgroundMarks={backgroundMarks}
-          disabled={disabled}
-          domain={domain}
-          labels={labels}
-          marks={marks}
-          onChangeMarks={onAnswersChange}
-          range={range}
-          size={size}
-          title={title}
-          toolbarTools={toolbarTools}
-        />
-
-        <br/>
-
-        {
-          rationale && (
-            <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
-              <div dangerouslySetInnerHTML={{ __html: rationale }}/>
-            </Collapsible>
-          )
-        }
-      </div>
+        </div>
+      </PreviewLayout>
     );
   }
 }
 
-const styles = () => ({
-  prompt: { verticalAlign: 'middle' }
+const Styled = withStyles({}, { name: 'Main' })(Main);
+
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
 });
 
-export default withStyles(styles)(Main);
+const Root = (props) => (
+  <MuiThemeProvider theme={theme}>
+    <Styled {...props} />
+  </MuiThemeProvider>
+);
+
+export default Root;

@@ -1,24 +1,29 @@
-const base = {};
-
-const model = (id, extras) =>
-  Object.assign(
-    {},
-    base,
-    {
-      id,
-      element: 'likert-el',
-      backgroundMarks: [],
-      size: { width: 600, height: 600 },
-      domain: { min: -5, max: 5, padding: 0, step: 1, labelStep: 1 },
-      range: { min: -5, max: 5, padding: 0, step: 1, labelStep: 1 },
-      toolbarTools: ['point']
-    },
-    extras
-  );
-
 module.exports = {
   elements: {
     'likert-el': '..'
   },
-  models: [model('1', {})]
+  models: [{
+    element: 'likert',
+    id: '1',
+    mode: 'gather',
+    disabled: false,
+    likertScale: 'likert3',
+    likertType: 'agreement',
+    likertOrientation: 'horizontal',
+    choices: [
+      {
+        label: 'Disagree',
+        value: -1
+      },
+      {
+        label: 'Unsure',
+        value: 0
+      },
+      {
+        label: 'Agree',
+        value: 1
+      }
+    ],
+    prompt: 'How likely are you to report a problem?'
+  }]
 };

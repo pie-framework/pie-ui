@@ -21,7 +21,6 @@ class Main extends React.Component {
 
   render() {
     const { model, onSessionChange, session, classes } = this.props;
-    console.error('session', session);
     return (
       <PreviewLayout>
         <div className={classNames(classes.root, classes[model.className])}>

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.1...@pie-ui/graphing@3.0.2) (2020-07-22)
+
+
+### Bug Fixes
+
+* add missing dependency ([5560fd1](https://github.com/pie-framework/pie-ui/commit/5560fd1))
+
+
+
+
+
 ## [3.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.0...@pie-ui/graphing@3.0.1) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/graphing

@@ -483,5 +483,20 @@
     "committerDate": "2020-05-15 17:52:57 +0300",
     "isTagged": true,
     "tag": "@pie-ui/graphing@3.0.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "add missing dependency",
+    "merge": null,
+    "header": "fix: add missing dependency",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5560fd17992d9ef482a9b5539c2145d463542a91",
+    "gitTags": "",
+    "committerDate": "2020-06-29 21:26:48 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@3.0.2"
   }
 ]

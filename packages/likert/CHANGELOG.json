@@ -1,1 +1,17 @@
-{}
+[
+  {
+    "type": "feat",
+    "scope": "likert",
+    "subject": "initial commit",
+    "merge": null,
+    "header": "feat(likert): initial commit",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "68a1d51fbbf8abe1a902e6144291df767f149b71",
+    "gitTags": " (origin/feat/likert)",
+    "committerDate": "2020-06-17 14:04:56 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/likert@0.1.0"
+  }
+]

@@ -2088,10 +2088,10 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@pie-framework/build-helper@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-5.2.1.tgz#91fc76a7cd6ac97067438dd7293858416bec595e"
-  integrity sha512-UyodnZ6dXuxtVAUTAdaREmv7jSGoGfJr+mmQLmVOEXxjAC44iSOwpSrEaBbNlR7C3GgExq7iLRddVPW5Owye0Q==
+"@pie-framework/build-helper@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@pie-framework/build-helper/-/build-helper-5.2.3.tgz#52ab878117aa02bb22f0a2e00e04bee232f68c31"
+  integrity sha512-AKyy2b8v1OjiGOFpLrMJ4aTmWnLP0DK0kU6MEVF7HVQ3IMFyh30EpMi5LH5F9VYnrQKR6xTGDcgt7h3qpkQCaA==
   dependencies:
     conventional-changelog-core "^4.1.7"
     conventional-changelog-writer "^4.0.16"
@@ -2101,7 +2101,7 @@
     git-raw-commits "^2.0.7"
     invariant "^2.2.4"
     jira-connector "^3.1.0"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     semver "^7.3.2"
     through2 "^3.0.1"
 
@@ -9048,7 +9048,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.1.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==

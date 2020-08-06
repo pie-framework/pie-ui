@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.4...@pie-ui/graphing@3.0.5) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [3.0.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.3...@pie-ui/graphing@3.0.4) (2020-07-22)
 
 **Note:** Version bump only for package @pie-ui/graphing

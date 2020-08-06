@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.31](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.30...@pie-ui/select-text@1.6.31) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [1.6.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.29...@pie-ui/select-text@1.6.30) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/select-text

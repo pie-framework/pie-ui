@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.0...@pie-ui/math-inline@3.1.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 # [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.44...@pie-ui/math-inline@3.1.0) (2020-06-05)
 
 

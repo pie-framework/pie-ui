@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.35...@pie-ui/fill-in-the-blank@1.3.36) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [1.3.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.34...@pie-ui/fill-in-the-blank@1.3.35) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/fill-in-the-blank

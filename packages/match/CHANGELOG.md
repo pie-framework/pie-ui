@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.1...@pie-ui/match@2.4.2) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [2.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.0...@pie-ui/match@2.4.1) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/match

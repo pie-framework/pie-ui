@@ -11,7 +11,7 @@
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.3.0",
+    "@pie-lib/correct-answer-toggle": "^2.3.1",
     "@pie-lib/drag": "^1.1.44",
     "@pie-lib/math-rendering": "^2.1.12",
     "@pie-lib/render-ui": "^4.8.0",

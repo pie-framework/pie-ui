@@ -2206,10 +2206,10 @@
     prop-types "^15.6.2"
     react-measure "^2.2.2"
 
-"@pie-lib/correct-answer-toggle@2.3.0", "@pie-lib/correct-answer-toggle@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.0.tgz#0bf5565ef7556e69808ea02a5fe1a49f65f735a3"
-  integrity sha512-BtlrpYl4iucs3BVN4VXDhRgWOOugcBIzQTGJSMSmigYa5b92OAyMRirU0ruDqPDIJz2Yp5Y1P2OxuEkPQsk0pg==
+"@pie-lib/correct-answer-toggle@2.3.1", "@pie-lib/correct-answer-toggle@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.1.tgz#47851c1dff8619cc0246dd1231acc91faab8b577"
+  integrity sha512-JJSBTQl3UzADndqiMzHRKMijvgecxHvdo8W80Zg7xxCsA9d15MBp3Hfcec7lJW0CYXQyr7gPfDcrUtNklQWkFQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@pie-lib/icons" "^2.4.20"
@@ -2402,12 +2402,7 @@
   resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.20.tgz#a3ca9e673c8118a2b28ed1ee87554dd916feec5a"
   integrity sha512-SnjzWL1vH9BGXXeHpJkg/TT2gUGbcUZgTsXgmTD1bzNtlVUN3tbQEbbCGeew8K7Z+5JGuqFGZF+keIlVuwhzwg==
 
-"@pie-lib/test-utils@0.2.13":
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.2.13.tgz#9ceabefc3945eb402d90d1fc3ed399eb0aa57312"
-  integrity sha512-w37JIKAwsp+v6A/UdswuBKsx+scYyThjL4EIx9Y3Myl6uaklo3p/4k3a7h1qcrUFty4mFiGcAVXmbzzFRoMXKw==
-
-"@pie-lib/test-utils@^0.2.14":
+"@pie-lib/test-utils@0.2.14", "@pie-lib/test-utils@^0.2.14":
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/@pie-lib/test-utils/-/test-utils-0.2.14.tgz#2692a92838d6baf2c45172e48d9c600bd842094e"
   integrity sha512-CWtR+ihnwWXEX78wFFvTIXcvvrKwYtbk7b8d1dpsUnCOVlHaPE7hZK4/t1T+NA5NkrNKfjybMCX4vwI9WT/eEw==

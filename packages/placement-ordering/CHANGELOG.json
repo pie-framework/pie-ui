@@ -698,5 +698,20 @@
     "committerDate": "2020-05-06 12:36:09 +0100",
     "isTagged": true,
     "tag": "@pie-ui/placement-ordering@4.7.34"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "update correct-answer-toggle@^2.3.1",
+    "merge": null,
+    "header": "fix: update correct-answer-toggle@^2.3.1",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2673e67178ed4d30a6b1761f7943f89a893b76c7",
+    "gitTags": "",
+    "committerDate": "2020-08-06 15:54:59 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/placement-ordering@4.7.36"
   }
 ]

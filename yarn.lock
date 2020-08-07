@@ -2203,7 +2203,7 @@
     prop-types "^15.6.2"
     react-measure "^2.2.2"
 
-"@pie-lib/correct-answer-toggle@^2.3.0":
+"@pie-lib/correct-answer-toggle@2.3.0", "@pie-lib/correct-answer-toggle@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.0.tgz#0bf5565ef7556e69808ea02a5fe1a49f65f735a3"
   integrity sha512-BtlrpYl4iucs3BVN4VXDhRgWOOugcBIzQTGJSMSmigYa5b92OAyMRirU0ruDqPDIJz2Yp5Y1P2OxuEkPQsk0pg==

@@ -110,7 +110,7 @@ describe('PlacementOrdering', () => {
         ));
 
       it('dropping choices updates the order', () => {
-        expect(onSessionChange).toHaveBeenCalledWith({ value: response });
+        expect(onSessionChange).toHaveBeenCalledWith({ value: response }, true);
       });
     });
 
@@ -135,7 +135,7 @@ describe('PlacementOrdering', () => {
       it('calls onSessionChange', () => {
         expect(onSessionChange).toHaveBeenCalledWith({
           value: ['c1', 'c2', 'c3']
-        });
+        }, true);
       });
     });
 

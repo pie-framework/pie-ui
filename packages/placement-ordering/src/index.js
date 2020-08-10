@@ -33,9 +33,8 @@ export default class Ordering extends HTMLElement {
     }
   }
 
-  sessionChange(session, userInteraction) {
+  sessionChange(session) {
     this._session.value = session.value;
-    this._session.userInteraction = userInteraction;
     this.render();
     this.dispatchEvent(
       new CustomEvent('session-changed', {

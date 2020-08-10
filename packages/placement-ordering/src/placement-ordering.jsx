@@ -121,7 +121,7 @@ export class PlacementOrdering extends React.Component {
       value: update.response
     });
 
-    onSessionChange(sessionUpdate, true);
+    onSessionChange(sessionUpdate);
   };
 
   onRemoveChoice = (target, ordering) => {
@@ -131,7 +131,7 @@ export class PlacementOrdering extends React.Component {
     const sessionUpdate = Object.assign({}, session, {
       value: update.response
     });
-    onSessionChange(sessionUpdate, true);
+    onSessionChange(sessionUpdate);
   };
 
   createOrdering = () => {

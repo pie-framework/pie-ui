@@ -4,23 +4,6 @@ import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { Collapsible, Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
-import isEqual from 'lodash/isEqual';
-
-function shuffle(array) {
-  let counter = array.length;
-
-  while (counter > 0) {
-    let index = Math.floor(Math.random() * counter);
-
-    counter--;
-
-    let temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
-  }
-
-  return array;
-}
 
 export class Main extends React.Component {
   static propTypes = {
@@ -40,8 +23,6 @@ export class Main extends React.Component {
           (props.session && props.session.answers) ||
           this.generateAnswers(props.model)
       },
-      // initially it'll be the same as the actual rows
-      shuffledRows: props.model.config.rows,
       showCorrect: false
     };
 
@@ -85,24 +66,8 @@ export class Main extends React.Component {
     return isRequired || !nextProps.session.answers;
   };
 
-  isShuffleRowsRequired = nextProps =>
-    this.props.model.config.shuffled === false &&
-    nextProps.model.config.shuffled === true;
-
-  isResetRowsRequired = nextProps =>
-    (this.props.model.config.shuffled === true &&
-      nextProps.model.config.shuffled === false) ||
-    this.props.model.config.rows.length !==
-      nextProps.model.config.rows.length ||
-    !isEqual(this.props.model.config.rows, nextProps.model.config.rows) ||
-    (nextProps.session.answers &&
-      nextProps.model.config.rows.length !==
-        Object.keys(nextProps.session.answers).length);
-
   UNSAFE_componentWillReceiveProps(nextProps) {
     const regenAnswers = this.isAnswerRegenerationRequired(nextProps);
-    const shuffleRows = this.isShuffleRowsRequired(nextProps);
-    const resetRows = this.isResetRowsRequired(nextProps);
 
     this.setState(
       state => ({
@@ -113,12 +78,6 @@ export class Main extends React.Component {
             ? this.generateAnswers(nextProps.model)
             : nextProps.session.answers
         },
-        // shuffle if needed
-        shuffledRows: shuffleRows
-          ? shuffle([...nextProps.model.config.rows])
-          : resetRows
-          ? nextProps.model.config.rows
-          : state.shuffledRows,
         showCorrect:
           this.props.model.disabled &&
           !nextProps.model.disabled &&
@@ -158,7 +117,7 @@ export class Main extends React.Component {
 
   render() {
     const { model, classes } = this.props;
-    const { showCorrect, shuffledRows, session } = this.state;
+    const { showCorrect, session } = this.state;
 
     return (
       <div className={classes.mainContainer}>
@@ -204,7 +163,7 @@ export class Main extends React.Component {
             choiceMode={model.config.choiceMode}
             answers={showCorrect ? model.correctResponse : session.answers}
             headers={model.config.headers}
-            rows={shuffledRows}
+            rows={model.config.rows}
           />
         </div>
         {model.rationale && (

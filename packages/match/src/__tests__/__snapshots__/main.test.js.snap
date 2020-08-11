@@ -72,7 +72,6 @@ exports[`Main render snapshot 1`] = `
             ],
           },
         ],
-        "shuffled": false,
       },
     }
   }
@@ -153,7 +152,6 @@ exports[`Main render snapshot with rationale 1`] = `
             ],
           },
         ],
-        "shuffled": false,
       },
     }
   }
@@ -235,7 +233,6 @@ exports[`Main render snapshot with teacher Instructions 1`] = `
             ],
           },
         ],
-        "shuffled": false,
       },
     }
   }

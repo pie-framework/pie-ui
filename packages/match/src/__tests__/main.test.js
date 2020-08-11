@@ -34,7 +34,6 @@ describe('Main', () => {
             values: [false, false]
           }
         ],
-        shuffled: false,
         partialScoring: [],
         layout: 3,
         headers: ['Column 1', 'Column 2', 'Column 3'],
@@ -111,29 +110,7 @@ describe('Main', () => {
             4: [false, false]
           }
         },
-        showCorrect: false,
-        shuffledRows: [
-          {
-            id: 1,
-            title: 'Question Text 1',
-            values: [false, false]
-          },
-          {
-            id: 2,
-            title: 'Question Text 2',
-            values: [false, false]
-          },
-          {
-            id: 3,
-            title: 'Question Text 3',
-            values: [false, false]
-          },
-          {
-            id: 4,
-            title: 'Question Text 4',
-            values: [false, false]
-          }
-        ]
+        showCorrect: false
       });
     });
     it('renders correctly with a pre-filled session', () => {
@@ -152,29 +129,7 @@ describe('Main', () => {
             4: [false, false]
           }
         },
-        showCorrect: false,
-        shuffledRows: [
-          {
-            id: 1,
-            title: 'Question Text 1',
-            values: [false, false]
-          },
-          {
-            id: 2,
-            title: 'Question Text 2',
-            values: [false, false]
-          },
-          {
-            id: 3,
-            title: 'Question Text 3',
-            values: [false, false]
-          },
-          {
-            id: 4,
-            title: 'Question Text 4',
-            values: [false, false]
-          }
-        ]
+        showCorrect: false
       });
 
       component = wrapper({
@@ -197,29 +152,7 @@ describe('Main', () => {
             '4': [false, false]
           }
         },
-        showCorrect: false,
-        shuffledRows: [
-          {
-            id: 1,
-            title: 'Question Text 1',
-            values: [false, false]
-          },
-          {
-            id: 2,
-            title: 'Question Text 2',
-            values: [false, false]
-          },
-          {
-            id: 3,
-            title: 'Question Text 3',
-            values: [false, false]
-          },
-          {
-            id: 4,
-            title: 'Question Text 4',
-            values: [false, false]
-          }
-        ]
+        showCorrect: false
       });
     });
   });

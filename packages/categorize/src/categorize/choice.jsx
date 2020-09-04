@@ -6,8 +6,7 @@ import { DragSource } from 'react-dnd';
 import { uid } from '@pie-lib/drag';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import green from '@material-ui/core/colors/green';
-import orange from '@material-ui/core/colors/orange';
+import { color } from '@pie-lib/render-ui';
 import debug from 'debug';
 
 const log = debug('@pie-ui:categorize:choice');
@@ -61,10 +60,10 @@ const styles = () => ({
     height: '100%',
     width: '100%',
     '&.correct': {
-      border: `solid 1px ${green[500]}`
+      border: `solid 1px ${color.correct()}`
     },
     '&.incorrect': {
-      border: `solid 1px ${orange[500]}`
+      border: `solid 1px ${color.incorrect()}`
     }
   },
   disabled: {

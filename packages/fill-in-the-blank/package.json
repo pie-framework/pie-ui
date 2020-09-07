@@ -10,6 +10,7 @@
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/correct-answer-toggle": "^2.3.1",
     "@pie-lib/drag": "^1.1.44",
+    "@pie-lib/render-ui": "^4.8.2",
     "react": "^16.8.1",
     "react-dnd": "^9.3.2",
     "react-dom": "^16.8.1"

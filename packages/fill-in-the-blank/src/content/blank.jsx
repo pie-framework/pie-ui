@@ -6,7 +6,7 @@ import { DropTarget } from 'react-dnd';
 import { uid } from '@pie-lib/drag';
 import debug from 'debug';
 import Choice from '../choices/choice';
-import orange from '@material-ui/core/colors/orange';
+import { color } from '@pie-lib/render-ui';
 
 const log = debug('@pie-ui:fill-in-the-blank:blank');
 
@@ -81,10 +81,10 @@ const styles = theme => ({
     transition: 'background-color 200ms ease-in'
   },
   empty: {
-    borderBottom: 'solid 1px black'
+    borderBottom: `solid 1px ${color.text()}`
   },
   incorrect: {
-    borderBottom: `solid 1px ${orange[500]}`
+    borderBottom: `solid 1px ${color.incorrect()}`
   },
   isOver: {
     backgroundColor: theme.palette.primary.light

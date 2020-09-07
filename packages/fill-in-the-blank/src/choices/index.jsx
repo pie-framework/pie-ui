@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import Choice from './choice';
-import grey from '@material-ui/core/colors/grey';
+import { color } from '@pie-lib/render-ui';
 
 export class Choices extends React.Component {
   static propTypes = {
@@ -37,7 +37,7 @@ const styles = theme => ({
   choices: {
     padding: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    border: `solid 1px ${grey[300]}`
+    border: `solid 1px ${color.disabled()}`
   },
   label: {
     textAlign: 'center'

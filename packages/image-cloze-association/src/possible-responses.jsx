@@ -2,6 +2,7 @@ import React  from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from '@pie-lib/drag';
 import { withStyles } from '@material-ui/core';
+import { color } from '@pie-lib/render-ui';
 
 import PossibleResponse from './possible-response';
 import c from './constants';
@@ -37,10 +38,10 @@ PossibleResponses.defaultProps = {
 
 const styles = theme => ({
   active: {
-    border: `1px solid ${theme.palette.primary.main}`
+    border: `1px solid ${color.primary()}`
   },
   base: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: color.background(),
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',

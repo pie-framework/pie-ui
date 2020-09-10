@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from '@pie-lib/drag';
 import { withStyles } from '@material-ui/core/styles';
+import { color } from '@pie-lib/render-ui';
 
 import PossibleResponse from './possible-response';
 import c from './constants';
@@ -67,13 +68,13 @@ ImageDropTarget.defaultProps = {
   classes: {}
 };
 
-const styles = theme => ({
+const styles = () => ({
   answers: {
     display: 'flex',
     flexWrap: 'wrap'
   },
   dragOverContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: color.background(),
     pointerEvents: 'none',
     width: 'fit-content'
   },
@@ -81,7 +82,7 @@ const styles = theme => ({
     position: 'absolute'
   },
   responseContainerActive: {
-    border: `2px solid ${theme.palette.primary.main}`,
+    border: `2px solid ${color.text()}`,
     backgroundColor: 'rgba(230, 242, 252, .8)'
   }
 });

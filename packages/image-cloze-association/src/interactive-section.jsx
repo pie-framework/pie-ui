@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
+import { color } from '@pie-lib/render-ui';
 
 import EvaluationIcon from './evaluation-icon';
 
@@ -61,13 +62,13 @@ InteractiveSection.defaultProps = {
 
 const styles = () => ({
   interactiveDefault: {
-    border: '1px solid lightgray'
+    border: `1px solid ${color.disabled()}`
   },
   interactiveCorrect: {
-    border: '2px solid green'
+    border: `2px solid ${color.correct()}`
   },
   interactiveIncorrect: {
-    border: '2px solid red'
+    border: `2px solid ${color.incorrect()}`
   }
 });
 

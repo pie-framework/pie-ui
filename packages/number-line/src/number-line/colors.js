@@ -1,3 +1,5 @@
+import { color } from '@pie-lib/render-ui';
+
 export const selected = '#aaaaff';
-export const correct = 'green';
-export const incorrect = 'orange';
+export const correct = color.correct();
+export const incorrect = color.incorrect();

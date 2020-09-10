@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import debug from 'debug';
 import { withStyles } from '@material-ui/core/styles';
 import { PlaceHolder } from '@pie-lib/drag';
+import { color } from '@pie-lib/render-ui';
 
 const log = debug('pie-elements:placement-ordering:tile');
 
@@ -42,7 +43,7 @@ const TileContent = withStyles({
     boxSizing: 'border-box',
     overflow: 'hidden',
     border: '1px solid #c2c2c2',
-    backgroundColor: 'white',
+    backgroundColor: color.background(),
     transition: 'opacity 200ms linear'
   },
   dragging: {
@@ -53,10 +54,10 @@ const TileContent = withStyles({
     cursor: 'not-allowed'
   },
   incorrect: {
-    border: 'solid 1px orange'
+    border: `1px solid ${color.incorrect()}`
   },
   correct: {
-    border: 'solid 1px green'
+    border: `1px solid ${color.correct()}`
   }
 })(props => {
   const {

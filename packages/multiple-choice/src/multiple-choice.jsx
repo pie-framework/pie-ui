@@ -4,7 +4,7 @@ import ChoiceInput from './choice-input';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 
 // Choice
 
@@ -95,7 +95,7 @@ const styles = {
   },
   prompt: {
     verticalAlign: 'middle',
-    color: 'var(--pie-primary-text, var(--pie-text, #000000))',
+    color: color.text(),
   },
 };
 

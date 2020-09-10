@@ -5,6 +5,7 @@ import Radio from '@material-ui/core/Radio';
 import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { color } from '@pie-lib/render-ui';
 
 export class AnswerGrid extends React.Component {
   static propTypes = {
@@ -143,10 +144,10 @@ const styles = theme => ({
     padding: '10px 20px 0',
   },
   correct: {
-    color: 'green !important'
+    color: `${color.correct()} !important`
   },
   incorrect: {
-    color: 'red !important'
+    color: `${color.incorrect()} !important`
   },
   empty: {
     margin: theme.spacing.unit * 2
@@ -168,7 +169,7 @@ const styles = theme => ({
     width: '100%'
   },
   table: {
-    backgroundColor: '#fff',
+    backgroundColor: color.background(),
     borderCollapse: 'collapse',
     borderSpacing: 0,
     marginBottom: 0

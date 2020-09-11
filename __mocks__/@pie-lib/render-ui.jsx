@@ -15,4 +15,5 @@ export const color = {
   primaryText: jest.fn(),
   secondary: jest.fn(),
   secondaryText: jest.fn(),
+  background: jest.fn(),
 };

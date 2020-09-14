@@ -112,6 +112,9 @@ let TopAppBar = class TopAppBar extends BaseElement {
           >
             <slot name="actionItems"></slot>
           </section>
+          <section>
+            <input value="document.body.style.getProperty('--pie-incorrect')" onchange="document.body.style.setProperty('--pie-incorrect', 'purple')"
+          </section>
         </div>
         ${extraRow}
       </header>

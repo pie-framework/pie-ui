@@ -48,6 +48,16 @@ import MDCShortTopAppBarFoundation from '@material/top-app-bar/short/foundation.
 import MDCFixedTopAppBarFoundation from '@material/top-app-bar/fixed/foundation.js';
 import { strings } from '@material/top-app-bar/constants.js';
 import { style } from './mwc-top-app-bar-css.js';
+
+window.setInput = function (id, input) {
+  window.inputs[id] = input;
+};
+
+window.setColorValue = function(input, id, color, value) {
+  document.body.style.setProperty(color, value);
+  input.value = value;
+};
+
 let TopAppBar = class TopAppBar extends BaseElement {
   constructor() {
     super(...arguments);
@@ -55,7 +65,7 @@ let TopAppBar = class TopAppBar extends BaseElement {
     this.type = '';
     this.dense = false;
     // does not work with prominent
-    this.extraRow = false;
+    this.extraRow = true;
   }
   get mdcFoundationClass() {
     return this.type === 'fixed' || this.type === 'prominentFixed'
@@ -91,6 +101,10 @@ let TopAppBar = class TopAppBar extends BaseElement {
           <div class="mdc-top-app-bar__row">
             <section class="mdc-top-app-bar__section">
               <slot name="extraRow"></slot>
+              <section>
+                <label>Text Color</label>
+                <input onload="setInput('textcolor', this)" onblur="setColorValue(this, 'textcolor', '--pie-text', this.value)" value="${document.body.style.getPropertyValue('--pie-text')}" onchange="setColorValue(this, 'textcolor', '--pie-text', this.value)" />
+              </section>
             </section>
           </div>
         `
@@ -111,9 +125,6 @@ let TopAppBar = class TopAppBar extends BaseElement {
             role="toolbar"
           >
             <slot name="actionItems"></slot>
-          </section>
-          <section>
-            <input value="document.body.style.getProperty('--pie-incorrect')" onchange="document.body.style.setProperty('--pie-incorrect', 'purple')"
           </section>
         </div>
         ${extraRow}

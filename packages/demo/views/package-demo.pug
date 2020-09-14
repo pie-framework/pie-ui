@@ -1,11 +1,11 @@
 include mixins
 html
-  head 
+  head
     meta(charset="utf-8")
     link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
     script(src="//unpkg.com/showdown@1.9.0/dist/showdown.min.js")
     script(src="/assets/index.js", charset="utf-8")
-    style. 
+    style.
 
       html, body {
         margin-left: 0;
@@ -22,7 +22,7 @@ html
       .holder{
         display: flex;
         position: relative;
-        top: 50px;
+        top: 250px;
         padding: 30px;
 
       }
@@ -43,7 +43,7 @@ html
 
     script(src=`/assets/${name}.js`, charset="utf-8")
 
-    script(type="text/javascript", charset="utf-8"). 
+    script(type="text/javascript", charset="utf-8").
 
 
 
@@ -51,7 +51,7 @@ html
 
       document.addEventListener('session-changed', e => {
         console.log('session changed', e);
-        // Note: this is an undocumented access to session that shouldn't be used, but here for debugging purposes 
+        // Note: this is an undocumented access to session that shouldn't be used, but here for debugging purposes
         console.debug(JSON.stringify(e.target._session));
         console.log("session:", window._demoSession );
       });
@@ -74,19 +74,19 @@ html
           if(data && data.models){
             const el = '!{tagName}';
             data.models.forEach( m => {
-              const n = document.querySelector(`[pie-id="${m.id}"]`); 
+              const n = document.querySelector(`[pie-id="${m.id}"]`);
               n.model = m;
               /**
                * Currently pie expects the outer context to pass in an object reference for the session,
-               * which the element will update. so on change we just need to look at this referenced array 
-               * defined as _demoSession here. 
+               * which the element will update. so on change we just need to look at this referenced array
+               * defined as _demoSession here.
                */
               let session = window._demoSession.find(s => s.id === m.id);
               if(!session){
                 session = {id: m.id};
                 window._demoSession.push(session);
               }
-              n.session = session; 
+              n.session = session;
             });
 
           } else {
@@ -97,7 +97,7 @@ html
         renderChangelog( document.querySelector('.next-changelog'));
         renderChangelog( document.querySelector('.changelog'));
       });
-  body 
+  body
     +top_bar(gitInfo, name, pkg.version)
     div.holder
       div.element

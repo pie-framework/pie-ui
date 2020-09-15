@@ -49,13 +49,41 @@ import MDCFixedTopAppBarFoundation from '@material/top-app-bar/fixed/foundation.
 import { strings } from '@material/top-app-bar/constants.js';
 import { style } from './mwc-top-app-bar-css.js';
 
-window.setInput = function (id, input) {
-  window.inputs[id] = input;
+window.inputs = {};
+
+window.setColorValue = function(input, color, value) {
+  document.body.style.setProperty(color, value);
+
+  window.inputs[color] = input;
+
+  input.value = value;
 };
 
-window.setColorValue = function(input, id, color, value) {
-  document.body.style.setProperty(color, value);
-  input.value = value;
+window.setBlackTextOnWhiteBackground = function() {
+  if (window.inputs['--pie-background']) window.inputs['--pie-background'].value = 'white';
+  document.body.style.setProperty('--pie-background', 'white');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'black';
+  document.body.style.setProperty('--pie-text', 'black');
+  if (window.inputs['--pie-primary']) window.inputs['--pie-primary'].value = 'black';
+  document.body.style.setProperty('--pie-primary', 'black');
+};
+
+window.setWhiteTextOnBlackBackground = function() {
+  if (window.inputs['--pie-background']) window.inputs['--pie-background'].value = 'black';
+  document.body.style.setProperty('--pie-background', 'black');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'white';
+  document.body.style.setProperty('--pie-text', 'white');
+  if (window.inputs['--pie-primary']) window.inputs['--pie-primary'].value = 'white';
+  document.body.style.setProperty('--pie-primary', 'white');
+};
+
+window.setYellowTextOnBlueBackground = function() {
+  if (window.inputs['--pie-background']) window.inputs['--pie-background'].value = 'darkblue';
+  document.body.style.setProperty('--pie-background', 'darkblue');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'yellow';
+  document.body.style.setProperty('--pie-text', 'yellow');
+  if (window.inputs['--pie-primary']) window.inputs['--pie-primary'].value = 'yellow';
+  document.body.style.setProperty('--pie-primary', 'yellow');
 };
 
 let TopAppBar = class TopAppBar extends BaseElement {
@@ -103,8 +131,68 @@ let TopAppBar = class TopAppBar extends BaseElement {
               <slot name="extraRow"></slot>
               <section>
                 <label>Text Color</label>
-                <input onload="setInput('textcolor', this)" onblur="setColorValue(this, 'textcolor', '--pie-text', this.value)" value="${document.body.style.getPropertyValue('--pie-text')}" onchange="setColorValue(this, 'textcolor', '--pie-text', this.value)" />
+                <input onblur="setColorValue(this, '--pie-text', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-text')}"
+                  onchange="setColorValue(this, '--pie-text', this.value)" />
               </section>
+              <br />
+              <section>
+                <label>Disabled Color</label>
+                <input onblur="setColorValue(this, '--pie-disabled', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-disabled')}"
+                  onchange="setColorValue(this, '--pie-disabled', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Correct Color</label>
+                <input onblur="setColorValue(this, '--pie-correct', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-correct')}"
+                  onchange="setColorValue(this, '--pie-correct', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Incorrect Color</label>
+                <input onblur="setColorValue(this, '--pie-incorrect', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-incorrect')}"
+                  onchange="setColorValue(this, '--pie-incorrect', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Primary Color</label>
+                <input onblur="setColorValue(this, '--pie-primary', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-primary')}"
+                  onchange="setColorValue(this, '--pie-primary', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Secondary Color</label>
+                <input onblur="setColorValue(this, '--pie-secondary', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-secondary')}"
+                  onchange="setColorValue(this, '--pie-secondary', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Background Color</label>
+                <input onblur="setColorValue(this, '--pie-background', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-background')}"
+                  onchange="setColorValue(this, '--pie-background', this.value)" />
+              </section>
+              <br />
+                <div>
+                    <button onclick="setBlackTextOnWhiteBackground()">
+                        Black Text on White Background
+                    </button>
+                </div>
+                <div>
+                    <button onclick="setWhiteTextOnBlackBackground()">
+                        White Text on Black Background
+                    </button>
+                </div>
+                <div>
+                    <button onclick="setYellowTextOnBlueBackground()">
+                        Yellow Text on Blue Background
+                    </button>
+                </div>
             </section>
           </div>
         `

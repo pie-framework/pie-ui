@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       element: 'multiple-choice',
-      id: '1',
+      id: '2',
       mode: 'evaluate',
       prompt: 'I have $4 and you have $5 - who has more?',
       disabled: true,

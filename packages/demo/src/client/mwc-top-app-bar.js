@@ -93,7 +93,7 @@ let TopAppBar = class TopAppBar extends BaseElement {
     this.type = '';
     this.dense = false;
     // does not work with prominent
-    this.extraRow = true;
+    this.extraRow = false;
   }
   get mdcFoundationClass() {
     return this.type === 'fixed' || this.type === 'prominentFixed'

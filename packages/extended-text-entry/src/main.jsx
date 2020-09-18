@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import debug from 'debug';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 
 const log = debug('@pie-ui:extended-text-entry');
 
 const style = theme => ({
   main: {
-    padding: '10px 20px'
+    padding: '10px 20px',
+    backgroundColor: color.background(),
+    color: color.text()
   },
   prompt: {
     width: '100%',

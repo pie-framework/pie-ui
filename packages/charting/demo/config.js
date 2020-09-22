@@ -6,12 +6,82 @@ const model = (id, extras) =>
     base,
     {
       id,
-      element: 'charting-el',
-      backgroundMarks: [],
-      size: { width: 600, height: 600 },
-      domain: { min: 0, max: 5, padding: 0, step: 1, labelStep: 1 },
-      range: { min: 0, max: 5, padding: 0, step: 1, labelStep: 1 },
-      addCategoryEnabled: true
+        element: 'charting-el',
+        addCategoryEnabled: true,
+        categoryDefaultLabel: 'Category',
+        chartType: 'bar',
+        correctAnswer: {
+            data: [
+                {
+                    label: 'A',
+                    value: 1,
+                    initial: true,
+                    interactive: false,
+                    editable: true,
+                    deletable: true
+                },
+                {
+                    label: 'B',
+                    value: 1,
+                    initial: true,
+                    interactive: true,
+                    editable: true,
+                    deletable: true
+                },
+                {
+                    label: 'C',
+                    value: 1,
+                    initial: true,
+                    interactive: true,
+                    editable: true,
+                    deletable: true
+                },
+            ]
+        },
+        data: [
+            {
+                label: 'A',
+                value: 1,
+                initial: true,
+                interactive: false,
+                editable: true,
+                deletable: true
+            },
+            {
+                label: 'B',
+                value: 1,
+                initial: true,
+                interactive: true,
+                editable: true,
+                deletable: true
+            },
+            {
+                label: 'D',
+                value: 2,
+                initial: true,
+                interactive: true,
+                editable: true,
+                deletable: true
+            },
+        ],
+        domain: {
+            label: 'Characters',
+        },
+        editCategoryEnabled: true,
+        graph: {
+            width: 480,
+            height: 480
+        },
+        prompt: 'Here goes item stem!',
+        promptEnabled: true,
+        rationale: 'Rationale goes here!',
+        range: {
+            label: 'Amount',
+            max: 3,
+            min: 0,
+            labelStep: 1,
+        },
+        title: 'This is a chart!',
     },
     extras
   );

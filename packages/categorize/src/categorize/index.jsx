@@ -10,7 +10,7 @@ import {
   moveChoiceToCategory
 } from '@pie-lib/categorize';
 import { withDragContext, uid } from '@pie-lib/drag';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
 
 import debug from 'debug';
 
@@ -140,7 +140,7 @@ export class Categorize extends React.Component {
     const { rowLabels } = model;
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         {
           model.teacherInstructions && (
             <Collapsible
@@ -241,6 +241,11 @@ class CategorizeProvider extends React.Component {
 }
 
 const styles = (theme) => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background()
+  },
   prompt: {
     marginBottom: '35px',
     verticalAlign: 'middle'

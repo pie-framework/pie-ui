@@ -47,7 +47,7 @@ export class Layout extends React.Component {
     return (
       <div className={rootNames}>
         <Card className={cardNames}>
-          <CardContent dangerouslySetInnerHTML={{ __html: content }} />
+          <CardContent classes={{ root: classes.cardRoot }} dangerouslySetInnerHTML={{ __html: content }} />
         </Card>
       </div>
     );
@@ -66,6 +66,11 @@ const styles = () => ({
       border: `solid 1px ${color.incorrect()}`
     }
   },
+  cardRoot: {
+    color: color.text(),
+    backgroundColor: color.background(),
+    border: '1px solid'
+  },
   disabled: {
     cursor: 'inherit'
   },
@@ -73,6 +78,8 @@ const styles = () => ({
     cursor: 'move'
   },
   card: {
+    color: color.text(),
+    backgroundColor: color.background(),
     width: '100%'
   }
 });

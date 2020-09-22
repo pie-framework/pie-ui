@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
+import { withStyles } from '@material-ui/core/styles';
 
 const DraggableDragInTheBlank = withDragContext(DragInTheBlank);
 
 export class Main extends React.Component {
   static propTypes = {
+    classes: PropTypes.object,
     model: PropTypes.object,
     value: PropTypes.object,
     feedback: PropTypes.object,
@@ -38,7 +40,7 @@ export class Main extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { model, onChange, value } = this.props;
+    const { model, onChange, value, classes } = this.props;
     const { prompt, mode } = model;
     const modelWithValue = {
       ...model,
@@ -46,7 +48,7 @@ export class Main extends React.Component {
     };
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         {
           model.teacherInstructions && (
             <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
@@ -80,4 +82,17 @@ export class Main extends React.Component {
   }
 }
 
-export default Main;
+
+const styles = (theme) => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background(),
+    '& tr > td': {
+      color: color.text()
+    }
+  },
+});
+
+export default withStyles(styles)(Main);
+

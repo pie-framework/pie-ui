@@ -478,7 +478,7 @@ export class Main extends React.Component {
 
 const styles = (theme) => ({
   mainContainer: {
-    display: 'inline-block',
+    display: 'inline-block'
   },
   tooltip: {
     background: color.background(),
@@ -505,6 +505,9 @@ const styles = (theme) => ({
   main: {
     width: '100%',
     position: 'relative',
+    padding: theme.spacing.unit / 2,
+    backgroundColor: color.background(),
+    color: color.text()
   },
   title: {
     fontSize: '1.1rem',
@@ -571,7 +574,8 @@ const styles = (theme) => ({
     borderRight: `2px solid ${color.disabled()}`,
   },
   blockMath: {
-    color: '#bdbdbd',
+    color: color.text(),
+    backgroundColor: color.background(),
     padding: theme.spacing.unit / 2,
     display: 'flex',
     alignItems: 'center',

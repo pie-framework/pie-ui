@@ -2190,30 +2190,30 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/config-ui@^10.8.25":
-  version "10.8.25"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.8.25.tgz#9f0031e81c587dcf1de651d20ac895b2f8918194"
-  integrity sha512-zk6ilmCKkH/g2iPwreas+4WOiMUR2GUghJAiMnyPHz3ARxdCQVYaTz1oK4EyPARwa2qCqYmDDT0mymqpVZ8R+Q==
+"@pie-lib/config-ui@^10.8.28":
+  version "10.8.28"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.8.28.tgz#dedf297a794073f0e443ed20100e8e746c0dce1b"
+  integrity sha512-PoWDVVtLPHqDbkxAA83f0NPeS3TWIipsMxjUZuFm28ZAGArWMaqdVEqRSfrXqJl6c+eud69KGC0ZgZP1dLHfEQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.12.10"
+    "@pie-lib/editable-html" "^7.12.11"
     "@pie-lib/icons" "^2.4.20"
-    "@pie-lib/render-ui" "^4.8.0"
+    "@pie-lib/render-ui" "^4.8.3"
     classnames "^2.2.6"
     debug "^4.1.1"
     lodash "^4.17.11"
     prop-types "^15.6.2"
     react-measure "^2.2.2"
 
-"@pie-lib/correct-answer-toggle@2.3.1", "@pie-lib/correct-answer-toggle@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.1.tgz#47851c1dff8619cc0246dd1231acc91faab8b577"
-  integrity sha512-JJSBTQl3UzADndqiMzHRKMijvgecxHvdo8W80Zg7xxCsA9d15MBp3Hfcec7lJW0CYXQyr7gPfDcrUtNklQWkFQ==
+"@pie-lib/correct-answer-toggle@2.3.4", "@pie-lib/correct-answer-toggle@^2.3.4":
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.4.tgz#362ee5d75a052922c01e28ced410b52e6d30d6c3"
+  integrity sha512-lWFpUu5mUdVolpBifKpnrYs6VId3LvkMQHe1k3ZuMBaIDIMElbKSOVUPh5mYoN/YXpCiYLxBqcZ3EaG0J97EBQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@pie-lib/icons" "^2.4.20"
-    "@pie-lib/render-ui" "^4.8.0"
+    "@pie-lib/render-ui" "^4.8.3"
     classnames "^2.2.6"
     lodash "^4.17.11"
     prop-types "^15.6.2"
@@ -2230,17 +2230,17 @@
     react-dnd "^9.3.2"
     react-dnd-html5-backend "^9.3.2"
 
-"@pie-lib/editable-html@^7.12.10":
-  version "7.12.10"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.12.10.tgz#dc23bbb55f23bffb5e1a7890f156adc05b7126f9"
-  integrity sha512-p1q54TJ+Sy+IH/4xGp5zflDIsI7UqKES1tAdvtgaNfpJHF8z1+k/PLhuaO/b0y1VtIwwEmpNPPTpPouEQxprTA==
+"@pie-lib/editable-html@^7.12.11":
+  version "7.12.11"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.12.11.tgz#d6b61e4d14e0eb3d445ef27f1a83b4319fb29303"
+  integrity sha512-ae14kk/RWgZEEkQN6ITL7JvAL0CEjA3oBPRt/72c2OiJLtTdpoETrV6fmWhr24eSKAsrDV987ACevTeUoG9cfg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
     "@material-ui/styles" "^3.0.0-alpha.10"
     "@pie-lib/drag" "^1.1.44"
     "@pie-lib/math-rendering" "^2.1.12"
-    "@pie-lib/math-toolbar" "^1.5.8"
+    "@pie-lib/math-toolbar" "^1.5.9"
     change-case "^3.0.2"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -2327,10 +2327,10 @@
     slate-react "^0.14.3"
     to-style "^1.3.3"
 
-"@pie-lib/math-input@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-6.5.0.tgz#f6db74edb97fb770a2ba3959175e502c477118ad"
-  integrity sha512-D1b1hDZEqvwCeDlh0ss9Op2oJjuDGhenqiNRKkULmsogl7s8tQM9MXV7wCHF9AJlPiEgyZdtsxc2RR3NVHQwcw==
+"@pie-lib/math-input@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-input/-/math-input-6.5.1.tgz#6959a327530a352cafc609acf00095c1b54e2227"
+  integrity sha512-xn5Sx5lZrDdEDIqcaYXsEpJy4LsRYzg4YX0zH16qtfZ4CyZB2Caa2KM8OASr64WVF0bdRx+VpIsH4sfRoCp3lQ==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -2347,14 +2347,14 @@
     debug "^4.1.1"
     mathjax-full "^3.0.0"
 
-"@pie-lib/math-toolbar@^1.5.8":
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.5.8.tgz#78546eb3e6e444d734b4448cdb2bd0813e2d9fdd"
-  integrity sha512-YmtKdtOaX7weJYLYqY2Srlr+AKsmtZvGcxNt4/2ZPGZHkYLtPcVDaikv3vWsVq944scEm01NvN4hWN8zCmBTHw==
+"@pie-lib/math-toolbar@^1.5.9":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.5.9.tgz#b5261f7c3c8216714a2360a61ca1be3304fe9109"
+  integrity sha512-96GU+saftf+rS5bkHHhWTpW61HYNxFzsZp4VItni1UsWnIN4bCWXNsm5c4P6opLAp18V14CI5MTyzemDkIg+lg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/math-input" "^6.5.0"
+    "@pie-lib/math-input" "^6.5.1"
     classnames "^2.2.6"
     debug "^4.1.1"
     keycode "^2.2.0"
@@ -2383,10 +2383,10 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/render-ui@^4.8.0":
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.8.0.tgz#0db7cc23db462f4bd16e3a4f7c7c03029d8cb7e1"
-  integrity sha512-3za1Zzv0NHwDka1LTgU7VXPf/Z4gC/keHTBcNglH9PJ58uHLwwHazJVjjz1jD5KthKcUeEs/bEQZAmYMLwwQEQ==
+"@pie-lib/render-ui@^4.8.3":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.8.3.tgz#41f3553609810d500e243890166e7163143dd6ee"
+  integrity sha512-Ui8ue9opUfhpTLRtzIx2k6lgfpo9tF8yC9iM4ZYjeOF0DRPnTBoNtwGtfxxwH3kqfiUQyiwO3TzladXyZdzKZg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -4629,7 +4629,7 @@ commander@*:
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.0.0.tgz#dbf1909b49e5044f8fdaf0adc809f0c0722bdfd0"
   integrity sha512-JrDGPAKjMGSP1G0DUoaceEJ3DZgAfr/q6X7FVk4+U5KxUSKviYGM2k6zWkfyyBHy5rAtzgYJFa1ro2O9PtoxwQ==
 
-commander@^2.19.0, commander@^2.20.0, commander@^2.8.1, commander@~2.20.0:
+commander@^2.19.0, commander@^2.20.0, commander@^2.8.1:
   version "2.20.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.1.tgz#3863ce3ca92d0831dcf2a102f5fb4b5926afd0f9"
   integrity sha512-cCuLsMhJeWQ/ZpsFTbE765kvVfoeSddc4nU3up4fV+fDBcfUXnbITJ+JzhkdjzOqhURjZgujxaioam4RM9yGUg==
@@ -6933,18 +6933,7 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
-handlebars@^4.1.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.4.2.tgz#8810a9821a9d6d52cb2f57d326d6ce7c3dfe741d"
-  integrity sha512-cIv17+GhL8pHHnRJzGu2wwcthL5sb8uDKBHvZ2Dtu5s1YNt0ljbzKbamnc+gr69y7bzwQiBdr5+hOpRd5pnOdg==
-  dependencies:
-    neo-async "^2.6.0"
-    optimist "^0.6.1"
-    source-map "^0.6.1"
-  optionalDependencies:
-    uglify-js "^3.1.4"
-
-handlebars@^4.7.6:
+handlebars@^4.1.2, handlebars@^4.7.6:
   version "4.7.6"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.6.tgz#d4c05c1baf90e9945f77aa68a7a219aa4a7df74e"
   integrity sha512-1f2BACcBfiwAfStCKZNrUCgqNZkGsAT7UM3kkYtXuLo0KnaVfjKOyf7PRzB6++aK9STyT1Pd2ZCPe3EGOXleXA==
@@ -9541,20 +9530,10 @@ minimist@0.0.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.3.tgz#3db5c0765545ab8637be71f333a104a965a9ca3f"
-  integrity sha512-+bMdgqjMN/Z77a6NlY/I3U5LlRDbnmaAk6lDveAPKwSpcPM4tKAuYsvYF8xjhOPXhOYGe/73vVLVez5PW+jqhw==
-
-minimist@^1.2.5:
+minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
-minimist@~0.0.1:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
-  integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -9823,9 +9802,9 @@ negotiator@0.6.2:
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
 neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
-  integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+  integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -10375,14 +10354,6 @@ opn@^5.4.0:
   integrity sha512-PqHpggC9bLV0VeWcdKhkpxY+3JTzetLSqTCWL/z/tFIbI6G8JCjondXklT1JinczLz2Xib62sSp0T/gKT4KksA==
   dependencies:
     is-wsl "^1.1.0"
-
-optimist@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
-  integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
-  dependencies:
-    minimist "~0.0.1"
-    wordwrap "~0.0.2"
 
 optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
@@ -14008,12 +13979,9 @@ uglify-js@^2.6.1:
     uglify-to-browserify "~1.0.0"
 
 uglify-js@^3.1.4:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.0.tgz#704681345c53a8b2079fb6cec294b05ead242ff5"
-  integrity sha512-W+jrUHJr3DXKhrsS7NUVxn3zqMOFn0hL/Ei6v0anCIMoKC93TjcflTagwIHLW7SfMFfiQuktQyFVCFHGUE0+yg==
-  dependencies:
-    commander "~2.20.0"
-    source-map "~0.6.1"
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.10.4.tgz#dd680f5687bc0d7a93b14a3482d16db6eba2bfbb"
+  integrity sha512-kBFT3U4Dcj4/pJ52vfjCSfyLyvG9VYYuGYPmrPvAxRw/i7xHiT4VvCev+uiEMcEEiu6UNB6KgWmGtSUYIWScbw==
 
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
@@ -14537,11 +14505,6 @@ wordwrap@^1.0.0, wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
-
-wordwrap@~0.0.2:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
-  integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
 worker-farm@^1.7.0:
   version "1.7.0"

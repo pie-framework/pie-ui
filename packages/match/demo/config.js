@@ -26,12 +26,12 @@ const base = {
       {
         id: 1,
         title: 'Question Text 1',
-        values: [false, false]
+        values: [true, false]
       },
       {
         id: 2,
         title: 'Question Text 2',
-        values: [false, false]
+        values: [true, false]
       },
       {
         id: 3,
@@ -41,7 +41,7 @@ const base = {
       {
         id: 4,
         title: 'Question Text 4',
-        values: [false, false]
+        values: [false, true]
       }
     ],
     promptEnabled: true,
@@ -49,8 +49,12 @@ const base = {
   }
 };
 
-const model = (id, extras) =>
-  Object.assign({}, base, { id, element: 'match-element' }, extras);
+const model = (id, extras, configExtras = {}) => {
+  const m = Object.assign({}, base, {id, element: 'match-element'}, extras);
+  m.config = { ...m.config, ...configExtras };
+
+  return m;
+};
 
 module.exports = {
   elements: {
@@ -58,7 +62,28 @@ module.exports = {
   },
   models: [
     model('1', {
+      disabled: false
+    }, {
+      choiceMode: 'checkbox'
+    }),
+    model('2', {
       disabled: false,
+    }),
+    model('3', {
+      disabled: true
+    }, {
+      choiceMode: 'checkbox',
+      correctness: {
+        correctness: 'correct',
+        score: '100'
+      }
+    }),
+    model('4', {
+      disabled: true,
+      correctness: {
+        correctness: 'correct',
+        score: '100'
+      }
     })
   ]
 };

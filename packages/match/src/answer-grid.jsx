@@ -115,6 +115,8 @@ export class AnswerGrid extends React.Component {
                           (showCorrect && rowItem === true) ||
                           (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex))
                         ),
+                        [classes.tag]: true,
+                        [classes.tagDisabled]: disabled,
                         [classes.incorrect]: allowFeedback && disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
                       })}
                       disabled={disabled}
@@ -165,10 +167,17 @@ const styles = theme => ({
   },
   separator: {
     border: 0,
-    borderTop: '2.5px solid lightgray',
+    borderTop: '2.5px solid lightgray', //TODO hardcoded color
     width: '100%'
   },
+  tag: {
+    color: color.text()
+  },
+  tagDisabled: {
+    color: 'gray !important' //TODO hardcoded color
+  },
   table: {
+    color: color.text(),
     backgroundColor: color.background(),
     borderCollapse: 'collapse',
     borderSpacing: 0,

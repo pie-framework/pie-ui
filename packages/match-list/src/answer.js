@@ -46,8 +46,9 @@ const AnswerContent = withStyles({
     opacity: 0.2
   },
   answerContent: {
-    backgroundColor: 'white',
-    border: '1px solid #c2c2c2',
+    color: color.text(),
+    backgroundColor: color.background(),
+    border: '1px solid #c2c2c2', // TODO hardcoded color
     cursor: 'pointer',
     width: '100%',
     padding: '10px',

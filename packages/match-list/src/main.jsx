@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withDragContext, swap } from '@pie-lib/drag';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
+import { color, Feedback } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 import uniqueId from 'lodash/uniqueId';
 import isUndefined from 'lodash/isUndefined';
@@ -110,7 +110,10 @@ const styles = theme => ({
   mainContainer: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    color: color.text(),
+    backgroundColor: color.background(),
+    padding: theme.spacing.unit * 3/2
   },
   promptList: {
     alignItems: 'flex-start'

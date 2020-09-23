@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.38](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.37...@pie-ui/extended-text-entry@3.2.38) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
 ## [3.2.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.36...@pie-ui/extended-text-entry@3.2.37) (2020-09-23)
 
 

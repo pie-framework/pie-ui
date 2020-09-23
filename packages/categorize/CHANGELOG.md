@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.19](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.18...@pie-ui/categorize@1.4.19) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
 ## [1.4.18](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.17...@pie-ui/categorize@1.4.18) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/categorize

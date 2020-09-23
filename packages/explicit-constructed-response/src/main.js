@@ -4,7 +4,7 @@ import debounce from 'lodash/debounce';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { ConstructedResponse } from '@pie-lib/mask-markup';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 
 export class Main extends React.Component {
@@ -53,7 +53,7 @@ export class Main extends React.Component {
     const { classes, mode, prompt, rationale, teacherInstructions } = this.props;
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         {
           teacherInstructions && (
             <div className={classes.collapsible}>
@@ -94,6 +94,16 @@ export class Main extends React.Component {
 }
 
 const styles = theme => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background(),
+    '& input': {
+      border: '1px solid gray',
+      color: color.text(),
+      backgroundColor: color.background()
+    }
+  },
   collapsible: {
     margin: `${theme.spacing.unit * 2} 0`,
   }

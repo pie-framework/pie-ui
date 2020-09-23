@@ -1,6 +1,6 @@
 import { HorizontalTiler, VerticalTiler } from './tiler';
 import { buildState, reducer } from './ordering';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -230,6 +230,8 @@ export class PlacementOrdering extends React.Component {
 
 const styles = theme => ({
   placementOrdering: {
+    color: color.text(),
+    backgroundColor: color.background(),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

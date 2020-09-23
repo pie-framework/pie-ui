@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.32...@pie-ui/drag-in-the-blank@1.7.33) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/drag-in-the-blank
+
+
+
+
+
 ## [1.7.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.31...@pie-ui/drag-in-the-blank@1.7.32) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/drag-in-the-blank

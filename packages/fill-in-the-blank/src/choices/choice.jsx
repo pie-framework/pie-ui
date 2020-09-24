@@ -44,10 +44,11 @@ export class Choice extends React.Component {
           className={classNames(
             correct === false && classes.incorrect,
             correct === true && classes.correct,
+            classes.tag,
             disabled && correct === undefined && classes.disabledCard
           )}
         >
-          <CardContent>
+          <CardContent classes={{ root: classes.cardContentRoot }}>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </CardContent>
         </Card>
@@ -56,8 +57,16 @@ export class Choice extends React.Component {
   }
 }
 const styles = () => ({
+  tag: {
+    color: color.text(),
+    backgroundColor: color.background(),
+  },
+  cardContentRoot: {
+    border: '1px solid lightgray' // TODO hardcoded color
+  },
   choice: {
     padding: 0,
+    color: color.text(),
     backgroundColor: color.background(),
     cursor: 'move'
   },

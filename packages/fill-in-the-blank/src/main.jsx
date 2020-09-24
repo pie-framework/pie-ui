@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
+import { color } from '@pie-lib/render-ui';
 import Content from './content';
 import Choices from './choices';
 import { buildContent, addChoice, removeChoice } from './builder';
@@ -68,24 +69,26 @@ export class Main extends React.Component {
 
     return (
       <uid.Provider value={this.uid}>
-        <CorrectAnswerToggle
-          show={model.correctResponse !== undefined}
-          toggled={showCorrect}
-          onToggle={this.toggleShowCorrect}
-          className={classes.toggle}
-        />
-        <div className={classNames(classes.main, className)}>
-          <Content
-            content={content}
-            onDropChoice={this.dropChoice}
-            onRemoveChoice={this.removeChoice}
-            disabled={model.disabled}
+        <div className={classes.mainContainer}>
+          <CorrectAnswerToggle
+            show={model.correctResponse !== undefined}
+            toggled={showCorrect}
+            onToggle={this.toggleShowCorrect}
+            className={classes.toggle}
           />
-          <Choices
-            choices={choices}
-            label={model.choiceLabel}
-            disabled={model.disabled}
-          />
+          <div className={classNames(classes.main, className)}>
+            <Content
+              content={content}
+              onDropChoice={this.dropChoice}
+              onRemoveChoice={this.removeChoice}
+              disabled={model.disabled}
+            />
+            <Choices
+              choices={choices}
+              label={model.choiceLabel}
+              disabled={model.disabled}
+            />
+          </div>
         </div>
       </uid.Provider>
     );
@@ -93,6 +96,11 @@ export class Main extends React.Component {
 }
 
 const styles = theme => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background()
+  },
   main: {},
   toggle: {
     paddingBottom: theme.spacing.unit

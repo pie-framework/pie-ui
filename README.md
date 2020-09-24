@@ -33,8 +33,6 @@ yarn install # install root package and child packages
 
 ### test single packages
 
-````
-
 To test an individual package you can do:
 
 ```shell

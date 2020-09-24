@@ -7,7 +7,7 @@
     "custom-element",
     "react"
   ],
-  "version": "1.2.35",
+  "version": "1.2.38",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "pie-framework/pie-ui.git",
@@ -20,8 +20,8 @@
     "@material-ui/icons": "^3.0.1",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/drag": "^1.1.44",
-    "@pie-lib/math-rendering": "^2.1.12",
-    "@pie-lib/render-ui": "^4.8.3",
+    "@pie-lib/math-rendering": "^2.2.0",
+    "@pie-lib/render-ui": "^4.8.4",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"

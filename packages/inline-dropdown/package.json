@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/inline-dropdown",
-  "version": "1.8.22",
+  "version": "1.8.25",
   "description": "",
   "repository": "pie-framework/pie-ui",
   "main": "lib/index.js",
@@ -13,10 +13,10 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.3.1",
-    "@pie-lib/mask-markup": "^1.7.29",
-    "@pie-lib/math-rendering": "^2.1.12",
-    "@pie-lib/render-ui": "^4.8.3",
+    "@pie-lib/correct-answer-toggle": "^2.3.5",
+    "@pie-lib/mask-markup": "^1.7.30",
+    "@pie-lib/math-rendering": "^2.2.0",
+    "@pie-lib/render-ui": "^4.8.4",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",

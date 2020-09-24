@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.3...@pie-ui/multiple-choice@4.13.4) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-elements/commit/b70a7e7))
+
+
+
+
+
+## [4.13.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.2...@pie-ui/multiple-choice@4.13.3) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.13.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.1...@pie-ui/multiple-choice@4.13.2) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
 ## [4.13.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.0...@pie-ui/multiple-choice@4.13.1) (2020-08-06)
 
 

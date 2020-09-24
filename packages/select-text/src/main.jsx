@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TextSelect } from '@pie-lib/text-select';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 
 import debug from 'debug';
@@ -52,7 +52,7 @@ export class Main extends React.Component {
     log('[render] selectedTokens:', selectedTokens);
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         {
           model.teacherInstructions && (
             <Collapsible
@@ -102,6 +102,10 @@ export class Main extends React.Component {
 }
 
 const StyledMain = withStyles(theme => ({
+  mainContainer: {
+    color: color.text(),
+    backgroundColor: color.background()
+  },
   textSelect: {
     marginBottom: theme.spacing.unit,
     marginTop: theme.spacing.unit

@@ -1,11 +1,12 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
+import { color } from '@pie-lib/render-ui';
 
 const style = {
   root: {
     strokeWidth: 2,
-    stroke: 'var(--line-stroke, black)'
+    stroke: color.primary()
   }
 };
 

@@ -1,5 +1,5 @@
 import * as colors from '../../colors';
-
+import { color } from '@pie-lib/render-ui';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Arrow from '../arrow';
@@ -25,7 +25,7 @@ const style = {
     '& line': {
       cursor: 'pointer',
       strokeWidth: '5px',
-      stroke: 'var(--line-stroke, black)'
+      stroke: color.primary()
     },
     '& line, & .arrow': {
       transition: 'stroke 150ms linear, fill 150ms linear'

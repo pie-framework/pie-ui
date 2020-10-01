@@ -7,6 +7,7 @@ import Toggle from '@pie-lib/correct-answer-toggle';
 import { buildElementModel } from './graph/elements/builder';
 import classNames from 'classnames';
 import cloneDeep from 'lodash/cloneDeep';
+import { color } from '@pie-lib/render-ui';
 import injectSheet from 'react-jss';
 import isArray from 'lodash/isArray';
 import isNumber from 'lodash/isNumber';
@@ -14,6 +15,10 @@ import isNumber from 'lodash/isNumber';
 export { Graph };
 
 const styles = {
+  mainContainer: {
+    color: color.text(),
+    backgroundColor: color.background(),
+  },
   graphTitle: {
     textAlign: 'center',
     pointerEvents: 'none',
@@ -205,7 +210,7 @@ export class NumberLine extends React.Component {
 
     let adjustedWidth = graphProps.width - 20;
 
-    const names = classNames(classes.numberLine, classes[model.colorContrast]);
+    const names = classNames(classes.numberLine, classes.mainContainer, classes[model.colorContrast]);
 
     return (
       <div className={names} style={{ width }}>

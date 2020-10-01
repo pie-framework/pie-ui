@@ -1,6 +1,7 @@
 import React from 'react';
 import { scaleLinear } from 'd3-scale';
 import { select, mouse } from 'd3-selection';
+import { color } from '@pie-lib/render-ui';
 import Point from './elements/point';
 import Line from './elements/line';
 import Ray from './elements/ray';
@@ -220,7 +221,7 @@ export class NumberLineGraph extends React.Component {
           <rect
             ref={rect => (this.rect = rect)}
             //need to have a fill for it to be clickable
-            fill="red"
+            fill={color.primary()}
             fillOpacity="0.0"
             width={width}
             height={height}

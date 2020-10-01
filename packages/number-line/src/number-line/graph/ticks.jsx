@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { buildTickData, isMultiple } from './tick-utils';
 import injectSheet from 'react-jss';
+import { color } from '@pie-lib/render-ui';
 
 const style = {
   text: {
     userSelect: 'none',
     textAlign: 'center',
-    fill: 'var(--tick-color, black)'
+    fill: color.primary()
   },
   line: {
-    stroke: 'var(--tick-color, black)'
+    stroke: color.primary()
   }
 };
 

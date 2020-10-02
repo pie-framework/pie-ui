@@ -9,14 +9,14 @@ import classNames from 'classnames';
 import injectSheet from 'react-jss';
 import isNumber from 'lodash/isNumber';
 
-const rayColor = color => ({
+const rayColor = rayColor => ({
   '& line': {
-    stroke: color
+    stroke: rayColor
   },
   '& .arrow': {
-    fill: color,
+    fill: rayColor,
     strokeWidth: '1px',
-    stroke: color
+    stroke: rayColor
   }
 });
 

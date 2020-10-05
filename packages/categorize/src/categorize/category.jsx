@@ -71,7 +71,7 @@ export class Category extends React.Component {
 }
 const styles = () => ({
   incorrect: {
-    border: `solid 1px ${color.incorrect()}`
+    border: `solid 2px ${color.incorrect()}`
   },
   placeholder: {
     minHeight: '60px',

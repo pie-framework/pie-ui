@@ -60,10 +60,10 @@ const styles = () => ({
     height: '100%',
     width: '100%',
     '&.correct': {
-      border: `solid 1px ${color.correct()}`
+      border: `solid 2px ${color.correct()}`
     },
     '&.incorrect': {
-      border: `solid 1px ${color.incorrect()}`
+      border: `solid 2px ${color.incorrect()}`
     }
   },
   cardRoot: {
@@ -72,7 +72,8 @@ const styles = () => ({
     border: '1px solid'
   },
   disabled: {
-    cursor: 'inherit'
+    cursor: 'not-allowed',
+    opacity: '0.6'
   },
   dragging: {
     cursor: 'move'
@@ -102,7 +103,7 @@ export class Choice extends React.Component {
       correct
     } = this.props;
     return connectDragSource(
-      <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ width: '100%', height: 'max-content' }}>
         <Styled
           id={id}
           content={content}

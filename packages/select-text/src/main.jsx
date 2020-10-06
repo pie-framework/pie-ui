@@ -103,6 +103,9 @@ export class Main extends React.Component {
 
 const StyledMain = withStyles(theme => ({
   mainContainer: {
+    paddingLeft: theme.spacing.unit,
+    paddingRight: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
     color: color.text(),
     backgroundColor: color.background()
   },

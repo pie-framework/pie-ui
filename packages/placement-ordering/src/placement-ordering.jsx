@@ -235,7 +235,8 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    paddingBottom: theme.spacing.unit
   },
   prompt: {
     padding: '5px',

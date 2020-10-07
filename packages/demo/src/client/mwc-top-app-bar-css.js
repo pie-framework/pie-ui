@@ -83,6 +83,7 @@ export const style = css`
   .mdc-top-app-bar__row {
     display: flex;
     position: relative;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
     margin-bottom: 5px;

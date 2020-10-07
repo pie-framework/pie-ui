@@ -44,14 +44,21 @@ const TileContent = withStyles({
     overflow: 'hidden',
     border: '1px solid #c2c2c2',
     backgroundColor: color.background(),
-    transition: 'opacity 200ms linear'
+    transition: 'opacity 200ms linear',
+    '&:hover': {
+      backgroundColor: color.secondary()
+    }
   },
   dragging: {
+    backgroundColor: color.secondaryLight(),
     opacity: 0.5
   },
   disabled: {
-    backgroundColor: '#ececec',
-    cursor: 'not-allowed'
+    opacity: 0.6,
+    cursor: 'not-allowed',
+    '&:hover': {
+      backgroundColor: color.background()
+    }
   },
   incorrect: {
     border: `1px solid ${color.incorrect()}`

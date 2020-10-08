@@ -7,7 +7,13 @@ exports[`Choice snapshot renders 1`] = `
   <WithStyles(Card)
     className=""
   >
-    <WithStyles(CardContent)>
+    <WithStyles(CardContent)
+      classes={
+        Object {
+          "root": undefined,
+        }
+      }
+    >
       <div
         dangerouslySetInnerHTML={
           Object {

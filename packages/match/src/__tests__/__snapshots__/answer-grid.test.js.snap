@@ -5,7 +5,7 @@ exports[`AnswerGrid renders 1`] = `
   className="AnswerGrid-controlsContainer-1"
 >
   <table
-    className="AnswerGrid-table-10"
+    className="AnswerGrid-table-12"
   >
     <colgroup>
       <col
@@ -27,7 +27,7 @@ exports[`AnswerGrid renders 1`] = `
           scope="row"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-13"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Column 1",
@@ -79,7 +79,7 @@ exports[`AnswerGrid renders 1`] = `
           key="td-title-0"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-13"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 1",
@@ -97,7 +97,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -113,7 +113,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -133,7 +133,7 @@ exports[`AnswerGrid renders 1`] = `
           key="td-title-1"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-13"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 2",
@@ -151,7 +151,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -167,7 +167,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -187,7 +187,7 @@ exports[`AnswerGrid renders 1`] = `
           key="td-title-2"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-13"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 3",
@@ -205,7 +205,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={true}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -221,7 +221,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -241,7 +241,7 @@ exports[`AnswerGrid renders 1`] = `
           key="td-title-3"
         >
           <div
-            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-11"
+            className="AnswerGrid-rowItem-8 AnswerGrid-questionText-13"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Question Text 4",
@@ -259,7 +259,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />
@@ -275,7 +275,7 @@ exports[`AnswerGrid renders 1`] = `
           >
             <WithStyles(Radio)
               checked={false}
-              className=""
+              className="AnswerGrid-tag-10"
               disabled={false}
               onChange={[Function]}
             />

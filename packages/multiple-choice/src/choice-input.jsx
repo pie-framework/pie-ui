@@ -19,7 +19,7 @@ const styleSheet = (theme) => ({
   row: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: color.background()
+    backgroundColor: color.background(),
   },
   checkboxHolder: {
     display: 'flex',
@@ -27,7 +27,7 @@ const styleSheet = (theme) => ({
     backgroundColor: color.background(),
     flex: 1,
     '& label': {
-      color: color.text()
+      color: color.text(),
     },
   },
   rationale: {
@@ -38,7 +38,7 @@ const styleSheet = (theme) => ({
 const formStyleSheet = {
   label: {
     color: `${color.text()} !important`, //'var(--choice-input-color, black)'
-    backgroundColor: color.background()
+    backgroundColor: color.background(),
   },
 };
 
@@ -60,15 +60,22 @@ const inputStyles = {
   'correct-root': colorStyle('correct-color', color.text()),
   'correct-checked': colorStyle('correct-selected-color', color.correct()), //green[500]),
   'correct-disabled': colorStyle('correct-disabled-color', color.disabled()), //'grey'),
-  'incorrect-root': colorStyle('incorrect-color', color.text()),
+  'incorrect-root': colorStyle('incorrect-color', color.incorrect()),
   'incorrect-checked': colorStyle('incorrect-checked', color.incorrect()), //orange[500]),
   'incorrect-disabled': colorStyle(
     'incorrect-disabled-color',
     color.disabled()
   ),
-  root: colorStyle('color', color.text()),
-  checked: colorStyle('selected-color', color.text()),
-  disabled: colorStyle('disabled-color', color.text()),
+  root: {
+    ...colorStyle('color', color.text()),
+    '&:hover': { color: `${color.primaryLight()} !important` },
+  },
+  checked: colorStyle('selected-color', color.primary()),
+  disabled: {
+    ...colorStyle('disabled-color', color.text()),
+    opacity: 0.6,
+    cursor: 'not-allowed !important',
+  },
 };
 
 export const StyledCheckbox = withStyles(inputStyles)((props) => {

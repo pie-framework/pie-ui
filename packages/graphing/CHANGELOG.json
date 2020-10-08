@@ -528,5 +528,20 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/graphing@3.0.8"
+  },
+  {
+    "type": "feat",
+    "scope": "graphing",
+    "subject": "graphing color theme support",
+    "merge": null,
+    "header": "feat(graphing): graphing color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f10a9d44bc2b1e1720bfa95e447a9e2a598cbcb2",
+    "gitTags": "",
+    "committerDate": "2020-09-30 16:14:56 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/graphing@3.1.0"
   }
 ]

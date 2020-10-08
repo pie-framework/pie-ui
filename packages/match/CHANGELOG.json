@@ -738,5 +738,50 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match@2.4.6"
+  },
+  {
+    "type": "feat",
+    "scope": "match",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(match): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1cc46d993729dc87cdd980ddd3b822f270eb6c98",
+    "gitTags": "",
+    "committerDate": "2020-09-23 16:53:17 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.5.0"
+  },
+  {
+    "type": "feat",
+    "scope": "match",
+    "subject": "color theme support added",
+    "merge": null,
+    "header": "feat(match): color theme support added",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5f1d8746c41509eaa2908147a473546fe771aaba",
+    "gitTags": "",
+    "committerDate": "2020-09-23 08:21:41 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.5.0"
+  },
+  {
+    "type": "feat",
+    "scope": "match",
+    "subject": "use render ui colors",
+    "merge": null,
+    "header": "feat(match): use render ui colors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "09b19d11b5ec6fe7c7ec373ceed5cdae0d7a0bfd",
+    "gitTags": "",
+    "committerDate": "2020-09-10 14:06:06 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match@2.5.0"
   }
 ]

@@ -1263,5 +1263,35 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.2.37"
+  },
+  {
+    "type": "feat",
+    "scope": "extended-text-entry",
+    "subject": "color theme support added",
+    "merge": null,
+    "header": "feat(extended-text-entry): color theme support added",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "939a205514ef15e28867524f79951eee2d82f788",
+    "gitTags": "",
+    "committerDate": "2020-09-21 12:55:09 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "extended-text-entry",
+    "subject": "initial commit for color treatment",
+    "merge": null,
+    "header": "feat(extended-text-entry): initial commit for color treatment",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5a8830ca08c1dc899a143a905f9de4b39ce91040",
+    "gitTags": "",
+    "committerDate": "2020-09-18 17:23:44 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.3.0"
   }
 ]

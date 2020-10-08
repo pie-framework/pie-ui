@@ -568,5 +568,20 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.8.25"
+  },
+  {
+    "type": "feat",
+    "scope": "inline-dropdown",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(inline-dropdown): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1fe3a3f8204a156808c03e5cbb2c18ad3ad3aa70",
+    "gitTags": "",
+    "committerDate": "2020-09-28 15:35:48 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.9.0"
   }
 ]

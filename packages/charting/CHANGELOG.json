@@ -283,5 +283,35 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/charting@0.2.31"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bad src import in charting",
+    "merge": null,
+    "header": "fix: bad src import in charting",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1d80c924baa801b61e660246bdc71baa9e94f6a5",
+    "gitTags": "",
+    "committerDate": "2020-10-08 10:47:14 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "charting",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(charting): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "c3c7bed958b1375deb8256214ecf3d8e34483813",
+    "gitTags": "",
+    "committerDate": "2020-09-29 16:53:40 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/charting@0.3.0"
   }
 ]

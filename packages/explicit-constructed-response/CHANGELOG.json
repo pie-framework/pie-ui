@@ -553,5 +553,20 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/explicit-constructed-response@1.7.32"
+  },
+  {
+    "type": "feat",
+    "scope": "explicit-constructed-response",
+    "subject": "color theme support added",
+    "merge": null,
+    "header": "feat(explicit-constructed-response): color theme support added",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "540705e3b96ca3207ab88293282c4a59ba7284db",
+    "gitTags": "",
+    "committerDate": "2020-09-23 08:21:25 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.8.0"
   }
 ]

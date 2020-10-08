@@ -1538,5 +1538,35 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.13.4"
+  },
+  {
+    "type": "feat",
+    "scope": "multiple-choice",
+    "subject": "color theme support fixes",
+    "merge": null,
+    "header": "feat(multiple-choice): color theme support fixes",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e15d02668c9da107a096299ec8adf9f86f95c230",
+    "gitTags": "",
+    "committerDate": "2020-09-16 09:45:58 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.14.0"
+  },
+  {
+    "type": "feat",
+    "scope": "multiple-choice",
+    "subject": "use render ui colors",
+    "merge": null,
+    "header": "feat(multiple-choice): use render ui colors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "55399ca60d96d83ff273aa474ed39288d509c01f",
+    "gitTags": "",
+    "committerDate": "2020-09-10 14:19:33 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.14.0"
   }
 ]

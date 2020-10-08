@@ -643,5 +643,35 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.4.38"
+  },
+  {
+    "type": "feat",
+    "scope": "match-list",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(match-list): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "6e391c1d2ed860b495450285dfcaa92670ddab5d",
+    "gitTags": "",
+    "committerDate": "2020-09-23 16:57:11 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.5.0"
+  },
+  {
+    "type": "feat",
+    "scope": "match-list",
+    "subject": "use render ui colors",
+    "merge": null,
+    "header": "feat(match-list): use render ui colors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "267b547925fcee9afe915c68fe06ce9c9d83d98d",
+    "gitTags": "",
+    "committerDate": "2020-09-10 14:21:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.5.0"
   }
 ]

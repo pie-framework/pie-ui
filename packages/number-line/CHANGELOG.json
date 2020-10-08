@@ -528,5 +528,50 @@
     "committerDate": "2020-09-23 11:38:06 +0100",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.2.4"
+  },
+  {
+    "type": "feat",
+    "scope": "number-line",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(number-line): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3bdbf5b34377d2001b19e09589797cf3fe673a03",
+    "gitTags": "",
+    "committerDate": "2020-10-02 13:26:20 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "number-line",
+    "subject": "add color theme support",
+    "merge": null,
+    "header": "feat(number-line): add color theme support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0811e5bc653cac9462440a07235a9cf29dc98639",
+    "gitTags": "",
+    "committerDate": "2020-10-01 17:22:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "number-line",
+    "subject": "use render ui colors",
+    "merge": null,
+    "header": "feat(number-line): use render ui colors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "7367d0008025ef0e91e9a6ec7c6e2d36de9723a0",
+    "gitTags": "",
+    "committerDate": "2020-09-10 14:17:21 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.3.0"
   }
 ]

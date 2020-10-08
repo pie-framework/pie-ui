@@ -223,5 +223,35 @@
     "committerDate": "2020-06-05 12:07:18 +0100",
     "isTagged": true,
     "tag": "@pie-ui/demo@0.3.138"
+  },
+  {
+    "type": "feat",
+    "scope": "placement-ordering",
+    "subject": "finalize color theme support and change disabled treatment",
+    "merge": null,
+    "header": "feat(placement-ordering): finalize color theme support and change disabled treatment",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "5cf08bb9922c4f1544b2254c98701c1752d30239",
+    "gitTags": "",
+    "committerDate": "2020-10-07 07:53:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.4.0"
+  },
+  {
+    "type": "feat",
+    "scope": "demo",
+    "subject": "extended color theme testing tools finalized",
+    "merge": null,
+    "header": "feat(demo): extended color theme testing tools finalized",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "48e90ae78c38b58b4139e22470af3b5b96e37224",
+    "gitTags": "",
+    "committerDate": "2020-10-06 20:37:36 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.4.0"
   }
 ]

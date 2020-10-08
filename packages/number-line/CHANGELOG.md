@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.5...@pie-ui/number-line@7.3.0) (2020-10-08)
+
+
+### Features
+
+* **number-line:** add color theme support ([3bdbf5b](https://github.com/pie-framework/pie-ui/commit/3bdbf5b))
+* **number-line:** add color theme support ([0811e5b](https://github.com/pie-framework/pie-ui/commit/0811e5b))
+* **number-line:** use render ui colors ([7367d00](https://github.com/pie-framework/pie-ui/commit/7367d00))
+
+
+
+
+
 ## [7.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.4...@pie-ui/number-line@7.2.5) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/number-line

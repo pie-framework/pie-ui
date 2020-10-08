@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.26...@pie-ui/inline-dropdown@1.9.0) (2020-10-08)
+
+
+### Features
+
+* **inline-dropdown:** add color theme support ([1fe3a3f](https://github.com/pie-framework/pie-ui/commit/1fe3a3f))
+
+
+
+
+
 ## [1.8.26](https://github.com/pie-framework/pie-ui/compare/@pie-ui/inline-dropdown@1.8.25...@pie-ui/inline-dropdown@1.8.26) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/inline-dropdown

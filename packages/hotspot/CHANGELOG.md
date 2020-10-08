@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.4...@pie-ui/hotspot@1.5.0) (2020-10-08)
+
+
+### Features
+
+* **hotspot:** use render ui colors ([d4262c9](https://github.com/pie-framework/pie-elements/commit/d4262c9))
+
+
+
+
+
 ## [1.4.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.3...@pie-ui/hotspot@1.4.4) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/hotspot

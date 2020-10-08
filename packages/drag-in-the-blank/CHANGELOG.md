@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.35...@pie-ui/drag-in-the-blank@1.8.0) (2020-10-08)
+
+
+### Features
+
+* **drag-in-the-blank:** add color theme support ([b6e9c8a](https://github.com/pie-framework/pie-ui/commit/b6e9c8a))
+
+
+
+
+
 ## [1.7.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/drag-in-the-blank@1.7.34...@pie-ui/drag-in-the-blank@1.7.35) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/drag-in-the-blank

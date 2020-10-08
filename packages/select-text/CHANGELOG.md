@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.35...@pie-ui/select-text@1.7.0) (2020-10-08)
+
+
+### Features
+
+* **select-text:** add color theme support ([cc5d71f](https://github.com/pie-framework/pie-ui/commit/cc5d71f))
+* **select-text:** color theme support finalized with wider palette ([4b3709e](https://github.com/pie-framework/pie-ui/commit/4b3709e))
+
+
+
+
+
 ## [1.6.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.34...@pie-ui/select-text@1.6.35) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/select-text

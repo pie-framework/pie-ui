@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.40...@pie-ui/placement-ordering@4.8.0) (2020-10-08)
+
+
+### Features
+
+* **placement-ordering:** color theme support added ([2a599af](https://github.com/pie-framework/pie-ui/commit/2a599af))
+* **placement-ordering:** finalize color theme support and change disabled treatment ([5cf08bb](https://github.com/pie-framework/pie-ui/commit/5cf08bb))
+* **placement-ordering:** use render ui colors ([a222b03](https://github.com/pie-framework/pie-ui/commit/a222b03))
+
+
+
+
+
 ## [4.7.40](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.39...@pie-ui/placement-ordering@4.7.40) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/placement-ordering

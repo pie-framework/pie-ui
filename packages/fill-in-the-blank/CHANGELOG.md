@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.40...@pie-ui/fill-in-the-blank@1.4.0) (2020-10-08)
+
+
+### Features
+
+* **fill-in-the-blank:** add color theme support ([d730aef](https://github.com/pie-framework/pie-ui/commit/d730aef))
+* **fill-in-the-blank:** use render ui colors ([3e89cc7](https://github.com/pie-framework/pie-ui/commit/3e89cc7))
+
+
+
+
+
 ## [1.3.40](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.3.39...@pie-ui/fill-in-the-blank@1.3.40) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/fill-in-the-blank

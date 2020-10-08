@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.32...@pie-ui/charting@0.3.0) (2020-10-08)
+
+
+### Bug Fixes
+
+* bad src import in charting ([1d80c92](https://github.com/pie-framework/pie-ui/commit/1d80c92))
+
+
+### Features
+
+* **charting:** add color theme support ([c3c7bed](https://github.com/pie-framework/pie-ui/commit/c3c7bed))
+
+
+
+
+
 ## [0.2.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.2.31...@pie-ui/charting@0.2.32) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/charting

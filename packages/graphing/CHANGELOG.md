@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.9...@pie-ui/graphing@3.1.0) (2020-10-08)
+
+
+### Features
+
+* **graphing:** graphing color theme support ([f10a9d4](https://github.com/pie-framework/pie-ui/commit/f10a9d4))
+
+
+
+
+
 ## [3.0.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.8...@pie-ui/graphing@3.0.9) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/graphing

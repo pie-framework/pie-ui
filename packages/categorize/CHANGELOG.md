@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.20...@pie-ui/categorize@1.5.0) (2020-10-08)
+
+
+### Features
+
+* **categorize:** color theme support fixes ([4481f98](https://github.com/pie-framework/pie-ui/commit/4481f98))
+* **categorize:** color theming support added ([3f5c36e](https://github.com/pie-framework/pie-ui/commit/3f5c36e))
+* **categorize:** finalize color theme support / disabled treatment ([e198e0a](https://github.com/pie-framework/pie-ui/commit/e198e0a))
+* **categorize:** use render ui colors ([2aa6504](https://github.com/pie-framework/pie-ui/commit/2aa6504))
+
+
+
+
+
 ## [1.4.20](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.19...@pie-ui/categorize@1.4.20) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/categorize

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.39...@pie-ui/match-list@1.5.0) (2020-10-08)
+
+
+### Features
+
+* **match-list:** add color theme support ([6e391c1](https://github.com/pie-framework/pie-ui/commit/6e391c1))
+* **match-list:** use render ui colors ([267b547](https://github.com/pie-framework/pie-ui/commit/267b547))
+
+
+
+
+
 ## [1.4.39](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.38...@pie-ui/match-list@1.4.39) (2020-09-23)
 
 **Note:** Version bump only for package @pie-ui/match-list

@@ -2162,7 +2162,7 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/charting@^4.3.1":
+"@pie-lib/charting@^4.2.22", "@pie-lib/charting@^4.3.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.3.1.tgz#58fd08f08fe8f792f47d48934a550e179fa76808"
   integrity sha512-pclhg7m9L0zCM3s3kdZ2igrr9lD67xEWUsXvqmBAjxIYWvS2oMRMgu5CuGk+XUjfwkzpv+rVIaQ5pVvbBM096g==
@@ -2205,6 +2205,19 @@
     lodash "^4.17.11"
     prop-types "^15.6.2"
     react-measure "^2.2.2"
+
+"@pie-lib/correct-answer-toggle@2.3.5":
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/correct-answer-toggle/-/correct-answer-toggle-2.3.5.tgz#27682f0611733d31b016333343a2948a0185af3f"
+  integrity sha512-DPvrfqykZ5xFQGjC8COJF+O179LynFUso7APVFyc2nMZLYCQ/5EMQYmrT7ZXlavZqmkKjl0xAryJh5ZaBW+pEg==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@pie-lib/icons" "^2.4.20"
+    "@pie-lib/render-ui" "^4.8.4"
+    classnames "^2.2.6"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    react-transition-group "^2.5.2"
 
 "@pie-lib/correct-answer-toggle@2.3.6", "@pie-lib/correct-answer-toggle@^2.3.6":
   version "2.3.6"
@@ -2271,7 +2284,7 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/graphing@^2.1.0":
+"@pie-lib/graphing@^2.0.0", "@pie-lib/graphing@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-2.1.0.tgz#111fce21aa6031aca2146b6495c8d8a3bdf0771b"
   integrity sha512-jCeVr7w9TPB6+nTSQ4FKfsDqMllc/g3Tw4/5JhLr/gi+1E71DzoT09uMqvPddhIFklaNbvhPV8P3UsG1Wr922A==
@@ -2385,7 +2398,7 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/render-ui@^4.9.0":
+"@pie-lib/render-ui@^4.8.4", "@pie-lib/render-ui@^4.9.0":
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.9.0.tgz#992e94e49b5f61b269926a9d004c3fb6ee593175"
   integrity sha512-fOOAJcwfZqafbtNTzKXdpTYoxo4CweN/NyAOtFJKWfSTb8PzU5+UDu4N+WDMWHDEikdhoEXT2/yUCgEHNIF4Sg==
@@ -2438,6 +2451,38 @@
     lodash "^4.17.11"
     react-portal "^4.2.0"
     trigonometry-calculator "^2.0.0"
+
+"@pie-ui/charting@^0.2.32":
+  version "0.2.32"
+  resolved "https://registry.yarnpkg.com/@pie-ui/charting/-/charting-0.2.32.tgz#70b583a069b96658f4e3fd9c9f173e5a437b1311"
+  integrity sha512-jxg2Ix7/vq5xY0yuilyfQXxTYnlGbSmEINJDqvulv4MJtw938mQcZxkSyAaJknFB+gMl+9/Jk6u/ios1ILmPvg==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-framework/pie-player-events" "^0.1.0"
+    "@pie-lib/charting" "^4.2.22"
+    "@pie-lib/math-rendering" "^2.2.0"
+    "@pie-lib/render-ui" "^4.8.4"
+    classnames "^2.2.5"
+    debug "^4.1.1"
+    lodash "^4.17.15"
+    react "^16.8.1"
+    react-dom "^16.8.1"
+
+"@pie-ui/graphing@^3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@pie-ui/graphing/-/graphing-3.0.9.tgz#55ae32602c423622834b93c823c0cdaf03e8736d"
+  integrity sha512-EjPoRzAoMF4B2ixUprgu+BDC/J+7m2eu84Bf6eQRO6CHu+HnUxHZ0F9ECfwT0ZPNjigh4s0zzAopa5LYXdArkw==
+  dependencies:
+    "@material-ui/core" "^3.9.2"
+    "@pie-framework/pie-player-events" "^0.1.0"
+    "@pie-lib/correct-answer-toggle" "2.3.5"
+    "@pie-lib/graphing" "^2.0.0"
+    "@pie-lib/math-rendering" "^2.2.0"
+    "@pie-lib/render-ui" "^4.8.4"
+    classnames "^2.2.5"
+    debug "^4.1.1"
+    react "^16.8.1"
+    react-dom "^16.8.1"
 
 "@pslb/estree-helper@^4.0.4":
   version "4.0.4"

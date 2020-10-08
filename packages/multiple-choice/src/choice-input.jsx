@@ -75,6 +75,7 @@ const inputStyles = {
     ...colorStyle('disabled-color', color.text()),
     opacity: 0.6,
     cursor: 'not-allowed !important',
+    pointerEvents: 'initial !important',
   },
 };
 

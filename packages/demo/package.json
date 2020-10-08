@@ -19,6 +19,8 @@
     "@pie-ui/multiple-choice": "^4.13.5",
     "@pie-ui/number-line": "^7.2.5",
     "@pie-ui/placement-ordering": "^4.7.40",
+    "@pie-ui/charting": "^0.2.32",
+    "@pie-ui/graphing": "^3.0.9",
     "@pie-ui/protractor": "^2.2.23",
     "@pie-ui/ruler": "^2.2.23",
     "@pie-ui/select-text": "^1.6.35",

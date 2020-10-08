@@ -6,8 +6,7 @@ import { DragSource } from 'react-dnd';
 import { uid } from '@pie-lib/drag';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import green from '@material-ui/core/colors/green';
-import orange from '@material-ui/core/colors/orange';
+import { color } from '@pie-lib/render-ui';
 import debug from 'debug';
 
 const log = debug('@pie-ui:categorize:choice');
@@ -48,7 +47,7 @@ export class Layout extends React.Component {
     return (
       <div className={rootNames}>
         <Card className={cardNames}>
-          <CardContent dangerouslySetInnerHTML={{ __html: content }} />
+          <CardContent classes={{ root: classes.cardRoot }} dangerouslySetInnerHTML={{ __html: content }} />
         </Card>
       </div>
     );
@@ -61,19 +60,27 @@ const styles = () => ({
     height: '100%',
     width: '100%',
     '&.correct': {
-      border: `solid 1px ${green[500]}`
+      border: `solid 2px ${color.correct()}`
     },
     '&.incorrect': {
-      border: `solid 1px ${orange[500]}`
+      border: `solid 2px ${color.incorrect()}`
     }
   },
+  cardRoot: {
+    color: color.text(),
+    backgroundColor: color.background(),
+    border: '1px solid'
+  },
   disabled: {
-    cursor: 'inherit'
+    cursor: 'not-allowed',
+    opacity: '0.6'
   },
   dragging: {
     cursor: 'move'
   },
   card: {
+    color: color.text(),
+    backgroundColor: color.background(),
     width: '100%'
   }
 });
@@ -96,7 +103,7 @@ export class Choice extends React.Component {
       correct
     } = this.props;
     return connectDragSource(
-      <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ width: '100%', height: 'max-content' }}>
         <Styled
           id={id}
           content={content}

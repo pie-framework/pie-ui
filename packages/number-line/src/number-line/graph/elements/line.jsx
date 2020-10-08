@@ -7,13 +7,14 @@ import classNames from 'classnames';
 import injectSheet from 'react-jss';
 import isEqual from 'lodash/isEqual';
 import isNumber from 'lodash/isNumber';
+import { color } from '@pie-lib/render-ui';
 
 const duration = '150ms';
 
 const style = {
   line: {
     '& .line-handle': {
-      stroke: 'var(--line-stroke, black)',
+      stroke: color.primary(),
       cursor: 'pointer',
       strokeWidth: '5px',
       transition: `opacity ${duration} linear, 
@@ -30,22 +31,22 @@ const style = {
   },
   selected: {
     '& .line-handle': {
-      stroke: '#aaaaff'
+      stroke: color.primaryDark()
     },
     '& circle': {
-      stroke: '#aaaaff'
+      stroke: color.primaryDark()
     }
   },
   correct: {
     '& .line-handle': {
       cursor: 'inherit',
-      stroke: 'green'
+      stroke: color.correct()
     }
   },
   incorrect: {
     '& .line-handle': {
       cursor: 'inherit',
-      stroke: 'orange'
+      stroke: color.incorrect()
     }
   }
 };

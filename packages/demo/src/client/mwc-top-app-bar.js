@@ -2,7 +2,7 @@
 
 var __decorate =
   (this && this.__decorate) ||
-  function(decorators, target, key, desc) {
+  function (decorators, target, key, desc) {
     var c = arguments.length,
       r =
         c < 3
@@ -41,13 +41,48 @@ import {
   property,
   query,
   customElement,
-  classMap
+  classMap,
 } from '@material/mwc-base/base-element.js';
 import MDCTopAppBarFoundation from '@material/top-app-bar/standard/foundation.js';
 import MDCShortTopAppBarFoundation from '@material/top-app-bar/short/foundation.js';
 import MDCFixedTopAppBarFoundation from '@material/top-app-bar/fixed/foundation.js';
 import { strings } from '@material/top-app-bar/constants.js';
 import { style } from './mwc-top-app-bar-css.js';
+
+window.inputs = {};
+
+window.setColorValue = function (input, color, value) {
+  document.body.style.setProperty(color, value);
+
+  window.inputs[color] = input;
+
+  input.value = value;
+};
+
+window.setBlackTextOnWhiteBackground = function () {
+  if (window.inputs['--pie-background'])
+    window.inputs['--pie-background'].value = 'white';
+  document.body.style.setProperty('--pie-background', 'white');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'black';
+  document.body.style.setProperty('--pie-text', 'black');
+};
+
+window.setWhiteTextOnBlackBackground = function () {
+  if (window.inputs['--pie-background'])
+    window.inputs['--pie-background'].value = 'black';
+  document.body.style.setProperty('--pie-background', 'black');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'white';
+  document.body.style.setProperty('--pie-text', 'white');
+};
+
+window.setYellowTextOnBlueBackground = function () {
+  if (window.inputs['--pie-background'])
+    window.inputs['--pie-background'].value = 'darkblue';
+  document.body.style.setProperty('--pie-background', 'darkblue');
+  if (window.inputs['--pie-text']) window.inputs['--pie-text'].value = 'yellow';
+  document.body.style.setProperty('--pie-text', 'yellow');
+};
+
 let TopAppBar = class TopAppBar extends BaseElement {
   constructor() {
     super(...arguments);
@@ -55,7 +90,7 @@ let TopAppBar = class TopAppBar extends BaseElement {
     this.type = '';
     this.dense = false;
     // does not work with prominent
-    this.extraRow = false;
+    this.extraRow = true;
   }
   get mdcFoundationClass() {
     return this.type === 'fixed' || this.type === 'prominentFixed'
@@ -84,14 +119,131 @@ let TopAppBar = class TopAppBar extends BaseElement {
       'mdc-top-app-bar--short-collapsed': this.type === 'shortCollapsed',
       'mdc-top-app-bar--prominent':
         this.type === 'prominent' || this.type === 'prominentFixed',
-      'mdc-top-app-bar--dense': this.dense
+      'mdc-top-app-bar--dense': this.dense,
     };
     const extraRow = this.extraRow
       ? html`
           <div class="mdc-top-app-bar__row">
             <section class="mdc-top-app-bar__section">
+            <div class="mdc-top-app-bar__row">
               <slot name="extraRow"></slot>
+              <section style="display: block">
+                <label>Text Color</label>
+                <input onblur="setColorValue(this, '--pie-text', this.value)"
+                 value="${document.body.style.getPropertyValue('--pie-text')}"
+                  onchange="setColorValue(this, '--pie-text', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Disabled Color</label>
+                <input onblur="setColorValue(this, '--pie-disabled', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-disabled'
+                 )}"
+                  onchange="setColorValue(this, '--pie-disabled', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Correct Color</label>
+                <input onblur="setColorValue(this, '--pie-correct', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-correct'
+                 )}"
+                  onchange="setColorValue(this, '--pie-correct', this.value)" />
+              </section>
+              <br />
+              <section>
+                <label>Incorrect Color</label>
+                <input onblur="setColorValue(this, '--pie-incorrect', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-incorrect'
+                 )}"
+                  onchange="setColorValue(this, '--pie-incorrect', this.value)" />
+              </section>
+              <br />
+              </div>
+              <div class="mdc-top-app-bar__row">
+              <section>
+                <label>Primary Color</label>
+                <input onblur="setColorValue(this, '--pie-primary', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-primary'
+                 )}"
+                  onchange="setColorValue(this, '--pie-primary', this.value)" />
+              </section>
+              
+              <section>
+                <label>Primary Dark Color</label>
+                <input onblur="setColorValue(this, '--pie-primary-dark', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-primary-dark'
+                 )}"
+                  onchange="setColorValue(this, '--pie-primary-dark', this.value)" />
+              </section>
+              <section>
+                <label>Primary Light Color</label>
+                <input onblur="setColorValue(this, '--pie-primary-light', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-primary-light'
+                 )}"
+                  onchange="setColorValue(this, '--pie-primary-light', this.value)" />
+              </section>
+              <br />
+              </div>
+              <div class="mdc-top-app-bar__row">
+              <section>
+                <label>Secondary Color</label>
+                <input onblur="setColorValue(this, '--pie-secondary', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-secondary'
+                 )}"
+                  onchange="setColorValue(this, '--pie-secondary', this.value)" />
+              </section>
+              <section>
+                <label>Secondary Dark Color</label>
+                <input onblur="setColorValue(this, '--pie-secondary-dark', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-secondary-dark'
+                 )}"
+                  onchange="setColorValue(this, '--pie-secondary-dark', this.value)" />
+              </section>
+              <section>
+                <label>Secondary Light Color</label>
+                <input onblur="setColorValue(this, '--pie-secondary-light', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-secondary-light'
+                 )}"
+                  onchange="setColorValue(this, '--pie-secondary-light', this.value)" />
+              </section>
+              <br />
+              </div>
+              <div class="mdc-top-app-bar__row">
+              <section>
+                <label>Background Color</label>
+                <input onblur="setColorValue(this, '--pie-background', this.value)"
+                 value="${document.body.style.getPropertyValue(
+                   '--pie-background'
+                 )}"
+                  onchange="setColorValue(this, '--pie-background', this.value)" />
+              </section>
+              <br />
+                <div>
+                    <button onclick="setBlackTextOnWhiteBackground()">
+                        Black Text on White Background
+                    </button>
+                </div>
+                <div>
+                    <button onclick="setWhiteTextOnBlackBackground()">
+                        White Text on Black Background
+                    </button>
+                </div>
+                <div>
+                    <button onclick="setYellowTextOnBlueBackground()">
+                        Yellow Text on Blue Background
+                    </button>
+                </div>
             </section>
+            </div>
           </div>
         `
       : '';
@@ -137,24 +289,24 @@ let TopAppBar = class TopAppBar extends BaseElement {
         this.dispatchEvent(
           new Event(strings.NAVIGATION_EVENT, {
             bubbles: true,
-            cancelable: true
+            cancelable: true,
           })
         );
       },
-      registerScrollHandler: handler =>
+      registerScrollHandler: (handler) =>
         this.scrollTarget.addEventListener('scroll', handler),
-      deregisterScrollHandler: handler =>
+      deregisterScrollHandler: (handler) =>
         this.scrollTarget.removeEventListener('scroll', handler),
-      registerResizeHandler: handler =>
+      registerResizeHandler: (handler) =>
         window.addEventListener('resize', handler),
-      deregisterResizeHandler: handler =>
+      deregisterResizeHandler: (handler) =>
         window.removeEventListener('resize', handler),
       getViewportScrollY: () =>
         this.scrollTarget[
           this.scrollTarget === window ? 'pageYOffset' : 'scrollTop'
         ],
       getTotalActionItems: () =>
-        this._actionItemsSlot.assignedNodes({ flatten: true }).length
+        this._actionItemsSlot.assignedNodes({ flatten: true }).length,
     });
   }
   // override that prevents `super.firstUpdated` since we are controlling when `createFoundation` is called.

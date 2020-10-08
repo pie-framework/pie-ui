@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { InlineDropdown as DropDown } from '@pie-lib/mask-markup';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
+import { withStyles } from '@material-ui/core/styles';
 
 export class InlineDropdown extends React.Component {
   static propTypes = {
+    classes: PropTypes.object,
     prompt: PropTypes.string,
     disabled: PropTypes.bool,
     markup: PropTypes.string,
@@ -48,10 +50,10 @@ export class InlineDropdown extends React.Component {
 
   render() {
     const { showCorrectAnswer } = this.state;
-    const { prompt, mode, rationale, teacherInstructions } = this.props;
+    const { classes, prompt, mode, rationale, teacherInstructions } = this.props;
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         {
           teacherInstructions && (
             <Collapsible
@@ -88,4 +90,12 @@ export class InlineDropdown extends React.Component {
   }
 }
 
-export default InlineDropdown;
+const styles = (theme) => ({
+  mainContainer: {
+    color: color.text(),
+    backgroundColor: color.background(),
+    padding: theme.spacing.unit
+  }
+});
+
+export default withStyles(styles)(InlineDropdown);

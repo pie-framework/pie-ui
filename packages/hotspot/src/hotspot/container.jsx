@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Layer, Stage } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
+import { color } from '@pie-lib/render-ui';
 
 import Rectangle from './rectangle';
 import Polygon from './polygon';
@@ -122,8 +123,8 @@ const styles = theme => ({
     position: 'absolute'
   },
   resize: {
-    borderBottom: '1px solid #727272',
-    borderRight: '1px solid #727272',
+    borderBottom: `1px solid ${color.disabled()}`,
+    borderRight: `1px solid ${color.disabled()}`,
     bottom: '-10px',
     cursor: 'se-resize',
     height: '10px',

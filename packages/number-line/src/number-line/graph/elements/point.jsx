@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { color } from '@pie-lib/render-ui';
 import Draggable from '../../../draggable';
 import classNames from 'classnames';
 import injectSheet from 'react-jss';
@@ -15,28 +15,28 @@ const style = {
     fill ${duration} linear,
     stroke ${duration} linear`,
 
-    stroke: 'var(--point-stroke, black)',
-    fill: 'var(--point-stroke, black)',
+    stroke: color.primary(),
+    fill: color.primary(),
     '&.react-draggable-dragging': {
       opacity: 0.25,
       r: '10px'
     }
   },
   selected: {
-    stroke: '#aaaaff'
+    stroke: color.primaryDark()
   },
   correct: {
     cursor: 'inherit',
-    stroke: 'green',
-    fill: 'green'
+    stroke: color.correct(),
+    fill: color.correct()
   },
   incorrect: {
     cursor: 'inherit',
-    stroke: 'orange',
-    fill: 'orange'
+    stroke: color.incorrect(),
+    fill: color.incorrect()
   },
   empty: {
-    fill: 'var(--point-fill, white)'
+    fill: 'var(--point-fill, white)' // TODO hardcoded color
   }
 };
 

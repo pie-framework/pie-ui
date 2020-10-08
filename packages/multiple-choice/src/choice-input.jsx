@@ -11,7 +11,7 @@ import classNames from 'classnames';
 
 const styleSheet = (theme) => ({
   label: {
-    color: color.text(), //'var(--choice-input-color, black)',
+    color: `${color.text()} !important`, //'var(--choice-input-color, black)',
     display: 'inline-block',
     verticalAlign: 'middle',
     cursor: 'pointer',
@@ -19,12 +19,16 @@ const styleSheet = (theme) => ({
   row: {
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: color.background()
   },
   checkboxHolder: {
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: color.background(),
     flex: 1,
-    '& label': {},
+    '& label': {
+      color: color.text()
+    },
   },
   rationale: {
     paddingLeft: theme.spacing.unit * 16,
@@ -33,7 +37,8 @@ const styleSheet = (theme) => ({
 
 const formStyleSheet = {
   label: {
-    color: color.text(), //'var(--choice-input-color, black)'
+    color: `${color.text()} !important`, //'var(--choice-input-color, black)'
+    backgroundColor: color.background()
   },
 };
 
@@ -47,7 +52,7 @@ const CLASS_NAME = 'multiple-choice-component';
 
 const colorStyle = (varName, fallback) => ({
   [`&.${CLASS_NAME}`]: {
-    color: `var(--choice-input-${varName}, ${fallback})`,
+    color: `var(--choice-input-${varName}, ${fallback}) !important`,
   },
 });
 

@@ -4,6 +4,7 @@ import { mq } from '@pie-lib/math-input';
 import cx from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { color } from '@pie-lib/render-ui';
 
 export class SimpleQuestionBlockRaw extends React.Component {
   static propTypes = {
@@ -95,7 +96,7 @@ const SimpleQuestionBlock = withStyles(theme => ({
     textAlign: 'left',
     padding: theme.spacing.unit,
     '&.mq-math-mode': {
-      border: '1px solid lightgrey'
+      border: `1px solid ${color.disabled()}`
     }
   },
   expression: {
@@ -117,10 +118,10 @@ const SimpleQuestionBlock = withStyles(theme => ({
     }
   },
   correct: {
-    color: 'green'
+    color: color.correct()
   },
   incorrect: {
-    color: 'red'
+    color: color.incorrect()
   }
 }))(SimpleQuestionBlockRaw);
 

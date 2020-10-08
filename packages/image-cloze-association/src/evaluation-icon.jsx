@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import Check from '@material-ui/icons/Check';
 import Close from '@material-ui/icons/Close';
+import { color } from '@pie-lib/render-ui';
 
 const getCorrectnessClass = (isCorrect, filled) => {
   if (filled) {
@@ -44,18 +45,18 @@ EvaluationIcon.defaultProps = {
 
 const styles = () => ({
   correctEmpty: {
-    color: 'green'
+    color: color.correct()
   },
   correctFilled: {
-    color: 'white',
-    backgroundColor: 'green'
+    color: color.background(),
+    backgroundColor: color.correct()
   },
   incorrectEmpty: {
-    color: 'red'
+    color: color.incorrect()
   },
   incorrectFilled: {
-    color: 'white',
-    backgroundColor: 'red'
+    color: color.background(),
+    backgroundColor: color.incorrect()
   }
 });
 

@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import Choice from './choice';
 import PlaceHolder from './droppable-placeholder';
-import orange from '@material-ui/core/colors/orange';
+import { color } from '@pie-lib/render-ui';
 
 export const CategoryType = {
   id: PropTypes.string.isRequired,
@@ -71,7 +71,7 @@ export class Category extends React.Component {
 }
 const styles = () => ({
   incorrect: {
-    border: `solid 1px ${orange[500]}`
+    border: `solid 2px ${color.incorrect()}`
   },
   placeholder: {
     minHeight: '60px',

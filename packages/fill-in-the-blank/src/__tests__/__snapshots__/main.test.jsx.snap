@@ -4,19 +4,21 @@ exports[`Main snapshot renders 1`] = `
 <ContextProvider
   value="1"
 >
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <div
-    className="className"
-  >
-    <WithStyles(Content)
-      onDropChoice={[Function]}
-      onRemoveChoice={[Function]}
+  <div>
+    <_default
+      onToggle={[Function]}
+      show={false}
+      toggled={false}
     />
-    <WithStyles(Choices) />
+    <div
+      className="className"
+    >
+      <WithStyles(Content)
+        onDropChoice={[Function]}
+        onRemoveChoice={[Function]}
+      />
+      <WithStyles(Choices) />
+    </div>
   </div>
 </ContextProvider>
 `;

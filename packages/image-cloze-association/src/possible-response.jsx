@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from '@pie-lib/drag';
 import { withStyles } from '@material-ui/core/styles';
+import { color } from '@pie-lib/render-ui';
 
 import EvaluationIcon from './evaluation-icon';
 import c from './constants';
@@ -59,23 +60,23 @@ PossibleResponse.defaultProps = {
   containerStyle: {}
 };
 
-const styles = theme => ({
+const styles = () => ({
   base: {
-    backgroundColor: '#fff',
-    border: `1px solid ${theme.palette.primary.main}`,
+    backgroundColor: color.background(),
+    border: `1px solid ${color.primary()}`,
     display: 'flex',
     marginLeft: 2,
     marginTop: 2,
     width: 'fit-content'
   },
   baseCorrect: {
-    border: '2px solid green'
+    border: `2px solid ${color.correct()}`
   },
   baseIncorrect: {
-    border: '2px solid red'
+    border: `2px solid ${color.incorrect()}`
   },
   span: {
-    backgroundColor: '#fff'
+    backgroundColor: color.background()
   }
 });
 

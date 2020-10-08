@@ -1,14 +1,14 @@
-include mixins 
+include mixins
 
 html
-  head 
+  head
     meta(charset="utf-8")
     link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
     link(href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css", rel="stylesheet")
     script(src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js", charset="utf-8")
     link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
 
-    style. 
+    style.
 
       html, body {
         margin-left: 0;
@@ -24,8 +24,6 @@ html
       }
 
       .content{
-        position: relative;
-        top: 50px;
         padding: 30px;
       }
 
@@ -41,20 +39,20 @@ html
       }
 
 
-  
-  body 
+
+  body
     +top_bar(gitInfo)
     div.content
-      table 
-        
-        for p in packages 
-          tr 
+      table
+
+        for p in packages
+          tr
             td.name
               a(href=`/${p.shortName}.html`)
                 | !{p.name}@!{p.version}
-            td 
+            td
               | !{p.description}
 
-        
+
 
     script(src="/assets/index.js", charset="utf-8")

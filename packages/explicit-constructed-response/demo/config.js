@@ -3,7 +3,7 @@ const model = (id, extras) => {
     element: 'explicit-constructed-response',
     disabled: false,
     // eslint-disable-next-line quotes
-    markup: `The best fruit in the world is {{0}}, <div> The best vegetable in the world is {{1}}</div>`
+    markup: `The best fruit in the world is {{0}}, <div style="margin-top: 20px;"> The best vegetable in the world is {{1}}</div>`
   };
 
   return Object.assign(defaults, { id }, extras);
@@ -17,6 +17,7 @@ module.exports = {
     model('2', { disabled: true }),
     model('3', {
       disabled: true,
+      showCorrectAnswer: true,
       feedback: {
         0: {
           correct: true

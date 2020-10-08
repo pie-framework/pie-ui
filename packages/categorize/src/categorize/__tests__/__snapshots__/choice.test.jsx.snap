@@ -8,6 +8,11 @@ exports[`layout correct 1`] = `
     className=""
   >
     <WithStyles(CardContent)
+      classes={
+        Object {
+          "root": undefined,
+        }
+      }
       dangerouslySetInnerHTML={
         Object {
           "__html": "Foo",
@@ -26,6 +31,11 @@ exports[`layout disabled 1`] = `
     className=""
   >
     <WithStyles(CardContent)
+      classes={
+        Object {
+          "root": undefined,
+        }
+      }
       dangerouslySetInnerHTML={
         Object {
           "__html": "Foo",
@@ -44,6 +54,11 @@ exports[`layout isDragging 1`] = `
     className=""
   >
     <WithStyles(CardContent)
+      classes={
+        Object {
+          "root": undefined,
+        }
+      }
       dangerouslySetInnerHTML={
         Object {
           "__html": "Foo",
@@ -62,6 +77,11 @@ exports[`layout renders 1`] = `
     className=""
   >
     <WithStyles(CardContent)
+      classes={
+        Object {
+          "root": undefined,
+        }
+      }
       dangerouslySetInnerHTML={
         Object {
           "__html": "Foo",

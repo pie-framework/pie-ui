@@ -6,10 +6,8 @@ import { DragSource } from 'react-dnd';
 import debug from 'debug';
 import { uid } from '@pie-lib/drag';
 import Card from '@material-ui/core/Card';
+import { color } from '@pie-lib/render-ui';
 import CardContent from '@material-ui/core/CardContent';
-import grey from '@material-ui/core/colors/grey';
-import orange from '@material-ui/core/colors/orange';
-import green from '@material-ui/core/colors/green';
 
 const log = debug('@pie-ui:fill-in-the-blank:choice');
 
@@ -46,10 +44,11 @@ export class Choice extends React.Component {
           className={classNames(
             correct === false && classes.incorrect,
             correct === true && classes.correct,
+            classes.tag,
             disabled && correct === undefined && classes.disabledCard
           )}
         >
-          <CardContent>
+          <CardContent classes={{ root: classes.cardContentRoot }}>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </CardContent>
         </Card>
@@ -58,27 +57,35 @@ export class Choice extends React.Component {
   }
 }
 const styles = () => ({
+  tag: {
+    color: color.text(),
+    backgroundColor: color.background(),
+  },
+  cardContentRoot: {
+    border: '1px solid lightgray' // TODO hardcoded color
+  },
   choice: {
     padding: 0,
-    backgroundColor: 'white',
+    color: color.text(),
+    backgroundColor: color.background(),
     cursor: 'move'
   },
   disabledChoice: {
     cursor: 'auto'
   },
   incorrect: {
-    border: `solid 1px ${orange[500]}`,
+    border: `solid 1px ${color.incorrect()}`,
     boxShadow: 'none',
     borderRadius: 0
   },
   correct: {
-    border: `solid 1px ${green[500]}`,
+    border: `solid 1px ${color.correct()}`,
     boxShadow: 'none',
     borderRadius: 0
   },
   disabledCard: {
     boxShadow: 'none',
-    border: `solid 1px ${grey[400]}`
+    border: `solid 1px ${color.disabled()}`
   }
 });
 

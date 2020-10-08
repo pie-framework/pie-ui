@@ -11,6 +11,7 @@ import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 import SimpleQuestionBlock from './simple-question-block';
 import MathQuill from '@pie-framework/mathquill';
+import { color } from '@pie-lib/render-ui';
 let registered = false;
 
 const REGEX = /{{response}}/gm;
@@ -477,13 +478,13 @@ export class Main extends React.Component {
 
 const styles = (theme) => ({
   mainContainer: {
-    display: 'inline-block',
+    display: 'inline-block'
   },
   tooltip: {
-    background: 'white',
-    color: 'black',
+    background: color.background(),
+    color: color.text(),
     padding: theme.spacing.unit * 2,
-    border: '1px solid black',
+    border: `1px solid $${color.text()}`,
     fontSize: '16px',
   },
   tooltipPopper: {
@@ -504,6 +505,9 @@ const styles = (theme) => ({
   main: {
     width: '100%',
     position: 'relative',
+    padding: theme.spacing.unit / 2,
+    backgroundColor: color.background(),
+    color: color.text()
   },
   title: {
     fontSize: '1.1rem',
@@ -548,10 +552,10 @@ const styles = (theme) => ({
     letterSpacing: '0.5px',
   },
   correct: {
-    borderColor: 'green !important',
+    borderColor: `${color.correct()} !important`,
   },
   incorrect: {
-    borderColor: 'red !important',
+    borderColor: `${color.incorrect()} !important`,
   },
   blockContainer: {
     margin: theme.spacing.unit,
@@ -567,10 +571,11 @@ const styles = (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRight: '2px solid grey',
+    borderRight: `2px solid ${color.disabled()}`,
   },
   blockMath: {
-    color: '#bdbdbd',
+    color: color.text(),
+    backgroundColor: color.background(),
     padding: theme.spacing.unit / 2,
     display: 'flex',
     alignItems: 'center',

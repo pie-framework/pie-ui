@@ -6,7 +6,7 @@ module.exports = {
   models: [
     {
       element: 'placement-ordering',
-      id: '1',
+      id: '3',
       prompt: 'Arrange the fruits alphabetically',
       choices: [
         {

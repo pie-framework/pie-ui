@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Collapsible, Feedback } from '@pie-lib/render-ui';
+import { color, Collapsible, Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -187,6 +187,8 @@ export class Main extends React.Component {
 
 const styles = theme => ({
   mainContainer: {
+    color: color.text(),
+    backgroundColor: color.background(),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'

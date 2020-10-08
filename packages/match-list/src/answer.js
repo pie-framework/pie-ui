@@ -7,6 +7,7 @@ import debug from 'debug';
 import { withStyles } from '@material-ui/core/styles';
 import { PlaceHolder } from '@pie-lib/drag';
 import isEmpty from 'lodash/isEmpty';
+import { color } from '@pie-lib/render-ui';
 
 const log = debug('pie-elements:match-title:answer');
 
@@ -45,8 +46,9 @@ const AnswerContent = withStyles({
     opacity: 0.2
   },
   answerContent: {
-    backgroundColor: 'white',
-    border: '1px solid #c2c2c2',
+    color: color.text(),
+    backgroundColor: color.background(),
+    border: '1px solid #c2c2c2', // TODO hardcoded color
     cursor: 'pointer',
     width: '100%',
     padding: '10px',
@@ -59,14 +61,14 @@ const AnswerContent = withStyles({
     opacity: 0.5
   },
   disabled: {
-    backgroundColor: '#ececec',
+    backgroundColor: color.background(),
     cursor: 'not-allowed'
   },
   incorrect: {
-    border: 'solid 1px orange'
+    border: `1px solid ${color.incorrect()}`
   },
   correct: {
-    border: 'solid 1px green'
+    border: `1px solid ${color.correct()}`
   }
 })(props => {
   const {
@@ -173,10 +175,10 @@ const StyledAnswer = withStyles({
     textAlign: 'center'
   },
   incorrect: {
-    border: '1px solid var(--feedback-incorrect-bg-color, orange)'
+    border: `1px solid var(--feedback-incorrect-bg-color, ${color.incorrect()})`
   },
   correct: {
-    border: '1px solid var(--feedback-correct-bg-color, green)'
+    border: `1px solid var(--feedback-correct-bg-color, ${color.correct()})`
   }
 })(Answer);
 

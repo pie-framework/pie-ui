@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Line, Group, Text } from 'react-konva';
+import { Line, Group } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
 import Image from './image';

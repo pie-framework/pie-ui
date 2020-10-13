@@ -82,14 +82,27 @@ class PolygonComponent extends React.Component {
       ? this.getEvaluateOutlineColor(isCorrect, outlineColor)
       : outlineColor;
     const outlineWidth = this.getOutlineWidth(selected, strokeWidth);
-    const iconSrc = isCorrect ? faCorrect : faWrong;
-    const pointsParsed = this.parsePointsForKonva(points);
 
+    const pointsParsed = this.parsePointsForKonva(points);
     const center = this.getPolygonCenter(points);
     const iconX = center[0];
     const iconY = center[1];
-    const textX = iconX - 13;
-    const textY = iconY + 25;
+
+    // Correctly selected hotspot: white checkmark in green circle (plus the selected hotspot will have a heavy outline, as on “Gather”)
+    // Correctly not selected hotspot: none
+    // Incorrectly selected hostpot: white “X” in red circle, plus the heavy outline around the selection should appear in red
+    // Incorrectly not selected hotspot: white “X” in red circle
+    let iconSrc;
+
+    if (selected) {
+      if (isCorrect) {
+        iconSrc = faCorrect;
+      } else {
+        iconSrc = faWrong;
+      }
+    } else if (!isCorrect) {
+      iconSrc = faWrong;
+    }
 
     return (
       <Group>
@@ -106,20 +119,13 @@ class PolygonComponent extends React.Component {
           onMouseLeave={this.handleMouseLeave}
           onMouseEnter={this.handleMouseEnter}
         />
-        {isEvaluateMode ? (
+        {(isEvaluateMode && iconSrc) ? (
           <Image
             src={iconSrc}
             x={iconX}
             y={iconY}
           />
         ): null}
-        {isEvaluateMode ? (
-          <Text
-            text={this.getEvaluateText(isCorrect, selected)}
-            x={textX}
-            y={textY}
-          />
-        ) : null}
       </Group>
     );
   }

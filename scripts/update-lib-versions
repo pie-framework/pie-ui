@@ -1,2 +1,4 @@
 #!/usr/bin/env fish
+
+which ncu
 ncu --filter "/^@pie-lib/.*/" -u

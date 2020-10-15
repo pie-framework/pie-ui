@@ -2169,10 +2169,10 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/charting@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.3.1.tgz#58fd08f08fe8f792f47d48934a550e179fa76808"
-  integrity sha512-pclhg7m9L0zCM3s3kdZ2igrr9lD67xEWUsXvqmBAjxIYWvS2oMRMgu5CuGk+XUjfwkzpv+rVIaQ5pVvbBM096g==
+"@pie-lib/charting@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/charting/-/charting-4.4.0.tgz#eda2f44f523038ae81c2c5e05ae10649c42650a4"
+  integrity sha512-BjjWe3jQUId8rCgHTCAFX/JF8V5por43x4BlFnAcAvcDUGM38kPZGtdR6vUbT6FTFH1a6aRKggFtRTycniLRQw==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
@@ -2278,10 +2278,10 @@
     debug "^4.1.1"
     lodash "^4.17.11"
 
-"@pie-lib/graphing@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-2.1.0.tgz#111fce21aa6031aca2146b6495c8d8a3bdf0771b"
-  integrity sha512-jCeVr7w9TPB6+nTSQ4FKfsDqMllc/g3Tw4/5JhLr/gi+1E71DzoT09uMqvPddhIFklaNbvhPV8P3UsG1Wr922A==
+"@pie-lib/graphing@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/graphing/-/graphing-2.2.0.tgz#bd4f8de231d78b224810971051447c9af7a0a1b7"
+  integrity sha512-1HuZCXExKCmDoc9CbaTjaP0RXHxQHr5Ua55kq4eGrKhdK2OSxzcayFu9xq1E8NVW4Le097T3wlAT5gfuzaJ5BQ==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@material-ui/core" "^3.8.3"
@@ -2315,10 +2315,10 @@
     classnames "^2.2.6"
     prop-types "^15.6.2"
 
-"@pie-lib/mask-markup@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.8.0.tgz#52ea63c61af2ffedf417f1f2f79f1184f5be1249"
-  integrity sha512-0g7bG8DVYGFjaCfAkyPERSAO8bLyu69v4ekHw2zlBzvjRqx14/JOPbbXl3dMcEEBkJZimxA/SqpjZeJ5B7otsA==
+"@pie-lib/mask-markup@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/mask-markup/-/mask-markup-1.9.0.tgz#bb03a3d771cfc92fc42e91dbf2e905ce31aedd5e"
+  integrity sha512-sMRBaGek2BvmQkJ+zre3CAeQydJfWpUvhwC2kDwUZB0DTO/HNkY0TnzpcYq3L3plBNa4rxilCXvXhyZ9UsqaLA==
   dependencies:
     "@material-ui/core" "^3.9.3"
     "@pie-lib/drag" "^1.1.44"

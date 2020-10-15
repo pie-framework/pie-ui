@@ -573,5 +573,20 @@
     "committerDate": "2020-09-10 14:17:21 +0300",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.3.0"
+  },
+  {
+    "type": "feat",
+    "scope": "number-line",
+    "subject": "finalize color theme support and disabled handling",
+    "merge": null,
+    "header": "feat(number-line): finalize color theme support and disabled handling",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0a7c257b958aec0b2e2c3fde6300e8324a14eeb0",
+    "gitTags": "",
+    "committerDate": "2020-10-08 16:11:32 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.4.0"
   }
 ]

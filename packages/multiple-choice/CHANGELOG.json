@@ -1568,5 +1568,35 @@
     "committerDate": "2020-09-10 14:19:33 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multiple-choice@4.14.0"
+  },
+  {
+    "type": "feat",
+    "scope": "match",
+    "subject": "color theme support finalized and disabled support",
+    "merge": null,
+    "header": "feat(match): color theme support finalized and disabled support",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3ac0b8c45b510c03c292456607638adab15795de",
+    "gitTags": "",
+    "committerDate": "2020-10-08 19:52:56 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.15.0"
+  },
+  {
+    "type": "feat",
+    "scope": "multiple-choice",
+    "subject": "finalize color theme support and disabled handling",
+    "merge": null,
+    "header": "feat(multiple-choice): finalize color theme support and disabled handling",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "f080d5e47e9589e1455a3269c8cf6007002c397d",
+    "gitTags": "",
+    "committerDate": "2020-10-08 17:11:54 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multiple-choice@4.15.0"
   }
 ]

@@ -388,5 +388,20 @@
     "committerDate": "2020-09-07 14:47:46 +0300",
     "isTagged": true,
     "tag": "@pie-ui/hotspot@1.5.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Drop all the text annotations & update correctness icons. PD-166",
+    "merge": null,
+    "header": "fix: Drop all the text annotations & update correctness icons. PD-166",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3e1868113af6082f6e46eacd489a90339746ab3f",
+    "gitTags": "",
+    "committerDate": "2020-10-13 19:43:54 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.5.1"
   }
 ]

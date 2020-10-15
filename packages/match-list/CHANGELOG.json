@@ -673,5 +673,35 @@
     "committerDate": "2020-09-10 14:21:46 +0300",
     "isTagged": true,
     "tag": "@pie-ui/match-list@1.5.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "complete is false if 0 is part of session value PD-541",
+    "merge": null,
+    "header": "fix: complete is false if 0 is part of session value PD-541",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "8ba2d52a053c821456ba9f000f3b087bca3af660",
+    "gitTags": "",
+    "committerDate": "2020-10-13 16:07:11 +0530",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.6.0"
+  },
+  {
+    "type": "feat",
+    "scope": "match-list",
+    "subject": "finalize color theme support and disabled handling",
+    "merge": null,
+    "header": "feat(match-list): finalize color theme support and disabled handling",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "9d46d9237523b959fa3fed909b052b4ba30fef3b",
+    "gitTags": "",
+    "committerDate": "2020-10-12 15:21:53 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/match-list@1.6.0"
   }
 ]

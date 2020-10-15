@@ -403,5 +403,20 @@
     "committerDate": "2020-09-07 14:27:42 +0300",
     "isTagged": true,
     "tag": "@pie-ui/fill-in-the-blank@1.4.0"
+  },
+  {
+    "type": "feat",
+    "scope": "fill-in-the-blank",
+    "subject": "finalize color theme support and disabled handling",
+    "merge": null,
+    "header": "feat(fill-in-the-blank): finalize color theme support and disabled handling",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "882729ff3f956e5b156bc7cd05ca9709b1d8b032",
+    "gitTags": "",
+    "committerDate": "2020-10-12 16:49:01 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/fill-in-the-blank@1.5.0"
   }
 ]

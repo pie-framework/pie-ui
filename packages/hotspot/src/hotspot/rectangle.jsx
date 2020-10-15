@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Rect, Group, Text } from 'react-konva';
+import { Rect, Group } from 'react-konva';
 import { withStyles } from '@material-ui/core/styles';
 
 import Image from './image';
@@ -70,10 +70,22 @@ class RectComponent extends React.Component {
 
     const iconX = (x + (width / 2)) - 10;
     const iconY = (y + (height / 2)) - 10;
-    const textX = iconX - 13;
-    const textY = iconY + 25;
 
-    const iconSrc = isCorrect ? faCorrect : faWrong;
+    // Correctly selected hotspot: white checkmark in green circle (plus the selected hotspot will have a heavy outline, as on “Gather”)
+    // Correctly not selected hotspot: none
+    // Incorrectly selected hostpot: white “X” in red circle, plus the heavy outline around the selection should appear in red
+    // Incorrectly not selected hotspot: white “X” in red circle
+    let iconSrc;
+
+    if (selected) {
+      if (isCorrect) {
+        iconSrc = faCorrect;
+      } else {
+        iconSrc = faWrong;
+      }
+    } else if (!isCorrect) {
+      iconSrc = faWrong;
+    }
 
     return (
       <Group>
@@ -92,20 +104,13 @@ class RectComponent extends React.Component {
           x={x}
           y={y}
         />
-        {isEvaluateMode ? (
+        {(isEvaluateMode && iconSrc) ? (
           <Image
             src={iconSrc}
             x={iconX}
             y={iconY}
           />
         ): null}
-        {isEvaluateMode ? (
-          <Text
-            text={this.getEvaluateText(isCorrect, selected)}
-            x={textX}
-            y={textY}
-          />
-        ) : null}
       </Group>
     );
   }

@@ -29,6 +29,10 @@ const style = {
       }
     }
   },
+  disabled: {
+    cursor: 'not-allowed',
+    opacity: 0.8
+  },
   selected: {
     '& .line-handle': {
       stroke: color.primaryDark()
@@ -182,6 +186,7 @@ export class Line extends React.Component {
     };
 
     var lineClass = classNames(classes.line, {
+      [classes.disabled]: disabled,
       [classes.selected]: selected,
       [classes.correct]: correct === true,
       [classes.incorrect]: correct === false

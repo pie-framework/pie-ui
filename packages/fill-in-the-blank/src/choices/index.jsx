@@ -37,7 +37,7 @@ const styles = theme => ({
   choices: {
     padding: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    border: `solid 1px ${color.disabled()}`
+    border: `solid 1px ${color.primaryLight()}`
   },
   label: {
     textAlign: 'center'

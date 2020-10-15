@@ -1,6 +1,8 @@
 const gen = (id, domain, ticks) => ({
   id,
   element: 'number-line',
+  mode: 'evaluate',
+  disabled: true,
   correctResponse: [
     {
       type: 'point',

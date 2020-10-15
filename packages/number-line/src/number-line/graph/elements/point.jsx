@@ -20,10 +20,17 @@ const style = {
     '&.react-draggable-dragging': {
       opacity: 0.25,
       r: '10px'
+    },
+    '&:hover': {
+      stroke: color.primaryDark()
     }
   },
   selected: {
     stroke: color.primaryDark()
+  },
+  disabled: {
+    cursor: 'not-allowed',
+    opacity: 0.8
   },
   correct: {
     cursor: 'inherit',
@@ -36,7 +43,7 @@ const style = {
     fill: color.incorrect()
   },
   empty: {
-    fill: 'var(--point-fill, white)' // TODO hardcoded color
+    fill: color.secondary()
   }
 };
 
@@ -144,6 +151,7 @@ export class Point extends React.Component {
     };
 
     const circleClass = classNames(classes.point, {
+      [classes.disabled]: disabled,
       [classes.selected]: selected,
       [classes.correct]: correct === true,
       [classes.incorrect]: correct === false,

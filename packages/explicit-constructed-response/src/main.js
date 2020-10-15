@@ -97,12 +97,7 @@ const styles = theme => ({
   mainContainer: {
     padding: theme.spacing.unit,
     color: color.text(),
-    backgroundColor: color.background(),
-    '& input': {
-      border: '1px solid gray',
-      color: color.text(),
-      backgroundColor: color.background()
-    }
+    backgroundColor: color.background()
   },
   collapsible: {
     margin: `${theme.spacing.unit * 2} 0`,

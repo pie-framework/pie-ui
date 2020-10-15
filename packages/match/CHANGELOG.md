@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.5.0...@pie-ui/match@2.6.0) (2020-10-15)
+
+
+### Features
+
+* **match:** color theme support finalized and disabled support ([3ac0b8c](https://github.com/pie-framework/pie-ui/commit/3ac0b8c))
+
+
+
+
+
 # [2.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.7...@pie-ui/match@2.5.0) (2020-10-08)
 
 

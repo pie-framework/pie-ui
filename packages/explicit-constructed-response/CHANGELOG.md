@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.8.0...@pie-ui/explicit-constructed-response@1.9.0) (2020-10-15)
+
+
+### Bug Fixes
+
+* bump lib versions ([7888b18](https://github.com/pie-framework/pie-ui/commit/7888b18))
+
+
+### Features
+
+* **explicit-constructed-response:** finalize color theme support and disabled handling ([4f867db](https://github.com/pie-framework/pie-ui/commit/4f867db))
+
+
+
+
+
 # [1.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.7.33...@pie-ui/explicit-constructed-response@1.8.0) (2020-10-08)
 
 

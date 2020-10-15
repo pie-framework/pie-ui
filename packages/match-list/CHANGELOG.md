@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.5.0...@pie-ui/match-list@1.6.0) (2020-10-15)
+
+
+### Bug Fixes
+
+* complete is false if 0 is part of session value PD-541 ([8ba2d52](https://github.com/pie-framework/pie-ui/commit/8ba2d52))
+
+
+### Features
+
+* **match-list:** finalize color theme support and disabled handling ([9d46d92](https://github.com/pie-framework/pie-ui/commit/9d46d92))
+
+
+
+
+
 # [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match-list@1.4.39...@pie-ui/match-list@1.5.0) (2020-10-08)
 
 

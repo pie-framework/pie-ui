@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.3.0...@pie-ui/number-line@7.4.0) (2020-10-15)
+
+
+### Features
+
+* **number-line:** finalize color theme support and disabled handling ([0a7c257](https://github.com/pie-framework/pie-ui/commit/0a7c257))
+
+
+
+
+
 # [7.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.5...@pie-ui/number-line@7.3.0) (2020-10-08)
 
 

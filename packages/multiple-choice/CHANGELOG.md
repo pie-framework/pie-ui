@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.14.0...@pie-ui/multiple-choice@4.15.0) (2020-10-15)
+
+
+### Features
+
+* **match:** color theme support finalized and disabled support ([3ac0b8c](https://github.com/pie-framework/pie-elements/commit/3ac0b8c))
+* **multiple-choice:** finalize color theme support and disabled handling ([f080d5e](https://github.com/pie-framework/pie-elements/commit/f080d5e))
+
+
+
+
+
 # [4.14.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.5...@pie-ui/multiple-choice@4.14.0) (2020-10-08)
 
 

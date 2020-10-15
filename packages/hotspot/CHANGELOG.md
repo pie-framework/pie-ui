@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.5.0...@pie-ui/hotspot@1.5.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* Drop all the text annotations & update correctness icons. PD-166 ([3e18681](https://github.com/pie-framework/pie-elements/commit/3e18681))
+
+
+
+
+
 # [1.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.4...@pie-ui/hotspot@1.5.0) (2020-10-08)
 
 

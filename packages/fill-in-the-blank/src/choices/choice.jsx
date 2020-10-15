@@ -45,7 +45,7 @@ export class Choice extends React.Component {
             correct === false && classes.incorrect,
             correct === true && classes.correct,
             classes.tag,
-            disabled && correct === undefined && classes.disabledCard
+            disabled && classes.disabledCard
           )}
         >
           <CardContent classes={{ root: classes.cardContentRoot }}>
@@ -60,9 +60,7 @@ const styles = () => ({
   tag: {
     color: color.text(),
     backgroundColor: color.background(),
-  },
-  cardContentRoot: {
-    border: '1px solid lightgray' // TODO hardcoded color
+    border: `1px solid ${color.primary()}`
   },
   choice: {
     padding: 0,
@@ -85,7 +83,8 @@ const styles = () => ({
   },
   disabledCard: {
     boxShadow: 'none',
-    border: `solid 1px ${color.disabled()}`
+    opacity: 0.6,
+    cursor: 'not-allowed'
   }
 });
 

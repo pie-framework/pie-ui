@@ -62,6 +62,7 @@ const AnswerContent = withStyles({
   },
   disabled: {
     backgroundColor: color.background(),
+    opacity: 0.6,
     cursor: 'not-allowed'
   },
   incorrect: {

@@ -20,7 +20,7 @@ export const isComplete = (session, model) => {
 
   if (value) {
     (model.config.prompts || []).forEach(prompt => {
-      if (!value[prompt.id]) {
+      if (!Number.isFinite(value[prompt.id])) {
         complete = false;
       }
     })

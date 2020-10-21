@@ -41,7 +41,7 @@ export class SimpleQuestionBlockRaw extends React.Component {
       model.correctness &&
       model.correctness.correct;
     const showAsCorrect = showCorrect || correct;
-    const showAsIncorrect = !correct && !showCorrect;
+    const showAsIncorrect = !correct && !showCorrect && !model.view;
     const { config } = model || {};
 
     if (!config) {
@@ -118,10 +118,12 @@ const SimpleQuestionBlock = withStyles(theme => ({
     }
   },
   correct: {
-    color: color.correct()
+    color: color.correct(),
+    border: `1px solid ${color.correct()} !important`,
   },
   incorrect: {
-    color: color.incorrect()
+    color: color.incorrect(),
+    border: `1px solid ${color.incorrect()} !important`,
   }
 }))(SimpleQuestionBlockRaw);
 

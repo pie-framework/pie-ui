@@ -4,7 +4,7 @@ import ChoiceInput from './choice-input';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import { color, Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible , PreviewPrompt} from '@pie-lib/render-ui';
 
 // Choice
 
@@ -210,7 +210,7 @@ export class MultipleChoice extends React.Component {
               visible: 'Hide Teacher Instructions',
             }}
           >
-            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
+          <PreviewPrompt className="prompt" prompt={teacherInstructions} />
           </Collapsible>
         )}
         <br />
@@ -220,10 +220,7 @@ export class MultipleChoice extends React.Component {
           onToggle={this.onToggle.bind(this)}
         />
         <br />
-        <div
-          className={classes.prompt}
-          dangerouslySetInnerHTML={{ __html: prompt }}
-        />
+        <PreviewPrompt prompt={prompt}/>
         {choices.map((choice, index) => (
           <StyledChoice
             key={`choice-${index}`}

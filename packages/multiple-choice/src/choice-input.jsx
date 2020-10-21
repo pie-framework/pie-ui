@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import { Feedback, color } from '@pie-lib/render-ui';
+import { Feedback, color , PreviewPrompt} from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
 import classNames from 'classnames';
@@ -185,18 +185,16 @@ export class ChoiceInput extends React.Component {
                 />
               }
             />
-            <span
+            <PreviewPrompt className="label" onClick={this.onToggleChoice} prompt={label} tagName="span"/>
+            {/* <span
               className={classes.label}
               onClick={this.onToggleChoice}
               dangerouslySetInnerHTML={{ __html: label }}
-            />
+            /> */}
           </div>
         </div>
         {rationale && (
-          <div
-            className={classes.rationale}
-            dangerouslySetInnerHTML={{ __html: rationale }}
-          />
+          <PreviewPrompt className="rationale" prompt={rationale} />
         )}
         <Feedback feedback={feedback} correctness={correctness} />
       </div>

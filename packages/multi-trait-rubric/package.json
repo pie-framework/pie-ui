@@ -1,0 +1,25 @@
+{
+  "name": "@pie-ui/multi-trait-rubric",
+  "version": "1.0.0",
+  "description": "Element for rendering multi-trait-rubric content",
+  "author": "pie framework developers",
+  "keywords": [
+    "pie",
+    "pie-ui",
+    "custom-element"
+  ],
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "repository": "pie-framework/pie-ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@pie-framework/pie-player-events": "^0.1.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Trait = (props) => {
-  const { trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues } = props;
+  const { excludeZero, trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues } = props;
   const { name, standards, scorePointsDescriptors, description } = trait || {};
 
   return (
@@ -28,11 +28,11 @@ const Trait = (props) => {
       }
 
       {
-        scorePointsValues.map((scorePointValue, index) => {
+        scorePointsValues && scorePointsValues.map((scorePointValue, index) => {
           let scoreDescriptor;
 
           try {
-            scoreDescriptor = scorePointsDescriptors[scorePointsValues.length - index - 1];
+            scoreDescriptor = scorePointsDescriptors[scorePointsValues.length - index - (excludeZero ? 0 : 1)] || '';
           } catch (e) {
             scoreDescriptor = '';
           }
@@ -51,6 +51,7 @@ const Trait = (props) => {
 };
 
 Trait.propTypes = {
+  excludeZero: PropTypes.bool,
   showStandards: PropTypes.bool,
   showDescription: PropTypes.bool,
   scorePointsValues: PropTypes.arrayOf(PropTypes.number),

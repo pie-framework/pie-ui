@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { ModelSetEvent } from '@pie-framework/pie-player-events';
 import Main from './main';
 
-export default class PiePassage extends HTMLElement {
+export default class MultiTraitRubric extends HTMLElement {
   constructor() {
     super();
     this._model = {};

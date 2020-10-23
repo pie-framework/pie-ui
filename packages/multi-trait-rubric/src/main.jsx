@@ -21,7 +21,6 @@ class Main extends React.Component {
             key={`scale_${scaleIndex}`}
             scale={scale}
             scaleIndex={scaleIndex}
-            halfScoring={halfScoring}
           />
         ))}
       </div>

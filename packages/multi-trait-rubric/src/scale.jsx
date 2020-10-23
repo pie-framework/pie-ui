@@ -87,12 +87,12 @@ class Scale extends React.Component {
           {showDescription ? <th>Description</th> : null}
 
           {
-            scorePointsValues.map((scorePointValue, index) => {
+            scorePointsValues && scorePointsValues.map((scorePointValue, index) => {
               let pointLabel = '';
 
               // to handle the case when there aren't enough labels
               try {
-                pointLabel = scorePointsLabels[scorePointsValues.length - index - 1];
+                pointLabel = scorePointsLabels[scorePointsValues.length - index - (excludeZero ? 0 : 1)] || '';
               } catch (e) {
                 pointLabel = '';
               }
@@ -129,7 +129,7 @@ class Scale extends React.Component {
 
         <tbody>
         {
-          traits.map((trait, traitIndex) => (
+          traits && traits.map((trait, traitIndex) => (
             <Trait
               key={`trait_${scaleIndex}_${traitIndex}`}
               trait={trait}
@@ -138,6 +138,7 @@ class Scale extends React.Component {
               showStandards={!!showStandards}
               scaleIndex={scaleIndex}
               scorePointsValues={scorePointsValues}
+              excludeZero={excludeZero}
             />
           ))
         }

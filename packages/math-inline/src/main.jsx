@@ -348,7 +348,7 @@ export class Main extends React.Component {
     const correct = model.correctness && model.correctness.correct;
     const staticLatex = prepareForStatic(model, state) || '';
 
-    const tooltipModeEnabled = model.disabled && model.correctness;
+    const tooltipModeEnabled = model.disabled && model.correctness && model.config && model.config.responseType !== ResponseTypes.simple;
 
     const midContent = (
       <div className={classes.main}>

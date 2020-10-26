@@ -39,10 +39,9 @@ export class SimpleQuestionBlockRaw extends React.Component {
     } = this.props;
     const correct =
       model.correctness &&
-      model.correctness.info &&
-      model.correctness.info.defaultResponse;
+      model.correctness.correct;
     const showAsCorrect = showCorrect || correct;
-    const showAsIncorrect = showCorrect && !correct;
+    const showAsIncorrect = !correct && !showCorrect && !model.view;
     const { config } = model || {};
 
     if (!config) {
@@ -92,21 +91,22 @@ const SimpleQuestionBlock = withStyles(theme => ({
     minWidth: '500px',
     maxWidth: '900px',
     height: 'auto',
-    minHeight: '130px',
     textAlign: 'left',
     padding: theme.spacing.unit,
     '&.mq-math-mode': {
-      border: `1px solid ${color.disabled()}`
+      border: `1px solid ${color.primaryLight()}`
     }
   },
   expression: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
-    padding: theme.spacing.unit,
-    minHeight: '150px'
+    padding: theme.spacing.unit
   },
   static: {
-    color: 'grey',
+    color: color.text(),
+    background: color.background(),
+    border: `1px solid ${color.primaryLight()}`,
+    width: '100%',
     fontSize: '1rem',
     padding: theme.spacing.unit / 2,
     '& > .mq-math-mode': {
@@ -118,10 +118,12 @@ const SimpleQuestionBlock = withStyles(theme => ({
     }
   },
   correct: {
-    color: color.correct()
+    color: color.correct(),
+    border: `1px solid ${color.correct()} !important`,
   },
   incorrect: {
-    color: color.incorrect()
+    color: color.incorrect(),
+    border: `1px solid ${color.incorrect()} !important`,
   }
 }))(SimpleQuestionBlockRaw);
 

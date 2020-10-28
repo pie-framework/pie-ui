@@ -10,12 +10,6 @@ import Radio from '@material-ui/core/Radio';
 import classNames from 'classnames';
 
 const styleSheet = (theme) => ({
-  label: {
-    color: `${color.text()} !important`, //'var(--choice-input-color, black)',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    cursor: 'pointer',
-  },
   row: {
     display: 'flex',
     alignItems: 'center',
@@ -29,9 +23,6 @@ const styleSheet = (theme) => ({
     '& label': {
       color: color.text()
     },
-  },
-  rationale: {
-    paddingLeft: theme.spacing.unit * 16,
   },
 });
 
@@ -186,11 +177,6 @@ export class ChoiceInput extends React.Component {
               }
             />
             <PreviewPrompt className="label" onClick={this.onToggleChoice} prompt={label} tagName="span"/>
-            {/* <span
-              className={classes.label}
-              onClick={this.onToggleChoice}
-              dangerouslySetInnerHTML={{ __html: label }}
-            /> */}
           </div>
         </div>
         {rationale && (

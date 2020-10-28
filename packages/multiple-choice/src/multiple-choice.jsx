@@ -94,11 +94,7 @@ const styles = {
       fontFamily: "'Roboto', Arial, Helvetica, sans-serif", //eslint-disable-line
       '-webkit-font-smoothing': 'antialiased',
     },
-  },
-  prompt: {
-    verticalAlign: 'middle',
-    color: color.text(),
-  },
+  }
 };
 
 export class MultipleChoice extends React.Component {
@@ -220,7 +216,7 @@ export class MultipleChoice extends React.Component {
           onToggle={this.onToggle.bind(this)}
         />
         <br />
-        <PreviewPrompt prompt={prompt}/>
+        <PreviewPrompt className="prompt" prompt={prompt}/>
         {choices.map((choice, index) => (
           <StyledChoice
             key={`choice-${index}`}

@@ -4,18 +4,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import { Feedback, color } from '@pie-lib/render-ui';
+import { Feedback, color , PreviewPrompt} from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
 import classNames from 'classnames';
 
 const styleSheet = (theme) => ({
-  label: {
-    color: `${color.text()} !important`, //'var(--choice-input-color, black)',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    cursor: 'pointer',
-  },
   row: {
     display: 'flex',
     alignItems: 'center',
@@ -29,9 +23,6 @@ const styleSheet = (theme) => ({
     '& label': {
       color: color.text(),
     },
-  },
-  rationale: {
-    paddingLeft: theme.spacing.unit * 16,
   },
 });
 
@@ -193,18 +184,11 @@ export class ChoiceInput extends React.Component {
                 />
               }
             />
-            <span
-              className={classes.label}
-              onClick={this.onToggleChoice}
-              dangerouslySetInnerHTML={{ __html: label }}
-            />
+            <PreviewPrompt className="label" onClick={this.onToggleChoice} prompt={label} tagName="span"/>
           </div>
         </div>
         {rationale && (
-          <div
-            className={classes.rationale}
-            dangerouslySetInnerHTML={{ __html: rationale }}
-          />
+          <PreviewPrompt className="rationale" prompt={rationale} />
         )}
         <Feedback feedback={feedback} correctness={correctness} />
       </div>

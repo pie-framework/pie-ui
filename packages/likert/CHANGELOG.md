@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.7...@pie-ui/likert@0.1.8) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 ## [0.1.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.6...@pie-ui/likert@0.1.7) (2020-10-08)
 
 **Note:** Version bump only for package @pie-ui/likert

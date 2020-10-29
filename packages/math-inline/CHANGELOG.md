@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.2.0...@pie-ui/math-inline@3.2.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+* **math-inline:** color theme and tooltip fixes ([87d38e6](https://github.com/pie-framework/pie-ui/commit/87d38e6))
+* **math-inline:** simple interaction fixes for correct and incorrect color ([c330972](https://github.com/pie-framework/pie-ui/commit/c330972))
+* **math-inline:** simple interaction fixes for validation and color ([25643fc](https://github.com/pie-framework/pie-ui/commit/25643fc))
+
+
+
+
+
 # [3.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.5...@pie-ui/math-inline@3.2.0) (2020-10-08)
 
 

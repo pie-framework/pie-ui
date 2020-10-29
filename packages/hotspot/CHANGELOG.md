@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.5.1...@pie-ui/hotspot@1.5.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-elements/commit/e731aa6))
+
+
+
+
+
 ## [1.5.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.5.0...@pie-ui/hotspot@1.5.1) (2020-10-15)
 
 

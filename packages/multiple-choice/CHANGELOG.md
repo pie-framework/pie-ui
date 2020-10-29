@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.0...@pie-ui/multiple-choice@4.15.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* Authored table borders are not visible in preview PD-342 ([9b7e5e8](https://github.com/pie-framework/pie-elements/commit/9b7e5e8))
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-elements/commit/e731aa6))
+* lint error ([96ed607](https://github.com/pie-framework/pie-elements/commit/96ed607))
+* Modified code for suggested changes and removed unwanted code PD-342 ([a148b13](https://github.com/pie-framework/pie-elements/commit/a148b13))
+* snapshot test ([65c9c90](https://github.com/pie-framework/pie-elements/commit/65c9c90))
+
+
+
+
+
 # [4.15.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.14.0...@pie-ui/multiple-choice@4.15.0) (2020-10-15)
 
 

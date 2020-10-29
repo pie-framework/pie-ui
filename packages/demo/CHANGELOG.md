@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.1...@pie-ui/demo@0.4.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* demo w lib linking ([197447b](https://github.com/pie-framework/pie-ui/commit/197447b))
+
+
+
+
+
 ## [0.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.0...@pie-ui/demo@0.4.1) (2020-10-15)
 
 **Note:** Version bump only for package @pie-ui/demo

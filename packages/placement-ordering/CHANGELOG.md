@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.8.0...@pie-ui/placement-ordering@4.8.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [4.8.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/placement-ordering@4.7.40...@pie-ui/placement-ordering@4.8.0) (2020-10-08)
 
 

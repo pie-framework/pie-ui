@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "type": "feat",
+    "scope": null,
+    "subject": "multi-trait-rubric player (scales representation with ability to render html values, halfScoring information)",
+    "merge": null,
+    "header": "feat: multi-trait-rubric player (scales representation with ability to render html values, halfScoring information)",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0615c2cdfa3f353f86946cbcf73c60a3e36bb4ff",
+    "gitTags": "",
+    "committerDate": "2020-10-22 11:27:55 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/multi-trait-rubric@1.1.0"
+  }
+]

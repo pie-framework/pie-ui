@@ -20,14 +20,11 @@ exports[`ChoiceInput snapshots checkbox renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <span
+      <Component
         className="label"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "label",
-          }
-        }
         onClick={[Function]}
+        prompt="label"
+        tagName="span"
       />
     </div>
   </div>
@@ -57,14 +54,11 @@ exports[`ChoiceInput snapshots radio renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <span
+      <Component
         className="label"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "label",
-          }
-        }
         onClick={[Function]}
+        prompt="label"
+        tagName="span"
       />
     </div>
   </div>
@@ -94,14 +88,11 @@ exports[`ChoiceInput snapshots radio with incorrect renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <span
+      <Component
         className="label"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "label",
-          }
-        }
         onClick={[Function]}
+        prompt="label"
+        tagName="span"
       />
     </div>
   </div>
@@ -131,14 +122,11 @@ exports[`ChoiceInput snapshots rationale does not render 1`] = `
         disabled={false}
         label="1. "
       />
-      <span
+      <Component
         className="label"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "label",
-          }
-        }
         onClick={[Function]}
+        prompt="label"
+        tagName="span"
       />
     </div>
   </div>
@@ -168,23 +156,17 @@ exports[`ChoiceInput snapshots rationale renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <span
+      <Component
         className="label"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "label",
-          }
-        }
         onClick={[Function]}
+        prompt="label"
+        tagName="span"
       />
     </div>
   </div>
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "This is rationale",
-      }
-    }
+  <Component
+    className="rationale"
+    prompt="This is rationale"
   />
   <Feedback
     correctness="correct"

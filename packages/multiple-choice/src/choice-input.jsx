@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import { Feedback, color , PreviewPrompt} from '@pie-lib/render-ui';
+import { Feedback, color, PreviewPrompt } from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
 import classNames from 'classnames';
 
-const styleSheet = (theme) => ({
+const styleSheet = () => ({
   row: {
     display: 'flex',
     alignItems: 'center',
@@ -184,7 +184,12 @@ export class ChoiceInput extends React.Component {
                 />
               }
             />
-            <PreviewPrompt className="label" onClick={this.onToggleChoice} prompt={label} tagName="span"/>
+            <PreviewPrompt
+              className="label"
+              onClick={this.onToggleChoice}
+              prompt={label}
+              tagName="span"
+            />
           </div>
         </div>
         {rationale && (

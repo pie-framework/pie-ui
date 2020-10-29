@@ -27,7 +27,7 @@ exports[`CorespringChoice snapshot renders 1`] = `
     toggled={false}
   />
   <br />
-  <Component
+  <PreviewPrompt
     className="prompt"
   />
   <WithStyles(Choice)
@@ -97,7 +97,7 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
     toggled={false}
   />
   <br />
-  <Component
+  <PreviewPrompt
     className="prompt"
   />
   <WithStyles(Choice)

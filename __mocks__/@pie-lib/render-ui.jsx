@@ -6,6 +6,8 @@ export const indicators = {
   Correct: () => <div>Correct</div>,
 };
 
+export const PreviewPrompt = () => <div>PreviewPrompt</div>;
+
 export const color = {
   text: jest.fn(),
   correct: jest.fn(),

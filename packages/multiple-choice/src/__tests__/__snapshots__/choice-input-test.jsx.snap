@@ -20,7 +20,7 @@ exports[`ChoiceInput snapshots checkbox renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <Component
+      <PreviewPrompt
         className="label"
         onClick={[Function]}
         prompt="label"
@@ -54,7 +54,7 @@ exports[`ChoiceInput snapshots radio renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <Component
+      <PreviewPrompt
         className="label"
         onClick={[Function]}
         prompt="label"
@@ -88,7 +88,7 @@ exports[`ChoiceInput snapshots radio with incorrect renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <Component
+      <PreviewPrompt
         className="label"
         onClick={[Function]}
         prompt="label"
@@ -122,7 +122,7 @@ exports[`ChoiceInput snapshots rationale does not render 1`] = `
         disabled={false}
         label="1. "
       />
-      <Component
+      <PreviewPrompt
         className="label"
         onClick={[Function]}
         prompt="label"
@@ -156,7 +156,7 @@ exports[`ChoiceInput snapshots rationale renders 1`] = `
         disabled={false}
         label="1. "
       />
-      <Component
+      <PreviewPrompt
         className="label"
         onClick={[Function]}
         prompt="label"
@@ -164,7 +164,7 @@ exports[`ChoiceInput snapshots rationale renders 1`] = `
       />
     </div>
   </div>
-  <Component
+  <PreviewPrompt
     className="rationale"
     prompt="This is rationale"
   />

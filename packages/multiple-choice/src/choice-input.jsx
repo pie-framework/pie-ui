@@ -168,6 +168,7 @@ export class ChoiceInput extends React.Component {
     const Tag = choiceMode === 'checkbox' ? StyledCheckbox : StyledRadio;
     const classSuffix = choiceMode === 'checkbox' ? 'checkbox' : 'radio-button';
 
+    console.log(PreviewPrompt);
     return (
       <div className={classNames(className, 'corespring-' + classSuffix)}>
         <div className={classes.row}>

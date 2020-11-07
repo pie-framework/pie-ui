@@ -2197,14 +2197,14 @@
     redux "^4.0.1"
     redux-undo beta
 
-"@pie-lib/config-ui@^10.8.36":
-  version "10.8.36"
-  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.8.36.tgz#244586693240972f7f3667ec47d997b9c587969b"
-  integrity sha512-24BFZQvqI4+ULyqoWQO2MUez5dFHWHW+L3hpx+o85/Z484rL77hbgwuZZ+zixGzP7I/5RscV/50PAxutud/FgA==
+"@pie-lib/config-ui@^10.8.38":
+  version "10.8.38"
+  resolved "https://registry.yarnpkg.com/@pie-lib/config-ui/-/config-ui-10.8.38.tgz#95a06d406272fe2f148705a7e65a62b2c68c9049"
+  integrity sha512-u6x7qg/FX/3e0oRrwTMNV8VJDoyI6U3RkDzqSyvq2ZkPUBG2Qz/kL4GX+c/onX2lv8ALvwXpe58FK+AsxWG/Ug==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
-    "@pie-lib/editable-html" "^7.13.4"
+    "@pie-lib/editable-html" "^7.14.0"
     "@pie-lib/icons" "^2.4.20"
     "@pie-lib/render-ui" "^4.9.4"
     classnames "^2.2.6"
@@ -2237,10 +2237,10 @@
     react-dnd "^11.1.3"
     react-dnd-html5-backend "^11.1.3"
 
-"@pie-lib/editable-html@^7.13.4":
-  version "7.13.4"
-  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.13.4.tgz#1bbaec6145c29444f456559cab4aa7aee05eb1a4"
-  integrity sha512-P88l/7D8pRC1XHnq5NDDsmPHY/1+TgbQ+Z+0Mj9at1T8d2y4TQeO75JEdDNYh7c1xJoNHSKPoeWAsO6pifDTOQ==
+"@pie-lib/editable-html@^7.14.0":
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@pie-lib/editable-html/-/editable-html-7.14.0.tgz#ead5e12ae829b904bab4c9516d2b55f0b48b677f"
+  integrity sha512-qswCsa9uB5DbUfq/3Kyj/4M2sKd5fnM2kUt7SLWFpVqhc9OHGVj/6RjesZz3NqpthRzk4C6/PxIL5i6td/vSrg==
   dependencies:
     "@material-ui/core" "^3.8.3"
     "@material-ui/icons" "^3.0.2"
@@ -2248,6 +2248,7 @@
     "@pie-lib/drag" "^1.1.45"
     "@pie-lib/math-rendering" "^2.2.3"
     "@pie-lib/math-toolbar" "^1.6.0"
+    "@pie-lib/render-ui" "^4.9.4"
     change-case "^3.0.2"
     classnames "^2.2.6"
     debug "^4.1.1"

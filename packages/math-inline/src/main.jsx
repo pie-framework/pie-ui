@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { Feedback, Collapsible, Readable } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -355,7 +355,8 @@ export class Main extends React.Component {
         <div className={classes.content}>
           <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
         </div>
-        <div className={classes.inputAndKeypadContainer}>
+        <Readable false>
+          <div className={classes.inputAndKeypadContainer}>
           {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
@@ -425,6 +426,7 @@ export class Main extends React.Component {
             </div>
           )}
         </div>
+        </Readable>
       </div>
     );
 

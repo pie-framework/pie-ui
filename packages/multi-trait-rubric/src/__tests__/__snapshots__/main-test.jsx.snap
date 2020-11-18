@@ -17,7 +17,7 @@ exports[`Main snapshots not visible to students => renders empty div 1`] = `
           "traits": Array [],
         },
       ],
-      "visibleToStudent": false,
+      "visible": false,
     }
   }
 >
@@ -31,7 +31,7 @@ exports[`Main snapshots visible to students => renders empty div if no scales 1`
     Object {
       "halfScoring": false,
       "scales": Array [],
-      "visibleToStudent": false,
+      "visible": false,
     }
   }
 >
@@ -56,7 +56,7 @@ exports[`Main snapshots visible to students => renders table with half-scoring 1
           "traits": Array [],
         },
       ],
-      "visibleToStudent": true,
+      "visible": true,
     }
   }
 >
@@ -199,7 +199,7 @@ exports[`Main snapshots visible to students => renders table without half-scorin
           "traits": Array [],
         },
       ],
-      "visibleToStudent": true,
+      "visible": true,
     }
   }
 >

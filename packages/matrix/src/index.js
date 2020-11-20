@@ -7,7 +7,7 @@ import Main from './Main';
 export const isComplete = (session) =>
   !!(session && session.value && session.value.length);
 
-export default class Likert extends HTMLElement {
+export default class Matrix extends HTMLElement {
   constructor() {
     super();
   }

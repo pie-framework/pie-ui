@@ -7,7 +7,6 @@ module.exports = {
     id: '1',
     mode: 'gather',
     disabled: false,
-    rowsSize: 3,
     labelType: 'agreement',
     rowLabels: ['I\'m interested in politics.', 'I\'m interested in economics.'],
     columnLabels: ['Disagree', 'Unsure', 'Agree'],

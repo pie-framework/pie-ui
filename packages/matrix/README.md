@@ -22,7 +22,6 @@ To use this pie, you need to configure it within an Assessment Item. This means 
       id: '1',
       mode: 'gather',
       disabled: false,
-      rowsSize: 3,
       labelType: 'agreement',
       rowLabels: ['I\'m interested in politics.', 'I\'m interested in economics.'],
       columnLabels: ['Disagree', 'Unsure', 'Agree'],

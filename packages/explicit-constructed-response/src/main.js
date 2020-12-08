@@ -40,7 +40,7 @@ export class Main extends React.Component {
     this.setState({ showCorrectAnswer: !this.state.showCorrectAnswer });
   };
 
-  changeSession = debounce(this.props.onChange, 300);
+  changeSession = debounce(this.props.onChange, 1500);
 
   onChange = value => {
     this.setState({ value });

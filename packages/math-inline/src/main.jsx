@@ -14,6 +14,7 @@ import MathQuill from '@pie-framework/mathquill';
 import { color } from '@pie-lib/render-ui';
 let registered = false;
 
+const NEWLINE_LATEX = /\\newline/g;
 const REGEX = /{{response}}/gm;
 const DEFAULT_KEYPAD_VARIANT = 6;
 
@@ -55,7 +56,7 @@ function prepareForStatic(model, state) {
       }
 
       return `\\MathQuillMathField[r${answerBlocks++}]{${(answer && answer.value) || ''}}`;
-    });
+    }).replace(NEWLINE_LATEX, '\\embed{newLine}[]');
   }
 }
 

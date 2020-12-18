@@ -4,23 +4,19 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { color } from '@pie-lib/render-ui';
 
-
-
- 
-const styles = theme => ({
+const styles = () => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-  colorPrimary: {
-    color: 'red',
+    backgroundColor: color.background(),
+    color: color.text()
   },
   tab: {
     fontSize: '0.8125em'
   },
   stickyTabs: {
-    background: '#fff',
+    background: color.background(),
     paddingBottom: '20px',
     position: 'sticky',
     top: 0
@@ -31,7 +27,7 @@ function TabContainer(props) {
   const padding = props.multiple ? '0 24px 24px 24px' : '24px';
 
   return (
-    <Typography component="div" style={{ padding, fontSize: '0.875em' }}>
+    <Typography component="div" style={{ padding, fontSize: '0.875em', backgroundColor: color.background(), color: color.text() }}>
       {props.children}
     </Typography>
   );
@@ -41,23 +37,23 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
   multiple: PropTypes.bool
 };
- 
+
 class StimulusTabs extends React.Component {
   state = {
     activeTab: 0,
   };
- 
+
   handleChange = (event, activeTab) => {
     this.setState( () => ({activeTab}));
   };
- 
+
   render() {
     const { classes, tabs } = this.props;
     const { activeTab } = this.state;
     if (tabs && tabs.length > 1) {
       return (
         <div className={classes.root}>
-         
+
             <Tabs
               classes={{
                 root: classes.stickyTabs
@@ -73,7 +69,7 @@ class StimulusTabs extends React.Component {
                   label={<span dangerouslySetInnerHTML={{__html: tab.title}}></span>}
                   value={tab.id}
                 />
-                
+
               ))
               }
             </Tabs>
@@ -93,10 +89,10 @@ class StimulusTabs extends React.Component {
         </div>
       );
     }
- 
+
   }
 }
- 
+
 StimulusTabs.propTypes = {
   classes: PropTypes.object.isRequired,
   tabs: PropTypes.arrayOf(
@@ -107,5 +103,5 @@ StimulusTabs.propTypes = {
     }).isRequired)
     .isRequired,
 };
- 
+
 export default withStyles(styles)(StimulusTabs);

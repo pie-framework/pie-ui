@@ -1,67 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main render should render in evaluate mode 1`] = `
-<div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Teacher Instructions",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={true}
-    toggled={false}
-  />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Prompt",
-      }
-    }
-  />
-  <br />
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Rationale",
-        "visible": "Hide Rationale",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Rationale",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -70,104 +26,57 @@ exports[`Main render should render in evaluate mode 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "evaluate",
+      "prompt": "Prompt",
+      "promptEnabled": true,
+      "rationale": "Rationale",
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": "Teacher Instructions",
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="evaluate"
-    onChange={[MockFunction]}
-    prompt="Prompt"
-    promptEnabled={true}
-    rationale="Rationale"
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions="Teacher Instructions"
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;
 
 exports[`Main render should render in gather mode 1`] = `
-<div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Teacher Instructions",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Prompt",
-      }
-    }
-  />
-  <br />
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Rationale",
-        "visible": "Hide Rationale",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Rationale",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -176,104 +85,57 @@ exports[`Main render should render in gather mode 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "gather",
+      "prompt": "Prompt",
+      "promptEnabled": true,
+      "rationale": "Rationale",
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": "Teacher Instructions",
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="gather"
-    onChange={[MockFunction]}
-    prompt="Prompt"
-    promptEnabled={true}
-    rationale="Rationale"
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions="Teacher Instructions"
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;
 
 exports[`Main render should render in view mode 1`] = `
-<div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Teacher Instructions",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Prompt",
-      }
-    }
-  />
-  <br />
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Rationale",
-        "visible": "Hide Rationale",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Rationale",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -282,97 +144,57 @@ exports[`Main render should render in view mode 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "view",
+      "prompt": "Prompt",
+      "promptEnabled": true,
+      "rationale": "Rationale",
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": "Teacher Instructions",
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="view"
-    onChange={[MockFunction]}
-    prompt="Prompt"
-    promptEnabled={true}
-    rationale="Rationale"
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions="Teacher Instructions"
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;
 
 exports[`Main render should render without prompt 1`] = `
-<div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Teacher Instructions",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <br />
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Rationale",
-        "visible": "Hide Rationale",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Rationale",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -381,88 +203,57 @@ exports[`Main render should render without prompt 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "gather",
+      "prompt": null,
+      "promptEnabled": true,
+      "rationale": "Rationale",
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": "Teacher Instructions",
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="gather"
-    onChange={[MockFunction]}
-    prompt={null}
-    promptEnabled={true}
-    rationale="Rationale"
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions="Teacher Instructions"
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;
 
 exports[`Main render should render without rationale 1`] = `
-<div>
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Teacher Instructions",
-        "visible": "Hide Teacher Instructions",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Teacher Instructions",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Prompt",
-      }
-    }
-  />
-  <br />
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -471,88 +262,57 @@ exports[`Main render should render without rationale 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "gather",
+      "prompt": "Prompt",
+      "promptEnabled": true,
+      "rationale": null,
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": "Teacher Instructions",
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="gather"
-    onChange={[MockFunction]}
-    prompt="Prompt"
-    promptEnabled={true}
-    rationale={null}
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions="Teacher Instructions"
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;
 
 exports[`Main render should render without teacher instructions 1`] = `
-<div>
-  <br />
-  <_default
-    onToggle={[Function]}
-    show={false}
-    toggled={false}
-  />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Prompt",
-      }
+<Main
+  classes={
+    Object {
+      "mainContainer": "Main-mainContainer-1",
     }
-  />
-  <br />
-  <Component
-    labels={
-      Object {
-        "hidden": "Show Rationale",
-        "visible": "Hide Rationale",
-      }
-    }
-  >
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Rationale",
-        }
-      }
-    />
-  </Component>
-  <br />
-  <Component
-    alternateResponses={
-      Array [
+  }
+  model={
+    Object {
+      "alternateResponses": Array [
         Array [
           "1",
         ],
         Array [
           "0",
         ],
-      ]
-    }
-    choices={
-      Array [
+      ],
+      "choices": Array [
         Object {
           "id": "1",
           "value": "<div>9</div>",
@@ -561,38 +321,35 @@ exports[`Main render should render without teacher instructions 1`] = `
           "id": "0",
           "value": "<div>6</div>",
         },
-      ]
-    }
-    choicesPosition="below"
-    correctResponse={
-      Object {
+      ],
+      "choicesPosition": "below",
+      "correctResponse": Object {
         "0": "0",
         "1": "1",
-      }
+      },
+      "disabled": false,
+      "duplicates": true,
+      "element": "drag-in-the-blank",
+      "feedback": Object {},
+      "id": "1",
+      "markup": "{{0}} + {{1}} = 15",
+      "mode": "gather",
+      "prompt": "Prompt",
+      "promptEnabled": true,
+      "rationale": "Rationale",
+      "rationaleEnabled": true,
+      "shuffle": true,
+      "studentInstructionsEnabled": true,
+      "teacherInstructions": null,
+      "teacherInstructionsEnabled": true,
     }
-    disabled={false}
-    duplicates={true}
-    element="drag-in-the-blank"
-    feedback={Object {}}
-    id="1"
-    markup="{{0}} + {{1}} = 15"
-    mode="gather"
-    onChange={[MockFunction]}
-    prompt="Prompt"
-    promptEnabled={true}
-    rationale="Rationale"
-    rationaleEnabled={true}
-    showCorrectAnswer={false}
-    shuffle={true}
-    studentInstructionsEnabled={true}
-    teacherInstructions={null}
-    teacherInstructionsEnabled={true}
-    value={
-      Object {
-        "0": "1",
-        "1": "0",
-      }
+  }
+  onChange={[MockFunction]}
+  value={
+    Object {
+      "0": "1",
+      "1": "0",
     }
-  />
-</div>
+  }
+/>
 `;

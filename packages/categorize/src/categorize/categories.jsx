@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { color } from '@pie-lib/render-ui';
 
 import chunk from 'lodash/chunk';
 
@@ -99,6 +100,8 @@ const styles = theme => ({
     flex: 1
   },
   label: {
+    color: color.text(),
+    backgroundColor: color.background(),
     textAlign: 'center',
     paddingTop: theme.spacing.unit
   }

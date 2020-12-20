@@ -3,6 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.0...@pie-ui/graphing@3.1.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* bump lib versions ([7888b18](https://github.com/pie-framework/pie-ui/commit/7888b18))
+
+
+
+
+
+# [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.9...@pie-ui/graphing@3.1.0) (2020-10-08)
+
+
+### Features
+
+* **graphing:** graphing color theme support ([f10a9d4](https://github.com/pie-framework/pie-ui/commit/f10a9d4))
+
+
+
+
+
+## [3.0.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.8...@pie-ui/graphing@3.0.9) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.0.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.7...@pie-ui/graphing@3.0.8) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [3.0.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.6...@pie-ui/graphing@3.0.7) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.0.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.5...@pie-ui/graphing@3.0.6) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.0.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.4...@pie-ui/graphing@3.0.5) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
+## [3.0.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.3...@pie-ui/graphing@3.0.4) (2020-07-22)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.0.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.2...@pie-ui/graphing@3.0.3) (2020-07-22)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.0.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.1...@pie-ui/graphing@3.0.2) (2020-07-22)
+
+
+### Bug Fixes
+
+* add missing dependency ([5560fd1](https://github.com/pie-framework/pie-ui/commit/5560fd1))
+
+
+
+
+
 ## [3.0.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.0.0...@pie-ui/graphing@3.0.1) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/graphing

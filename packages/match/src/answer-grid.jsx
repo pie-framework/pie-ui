@@ -5,6 +5,7 @@ import Radio from '@material-ui/core/Radio';
 import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { color } from '@pie-lib/render-ui';
 
 export class AnswerGrid extends React.Component {
   static propTypes = {
@@ -114,6 +115,9 @@ export class AnswerGrid extends React.Component {
                           (showCorrect && rowItem === true) ||
                           (disabled && !view && this.answerIsCorrect(row.id, rowItem, answerIndex))
                         ),
+                        [classes.tag]: true,
+                        [classes.checked]: rowItem === true,
+                        [classes.tagDisabled]: disabled,
                         [classes.incorrect]: allowFeedback && disabled && !view && this.answerIsIncorrect(row.id, rowItem, answerIndex)
                       })}
                       disabled={disabled}
@@ -143,10 +147,10 @@ const styles = theme => ({
     padding: '10px 20px 0',
   },
   correct: {
-    color: 'green !important'
+    color: `${color.correct()} !important`
   },
   incorrect: {
-    color: 'red !important'
+    color: `${color.incorrect()} !important`
   },
   empty: {
     margin: theme.spacing.unit * 2
@@ -164,11 +168,30 @@ const styles = theme => ({
   },
   separator: {
     border: 0,
-    borderTop: '2.5px solid lightgray',
+    borderTop: `2.5px solid ${color.primaryLight()}`,
     width: '100%'
   },
+  tag: {
+    color: color.text(),
+    '&:hover': {
+      color: color.primaryLight()
+    }
+  },
+  checked: {
+    color: `${color.primary()} !important`
+  },
+  tagDisabled: {
+    color: color.disabled(),
+    cursor: 'not-allowed !important',
+    pointerEvents: 'initial !important',
+    opacity: 0.7,
+    '&:hover': {
+      color: color.disabled()
+    }
+  },
   table: {
-    backgroundColor: '#fff',
+    color: color.text(),
+    backgroundColor: color.background(),
     borderCollapse: 'collapse',
     borderSpacing: 0,
     marginBottom: 0

@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.39...@pie-ui/image-cloze-association@1.3.0) (2020-10-08)
+
+
+### Features
+
+* **image-cloze-associations:** use render ui colors ([2c5933c](https://github.com/pie-framework/pie-ui/commit/2c5933c))
+
+
+
+
+
+## [1.2.39](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.38...@pie-ui/image-cloze-association@1.2.39) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/image-cloze-association
+
+
+
+
+
+## [1.2.38](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.37...@pie-ui/image-cloze-association@1.2.38) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [1.2.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.36...@pie-ui/image-cloze-association@1.2.37) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/image-cloze-association
+
+
+
+
+
+## [1.2.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.35...@pie-ui/image-cloze-association@1.2.36) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/image-cloze-association
+
+
+
+
+
 ## [1.2.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/image-cloze-association@1.2.34...@pie-ui/image-cloze-association@1.2.35) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/image-cloze-association

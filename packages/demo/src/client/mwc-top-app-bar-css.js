@@ -23,11 +23,10 @@ export const style = css`
     background-color: var(--mdc-theme-primary, #6200ee);
     color: #fff;
     display: flex;
-    position: fixed;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     z-index: 4;
   }
   .mdc-top-app-bar .mdc-top-app-bar__action-item,
@@ -84,12 +83,15 @@ export const style = css`
   .mdc-top-app-bar__row {
     display: flex;
     position: relative;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    height: 64px;
+    margin-bottom: 5px;
+    padding: 5px;
   }
   .mdc-top-app-bar__section {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
     align-items: center;
     min-width: 0;
@@ -103,6 +105,16 @@ export const style = css`
   .mdc-top-app-bar__section--align-end {
     justify-content: flex-end;
     order: 1;
+  }
+  .mdc-top-app-bar__section input { 
+    margin-right: 5px;
+  }
+  .mdc-top-app-bar__section button { 
+    padding: 5px;
+    color: black;
+    background: white;
+    border-radius: 4px;
+    margin-right: 5px;
   }
   .mdc-top-app-bar__title {
     font-family: Roboto, sans-serif;

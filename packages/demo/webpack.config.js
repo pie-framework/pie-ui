@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   // optimization: {
   //   splitChunks: {
@@ -11,7 +13,9 @@ module.exports = {
   //   }
   // },
   resolve: {
+    symlinks: true,
     mainFields: ['browser', 'main'],
+    modules: [path.resolve(__dirname, '../../node_modules')],
   },
   module: {
     rules: [

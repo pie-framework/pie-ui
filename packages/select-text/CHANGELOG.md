@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.35...@pie-ui/select-text@1.7.0) (2020-10-08)
+
+
+### Features
+
+* **select-text:** add color theme support ([cc5d71f](https://github.com/pie-framework/pie-ui/commit/cc5d71f))
+* **select-text:** color theme support finalized with wider palette ([4b3709e](https://github.com/pie-framework/pie-ui/commit/4b3709e))
+
+
+
+
+
+## [1.6.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.34...@pie-ui/select-text@1.6.35) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.6.34](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.33...@pie-ui/select-text@1.6.34) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [1.6.33](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.32...@pie-ui/select-text@1.6.33) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.6.32](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.31...@pie-ui/select-text@1.6.32) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.6.31](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.30...@pie-ui/select-text@1.6.31) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [1.6.30](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.29...@pie-ui/select-text@1.6.30) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/select-text

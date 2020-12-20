@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.38...@pie-ui/extended-text-entry@3.3.0) (2020-10-08)
+
+
+### Features
+
+* **extended-text-entry:** color theme support added ([939a205](https://github.com/pie-framework/pie-ui/commit/939a205))
+* **extended-text-entry:** initial commit for color treatment ([5a8830c](https://github.com/pie-framework/pie-ui/commit/5a8830c))
+
+
+
+
+
+## [3.2.38](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.37...@pie-ui/extended-text-entry@3.2.38) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.2.37](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.36...@pie-ui/extended-text-entry@3.2.37) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [3.2.36](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.35...@pie-ui/extended-text-entry@3.2.36) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.2.35](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.34...@pie-ui/extended-text-entry@3.2.35) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
 ## [3.2.34](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.33...@pie-ui/extended-text-entry@3.2.34) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

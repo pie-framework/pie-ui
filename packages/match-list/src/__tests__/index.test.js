@@ -92,4 +92,28 @@ describe('isComplete', () => {
     testModel,
     true
   );
+
+  assertIsComplete(
+    session({
+      0: 2,
+      1: 1,
+      2: 3,
+      3: 3,
+      4: 0
+    }),
+    testModel,
+    true
+  );
+
+  assertIsComplete(
+    session({
+      0: 2,
+      1: undefined,
+      2: 3,
+      3: 3,
+      4: 0
+    }),
+    testModel,
+    false
+  );
 });

@@ -358,5 +358,50 @@
     "committerDate": "2020-06-15 12:08:03 +0100",
     "isTagged": true,
     "tag": "@pie-ui/hotspot@1.4.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "bump lib versions",
+    "merge": null,
+    "header": "fix: bump lib versions",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "b70a7e7b7a43c40527fcb48b021608ac28fb52d4",
+    "gitTags": "",
+    "committerDate": "2020-09-23 11:38:06 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.4.3"
+  },
+  {
+    "type": "feat",
+    "scope": "hotspot",
+    "subject": "use render ui colors",
+    "merge": null,
+    "header": "feat(hotspot): use render ui colors",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "d4262c9989ef987f5d56025311ee0fc826ddcf86",
+    "gitTags": "",
+    "committerDate": "2020-09-07 14:47:46 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.5.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "Drop all the text annotations & update correctness icons. PD-166",
+    "merge": null,
+    "header": "fix: Drop all the text annotations & update correctness icons. PD-166",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3e1868113af6082f6e46eacd489a90339746ab3f",
+    "gitTags": "",
+    "committerDate": "2020-10-13 19:43:54 +0300",
+    "isTagged": true,
+    "tag": "@pie-ui/hotspot@1.5.1"
   }
 ]

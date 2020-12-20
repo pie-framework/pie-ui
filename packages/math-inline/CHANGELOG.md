@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.5...@pie-ui/math-inline@3.2.0) (2020-10-08)
+
+
+### Features
+
+* **math-inline:** add color theme support ([78ec58a](https://github.com/pie-framework/pie-ui/commit/78ec58a))
+* **math-inline:** use render-ui colors ([c47f950](https://github.com/pie-framework/pie-ui/commit/c47f950))
+
+
+
+
+
+## [3.1.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.4...@pie-ui/math-inline@3.1.5) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.3...@pie-ui/math-inline@3.1.4) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [3.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.2...@pie-ui/math-inline@3.1.3) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.1...@pie-ui/math-inline@3.1.2) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.0...@pie-ui/math-inline@3.1.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 # [3.1.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.0.44...@pie-ui/math-inline@3.1.0) (2020-06-05)
 
 

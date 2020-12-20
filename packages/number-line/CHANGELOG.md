@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.3.0...@pie-ui/number-line@7.4.0) (2020-10-15)
+
+
+### Features
+
+* **number-line:** finalize color theme support and disabled handling ([0a7c257](https://github.com/pie-framework/pie-ui/commit/0a7c257))
+
+
+
+
+
+# [7.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.5...@pie-ui/number-line@7.3.0) (2020-10-08)
+
+
+### Features
+
+* **number-line:** add color theme support ([3bdbf5b](https://github.com/pie-framework/pie-ui/commit/3bdbf5b))
+* **number-line:** add color theme support ([0811e5b](https://github.com/pie-framework/pie-ui/commit/0811e5b))
+* **number-line:** use render ui colors ([7367d00](https://github.com/pie-framework/pie-ui/commit/7367d00))
+
+
+
+
+
+## [7.2.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.4...@pie-ui/number-line@7.2.5) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.2.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.3...@pie-ui/number-line@7.2.4) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [7.2.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.2...@pie-ui/number-line@7.2.3) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.2.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.1...@pie-ui/number-line@7.2.2) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/number-line
+
+
+
+
+
+## [7.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.2.0...@pie-ui/number-line@7.2.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 # [7.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.1.42...@pie-ui/number-line@7.2.0) (2020-06-15)
 
 

@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.0...@pie-ui/demo@0.4.1) (2020-10-15)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+# [0.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.145...@pie-ui/demo@0.4.0) (2020-10-08)
+
+
+### Features
+
+* **demo:** extended color theme testing tools finalized ([48e90ae](https://github.com/pie-framework/pie-ui/commit/48e90ae))
+* **placement-ordering:** finalize color theme support and change disabled treatment ([5cf08bb](https://github.com/pie-framework/pie-ui/commit/5cf08bb))
+
+
+
+
+
+## [0.3.145](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.144...@pie-ui/demo@0.3.145) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.144](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.143...@pie-ui/demo@0.3.144) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.143](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.142...@pie-ui/demo@0.3.143) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.142](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.141...@pie-ui/demo@0.3.142) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.141](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.140...@pie-ui/demo@0.3.141) (2020-08-11)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.3.140](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.139...@pie-ui/demo@0.3.140) (2020-08-06)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
 ## [0.3.139](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.3.138...@pie-ui/demo@0.3.139) (2020-06-15)
 
 **Note:** Version bump only for package @pie-ui/demo

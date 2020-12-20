@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.49](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.48...@pie-ui/ebsr@1.2.49) (2020-10-15)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.48](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.47...@pie-ui/ebsr@1.2.48) (2020-10-08)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.47](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.46...@pie-ui/ebsr@1.2.47) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.46](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.45...@pie-ui/ebsr@1.2.46) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.45](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.44...@pie-ui/ebsr@1.2.45) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.44](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.43...@pie-ui/ebsr@1.2.44) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
+## [1.2.43](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.42...@pie-ui/ebsr@1.2.43) (2020-08-06)
+
+**Note:** Version bump only for package @pie-ui/ebsr
+
+
+
+
+
 ## [1.2.42](https://github.com/pie-framework/pie-elements/compare/@pie-ui/ebsr@1.2.41...@pie-ui/ebsr@1.2.42) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/ebsr

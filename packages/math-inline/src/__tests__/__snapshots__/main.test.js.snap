@@ -5,7 +5,7 @@ exports[`Math-Inline Main render renders correctly with snapshot 1`] = `
   classes={
     Object {
       "blockContainer": "Main-blockContainer-17",
-      "blockMath": "Main-blockMath-19",
+      "blockMath": "Main-blockMath-20",
       "blockResponse": "Main-blockResponse-18",
       "collapsible": "Main-collapsible-9",
       "content": "Main-content-8",
@@ -21,6 +21,7 @@ exports[`Math-Inline Main render renders correctly with snapshot 1`] = `
       "responseContainer": "Main-responseContainer-10",
       "showCorrectness": "Main-showCorrectness-13",
       "title": "Main-title-7",
+      "toggle": "Main-toggle-19",
       "tooltip": "Main-tooltip-2",
       "tooltipPopper": "Main-tooltipPopper-3",
     }

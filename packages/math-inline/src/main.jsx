@@ -11,6 +11,7 @@ import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 import SimpleQuestionBlock from './simple-question-block';
 import MathQuill from '@pie-framework/mathquill';
+import { color } from '@pie-lib/render-ui';
 let registered = false;
 
 const REGEX = /{{response}}/gm;
@@ -26,7 +27,10 @@ function generateAdditionalKeys(keyData = []) {
 }
 
 function getKeyPadWidth(additionalKeys = [], equationEditor) {
-  return Math.floor(additionalKeys.length / 5) * 30 + (equationEditor === 'everything' ? 600 : 500);
+  return (
+    Math.floor(additionalKeys.length / 5) * 30 +
+    (equationEditor === 'everything' ? 600 : 500)
+  );
 }
 
 function prepareForStatic(model, state) {
@@ -171,7 +175,9 @@ export class Main extends React.Component {
     const { config: nextConfig = {} } = nextProps.model || {};
 
     if (
-      (config && config.responses && config.responses.length !== nextConfig.responses.length) ||
+      (config &&
+        config.responses &&
+        config.responses.length !== nextConfig.responses.length) ||
       (!config && nextConfig && nextConfig.responses) ||
       (config && nextConfig && config.expression !== nextConfig.expression)
     ) {
@@ -184,7 +190,10 @@ export class Main extends React.Component {
       (nextConfig.expression || '').replace(REGEX, () => {
         newAnswers[`r${answerBlocks}`] = {
           value:
-            (answers && answers[`r${answerBlocks}`] && answers[`r${answerBlocks}`].value) || '',
+            (answers &&
+              answers[`r${answerBlocks}`] &&
+              answers[`r${answerBlocks}`].value) ||
+            '',
         };
         answerBlocks++;
       });
@@ -339,7 +348,7 @@ export class Main extends React.Component {
     const correct = model.correctness && model.correctness.correct;
     const staticLatex = prepareForStatic(model, state) || '';
 
-    const tooltipModeEnabled = model.disabled && model.correctness;
+    const tooltipModeEnabled = model.disabled && model.correctness && model.config && model.config.responseType !== ResponseTypes.simple;
 
     const midContent = (
       <div className={classes.main}>
@@ -358,40 +367,53 @@ export class Main extends React.Component {
           {model.config.responseType === ResponseTypes.advanced && (
             <div
               className={cx(classes.expression, {
-                [classes.incorrect]: !correct,
-                [classes.correct]: correct,
-                [classes.showCorrectness]: model.disabled && model.correctness && !model.view,
+                [classes.incorrect]: !correct && !showCorrect,
+                [classes.correct]: correct || showCorrect,
+                [classes.showCorrectness]:
+                  model.disabled && model.correctness && !model.view,
                 [classes.correctAnswerShown]: showCorrect,
               })}
             >
               <Tooltip
                 interactive
                 open={!!activeAnswerBlock}
-                classes={{ tooltip: classes.keypadTooltip, popper: classes.keypadTooltipPopper }}
+                classes={{
+                  tooltip: classes.keypadTooltip,
+                  popper: classes.keypadTooltipPopper,
+                }}
                 title={Object.keys(session.answers).map(
                   (answerId) =>
-                    (answerId === activeAnswerBlock && !(showCorrect || model.disabled) && (
-                      <div
-                        data-keypad={true}
-                        key={answerId}
-                        className={classes.responseContainer}
-                        style={{
-                          // marginTop: this.mqStatic && this.mqStatic.input.offsetHeight - 20,
-                          width: getKeyPadWidth(additionalKeys, model.config.equationEditor),
-                        }}
-                      >
-                        <HorizontalKeypad
-                          additionalKeys={additionalKeys}
-                          mode={model.config.equationEditor || DEFAULT_KEYPAD_VARIANT}
-                          onClick={this.onClick}
-                        />
-                      </div>
-                    )) ||
+                    (answerId === activeAnswerBlock &&
+                      !(showCorrect || model.disabled) && (
+                        <div
+                          data-keypad={true}
+                          key={answerId}
+                          className={classes.responseContainer}
+                          style={{
+                            // marginTop: this.mqStatic && this.mqStatic.input.offsetHeight - 20,
+                            width: getKeyPadWidth(
+                              additionalKeys,
+                              model.config.equationEditor
+                            ),
+                          }}
+                        >
+                          <HorizontalKeypad
+                            additionalKeys={additionalKeys}
+                            mode={
+                              model.config.equationEditor ||
+                              DEFAULT_KEYPAD_VARIANT
+                            }
+                            onClick={this.onClick}
+                          />
+                        </div>
+                      )) ||
                     null
                 )}
               >
                 <mq.Static
-                  ref={(mqStatic) => (this.mqStatic = mqStatic || this.mqStatic)}
+                  ref={(mqStatic) =>
+                    (this.mqStatic = mqStatic || this.mqStatic)
+                  }
                   latex={staticLatex}
                   onSubFieldChange={this.subFieldChanged}
                   getFieldName={this.getFieldName}
@@ -406,7 +428,13 @@ export class Main extends React.Component {
       </div>
     );
 
-    if (tooltipModeEnabled) {
+    if (
+      tooltipModeEnabled &&
+      ((model.correctness && model.correctness.correctness !== 'correct') ||
+        model.teacherInstructions ||
+        model.rationale ||
+        model.feedback)
+    ) {
       return (
         <Tooltip
           interactive
@@ -417,14 +445,15 @@ export class Main extends React.Component {
           title={
             <div>
               <div className={classes.main}>
-                {model.correctness && model.correctness.correctness !== 'correct' && (
-                  <CorrectAnswerToggle
-                    className={classes.toggle}
-                    show
-                    toggled={showCorrect}
-                    onToggle={this.toggleShowCorrect}
-                  />
-                )}
+                {model.correctness &&
+                  model.correctness.correctness !== 'correct' && (
+                    <CorrectAnswerToggle
+                      className={classes.toggle}
+                      show
+                      toggled={showCorrect}
+                      onToggle={this.toggleShowCorrect}
+                    />
+                  )}
               </div>
               {model.teacherInstructions && [
                 <Collapsible
@@ -456,19 +485,28 @@ export class Main extends React.Component {
                 <br key="br" />,
               ]}
               {model.feedback && (
-                <Feedback correctness={model.correctness.correctness} feedback={model.feedback} />
+                <Feedback
+                  correctness={model.correctness.correctness}
+                  feedback={model.feedback}
+                />
               )}
             </div>
           }
         >
-          <div className={classes.mainContainer} ref={(r) => (this.root = r || this.root)}>
+          <div
+            className={classes.mainContainer}
+            ref={(r) => (this.root = r || this.root)}
+          >
             {midContent}
           </div>
         </Tooltip>
       );
     }
     return (
-      <div className={classes.mainContainer} ref={(r) => (this.root = r || this.root)}>
+      <div
+        className={classes.mainContainer}
+        ref={(r) => (this.root = r || this.root)}
+      >
         {midContent}
       </div>
     );
@@ -480,10 +518,10 @@ const styles = (theme) => ({
     display: 'inline-block',
   },
   tooltip: {
-    background: 'white',
-    color: 'black',
+    background: color.primaryLight(),
+    color: color.text(),
     padding: theme.spacing.unit * 2,
-    border: '1px solid black',
+    border: `1px solid ${color.secondary()}`,
     fontSize: '16px',
   },
   tooltipPopper: {
@@ -504,6 +542,9 @@ const styles = (theme) => ({
   main: {
     width: '100%',
     position: 'relative',
+    padding: theme.spacing.unit / 2,
+    backgroundColor: color.background(),
+    color: color.text(),
   },
   title: {
     fontSize: '1.1rem',
@@ -548,10 +589,10 @@ const styles = (theme) => ({
     letterSpacing: '0.5px',
   },
   correct: {
-    borderColor: 'green !important',
+    borderColor: `${color.correct()} !important`,
   },
   incorrect: {
-    borderColor: 'red !important',
+    borderColor: `${color.incorrect()} !important`,
   },
   blockContainer: {
     margin: theme.spacing.unit,
@@ -567,10 +608,14 @@ const styles = (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRight: '2px solid grey',
+    borderRight: `2px solid ${color.disabled()}`,
+  },
+  toggle: {
+    color: color.text(),
   },
   blockMath: {
-    color: '#bdbdbd',
+    color: color.text(),
+    backgroundColor: color.background(),
     padding: theme.spacing.unit / 2,
     display: 'flex',
     alignItems: 'center',

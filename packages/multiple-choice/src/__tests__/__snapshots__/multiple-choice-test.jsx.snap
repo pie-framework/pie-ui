@@ -27,12 +27,8 @@ exports[`CorespringChoice snapshot renders 1`] = `
     toggled={false}
   />
   <br />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": undefined,
-      }
-    }
+  <PreviewPrompt
+    className="prompt"
   />
   <WithStyles(Choice)
     checked={false}
@@ -101,12 +97,8 @@ exports[`CorespringChoice snapshot renders incorrect tick if one answer is corre
     toggled={false}
   />
   <br />
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": undefined,
-      }
-    }
+  <PreviewPrompt
+    className="prompt"
   />
   <WithStyles(Choice)
     checked={true}

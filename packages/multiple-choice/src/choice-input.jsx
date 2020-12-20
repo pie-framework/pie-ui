@@ -4,36 +4,32 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import { Feedback, color } from '@pie-lib/render-ui';
+import { Feedback, color, PreviewPrompt } from '@pie-lib/render-ui';
 import FeedbackTick from './feedback-tick';
 import Radio from '@material-ui/core/Radio';
 import classNames from 'classnames';
 
-const styleSheet = (theme) => ({
-  label: {
-    color: color.text(), //'var(--choice-input-color, black)',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    cursor: 'pointer',
-  },
+const styleSheet = () => ({
   row: {
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: color.background(),
   },
   checkboxHolder: {
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: color.background(),
     flex: 1,
-    '& label': {},
-  },
-  rationale: {
-    paddingLeft: theme.spacing.unit * 16,
+    '& label': {
+      color: color.text(),
+    },
   },
 });
 
 const formStyleSheet = {
   label: {
-    color: color.text(), //'var(--choice-input-color, black)'
+    color: `${color.text()} !important`, //'var(--choice-input-color, black)'
+    backgroundColor: color.background(),
   },
 };
 
@@ -47,7 +43,7 @@ const CLASS_NAME = 'multiple-choice-component';
 
 const colorStyle = (varName, fallback) => ({
   [`&.${CLASS_NAME}`]: {
-    color: `var(--choice-input-${varName}, ${fallback})`,
+    color: `var(--choice-input-${varName}, ${fallback}) !important`,
   },
 });
 
@@ -55,15 +51,23 @@ const inputStyles = {
   'correct-root': colorStyle('correct-color', color.text()),
   'correct-checked': colorStyle('correct-selected-color', color.correct()), //green[500]),
   'correct-disabled': colorStyle('correct-disabled-color', color.disabled()), //'grey'),
-  'incorrect-root': colorStyle('incorrect-color', color.text()),
+  'incorrect-root': colorStyle('incorrect-color', color.incorrect()),
   'incorrect-checked': colorStyle('incorrect-checked', color.incorrect()), //orange[500]),
   'incorrect-disabled': colorStyle(
     'incorrect-disabled-color',
     color.disabled()
   ),
-  root: colorStyle('color', color.text()),
-  checked: colorStyle('selected-color', color.text()),
-  disabled: colorStyle('disabled-color', color.text()),
+  root: {
+    ...colorStyle('color', color.text()),
+    '&:hover': { color: `${color.primaryLight()} !important` },
+  },
+  checked: colorStyle('selected-color', color.primary()),
+  disabled: {
+    ...colorStyle('disabled-color', color.text()),
+    opacity: 0.6,
+    cursor: 'not-allowed !important',
+    pointerEvents: 'initial !important',
+  },
 };
 
 export const StyledCheckbox = withStyles(inputStyles)((props) => {
@@ -180,18 +184,16 @@ export class ChoiceInput extends React.Component {
                 />
               }
             />
-            <span
-              className={classes.label}
+            <PreviewPrompt
+              className="label"
               onClick={this.onToggleChoice}
-              dangerouslySetInnerHTML={{ __html: label }}
+              prompt={label}
+              tagName="span"
             />
           </div>
         </div>
         {rationale && (
-          <div
-            className={classes.rationale}
-            dangerouslySetInnerHTML={{ __html: rationale }}
-          />
+          <PreviewPrompt className="rationale" prompt={rationale} />
         )}
         <Feedback feedback={feedback} correctness={correctness} />
       </div>

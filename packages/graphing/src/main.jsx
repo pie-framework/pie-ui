@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { GraphContainer } from '@pie-lib/graphing';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 
 export class Main extends React.Component {
@@ -47,7 +47,7 @@ export class Main extends React.Component {
 
 
     return (
-      <div>
+      <div className={classes.mainContainer}>
         <CorrectAnswerToggle
           show={showToggle}
           toggled={showingCorrect}
@@ -112,7 +112,12 @@ export class Main extends React.Component {
   }
 }
 
-const styles = () => ({
+const styles = theme => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background()
+  },
   prompt: { verticalAlign: 'middle' }
 });
 

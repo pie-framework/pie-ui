@@ -11,18 +11,18 @@ const partA = {
   choices: [
     {
       value: 'yellow',
-      label: 'Yellow'
+      label: 'Yellow',
     },
     {
       value: 'green',
-      label: 'Green'
+      label: 'Green',
     },
     {
       correct: true,
       value: 'blue',
-      label: 'Blue'
-    }
-  ]
+      label: 'Blue',
+    },
+  ],
 };
 
 const partB = {
@@ -38,27 +38,27 @@ const partB = {
   choices: [
     {
       value: 'orange',
-      label: 'Orange'
+      label: 'Orange',
     },
     {
       correct: true,
       value: 'purple',
-      label: 'Purple'
+      label: 'Purple',
     },
     {
       value: 'pink',
-      label: 'Pink'
+      label: 'Pink',
     },
     {
       value: 'green',
-      label: 'Green'
-    }
-  ]
+      label: 'Green',
+    },
+  ],
 };
 
 module.exports = {
   elements: {
-    'ebsr-element': '..'
+    'ebsr-element': '..',
   },
   models: [
     {
@@ -66,7 +66,14 @@ module.exports = {
       element: 'ebsr-element',
       mode: 'gather',
       partA,
-      partB
-    }
-  ]
+      partB,
+    },
+    {
+      id: '2',
+      element: 'ebsr-element',
+      mode: 'evaluate',
+      partA,
+      partB: { ...partB, disabled: true },
+    },
+  ],
 };

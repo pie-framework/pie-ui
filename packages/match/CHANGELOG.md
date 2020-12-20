@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.5.0...@pie-ui/match@2.6.0) (2020-10-15)
+
+
+### Features
+
+* **match:** color theme support finalized and disabled support ([3ac0b8c](https://github.com/pie-framework/pie-ui/commit/3ac0b8c))
+
+
+
+
+
+# [2.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.7...@pie-ui/match@2.5.0) (2020-10-08)
+
+
+### Features
+
+* **match:** add color theme support ([1cc46d9](https://github.com/pie-framework/pie-ui/commit/1cc46d9))
+* **match:** color theme support added ([5f1d874](https://github.com/pie-framework/pie-ui/commit/5f1d874))
+* **match:** use render ui colors ([09b19d1](https://github.com/pie-framework/pie-ui/commit/09b19d1))
+
+
+
+
+
+## [2.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.6...@pie-ui/match@2.4.7) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.4.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.5...@pie-ui/match@2.4.6) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-ui/commit/b70a7e7))
+
+
+
+
+
+## [2.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.4...@pie-ui/match@2.4.5) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.4.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.3...@pie-ui/match@2.4.4) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.4.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.2...@pie-ui/match@2.4.3) (2020-08-11)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.1...@pie-ui/match@2.4.2) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-ui/commit/2673e67))
+
+
+
+
+
 ## [2.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.4.0...@pie-ui/match@2.4.1) (2020-06-05)
 
 **Note:** Version bump only for package @pie-ui/match

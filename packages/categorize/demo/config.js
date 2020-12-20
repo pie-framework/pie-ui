@@ -35,6 +35,7 @@ module.exports = {
       id: '1',
       element: 'categorize-el',
       disabled: false,
+      categoriesPerRow: 2,
       categories: getCategories(),
       choices: getChoices(),
       config: {
@@ -53,6 +54,7 @@ module.exports = {
       id: '2',
       element: 'categorize-el',
       disabled: true,
+      categoriesPerRow: 2,
       categories: getCategories(),
       choices: getChoices(),
       config: {
@@ -70,6 +72,7 @@ module.exports = {
       id: '3',
       element: 'categorize-el',
       disabled: true,
+      categoriesPerRow: 2,
       categories: getCategories(),
       choices: getChoices(),
       incorrect: true,

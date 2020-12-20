@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trait snapshots renders without scorePointsDescriptors 1`] = `
+<Trait
+  scaleIndex={1}
+  scorePointsValues={
+    Array [
+      0,
+      1,
+    ]
+  }
+  showDescription={true}
+  showStandards={true}
+  trait={
+    Object {
+      "description": "Trait 1 Description",
+      "name": "Trait 1",
+      "scorePointsDescriptors": Array [],
+      "standards": Array [
+        "a",
+        "b",
+      ],
+    }
+  }
+  traitIndex={1}
+>
+  <tr
+    key="scale-1-trait-1"
+  >
+    <td>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Trait 1",
+          }
+        }
+      />
+    </td>
+    <td>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "a,b",
+          }
+        }
+      />
+    </td>
+    <td>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Trait 1 Description",
+          }
+        }
+      />
+    </td>
+    <td
+      key="table-cell-0"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </td>
+    <td
+      key="table-cell-1"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </td>
+  </tr>
+</Trait>
+`;
+
+exports[`Trait snapshots renders without standards, description and scorePointsValues 1`] = `
+<Trait
+  scaleIndex={1}
+  scorePointsValues={Array []}
+  showDescription={false}
+  showStandards={false}
+  trait={
+    Object {
+      "description": "Trait 1 Description",
+      "name": "Trait 1",
+      "scorePointsDescriptors": Array [
+        "Descriptor 0",
+        "Descriptor 1",
+      ],
+      "standards": Array [
+        "a",
+        "b",
+      ],
+    }
+  }
+  traitIndex={1}
+>
+  <tr
+    key="scale-1-trait-1"
+  >
+    <td>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Trait 1",
+          }
+        }
+      />
+    </td>
+  </tr>
+</Trait>
+`;

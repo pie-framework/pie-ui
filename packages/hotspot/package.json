@@ -7,7 +7,7 @@
     "custom-element",
     "react"
   ],
-  "version": "1.4.0",
+  "version": "1.5.1",
   "main": "lib/index.js",
   "module": "src/index.js",
   "repository": "pie-framework/pie-elements.git",
@@ -18,8 +18,8 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/math-rendering": "^2.1.12",
-    "@pie-lib/render-ui": "^4.8.0",
+    "@pie-lib/math-rendering": "^2.2.3",
+    "@pie-lib/render-ui": "^4.9.4",
     "konva": "^3.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",

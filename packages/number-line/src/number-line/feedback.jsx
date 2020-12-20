@@ -6,6 +6,7 @@ import {
   ShowRationale
 } from '@pie-lib/icons';
 import PropTypes from 'prop-types';
+import { color } from '@pie-lib/render-ui';
 
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -76,10 +77,10 @@ const styles = {
     userSelect: 'none'
   },
   correct: {
-    backgroundColor: 'var(--number-line-correct-bg, green)'
+    backgroundColor: color.correct()
   },
   incorrect: {
-    backgroundColor: 'var(--number-line-incorrect-bg, orange)'
+    backgroundColor: color.incorrect()
   }
 };
 

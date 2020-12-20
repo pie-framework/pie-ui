@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.5.0...@pie-ui/hotspot@1.5.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* Drop all the text annotations & update correctness icons. PD-166 ([3e18681](https://github.com/pie-framework/pie-elements/commit/3e18681))
+
+
+
+
+
+# [1.5.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.4...@pie-ui/hotspot@1.5.0) (2020-10-08)
+
+
+### Features
+
+* **hotspot:** use render ui colors ([d4262c9](https://github.com/pie-framework/pie-elements/commit/d4262c9))
+
+
+
+
+
+## [1.4.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.3...@pie-ui/hotspot@1.4.4) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.4.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.2...@pie-ui/hotspot@1.4.3) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-elements/commit/b70a7e7))
+
+
+
+
+
+## [1.4.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.1...@pie-ui/hotspot@1.4.2) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
+## [1.4.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.4.0...@pie-ui/hotspot@1.4.1) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/hotspot
+
+
+
+
+
 # [1.4.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/hotspot@1.3.29...@pie-ui/hotspot@1.4.0) (2020-06-15)
 
 

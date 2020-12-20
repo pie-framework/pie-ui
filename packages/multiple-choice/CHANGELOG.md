@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.14.0...@pie-ui/multiple-choice@4.15.0) (2020-10-15)
+
+
+### Features
+
+* **match:** color theme support finalized and disabled support ([3ac0b8c](https://github.com/pie-framework/pie-elements/commit/3ac0b8c))
+* **multiple-choice:** finalize color theme support and disabled handling ([f080d5e](https://github.com/pie-framework/pie-elements/commit/f080d5e))
+
+
+
+
+
+# [4.14.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.5...@pie-ui/multiple-choice@4.14.0) (2020-10-08)
+
+
+### Features
+
+* **multiple-choice:** color theme support fixes ([e15d026](https://github.com/pie-framework/pie-elements/commit/e15d026))
+* **multiple-choice:** use render ui colors ([55399ca](https://github.com/pie-framework/pie-elements/commit/55399ca))
+
+
+
+
+
+## [4.13.5](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.4...@pie-ui/multiple-choice@4.13.5) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.13.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.3...@pie-ui/multiple-choice@4.13.4) (2020-09-23)
+
+
+### Bug Fixes
+
+* bump lib versions ([b70a7e7](https://github.com/pie-framework/pie-elements/commit/b70a7e7))
+
+
+
+
+
+## [4.13.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.2...@pie-ui/multiple-choice@4.13.3) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.13.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.1...@pie-ui/multiple-choice@4.13.2) (2020-09-23)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.13.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.13.0...@pie-ui/multiple-choice@4.13.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* update correct-answer-toggle@^2.3.1 ([2673e67](https://github.com/pie-framework/pie-elements/commit/2673e67))
+
+
+
+
+
 # [4.13.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.12.23...@pie-ui/multiple-choice@4.13.0) (2020-06-05)
 
 

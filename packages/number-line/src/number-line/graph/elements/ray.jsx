@@ -1,5 +1,5 @@
 import * as colors from '../../colors';
-
+import { color } from '@pie-lib/render-ui';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Arrow from '../arrow';
@@ -9,14 +9,14 @@ import classNames from 'classnames';
 import injectSheet from 'react-jss';
 import isNumber from 'lodash/isNumber';
 
-const rayColor = color => ({
+const rayColor = rayColor => ({
   '& line': {
-    stroke: color
+    stroke: rayColor
   },
   '& .arrow': {
-    fill: color,
+    fill: rayColor,
     strokeWidth: '1px',
-    stroke: color
+    stroke: rayColor
   }
 });
 
@@ -25,7 +25,7 @@ const style = {
     '& line': {
       cursor: 'pointer',
       strokeWidth: '5px',
-      stroke: 'var(--line-stroke, black)'
+      stroke: color.primary()
     },
     '& line, & .arrow': {
       transition: 'stroke 150ms linear, fill 150ms linear'

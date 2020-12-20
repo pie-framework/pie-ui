@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import injectSheet from 'react-jss';
+import { color } from '@pie-lib/render-ui';
 
 const style = {
   root: {
-    fill: 'var(--arrow-color, black)'
+    fill: color.primary()
   }
 };
 

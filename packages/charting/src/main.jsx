@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible } from '@pie-lib/render-ui';
 import { Chart, chartTypes } from '@pie-lib/charting';
 import isEqual from 'lodash/isEqual';
 
@@ -10,7 +10,7 @@ export class Main extends React.Component {
     classes: PropTypes.object,
     model: PropTypes.object.isRequired,
     onAnswersChange: PropTypes.func,
-    categories: PropTypes.array
+    categories: PropTypes.array,
   };
 
   static defaultProps = { classes: {} };
@@ -19,7 +19,7 @@ export class Main extends React.Component {
     super(props);
 
     this.state = {
-      categories: props.categories || props.model.data
+      categories: props.categories || props.model.data,
     };
   }
 
@@ -28,13 +28,17 @@ export class Main extends React.Component {
     const { model: { data = [] } = {} } = this.props;
 
     if (!isEqual(nextData, data)) {
-      this.setState({ categories: nextData })
+      this.setState({ categories: nextData });
     }
   }
 
-  changeData = data => this.setState({
-    categories: data
-  }, () => this.props.onAnswersChange(data));
+  changeData = (data) =>
+    this.setState(
+      {
+        categories: data,
+      },
+      () => this.props.onAnswersChange(data)
+    );
 
   render() {
     const { categories } = this.state;
@@ -51,20 +55,21 @@ export class Main extends React.Component {
       addCategoryEnabled,
       categoryDefaultLabel,
       rationale,
-      correctedAnswer
+      correctedAnswer,
     } = model;
 
     return (
-      <div>
-        {
-          teacherInstructions && (
-            <Collapsible
-              labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
-            </Collapsible>
-          )
-        }
+      <div className={classes.mainContainer}>
+        {teacherInstructions && (
+          <Collapsible
+            labels={{
+              hidden: 'Show Teacher Instructions',
+              visible: 'Hide Teacher Instructions',
+            }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
+          </Collapsible>
+        )}
         <br />
         <div
           className={classes.prompt}
@@ -84,7 +89,7 @@ export class Main extends React.Component {
             chartTypes.LineDot(),
             chartTypes.LineCross(),
             chartTypes.DotPlot(),
-            chartTypes.LinePlot()
+            chartTypes.LinePlot(),
           ]}
           data={correctedAnswer || categories}
           title={title}
@@ -95,22 +100,27 @@ export class Main extends React.Component {
         />
 
         <br />
-        {
-          rationale && (
-            <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
-              <div dangerouslySetInnerHTML={{ __html: rationale }}/>
-            </Collapsible>
-          )
-        }
+        {rationale && (
+          <Collapsible
+            labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: rationale }} />
+          </Collapsible>
+        )}
       </div>
     );
   }
 }
 
-const styles = () => ({
+const styles = theme => ({
+  mainContainer: {
+    padding: theme.spacing.unit,
+    color: color.text(),
+    backgroundColor: color.background(),
+  },
   prompt: {
-    verticalAlign: 'middle'
-  }
+    verticalAlign: 'middle',
+  },
 });
 
 export default withStyles(styles)(Main);

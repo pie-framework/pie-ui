@@ -18,6 +18,9 @@ const ChoiceInput = withStyles(radioStyles)((props) => {
   const {disabled, checked, matrixKey, matrixValue, classes, onChange} = props;
 
   const onChangeWrapper = () => {
+    if (disabled) {
+      return;
+    }
     onChange({
       matrixValue,
       matrixKey

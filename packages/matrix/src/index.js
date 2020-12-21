@@ -4,8 +4,12 @@ import {SessionChangedEvent} from '@pie-framework/pie-player-events';
 import {renderMath} from '@pie-lib/math-rendering';
 import Main from './Main';
 
-export const isComplete = (session) =>
-  !!(session && session.value && session.value.length);
+export const isComplete = session => {
+  if (!session || !session.value) {
+    return false;
+  }
+  return !!(Object.keys(session.value).length);
+};
 
 export default class Matrix extends HTMLElement {
   constructor() {

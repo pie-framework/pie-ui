@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { color, Purpose } from '@pie-lib/render-ui';
 
-const styles = (theme) => ({
+const styles = (/*theme*/) => ({
   root: {
     flexGrow: 1,
     backgroundColor: color.background(),

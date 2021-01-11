@@ -4,21 +4,19 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Purpose } from '@pie-lib/render-ui';
+import { color, Purpose } from '@pie-lib/render-ui';
 
-const styles = (theme) => ({
+const styles = (/*theme*/) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-  colorPrimary: {
-    color: 'red',
+    backgroundColor: color.background(),
+    color: color.text(),
   },
   tab: {
     fontSize: '0.8125em',
   },
   stickyTabs: {
-    background: '#fff',
+    background: color.background(),
     paddingBottom: '20px',
     position: 'sticky',
     top: 0,
@@ -29,7 +27,15 @@ function TabContainer(props) {
   const padding = props.multiple ? '0 24px 24px 24px' : '24px';
 
   return (
-    <Typography component="div" style={{ padding, fontSize: '0.875em' }}>
+    <Typography
+      component="div"
+      style={{
+        padding,
+        fontSize: '0.875em',
+        backgroundColor: color.background(),
+        color: color.text(),
+      }}
+    >
       {props.children}
     </Typography>
   );
@@ -50,12 +56,12 @@ class StimulusTabs extends React.Component {
     setTimeout(() => {
       const tabChangeEvent = new CustomEvent('pie-ui-passage-tabChanged', {
         detail: {
-          tab: activeTab
-        }
+          tab: activeTab,
+        },
       });
 
       window.dispatchEvent(tabChangeEvent);
-    })
+    });
   };
 
   render() {

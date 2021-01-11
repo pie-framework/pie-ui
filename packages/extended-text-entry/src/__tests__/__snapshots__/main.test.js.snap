@@ -9,6 +9,7 @@ exports[`Render Main Component should match snapshot 1`] = `
     pluginProps={
       Object {
         "math": Object {
+          "controlledKeypadMode": false,
           "disabled": true,
           "keypadMode": undefined,
         },
@@ -46,6 +47,7 @@ exports[`Render Main Component should match snapshot with teacher instructions 1
     pluginProps={
       Object {
         "math": Object {
+          "controlledKeypadMode": false,
           "disabled": true,
           "keypadMode": undefined,
         },

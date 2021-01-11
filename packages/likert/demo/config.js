@@ -3,7 +3,7 @@ module.exports = {
     'likert-el': '..'
   },
   models: [{
-    element: 'likert',
+    element: 'likert-el',
     id: '1',
     mode: 'gather',
     disabled: false,

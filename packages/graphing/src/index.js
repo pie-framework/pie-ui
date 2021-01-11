@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './main';
 import { SessionChangedEvent } from '@pie-framework/pie-player-events';
 import { renderMath } from '@pie-lib/math-rendering';
+
+import {  removeInvalidAnswers } from './utils';
+import Main from './main';
 
 export { Main as Component };
 
@@ -28,7 +30,7 @@ export default class Graphing extends HTMLElement {
   isComplete = answer => Array.isArray(answer) && answer.length > 0;
 
   changeAnswers = answer => {
-    this._session.answer = answer;
+    this._session.answer = removeInvalidAnswers(answer);
 
     this.dispatchEvent(
       new SessionChangedEvent(

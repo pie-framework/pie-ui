@@ -253,5 +253,20 @@
     "committerDate": "2020-10-06 20:37:36 +0300",
     "isTagged": true,
     "tag": "@pie-ui/demo@0.4.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "demo w lib linking",
+    "merge": null,
+    "header": "fix: demo w lib linking",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "197447b7b0cd48a02daa30c5c24ec52429a2d30c",
+    "gitTags": "",
+    "committerDate": "2020-10-20 10:00:37 +0100",
+    "isTagged": true,
+    "tag": "@pie-ui/demo@0.4.2"
   }
 ]

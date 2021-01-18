@@ -91,7 +91,6 @@ const styles = {
     backgroundColor: color.background(),
     padding: '5px',
     '& *': {
-      fontFamily: "'Roboto', Arial, Helvetica, sans-serif", //eslint-disable-line
       '-webkit-font-smoothing': 'antialiased',
     },
   }

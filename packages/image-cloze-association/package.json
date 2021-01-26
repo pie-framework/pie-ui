@@ -20,8 +20,8 @@
     "@material-ui/icons": "^3.0.1",
     "@pie-framework/pie-player-events": "^0.1.0",
     "@pie-lib/drag": "^1.1.45",
-    "@pie-lib/math-rendering": "^2.2.3",
-    "@pie-lib/render-ui": "^4.9.4",
+    "@pie-lib/math-rendering": "^2.3.0",
+    "@pie-lib/render-ui": "^4.10.1",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"

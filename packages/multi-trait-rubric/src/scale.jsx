@@ -92,7 +92,7 @@ class Scale extends React.Component {
 
               // to handle the case when there aren't enough labels
               try {
-                pointLabel = scorePointsLabels[scorePointsValues.length - index - (excludeZero ? 0 : 1)] || '';
+                pointLabel = scorePointsLabels[scorePointsValues.length - index - 1] || '';
               } catch (e) {
                 pointLabel = '';
               }

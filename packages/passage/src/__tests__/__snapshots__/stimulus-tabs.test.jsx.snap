@@ -4,10 +4,9 @@ exports[`stimulus tabs snapshot should render component 1`] = `
 <StimulusTabs
   classes={
     Object {
-      "colorPrimary": "StimulusTabs-colorPrimary-2",
       "root": "StimulusTabs-root-1",
-      "stickyTabs": "StimulusTabs-stickyTabs-4",
-      "tab": "StimulusTabs-tab-3",
+      "stickyTabs": "StimulusTabs-stickyTabs-3",
+      "tab": "StimulusTabs-tab-2",
     }
   }
   tabs={

@@ -551,7 +551,7 @@ exports[`Scale snapshots renders without 0 1`] = `
                     <div
                       dangerouslySetInnerHTML={
                         Object {
-                          "__html": "B",
+                          "__html": "A",
                         }
                       }
                     />
@@ -614,7 +614,7 @@ exports[`Scale snapshots renders without 0 1`] = `
               <div
                 dangerouslySetInnerHTML={
                   Object {
-                    "__html": "Descriptor 1",
+                    "__html": "Descriptor 0",
                   }
                 }
               />

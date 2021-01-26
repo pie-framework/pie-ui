@@ -1,0 +1,24 @@
+{
+  "name": "@pie-ui/matrix",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "This interaction asks a student to answer a matrix question.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@pie-framework/pie-player-events": "^0.1.0",
+    "@pie-lib/math-rendering": "^2.3.0",
+    "@pie-lib/render-ui": "^4.10.1",
+    "debug": "^4.1.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "styled-components": "^5.2.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "gitHead": "25b2169d13da6abaaaa962e42f3f6d6ab400ec8b"
+}

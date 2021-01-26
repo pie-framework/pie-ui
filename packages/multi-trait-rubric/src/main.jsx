@@ -7,9 +7,9 @@ import Scale from './scale';
 class Main extends React.Component {
   render() {
     const { model } = this.props;
-    const { halfScoring, scales, visibleToStudent } = model || {};
+    const { halfScoring, scales, visible } = model || {};
 
-    if (!scales || !visibleToStudent) {
+    if (!scales || !visible) {
       return <div/>;
     }
 
@@ -43,7 +43,7 @@ Main.propTypes = {
         standards: PropTypes.arrayOf(PropTypes.string),
       }))
     })),
-    visibleToStudent: PropTypes.bool,
+    visible: PropTypes.bool,
   })
 };
 

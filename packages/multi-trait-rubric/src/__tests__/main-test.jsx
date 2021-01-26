@@ -19,7 +19,7 @@ describe('Main', () => {
           traits: []
         }
       ],
-      visibleToStudent: false,
+      visible: false,
       ...modelOptions
     };
 
@@ -37,12 +37,12 @@ describe('Main', () => {
     });
 
     it('visible to students => renders table without half-scoring', () => {
-      const wrapper = mkWrapper({ visibleToStudent: true });
+      const wrapper = mkWrapper({ visible: true });
       expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     it('visible to students => renders table with half-scoring', () => {
-      const wrapper = mkWrapper({ visibleToStudent: true, halfScoring: true });
+      const wrapper = mkWrapper({ visible: true, halfScoring: true });
       expect(toJson(wrapper)).toMatchSnapshot();
     });
 

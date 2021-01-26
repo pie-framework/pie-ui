@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import debug from 'debug';
+import debounce from 'lodash/debounce';
 import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 
@@ -39,8 +40,10 @@ export class Main extends React.Component {
     }
   }
 
+  changeSession = debounce(this.props.onChange, 1500);
+
   render() {
-    const { model, onChange, classes, session } = this.props;
+    const { model, classes, session } = this.props;
     const { dimensions, disabled, feedback, teacherInstructions, mathInput } = model;
     const { value } = session;
     const { width, height } = dimensions || {};
@@ -73,7 +76,7 @@ export class Main extends React.Component {
           />
         )}
         <EditableHTML
-          onChange={onChange}
+          onChange={this.changeSession}
           markup={value || ''}
           width={width && width.toString()}
           height={height && height.toString()}
@@ -82,8 +85,8 @@ export class Main extends React.Component {
           pluginProps={{
             math: {
               disabled: !mathInput,
-              keypadMode: this.props.model.equationEditor
-
+              keypadMode: this.props.model.equationEditor,
+              controlledKeypadMode: false
             }
           }}
         />

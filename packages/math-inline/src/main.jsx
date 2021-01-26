@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
-import { Feedback, Collapsible } from '@pie-lib/render-ui';
+import { Feedback, Collapsible, Readable } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -14,6 +14,7 @@ import MathQuill from '@pie-framework/mathquill';
 import { color } from '@pie-lib/render-ui';
 let registered = false;
 
+const NEWLINE_LATEX = /\\newline/g;
 const REGEX = /{{response}}/gm;
 const DEFAULT_KEYPAD_VARIANT = 6;
 
@@ -55,7 +56,7 @@ function prepareForStatic(model, state) {
       }
 
       return `\\MathQuillMathField[r${answerBlocks++}]{${(answer && answer.value) || ''}}`;
-    });
+    }).replace(NEWLINE_LATEX, '\\embed{newLine}[]');
   }
 }
 
@@ -355,7 +356,8 @@ export class Main extends React.Component {
         <div className={classes.content}>
           <div dangerouslySetInnerHTML={{ __html: model.config.prompt }} />
         </div>
-        <div className={classes.inputAndKeypadContainer}>
+        <Readable false>
+          <div className={classes.inputAndKeypadContainer}>
           {model.config.responseType === ResponseTypes.simple && (
             <SimpleQuestionBlock
               onSimpleResponseChange={this.onSimpleResponseChange}
@@ -425,6 +427,7 @@ export class Main extends React.Component {
             </div>
           )}
         </div>
+        </Readable>
       </div>
     );
 

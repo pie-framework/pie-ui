@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.2...@pie-ui/graphing@3.1.3) (2021-01-26)
+
+
+### Bug Fixes
+
+* Do not save incomplete answers in the session. PD-775 ([1961783](https://github.com/pie-framework/pie-ui/commit/1961783))
+
+
+
+
+
 ## [3.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.1...@pie-ui/graphing@3.1.2) (2020-10-29)
 
 

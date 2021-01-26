@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.2.1...@pie-ui/math-inline@3.3.0) (2021-01-26)
+
+
+### Features
+
+* **math-inline:** mark math editor content as non-readable - PD-579 ([7d31c13](https://github.com/pie-framework/pie-ui/commit/7d31c13))
+* **math-inline:** re-work line breaks for simpler model - PD-787 ([e8b86b7](https://github.com/pie-framework/pie-ui/commit/e8b86b7))
+
+
+
+
+
 ## [3.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.2.0...@pie-ui/math-inline@3.2.1) (2020-10-29)
 
 

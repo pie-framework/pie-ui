@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.9.1...@pie-ui/explicit-constructed-response@1.10.0) (2021-01-26)
+
+
+### Features
+
+* **explicit-constructed-response:** adjust debounce on session change to 1.5s ([6924927](https://github.com/pie-framework/pie-ui/commit/6924927))
+
+
+
+
+
 ## [1.9.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.9.0...@pie-ui/explicit-constructed-response@1.9.1) (2020-10-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/placement-ordering",
-  "version": "4.8.1",
+  "version": "4.8.2",
   "main": "lib/index.js",
   "module": "src/index.js",
   "description": "A pie placement component",

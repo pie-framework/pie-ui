@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.3.2...@pie-ui/extended-text-entry@3.4.0) (2021-01-26)
+
+
+### Features
+
+* **extended-text-entry:** debounce on session change 1.5s ([efb0aeb](https://github.com/pie-framework/pie-ui/commit/efb0aeb))
+* **extended-text-entry:** lock down editable html to not have a controlled keypad - PD-355 ([0beddd4](https://github.com/pie-framework/pie-ui/commit/0beddd4))
+
+
+
+
+
 ## [3.3.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.3.1...@pie-ui/extended-text-entry@3.3.2) (2020-11-07)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

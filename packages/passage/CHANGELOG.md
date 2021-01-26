@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.3.9...@pie-ui/passage@1.4.0) (2021-01-26)
+
+
+### Bug Fixes
+
+* lint fix ([e086f6f](https://github.com/pie-framework/pie-ui/commit/e086f6f))
+
+
+### Features
+
+* **passage:** add color support for passage tabs and text - PD-805 ([912fd44](https://github.com/pie-framework/pie-ui/commit/912fd44))
+* **passage:** add purpose tags to tabs and text + tab change event ([0e9d9ba](https://github.com/pie-framework/pie-ui/commit/0e9d9ba))
+
+
+
+
+
 ## [1.3.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/passage@1.3.8...@pie-ui/passage@1.3.9) (2020-04-28)
 
 **Note:** Version bump only for package @pie-ui/passage

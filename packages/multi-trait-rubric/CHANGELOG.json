@@ -13,5 +13,20 @@
     "committerDate": "2020-10-22 11:27:55 +0300",
     "isTagged": true,
     "tag": "@pie-ui/multi-trait-rubric@1.1.0"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "If excludeZero, do not treat specially scorePointsDescriptors and scorePointsLabels.",
+    "merge": null,
+    "header": "fix: If excludeZero, do not treat specially scorePointsDescriptors and scorePointsLabels.",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "752a729cbf5663f74d0e151c69a7ee9571c3b7d3",
+    "gitTags": "",
+    "committerDate": "2020-11-11 11:10:25 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/multi-trait-rubric@1.1.1"
   }
 ]

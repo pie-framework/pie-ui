@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.3.5...@pie-ui/charting@0.3.6) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/charting
+
+
+
+
+
 ## [0.3.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.3.4...@pie-ui/charting@0.3.5) (2021-01-28)
 
 **Note:** Version bump only for package @pie-ui/charting

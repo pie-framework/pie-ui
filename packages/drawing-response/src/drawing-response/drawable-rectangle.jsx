@@ -47,7 +47,7 @@ export default class RectangleDrawable extends DrawableHelper {
 
   render(props) {
     const { draggable, key, onMouseOverElement, onMouseOutElement } = props;
-    console.log({startx: this.startx, starty: this.starty, x: this.x, y: this.y});
+
     return (
       <Rect
         key={key}

@@ -1308,5 +1308,35 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.3.1"
+  },
+  {
+    "type": "feat",
+    "scope": "extended-text-entry",
+    "subject": "debounce on session change 1.5s",
+    "merge": null,
+    "header": "feat(extended-text-entry): debounce on session change 1.5s",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "efb0aebd9bce8a8aecc2b242a1221a3ec71ac5c0",
+    "gitTags": " (origin/feat/DNA-10435)",
+    "committerDate": "2020-12-08 14:01:40 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.4.0"
+  },
+  {
+    "type": "feat",
+    "scope": "extended-text-entry",
+    "subject": "lock down editable html to not have a controlled keypad - PD-355",
+    "merge": null,
+    "header": "feat(extended-text-entry): lock down editable html to not have a controlled keypad - PD-355",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "0beddd433bdf4c4d1a5ba25388fb8914b0b27d38",
+    "gitTags": " (origin/fix/PD-355)",
+    "committerDate": "2020-11-16 13:55:27 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.4.0"
   }
 ]

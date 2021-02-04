@@ -613,5 +613,20 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/explicit-constructed-response@1.9.1"
+  },
+  {
+    "type": "feat",
+    "scope": "explicit-constructed-response",
+    "subject": "adjust debounce on session change to 1.5s",
+    "merge": null,
+    "header": "feat(explicit-constructed-response): adjust debounce on session change to 1.5s",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "692492721f0737f45e96db37eb6fedb6ab1300fc",
+    "gitTags": "",
+    "committerDate": "2020-12-08 14:00:58 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/explicit-constructed-response@1.10.0"
   }
 ]

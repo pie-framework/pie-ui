@@ -7,30 +7,43 @@ import Trait from './trait';
 
 const styles = () => ({
   table: {
-    border: '1px solid lightgrey',
     borderSpacing: 0,
     marginBottom: '16px',
+    borderRadius: '4px',
+    color: '#050F2D',
+    fontSize: '14px',
+    lineHeight: '16px',
+    fontFamily: 'Cerebri Sans',
 
     '& th': {
-      border: '1px solid lightgrey',
-      padding: '8px',
-      textAlign: 'start'
+      padding: '16px',
+      textAlign: 'left',
+      backgroundColor: '#F1F1F1',
+      verticalAlign: 'bottom'
+    },
+
+    '& th div': {
+      width: '200px',
     },
 
     '& td': {
-      border: '1px solid lightgrey',
-      padding: '8px',
-
-      '&:last-child': {
-        textAlign: 'center'
-      }
+      width: '200px',
+      padding: '16px 8px',
+      verticalAlign: 'top'
     }
   },
   scorePointHeader: {
     '& td': {
       border: 0,
-      padding: 0
+      padding: 0,
+      textAlign: 'center',
     }
+  },
+  pointLabel: {
+    marginBottom: '4px'
+  },
+  scorePointValue: {
+    fontWeight: 'normal',
   }
 });
 
@@ -82,9 +95,9 @@ class Scale extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: traitLabel }}/>
           </th>
 
-          {showStandards ? <th>Standard(s)</th> : null}
+          {showStandards ? <th><div>Standard(s)</div></th> : null}
 
-          {showDescription ? <th>Description</th> : null}
+          {showDescription ? <th><div>Description</div></th> : null}
 
           {
             scorePointsValues && scorePointsValues.map((scorePointValue, index) => {
@@ -101,23 +114,22 @@ class Scale extends React.Component {
                 <th key={`table-header-${index}`}>
                   <table className={classes.scorePointHeader}>
                     <thead>
+                    {showPointsLabels
+                        ? (
+                            <tr>
+                              <td>
+                                <div className={classes.pointLabel} dangerouslySetInnerHTML={{ __html: pointLabel }}/>
+                              </td>
+                            </tr>
+                        )
+                        : null
+                    }
                     <tr>
-                      <td>{scorePointValue}</td>
+                      <td className={classes.scorePointValue}>
+                        {scorePointValue === 1 ? `${scorePointValue} point` : `${scorePointValue} points`}
+                      </td>
                     </tr>
                     </thead>
-
-                    <tbody>
-                    {showPointsLabels
-                      ? (
-                        <tr>
-                          <td>
-                            <div dangerouslySetInnerHTML={{ __html: pointLabel }}/>
-                          </td>
-                        </tr>
-                      )
-                      : null
-                    }
-                    </tbody>
                   </table>
                 </th>
               );

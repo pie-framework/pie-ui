@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withStyles} from '@material-ui/core/styles';
+
+const styles = () => ({
+    trait: {
+      '&$traitName': {
+        color: '#7E8494',
+        verticalAlign: 'middle'
+      }
+    },
+    traitName: {}
+});
 
 const Trait = (props) => {
-  const { trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues } = props;
+  const { trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues, classes } = props;
   const { name, standards, scorePointsDescriptors, description } = trait || {};
 
   return (
     <tr key={`scale-${scaleIndex}-trait-${traitIndex}`}>
-      <td>
+      <td className={`${classes.trait} ${classes.traitName}`}>
         <div dangerouslySetInnerHTML={{ __html: name }}/>
       </td>
 
@@ -51,6 +62,7 @@ const Trait = (props) => {
 };
 
 Trait.propTypes = {
+  classes: PropTypes.object,
   showStandards: PropTypes.bool,
   showDescription: PropTypes.bool,
   scorePointsValues: PropTypes.arrayOf(PropTypes.number),
@@ -64,4 +76,4 @@ Trait.propTypes = {
   })
 };
 
-export default Trait;
+export default withStyles(styles)(Trait);

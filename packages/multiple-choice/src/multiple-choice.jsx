@@ -90,9 +90,6 @@ const styles = {
   corespringChoice: {
     backgroundColor: color.background(),
     padding: '5px',
-    '& *': {
-      '-webkit-font-smoothing': 'antialiased',
-    },
   }
 };
 

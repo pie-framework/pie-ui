@@ -11,12 +11,12 @@ export class Choices extends React.Component {
     className: PropTypes.string,
     choices: PropTypes.array.isRequired,
     label: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {};
   render() {
-    const { classes, className, choices, label, disabled } = this.props;
+    const { classes, className, choices = [], label, disabled } = this.props;
     return (
       <div className={classNames(classes.choices, className)}>
         {label && <div className={classes.label}>{label}</div>}
@@ -33,22 +33,22 @@ export class Choices extends React.Component {
   }
 }
 
-const styles = theme => ({
+const styles = (theme) => ({
   choices: {
     padding: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    border: `solid 1px ${color.primaryLight()}`
+    border: `solid 1px ${color.primaryLight()}`,
   },
   label: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   choicesContainer: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   choiceHolder: {
-    margin: theme.spacing.unit
-  }
+    margin: theme.spacing.unit,
+  },
 });
 
 export default withStyles(styles)(Choices);

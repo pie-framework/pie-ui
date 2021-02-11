@@ -37,6 +37,7 @@ const styles = () => ({
       border: 0,
       padding: 0,
       textAlign: 'center',
+      minWidth: '200px'
     }
   },
   pointLabel: {
@@ -49,13 +50,10 @@ const styles = () => ({
 
 class Scale extends React.Component {
   render() {
-    const { classes, scale, scaleIndex } = this.props;
+    const { classes, scale, scaleIndex, showDescription, showPointsLabels, showStandards } = this.props;
     const { excludeZero, maxPoints, traitLabel, traits, scorePointsLabels } = scale || {};
 
     let scorePointsValues = [];
-    let showStandards;
-    let showDescription;
-    let showPointsLabels;
 
     try {
       // determining the score points values
@@ -63,25 +61,8 @@ class Scale extends React.Component {
         scorePointsValues.push(pointValue);
       }
 
-      // determining which columns have to be displayed and the number of columns for values
-      const { traitStandards, traitDescriptions } = traits.reduce(
-        (tcc, trait) => ({
-          traitStandards: [...tcc.traitStandards, ...(trait.standards || [])],
-          traitDescriptions: [...tcc.traitDescriptions, ...(trait.description || [])],
-        }),
-        {
-          traitStandards: [],
-          traitDescriptions: [],
-        }
-      );
-
-      showDescription = traitDescriptions.length;
-      showPointsLabels = scorePointsLabels.length;
-      showStandards = traitStandards.length;
     } catch (e) {
-      showDescription = false;
-      showPointsLabels = false;
-      showStandards = false;
+      scorePointsValues = []
     }
 
     return (
@@ -174,7 +155,10 @@ Scale.propTypes = {
       scorePointsDescriptors: PropTypes.arrayOf(PropTypes.string),
       description: PropTypes.string,
     }))
-  })
+  }),
+  showPointsLabels: PropTypes.bool,
+  showDescription: PropTypes.bool,
+  showStandards: PropTypes.bool,
 };
 
 export default withStyles(styles)(Scale);

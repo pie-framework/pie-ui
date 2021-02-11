@@ -27,8 +27,9 @@ exports[`Trait snapshots renders without scorePointsDescriptors 1`] = `
   <Trait
     classes={
       Object {
+        "noDescription": "Trait-noDescription-2",
         "trait": "Trait-trait-1",
-        "traitName": "Trait-traitName-2",
+        "traitName": "Trait-traitName-3",
       }
     }
     scaleIndex={1}
@@ -57,7 +58,7 @@ exports[`Trait snapshots renders without scorePointsDescriptors 1`] = `
       key="scale-1-trait-1"
     >
       <td
-        className="Trait-trait-1 Trait-traitName-2"
+        className="Trait-trait-1 Trait-traitName-3"
       >
         <div
           dangerouslySetInnerHTML={
@@ -89,9 +90,10 @@ exports[`Trait snapshots renders without scorePointsDescriptors 1`] = `
         key="table-cell-0"
       >
         <div
+          className="Trait-noDescription-2"
           dangerouslySetInnerHTML={
             Object {
-              "__html": "",
+              "__html": "No Description",
             }
           }
         />
@@ -100,9 +102,10 @@ exports[`Trait snapshots renders without scorePointsDescriptors 1`] = `
         key="table-cell-1"
       >
         <div
+          className="Trait-noDescription-2"
           dangerouslySetInnerHTML={
             Object {
-              "__html": "",
+              "__html": "No Description",
             }
           }
         />
@@ -137,8 +140,9 @@ exports[`Trait snapshots renders without standards, description and scorePointsV
   <Trait
     classes={
       Object {
+        "noDescription": "Trait-noDescription-2",
         "trait": "Trait-trait-1",
-        "traitName": "Trait-traitName-2",
+        "traitName": "Trait-traitName-3",
       }
     }
     scaleIndex={1}
@@ -165,7 +169,7 @@ exports[`Trait snapshots renders without standards, description and scorePointsV
       key="scale-1-trait-1"
     >
       <td
-        className="Trait-trait-1 Trait-traitName-2"
+        className="Trait-trait-1 Trait-traitName-3"
       >
         <div
           dangerouslySetInnerHTML={

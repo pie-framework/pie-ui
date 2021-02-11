@@ -61,7 +61,13 @@ exports[`Main snapshots visible to students => renders table with half-scoring 1
   }
 >
   <div>
-    <p>
+    <p
+      style={
+        Object {
+          "fontFamily": "Cerebri Sans",
+        }
+      }
+    >
       * Half-point or in-between scores are permitted under this rubric.
     </p>
     <WithStyles(Scale)
@@ -126,18 +132,6 @@ exports[`Main snapshots visible to students => renders table with half-scoring 1
                 >
                   <thead>
                     <tr>
-                      <td>
-                        <div
-                          className="Scale-pointLabel-3"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "B",
-                            }
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
                       <td
                         className="Scale-scorePointValue-4"
                       >
@@ -154,18 +148,6 @@ exports[`Main snapshots visible to students => renders table with half-scoring 1
                   className="Scale-scorePointHeader-2"
                 >
                   <thead>
-                    <tr>
-                      <td>
-                        <div
-                          className="Scale-pointLabel-3"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "A",
-                            }
-                          }
-                        />
-                      </td>
-                    </tr>
                     <tr>
                       <td
                         className="Scale-scorePointValue-4"
@@ -270,18 +252,6 @@ exports[`Main snapshots visible to students => renders table without half-scorin
                 >
                   <thead>
                     <tr>
-                      <td>
-                        <div
-                          className="Scale-pointLabel-3"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "B",
-                            }
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <tr>
                       <td
                         className="Scale-scorePointValue-4"
                       >
@@ -298,18 +268,6 @@ exports[`Main snapshots visible to students => renders table without half-scorin
                   className="Scale-scorePointHeader-2"
                 >
                   <thead>
-                    <tr>
-                      <td>
-                        <div
-                          className="Scale-pointLabel-3"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "A",
-                            }
-                          }
-                        />
-                      </td>
-                    </tr>
                     <tr>
                       <td
                         className="Scale-scorePointValue-4"

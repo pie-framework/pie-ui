@@ -60,14 +60,14 @@ exports[`Main snapshots visible to students => renders table with half-scoring 1
     }
   }
 >
-  <div>
-    <p
-      style={
-        Object {
-          "fontFamily": "Cerebri Sans",
-        }
+  <div
+    style={
+      Object {
+        "fontFamily": "Cerebri Sans",
       }
-    >
+    }
+  >
+    <p>
       * Half-point or in-between scores are permitted under this rubric.
     </p>
     <WithStyles(Scale)
@@ -189,7 +189,13 @@ exports[`Main snapshots visible to students => renders table without half-scorin
     }
   }
 >
-  <div>
+  <div
+    style={
+      Object {
+        "fontFamily": "Cerebri Sans",
+      }
+    }
+  >
     <WithStyles(Scale)
       key="scale_0"
       scale={

@@ -14,8 +14,8 @@ class Main extends React.Component {
     }
 
     return (
-      <div>
-        {halfScoring ? <p style={{ fontFamily: 'Cerebri Sans' }}>* Half-point or in-between scores are permitted under this rubric.</p> : null}
+      <div style={{ fontFamily: 'Cerebri Sans' }}>
+        {halfScoring ? <p>* Half-point or in-between scores are permitted under this rubric.</p> : null}
         {scales.map((scale, scaleIndex) => (
           <Scale
             key={`scale_${scaleIndex}`}

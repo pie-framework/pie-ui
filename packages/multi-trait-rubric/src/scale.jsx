@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-
+import {withStyles} from '@material-ui/core/styles';
+import {color} from '@pie-lib/render-ui';
 import Trait from './trait';
 
 
@@ -10,14 +10,14 @@ const styles = () => ({
     borderSpacing: 0,
     marginBottom: '16px',
     borderRadius: '4px',
-    color: '#050F2D',
+    color: color.text(),
     fontSize: '14px',
     lineHeight: '16px',
 
     '& th': {
       padding: '16px',
       textAlign: 'left',
-      backgroundColor: '#F1F1F1',
+      backgroundColor: color.secondaryBackground(),
       verticalAlign: 'bottom'
     },
 
@@ -49,8 +49,8 @@ const styles = () => ({
 
 class Scale extends React.Component {
   render() {
-    const { classes, scale, scaleIndex, showDescription, showPointsLabels, showStandards } = this.props;
-    const { excludeZero, maxPoints, traitLabel, traits, scorePointsLabels } = scale || {};
+    const {classes, scale, scaleIndex, showDescription, showPointsLabels, showStandards} = this.props;
+    const {excludeZero, maxPoints, traitLabel, traits, scorePointsLabels} = scale || {};
 
     let scorePointsValues = [];
     let descriptions;
@@ -62,15 +62,15 @@ class Scale extends React.Component {
         scorePointsValues.push(pointValue);
       }
 
-      const { traitStandards, traitDescriptions } = traits.reduce(
-          (tcc, trait) => ({
-            traitStandards: [...tcc.traitStandards, ...(trait.standards || [])],
-            traitDescriptions: [...tcc.traitDescriptions, ...(trait.description || [])],
-          }),
-          {
-            traitStandards: [],
-            traitDescriptions: [],
-          }
+      const {traitStandards, traitDescriptions} = traits.reduce(
+        (tcc, trait) => ({
+          traitStandards: [...tcc.traitStandards, ...(trait.standards || [])],
+          traitDescriptions: [...tcc.traitDescriptions, ...(trait.description || [])],
+        }),
+        {
+          traitStandards: [],
+          traitDescriptions: [],
+        }
       );
 
       descriptions = showDescription && traitDescriptions.length;
@@ -90,12 +90,16 @@ class Scale extends React.Component {
         <thead>
         <tr>
           <th>
-            <div dangerouslySetInnerHTML={{ __html: traitLabel }}/>
+            <div dangerouslySetInnerHTML={{__html: traitLabel}}/>
           </th>
 
-          {standards ? <th><div>Standard(s)</div></th> : null}
+          {standards ? <th>
+            <div>Standard(s)</div>
+          </th> : null}
 
-          {descriptions ? <th><div>Description</div></th> : null}
+          {descriptions ? <th>
+            <div>Description</div>
+          </th> : null}
 
           {
             scorePointsValues && scorePointsValues.map((scorePointValue, index) => {
@@ -113,14 +117,14 @@ class Scale extends React.Component {
                   <table className={classes.scorePointHeader}>
                     <thead>
                     {pointsLabels
-                        ? (
-                            <tr>
-                              <td>
-                                <div className={classes.pointLabel} dangerouslySetInnerHTML={{ __html: pointLabel }}/>
-                              </td>
-                            </tr>
-                        )
-                        : null
+                      ? (
+                        <tr>
+                          <td>
+                            <div className={classes.pointLabel} dangerouslySetInnerHTML={{__html: pointLabel}}/>
+                          </td>
+                        </tr>
+                      )
+                      : null
                     }
                     <tr>
                       <td className={classes.scorePointValue}>

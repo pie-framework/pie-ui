@@ -6,15 +6,15 @@ import Scale from './scale';
 
 class Main extends React.Component {
   render() {
-    const { model } = this.props;
-    const { halfScoring, scales, visible, pointLabels, description, standards } = model || {};
+    const {model} = this.props;
+    const {halfScoring, scales, visible, pointLabels, description, standards} = model || {};
 
     if (!scales || !visible) {
       return <div/>;
     }
 
     return (
-      <div style={{ fontFamily: 'Cerebri Sans' }}>
+      <div style={{fontFamily: 'Cerebri Sans'}}>
         {halfScoring ? <p>* Half-point or in-between scores are permitted under this rubric.</p> : null}
         {scales.map((scale, scaleIndex) => (
           <Scale

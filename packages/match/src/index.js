@@ -37,6 +37,7 @@ export default class Match extends HTMLElement {
   }
 
   sessionChanged(s) {
+    console.log("SUNTAPELAT");
     this._session.answers = s.answers;
     const complete = isComplete(this._session, this._model);
     this.dispatchEvent(

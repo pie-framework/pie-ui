@@ -21,10 +21,17 @@ export class Main extends React.Component {
 
   toggleCorrect = showingCorrect => this.setState({ showingCorrect });
 
+  resetMarkups = () => {
+    console.log("THIS PROPS", this.props);
+    this.props.session.answer = {}
+  };
+
   render() {
     const { model, classes, onAnswersChange, session } = this.props;
     const { showingCorrect } = this.state;
     const { answer } = session || {};
+    console.log("answer------------------", answer);
+
     const {
       answersCorrected,
       arrows,
@@ -40,7 +47,7 @@ export class Main extends React.Component {
       showToggle,
       title,
       teacherInstructions,
-      toolbarTools
+      toolbarTools,
     } = model || {};
 
     const marks = answersCorrected || answer || [];
@@ -53,7 +60,7 @@ export class Main extends React.Component {
           toggled={showingCorrect}
           onToggle={this.toggleCorrect}
         />
-
+<p>hello ui</p>
         {(showingCorrect && showToggle) && (
           <GraphContainer
             axesSettings={{ includeArrows: arrows }}
@@ -96,6 +103,7 @@ export class Main extends React.Component {
           size={size}
           title={title}
           toolbarTools={toolbarTools}
+          onResetMarkup={this.resetMarkups}
         />
 
         <br/>

@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "This interaction asks a student to answer a matrix question.",
   "main": "lib/index.js",
   "module": "src/index.js",

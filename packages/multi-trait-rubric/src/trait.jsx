@@ -1,20 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withStyles} from '@material-ui/core/styles';
+import {color} from '@pie-lib/render-ui';
+
+const styles = () => ({
+  trait: {
+    '&$traitName': {
+      color: color.primaryDark(),
+      verticalAlign: 'middle'
+    }
+  },
+  noDescription: {
+    color: color.secondaryBackground(),
+    textAlign: 'center'
+  },
+  traitName: {}
+});
 
 const Trait = (props) => {
-  const { trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues } = props;
-  const { name, standards, scorePointsDescriptors, description } = trait || {};
+  const {trait, traitIndex, scaleIndex, showStandards, showDescription, scorePointsValues, classes} = props;
+  const {name, standards, scorePointsDescriptors, description} = trait || {};
 
   return (
     <tr key={`scale-${scaleIndex}-trait-${traitIndex}`}>
-      <td>
-        <div dangerouslySetInnerHTML={{ __html: name }}/>
+      <td className={`${classes.trait} ${classes.traitName}`}>
+        <div dangerouslySetInnerHTML={{__html: name}}/>
       </td>
 
       {showStandards
         ?
         <td>
-          <div dangerouslySetInnerHTML={{ __html: standards.join(',') }}/>
+          <div dangerouslySetInnerHTML={{__html: standards.join(',')}}/>
         </td>
         : null
       }
@@ -22,7 +38,7 @@ const Trait = (props) => {
       {showDescription
         ?
         <td>
-          <div dangerouslySetInnerHTML={{ __html: description }}/>
+          <div dangerouslySetInnerHTML={{__html: description}}/>
         </td>
         : null
       }
@@ -39,8 +55,8 @@ const Trait = (props) => {
 
           return (
             <td key={`table-cell-${index}`}>
-              <div
-                dangerouslySetInnerHTML={{ __html: scoreDescriptor }}
+              <div className={!scoreDescriptor ? classes.noDescription : ''}
+                   dangerouslySetInnerHTML={{__html: scoreDescriptor || 'No Description'}}
               />
             </td>
           );
@@ -51,6 +67,7 @@ const Trait = (props) => {
 };
 
 Trait.propTypes = {
+  classes: PropTypes.object,
   showStandards: PropTypes.bool,
   showDescription: PropTypes.bool,
   scorePointsValues: PropTypes.arrayOf(PropTypes.number),
@@ -64,4 +81,4 @@ Trait.propTypes = {
   })
 };
 
-export default Trait;
+export default withStyles(styles)(Trait);

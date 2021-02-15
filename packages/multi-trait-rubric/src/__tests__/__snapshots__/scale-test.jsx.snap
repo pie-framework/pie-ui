@@ -30,7 +30,9 @@ exports[`Scale snapshots renders with 0 1`] = `
   <Scale
     classes={
       Object {
+        "pointLabel": "Scale-pointLabel-3",
         "scorePointHeader": "Scale-scorePointHeader-2",
+        "scorePointValue": "Scale-scorePointValue-4",
         "table": "Scale-table-1",
       }
     }
@@ -73,9 +75,6 @@ exports[`Scale snapshots renders with 0 1`] = `
               }
             />
           </th>
-          <th>
-            Description
-          </th>
           <th
             key="table-header-0"
           >
@@ -84,24 +83,13 @@ exports[`Scale snapshots renders with 0 1`] = `
             >
               <thead>
                 <tr>
-                  <td>
-                    1
+                  <td
+                    className="Scale-scorePointValue-4"
+                  >
+                    1 point
                   </td>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "B",
-                        }
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
             </table>
           </th>
           <th
@@ -112,30 +100,19 @@ exports[`Scale snapshots renders with 0 1`] = `
             >
               <thead>
                 <tr>
-                  <td>
-                    0
+                  <td
+                    className="Scale-scorePointValue-4"
+                  >
+                    0 points
                   </td>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "A",
-                        }
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
             </table>
           </th>
         </tr>
       </thead>
       <tbody>
-        <Trait
+        <WithStyles(Trait)
           excludeZero={false}
           key="trait_1_0"
           scaleIndex={1}
@@ -145,7 +122,7 @@ exports[`Scale snapshots renders with 0 1`] = `
               0,
             ]
           }
-          showDescription={true}
+          showDescription={false}
           showStandards={false}
           trait={
             Object {
@@ -160,51 +137,78 @@ exports[`Scale snapshots renders with 0 1`] = `
           }
           traitIndex={0}
         >
-          <tr
-            key="scale-1-trait-0"
+          <Trait
+            classes={
+              Object {
+                "noDescription": "Trait-noDescription-6",
+                "trait": "Trait-trait-5",
+                "traitName": "Trait-traitName-7",
+              }
+            }
+            excludeZero={false}
+            scaleIndex={1}
+            scorePointsValues={
+              Array [
+                1,
+                0,
+              ]
+            }
+            showDescription={false}
+            showStandards={false}
+            trait={
+              Object {
+                "description": "Trait 1 Description",
+                "name": "Trait 1",
+                "scorePointsDescriptors": Array [
+                  "Descriptor 0",
+                  "Descriptor 1",
+                ],
+                "standards": Array [],
+              }
+            }
+            traitIndex={0}
           >
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1",
-                  }
-                }
-              />
-            </td>
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1 Description",
-                  }
-                }
-              />
-            </td>
-            <td
-              key="table-cell-0"
+            <tr
+              key="scale-1-trait-0"
             >
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Descriptor 1",
+              <td
+                className="Trait-trait-5 Trait-traitName-7"
+              >
+                <div
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Trait 1",
+                    }
                   }
-                }
-              />
-            </td>
-            <td
-              key="table-cell-1"
-            >
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Descriptor 0",
+                />
+              </td>
+              <td
+                key="table-cell-0"
+              >
+                <div
+                  className=""
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Descriptor 1",
+                    }
                   }
-                }
-              />
-            </td>
-          </tr>
-        </Trait>
+                />
+              </td>
+              <td
+                key="table-cell-1"
+              >
+                <div
+                  className=""
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Descriptor 0",
+                    }
+                  }
+                />
+              </td>
+            </tr>
+          </Trait>
+        </WithStyles(Trait)>
       </tbody>
     </table>
   </Scale>
@@ -241,7 +245,9 @@ exports[`Scale snapshots renders with no score points 1`] = `
   <Scale
     classes={
       Object {
+        "pointLabel": "Scale-pointLabel-3",
         "scorePointHeader": "Scale-scorePointHeader-2",
+        "scorePointValue": "Scale-scorePointValue-4",
         "table": "Scale-table-1",
       }
     }
@@ -284,18 +290,15 @@ exports[`Scale snapshots renders with no score points 1`] = `
               }
             />
           </th>
-          <th>
-            Description
-          </th>
         </tr>
       </thead>
       <tbody>
-        <Trait
+        <WithStyles(Trait)
           excludeZero={true}
           key="trait_1_0"
           scaleIndex={1}
           scorePointsValues={Array []}
-          showDescription={true}
+          showDescription={false}
           showStandards={false}
           trait={
             Object {
@@ -310,29 +313,49 @@ exports[`Scale snapshots renders with no score points 1`] = `
           }
           traitIndex={0}
         >
-          <tr
-            key="scale-1-trait-0"
+          <Trait
+            classes={
+              Object {
+                "noDescription": "Trait-noDescription-6",
+                "trait": "Trait-trait-5",
+                "traitName": "Trait-traitName-7",
+              }
+            }
+            excludeZero={true}
+            scaleIndex={1}
+            scorePointsValues={Array []}
+            showDescription={false}
+            showStandards={false}
+            trait={
+              Object {
+                "description": "Trait 1 Description",
+                "name": "Trait 1",
+                "scorePointsDescriptors": Array [
+                  "Descriptor 0",
+                  "Descriptor 1",
+                ],
+                "standards": Array [],
+              }
+            }
+            traitIndex={0}
           >
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1",
+            <tr
+              key="scale-1-trait-0"
+            >
+              <td
+                className="Trait-trait-5 Trait-traitName-7"
+              >
+                <div
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Trait 1",
+                    }
                   }
-                }
-              />
-            </td>
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1 Description",
-                  }
-                }
-              />
-            </td>
-          </tr>
-        </Trait>
+                />
+              </td>
+            </tr>
+          </Trait>
+        </WithStyles(Trait)>
       </tbody>
     </table>
   </Scale>
@@ -359,7 +382,9 @@ exports[`Scale snapshots renders with no traits 1`] = `
   <Scale
     classes={
       Object {
+        "pointLabel": "Scale-pointLabel-3",
         "scorePointHeader": "Scale-scorePointHeader-2",
+        "scorePointValue": "Scale-scorePointValue-4",
         "table": "Scale-table-1",
       }
     }
@@ -400,24 +425,13 @@ exports[`Scale snapshots renders with no traits 1`] = `
             >
               <thead>
                 <tr>
-                  <td>
-                    1
+                  <td
+                    className="Scale-scorePointValue-4"
+                  >
+                    1 point
                   </td>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "B",
-                        }
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
             </table>
           </th>
           <th
@@ -428,24 +442,13 @@ exports[`Scale snapshots renders with no traits 1`] = `
             >
               <thead>
                 <tr>
-                  <td>
-                    0
+                  <td
+                    className="Scale-scorePointValue-4"
+                  >
+                    0 points
                   </td>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "A",
-                        }
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
             </table>
           </th>
         </tr>
@@ -486,7 +489,9 @@ exports[`Scale snapshots renders without 0 1`] = `
   <Scale
     classes={
       Object {
+        "pointLabel": "Scale-pointLabel-3",
         "scorePointHeader": "Scale-scorePointHeader-2",
+        "scorePointValue": "Scale-scorePointValue-4",
         "table": "Scale-table-1",
       }
     }
@@ -529,9 +534,6 @@ exports[`Scale snapshots renders without 0 1`] = `
               }
             />
           </th>
-          <th>
-            Description
-          </th>
           <th
             key="table-header-0"
           >
@@ -540,30 +542,19 @@ exports[`Scale snapshots renders without 0 1`] = `
             >
               <thead>
                 <tr>
-                  <td>
-                    1
+                  <td
+                    className="Scale-scorePointValue-4"
+                  >
+                    1 point
                   </td>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "A",
-                        }
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
             </table>
           </th>
         </tr>
       </thead>
       <tbody>
-        <Trait
+        <WithStyles(Trait)
           excludeZero={true}
           key="trait_1_0"
           scaleIndex={1}
@@ -572,7 +563,7 @@ exports[`Scale snapshots renders without 0 1`] = `
               1,
             ]
           }
-          showDescription={true}
+          showDescription={false}
           showStandards={false}
           trait={
             Object {
@@ -587,40 +578,65 @@ exports[`Scale snapshots renders without 0 1`] = `
           }
           traitIndex={0}
         >
-          <tr
-            key="scale-1-trait-0"
+          <Trait
+            classes={
+              Object {
+                "noDescription": "Trait-noDescription-6",
+                "trait": "Trait-trait-5",
+                "traitName": "Trait-traitName-7",
+              }
+            }
+            excludeZero={true}
+            scaleIndex={1}
+            scorePointsValues={
+              Array [
+                1,
+              ]
+            }
+            showDescription={false}
+            showStandards={false}
+            trait={
+              Object {
+                "description": "Trait 1 Description",
+                "name": "Trait 1",
+                "scorePointsDescriptors": Array [
+                  "Descriptor 0",
+                  "Descriptor 1",
+                ],
+                "standards": Array [],
+              }
+            }
+            traitIndex={0}
           >
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1",
-                  }
-                }
-              />
-            </td>
-            <td>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Trait 1 Description",
-                  }
-                }
-              />
-            </td>
-            <td
-              key="table-cell-0"
+            <tr
+              key="scale-1-trait-0"
             >
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Descriptor 0",
+              <td
+                className="Trait-trait-5 Trait-traitName-7"
+              >
+                <div
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Trait 1",
+                    }
                   }
-                }
-              />
-            </td>
-          </tr>
-        </Trait>
+                />
+              </td>
+              <td
+                key="table-cell-0"
+              >
+                <div
+                  className=""
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Descriptor 0",
+                    }
+                  }
+                />
+              </td>
+            </tr>
+          </Trait>
+        </WithStyles(Trait)>
       </tbody>
     </table>
   </Scale>

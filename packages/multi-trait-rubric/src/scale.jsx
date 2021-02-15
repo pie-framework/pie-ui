@@ -1,57 +1,68 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-
+import {withStyles} from '@material-ui/core/styles';
+import {color} from '@pie-lib/render-ui';
 import Trait from './trait';
 
 
 const styles = () => ({
   table: {
-    border: '1px solid lightgrey',
     borderSpacing: 0,
     marginBottom: '16px',
+    borderRadius: '4px',
+    color: color.text(),
+    fontSize: '14px',
+    lineHeight: '16px',
 
     '& th': {
-      border: '1px solid lightgrey',
-      padding: '8px',
-      textAlign: 'start'
+      padding: '16px',
+      textAlign: 'left',
+      backgroundColor: color.secondaryBackground(),
+      verticalAlign: 'bottom'
+    },
+
+    '& th div': {
+      width: '200px',
     },
 
     '& td': {
-      border: '1px solid lightgrey',
-      padding: '8px',
-
-      '&:last-child': {
-        textAlign: 'center'
-      }
+      width: '200px',
+      padding: '16px 8px',
+      verticalAlign: 'top'
     }
   },
   scorePointHeader: {
     '& td': {
       border: 0,
-      padding: 0
+      padding: 0,
+      textAlign: 'center',
+      minWidth: '200px'
     }
+  },
+  pointLabel: {
+    marginBottom: '4px'
+  },
+  scorePointValue: {
+    fontWeight: 'normal',
   }
 });
 
 class Scale extends React.Component {
   render() {
-    const { classes, scale, scaleIndex } = this.props;
-    const { excludeZero, maxPoints, traitLabel, traits, scorePointsLabels } = scale || {};
+    const {classes, scale, scaleIndex, showDescription, showPointsLabels, showStandards} = this.props;
+    const {excludeZero, maxPoints, traitLabel, traits, scorePointsLabels} = scale || {};
 
     let scorePointsValues = [];
-    let showStandards;
-    let showDescription;
-    let showPointsLabels;
-
+    let descriptions;
+    let pointsLabels;
+    let standards;
     try {
       // determining the score points values
       for (let pointValue = maxPoints; pointValue >= excludeZero ? 1 : 0; pointValue -= 1) {
         scorePointsValues.push(pointValue);
       }
 
-      // determining which columns have to be displayed and the number of columns for values
-      const { traitStandards, traitDescriptions } = traits.reduce(
+      const {traitStandards, traitDescriptions} = traits.reduce(
         (tcc, trait) => ({
           traitStandards: [...tcc.traitStandards, ...(trait.standards || [])],
           traitDescriptions: [...tcc.traitDescriptions, ...(trait.description || [])],
@@ -62,13 +73,13 @@ class Scale extends React.Component {
         }
       );
 
-      showDescription = traitDescriptions.length;
-      showPointsLabels = scorePointsLabels.length;
-      showStandards = traitStandards.length;
+      descriptions = showDescription && traitDescriptions.length;
+      pointsLabels = showPointsLabels && scorePointsLabels.length;
+      standards = showStandards && traitStandards.length;
     } catch (e) {
-      showDescription = false;
-      showPointsLabels = false;
-      showStandards = false;
+      descriptions = false;
+      pointsLabels = false;
+      standards = false;
     }
 
     return (
@@ -79,12 +90,16 @@ class Scale extends React.Component {
         <thead>
         <tr>
           <th>
-            <div dangerouslySetInnerHTML={{ __html: traitLabel }}/>
+            <div dangerouslySetInnerHTML={{__html: traitLabel}}/>
           </th>
 
-          {showStandards ? <th>Standard(s)</th> : null}
+          {standards ? <th>
+            <div>Standard(s)</div>
+          </th> : null}
 
-          {showDescription ? <th>Description</th> : null}
+          {descriptions ? <th>
+            <div>Description</div>
+          </th> : null}
 
           {
             scorePointsValues && scorePointsValues.map((scorePointValue, index) => {
@@ -101,23 +116,22 @@ class Scale extends React.Component {
                 <th key={`table-header-${index}`}>
                   <table className={classes.scorePointHeader}>
                     <thead>
-                    <tr>
-                      <td>{scorePointValue}</td>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    {showPointsLabels
+                    {pointsLabels
                       ? (
                         <tr>
                           <td>
-                            <div dangerouslySetInnerHTML={{ __html: pointLabel }}/>
+                            <div className={classes.pointLabel} dangerouslySetInnerHTML={{__html: pointLabel}}/>
                           </td>
                         </tr>
                       )
                       : null
                     }
-                    </tbody>
+                    <tr>
+                      <td className={classes.scorePointValue}>
+                        {scorePointValue === 1 ? `${scorePointValue} point` : `${scorePointValue} points`}
+                      </td>
+                    </tr>
+                    </thead>
                   </table>
                 </th>
               );
@@ -134,8 +148,8 @@ class Scale extends React.Component {
               key={`trait_${scaleIndex}_${traitIndex}`}
               trait={trait}
               traitIndex={traitIndex}
-              showDescription={!!showDescription}
-              showStandards={!!showStandards}
+              showDescription={!!descriptions}
+              showStandards={!!standards}
               scaleIndex={scaleIndex}
               scorePointsValues={scorePointsValues}
               excludeZero={excludeZero}
@@ -162,7 +176,10 @@ Scale.propTypes = {
       scorePointsDescriptors: PropTypes.arrayOf(PropTypes.string),
       description: PropTypes.string,
     }))
-  })
+  }),
+  showPointsLabels: PropTypes.bool,
+  showDescription: PropTypes.bool,
+  showStandards: PropTypes.bool,
 };
 
 export default withStyles(styles)(Scale);

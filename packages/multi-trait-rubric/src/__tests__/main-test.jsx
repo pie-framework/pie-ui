@@ -4,6 +4,14 @@ import toJson from 'enzyme-to-json';
 
 import Main from '../main';
 
+jest.mock('@pie-lib/render-ui', () => ({
+  color: {
+    primaryDark: jest.fn().mockReturnValue('blue'),
+    secondaryBackground: jest.fn().mockReturnValue('grey'),
+    text: jest.fn().mockReturnValue('blue'),
+  }
+}));
+
 describe('Main', () => {
   let wrapper, model;
 

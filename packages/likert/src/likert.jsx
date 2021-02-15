@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChoiceInput from './choice-input';
-import {withStyles} from '@material-ui/core/styles';
-import {Collapsible} from '@pie-lib/render-ui';
-import {LIKERT_ORIENTATION} from './likertEntities';
-
+import { withStyles } from '@material-ui/core/styles';
+import { Collapsible } from '@pie-lib/render-ui';
+import { LIKERT_ORIENTATION } from './likertEntities';
 
 const styles = {
   corespringChoice: {
     '& *': {
-      fontFamily: 'Roboto, Arial, Helvetica, sans-serif', '-webkit-font-smoothing': 'antialiased'
+      fontFamily: 'Roboto, Arial, Helvetica, sans-serif',
+      '-webkit-font-smoothing': 'antialiased',
     },
   },
   prompt: {
     verticalAlign: 'middle',
     color: 'var(--pie-primary-text, var(--pie-text, #000000))',
-    paddingBottom: '20px'
+    paddingBottom: '20px',
   },
   choicesWrapper: {
-    display: 'flex'
-  }
+    display: 'flex',
+  },
 };
 
 export class Likert extends React.Component {
@@ -31,11 +31,10 @@ export class Likert extends React.Component {
     disabled: PropTypes.bool.isRequired,
     onSessionChange: PropTypes.func.isRequired,
     likertOrientation: PropTypes.string.isRequired,
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
   };
 
-  UNSAFE_componentWillReceiveProps() {
-  }
+  UNSAFE_componentWillReceiveProps() {}
 
   isSelected(value) {
     return this.props.session && this.props.session.value === value;
@@ -44,15 +43,16 @@ export class Likert extends React.Component {
   render() {
     const {
       disabled,
-      choices,
+      choices = [],
       prompt,
       onSessionChange,
       teacherInstructions,
       classes,
-      likertOrientation
+      likertOrientation,
     } = this.props;
 
-    const flexDirection = likertOrientation === LIKERT_ORIENTATION.vertical ? 'column' : 'row';
+    const flexDirection =
+      likertOrientation === LIKERT_ORIENTATION.vertical ? 'column' : 'row';
 
     return (
       <div className={classes.corespringChoice}>
@@ -63,16 +63,16 @@ export class Likert extends React.Component {
               visible: 'Hide Teacher Instructions',
             }}
           >
-            <div dangerouslySetInnerHTML={{__html: teacherInstructions}}/>
+            <div dangerouslySetInnerHTML={{ __html: teacherInstructions }} />
           </Collapsible>
         )}
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div
           className={classes.prompt}
-          dangerouslySetInnerHTML={{__html: prompt}}
+          dangerouslySetInnerHTML={{ __html: prompt }}
         />
-        <div className={classes.choicesWrapper} style={{flexDirection}}>
+        <div className={classes.choicesWrapper} style={{ flexDirection }}>
           {choices.map((choice, index) => (
             <ChoiceInput
               key={`choice-${index}`}
@@ -83,8 +83,7 @@ export class Likert extends React.Component {
               onChange={onSessionChange}
               likertOrientation={likertOrientation}
               checked={this.isSelected(choice.value)}
-            >
-            </ChoiceInput>
+            ></ChoiceInput>
           ))}
         </div>
       </div>
@@ -94,7 +93,7 @@ export class Likert extends React.Component {
 
 Likert.defaultProps = {
   session: {
-    value: []
+    value: [],
   },
 };
 

@@ -4,6 +4,14 @@ import toJson from 'enzyme-to-json';
 
 import Scale from '../scale';
 
+jest.mock('@pie-lib/render-ui', () => ({
+  color: {
+    text: jest.fn().mockReturnValue('blue'),
+    secondaryBackground: jest.fn().mockReturnValue('grey'),
+    primaryDark: jest.fn().mockReturnValue('blue'),
+  }
+}));
+
 describe('Scale', () => {
   let wrapper, scale;
 

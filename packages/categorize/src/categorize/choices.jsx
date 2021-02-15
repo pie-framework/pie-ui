@@ -13,28 +13,34 @@ export class Choices extends React.Component {
     choices: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.shape(ChoiceType),
-        PropTypes.shape({ empty: PropTypes.bool })
+        PropTypes.shape({ empty: PropTypes.bool }),
       ])
     ),
     model: PropTypes.shape({
       choicesPerRow: PropTypes.number,
-      choicesLabel: PropTypes.string
+      choicesLabel: PropTypes.string,
     }),
     disabled: PropTypes.bool,
-    choicePosition: PropTypes.string
+    choicePosition: PropTypes.string,
   };
 
   static defaultProps = {
     model: {
       choicesPerRow: 4,
-      choicesLabel: ''
-    }
+      choicesLabel: '',
+    },
   };
 
   render() {
-    const { classes, choices, model, disabled, choicePosition } = this.props;
+    const {
+      classes,
+      choices = [],
+      model,
+      disabled,
+      choicePosition,
+    } = this.props;
     let style = {
-      textAlign: 'center'
+      textAlign: 'center',
     };
 
     if (choicePosition === 'left') {
@@ -43,10 +49,9 @@ export class Choices extends React.Component {
 
     return (
       <div className={classes.wrapper}>
-        {model.choicesLabel &&
-        model.choicesLabel !== '' && (
-            <div className={classes.labelHolder}>{model.choicesLabel}</div>
-          )}
+        {model.choicesLabel && model.choicesLabel !== '' && (
+          <div className={classes.labelHolder}>{model.choicesLabel}</div>
+        )}
         <GridContent
           columns={model.choicesPerRow}
           className={classes.choices}
@@ -70,20 +75,20 @@ export class Choices extends React.Component {
   }
 }
 
-const styles = theme => ({
+const styles = (theme) => ({
   wrapper: {
     flex: 1,
-    padding: theme.spacing.unit
+    padding: theme.spacing.unit,
   },
   choices: {
     paddingTop: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit
+    paddingBottom: theme.spacing.unit,
   },
   labelHolder: {
     margin: '0 auto',
     textAlign: 'center',
-    paddingTop: theme.spacing.unit
-  }
+    paddingTop: theme.spacing.unit,
+  },
 });
 
 export default withStyles(styles)(Choices);

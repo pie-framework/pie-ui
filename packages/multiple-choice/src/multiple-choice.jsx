@@ -185,7 +185,7 @@ export class MultipleChoice extends React.Component {
     const {
       mode,
       disabled,
-      choices,
+      choices = [],
       choiceMode,
       prompt,
       onChoiceChanged,

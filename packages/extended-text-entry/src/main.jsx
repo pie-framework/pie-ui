@@ -87,6 +87,12 @@ export class Main extends React.Component {
               disabled: !mathInput,
               keypadMode: this.props.model.equationEditor,
               controlledKeypadMode: false
+            },
+            video: {
+              disabled: true
+            },
+             audio: {
+              disabled: true
             }
           }}
         />

@@ -8,7 +8,7 @@ import { color } from '@pie-lib/render-ui';
 
 export const CategoryType = {
   id: PropTypes.string.isRequired,
-  categoryId: PropTypes.string
+  categoryId: PropTypes.string,
 };
 
 export class Category extends React.Component {
@@ -18,7 +18,7 @@ export class Category extends React.Component {
     disabled: PropTypes.bool,
     classes: PropTypes.object.isRequired,
     onDropChoice: PropTypes.func,
-    onRemoveChoice: PropTypes.func
+    onRemoveChoice: PropTypes.func,
   };
 
   static defaultProps = {};
@@ -27,13 +27,13 @@ export class Category extends React.Component {
     const {
       classes,
       className,
-      choices,
+      choices = [],
       disabled,
       onDropChoice,
       onRemoveChoice,
       grid,
       id,
-      correct
+      correct,
     } = this.props;
 
     const names = classNames(classes.category, className);
@@ -48,7 +48,7 @@ export class Category extends React.Component {
         <PlaceHolder
           grid={{
             ...grid,
-            rowsRepeatValue: 'minmax(60px, auto)'
+            rowsRepeatValue: 'minmax(60px, auto)',
           }}
           onDropChoice={onDropChoice}
           disabled={disabled}
@@ -71,16 +71,16 @@ export class Category extends React.Component {
 }
 const styles = () => ({
   incorrect: {
-    border: `solid 2px ${color.incorrect()}`
+    border: `solid 2px ${color.incorrect()}`,
   },
   placeholder: {
     minHeight: '60px',
     flex: '1',
-    display: 'grid'
+    display: 'grid',
   },
   category: {
     display: 'flex',
-    flexDirection: 'column'
-  }
+    flexDirection: 'column',
+  },
 });
 export default withStyles(styles)(Category);

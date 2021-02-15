@@ -4,6 +4,13 @@ import toJson from 'enzyme-to-json';
 
 import Trait from '../trait';
 
+jest.mock('@pie-lib/render-ui', () => ({
+  color: {
+    primaryDark: jest.fn().mockReturnValue('blue'),
+    secondaryBackground: jest.fn().mockReturnValue('grey'),
+  }
+}));
+
 describe('Trait', () => {
   let wrapper, trait, options;
 

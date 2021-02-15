@@ -8,10 +8,16 @@ exports[`Render Main Component should match snapshot 1`] = `
     onChange={[Function]}
     pluginProps={
       Object {
+        "audio": Object {
+          "disabled": true,
+        },
         "math": Object {
           "controlledKeypadMode": false,
           "disabled": true,
           "keypadMode": undefined,
+        },
+        "video": Object {
+          "disabled": true,
         },
       }
     }
@@ -46,10 +52,16 @@ exports[`Render Main Component should match snapshot with teacher instructions 1
     onChange={[Function]}
     pluginProps={
       Object {
+        "audio": Object {
+          "disabled": true,
+        },
         "math": Object {
           "controlledKeypadMode": false,
           "disabled": true,
           "keypadMode": undefined,
+        },
+        "video": Object {
+          "disabled": true,
         },
       }
     }

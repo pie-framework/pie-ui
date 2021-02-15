@@ -99,6 +99,8 @@ describe('DrawingResponse', () => {
 
         expect(element.startx).toEqual(300);
         expect(element.starty).toEqual(300);
+        expect(element.x).toEqual(400);
+        expect(element.y).toEqual(300);
       });
     });
   });
@@ -376,6 +378,8 @@ describe('DrawingResponse', () => {
 
         expect(element.startx).toEqual(300);
         expect(element.starty).toEqual(300);
+        expect(element.x).toEqual(400);
+        expect(element.y).toEqual(400);
       });
     });
   });

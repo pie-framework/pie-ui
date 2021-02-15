@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.5...@pie-ui/categorize@1.5.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* **categorize:** fix choices map null check - PD-879 ([fccd6c5](https://github.com/pie-framework/pie-ui/commit/fccd6c5fe1ae96d628411f4661ac2c74eb84a06e))
+
+
+
+
+
 ## [1.5.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.4...@pie-ui/categorize@1.5.5) (2021-02-01)
 
 **Note:** Version bump only for package @pie-ui/categorize

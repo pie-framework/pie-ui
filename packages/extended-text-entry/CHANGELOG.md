@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.4...@pie-ui/extended-text-entry@3.4.5) (2021-02-15)
+
+
+### Bug Fixes
+
+* **extended-text-entry:** remove audio and video buttons for player ([3f4d239](https://github.com/pie-framework/pie-ui/commit/3f4d2395a235f78dfeaf681360bc3e7dcee61e9f))
+* **extended-text-entry:** update-snapshots ([4766e33](https://github.com/pie-framework/pie-ui/commit/4766e33585fcba5e5a81db341c9375297a234ddd))
+
+
+
+
+
 ## [3.4.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.3...@pie-ui/extended-text-entry@3.4.4) (2021-02-04)
 
 **Note:** Version bump only for package @pie-ui/extended-text-entry

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.12...@pie-ui/likert@0.1.13) (2021-02-15)
+
+
+### Bug Fixes
+
+* **likert:** fix choices map null check - PD-879 ([e8f356f](https://github.com/pie-framework/pie-ui/commit/e8f356f8e97209d745c59b5330227c110221941f))
+
+
+
+
+
 ## [0.1.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.11...@pie-ui/likert@0.1.12) (2021-02-01)
 
 **Note:** Version bump only for package @pie-ui/likert

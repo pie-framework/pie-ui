@@ -10,9 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.3.15",
-    "@pie-lib/math-rendering": "^2.3.1",
-    "@pie-lib/render-ui": "^4.10.4",
+    "@pie-lib/correct-answer-toggle": "^2.3.18",
+    "@pie-lib/math-rendering": "^2.3.3",
+    "@pie-lib/render-ui": "^4.11.2",
     "classnames": "^2.2.5",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",
@@ -21,7 +21,7 @@
     "react-dom": "^16.8.1"
   },
   "devDependencies": {
-    "@pie-lib/test-utils": "^0.2.14"
+    "@pie-lib/test-utils": "^0.2.16"
   },
   "author": "",
   "license": "ISC",

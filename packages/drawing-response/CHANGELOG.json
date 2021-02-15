@@ -1003,5 +1003,35 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.34"
+  },
+  {
+    "type": "fix",
+    "scope": "drawing-response",
+    "subject": "update tests",
+    "merge": null,
+    "header": "fix(drawing-response): update tests",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a219cbc1ffa8ae1ff9571adb63f1a30c3885f6b7",
+    "gitTags": " (origin/fix/drawing-response-resize)",
+    "committerDate": "2021-02-05 10:32:44 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.39"
+  },
+  {
+    "type": "fix",
+    "scope": "drawing-response",
+    "subject": "remove console.log",
+    "merge": null,
+    "header": "fix(drawing-response): remove console.log",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "2d777c77da4208d17db5f206ae1747854ce75720",
+    "gitTags": "",
+    "committerDate": "2021-02-04 11:07:53 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.39"
   }
 ]

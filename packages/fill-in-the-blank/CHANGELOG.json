@@ -433,5 +433,20 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/fill-in-the-blank@1.5.1"
+  },
+  {
+    "type": "fix",
+    "scope": "fill-in-the-blank",
+    "subject": "fix choices map null check - PD-879",
+    "merge": null,
+    "header": "fix(fill-in-the-blank): fix choices map null check - PD-879",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "e11e2a9b9c7b7ce51cf0f0a5e0f30e4d975bcef8",
+    "gitTags": "",
+    "committerDate": "2021-02-08 15:12:59 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/fill-in-the-blank@1.5.6"
   }
 ]

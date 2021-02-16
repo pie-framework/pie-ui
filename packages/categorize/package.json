@@ -1,6 +1,6 @@
 {
   "name": "@pie-ui/categorize",
-  "version": "1.5.0",
+  "version": "1.5.8",
   "description": "",
   "main": "lib/index.js",
   "module": "src/index.js",

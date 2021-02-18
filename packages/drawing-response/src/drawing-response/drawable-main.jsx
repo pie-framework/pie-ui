@@ -98,7 +98,8 @@ class DrawableMain extends React.Component {
         startx: x,
         starty: y,
         fillColor,
-        outlineColor
+        outlineColor,
+        createdAt: new Date()
       });
 
       this.setState({

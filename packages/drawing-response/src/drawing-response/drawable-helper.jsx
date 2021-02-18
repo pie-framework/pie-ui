@@ -5,10 +5,10 @@
  */
 export default class DrawableHelper {
   constructor(props, type) {
-    const { startx, starty, fillColor, outlineColor } = props;
+    const { startx, starty, fillColor, outlineColor, createdAt } = props;
     this.startx = startx;
     this.starty = starty;
-    this.createdAt = new Date();
+    this.createdAt = createdAt;
     this.fillColor = fillColor;
     this.outlineColor = outlineColor;
     this.type = type;

@@ -164,7 +164,7 @@ class DrawableMain extends React.Component {
   handleClearAll = () => {
     const { TextEntry } = this.props;
 
-    TextEntry.all.pop();
+    TextEntry.all = [];
     this.setState(
       { drawables: [], updatedAt: new Date() },
       this.handleSessionChange

@@ -4,8 +4,8 @@ import Main from '../main';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
 import { shallowChild } from '@pie-lib/test-utils';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
 import SimpleQuestionBlock from '../simple-question-block';
+import { Feedback } from "../../../../__mocks__/@pie-lib/render-ui";
 
 const Mathquill = require('@pie-framework/mathquill');
 
@@ -15,6 +15,20 @@ jest.mock('@pie-framework/mathquill', () => ({
   }),
   registerEmbed: jest.fn(),
   getInterface: jest.fn().mockReturnThis(),
+}));
+
+jest.mock('@pie-lib/render-ui', () => ({
+  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  color: {
+    secondary: jest.fn().mockReturnValue('blue'),
+    primaryLight: jest.fn().mockReturnValue('blue'),
+    text: jest.fn().mockReturnValue('black'),
+    background: jest.fn().mockReturnValue('grey'),
+    incorrect: jest.fn().mockReturnValue('red'),
+    correct: jest.fn().mockReturnValue('green'),
+    disabled: jest.fn().mockReturnValue('grey'),
+  },
+  Feedback: 'Feedback'
 }));
 
 describe('Math-Inline Main', () => {
@@ -74,8 +88,8 @@ describe('Math-Inline Main', () => {
     });
 
     it('renders correctly', () => {
-      expect(wrapper.dive().find(CorrectAnswerToggle).length).toEqual(0);
-      expect(wrapper.dive().find(Feedback).length).toEqual(0);
+      expect(wrapper.find(CorrectAnswerToggle).length).toEqual(0);
+      expect(wrapper.find(Feedback).length).toEqual(0);
 
       expect(wrapper.dive().state()).toEqual({
         activeAnswerBlock: '',

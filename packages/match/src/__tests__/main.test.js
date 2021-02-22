@@ -2,9 +2,18 @@ import * as React from 'react';
 import Main from '../main';
 import { shallowChild } from '@pie-lib/test-utils';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { Feedback } from '@pie-lib/render-ui';
 import AnswerGrid from '../answer-grid';
 import { shallow } from 'enzyme/build';
+import { Feedback } from "../../../../__mocks__/@pie-lib/render-ui";
+
+jest.mock('@pie-lib/render-ui', () => ({
+  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  color: {
+    text: jest.fn().mockReturnValue('black'),
+    background: jest.fn().mockReturnValue('grey'),
+  },
+  Feedback: 'Feedback'
+}));
 
 describe('Main', () => {
   const defaultProps = {

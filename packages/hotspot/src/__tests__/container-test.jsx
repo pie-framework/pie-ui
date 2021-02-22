@@ -9,6 +9,13 @@ import HotspotComponent from '../hotspot/index';
 
 Konva.isBrowser = false;
 
+jest.mock('@pie-lib/render-ui', () => ({
+  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  color: {
+    disabled: jest.fn().mockReturnValue('grey'),
+  }
+}));
+
 describe('HotspotComponent', () => {
   describe('renders', () => {
     let wrapper;

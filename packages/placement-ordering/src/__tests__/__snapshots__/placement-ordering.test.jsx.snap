@@ -26,7 +26,7 @@ exports[`PlacementOrdering render shows toggle 1`] = `
     tiler={[Function]}
   />
   <br />
-  <Feedback />
+  <Component />
 </div>
 `;
 
@@ -55,7 +55,7 @@ exports[`PlacementOrdering render snapshot 1`] = `
     tiler={[Function]}
   />
   <br />
-  <Feedback />
+  <Component />
 </div>
 `;
 
@@ -100,6 +100,6 @@ exports[`PlacementOrdering render snapshot with rationale 1`] = `
       }
     />
   </Component>
-  <Feedback />
+  <Component />
 </div>
 `;

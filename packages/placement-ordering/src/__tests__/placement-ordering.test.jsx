@@ -8,6 +8,19 @@ jest.mock('../ordering', () => ({
   buildState: jest.fn().mockReturnValue({}),
   reducer: jest.fn().mockReturnValue({})
 }));
+
+jest.mock('@pie-lib/render-ui', () => ({
+  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  color: {
+    secondary: jest.fn().mockReturnValue('blue'),
+    secondaryLight: jest.fn().mockReturnValue('blue'),
+    text: jest.fn().mockReturnValue('black'),
+    background: jest.fn().mockReturnValue('blue'),
+    incorrect: jest.fn().mockReturnValue('red'),
+    correct: jest.fn().mockReturnValue('green'),
+  }
+}));
+
 describe('PlacementOrdering', () => {
   let wrapper, model, session;
   let choices;

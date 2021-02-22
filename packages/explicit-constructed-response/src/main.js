@@ -4,7 +4,7 @@ import debounce from 'lodash/debounce';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { ConstructedResponse } from '@pie-lib/mask-markup';
-import { color, Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 
 export class Main extends React.Component {
@@ -55,7 +55,7 @@ export class Main extends React.Component {
     return (
       <div className={classes.mainContainer}>
         {
-          teacherInstructions && (
+          teacherInstructions && parseHtmlHasText(teacherInstructions) && (
             <div className={classes.collapsible}>
               <Collapsible
                 labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
@@ -72,7 +72,7 @@ export class Main extends React.Component {
         />
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         {
-          rationale && (
+          rationale && parseHtmlHasText(rationale) && (
             <div className={classes.collapsible}>
               <Collapsible
                 labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}

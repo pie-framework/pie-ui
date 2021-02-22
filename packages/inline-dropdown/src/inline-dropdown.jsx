@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { InlineDropdown as DropDown } from '@pie-lib/mask-markup';
-import { color, Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -55,7 +55,7 @@ export class InlineDropdown extends React.Component {
     return (
       <div className={classes.mainContainer}>
         {
-          teacherInstructions && (
+          teacherInstructions && parseHtmlHasText(teacherInstructions) && (
             <Collapsible
               labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
             >
@@ -73,7 +73,7 @@ export class InlineDropdown extends React.Component {
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <br />
         {
-          rationale && (
+          rationale && parseHtmlHasText(rationale) && (
             <Collapsible
               labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
             >

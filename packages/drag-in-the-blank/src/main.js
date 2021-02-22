@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { DragInTheBlank } from '@pie-lib/mask-markup';
 import { withDragContext } from '@pie-lib/drag';
-import { color, Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -50,7 +50,7 @@ export class Main extends React.Component {
     return (
       <div className={classes.mainContainer}>
         {
-          model.teacherInstructions && (
+          model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) &&  (
             <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
               <div dangerouslySetInnerHTML={{ __html: model.teacherInstructions }}/>
             </Collapsible>
@@ -65,7 +65,7 @@ export class Main extends React.Component {
         {prompt && <div dangerouslySetInnerHTML={{ __html: prompt }}/>}
         <br />
         {
-          model.rationale && (
+          model.rationale && parseHtmlHasText(model.rationale) && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
               <div dangerouslySetInnerHTML={{ __html: model.rationale }}/>
             </Collapsible>

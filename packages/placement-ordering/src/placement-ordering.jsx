@@ -1,6 +1,6 @@
 import { HorizontalTiler, VerticalTiler } from './tiler';
 import { buildState, reducer } from './ordering';
-import { color, Feedback, Collapsible } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -177,7 +177,7 @@ export class PlacementOrdering extends React.Component {
     return (
       <div className={classes.placementOrdering}>
         {
-          model.teacherInstructions && (
+          model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) && (
             <Collapsible
               labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
               className={classes.collapsible}
@@ -211,7 +211,7 @@ export class PlacementOrdering extends React.Component {
         />
         <br />
         {
-          model.rationale && (
+          model.rationale && parseHtmlHasText(model.rationale) && (
             <Collapsible
               labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
               className={classes.collapsible}

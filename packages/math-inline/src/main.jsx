@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 import { mq, HorizontalKeypad } from '@pie-lib/math-input';
-import { Feedback, Collapsible, Readable } from '@pie-lib/render-ui';
+import { Feedback, Collapsible, Readable, parseHtmlHasText } from '@pie-lib/render-ui';
 import { renderMath } from '@pie-lib/math-rendering';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -458,7 +458,7 @@ export class Main extends React.Component {
                     />
                   )}
               </div>
-              {model.teacherInstructions && [
+              {model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) && [
                 <Collapsible
                   key="collapsible"
                   labels={{
@@ -475,7 +475,7 @@ export class Main extends React.Component {
                 </Collapsible>,
                 <br key="br" />,
               ]}
-              {model.rationale && [
+              {model.rationale && parseHtmlHasText(model.rationale) && [
                 <Collapsible
                   key="collapsible"
                   labels={{

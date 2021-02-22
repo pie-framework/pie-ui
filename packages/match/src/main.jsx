@@ -121,7 +121,7 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
-        {model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) &&  (
+        {model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) && (
           <Collapsible
             labels={{
               hidden: 'Show Teacher Instructions',

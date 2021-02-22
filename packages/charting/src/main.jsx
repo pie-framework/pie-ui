@@ -60,7 +60,7 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
-        {teacherInstructions && parseHtmlHasText(teacherInstructions) &&(
+        {teacherInstructions && parseHtmlHasText(teacherInstructions) && (
           <Collapsible
             labels={{
               hidden: 'Show Teacher Instructions',

@@ -98,7 +98,8 @@ class DrawableMain extends React.Component {
         startx: x,
         starty: y,
         fillColor,
-        outlineColor
+        outlineColor,
+        createdAt: new Date()
       });
 
       this.setState({
@@ -164,7 +165,7 @@ class DrawableMain extends React.Component {
   handleClearAll = () => {
     const { TextEntry } = this.props;
 
-    TextEntry.all.pop();
+    TextEntry.all = [];
     this.setState(
       { drawables: [], updatedAt: new Date() },
       this.handleSessionChange

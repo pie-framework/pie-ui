@@ -47,7 +47,8 @@ describe('DrawingResponse', () => {
         startx: 200,
         starty: 200,
         x: 300,
-        y: 200
+        y: 200,
+        createdAt: new Date(),
       };
       wrapper = mkWrapper('CircleDrawable', props);
     });
@@ -118,7 +119,8 @@ describe('DrawingResponse', () => {
         posX: 200,
         posY: 200,
         startx: 200,
-        starty: 200
+        starty: 200,
+        createdAt: new Date(),
       };
       wrapper = mkWrapper('EraserDrawable', props);
     });
@@ -183,7 +185,8 @@ describe('DrawingResponse', () => {
         posX: 200,
         posY: 200,
         startx: 200,
-        starty: 200
+        starty: 200,
+        createdAt: new Date(),
       };
       wrapper = mkWrapper('FreePathDrawable', props);
     });
@@ -256,7 +259,8 @@ describe('DrawingResponse', () => {
         posX: 200,
         posY: 200,
         x: 300,
-        y: 200
+        y: 200,
+        createdAt: new Date(),
       };
       wrapper = mkWrapper('LineDrawable', props);
     });
@@ -326,7 +330,8 @@ describe('DrawingResponse', () => {
         startx: 200,
         starty: 200,
         x: 300,
-        y: 300
+        y: 300,
+        createdAt: new Date(),
       };
       wrapper = mkWrapper('RectangleDrawable', props);
     });

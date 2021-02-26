@@ -7,7 +7,7 @@ import { shallow } from 'enzyme/build';
 import { Feedback } from "../../../../__mocks__/@pie-lib/render-ui";
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  hasText: jest.fn().mockReturnValue('true'),
   color: {
     text: jest.fn().mockReturnValue('black'),
     background: jest.fn().mockReturnValue('grey'),

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TextSelect } from '@pie-lib/text-select';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { color, Feedback, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
+import { color, Feedback, Collapsible, hasText } from '@pie-lib/render-ui';
 import { withStyles } from '@material-ui/core/styles';
 
 import debug from 'debug';
@@ -54,7 +54,7 @@ export class Main extends React.Component {
     return (
       <div className={classes.mainContainer}>
         {
-          model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) && (
+          model.teacherInstructions && hasText(model.teacherInstructions) && (
             <Collapsible
               labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
               className={classes.collapsible}
@@ -84,7 +84,7 @@ export class Main extends React.Component {
           maxNoOfSelections={model.maxSelections}
         />
         {
-          model.rationale && parseHtmlHasText(model.rationale) && (
+          model.rationale && hasText(model.rationale) && (
             <Collapsible
               labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
               className={classes.collapsible}

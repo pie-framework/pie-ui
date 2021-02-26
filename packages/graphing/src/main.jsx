@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { GraphContainer } from '@pie-lib/graphing';
-import { color, Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
+import { color, Collapsible, hasText } from '@pie-lib/render-ui';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
 
 export class Main extends React.Component {
@@ -71,7 +71,7 @@ export class Main extends React.Component {
         )}
 
         {
-          teacherInstructions && parseHtmlHasText(teacherInstructions) && (
+          teacherInstructions && hasText(teacherInstructions) && (
             <Collapsible labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}>
               <div dangerouslySetInnerHTML={{ __html: teacherInstructions }}/>
             </Collapsible>
@@ -101,7 +101,7 @@ export class Main extends React.Component {
         <br/>
 
         {
-          rationale && parseHtmlHasText(rationale) && (
+          rationale && hasText(rationale) && (
             <Collapsible labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}>
               <div dangerouslySetInnerHTML={{ __html: rationale }}/>
             </Collapsible>

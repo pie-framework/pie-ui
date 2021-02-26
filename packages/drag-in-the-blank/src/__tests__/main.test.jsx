@@ -4,7 +4,7 @@ import React from 'react';
 import Main from '../main';
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  hasText: jest.fn().mockReturnValue('true'),
   color: {
     text: jest.fn().mockReturnValue('black'),
     background: jest.fn().mockReturnValue('grey'),

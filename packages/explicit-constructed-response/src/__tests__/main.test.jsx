@@ -6,7 +6,7 @@ import { Main } from '../main';
 const choice = (l, v) => ({ label: l, value: v });
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true')
+  hasText: jest.fn().mockReturnValue('true')
 }));
 
 describe('Main', () => {

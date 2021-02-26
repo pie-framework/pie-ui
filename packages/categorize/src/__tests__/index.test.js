@@ -10,7 +10,7 @@ import { Categorize as UnStyledCategorize } from '../categorize/index';
 jest.mock('@pie-lib/math-rendering', () => ({ renderMath: jest.fn() }));
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true')
+  hasText: jest.fn().mockReturnValue('true')
 }));
 
 describe('categorize', () => {

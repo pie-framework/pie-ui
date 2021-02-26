@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import { Collapsible, parseHtmlHasText } from '@pie-lib/render-ui';
+import { Collapsible, hasText } from '@pie-lib/render-ui';
 import Container from './container';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -44,7 +44,7 @@ class HotspotComponent extends React.Component {
     return (
       <div>
         {
-          teacherInstructions && parseHtmlHasText(teacherInstructions) && (
+          teacherInstructions && hasText(teacherInstructions) && (
             <Collapsible
               labels={{ hidden: 'Show Teacher Instructions', visible: 'Hide Teacher Instructions' }}
               className={classes.collapsible}
@@ -75,7 +75,7 @@ class HotspotComponent extends React.Component {
         ) : null}
 
         {
-          rationale && parseHtmlHasText(rationale) && (
+          rationale && hasText(rationale) && (
             <Collapsible
               labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
               className={classes.collapsible}

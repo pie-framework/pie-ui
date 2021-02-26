@@ -4,7 +4,7 @@ import React from 'react';
 import { InlineDropdown } from '../inline-dropdown';
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true')
+  hasText: jest.fn().mockReturnValue('true')
 }));
 
 describe('InlineDropdown', () => {

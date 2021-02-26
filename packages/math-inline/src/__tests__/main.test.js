@@ -18,7 +18,7 @@ jest.mock('@pie-framework/mathquill', () => ({
 }));
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  hasText: jest.fn().mockReturnValue('true'),
   color: {
     secondary: jest.fn().mockReturnValue('blue'),
     primaryLight: jest.fn().mockReturnValue('blue'),

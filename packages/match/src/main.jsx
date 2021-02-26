@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CorrectAnswerToggle from '@pie-lib/correct-answer-toggle';
-import { color, Collapsible, Feedback, parseHtmlHasText } from '@pie-lib/render-ui';
+import { color, Collapsible, Feedback, hasText } from '@pie-lib/render-ui';
 import AnswerGrid from './answer-grid';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -121,7 +121,7 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
-        {model.teacherInstructions && parseHtmlHasText(model.teacherInstructions) && (
+        {model.teacherInstructions && hasText(model.teacherInstructions) && (
           <Collapsible
             labels={{
               hidden: 'Show Teacher Instructions',
@@ -166,7 +166,7 @@ export class Main extends React.Component {
             rows={model.config.rows}
           />
         </div>
-        {model.rationale && parseHtmlHasText(model.rationale) && (
+        {model.rationale && hasText(model.rationale) && (
           <Collapsible
             labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
             className={classes.collapsible}

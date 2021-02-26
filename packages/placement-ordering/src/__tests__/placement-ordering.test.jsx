@@ -10,7 +10,7 @@ jest.mock('../ordering', () => ({
 }));
 
 jest.mock('@pie-lib/render-ui', () => ({
-  parseHtmlHasText: jest.fn().mockReturnValue('true'),
+  hasText: jest.fn().mockReturnValue('true'),
   color: {
     secondary: jest.fn().mockReturnValue('blue'),
     secondaryLight: jest.fn().mockReturnValue('blue'),

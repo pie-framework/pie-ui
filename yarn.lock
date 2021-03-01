@@ -2574,6 +2574,15 @@
     lodash "^4.17.11"
     mathjax-full "^3.1.2"
 
+"@pie-lib/math-rendering@^2.3.5":
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/@pie-lib/math-rendering/-/math-rendering-2.3.5.tgz#07ab4211adafe42e1fb4a407e80858f2f79f76cc"
+  integrity sha512-Snjrmp/KYzUjuoeZ8M2Wlk6XYhAi8oVqK+kJdu9pfztbN3xpFsn7r5L20vRqqrHFqfC3K9A4RHXZVKUkylqRjA==
+  dependencies:
+    debug "^4.1.1"
+    lodash "^4.17.11"
+    mathjax-full "^3.1.2"
+
 "@pie-lib/math-toolbar@^1.7.3", "@pie-lib/math-toolbar@^1.7.4":
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/@pie-lib/math-toolbar/-/math-toolbar-1.7.4.tgz#76c0fab643c5d17ba344a5991a383396310c95f6"
@@ -2619,6 +2628,20 @@
     "@material-ui/icons" "^3.0.2"
     "@pie-lib/icons" "^2.4.23"
     "@pie-lib/math-rendering" "^2.3.4"
+    classnames "^2.2.6"
+    debug "^4.1.1"
+    prop-types "^15.7.2"
+    react-transition-group "^2.5.2"
+
+"@pie-lib/render-ui@^4.11.4":
+  version "4.11.4"
+  resolved "https://registry.yarnpkg.com/@pie-lib/render-ui/-/render-ui-4.11.4.tgz#41145eb1de27e7602284f492cfa4e83c321c3466"
+  integrity sha512-gD2xK4Nz3iNHnaPwE69bA24ER15v3mf088A2UbxxpqIrzLMbXV0COCc95jpZMGZp08823lfj+Smr6t2aIQxxig==
+  dependencies:
+    "@material-ui/core" "^3.8.3"
+    "@material-ui/icons" "^3.0.2"
+    "@pie-lib/icons" "^2.4.23"
+    "@pie-lib/math-rendering" "^2.3.5"
     classnames "^2.2.6"
     debug "^4.1.1"
     prop-types "^15.7.2"

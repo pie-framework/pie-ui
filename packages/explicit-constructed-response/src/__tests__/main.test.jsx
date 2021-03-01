@@ -5,6 +5,10 @@ import { Main } from '../main';
 
 const choice = (l, v) => ({ label: l, value: v });
 
+jest.mock('@pie-lib/render-ui', () => ({
+  hasText: jest.fn().mockReturnValue('true')
+}));
+
 describe('Main', () => {
   let wrapper;
   let onChange = jest.fn();

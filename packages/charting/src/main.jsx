@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { color, Collapsible } from '@pie-lib/render-ui';
+import { color, Collapsible, hasText } from '@pie-lib/render-ui';
 import { Chart, chartTypes } from '@pie-lib/charting';
 import isEqual from 'lodash/isEqual';
 
@@ -60,7 +60,7 @@ export class Main extends React.Component {
 
     return (
       <div className={classes.mainContainer}>
-        {teacherInstructions && (
+        {teacherInstructions && hasText(teacherInstructions) && (
           <Collapsible
             labels={{
               hidden: 'Show Teacher Instructions',
@@ -100,7 +100,7 @@ export class Main extends React.Component {
         />
 
         <br />
-        {rationale && (
+        {rationale && hasText(rationale) && (
           <Collapsible
             labels={{ hidden: 'Show Rationale', visible: 'Hide Rationale' }}
           >

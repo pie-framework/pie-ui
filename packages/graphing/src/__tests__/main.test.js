@@ -6,6 +6,10 @@ jest.mock('lodash/uniq', () => {
   return () => ([]);
 });
 
+jest.mock('@pie-lib/render-ui', () => ({
+  hasText: jest.fn().mockReturnValue('true')
+}));
+
 describe('Main', () => {
   const defaultProps = {
     model: {

@@ -3,6 +3,14 @@ import React from 'react';
 
 import Main from '../main';
 
+jest.mock('@pie-lib/render-ui', () => ({
+  hasText: jest.fn().mockReturnValue('true'),
+  color: {
+    text: jest.fn().mockReturnValue('black'),
+    background: jest.fn().mockReturnValue('grey'),
+  }
+}));
+
 describe('Main', () => {
   let wrapper;
   let onChange = jest.fn();

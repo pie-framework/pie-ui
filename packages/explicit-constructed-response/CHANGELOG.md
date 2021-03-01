@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.10.6...@pie-ui/explicit-constructed-response@1.10.7) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
 ## [1.10.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/explicit-constructed-response@1.10.4...@pie-ui/explicit-constructed-response@1.10.6) (2021-02-15)
 
 **Note:** Version bump only for package @pie-ui/explicit-constructed-response

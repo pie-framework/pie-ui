@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.3.9...@pie-ui/charting@0.3.10) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
 ## [0.3.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/charting@0.3.7...@pie-ui/charting@0.3.9) (2021-02-15)
 
 **Note:** Version bump only for package @pie-ui/charting

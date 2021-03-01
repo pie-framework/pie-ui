@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.4.8...@pie-ui/number-line@7.4.9) (2021-03-01)
+
+
+### Bug Fixes
+
+* **number-line:** fix grammar issue in error message PD-51 ([cd7871d](https://github.com/pie-framework/pie-ui/commit/cd7871ddd412385d3add68bed77fbe7331fe84e3))
+
+
+
+
+
 ## [7.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/number-line@7.4.6...@pie-ui/number-line@7.4.8) (2021-02-15)
 
 **Note:** Version bump only for package @pie-ui/number-line

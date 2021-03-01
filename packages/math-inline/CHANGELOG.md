@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.6...@pie-ui/math-inline@3.3.7) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
 ## [3.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.4...@pie-ui/math-inline@3.3.6) (2021-02-15)
 
 **Note:** Version bump only for package @pie-ui/math-inline

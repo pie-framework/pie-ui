@@ -1033,5 +1033,35 @@
     "committerDate": "2021-02-04 11:07:53 +0200",
     "isTagged": true,
     "tag": "@pie-ui/drawing-response@1.6.39"
+  },
+  {
+    "type": "fix",
+    "scope": "drawing-response",
+    "subject": "make undo button behave as expected- PD-905",
+    "merge": null,
+    "header": "fix(drawing-response): make undo button behave as expected- PD-905",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "1fd1d1ea8628cf334497ddd74ce70d0a9cfa219e",
+    "gitTags": "",
+    "committerDate": "2021-02-18 15:34:09 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.42"
+  },
+  {
+    "type": "fix",
+    "scope": "drawing-response",
+    "subject": "make clear all buton remove all text - PD-264",
+    "merge": null,
+    "header": "fix(drawing-response): make clear all buton remove all text - PD-264",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "ee90c843a724a009cefbcd43385c306cea43b237",
+    "gitTags": "",
+    "committerDate": "2021-02-18 15:12:54 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/drawing-response@1.6.42"
   }
 ]

@@ -8,9 +8,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@pie-framework/pie-player-events": "^0.1.0",
-    "@pie-lib/correct-answer-toggle": "^2.3.18",
-    "@pie-lib/drag": "^1.1.47",
-    "@pie-lib/render-ui": "^4.11.4",
+    "@pie-lib/correct-answer-toggle": "^2.3.21",
+    "@pie-lib/drag": "^1.1.50",
+    "@pie-lib/render-ui": "^4.11.5",
     "react": "^16.8.1",
     "react-dnd": "^9.3.2",
     "react-dom": "^16.8.1"

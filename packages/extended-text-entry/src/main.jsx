@@ -47,6 +47,7 @@ export class Main extends React.Component {
     const { dimensions, disabled, feedback, teacherInstructions, mathInput } = model;
     const { value } = session;
     const { width, height } = dimensions || {};
+    const maxHeight = '40vh';
     log('[render] disabled? ', disabled);
 
     return (
@@ -79,7 +80,8 @@ export class Main extends React.Component {
           onChange={this.changeSession}
           markup={value || ''}
           width={width && width.toString()}
-          height={height && height.toString()}
+          minHeight={height && height.toString()}
+          maxHeight={maxHeight}
           disabled={disabled}
           highlightShape={true}
           pluginProps={{

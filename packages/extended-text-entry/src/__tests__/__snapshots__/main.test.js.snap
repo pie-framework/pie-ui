@@ -5,6 +5,7 @@ exports[`Render Main Component should match snapshot 1`] = `
   <[object Object]
     highlightShape={true}
     markup="hi"
+    maxHeight="40vh"
     onChange={[Function]}
     pluginProps={
       Object {
@@ -49,6 +50,7 @@ exports[`Render Main Component should match snapshot with teacher instructions 1
   <[object Object]
     highlightShape={true}
     markup="hi"
+    maxHeight="40vh"
     onChange={[Function]}
     pluginProps={
       Object {

@@ -189,7 +189,8 @@ export class NumberLine extends React.Component {
       : getAnswerElements();
 
     let maxPointsMessage = () =>
-      `You can only add ${model.graph.maxNumberOfPoints} elements`;
+      `You can only add ${model.graph.maxNumberOfPoints} element${model.graph.maxNumberOfPoints == 1 ? '' : 's'}`;
+
 
     let deleteElements = () => {
       this.props.onDeleteElements(this.state.selectedElements);

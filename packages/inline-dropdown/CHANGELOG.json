@@ -613,5 +613,20 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/inline-dropdown@1.9.2"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "render teacher instructions and rationale only if they are not blank - PD-771",
+    "merge": null,
+    "header": "fix: render teacher instructions and rationale only if they are not blank - PD-771",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "18e5edeab7eb5dfae1a7539b6dbd052e05a605bc",
+    "gitTags": "",
+    "committerDate": "2021-02-22 14:47:57 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/inline-dropdown@1.9.10"
   }
 ]

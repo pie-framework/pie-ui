@@ -1338,5 +1338,50 @@
     "committerDate": "2020-11-16 13:55:27 +0200",
     "isTagged": true,
     "tag": "@pie-ui/extended-text-entry@3.4.0"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "expand text entry box - PD-694",
+    "merge": null,
+    "header": "fix(extended-text-entry): expand text entry box - PD-694",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "a8054c82e2b8b6d0c7ddca119e5520a88db6abda",
+    "gitTags": " (origin/fix/extended-text-entry-expand-box)",
+    "committerDate": "2021-02-26 10:48:48 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.4.8"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "update-snapshots",
+    "merge": null,
+    "header": "fix(extended-text-entry): update-snapshots",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "4766e33585fcba5e5a81db341c9375297a234ddd",
+    "gitTags": " (origin/fix/PD-908-remove-video-and-audio-buttons-for-player)",
+    "committerDate": "2021-02-12 17:00:18 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.4.5"
+  },
+  {
+    "type": "fix",
+    "scope": "extended-text-entry",
+    "subject": "remove audio and video buttons for player",
+    "merge": null,
+    "header": "fix(extended-text-entry): remove audio and video buttons for player",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "3f4d2395a235f78dfeaf681360bc3e7dcee61e9f",
+    "gitTags": "",
+    "committerDate": "2021-02-12 16:46:39 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/extended-text-entry@3.4.5"
   }
 ]

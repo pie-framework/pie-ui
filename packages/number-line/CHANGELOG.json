@@ -603,5 +603,20 @@
     "committerDate": "2020-10-29 10:52:23 +0000",
     "isTagged": true,
     "tag": "@pie-ui/number-line@7.4.1"
+  },
+  {
+    "type": "fix",
+    "scope": "number-line",
+    "subject": "fix grammar issue in error message PD-51",
+    "merge": null,
+    "header": "fix(number-line): fix grammar issue in error message PD-51",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "cd7871ddd412385d3add68bed77fbe7331fe84e3",
+    "gitTags": " (origin/fix/PD-51-fix-grammar-issue-in-number-line-error-message)",
+    "committerDate": "2021-02-18 14:41:28 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/number-line@7.4.9"
   }
 ]

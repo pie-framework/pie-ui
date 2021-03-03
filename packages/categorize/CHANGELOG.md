@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.8...@pie-ui/categorize@1.5.9) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
+## [1.5.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.6...@pie-ui/categorize@1.5.8) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.5.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.5...@pie-ui/categorize@1.5.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* **categorize:** fix choices map null check - PD-879 ([fccd6c5](https://github.com/pie-framework/pie-ui/commit/fccd6c5fe1ae96d628411f4661ac2c74eb84a06e))
+
+
+
+
+
+## [1.5.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.4...@pie-ui/categorize@1.5.5) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.5.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.3...@pie-ui/categorize@1.5.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.5.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.2...@pie-ui/categorize@1.5.3) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.5.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.1...@pie-ui/categorize@1.5.2) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/categorize
+
+
+
+
+
+## [1.5.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.5.0...@pie-ui/categorize@1.5.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/categorize@1.4.20...@pie-ui/categorize@1.5.0) (2020-10-08)
 
 

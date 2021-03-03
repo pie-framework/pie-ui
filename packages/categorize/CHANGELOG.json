@@ -1236,21 +1236,6 @@
   },
   {
     "type": "fix",
-    "scope": null,
-    "subject": "render teacher instructions and rationale only if they are not blank - PD-771",
-    "merge": null,
-    "header": "fix: render teacher instructions and rationale only if they are not blank - PD-771",
-    "body": null,
-    "footer": null,
-    "notes": [],
-    "hash": "18e5edeab7eb5dfae1a7539b6dbd052e05a605bc",
-    "gitTags": "",
-    "committerDate": "2021-02-22 14:47:57 +0200",
-    "isTagged": true,
-    "tag": "@pie-ui/categorize@1.5.9"
-  },
-  {
-    "type": "fix",
     "scope": "categorize",
     "subject": "fix choices map null check - PD-879",
     "merge": null,
@@ -1263,5 +1248,20 @@
     "committerDate": "2021-02-08 15:12:42 +0200",
     "isTagged": true,
     "tag": "@pie-ui/categorize@1.5.6"
+  },
+  {
+    "type": "fix",
+    "scope": null,
+    "subject": "render teacher instructions and rationale only if they are not blank - PD-771",
+    "merge": null,
+    "header": "fix: render teacher instructions and rationale only if they are not blank - PD-771",
+    "body": null,
+    "footer": null,
+    "notes": [],
+    "hash": "18e5edeab7eb5dfae1a7539b6dbd052e05a605bc",
+    "gitTags": "",
+    "committerDate": "2021-02-22 14:47:57 +0200",
+    "isTagged": true,
+    "tag": "@pie-ui/categorize@1.5.9"
   }
 ]

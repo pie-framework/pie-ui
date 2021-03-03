@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.8...@pie-ui/select-text@1.7.9) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
+## [1.7.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.6...@pie-ui/select-text@1.7.8) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.5...@pie-ui/select-text@1.7.6) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.4...@pie-ui/select-text@1.7.5) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.3...@pie-ui/select-text@1.7.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.2...@pie-ui/select-text@1.7.3) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.1...@pie-ui/select-text@1.7.2) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/select-text
+
+
+
+
+
+## [1.7.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.0...@pie-ui/select-text@1.7.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [1.7.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.6.35...@pie-ui/select-text@1.7.0) (2020-10-08)
 
 

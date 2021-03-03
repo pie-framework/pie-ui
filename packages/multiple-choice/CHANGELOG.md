@@ -3,6 +3,107 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.12](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.11...@pie-ui/multiple-choice@4.15.12) (2021-03-02)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.11](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.10...@pie-ui/multiple-choice@4.15.11) (2021-03-01)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.10](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.8...@pie-ui/multiple-choice@4.15.10) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.8](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.7...@pie-ui/multiple-choice@4.15.8) (2021-02-15)
+
+
+### Bug Fixes
+
+* **multiple-choice:** fix choices map null check - PD-879 ([fc79223](https://github.com/pie-framework/pie-elements/commit/fc79223b34e0f55084f63539c88da79c0546155a))
+
+
+
+
+
+## [4.15.7](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.6...@pie-ui/multiple-choice@4.15.7) (2021-02-04)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.6](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.5...@pie-ui/multiple-choice@4.15.6) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.5](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.4...@pie-ui/multiple-choice@4.15.5) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.4](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.3...@pie-ui/multiple-choice@4.15.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.3](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.2...@pie-ui/multiple-choice@4.15.3) (2021-01-26)
+
+
+### Bug Fixes
+
+* **multiple-choice:** fix font problem - PD-398 ([35267ea](https://github.com/pie-framework/pie-elements/commit/35267ea))
+
+
+
+
+
+## [4.15.2](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.1...@pie-ui/multiple-choice@4.15.2) (2020-11-07)
+
+**Note:** Version bump only for package @pie-ui/multiple-choice
+
+
+
+
+
+## [4.15.1](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.15.0...@pie-ui/multiple-choice@4.15.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* Authored table borders are not visible in preview PD-342 ([9b7e5e8](https://github.com/pie-framework/pie-elements/commit/9b7e5e8))
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-elements/commit/e731aa6))
+* lint error ([96ed607](https://github.com/pie-framework/pie-elements/commit/96ed607))
+* Modified code for suggested changes and removed unwanted code PD-342 ([a148b13](https://github.com/pie-framework/pie-elements/commit/a148b13))
+* snapshot test ([65c9c90](https://github.com/pie-framework/pie-elements/commit/65c9c90))
+
+
+
+
+
 # [4.15.0](https://github.com/pie-framework/pie-elements/compare/@pie-ui/multiple-choice@4.14.0...@pie-ui/multiple-choice@4.15.0) (2020-10-15)
 
 

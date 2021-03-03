@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.8...@pie-ui/match@2.6.9) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
+## [2.6.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.6...@pie-ui/match@2.6.8) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.5...@pie-ui/match@2.6.6) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.4...@pie-ui/match@2.6.5) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.3...@pie-ui/match@2.6.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.2...@pie-ui/match@2.6.3) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.1...@pie-ui/match@2.6.2) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/match
+
+
+
+
+
+## [2.6.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.6.0...@pie-ui/match@2.6.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [2.6.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/match@2.5.0...@pie-ui/match@2.6.0) (2020-10-15)
 
 

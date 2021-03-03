@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.9...@pie-ui/graphing@3.1.10) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
+## [3.1.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.7...@pie-ui/graphing@3.1.9) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.1.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.6...@pie-ui/graphing@3.1.7) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.1.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.5...@pie-ui/graphing@3.1.6) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.1.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.4...@pie-ui/graphing@3.1.5) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.1.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.3...@pie-ui/graphing@3.1.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/graphing
+
+
+
+
+
+## [3.1.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.2...@pie-ui/graphing@3.1.3) (2021-01-26)
+
+
+### Bug Fixes
+
+* Do not save incomplete answers in the session. PD-775 ([1961783](https://github.com/pie-framework/pie-ui/commit/1961783))
+
+
+
+
+
+## [3.1.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.1...@pie-ui/graphing@3.1.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 ## [3.1.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/graphing@3.1.0...@pie-ui/graphing@3.1.1) (2020-10-15)
 
 

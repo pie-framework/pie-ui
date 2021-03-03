@@ -3,6 +3,97 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.13](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.12...@pie-ui/demo@0.4.13) (2021-03-02)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.12](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.11...@pie-ui/demo@0.4.12) (2021-03-01)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.11](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.9...@pie-ui/demo@0.4.11) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.8...@pie-ui/demo@0.4.9) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.7...@pie-ui/demo@0.4.8) (2021-02-04)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.6...@pie-ui/demo@0.4.7) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.5...@pie-ui/demo@0.4.6) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.4...@pie-ui/demo@0.4.5) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.3...@pie-ui/demo@0.4.4) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.2...@pie-ui/demo@0.4.3) (2020-11-07)
+
+**Note:** Version bump only for package @pie-ui/demo
+
+
+
+
+
+## [0.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.1...@pie-ui/demo@0.4.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* demo w lib linking ([197447b](https://github.com/pie-framework/pie-ui/commit/197447b))
+
+
+
+
+
 ## [0.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/demo@0.4.0...@pie-ui/demo@0.4.1) (2020-10-15)
 
 **Note:** Version bump only for package @pie-ui/demo

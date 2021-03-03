@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.42](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.41...@pie-ui/drawing-response@1.6.42) (2021-03-01)
+
+
+### Bug Fixes
+
+* **drawing-response:** make clear all buton remove all text - PD-264 ([ee90c84](https://github.com/pie-framework/pie-elements/commit/ee90c843a724a009cefbcd43385c306cea43b237))
+* **drawing-response:** make undo button behave as expected- PD-905 ([1fd1d1e](https://github.com/pie-framework/pie-elements/commit/1fd1d1ea8628cf334497ddd74ce70d0a9cfa219e))
+
+
+
+
+
+## [1.6.41](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.39...@pie-ui/drawing-response@1.6.41) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.39](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.38...@pie-ui/drawing-response@1.6.39) (2021-02-15)
+
+
+### Bug Fixes
+
+* **drawing-response:** remove console.log ([2d777c7](https://github.com/pie-framework/pie-elements/commit/2d777c77da4208d17db5f206ae1747854ce75720))
+* **drawing-response:** update tests ([a219cbc](https://github.com/pie-framework/pie-elements/commit/a219cbc1ffa8ae1ff9571adb63f1a30c3885f6b7))
+
+
+
+
+
+## [1.6.38](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.37...@pie-ui/drawing-response@1.6.38) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.37](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.36...@pie-ui/drawing-response@1.6.37) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.36](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.35...@pie-ui/drawing-response@1.6.36) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.35](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.34...@pie-ui/drawing-response@1.6.35) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/drawing-response
+
+
+
+
+
+## [1.6.34](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.33...@pie-ui/drawing-response@1.6.34) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-elements/commit/e731aa6))
+
+
+
+
+
 ## [1.6.33](https://github.com/pie-framework/pie-elements/compare/@pie-ui/drawing-response@1.6.32...@pie-ui/drawing-response@1.6.33) (2020-10-08)
 
 **Note:** Version bump only for package @pie-ui/drawing-response

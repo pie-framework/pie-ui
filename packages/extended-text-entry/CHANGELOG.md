@@ -3,6 +3,108 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.8...@pie-ui/extended-text-entry@3.4.9) (2021-03-02)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.4.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.7...@pie-ui/extended-text-entry@3.4.8) (2021-03-01)
+
+
+### Bug Fixes
+
+* **extended-text-entry:** expand text entry box - PD-694 ([a8054c8](https://github.com/pie-framework/pie-ui/commit/a8054c82e2b8b6d0c7ddca119e5520a88db6abda))
+
+
+
+
+
+## [3.4.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.5...@pie-ui/extended-text-entry@3.4.7) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.4.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.4...@pie-ui/extended-text-entry@3.4.5) (2021-02-15)
+
+
+### Bug Fixes
+
+* **extended-text-entry:** remove audio and video buttons for player ([3f4d239](https://github.com/pie-framework/pie-ui/commit/3f4d2395a235f78dfeaf681360bc3e7dcee61e9f))
+* **extended-text-entry:** update-snapshots ([4766e33](https://github.com/pie-framework/pie-ui/commit/4766e33585fcba5e5a81db341c9375297a234ddd))
+
+
+
+
+
+## [3.4.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.3...@pie-ui/extended-text-entry@3.4.4) (2021-02-04)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.4.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.2...@pie-ui/extended-text-entry@3.4.3) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.4.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.1...@pie-ui/extended-text-entry@3.4.2) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.4.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.4.0...@pie-ui/extended-text-entry@3.4.1) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+# [3.4.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.3.2...@pie-ui/extended-text-entry@3.4.0) (2021-01-26)
+
+
+### Features
+
+* **extended-text-entry:** debounce on session change 1.5s ([efb0aeb](https://github.com/pie-framework/pie-ui/commit/efb0aeb))
+* **extended-text-entry:** lock down editable html to not have a controlled keypad - PD-355 ([0beddd4](https://github.com/pie-framework/pie-ui/commit/0beddd4))
+
+
+
+
+
+## [3.3.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.3.1...@pie-ui/extended-text-entry@3.3.2) (2020-11-07)
+
+**Note:** Version bump only for package @pie-ui/extended-text-entry
+
+
+
+
+
+## [3.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.3.0...@pie-ui/extended-text-entry@3.3.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/extended-text-entry@3.2.38...@pie-ui/extended-text-entry@3.3.0) (2020-10-08)
 
 

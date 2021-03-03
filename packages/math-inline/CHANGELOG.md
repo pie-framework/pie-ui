@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.7...@pie-ui/math-inline@3.3.8) (2021-03-02)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.3.7](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.6...@pie-ui/math-inline@3.3.7) (2021-03-01)
+
+
+### Bug Fixes
+
+* render teacher instructions and rationale only if they are not blank - PD-771 ([18e5ede](https://github.com/pie-framework/pie-ui/commit/18e5edeab7eb5dfae1a7539b6dbd052e05a605bc))
+
+
+
+
+
+## [3.3.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.4...@pie-ui/math-inline@3.3.6) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.3.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.3...@pie-ui/math-inline@3.3.4) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.3.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.2...@pie-ui/math-inline@3.3.3) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.3.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.1...@pie-ui/math-inline@3.3.2) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+## [3.3.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.3.0...@pie-ui/math-inline@3.3.1) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/math-inline
+
+
+
+
+
+# [3.3.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.2.1...@pie-ui/math-inline@3.3.0) (2021-01-26)
+
+
+### Features
+
+* **math-inline:** mark math editor content as non-readable - PD-579 ([7d31c13](https://github.com/pie-framework/pie-ui/commit/7d31c13))
+* **math-inline:** re-work line breaks for simpler model - PD-787 ([e8b86b7](https://github.com/pie-framework/pie-ui/commit/e8b86b7))
+
+
+
+
+
+## [3.2.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.2.0...@pie-ui/math-inline@3.2.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+* **math-inline:** color theme and tooltip fixes ([87d38e6](https://github.com/pie-framework/pie-ui/commit/87d38e6))
+* **math-inline:** simple interaction fixes for correct and incorrect color ([c330972](https://github.com/pie-framework/pie-ui/commit/c330972))
+* **math-inline:** simple interaction fixes for validation and color ([25643fc](https://github.com/pie-framework/pie-ui/commit/25643fc))
+
+
+
+
+
 # [3.2.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/math-inline@3.1.5...@pie-ui/math-inline@3.2.0) (2020-10-08)
 
 

@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.8...@pie-ui/fill-in-the-blank@1.5.9) (2021-03-01)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.8](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.6...@pie-ui/fill-in-the-blank@1.5.8) (2021-02-15)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.6](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.5...@pie-ui/fill-in-the-blank@1.5.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* **fill-in-the-blank:** fix choices map null check - PD-879 ([e11e2a9](https://github.com/pie-framework/pie-ui/commit/e11e2a9b9c7b7ce51cf0f0a5e0f30e4d975bcef8))
+
+
+
+
+
+## [1.5.5](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.4...@pie-ui/fill-in-the-blank@1.5.5) (2021-02-01)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.4](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.3...@pie-ui/fill-in-the-blank@1.5.4) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.3](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.2...@pie-ui/fill-in-the-blank@1.5.3) (2021-01-28)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.2](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.1...@pie-ui/fill-in-the-blank@1.5.2) (2021-01-26)
+
+**Note:** Version bump only for package @pie-ui/fill-in-the-blank
+
+
+
+
+
+## [1.5.1](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.5.0...@pie-ui/fill-in-the-blank@1.5.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump lib versions ([e731aa6](https://github.com/pie-framework/pie-ui/commit/e731aa6))
+
+
+
+
+
 # [1.5.0](https://github.com/pie-framework/pie-ui/compare/@pie-ui/fill-in-the-blank@1.4.0...@pie-ui/fill-in-the-blank@1.5.0) (2020-10-15)
 
 

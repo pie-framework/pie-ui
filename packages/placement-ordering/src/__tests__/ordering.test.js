@@ -49,8 +49,16 @@ describe('ordering', () => {
 
       it(label, () => {
         const endState = actions.reduce((state, [fromIndex, toIndex]) => {
-          const from = state.tiles[fromIndex];
-          const to = state.tiles[toIndex];
+          let tiles;
+          if(!opts.includeTargets) {
+            tiles = state.tiles.filter(tile => tile.type === 'choice');
+          } else {
+            tiles = state.tiles;
+          }
+
+          const from = tiles[fromIndex];
+          const to = tiles[toIndex];
+
           return reducer({ ...action, from, to }, state);
         }, initialState);
         a(endState, expected);
@@ -58,22 +66,25 @@ describe('ordering', () => {
     };
 
   describe('reducer', () => {
-    describe('swap', () => {
-      const assertSwapLabel = (i, actions, e) =>
+    describe('push', () => {
+      const assertPushLabel = (i, actions, e) =>
         `${i.tiles.map(t => t.id)} + ${actions.map(toLabel).join(', ')} = ${e}`;
 
-      const assertSwap = assertReducer(
+      const assertPush = assertReducer(
         [1, 2, 3, 4],
         { includeTargets: false },
         { type: 'move' },
         (s, expected) => {
-          expect(s.tiles.map(t => t.id)).toEqual(expected);
+          expect(s.tiles
+            .map(t => t.id)
+            .filter((item, index, array) => array.indexOf(item) === index))
+            .toEqual(expected);
         },
-        assertSwapLabel
+        assertPushLabel
       );
 
-      assertSwap([0, 1], [2, 1, 3, 4]);
-      assertSwap([0, 1], [2, 1], [2, 3, 1, 4]);
+      assertPush([0, 1], [2, 1, 3, 4]);
+      assertPush([0, 1], [2, 1], [2, 3, 1, 4]);
     });
 
     describe('move - with targets', () => {

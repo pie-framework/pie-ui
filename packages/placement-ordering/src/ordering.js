@@ -6,6 +6,17 @@ import assign from 'lodash/assign';
 
 const log = debug('pie-elements:placement-ordering:ordering');
 
+export const push = (arr, fromIndex, toIndex) => {
+  const movedItem = arr.find((item, index) => index === fromIndex);
+  const remainingItems = arr.filter((item, index) => index !== fromIndex);
+
+  return [
+    ...remainingItems.slice(0, toIndex),
+    movedItem,
+    ...remainingItems.slice(toIndex)
+  ];
+}
+
 export const swap = (arr, fromIndex, toIndex) => {
   log('[swap]', arr, fromIndex, toIndex);
   if (
@@ -64,14 +75,14 @@ function updateResponse(state, from, to) {
       r => r !== undefined && r === to.id
     );
     log('fromIndex: ', fromIndex, 'toIndex:', toIndex);
-    return swap(state.response, fromIndex, toIndex);
+    return push(state.response, fromIndex, toIndex);
   }
 }
 
 function buildTiles(choices, response, outcomes, opts) {
   if (opts.includeTargets) {
     const targets = [];
-    for (var i = 0; i < response.length; i++) {
+    for (let i = 0; i < response.length; i++) {
       const r = response[i];
 
       const choice = choices.find(
@@ -109,13 +120,26 @@ function buildTiles(choices, response, outcomes, opts) {
 
     return processedChoices.concat(targets);
   } else {
-    return response.map((id, index) => {
-      return Object.assign(
-        { type: 'choice', draggable: true, droppable: true },
+    return response.reduce((acc, id, index) => {
+      const emptyTile = Object.assign(
+        { type: 'empty', draggable: false, droppable: true },
         choices.find(m => m.id === id),
         outcomes[index]
       );
-    });
+      const choiceTile = Object.assign(
+        { type: 'choice', draggable: true, droppable: true },
+        choices.find(m => m.id === id),
+        outcomes[index]
+      )
+
+      if(index === 0) {
+        acc.push(emptyTile)
+      }
+
+      acc.push(choiceTile, emptyTile);
+
+      return acc;
+    }, []);
   }
 }
 

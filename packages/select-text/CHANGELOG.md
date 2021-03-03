@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.10](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.9...@pie-ui/select-text@1.7.10) (2021-03-03)
+
+
+### Bug Fixes
+
+* **select-text:** fix whitespace line wrapping ([c2e8a01](https://github.com/pie-framework/pie-ui/commit/c2e8a01c49a034f1b20c6565ab22fe0d3b0affe2))
+
+
+
+
+
 ## [1.7.9](https://github.com/pie-framework/pie-ui/compare/@pie-ui/select-text@1.7.8...@pie-ui/select-text@1.7.9) (2021-03-01)
 
 

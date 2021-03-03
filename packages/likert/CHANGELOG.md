@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.17](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.16...@pie-ui/likert@0.1.17) (2021-03-03)
+
+**Note:** Version bump only for package @pie-ui/likert
+
+
+
+
+
 ## [0.1.16](https://github.com/pie-framework/pie-ui/compare/@pie-ui/likert@0.1.15...@pie-ui/likert@0.1.16) (2021-03-01)
 
 **Note:** Version bump only for package @pie-ui/likert

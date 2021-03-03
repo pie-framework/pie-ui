@@ -111,7 +111,8 @@ const StyledMain = withStyles(theme => ({
   },
   textSelect: {
     marginBottom: theme.spacing.unit,
-    marginTop: theme.spacing.unit
+    marginTop: theme.spacing.unit,
+    whiteSpace: 'normal'
   },
   prompt: {
     verticalAlign: 'middle',

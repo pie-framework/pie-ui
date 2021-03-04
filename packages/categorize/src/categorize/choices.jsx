@@ -41,6 +41,7 @@ export class Choices extends React.Component {
     } = this.props;
     let style = {
       textAlign: 'center',
+      gridTemplateColumns: `repeat(${model.choicesPerRow}, min-content)`,
     };
 
     if (choicePosition === 'left') {

@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Tile from './tile';
 import { withStyles } from '@material-ui/core/styles';
+import classNames from 'classnames';
 
 const common = {
   tiler: {
-    display: 'grid',
+    display: 'grid'
+  },
+  withGap: {
     gridGap: '10px'
   }
 };
@@ -34,7 +37,13 @@ const buildTiles = props => {
     tile.instanceId = props.instanceId;
     tile.disabled = props.disabled;
     tile.guideIndex = props.addGuide ? tile.index + 1 : undefined;
-    return <Tile {...tile} key={index} />;
+
+    if(props.includeTargets) {
+      return <Tile {...tile} key={index} />;
+    }
+    else {
+      return tile.type === 'choice' ? <Tile {...tile} key={index}/> : <Tile {...tile} label='' key={index}/>;
+    }
   };
 
   T.propTypes = { ...types };
@@ -60,7 +69,9 @@ class HTiler extends React.Component {
     const columns = includeTargets ? tiles.length / 2 : tiles.length;
 
     const style = {
-      gridTemplateColumns: `repeat(${columns}, ${tileSize})`,
+      gridTemplateColumns: includeTargets ?
+        `repeat(${columns}, ${tileSize})` :
+        `auto repeat(${Math.floor(columns / 2) - 1}, ${tileSize} 10px) ${tileSize} auto`,
       gridTemplateRows: rows
     };
 
@@ -68,8 +79,13 @@ class HTiler extends React.Component {
       gridColumn: `1/${columns + 1}`
     };
 
+    const names = classNames(
+      classes.htiler,
+      includeTargets ? classes.withGap : null
+    );
+
     return (
-      <div className={classes.htiler} style={style}>
+      <div className={names} style={style}>
         <div
           className={classes.choiceLabel}
           style={labelStyle}
@@ -97,6 +113,9 @@ const horizontalStyles = {
   targetLabel: {
     textAlign: 'center',
     gridRow: '3/4'
+  },
+  withGap: {
+    gridGap: '10px'
   }
 };
 
@@ -120,11 +139,18 @@ class VTiler extends React.Component {
 
     const style = {
       gridTemplateColumns: `repeat(${columns}, ${tileSize})`,
-      gridTemplateRows: `auto repeat(${rows}, ${tileSize})`
+      gridTemplateRows: includeTargets ?
+        `auto repeat(${rows}, ${tileSize})` :
+        `auto auto repeat(${Math.floor(rows / 2) - 1}, ${tileSize} 10px) ${tileSize} auto`
     };
 
+    const names = classNames(
+      classes.vtiler,
+      includeTargets ? classes.withGap : null
+    );
+
     return (
-      <div className={classes.vtiler} style={style}>
+      <div className={names} style={style}>
         <div
           className={classes.choiceLabel}
           dangerouslySetInnerHTML={{ __html: choiceLabel }}
@@ -151,6 +177,9 @@ const verticalStyles = {
   targetLabel: {
     gridColumn: '2/3',
     textAlign: 'center'
+  },
+  withGap: {
+    gridGap: '10px'
   }
 };
 

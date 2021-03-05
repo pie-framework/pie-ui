@@ -65,6 +65,12 @@ const TileContent = withStyles({
   },
   correct: {
     border: `1px solid ${color.correct()}`
+  },
+  emptyTile: {
+    border: 'none',
+    '&:hover': {
+      backgroundColor: 'unset',
+    }
   }
 })(props => {
   const {
@@ -91,6 +97,7 @@ const TileContent = withStyles({
   } else {
     const names = classNames(
       classes.tileContent,
+      !label ? classes.emptyTile : null,
       isDragging && !disabled && classes.dragging,
       isOver && !disabled && classes.over,
       disabled && classes.disabled,

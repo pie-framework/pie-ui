@@ -1,5 +1,16 @@
 # pie-ui
 
+
+# Maintenance Mode
+
+pie-ui is no longer actively developed.
+No prs will be accepted.
+
+See http://github.com/pie-framework/pie-elements instead.
+
+
+
+
 [![CircleCI](https://circleci.com/gh/pie-framework/pie-ui.svg?style=svg)](https://circleci.com/gh/pie-framework/pie-ui)
 
 The pie custom elements only.

@@ -61,16 +61,16 @@
     prop-types "^15.6.0"
     react-is "^16.6.3"
 
-"@pie-lib/style-utils@^0.1.20":
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.20.tgz#a3ca9e673c8118a2b28ed1ee87554dd916feec5a"
+"@pie-lib/style-utils@^0.1.23":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@pie-lib/style-utils/-/style-utils-0.1.23.tgz#e7489d0bcd24cee1827c7fda018252d0f576e1c6"
 
-"@pie-lib/tools@^0.9.19":
-  version "0.9.19"
-  resolved "https://registry.yarnpkg.com/@pie-lib/tools/-/tools-0.9.19.tgz#7b1e7de134a5ac15f1464d61b3942540eb9d8847"
+"@pie-lib/tools@^0.9.22":
+  version "0.9.22"
+  resolved "https://registry.yarnpkg.com/@pie-lib/tools/-/tools-0.9.22.tgz#ea10ced1595d784aa256279cd09cf6666040c473"
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
-    "@pie-lib/style-utils" "^0.1.20"
+    "@pie-lib/style-utils" "^0.1.23"
     assert "^1.4.1"
     classnames "^2.2.6"
     debug "^4.1.1"
@@ -454,8 +454,8 @@ trigonometry-equations@^2.0.1:
     radians-degrees "^1.0.0"
 
 ua-parser-js@^0.7.9:
-  version "0.7.18"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.18.tgz#a7bfd92f56edfb117083b69e31d2aa8882d4b1ed"
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
 
 util@0.10.3:
   version "0.10.3"
